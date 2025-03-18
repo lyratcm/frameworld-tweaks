@@ -9,5 +9,5 @@ inline_script = {
 	SCALE = $SCALE$
 	SCALE = 1
 
-	job = $job$
+	JOB = $JOB$
 }

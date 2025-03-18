@@ -26,14 +26,18 @@ resources = {
 		rare_crystals = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
 	}
 }
+
 inline_script = {
-	script = $job$
-	jobs = 1
+	script = $JOB$
+	jobs = @[ 4 * $SIZE_COST$ ]
+	district = 1
 }
+
 planet_modifier = {
 	planet_housing_add = @base_housing
 	planet_housing_add = @[ $SIZE$ * 0.125 ]
 }
+
 ai_resource_production = {
 	unity = @[ 4 * $SIZE_COST$ ]
 	trigger = {

@@ -13,10 +13,7 @@ show_tech_unlock_if = {
 	giga_has_frameworld_origin = yes
 }
 is_capped_by_modifier = no
-prerequisites = {
-	#fall back tech that everyone will get
-	tech_basic_industry
-}
+
 
 triggered_planet_modifier = {
 	potential = {
@@ -42,7 +39,7 @@ triggered_planet_modifier = {
 
 inline_script = {
 	script = planet/consumer_goods/giga_artisan_job_swap
-	jobs = 1
+	jobs = @[ 4 * $SIZE_COST$ ]
 }
 
 triggered_desc = {

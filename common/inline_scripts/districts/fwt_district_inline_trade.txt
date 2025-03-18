@@ -39,9 +39,9 @@ resources = {
 planet_modifier = {
 	planet_housing_add = @base_housing
 	planet_housing_add = @[ $SIZE$ * 0.25 ]
-	job_clerk_add =  1
-	job_trader_add = 0.5
-	job_merchant_add = 0.25
+	job_clerk_add =  @[ 4 * $SIZE_COST$ ]
+	job_trader_add = @[ 2 * $SIZE_COST$ ]
+	job_merchant_add = @[ 1 * $SIZE_COST$ ]
 }
 
 triggered_planet_modifier = {
@@ -53,7 +53,7 @@ triggered_planet_modifier = {
 	}
 	modifier = {
 		job_trader_add = 1
-		planet_housing_add = 0.125
+		planet_housing_add = @[ 0.25 * $SIZE_COST$ ]
 	}
 }
 
