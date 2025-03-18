@@ -1,0 +1,6 @@
+$MODIFIER$_offset = {
+    icon = mod_pop_housing_usage_mult
+    good = yes
+    category = planet
+    localize_with_value_key = yes
+}

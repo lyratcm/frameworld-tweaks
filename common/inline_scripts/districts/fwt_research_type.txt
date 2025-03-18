@@ -1,0 +1,11 @@
+triggered_planet_modifier = {
+	potential = {
+		exists = owner
+		owner = { 
+			$AUTH$
+		}
+	}
+	modifier = {
+		$JOB_TYPE$ = $COUNT$
+	}
+}

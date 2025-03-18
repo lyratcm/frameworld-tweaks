@@ -1,0 +1,74 @@
+# fwt_auto_fab_speed = {
+# 	potential = {
+# 		giga_has_frameworld_origin = yes
+# 	}
+# 	inline_script = {
+# 		script = policies/fwt_inline_auto_fab
+# 		SPEED = 100
+# 	}
+# 	inline_script = {
+# 		script = policies/fwt_inline_auto_fab
+# 		SPEED = 90
+# 	}
+# 	inline_script = {
+# 		script = policies/fwt_inline_auto_fab
+# 		SPEED = 80
+# 	}
+# 	inline_script = {
+# 		script = policies/fwt_inline_auto_fab
+# 		SPEED = 70
+# 	}
+# 	inline_script = {
+# 		script = policies/fwt_inline_auto_fab
+# 		SPEED = 60
+# 	}
+# 	inline_script = {
+# 		script = policies/fwt_inline_auto_fab
+# 		SPEED = 50
+# 	}
+# 	inline_script = {
+# 		script = policies/fwt_inline_auto_fab
+# 		SPEED = 40
+# 	}
+# 	inline_script = {
+# 		script = policies/fwt_inline_auto_fab
+# 		SPEED = 30
+# 	}
+# 	inline_script = {
+# 		script = policies/fwt_inline_auto_fab
+# 		SPEED = 20
+# 	}
+# 	inline_script = {
+# 		script = policies/fwt_inline_auto_fab
+# 		SPEED = 10
+# 	}
+# 	inline_script = {
+# 		script = policies/fwt_inline_auto_fab
+# 		SPEED = 5
+# 	}
+# 	inline_script = {
+# 		script = policies/fwt_inline_auto_fab
+# 		SPEED = 3
+# 	}
+# 	inline_script = {
+# 		script = policies/fwt_inline_auto_fab
+# 		SPEED = 1
+# 	}
+# 	inline_script = {
+# 		script = policies/fwt_inline_auto_fab
+# 		SPEED = 0
+# 	}
+# 	# option = {
+# 	# 	name = "fwt_auto_fab_$SPEED$"
+	
+# 	# 	policy_flags = {
+# 	# 		fwt_auto_fab_$SPEED$
+# 	# 	}
+# 	# 	modifier = {
+# 	# 		fwt_auto_fab_speed_add = $SPEED$
+# 	# 	}
+# 	# 	AI_weight = {
+# 	# 		factor = 1
+# 	# 	}
+# 	# }	
+# }

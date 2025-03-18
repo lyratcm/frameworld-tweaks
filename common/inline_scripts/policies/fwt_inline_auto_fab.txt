@@ -1,0 +1,13 @@
+option = {
+	name = "fwt_auto_fab_$SPEED$"
+
+	policy_flags = {
+		fwt_auto_fab_$SPEED$
+	}
+	modifier = {
+		fwt_auto_fab_speed_add = $SPEED$
+	}
+	AI_weight = {
+		factor = 1
+	}
+}

@@ -1,0 +1,27 @@
+planet_jobs_$MODIFIER$_produces_mult_offset = {
+    icon = mod_pop_housing_usage_mult
+    good = yes
+    category = planet
+    localize_with_value_key = yes
+}
+
+planet_jobs_$MODIFIER$_upkeep_mult_offset = {
+    icon = mod_pop_housing_usage_mult
+    good = yes
+    category = planet
+    localize_with_value_key = yes
+}
+
+planet_jobs_productive_$MODIFIER$_produces_mult_offset = {
+    icon = mod_pop_housing_usage_mult
+    good = yes
+    category = planet
+    localize_with_value_key = yes
+}
+
+planet_jobs_productive_$MODIFIER$_upkeep_mult_offset = {
+    icon = mod_pop_housing_usage_mult
+    good = yes
+    category = planet
+    localize_with_value_key = yes
+}

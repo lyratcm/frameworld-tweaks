@@ -1,0 +1,23 @@
+inline_script = {
+	script = districts/fwt_research_type
+	AUTH = "is_gestalt = no"
+	JOB_TYPE = job_researcher_add
+	COUNT = $COUNT$
+	HOUSING = 0
+}
+
+inline_script = {
+	script = districts/fwt_research_type
+	AUTH = "is_hive_empire = yes"
+	JOB_TYPE = job_brain_drone_add
+	COUNT = $COUNT$
+	HOUSING = 0
+}
+
+inline_script = {
+	script = districts/fwt_research_type
+	AUTH = "is_machine_empire = yes"
+	JOB_TYPE = job_calculator_add
+	COUNT = $COUNT$
+	HOUSING = 0
+}

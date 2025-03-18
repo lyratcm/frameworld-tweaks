@@ -1,0 +1,4 @@
+fwt_set_job_size_variable_params = {
+    MODIFIER = planet_technician_energy_produces_add
+    BASE = 6
+}

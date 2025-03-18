@@ -1,0 +1,11 @@
+inline_script = {
+	script = districts/fwt_district_inline_trade
+	SIZE = $SIZE$
+	SIZE = 0
+
+	SIZE_COST = $SIZE_COST$
+	SIZE_COST = 0.5
+
+	SCALE = $SCALE$
+	SCALE = 1
+}

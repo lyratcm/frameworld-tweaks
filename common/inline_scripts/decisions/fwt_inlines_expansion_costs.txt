@@ -1,0 +1,57 @@
+resources = {
+    category = megastructures_frameworld
+    cost = {
+        alloys = @giga_frameworld_expansion_cost_base
+		multiplier = $NAME$_cost_multiplier
+
+    }
+    
+	inline_script = {
+		script = decisions/fwt_inlines_expansion_costs_reductions
+		NAME = $NAME$
+		TECH = tech_habitat_2
+		VAR = @giga_frameworld_expansion_cost_habitat_2
+	}
+
+	inline_script = {
+		script = decisions/fwt_inlines_expansion_costs_reductions
+		NAME = $NAME$
+		TECH = tech_habitat_3
+		VAR = @giga_frameworld_expansion_cost_habitat_3
+	}
+
+	inline_script = {
+		script = decisions/fwt_inlines_expansion_costs_reductions
+		NAME = $NAME$
+		TECH = tech_starbase_2
+		VAR = @fwt_frameworld_expansion_cost_starbase_2
+	}
+
+	inline_script = {
+		script = decisions/fwt_inlines_expansion_costs_reductions
+		NAME = $NAME$
+		TECH = tech_starbase_3
+		VAR = @fwt_frameworld_expansion_cost_starbase_3
+	}
+
+	inline_script = {
+		script = decisions/fwt_inlines_expansion_costs_reductions
+		NAME = $NAME$
+		TECH = tech_starbase_4
+		VAR = @fwt_frameworld_expansion_cost_starbase_4
+	}
+
+	inline_script = {
+		script = decisions/fwt_inlines_expansion_costs_reductions
+		NAME = $NAME$
+		TECH = tech_starbase_5
+		VAR = @fwt_frameworld_expansion_cost_starbase_5
+	}
+
+	inline_script = {
+		script = decisions/fwt_inlines_expansion_costs_reductions
+		NAME = $NAME$
+		TECH = tech_mega_shipyard
+		VAR = @fwt_frameworld_expansion_cost_megashipyard
+	}
+}

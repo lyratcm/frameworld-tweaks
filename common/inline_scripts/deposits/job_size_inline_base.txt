@@ -1,0 +1,9 @@
+triggered_planet_modifier = {
+    potential = {
+        is_variable_set = fwt_$MODIFIER$_var
+    }
+    multiplier = fwt_$MODIFIER$_var
+
+    $MODIFIER$ = 1
+    $MODIFIER$_offset = 1
+}

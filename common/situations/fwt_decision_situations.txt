@@ -1,0 +1,576 @@
+
+giga_situation_frameworld_decisions = {
+    picture = GFX_evt_space_station
+    complete_icon = GFX_situation_outcome_unknown
+    complete_icon_frame = GFX_situation_outcome_frame_blue
+    monthly_progress = {
+		base = 0
+		modifier = { 						#Standard weight fields, you can do everything that common/script_values/00_script_values.txt tells you about
+			add = value:fwt_situation_decision_cost_time
+			desc = giga_situation_frameworld_outposts_expansion_base_speed 	#Do not forget to add loc tooltips (the game will scream at you otherwise)
+		}
+		modifier = {
+			mult = event_target:frame_expand@owner.value:fwt_mult_bonus_to_dec_mult|MODIFIER|planet_decision_enact_speed_mult|
+			desc = giga_situation_frameworld_outposts_expansion_decision_speed
+		}
+	}
+    on_progress_complete = {
+		fwt_trigger_effects_situation = yes
+	}
+
+    stages = {
+        stage_1 = {
+            icon = GFX_situation_stage_giga_frameworld_outpost
+            icon_background = GFX_situation_stage_frame_blue
+            end = 100
+        }
+    }
+
+    approach = {
+        name = giga_situation_frameworld_outposts_approach
+        icon = GFX_situation_approach_balance_sheet
+        icon_background = GFX_situation_approach_bg_yellow
+        default = yes
+
+    }
+	on_start = {
+		set_variable = {
+			which = fwt_decision_time
+			value = owner.fwt_decision_time
+		}
+	}						#Effects when the Situation is created
+	on_monthly = {
+		events = {
+			fwt.2
+		}
+	}
+}
+
+
+fwt_situation_continuous_expansion = {
+    picture = GFX_evt_space_station
+    complete_icon = GFX_situation_outcome_unknown
+    complete_icon_frame = GFX_situation_outcome_frame_blue
+
+    monthly_progress = {
+		base = 0
+		modifier = {
+			add = value:fwt_situation_continuous_speed
+			desc = giga_situation_frameworld_outposts_expansion_base_speed 	#Do not forget to add loc tooltips (the game will scream at you otherwise)
+		}
+	}
+	
+	on_progress_complete = {
+		#backup in case theres exactly enough progress
+		custom_tooltip = frameworld_line
+		event_target:frame_expand@owner = {
+			remove_planet_flag = giga_frameworld_expand_queued
+			giga_frameworld_expand_deposit = { 
+				DEPOSIT = d_frameworld_expansion 
+				VAR = giga_frameworld_expansions
+			}
+			custom_tooltip = frameworld_line
+			giga_frameworld_expand_deposit = { 
+				DEPOSIT = d_frameworld_structure_expansion 
+				VAR = giga_frameworld_structure_expansions
+			}
+			custom_tooltip = frameworld_line
+			change_planet_size = 1
+		
+			# update entity and do all the math
+			hidden_effect = {
+				giga_frameworld_update_entity_with_fallback = yes
+				giga_frameworld_recalculate_variables = yes
+				frameworld_conduct_audit_check_ai = yes
+			}
+			remove_flags = { NAME = giga_frameworld_expand }
+		}
+		owner = {
+			set_variable = {
+				which = fwt_expansion_income
+				value = prev.fwt_expansion_income
+			}
+		}
+		#might fix any jank with more than end of situation
+		owner = { start_situation = { type = fwt_situation_continuous_expansion } }
+		destroy_situation = this
+	}
+
+
+	triggered_modifier = {
+		potential = {
+			always = yes
+		}
+		#added in country scope
+		country_situations_expansion_alloys_upkeep_add = 1
+		country_situations_expansion_alloys_upkeep_add_offset = 1
+		multiplier = fwt_situation_continuous_total_revenue
+	}
+
+    stages = {
+        stage_1 = {
+            icon = GFX_situation_stage_giga_frameworld_outpost
+            icon_background = GFX_situation_stage_frame_blue
+            end = 100
+        }
+    }
+
+    approach = {
+		# no avoiding this with deficit
+		allow = { owner = { not = { has_deficit = alloys } } }
+        name = fwt_situation_continuous_expansion_approach_speed
+        icon = GFX_situation_approach_balance_sheet
+        icon_background = GFX_situation_approach_bg_yellow
+		default = yes
+		resources = {
+			category = country_situations_expansion
+		}
+    }
+
+	approach = {
+		#change speed
+        name = fwt_situation_continuous_expansion_approach_speed_change
+        icon = GFX_situation_approach_balance_sheet
+        icon_background = GFX_situation_approach_bg_yellow
+		resources = {
+			category = country_situations_expansion
+		}
+		on_select = { 
+			situation_event = {
+				id = fwt.42
+			}
+		} 
+    }
+
+	approach = {
+		#end situation
+        name = fwt_situation_continuous_expansion_approach_finish
+        icon = GFX_situation_approach_balance_sheet
+        icon_background = GFX_situation_approach_bg_yellow
+		on_select = { 
+			#store the current progress in case you want to continue it later
+			owner = {
+				if = {
+					limit = {
+						prev = {
+							situation_progress > 99.9
+							situation_progress < 0
+						}
+					}
+					event_target:frame_expand@owner = {
+						remove_planet_flag = giga_frameworld_expand_queued
+						giga_frameworld_expand_deposit = { 
+							DEPOSIT = d_frameworld_expansion 
+							VAR = giga_frameworld_expansions
+						}
+						custom_tooltip = frameworld_line
+						giga_frameworld_expand_deposit = { 
+							DEPOSIT = d_frameworld_structure_expansion 
+							VAR = giga_frameworld_structure_expansions
+						}
+						custom_tooltip = frameworld_line
+						change_planet_size = 1
+					
+						# update entity and do all the math
+						hidden_effect = {
+							giga_frameworld_update_entity_with_fallback = yes
+							giga_frameworld_recalculate_variables = yes
+							frameworld_conduct_audit_check_ai = yes
+						}
+						remove_flags = { NAME = giga_frameworld_expand }
+					}
+					clear_variable = situation_progress
+				}
+				else = {
+					set_variable = {
+						which = fwt_auto_expand_progress
+						value = prev.trigger:situation_progress
+					}
+					if = {
+						limit = {
+							check_variable = {
+								which = fwt_auto_expand_progress
+								value > 100
+							}
+						}
+						set_variable = {
+							which = fwt_auto_expand_progress
+							value = 100
+						}
+					}
+					else_if = {
+						limit = {
+							check_variable = {
+								which = fwt_auto_expand_progress
+								value < 0
+							}
+						}
+						set_variable = {
+							which = fwt_auto_expand_progress
+							value = 0
+						}
+					}
+				}
+			}
+
+			destroy_situation = this
+			event_target:frame_expand@owner = {
+				remove_planet_flag = giga_frameworld_expand_auto_queued
+				remove_planet_flag = giga_frameworld_expand_auto_dec
+				remove_planet_flag = giga_frameworld_expand_auto
+			}
+		} 
+    }
+	
+	on_start = {
+		set_variable = {
+			which = fwt_expansion_income
+			value = owner.fwt_expansion_income
+		}
+		#resume the progress from last time
+		if = {
+			limit = { owner = { is_variable_set = fwt_auto_expand_progress } }
+			add_situation_progress = owner.fwt_auto_expand_progress
+			owner = { clear_variable = fwt_auto_expand_progress }
+		}
+		set_variable = {
+			which = fwt_decision_time
+			value = @fwt_frameworld_auto_expansion_time
+		}
+		event_target:frame_expand@owner = {
+			set_planet_flag = giga_frameworld_expand_auto_queued
+			set_planet_flag = giga_frameworld_expand_auto_dec
+			set_planet_flag = giga_frameworld_expand_auto
+		}
+		set_situation_approach = fwt_situation_continuous_expansion_approach_speed
+		#do month 1 of alloy upkeep
+		#income
+		set_variable = {
+			which = fwt_situation_continuous_total_revenue 
+			value = value:fwt_situation_continuous_postive_revenue
+		}
+		#upkeep ignoring situation
+		set_variable = {
+			which = fwt_situation_continuous_total_expense
+			value = value:fwt_situation_continuous_postive_expense
+		}
+		#total income ignoring situation
+		subtract_variable = {
+			which = fwt_situation_continuous_total_revenue
+			value = fwt_situation_continuous_total_expense
+		}
+		#% of total income to use on situation
+		multiply_variable = {
+			which = fwt_situation_continuous_total_revenue
+			value = value:fwt_situation_continuous_pol_speed
+		}
+		add_situation_progress = owner.fwt_expansion_extra
+		owner = {
+			clear_variable = fwt_expansion_extra
+		}
+	}
+
+	on_monthly = {
+		events = {
+			fwt.2
+		}
+	}
+}
+
+
+fwt_situation_frameworld_continuous_harvest = {
+    picture = GFX_evt_space_station
+    complete_icon = GFX_situation_outcome_unknown
+    complete_icon_frame = GFX_situation_outcome_frame_blue
+    monthly_progress = {
+		base = 4.17
+		modifier = {
+			mult = owner.value:fwt_mult_bonus_to_dec_mult|MODIFIER|megastructure_build_speed_mult|
+			desc = giga_situation_frameworld_outposts_expansion_decision_speed
+		}
+		modifier = {
+			mult = 0
+			desc = giga_situation_frameworld_outposts_expansion_decision_speed
+			or = {
+				current_situation_approach = fwt_situation_continuous_expansion_approach_pause
+				owner = {
+					nor = {
+						has_country_flag = has_more_asteroids
+						has_country_flag = has_more_asteroids_1
+					}
+				}
+				owner = {
+					nand = {
+						has_country_flag = fwt_asteroid_harvesting_1
+						has_country_flag = fwt_asteroid_harvesting
+					}
+				}
+			}
+		}
+	}
+
+    on_progress_complete = {
+		owner = {
+			if = {
+				limit = {
+					has_country_flag = fwt_asteroid_harvesting_1
+				}
+				random_planet_within_border = {
+					limit = {
+						or = {
+							is_planet_class = pc_asteroid
+							is_planet_class = pc_ice_asteroid
+							is_planet_class = pc_crystal_asteroid
+							is_planet_class = pc_rare_crystal_asteroid
+							is_asteroid = yes
+						}
+						solar_system = {
+							count_system_planet = {
+								count > 1
+								limit = { 					
+									or = {
+										is_planet_class = pc_asteroid
+										is_planet_class = pc_ice_asteroid
+										is_planet_class = pc_crystal_asteroid
+										is_planet_class = pc_rare_crystal_asteroid
+										is_asteroid = yes
+									} 
+								}
+							}
+							# don't build in here if its being used for minerals
+							not = {
+								any_megastructure = {
+									is_megastructure_type = orbital_arc_furnace_1
+									is_megastructure_type = orbital_arc_furnace_2
+									is_megastructure_type = orbital_arc_furnace_3
+									is_megastructure_type = orbital_arc_furnace_4
+									is_megastructure_type = orbital_arc_furnace_destroyed
+									is_megastructure_type = orbital_arc_furnace_restored
+								}
+							}
+						}
+					}
+					solar_system = {
+						event_target:frame_expand@owner = {
+							giga_frameworld_expand_deposit = { 
+								DEPOSIT = d_frameworld_asteroid
+								VAR = giga_frameworld_asteroids
+							}
+							giga_frameworld_expand_deposit = { 
+								DEPOSIT = d_frameworld_expansion 
+								VAR = giga_frameworld_expansions
+							}
+							change_planet_size = 1
+							giga_frameworld_update_entity_with_fallback = yes
+							frameworld_conduct_audit_check_ai = yes
+						}
+					}
+					remove_planet = yes
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = fwt_asteroid_harvesting
+				}
+				random_planet_within_border = {
+					limit = {
+						or = {
+							is_planet_class = pc_asteroid
+							is_planet_class = pc_ice_asteroid
+							is_planet_class = pc_crystal_asteroid
+							is_planet_class = pc_rare_crystal_asteroid
+							is_asteroid = yes
+						}
+						solar_system = {
+							# don't build in here if its being used for minerals
+							not = {
+								any_megastructure = {
+									is_megastructure_type = orbital_arc_furnace_1
+									is_megastructure_type = orbital_arc_furnace_2
+									is_megastructure_type = orbital_arc_furnace_3
+									is_megastructure_type = orbital_arc_furnace_4
+									is_megastructure_type = orbital_arc_furnace_destroyed
+									is_megastructure_type = orbital_arc_furnace_restored
+								}
+							}
+						}
+					}
+					solar_system = {
+						event_target:frame_expand@owner = {
+							giga_frameworld_expand_deposit = { 
+								DEPOSIT = d_frameworld_asteroid
+								VAR = giga_frameworld_asteroids
+							}
+							giga_frameworld_expand_deposit = { 
+								DEPOSIT = d_frameworld_expansion 
+								VAR = giga_frameworld_expansions
+							}
+							change_planet_size = 1
+							giga_frameworld_update_entity_with_fallback = yes
+							frameworld_conduct_audit_check_ai = yes
+							
+						}
+					}
+					remove_planet = yes
+				}
+			}
+			start_situation = {
+				type = fwt_situation_frameworld_continuous_harvest
+			}
+		}
+		destroy_situation = this
+	}
+
+    stages = {
+        stage_1 = {
+            icon = GFX_situation_stage_giga_frameworld_outpost
+            icon_background = GFX_situation_stage_frame_blue
+            end = 100
+        }
+    }
+
+    approach = {
+        name = fwt_situation_continuous_expansion_approach_harvest
+        icon = GFX_situation_approach_balance_sheet
+        icon_background = GFX_situation_approach_bg_yellow
+        default = yes
+		resources = {
+			category = country_situations_harvest
+			upkeep = {
+				trigger = {
+					owner = {
+						or = {
+							has_country_flag = has_more_asteroids
+							has_country_flag = has_more_asteroids_1
+						}
+					}
+					owner = {
+						has_country_flag = fwt_asteroid_harvesting_1
+						has_country_flag = fwt_asteroid_harvesting
+					}
+				}
+				energy = 41.67
+			}
+		}
+    }
+	
+	approach = {
+        name = fwt_situation_continuous_expansion_approach_pause
+        icon = GFX_situation_approach_balance_sheet
+        icon_background = GFX_situation_approach_bg_yellow
+    }
+
+	approach = {
+        name = fwt_situation_continuous_expansion_approach_mode_change
+        icon = GFX_situation_approach_balance_sheet
+        icon_background = GFX_situation_approach_bg_yellow
+		on_select = {
+			owner = {
+				country_event = {
+					id = fwt.41
+				}
+			}
+		}
+    }
+
+	approach = {
+        name = fwt_situation_continuous_expansion_approach_finish
+        icon = GFX_situation_approach_balance_sheet
+        icon_background = GFX_situation_approach_bg_yellow
+		on_select = {
+			owner = {
+				set_variable = {
+					which = fwt_situation_frameworld_continuous_harvest_progress
+					value = prev.trigger:situation_progress 
+				}
+			}
+			destroy_situation = this
+		}
+    }
+
+	on_start = {
+		if = {
+			limit = {
+				owner = {
+					nor = {
+						has_country_flag = fwt_asteroid_harvesting_1
+						has_country_flag = fwt_asteroid_harvesting
+					}
+				}
+			}
+			owner = {
+				country_event = {
+					id = fwt.41
+				}
+			}
+		}
+		#if theres a 
+		owner = {
+			if = {
+				limit = {
+					has_country_flag = fwt_asteroid_harvesting
+					has_country_flag = fwt_asteroid_harvesting_1
+				}
+				random_planet_within_border = {
+					limit = {
+						or = {
+							is_planet_class = pc_asteroid
+							is_planet_class = pc_ice_asteroid
+							is_planet_class = pc_crystal_asteroid
+							is_planet_class = pc_rare_crystal_asteroid
+							is_asteroid = yes
+						}
+						solar_system = {
+							count_system_planet = {
+								count > 1
+								limit = { 					
+									or = {
+										is_planet_class = pc_asteroid
+										is_planet_class = pc_ice_asteroid
+										is_planet_class = pc_crystal_asteroid
+										is_planet_class = pc_rare_crystal_asteroid
+										is_asteroid = yes
+									} 
+								}
+							}
+						}
+					}
+					root = {
+						owner = {
+							set_country_flag = has_more_asteroids
+							set_country_flag = has_more_asteroids_1
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_country_flag = fwt_asteroid_harvesting
+					not = {
+						has_country_flag = fwt_asteroid_harvesting_1
+					}
+				}
+				random_planet_within_border = {
+					limit = {
+						or = {
+							is_planet_class = pc_asteroid
+							is_planet_class = pc_ice_asteroid
+							is_planet_class = pc_crystal_asteroid
+							is_planet_class = pc_rare_crystal_asteroid
+							is_asteroid = yes
+						}
+					}
+					root = {
+						owner = {
+							set_country_flag = has_more_asteroids
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = { is_variable_set = fwt_situation_frameworld_continuous_harvest_progress }
+			add_situation_progress = owner.fwt_situation_frameworld_continuous_harvest_progress
+		}
+	}					#Effects when the Situation is created
+}

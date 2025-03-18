@@ -1,0 +1,31 @@
+country_situations_fwt = {
+	generate_add_modifiers = {
+		upkeep
+	}
+	parent = country_situations
+	modifier_category = country
+}
+
+country_situations_expansion = {
+	generate_add_modifiers = {
+		upkeep
+	}
+	modifier_category = country
+	parent = country_situations_fwt
+}
+
+country_situations_harvest = {
+	generate_add_modifiers = {
+		upkeep
+	}
+	parent = country_situations_fwt
+	modifier_category = country
+}
+
+fwt_maintenance_cat = {
+	# generate_add_modifiers = {
+	# 	upkeep
+	# }
+	# parent = country_situations_fwt
+	modifier_category = pop
+}
