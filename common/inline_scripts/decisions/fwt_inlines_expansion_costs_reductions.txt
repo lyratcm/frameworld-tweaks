@@ -1,0 +1,8 @@
+cost = {
+	trigger = {
+		exists = owner
+		owner = { has_technology = $TECH$ }
+	}
+	alloys = $VAR$
+	multiplier = $NAME$_cost_multiplier
+}

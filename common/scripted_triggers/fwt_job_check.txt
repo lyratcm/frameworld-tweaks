@@ -1,0 +1,984 @@
+#compat for my patch mod
+megacorp_metamod_enable = {
+    always = no
+}
+
+has_stellaris_evolved = {
+    always = no
+}
+
+# generally want to avoid adding more limiters to the check bc compat is already bad enough
+# do mod based checks as they should never be seen outside of their jobs
+# ignore ruler jobs as they aren't used
+
+#split by is gestalt or not, then by mod, then by stratum. this gets checked a load so best to optimise
+fwt_metallurgists_job_check = {
+    or = {
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            or = {
+                and = {
+                    has_job_category = specialist
+                    or = {
+                        has_job = catalytic_technician
+                        has_job = foundry
+                    }
+                }
+                and = {
+                    has_job_category = worker
+                    or = {
+                        has_job = odd_factory_worker
+                        has_job = bluelotus_technician
+                    }
+                }
+                #evolved compat
+                and = {
+                    has_stellaris_evolved = yes
+                    or = {
+                        and = {
+                            has_job_category = specialist
+                            or = {
+                                has_job = manufactorium_specialist
+                            }
+                        }
+                        and = {
+                            has_job_category = worker
+                            or = {
+                                has_job = tec_scrapper
+                                has_job = tec_hired_foundry
+                                has_job = tec_hired_catalytic
+                                has_job = foundry_prison_worker
+                                has_job = catalytic_technician_prison_worker
+                                has_job = manufactorium_scraper
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            or = {
+                and = {
+                    has_job_category = complex_drone
+                    or = {
+                        has_job = alloy_drone
+                        has_job = catalytic_drone
+                        has_job = bluelotus_drone
+                        has_job = fabricator
+                    }
+                }
+                and = {
+                    has_job_category = simple_drone
+                    or = {
+                        has_job = odd_factory_drone
+                    }
+                }
+                #evolved compat
+                and = {
+                    has_stellaris_evolved = yes
+                    or = {
+                        and = {
+                            has_job_category = complex_drone
+                            or = {
+                                has_job = manufactorium_complex_drone
+                            }
+                        }
+                        and = {
+                            has_job_category = simple_drone
+                            or = {
+                                has_job = manufactorium_scraper_drone
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+fwt_artisans_job_check = {
+    or = {
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            or = {
+                and = {
+                    has_job_category = specialist
+                    or = {
+                        has_job = artisan
+                        has_job = artificer
+                        has_job = pearl_diver
+                    }
+                }
+                # and = {
+                #     has_job_category = worker
+                #     or = {
+                #     }
+                # }
+                and = {
+                    has_stellaris_evolved = yes
+                    or = {
+                        # and = {
+                        #     has_job_category = specialist
+                        #     or = {
+                        #     }
+                        # }
+                        and = {
+                            has_job_category = worker
+                            or = {
+                                has_job = tec_hired_artisan
+                                has_job = artisan_prison_worker
+                                has_job = artificer_prison_worker
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            or = {
+                and = {
+                    has_job_category = complex_drone
+                    or = {
+                        has_job = artisan_drone
+                    }
+                }
+                # and = {
+                #     has_job_category = simple_drone
+                #     or = {
+                #     }
+                # }
+
+                # and = {
+                #     has_stellaris_evolved = yes
+                #     or = {
+                #         and = {
+                #             has_job_category = complex_drone
+                #             or = {
+                #                 has_job = manufactorium_complex_drone
+                #             }
+                #         }
+                #         and = {
+                #             has_job_category = simple_drone
+                #             or = {
+                #                 has_job = manufactorium_scraper_drone
+                #             }
+                #         }
+                #     }
+                # }
+                
+            }
+        }
+    }
+}
+
+fwt_researchers_job_check = {
+    or = {
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            or = {
+                and = {
+                    has_job_category = specialist
+                    or = {
+                        has_job = researcher
+                        has_job = necromancer
+                        has_job = knight
+                        has_job = archaeoengineers
+                        #can't get on the frameworld
+                        # has_job = dimensional_portal_researcher
+                        # has_job = space_time_anomaly_researcher
+                        has_job = astral_researcher
+                        has_job = astrometeorologist
+                        has_job = storm_dancer
+                        has_job = nanotech_researcher
+                    }
+                }
+                # and = {
+                #     has_job_category = worker
+                #     or = {
+                #     }
+                # }
+                and = {
+                    has_stellaris_evolved = yes
+                    or = {
+                        and = {
+                            has_job_category = specialist
+                            or = {
+                                has_job = tec_minor_occultist
+                                has_job = tec_telecom_technician
+                                has_job = tec_planetdefense_technician
+                                has_job = tec_shipyard_engineer
+                                has_job = tec_nanite_researcher
+                                # inherits from researchers
+                                has_job = tec_grand_archivist
+                                has_job = tec_grand_occultist
+                                has_job = stratovent_researcher
+                                has_job = archivist
+                                has_job = munitions_decommissioner
+
+                            }
+                        }
+                        and = {
+                            has_job_category = worker
+                            or = {
+                                has_job = tec_labrat
+                                has_job = tec_hired_researcher
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            or = {
+                and = {
+                    has_job_category = complex_drone
+                    or = {
+                        has_job = brain_drone
+                        has_job = calculator
+                        has_job = archaeo_drone
+                        has_job = archaeo_unit
+                        has_job = astral_drone
+                        has_job = astral_unit
+                        has_job = astrometeorologist_hive
+                        has_job = astrometeorologist_machine
+                        #can't get on the frameworld
+                        # has_job = space_time_anomaly_researcher_gestalt
+                        # has_job = dimensional_portal_researcher_gestalt
+                    }
+                }
+                # and = {
+                #     has_job_category = simple_drone
+                #     or = {
+                #     }
+                # }
+                and = {
+                    has_global_flag = stellarisevolved
+                    or = {
+                        and = {
+                            has_job_category = complex_drone
+                            or = {
+                                has_job = tec_ecoresearcher_drone
+                                has_job = tec_shipyard_engineer_drone
+                                has_job = tec_hydrorelay_drone
+                                has_job = tec_geneticist_drone
+                                has_job = tec_nanite_researcher_drone
+                                has_job = munitions_decommissioning_unit
+                                has_job = munitions_decommissioning_drone
+                                has_job = nanotech_research_unit
+                            }
+                        }
+                        # and = {
+                        #     has_job_category = simple_drone
+                        #     or = {
+                        #     }
+                        # }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+#inc priest despite not being of the same cat as they inherit and are replaced for spiritualists
+fwt_administrators_job_check = {
+    or = {
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            or = {
+                and = {
+                    has_job_category = specialist
+                    or = {
+                        has_job = bureaucrat
+                        has_job = unifier
+                        has_job = steward
+                        has_job = priest
+                        has_job = death_priest
+                        has_job = knight
+                    }
+                }
+                and = {
+                    has_job_category = worker
+                    or = {
+                        has_job = tec_memorialist
+                        has_job = mortal_initiate
+                    }
+                }
+                and = {
+                    has_stellaris_evolved = yes
+                    or = {
+                        and = {
+                            has_job_category = specialist
+                            or = {
+                                has_job = tec_minor_occultist
+                                has_job = tec_state_administrator
+                                has_job = tec_ai_operator
+                                has_job = tec_ai_ordinator
+                                has_job = tec_supervisor_bureaucrat
+                            }
+                        }
+                        # and = {
+                        #     has_job_category = worker
+                        #     or = {
+                        #     }
+                        # }
+                    }
+                }
+            }
+        }
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            or = {
+                and = {
+                    has_job_category = complex_drone
+                    or = {
+                        has_job = synapse_drone
+                        has_job = coordinator
+                    }
+                }
+                and = {
+                    has_job_category = simple_drone
+                    or = {
+                        has_job = tec_memorialist_drone
+                    }
+                }
+                and = {
+                    has_stellaris_evolved = yes
+                    or = {
+                        and = {
+                            has_job_category = complex_drone
+                            or = {
+                                has_job = tec_resonance_drone
+                                has_job = tec_network_drone
+                                has_job = tec_hive_admin_drone
+                                has_job = tec_development_drone
+                                has_job = robot_caretaker
+                            }
+                        }
+                        # and = {
+                        #     has_job_category = simple_drone
+                        #     or = {
+                        #     }
+                        # }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+fwt_priests_job_check = {
+    or = {
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            or = {
+                and = {
+                    has_job_category = specialist
+                    or = {
+                        has_job = priest
+                        has_job = death_priest
+                        has_job = tec_techno_priest
+                        has_job = tec_mecha_priest
+                        has_job = numistic_priest
+                        has_job = preacher
+                        has_job = haruspex
+                        has_job = technophant
+                    }
+                }
+                and = {
+                    has_stellaris_evolved = yes
+                    or = {
+                        and = {
+                            has_job_category = specialist
+                            or = {
+                                has_job = tec_minor_occultist
+                                has_job = templar
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+fwt_culture_workers_job_check = {
+    or = {
+        has_job = culture_worker
+        has_job = death_chronicler
+        has_job = geologist
+        has_job = wonder_curator
+        has_job = historical_curator
+    }
+}
+
+fwt_evaluators_job_check = {
+    or = {
+        has_job = chronicle_drone
+        has_job = evaluator
+        has_job = drone_geologist
+        has_job = drone_wonder_curator
+        has_job = drone_historical_curator
+    }
+}
+#
+# fwt_politicians_job_check = {
+#     or = {
+#         has_job = politician
+#         has_job = noble
+#         has_job = executive
+#     }
+# }
+
+# fwt_nobles_job_check = {
+#     or = {
+#         has_job = noble
+#     }
+# }
+
+# fwt_executive_job_check = {
+#     or = {
+#         has_job = executive
+#     }
+# }
+
+fwt_bio_trophies_job_check = {
+    or = {
+        has_job = bio_trophy
+        has_job = machine_nurse
+    }
+}
+
+fwt_chemists_job_check = {
+    or = {
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            or = {
+                has_job = chemist
+                has_job = mote_harvester
+            }
+        }
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            or = {
+                has_job = chemist_drone
+                has_job = mote_harvesting_drone
+            }
+        }
+    }
+}
+
+
+fwt_translucers_job_check = {
+    or = {
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            or = {
+                has_job = translucer
+                has_job = crystal_miner
+            }
+        }
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            or = {
+                has_job = translucer_drone
+                has_job = crystal_mining_drone
+            }
+        }
+    }
+}
+
+
+fwt_refiners_job_check = {
+    or = {
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            or = {
+                has_job = gas_refiner
+                has_job = gas_extractor
+                has_job = gas_plant_engineer
+            }
+        }
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            or = {
+                has_job = gas_extraction_drone
+                has_job = gas_refiner_drone
+                has_job = gas_plant_engineer_gestalt
+            }
+        }
+    }
+}
+#including sr miners as their rarer
+# no  strata check as their all worker
+fwt_miners_job_check = {
+    or = {
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            or = {
+                and = {
+                    has_job_category = worker
+                    or = {
+                        has_job = miner
+                        has_job = tec_hired_miner
+                        has_job = tec_matterminer
+                        has_job = crystal_miner
+                        has_job = gas_extractor
+                        has_job = mote_harvester
+                        has_job = scrap_miner
+                        has_job = crystal_mining_drone
+                        has_job = mote_harvesting_drone
+                        has_job = gas_extraction_drone
+                        has_job = scrap_miner_drone
+                        has_job = cave_cleaner
+                        has_job = astrogarbage_collector
+                    }
+                }
+                and = {
+                    has_job_category = specialist
+                    or = {
+                        has_job = stratovent_refiner
+                        has_job = stratovent_refiner_upg
+                        has_job = stratovent_refiner_minerals
+                        has_job = mineral_diver
+                    }
+                }
+            }
+        }
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            or = {
+                has_job = mining_drone
+                has_job = tec_reef_drone
+                has_job = tec_matterminer_drone
+                has_job = tec_biomass_mining_drone
+                has_job = cave_cleaner_gestalt
+                has_job = astrogarbage_collector_gestalt
+                has_job = mineral_diver_drone
+            }
+        }
+    }
+}
+
+fwt_farmers_job_check = {
+    or = {
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            or = {
+                and = {
+                    has_job_category = worker
+                    or = {
+                        has_job = tec_hired_farmer
+                        has_job = farmer
+                        has_job = angler
+                        has_job = turtle_miner
+                        has_job = puddle_technician
+                        has_job = alien_hunter
+                    }
+                }
+                and = {
+                    has_job_category = specialist
+                    or = {
+                        has_job = mineral_diver
+                    }
+                }
+            }
+        }
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            or = {
+                has_job = agri_drone
+                has_job = tec_aqua_drone
+                has_job = tec_biomass_agri_drone
+                has_job = turtle_miner_gestalt
+                has_job = puddle_technician_drone
+            }
+        }
+    }
+}
+
+fwt_technician_job_check = {
+    or = {
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            or = {
+                and = {
+                    has_job_category = worker
+                    or = {
+                        has_job = tec_hired_technician
+                        has_job = technician
+                    }
+                }
+                and = {
+                    has_job_category = specialist
+                    or = {
+                        has_job = myrmeku_power_farmer
+                    }
+                }
+            }
+        }
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            or = {
+                has_job = technician_drone
+                has_job = tec_thermogenerator_drone
+                has_job = myrmeku_power_farmer_gestalt
+            }
+        }
+    }
+}
+
+#unused atm
+
+fwt_doctors_job_check = {
+    or = {
+        has_job = healthcare
+        has_job = gestation_drone
+        has_job = giga_extra_healthcare
+    }
+}
+
+fwt_pop_assemblers_job_check = {
+    or = {
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            or = {
+                and = {
+                    has_job_category = worker
+                    or = {
+                        has_job = tec_minor_roboticist
+                    }
+                }
+                and = {
+                    has_job_category = specialist
+                    or = {
+                        has_job = roboticist
+                        has_job = reassigner
+                        has_job = identity_designer
+                        has_job = giga_cloning
+                        and = {
+                            has_stellaris_evolved = yes
+                            or = {
+                                has_job = tec_hive_germinator
+                                has_job = tec_cyborg_ripperdoc
+                                has_job = tec_cloner
+                                has_job = tec_bioengineer
+                                has_job = tec_master_roboticist
+                            }
+                        }
+                        and = {
+                            has_global_flag = bug_branch_active
+                            or = {
+                                has_job = bugged_lifescribe
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            or = {
+                has_job = spawning_drone
+                has_job = replicator
+                has_job = giga_extra_crucible_drone
+                and = {
+                    has_stellaris_evolved = yes
+                    or = {
+                        has_job = tec_podtender_drone
+                        has_job = tec_replicator_drone
+                        has_job = tec_master_replicator_drone
+                        has_job = tec_cloner_drone
+                        has_job = tec_master_cloner_drone
+                        has_job = tec_bioengineer_drone
+                        has_job = tec_master_bioengineer_drone
+                        has_job = tec_hive_germinator_drone
+                    }
+                }
+            }
+        }
+    }
+}
+
+fwt_soldiers_job_check = {
+    or = {
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+            or = {
+                and = {
+                    has_job_category = worker
+                    or = {
+                        has_job = soldier
+                        has_job = battle_thrall
+                    }
+                }
+                # and = {
+                #     has_job_category = specialist
+                #     or = {
+                #     }
+                # }
+                and = {
+                    has_stellaris_evolved = yes
+                    or = {
+                        and = {
+                            has_job_category = worker
+                            or = {
+                                has_job = tec_hired_soldier
+                            }
+                        }
+                        and = {
+                            has_job_category = specialist
+                            or = {
+                                has_job = tec_shipyard_technician
+                                has_job = tec_shipyard_engineer
+                                has_job = tec_telecom_technician
+                                has_job = tec_planetdefense_technician
+                                has_job = tec_naval_operator
+
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        and = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+            or = {
+                has_job = tec_pherodrone_drone
+                has_job = tec_naval_operator_drone
+                has_job = tec_shipyard_technician_drone
+                has_job = warrior_drone
+            }
+        }
+    }
+}
+
+# fwt_merchants_job_check = {
+#     or = {
+#         has_job = tec_trade_specialist
+#         has_job = tec_mogul
+#         has_job = tec_trade_drone
+#         has_job = tec_numismatic_drone
+#         has_job = merchant
+#     }
+# }
+
+fwt_entertainers_job_check = {
+    or = {
+        has_job = gladiator
+        has_job = tec_hired_entertainer
+        has_job = entertainer
+        has_job = duelist
+        has_job = resort_worker
+    }
+}
+
+fwt_maintenancedrones_job_check = {
+    or = {
+        has_job = maintenance_drone
+        has_job = tec_spareparts_drone
+        has_job = tec_machine_admin_drone
+        has_job = tec_planner_drone
+        has_job = tec_nurturer_drone
+    }
+}
+
+fwt_enforcers_job_check = {
+    or = {
+        has_job = tec_depth_drone
+        has_job = enforcer
+        has_job = patrol_drone
+        has_job = stasis_warden
+        has_job = stasis_warden_drone
+    }
+}
+
+fwt_livestock_job_check = {
+    or = {
+        has_job = tec_mental_servant
+        has_job = livestock
+        has_job = livestock_zoo_animal
+        has_job = livestock_zoo_beast
+    }
+}
+
+fwt_trade_job_check = {
+    and = {
+        exists = owner
+        owner = {
+            is_gestalt = no
+        }
+        or = {
+            fwt_clerks_job_check = yes
+            # fwt_merchant_job_check = yes
+            fwt_trader_job_check = yes
+            fwt_manager_job_check = yes
+        }
+    }
+}
+
+# excluded bc it only rulers
+fwt_merchant_job_check = {
+    or = {
+        has_job = merchant
+    }
+}
+
+
+fwt_trader_job_check = {
+    or = {
+        has_job = trader
+    }
+}
+
+
+fwt_clerks_job_check = {
+    or = {
+        has_job = clerk
+    }
+}
+
+fwt_manager_job_check = {
+    or = {
+        has_job = manager
+    }
+}
+
+fwt_non_productive_job = {
+    always = no
+}
+
+#no idea if colonist will even be getable
+fwt_colonists_job_check = {
+    or = {
+        has_job = tec_pathfinder
+        has_job = tec_planner
+        has_job = colonist
+    }
+}
+
+# job classes that the frameworld should never add via districts so don't scale
+fwt_job_blacklist = {
+    or = {
+        and = {
+            exists = owner
+            owner = {
+                is_megacorp = no
+            }
+            has_job_category = ruler
+        }
+        and = {
+            # allow megacorp to benefit from trade rulers
+            exists = owner
+            owner = {
+                is_megacorp = yes
+            }
+            not = {
+               fwt_merchant_job_check = yes
+            }
+            has_job_category = ruler
+        }
+        and = {
+            has_stellaris_evolved = yes
+            or = {
+                has_job_category = tec_prime_drone
+                has_job_category = tec_brood_drone
+            }
+        }
+        fwt_pop_assemblers_job_check = yes
+        fwt_colonists_job_check = yes
+        fwt_doctors_job_check = yes
+        fwt_culture_workers_job_check = yes
+        fwt_chemists_job_check = yes
+        fwt_translucers_job_check = yes
+        fwt_refiners_job_check = yes
+        has_job = giga_dark_matter_weaver
+        has_job = giga_dark_matter_weaver_drone
+        has_job = frameworld_defender
+        has_job = frameworld_defender_drone
+        has_job = archaeo_drone
+        has_job = archaeo_unit
+        has_job = archaeoengineers
+        has_job_category = criminal
+    }
+}

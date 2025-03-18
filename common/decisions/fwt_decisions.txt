@@ -1,0 +1,27 @@
+fwt_auto_actions = {
+	icon = decision_frameworld_expand
+	owned_planets_only = yes
+	
+	enactment_time = 0
+	
+	potential = {
+		exists = owner
+		owner = {
+			not = {
+				has_country_flag = auto_menu_open
+			}
+			giga_has_frameworld_origin = yes
+		}
+		giga_is_frame_world = yes
+	}
+
+	effect = {
+		owner = {
+			set_country_flag = auto_menu_open
+			country_event = {
+				id = fwt.4
+			}
+			
+		}
+	}
+}

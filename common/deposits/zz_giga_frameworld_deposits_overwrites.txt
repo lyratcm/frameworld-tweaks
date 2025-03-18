@@ -1,0 +1,1243 @@
+#####################################################################################################################
+#####################################################################################################################
+#####################################################################################################################
+
+d_giga_job_upkeep = {
+	is_for_colonizable = yes
+	icon = unused/d_synth_sabotage
+	category = deposit_cat_energy
+	
+	drop_weight = { weight = 0 }
+	potential = { always = no }
+
+	custom_tooltip = d_giga_job_upkeep_tooltip
+	custom_tooltip_short = d_giga_job_upkeep_tooltip_short
+
+	triggered_planet_modifier = {
+		potential = { always = yes }
+
+		planet_jobs_upkeep_mult = 1
+		giga_planet_jobs_upkeep_mult_offset = 1
+
+		multiplier = value:giga_planet_density_offset_modifier_by_pops|modifier|planet_jobs_upkeep_mult|negativeOnly|yes|
+	}
+	triggered_planet_modifier = {
+		potential = { always = yes }
+
+		planet_jobs_productive_upkeep_mult = 1
+		giga_planet_jobs_productive_upkeep_mult_offset = 1
+
+		multiplier = value:giga_planet_density_offset_modifier_by_pops|modifier|planet_jobs_productive_upkeep_mult|negativeOnly|yes|
+	}
+
+	triggered_planet_modifier = {
+		potential = { always = yes }
+
+		planet_researchers_upkeep_mult = 1
+		giga_planet_researchers_upkeep_mult_offset = 1
+
+		multiplier = value:giga_planet_density_offset_modifier_by_pops|modifier|planet_researchers_upkeep_mult|negativeOnly|yes|
+	}
+
+	triggered_planet_modifier = {
+		potential = { always = yes }
+
+		planet_metallurgists_upkeep_mult = 1
+		giga_planet_metallurgists_upkeep_mult_offset = 1
+
+		multiplier = value:giga_planet_density_offset_modifier_by_pops|modifier|planet_metallurgists_upkeep_mult|negativeOnly|yes|
+	}
+
+	triggered_planet_modifier = {
+		potential = { always = yes }
+
+		planet_artisans_upkeep_mult = 1
+		giga_planet_artisans_upkeep_mult_offset = 1
+
+		multiplier = value:giga_planet_density_offset_modifier_by_pops|modifier|planet_artisans_upkeep_mult|negativeOnly|yes|
+	}
+
+	triggered_planet_modifier = {
+		potential = { always = yes }
+
+		planet_giga_megaengineers_upkeep_mult = 1
+		giga_planet_giga_megaengineers_upkeep_mult_offset = 1
+
+		multiplier = value:giga_planet_density_offset_modifier_by_pops|modifier|planet_giga_megaengineers_upkeep_mult|negativeOnly|yes|
+	}
+
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { is_gestalt = no } }
+
+		planet_stability_add = 1
+
+		multiplier = value:giga_planet_density_offset_jobs_by_pops|job|enforcer|
+	}
+	# the damn distribute relics thing
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { is_hive_empire = yes } has_modifier = planet_artifact_relays_hivemind }
+
+		planet_stability_add = 2
+		planet_jobs_simple_drone_produces_mult = 0.01
+
+		multiplier = value:giga_planet_density_offset_jobs_by_pops|job|synapse_drone|
+	}
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { is_machine_empire = yes } has_modifier = planet_artifact_relays_machine }
+
+		planet_stability_add = 2
+		planet_jobs_simple_drone_produces_mult = 0.01
+
+		multiplier = value:giga_planet_density_offset_jobs_by_pops|job|coordinator|
+	}
+	# soldiers
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { is_gestalt = no } }
+
+		planet_stability_add = 1
+
+		multiplier = value:giga_planet_density_soldier_stability
+	}
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { is_gestalt = yes } }
+
+		planet_stability_add = 1
+
+		multiplier = value:giga_planet_density_warrior_drone_stability
+	}
+
+	# noxious STANK dispersion
+	triggered_planet_modifier = {
+		potential = { always = yes }
+
+		pop_non_noxious_happiness = 1
+		giga_pop_non_noxious_happiness_offset = 1
+
+		multiplier = value:giga_planet_density_offset_modifier_by_pops|modifier|pop_non_noxious_happiness|negativeOnly|yes|
+	}
+
+	# bio trophies
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { is_gestalt = yes } }
+
+		planet_jobs_complex_drone_produces_mult = 0.01
+
+		multiplier = value:giga_planet_density_offset_by_bio_trophies
+	}
+	# bio trophy M-brain uplink
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { is_gestalt = yes } }
+
+		planet_jobs_complex_drone_produces_mult = 0.0025
+
+		multiplier = value:giga_planet_density_offset_by_bio_trophy_booster_buildings|building|building_giga_matrioshka_brain_uplink_sanctuary|
+	}
+
+	# clerk trade value percent
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { is_gestalt = no } }
+
+		trade_value_mult = 0.01
+
+		multiplier = value:giga_planet_density_offset_jobs_by_pops|job|clerk|
+	}
+
+	####################################################################################################################
+	# government and ascension stuff
+
+	# modularity administrators
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { is_gestalt = no has_tradition = tr_modularity_4 } }
+
+		planet_jobs_worker_produces_mult = 0.02
+
+		multiplier = value:giga_planet_density_offset_bureaucrats_by_pops
+	}
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { is_machine_empire = yes has_tradition = tr_modularity_4 } }
+
+		planet_jobs_simple_drone_produces_mult = 0.02
+
+		multiplier = value:giga_planet_density_offset_jobs_by_pops|job|coordinator|
+	}
+
+
+	# virtual maintenance
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { is_gestalt = no has_active_tradition = tr_virtuality_5 } }
+
+		planet_virtual_jobs_produces_mult = 0.01
+
+		multiplier = value:giga_planet_density_offset_jobs_by_pops|job|clerk|
+	}
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { is_machine_empire = yes has_active_tradition = tr_virtuality_5 } }
+
+		planet_virtual_jobs_produces_mult = 0.01
+
+		multiplier = value:giga_planet_density_offset_jobs_by_pops|job|maintenance_drone|
+	}
+
+	# synth democracy physical
+	# +1% specialist output and +1% district energy upkeep per district
+	# just gonna... make this not just be energy upkeep and a bit heavier I suppose
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { has_authority = auth_democratic has_country_flag = synth_physical } }
+
+		planet_districts_energy_upkeep_mult = -0.005
+		planet_districts_upkeep_mult = 0.01
+
+		multiplier = trigger:num_districts
+	}
+
+	# synth oligarchy
+	# +5% ruler output per enforcer
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_authority = auth_oligarchic
+				OR = {
+					has_country_flag = synth_physical
+					has_country_flag = synth_virtual
+				}
+			}
+		}
+
+		planet_jobs_ruler_produces_mult = 0.05
+
+		multiplier = value:giga_planet_density_offset_jobs_by_pops|job|enforcer|
+	}
+
+	# cybernetic oligarchy individualist
+	# +1% ruler output per specialist pop
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { has_authority = auth_oligarchic has_country_flag = cyber_individualist } }
+
+		planet_jobs_ruler_produces_mult = 0.01
+
+		multiplier = value:giga_planet_density_offset_pop_category_by_pops|category|specialist|
+	}
+
+	# cybernetic dictatorship individualist
+	# +2.5% cyborg output per enforcer
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { has_authority = auth_dictatorial has_country_flag = cyber_individualist } }
+
+		planet_cyborg_jobs_produces_mult = 0.025
+
+		multiplier = value:giga_planet_density_offset_jobs_by_pops|job|enforcer|
+	}
+
+	# synthetic megacorp computation core policy
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { has_policy_flag = computation_core_production } }
+
+		planet_jobs_alloys_produces_mult = 0.005
+
+		multiplier = value:giga_planet_density_offset_jobs_by_pops|job|clerk|
+	}
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { has_policy_flag = computation_core_stability } }
+
+		planet_jobs_unity_produces_mult = 0.005
+
+		multiplier = value:giga_planet_density_offset_jobs_by_pops|job|clerk|
+	}
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { has_policy_flag = computation_core_research } }
+
+		planet_jobs_physics_research_produces_mult = 0.005
+		planet_jobs_society_research_produces_mult = 0.005
+		planet_jobs_engineering_research_produces_mult = 0.005
+
+		multiplier = value:giga_planet_density_offset_jobs_by_pops|job|clerk|
+	}
+
+	# shroud conduit jobs
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { is_gestalt = no giga_country_uses_priests = no } }
+
+		planet_psionic_jobs_produces_mult = 0.05
+
+		multiplier = value:giga_planet_density_offset_shroud_conduit_by_pops|job|giga_shroud_conduit_worker|
+	}
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { is_gestalt = no giga_country_uses_priests = yes } }
+
+		planet_psionic_jobs_produces_mult = 0.05
+
+		multiplier = value:giga_planet_density_offset_shroud_conduit_by_pops|job|giga_shroud_conduit_priest|
+	}
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { is_gestalt = yes } }
+
+		planet_psionic_jobs_produces_mult = 0.05
+
+		multiplier = value:giga_planet_density_offset_shroud_conduit_by_pops|job|giga_shroud_conduit_drone|
+	}
+
+	####################################################################################################################
+	# bug branch jobs of note
+
+	# brain drone research boost civic
+	inline_script = {
+		script = generic_parts/giga_toggled_modifier
+		type = planet
+		trigger = "
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				has_valid_civic = civic_bugged_hive_researcher
+			}
+		"
+
+		modifiers = "
+			planet_researchers_produces_mult = 0.01
+			multiplier = value:giga_planet_density_offset_jobs_by_pops|job|brain_drone|
+		"
+
+		toggle = @has_bug_branch
+	}
+
+	# financiers
+	inline_script = {
+		script = generic_parts/giga_toggled_modifier
+		type = planet
+		trigger = "
+			exists = owner
+			owner = {
+				is_gestalt = no
+			}
+		"
+
+		modifiers = "
+			pop_job_trade_mult = 0.025 # tooltip says 5%?
+			multiplier = value:giga_planet_density_offset_jobs_by_pops|job|bugged_financier|
+		"
+
+		toggle = @has_bug_branch
+	}
+}
+
+d_frameworld_expansion = {
+    is_for_colonizable = yes
+    icon = d_frameworld_station
+    category = deposit_cat_energy
+    use_for_min_max_adjustments = yes
+
+    drop_weight = { weight = 0 }
+    potential = { always = no }
+
+    triggered_planet_modifier = {
+        potential = { always = yes }
+        multiplier = giga_frameworld_expansions
+        giga_frameworld_expansion_count = 1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                giga_has_frameworld_origin = yes
+            }
+        }
+        multiplier = giga_frameworld_expansions
+
+        giga_frameworld_growth_jobs_add = 0.2
+        pop_growth_speed = 0.025
+        planet_decision_enact_speed_mult = 0.02
+        planet_army_build_speed_mult = 0.02
+        pop_purge_speed = 0.02
+        giga_pop_assimilation_speed = 0.02
+    }
+    triggered_planet_modifier = {
+        potential = {
+            has_planet_flag = frameworld_habitat_completed
+            has_planet_flag = frameworld_advanced_city_completed
+			owner = {
+				giga_has_frameworld_origin = yes
+			}
+        }
+        multiplier = giga_frameworld_expansions
+
+        giga_frameworld_growth_jobs_add = 0.1
+        pop_growth_speed = 0.0125
+        planet_decision_enact_speed_mult = 0.01
+        planet_army_build_speed_mult = 0.01
+        pop_purge_speed = 0.01
+        giga_pop_assimilation_speed = 0.01
+    }
+	triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+				has_galactic_wonders = yes
+                giga_has_frameworld_origin = yes
+            }
+        }
+        multiplier = giga_frameworld_expansions
+
+        giga_frameworld_growth_jobs_add = 0.15
+        pop_growth_speed = 0.01825
+        planet_decision_enact_speed_mult = 0.15
+		#extra build speed as pop growth will be getting out of control
+		planet_building_build_speed_mult = 0.02
+        planet_army_build_speed_mult = 0.15
+        pop_purge_speed = 0.15
+        giga_pop_assimilation_speed = 0.15
+    }
+	triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                giga_has_frameworld_origin = yes
+            }
+        }
+        multiplier = value:fwt_expansion_build_scaling
+
+        planet_building_build_speed_mult = 0.02
+    }
+}
+
+d_frameworld_expansion_tooltip = {
+    is_for_colonizable = yes
+    icon = d_frameworld_station
+    category = deposit_cat_energy
+    use_for_min_max_adjustments = yes
+
+    drop_weight = { weight = 0 }
+    potential = { always = no }
+
+    triggered_planet_modifier = {
+        potential = { always = yes }
+
+        planet_orbital_bombardment_damage = -0.01
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                giga_has_frameworld_origin = yes
+            }
+        }
+        multiplier = giga_frameworld_expansions
+
+        giga_frameworld_growth_jobs_add = 0.2
+        pop_growth_speed = 0.025
+        planet_decision_enact_speed_mult = 0.02
+        planet_army_build_speed_mult = 0.02
+        pop_purge_speed = 0.02
+        giga_pop_assimilation_speed = 0.02
+    }
+	triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+				has_galactic_wonders = yes
+            }
+        }
+        multiplier = giga_frameworld_expansions
+
+        giga_frameworld_growth_jobs_add = 0.15
+        pop_growth_speed = 0.01875
+        planet_decision_enact_speed_mult = 0.02
+        planet_army_build_speed_mult = 0.02
+        pop_purge_speed = 0.02
+        giga_pop_assimilation_speed = 0.02
+    }
+	triggered_planet_modifier = {
+        potential = {
+			has_planet_flag = frameworld_habitat_completed
+			has_planet_flag = frameworld_advanced_city_completed
+        }
+        multiplier = giga_frameworld_expansions
+
+        giga_frameworld_growth_jobs_add = 0.1
+        pop_growth_speed = 0.0125
+        planet_decision_enact_speed_mult = 0.01
+        planet_army_build_speed_mult = 0.01
+        pop_purge_speed = 0.01
+        giga_pop_assimilation_speed = 0.01
+    }
+	triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                giga_has_frameworld_origin = yes
+            }
+        }
+        multiplier = value:fwt_expansion_build_scaling
+
+        planet_building_build_speed_mult = 0.02
+    }
+}
+
+d_frameworld_asteroid = {
+    is_for_colonizable = yes
+    icon = d_frameworld_asteroid
+    category = deposit_cat_minerals
+    use_for_min_max_adjustments = yes
+
+    drop_weight = { weight = 0 }
+    potential = { always = no }
+
+    triggered_planet_modifier = {
+        potential = { always = yes }
+        multiplier = giga_frameworld_asteroids
+        giga_frameworld_asteroid_count = 1
+    }
+
+    triggered_planet_modifier = {
+        potential = { always = yes }
+        multiplier = giga_frameworld_asteroids
+
+        district_giga_frameworld_mining_max = 1
+    }
+}
+
+d_frameworld_reorganise_expansion = {
+    is_for_colonizable = yes
+    icon = d_frameworld_reorganise
+    category = deposit_cat_energy
+
+    drop_weight = { weight = 0 }
+    potential = { always = no }
+
+    triggered_planet_modifier = {
+        potential = { always = yes }
+        multiplier = giga_frameworld_reorganise_expansions
+        giga_frameworld_reorganise_expansion_count = 1
+    }
+
+    triggered_planet_modifier = {
+        potential = { always = yes }
+        multiplier = giga_frameworld_reorganise_expansions
+
+        giga_frameworld_growth_jobs_add = 1
+        planet_building_build_speed_mult = 0.1
+        planet_decision_enact_speed_mult = 0.1
+        planet_army_build_speed_mult = 0.1
+        pop_purge_speed = 0.1
+        giga_pop_assimilation_speed = 0.1
+    }
+	triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+				has_galactic_wonders = yes
+            }
+        }
+        multiplier = giga_frameworld_reorganise_expansions
+
+        giga_frameworld_growth_jobs_add = 1.5
+        pop_growth_speed = 0.1875
+        planet_decision_enact_speed_mult = 0.2
+        planet_army_build_speed_mult = 0.2
+        pop_purge_speed = 0.2
+        giga_pop_assimilation_speed = 0.2
+    }
+	triggered_planet_modifier = {
+        potential = {
+			has_planet_flag = frameworld_habitat_completed
+			has_planet_flag = frameworld_advanced_city_completed
+        }
+        multiplier = giga_frameworld_reorganise_expansions
+
+        giga_frameworld_growth_jobs_add = 1
+        pop_growth_speed = 0.125
+        planet_decision_enact_speed_mult = 0.1
+        planet_army_build_speed_mult = 0.1
+        pop_purge_speed = 0.1
+        giga_pop_assimilation_speed = 0.1
+    }
+    triggered_planet_modifier = {
+        potential = {
+            any_owned_pop = {
+                has_auto_modding_trait = yes
+            }
+        }
+        multiplier = giga_frameworld_reorganise_expansions
+
+        auto_mod_monthly_add = 0.25
+    }
+}
+
+d_frameworld_reorganise_expansion_tooltip = {
+    is_for_colonizable = yes
+    icon = d_frameworld_reorganise
+    category = deposit_cat_energy
+
+    drop_weight = { weight = 0 }
+    potential = { always = no }
+
+	triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+				has_galactic_wonders = yes
+            }
+        }
+        multiplier = giga_frameworld_expansions
+
+        giga_frameworld_growth_jobs_add = 1.5
+        pop_growth_speed = 0.1875
+        planet_decision_enact_speed_mult = 0.2
+        planet_army_build_speed_mult = 0.2
+        pop_purge_speed = 0.2
+        giga_pop_assimilation_speed = 0.2
+    }
+	triggered_planet_modifier = {
+        potential = {
+			has_planet_flag = frameworld_habitat_completed
+			has_planet_flag = frameworld_advanced_city_completed
+        }
+        multiplier = giga_frameworld_expansions
+
+        giga_frameworld_growth_jobs_add = 1
+        pop_growth_speed = 0.125
+        planet_decision_enact_speed_mult = 0.1
+        planet_army_build_speed_mult = 0.1
+        pop_purge_speed = 0.1
+        giga_pop_assimilation_speed = 0.1
+    }
+
+    triggered_planet_modifier = {
+        potential = { always = yes }
+        planet_building_build_speed_mult = 0.1
+        planet_decision_enact_speed_mult = 0.1
+        planet_army_build_speed_mult = 0.1
+        pop_purge_speed = 0.1
+        giga_pop_assimilation_speed = 0.1
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            any_owned_pop = {
+                has_auto_modding_trait = yes
+            }
+        }
+        auto_mod_monthly_add = 0.25
+    }
+}
+
+d_frameworld_nanite_expansion = {
+    is_for_colonizable = yes
+    icon = d_buried_lithoids
+    category = deposit_cat_minerals
+    use_for_min_max_adjustments = yes
+
+    drop_weight = { weight = 0 }
+    potential = { always = no }
+
+    triggered_planet_modifier = {
+        potential = { always = yes }
+        multiplier = giga_frameworld_nanite_expansions
+        giga_frameworld_nanite_expansion_count = 1
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            frameworld_has_active_nanite_upgrade = yes
+        }
+        multiplier = giga_frameworld_nanite_expansions
+
+        district_giga_frameworld_mining_max = 0.2
+        planet_miners_nanites_produces_mult = 0.02
+        planet_districts_produces_mult = 0.02
+    }
+
+	triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+				has_galactic_wonders = yes
+            }
+        }
+        multiplier = giga_frameworld_nanite_expansions
+
+        giga_frameworld_growth_jobs_add = 1.5
+        pop_growth_speed = 0.1875
+        planet_decision_enact_speed_mult = 0.2
+        planet_army_build_speed_mult = 0.2
+        pop_purge_speed = 0.2
+        giga_pop_assimilation_speed = 0.2
+    }
+	triggered_planet_modifier = {
+        potential = {
+			has_planet_flag = frameworld_habitat_completed
+			has_planet_flag = frameworld_advanced_city_completed
+        }
+        multiplier = giga_frameworld_nanite_expansions
+
+        giga_frameworld_growth_jobs_add = 1
+        pop_growth_speed = 0.125
+        planet_decision_enact_speed_mult = 0.1
+        planet_army_build_speed_mult = 0.1
+        pop_purge_speed = 0.1
+        giga_pop_assimilation_speed = 0.1
+    }
+}
+
+d_frameworld_expanded_maintenance_protocol = {
+    is_for_colonizable = yes
+    icon = unused/d_space_walk
+    category = deposit_cat_energy
+
+    drop_weight = { weight = 0 }
+    potential = { always = no }
+
+    triggered_planet_modifier = {
+        potential = {
+			owner = {
+				is_gestalt = no
+				has_country_flag = fwt_maintenance_default
+			}
+		}
+        multiplier = value:giga_frameworld_expanded_maintenance_multiplier
+
+        job_frame_maintenance_worker_add = 1
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+			owner = {
+				is_gestalt = yes
+				has_country_flag = fwt_maintenance_default
+			}
+		}
+        multiplier = value:giga_frameworld_expanded_maintenance_multiplier
+
+        job_frame_maintenance_drone_add = 1
+    }
+}
+
+d_frameworld_admin = {
+	is_for_colonizable = yes
+	icon = d_frameworld_core
+	category = deposit_cat_rare
+
+	drop_weight = { weight = 0 }
+	potential = { always = no }
+
+	# virtual colony size
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				or = {
+					is_machine_empire = yes
+					is_individual_machine = yes
+				}
+			}
+		}
+		giga_virtual_colony_size = 1
+		multiplier = value:giga_frameworld_virtual_colony_size
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				giga_has_frameworld_origin = yes
+			}
+		}
+		# job_frameworld_defender_add = 2
+		job_frameworld_defender_per_pop = 0.02
+		planet_housing_add = 5
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				giga_has_frameworld_origin = yes
+				not = { has_valid_civic = civic_dystopian_society }
+			}
+		}
+		job_entertainer_add = 1
+	}
+
+	####################################################################################################################
+	####################################################################################################################
+	####################################################################################################################
+
+	# growth
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				giga_has_frameworld_origin = yes
+				is_synthetic_empire = no
+			}
+			giga_planet_has_robot_assembly_facilities = no
+			giga_planet_has_cloning_assembly_facilities = no
+			giga_planet_has_zombie_assembly_facilities = no
+		}
+
+		job_giga_extra_healthcare_add = 1
+
+		multiplier = modifier:giga_frameworld_growth_jobs_add
+	}
+
+	####################################################################################################################
+	# robot assembly
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				giga_has_frameworld_origin = yes
+				is_synthetic_empire = no
+			}
+			giga_planet_has_robot_assembly_facilities = yes
+			giga_planet_has_cloning_assembly_facilities = no
+			giga_planet_has_zombie_assembly_facilities = no
+		}
+
+		job_roboticist_add = 0.5
+
+		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0|
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				giga_has_frameworld_origin = yes
+				is_synthetic_empire = no
+			}
+			giga_planet_has_robot_assembly_facilities = yes
+			giga_planet_has_cloning_assembly_facilities = no
+			giga_planet_has_zombie_assembly_facilities = no
+		}
+
+		job_giga_extra_healthcare_add = 1
+
+		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0.5|
+	}
+
+	####################################################################################################################
+	# cloning
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				giga_has_frameworld_origin = yes
+				is_synthetic_empire = no
+			}
+			giga_planet_has_cloning_assembly_facilities = yes
+			giga_planet_has_zombie_assembly_facilities = no
+		}
+
+		job_giga_cloning_add = 0.5
+
+		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0|
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				giga_has_frameworld_origin = yes
+				is_synthetic_empire = no
+			}
+			giga_planet_has_cloning_assembly_facilities = yes
+			giga_planet_has_zombie_assembly_facilities = no
+		}
+
+		job_giga_extra_healthcare_add = 1
+
+		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0.5|
+	}
+
+	####################################################################################################################
+	# zombies
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				giga_has_frameworld_origin = yes
+				is_synthetic_empire = no
+			}
+			giga_planet_has_zombie_assembly_facilities = yes
+		}
+
+		job_reassigner_add = 0.5
+
+		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|8|fraction|0.25|offset|0.75|
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				giga_has_frameworld_origin = yes
+				is_synthetic_empire = no
+			}
+			giga_planet_has_zombie_assembly_facilities = yes
+		}
+
+		job_giga_extra_healthcare_add = 1
+
+		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|8|fraction|0.75|offset|0|
+	}
+
+	####################################################################################################################
+	# synth assembly
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				giga_has_frameworld_origin = yes
+				is_synthetic_empire = yes
+			}
+		}
+
+		job_roboticist_add = 0.5
+
+		multiplier = modifier:giga_frameworld_growth_jobs_add
+	}
+	# extra for synthetic ascension
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				giga_has_frameworld_origin = yes
+				has_country_flag = synthetic_empire
+			}
+		}
+
+		job_roboticist_add = 0.25
+
+		multiplier = modifier:giga_frameworld_growth_jobs_add
+	}
+
+	####################################################################################################################
+	####################################################################################################################
+	####################################################################################################################
+
+	# dystopian leisure districts
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				has_valid_civic = civic_dystopian_society
+			}
+		}
+		district_giga_frameworld_amenities_dystopian_max = 0.01
+		multiplier = trigger:num_pops
+	}
+
+	# maginot district caps
+	triggered_planet_modifier = {
+		potential = {
+			is_giga_maginot_frameworld = yes
+		}
+		district_giga_frameworld_maginot_planetary_cannons_max = @giga_frameworld_maginot_district_factor
+		multiplier = trigger:planet_size
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_giga_maginot_frameworld = yes
+		}
+		district_giga_frameworld_maginot_shield_generators_max = @giga_frameworld_maginot_district_factor
+		multiplier = trigger:planet_size
+	}
+
+	####################################################################################################################
+	####################################################################################################################
+	####################################################################################################################
+
+	inline_script = {
+		script = planet/unity/giga_unity_job_swap
+		jobs = 5
+
+		condition = "owner = { giga_has_frameworld_origin = no }"
+	}
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					or = {
+						is_regular_empire = no
+						giga_has_frameworld_origin = no
+					}
+				}
+			}
+			unity = 10
+		}
+	}
+}
+
+d_frameworld_hive = {
+	is_for_colonizable = yes
+	icon = d_frameworld_core
+	category = deposit_cat_rare
+
+	drop_weight = { weight = 0 }
+	potential = { always = no }
+
+	# virtual colony size
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				or = {
+					is_machine_empire = yes
+					is_individual_machine = yes
+				}
+			}
+		}
+		giga_virtual_colony_size = 1
+		multiplier = value:giga_frameworld_virtual_colony_size
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				giga_has_frameworld_origin = yes
+			}
+		}
+		job_maintenance_drone_add = 1
+		# job_frameworld_defender_drone_add = 2
+		job_frameworld_defender_drone_per_pop = 0.02
+		planet_housing_add = 5
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_hive_empire = yes
+				giga_has_frameworld_origin = yes
+			}
+		}
+		job_spawning_drone_add = 0.5
+
+		multiplier = modifier:giga_frameworld_growth_jobs_add
+	}
+
+	####################################################################################################################
+	####################################################################################################################
+	####################################################################################################################
+
+	# dystopian leisure districts
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				has_valid_civic = civic_dystopian_society
+			}
+		}
+		district_giga_frameworld_amenities_dystopian_max = 0.01
+		multiplier = trigger:num_pops
+	}
+
+	# maginot district caps
+	triggered_planet_modifier = {
+		potential = {
+			is_giga_maginot_frameworld = yes
+		}
+		district_giga_frameworld_maginot_planetary_cannons_max = @giga_frameworld_maginot_district_factor
+		multiplier = trigger:planet_size
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_giga_maginot_frameworld = yes
+		}
+		district_giga_frameworld_maginot_shield_generators_max = @giga_frameworld_maginot_district_factor
+		multiplier = trigger:planet_size
+	}
+
+	####################################################################################################################
+	####################################################################################################################
+	####################################################################################################################
+
+	inline_script = {
+		script = planet/research/giga_researcher_job_swap
+		jobs = 3
+		condition = "owner = { giga_has_frameworld_origin = no }"
+	}
+	inline_script = {
+		script = planet/unity/giga_unity_job_swap
+		jobs = 2
+		condition = "owner = { giga_has_frameworld_origin = no }"
+	}
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					or = {
+						is_hive_empire = no
+						giga_has_frameworld_origin = no
+					}
+				}
+			}
+			physics_research = 3
+			society_research = 3
+			engineering_research = 3
+			unity = 4
+		}
+	}
+}
+
+d_frameworld_core = {
+	is_for_colonizable = yes
+	icon = d_frameworld_core
+	category = deposit_cat_rare
+
+	drop_weight = { weight = 0 }
+	potential = { always = no }
+
+	# virtual colony size
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				or = {
+					is_machine_empire = yes
+					is_individual_machine = yes
+				}
+			}
+		}
+		giga_virtual_colony_size = 1
+		multiplier = value:giga_frameworld_virtual_colony_size
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				giga_has_frameworld_origin = yes
+			}
+		}
+		job_maintenance_drone_add = 1
+		# job_frameworld_defender_drone_add = 2
+		job_frameworld_defender_drone_per_pop = 0.02
+		planet_housing_add = 5
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				giga_has_frameworld_origin = yes
+			}
+			not = { has_modifier = frameworld_crucible }
+		}
+		job_replicator_add = 1
+
+		multiplier = modifier:giga_frameworld_growth_jobs_add
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				giga_has_frameworld_origin = yes
+			}
+			has_modifier = frameworld_crucible
+		}
+
+		job_giga_extra_crucible_drone_add = 0.5
+
+		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0|
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+				giga_has_frameworld_origin = yes
+			}
+			has_modifier = frameworld_crucible
+		}
+
+		job_replicator_add = 1
+
+		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0.5|
+	}
+
+	####################################################################################################################
+	####################################################################################################################
+	####################################################################################################################
+
+	# dystopian leisure districts
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_regular_empire = yes
+				has_valid_civic = civic_dystopian_society
+			}
+		}
+		district_giga_frameworld_amenities_dystopian_max = 0.01
+		multiplier = trigger:num_pops
+	}
+
+	# maginot district caps
+	triggered_planet_modifier = {
+		potential = {
+			is_giga_maginot_frameworld = yes
+		}
+		district_giga_frameworld_maginot_planetary_cannons_max = @giga_frameworld_maginot_district_factor
+		multiplier = trigger:planet_size
+	}
+	triggered_planet_modifier = {
+		potential = {
+			is_giga_maginot_frameworld = yes
+		}
+		district_giga_frameworld_maginot_shield_generators_max = @giga_frameworld_maginot_district_factor
+		multiplier = trigger:planet_size
+	}
+
+	####################################################################################################################
+	####################################################################################################################
+	####################################################################################################################
+
+	inline_script = {
+		script = planet/research/giga_researcher_job_swap
+		jobs = 5
+		condition = "owner = { giga_has_frameworld_origin = no }"
+	}
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			trigger = {
+				exists = owner
+				owner = {
+					or = {
+						is_machine_empire = no
+						giga_has_frameworld_origin = no
+					}
+				}
+			}
+			physics_research = 5
+			society_research = 5
+			engineering_research = 5
+		}
+	}
+}

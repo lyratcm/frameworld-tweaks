@@ -1,0 +1,322 @@
+
+defined_text = {
+    name = FrameworldExpansionCost3
+
+    text = {
+        trigger = {
+            has_technology = "tech_starbase_2"
+        }
+
+        localization_key = giga_frameworld_expand_base_discount_mod_3
+    }
+
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = FrameworldExpansionCost4
+
+    text = {
+        trigger = {
+            has_technology = "tech_starbase_3"
+        }
+
+        localization_key = giga_frameworld_expand_base_discount_mod_4
+    }
+
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = FrameworldExpansionCost5
+
+    text = {
+        trigger = {
+            has_technology = "tech_starbase_4"
+        }
+
+        localization_key = giga_frameworld_expand_base_discount_mod_5
+    }
+
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = FrameworldExpansionCost6
+
+    text = {
+        trigger = {
+            has_technology = "tech_starbase_5"
+        }
+
+        localization_key = giga_frameworld_expand_base_discount_mod_6
+    }
+
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = FrameworldExpansionCost7
+
+    text = {
+        trigger = {
+            has_technology = "tech_mega_shipyard"
+        }
+
+        localization_key = giga_frameworld_expand_base_discount_mod_7
+    }
+
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = FrameworldExpansionMult4
+
+    text = {
+        trigger = {
+            has_technology = tech_mega_engineering
+        }
+
+        localization_key = giga_frameworld_expand_multiplier_discount_mod_4
+    }
+
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = FrameworldExpansionUpgrades6
+
+    text = {
+        trigger = {
+            exists = owner
+            owner = {
+                not = { has_technology = "tech_starbase_2" }
+            }
+        }
+
+        localization_key = giga_frameworld_expand_upgrade_6
+    }
+
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = FrameworldExpansionUpgrades7
+
+    text = {
+        trigger = {
+            exists = owner
+            owner = {
+                not = { has_technology = "tech_starbase_3" }
+            }
+        }
+
+        localization_key = giga_frameworld_expand_upgrade_7
+    }
+
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = FrameworldExpansionUpgrades8
+
+    text = {
+        trigger = {
+            exists = owner
+            owner = {
+                not = { has_technology = "tech_starbase_4" }
+            }
+        }
+
+        localization_key = giga_frameworld_expand_upgrade_8
+    }
+
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = FrameworldExpansionUpgrades9
+
+    text = {
+        trigger = {
+            exists = owner
+            owner = {
+                not = { has_technology = "tech_starbase_5" }
+            }
+        }
+
+        localization_key = giga_frameworld_expand_upgrade_9
+    }
+
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = FrameworldExpansionUpgrades10
+
+    text = {
+        trigger = {
+            exists = owner
+            owner = {
+                not = { has_technology = "tech_mega_shipyard" }
+            }
+        }
+
+        localization_key = giga_frameworld_expand_upgrade_10
+    }
+
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = FrameworldExpansionUpgrades11
+
+    text = {
+        trigger = {
+            exists = owner
+            owner = {
+                not = { has_technology = tech_mega_engineering }
+            }
+        }
+
+        localization_key = giga_frameworld_expand_upgrade_11
+    }
+
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = FrameworldExpansionSituationName
+    text = {
+        trigger = { has_situation_flag = giga_frameworld_expand_dec }
+        localization_key = giga_frameworld_expand
+	}
+	text = {
+        trigger = { has_situation_flag = giga_frameworld_expand_bulk_5_dec }
+        localization_key = giga_frameworld_expand_bulk_5
+    }
+	text = {
+        trigger = { has_situation_flag = giga_frameworld_expand_bulk_10_dec }
+        localization_key = giga_frameworld_expand_bulk_10
+    }
+	text = {
+        trigger = { has_situation_flag = giga_frameworld_expand_mass_dec }
+        localization_key = giga_frameworld_expand_mass
+    }
+	text = {
+		trigger = { has_situation_flag = giga_frameworld_expand_mass_bulk_5_dec }
+		localization_key = giga_frameworld_expand_mass_bulk_10
+	}
+	text = {
+		trigger = { has_situation_flag = giga_frameworld_reorganise_dec }
+        localization_key = giga_frameworld_reorganise
+    }
+	text = {
+        trigger = { has_situation_flag = giga_frameworld_consume_world_dec }
+        localization_key = giga_frameworld_consume_world
+    }
+	text = {
+        trigger = { has_situation_flag = frameworld_penrose_dec }
+        localization_key = giga_frameworld_penrose
+    }
+	text = {
+        trigger = { has_situation_flag = giga_frameworld_decompressor_dec }
+        localization_key = giga_frameworld_decompressor
+    }
+	text = {
+        trigger = { has_situation_flag = giga_frameworld_advanced_city_dec }
+        localization_key = giga_frameworld_advanced_city
+    }
+	text = {
+        trigger = { has_situation_flag = giga_frameworld_advanced_industrial_dec }
+        localization_key = giga_frameworld_advanced_industrial
+    }
+	text = {
+        trigger = { has_situation_flag = frameworld_advanced_sanctuary_dec }
+        localization_key = giga_frameworld_advanced_sanctuary
+    }
+	text = {
+        trigger = { has_situation_flag = giga_frameworld_gaia_dec }
+        localization_key = giga_frameworld_gaia
+    }
+	text = {
+        trigger = { has_situation_flag = giga_frameworld_computing_complex_dec }
+        localization_key = giga_frameworld_computing_complex
+    }
+	text = {
+        trigger = { has_situation_flag = giga_frameworld_expand_infrastructure_dec }
+        localization_key = giga_frameworld_expand_infrastructure
+    }
+	text = {
+        trigger = { has_situation_flag = frameworld_orbital_ring_dec }
+        localization_key = giga_frameworld_orbital_ring_upgrade
+    }
+	text = {
+        trigger = { has_situation_flag = frameworld_maginot_dec }
+        localization_key = giga_frameworld_maginot
+    }
+	text = {
+        trigger = { has_situation_flag = frameworld_habitat_dec }
+        localization_key = giga_frameworld_habitat_upgrade
+    }
+	text = {
+        trigger = { has_situation_flag = interstellar_assembly_dec }
+        localization_key = giga_interstellar_assembly_upgrade
+    }
+	text = {
+        trigger = { has_situation_flag = yggdrasil_orchid_dec }
+        localization_key = giga_yggdrasil_orchid_upgrade
+    }
+    default = frameworld_blank
+}
+
+# You can also do this to use script values in loc:
+defined_text = {
+	name = fwt_total_pop_gain
+	value = value:total_pop_gain
+}
+
+defined_text = {
+    name = fwt_pop_type
+
+	text = {
+        trigger = {
+			or = {
+				is_hive_empire = yes
+				and = {
+					#normal bio
+					is_synthetic_empire = no
+					is_machine_empire = no
+					is_robot_empire = no
+				}
+			}
+        }
+        localization_key = fwt_bio_food
+    }
+
+	text = {
+        trigger = {
+			or = {
+				is_synthetic_empire = yes
+				is_machine_empire = yes
+				is_robot_empire = yes
+			}
+        }
+        localization_key = fwt_robot_energy
+    }
+
+	text = {
+        trigger = {
+			is_lithoid = yes
+        }
+        localization_key = fwt_bio_minerals
+    }
+
+    default = frameworld_blank
+}
+
+
+# defined_text = {
+# 	name = fwt_situation_speed_script_value
+# 	value = value:total_pop_gain
+# }

@@ -1,0 +1,1128 @@
+namespace = fwt
+
+country_event = {
+    id = fwt.1
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        exists = owner
+        giga_has_frameworld_origin = yes
+    }
+    immediate = {
+        random_planet_within_border = {
+            limit = {
+                exists = owner
+                owner = {
+                    giga_has_frameworld_origin = yes
+                }
+                giga_is_frame_world = yes
+            }
+            owner = {
+                set_variable = {
+                    which = fwt_decision_time
+                    value = 360
+                }
+                if = {
+                    limit = {
+                        megacorp_metamod_enable = yes
+                    }
+                    set_variable = {
+                        which = fwt_growth_ceiling
+                        value = 1.7
+                    }
+                    set_variable = {
+                        which = fwt_required_scaling
+                        value = 0.25
+                    }
+                }
+                else = {
+                    set_variable = {
+                        which = fwt_growth_ceiling
+                        value = 1.5
+                    }
+                    set_variable = {
+                        which = fwt_required_scaling
+                        value = 0.25
+                    }
+                }
+            }
+            #used in some places for mult if gigas needed it
+            set_variable = { which = fwt_energy_completion value = 1 }
+            set_variable = { which = fwt_mineral_completion value = 1 }
+            set_variable = { which = fwt_food_completion value = 1 }
+            set_variable = { which = fwt_alloy_completion value = 1 }
+            set_variable = { which = fwt_consumer_goods_completion value = 1 }
+            set_variable = { which = fwt_consumer_unity_trade_completion value = 1 }
+            set_variable = { which = fwt_consumer_sanctuary_completion value = 1 }
+            set_variable = { which = fwt_consumer_science_completion value = 1 }
+            set_variable = { which = fwt_consumer_rare_resources_completion value = 1 }
+            # code for my job scaling
+            set_variable = { which = frame_expansion_scale value = 2 }
+            set_variable = { which = background_pops value = 0 }
+            set_variable = { which = fwt_maintance_scale value = 0.5 }
+            add_deposit = d_fwt_job_size
+            planet_event = { id = fwt_jobs.31 }
+            save_global_event_target_as = frame_expand@owner
+            add_modifier = {
+                modifier = fwt_job_size_info
+            }
+            add_modifier = {
+                modifier = fwt_speed_unemploy_info
+                multiplier = -100000000
+                days = 40
+            }
+            planet_event = {
+                id = fwt_jobs.31
+                days = 61
+            }
+            #normal empires start with a little to much cg little to few minerals
+            if = {
+                limit = {
+                    owner = {
+                        is_gestalt = no
+                    }
+                }
+                add_district = district_giga_frameworld_factory
+            }
+            else = {
+                add_district = district_giga_frameworld_mining
+            }
+            if = {
+                limit = {
+                    #evovled adds more upkeep traits so give them more food
+                    has_global_flag = stellarisevolved
+                }
+                if = {
+                    limit = {
+                        owner_main_species = {
+                            is_lithoid = yes
+                        }
+                    }
+                    add_district = district_giga_frameworld_mining
+                }
+                else = {
+                    add_district = district_giga_frameworld_farming
+                }
+            }
+        }
+        set_variable = { which = fwt_expansion_income value = 60 }
+        set_variable = { which = fwt_maintenance_count value = 1 }
+        set_country_flag = fwt_maintenance_default
+
+    }
+}
+
+
+country_event = {
+    id = fwt.11
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        exists = owner
+        giga_has_frameworld_origin = yes
+    }
+    immediate = {
+        #backup in case it breaks, if your capital isn't the frameworld something is wrong but don't want to break it further
+        if = {
+            limit = {
+                capital_scope = {
+                    giga_is_frame_world = yes
+                }
+            }
+            capital_scope = {
+                save_global_event_target_as = frame_expand@owner
+            }
+        }
+    }
+}
+
+
+country_event = {
+    id = fwt.121
+    title = "fwt.121.growth.name"
+    desc = "fwt.121.growth.desc"
+    hide_window = no
+    is_triggered_only = yes
+    picture = GFX_evt_overgrown_city
+
+    trigger = {
+        #should only be 1 empire
+        has_country_flag = giga_host
+    }
+    option = {
+        name = fwt.12.increase_1
+        country_event = {
+            id = fwt.121
+        }
+        change_variable = {
+            which = fwt_growth_ceiling
+            value = 0.1
+        }
+    }
+    option = {
+        name = fwt.12.increase_05
+        country_event = {
+            id = fwt.121
+        }
+        change_variable = {
+            which = fwt_growth_ceiling
+            value = 0.05
+        }
+    }
+    option = {
+        name = fwt.12.increase_01
+        change_variable = {
+            which = fwt_growth_ceiling
+            value = 0.01
+        }
+        country_event = {
+            id = fwt.121
+        }
+    }
+    option = {
+        name = fwt.12.current_growth_ceiling
+        allow = {
+            always = no
+        }
+    }
+    option = {
+        name = fwt.12.decrease_01
+        change_variable = {
+            which = fwt_growth_ceiling
+            value = -0.01
+        }
+        country_event = {
+            id = fwt.121
+        }
+    }
+    option = {
+        name = fwt.12.decrease_05
+        change_variable = {
+            which = fwt_growth_ceiling
+            value = -0.05
+        }
+        country_event = {
+            id = fwt.121
+        }
+    }
+    option = {
+        name = fwt.12.decrease_1
+        change_variable = {
+            which = fwt_growth_ceiling
+            value = -0.1
+        }
+        country_event = {
+            id = fwt.121
+        }
+    }
+    option = {
+        name = fwt.close_menu
+        event_target:giga_global_situation_country = {
+            #is the scope the situation is created in
+            set_variable = { which = fwt_growth_ceiling value = root.fwt_growth_ceiling }
+            every_country = {
+                limit = {
+                    giga_has_frameworld_origin = yes
+                }
+                set_variable = { which = fwt_growth_ceiling value = root.fwt_growth_ceiling }
+                event_target:frame_expand@owner = {
+                    set_variable = { which = fwt_growth_ceiling value = root.fwt_growth_ceiling }
+                }
+            }
+        }
+        country_event = {
+            id = fwt.122
+        }
+    }
+}
+
+country_event = {
+    id = fwt.122
+    title = "fwt.122.growth.name"
+    desc = "fwt.122.growth.desc"
+    hide_window = no
+    is_triggered_only = yes
+    picture = GFX_evt_overgrown_city
+
+    option = {
+        name = fwt.12.increase_1
+        country_event = {
+            id = fwt.122
+        }
+        change_variable = {
+            which = fwt_required_scaling
+            value = 0.1
+        }
+    }
+    option = {
+        name = fwt.12.increase_05
+        country_event = {
+            id = fwt.122
+        }
+        change_variable = {
+            which = fwt_required_scaling
+            value = 0.05
+        }
+    }
+    option = {
+        name = fwt.12.increase_01
+        change_variable = {
+            which = fwt_required_scaling
+            value = 0.01
+        }
+        country_event = {
+            id = fwt.122
+        }
+    }
+    option = {
+        name = fwt.12.current_required_scaling
+        allow = {
+            always = no
+        }
+    }
+    option = {
+        name = fwt.12.decrease_01
+        change_variable = {
+            which = fwt_required_scaling
+            value = -0.01
+        }
+        country_event = {
+            id = fwt.122
+        }
+    }
+    option = {
+        name = fwt.12.decrease_05
+        change_variable = {
+            which = fwt_required_scaling
+            value = -0.5
+        }
+        country_event = {
+            id = fwt.122
+        }
+    }
+    option = {
+        name = fwt.12.decrease_1
+        change_variable = {
+            which = fwt_required_scaling
+            value = -0.1
+        }
+        country_event = {
+            id = fwt.122
+        }
+    }
+    option = {
+        name = fwt.close_menu
+        event_target:giga_global_situation_country = {
+            set_variable = { which = fwt_required_scaling value = root.fwt_required_scaling }
+            every_country = {
+                limit = {
+                    giga_has_frameworld_origin = yes
+                }
+                set_variable = { which = fwt_required_scaling value = root.fwt_required_scaling }
+                event_target:frame_expand@owner = {
+                    set_variable = { which = fwt_growth_ceiling value = root.fwt_required_scaling }
+                }
+            }
+        }
+        every_country = {
+            limit = {
+                giga_has_frameworld_origin = yes
+            }
+            event_target:frame_expand@owner = {
+                giga_extra_growth_setup = yes
+            }
+        }
+    }
+}
+
+situation_event = {
+    id = fwt.2
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        if = {
+            limit = {
+                #98 > 95
+                situation_progress > value:fwt_situation_end_less_than_month
+            }
+            set_variable = {
+                which = fwt_days_left_timer
+                value = value:fwt_situation_end_days_left
+            }
+            # % of time left * 30
+            # progression left / monthly progression
+            situation_event = {
+                id = fwt.22
+                days = 1
+            }
+        }
+
+        #income
+        owner = {
+            export_trigger_value_to_variable = {
+                trigger = resource_income_compare
+                parameters = {
+                    resource = alloys
+                    value = 0
+                }
+                variable = fwt_situation_continuous_total_revenue_sub
+            }
+            change_variable = {
+                which = fwt_situation_continuous_total_revenue_sub
+                value = modifier:country_situations_expansion_alloys_upkeep_add_offset
+            }
+        }
+        #% of total income to use on situation
+        set_variable = { which = fwt_situation_continuous_total_revenue_sub value = owner.fwt_situation_continuous_total_revenue_sub }
+        multiply_variable = {
+            which = fwt_situation_continuous_total_revenue_sub
+            value = value:fwt_situation_continuous_pol_speed
+        }
+        set_variable = {
+            which = fwt_situation_continuous_total_revenue
+            value = fwt_situation_continuous_total_revenue_sub
+        }
+    }
+}
+
+situation_event = {
+    id = fwt.22
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        # run until the day the the decision time would finish
+        if = {
+            limit = {
+                check_variable = {
+                    #5
+                    which = fwt_days_left_timer
+                    value < 1
+                }
+            }
+            switch = {
+                trigger = is_situation_type
+                giga_situation_frameworld_decisions = { fwt_trigger_effects_situation = yes }
+                fwt_situation_continuous_expansion = {
+                    custom_tooltip = frameworld_line
+                    while = {
+                        count = value:fwt_situation_finish_count
+                        event_target:frame_expand@owner = {
+                            remove_planet_flag = giga_frameworld_expand_queued
+                            giga_frameworld_expand_deposit = {
+                                DEPOSIT = d_frameworld_expansion
+                                VAR = giga_frameworld_expansions
+                            }
+                            custom_tooltip = frameworld_line
+                            giga_frameworld_expand_deposit = {
+                                DEPOSIT = d_frameworld_structure_expansion
+                                VAR = giga_frameworld_structure_expansions
+                            }
+                            custom_tooltip = frameworld_line
+                            change_planet_size = 1
+
+                            # update entity and do all the math
+                            hidden_effect = {
+                                giga_frameworld_update_entity_with_fallback = yes
+                                giga_frameworld_recalculate_variables = yes
+                                frameworld_conduct_audit_check_ai = yes
+                            }
+                            remove_flags = { NAME = giga_frameworld_expand }
+                        }
+                    }
+                    owner = {
+                        set_variable = {
+                            which = fwt_expansion_extra
+                            value = prev.value:fwt_situation_finish_count_sub
+                        }
+                    }
+                    #might fix any jank with more than end of situation
+                    owner = { start_situation = { type = fwt_situation_continuous_expansion } }
+                    destroy_situation = this
+                }
+            }
+        }
+        else = {
+            change_variable = {
+                which = fwt_days_left_timer
+                value = -1
+            }
+            situation_event = {
+                id = fwt.22
+                days = 1
+            }
+        }
+    }
+}
+
+country_event = {
+    id = fwt.3
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        or = {
+            last_increased_tech = tech_habitat_1
+            last_increased_tech = tech_habitat_2
+        }
+        exists = owner
+        giga_has_frameworld_origin = yes
+    }
+
+    immediate = {
+        #while this is faster than normal if a frameworld isn't taking the voidborne their losing out anyway so it isn't a issue
+        if = {
+            limit = {
+                last_increased_tech = tech_habitat_1
+            }
+            add_research_option = tech_habitat_2
+        }
+        else = {
+            #when researching the hab 2 tech give tech option for the hab 3 tech, as can't roll habs with no habs and overwriting tech files required overwriting all
+            add_research_option = tech_habitat_3
+        }
+    }
+}
+
+country_event = {
+    id = fwt.4
+    title = "fwt.4.name"
+    desc = "fwt.4.desc"
+    picture = GFX_evt_overgrown_city
+    location = from
+    show_sound = event_wind_ruins
+    hide_window = no
+    is_triggered_only = yes
+
+    option = {
+        allow = {
+            not = {
+                any_situation = {
+                    is_situation_type = fwt_situation_frameworld_continuous_harvest
+                }
+            }
+        }
+        name = fwt.4.asteroid
+        start_situation = {
+            type = fwt_situation_frameworld_continuous_harvest
+        }
+        country_event = {
+            id = fwt.4
+        }
+    }
+    # option = {
+    # 	name = fwt.4.maintenance
+    # 	country_event = {
+    # 		id = fwt.43
+    # 	}
+    # 	country_event = {
+    # 		id = fwt.4
+    # 	}
+    # }
+    option = {
+        allow = {
+            not = {
+                any_situation = {
+                    is_situation_type = fwt_situation_continuous_expansion
+                }
+            }
+        }
+        name = fwt.4.auto_expand
+        start_situation = {
+            type = fwt_situation_continuous_expansion
+        }
+        country_event = {
+            id = fwt.4
+        }
+    }
+    option = {
+        name = fwt.close_menu
+        remove_country_flag = auto_menu_open
+    }
+}
+
+
+country_event = {
+    id = fwt.41
+    title = "fwt.41.asteroid.name"
+    desc = "fwt.41.asteroid.desc"
+    picture = GFX_evt_overgrown_city
+    location = from
+    show_sound = event_wind_ruins
+    hide_window = no
+    is_triggered_only = yes
+
+    option = {
+        name = fwt.41.enable
+        allow = {
+            or = {
+                owner = {
+                    not = { has_country_flag = fwt_asteroid_harvesting }
+                    has_country_flag = fwt_asteroid_harvesting_1
+                }
+            }
+        }
+        owner = {
+            set_country_flag = fwt_asteroid_harvesting
+        }
+        country_event = {
+            id = fwt.41
+        }
+    }
+    option = {
+        name = fwt.41.enable_1
+        allow = {
+            owner = {
+                not = { has_country_flag = fwt_asteroid_harvesting_1 }
+            }
+        }
+        owner = {
+            set_country_flag = fwt_asteroid_harvesting
+            set_country_flag = fwt_asteroid_harvesting_1
+        }
+        country_event = {
+            id = fwt.41
+        }
+    }
+    option = {
+        name = fwt.41.disable
+        allow = {
+            owner = {
+                has_country_flag = fwt_asteroid_harvesting
+            }
+        }
+        owner = {
+            remove_country_flag = fwt_asteroid_harvesting
+            remove_country_flag = fwt_asteroid_harvesting_1
+        }
+        country_event = {
+            id = fwt.41
+        }
+    }
+    option = {
+        name = fwt.close_menu
+    }
+}
+
+ship_event = {
+    id = fwt.4111
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                exists = from
+                from = {
+                    is_scope_type = country
+                }
+            }
+            from = {
+                country_event = {
+                    id = fwt.412
+                }
+            }
+        }
+        else = {
+            owner = {
+                country_event = {
+                    id = fwt.412
+                }
+            }
+        }
+    }
+}
+
+system_event = {
+    id = fwt.4112
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        owner = {
+            country_event = {
+                id = fwt.412
+            }
+        }
+    }
+}
+
+country_event = {
+    id = fwt.412
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                has_country_flag = has_more_asteroids
+            }
+            if = {
+                limit = {
+                    has_country_flag = fwt_asteroid_harvesting
+                    has_country_flag = fwt_asteroid_harvesting_1
+                    has_country_flag = has_more_asteroids
+                    has_country_flag = has_more_asteroids_1
+                    not = {
+                        any_planet_within_border = {
+                            or = {
+                                is_planet_class = pc_asteroid
+                                is_planet_class = pc_ice_asteroid
+                                is_planet_class = pc_crystal_asteroid
+                                is_planet_class = pc_rare_crystal_asteroid
+                                is_asteroid = yes
+                            }
+                            solar_system = {
+                                count_system_planet = {
+                                    count > 1
+                                    limit = {
+                                        or = {
+                                            is_planet_class = pc_asteroid
+                                            is_planet_class = pc_ice_asteroid
+                                            is_planet_class = pc_crystal_asteroid
+                                            is_planet_class = pc_rare_crystal_asteroid
+                                            is_asteroid = yes
+                                        }
+                                    }
+                                }
+                                # don't build in here if its being used for minerals
+                                not = {
+                                    any_megastructure = {
+                                        is_megastructure_type = orbital_arc_furnace_1
+                                        is_megastructure_type = orbital_arc_furnace_2
+                                        is_megastructure_type = orbital_arc_furnace_3
+                                        is_megastructure_type = orbital_arc_furnace_4
+                                        is_megastructure_type = orbital_arc_furnace_destroyed
+                                        is_megastructure_type = orbital_arc_furnace_restored
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                remove_country_flag = has_more_asteroids
+                remove_country_flag = has_more_asteroids_1
+            }
+            if = {
+                limit = {
+                    has_country_flag = fwt_asteroid_harvesting
+                    not = { has_country_flag = fwt_asteroid_harvesting_1 }
+                    has_country_flag = has_more_asteroids
+                    not = { has_country_flag = has_more_asteroids_1 }
+                    any_planet_within_border = {
+                        or = {
+                            is_planet_class = pc_asteroid
+                            is_planet_class = pc_ice_asteroid
+                            is_planet_class = pc_crystal_asteroid
+                            is_planet_class = pc_rare_crystal_asteroid
+                            is_asteroid = yes
+                        }
+                        solar_system = {
+                            # don't build in here if its being used for minerals
+                            not = {
+                                any_megastructure = {
+                                    is_megastructure_type = orbital_arc_furnace_1
+                                    is_megastructure_type = orbital_arc_furnace_2
+                                    is_megastructure_type = orbital_arc_furnace_3
+                                    is_megastructure_type = orbital_arc_furnace_4
+                                    is_megastructure_type = orbital_arc_furnace_destroyed
+                                    is_megastructure_type = orbital_arc_furnace_restored
+                                }
+                            }
+                        }
+                    }
+                }
+                remove_country_flag = has_more_asteroids
+            }
+        }
+        else = {
+            if = {
+                limit = {
+                    has_country_flag = fwt_asteroid_harvesting
+                    has_country_flag = fwt_asteroid_harvesting_1
+                    not = { has_country_flag = has_more_asteroids }
+                    not = { has_country_flag = has_more_asteroids_1 }
+                    any_planet_within_border = {
+                        or = {
+                            is_planet_class = pc_asteroid
+                            is_planet_class = pc_ice_asteroid
+                            is_planet_class = pc_crystal_asteroid
+                            is_planet_class = pc_rare_crystal_asteroid
+                            is_asteroid = yes
+                        }
+                        solar_system = {
+                            count_system_planet = {
+                                count > 1
+                                limit = {
+                                    or = {
+                                        is_planet_class = pc_asteroid
+                                        is_planet_class = pc_ice_asteroid
+                                        is_planet_class = pc_crystal_asteroid
+                                        is_planet_class = pc_rare_crystal_asteroid
+                                        is_asteroid = yes
+                                    }
+                                }
+                            }
+                            # don't build in here if its being used for minerals
+                            not = {
+                                any_megastructure = {
+                                    is_megastructure_type = orbital_arc_furnace_1
+                                    is_megastructure_type = orbital_arc_furnace_2
+                                    is_megastructure_type = orbital_arc_furnace_3
+                                    is_megastructure_type = orbital_arc_furnace_4
+                                    is_megastructure_type = orbital_arc_furnace_destroyed
+                                    is_megastructure_type = orbital_arc_furnace_restored
+                                }
+                            }
+                        }
+                    }
+                }
+                set_country_flag = has_more_asteroids
+                set_country_flag = has_more_asteroids_1
+            }
+            if = {
+                limit = {
+                    has_country_flag = fwt_asteroid_harvesting
+                    not = { has_country_flag = fwt_asteroid_harvesting_1 }
+                    not = { has_country_flag = has_more_asteroids }
+                    not = { has_country_flag = has_more_asteroids_1 }
+                    any_planet_within_border = {
+                        or = {
+                            is_planet_class = pc_asteroid
+                            is_planet_class = pc_ice_asteroid
+                            is_planet_class = pc_crystal_asteroid
+                            is_planet_class = pc_rare_crystal_asteroid
+                            is_asteroid = yes
+                        }
+                        solar_system = {
+                            # don't build in here if its being used for minerals
+                            not = {
+                                any_megastructure = {
+                                    is_megastructure_type = orbital_arc_furnace_1
+                                    is_megastructure_type = orbital_arc_furnace_2
+                                    is_megastructure_type = orbital_arc_furnace_3
+                                    is_megastructure_type = orbital_arc_furnace_4
+                                    is_megastructure_type = orbital_arc_furnace_destroyed
+                                    is_megastructure_type = orbital_arc_furnace_restored
+                                }
+                            }
+                        }
+                    }
+                }
+                set_country_flag = has_more_asteroids
+            }
+        }
+    }
+}
+
+situation_event = {
+    id = fwt.42
+    title = "fwt.42.expand.name"
+    desc = "fwt.42.expand.desc"
+    picture = GFX_evt_overgrown_city
+    location = from
+    show_sound = event_wind_ruins
+    hide_window = no
+    is_triggered_only = yes
+
+    option = {
+        name = fwt.4.increase_10
+        situation_event = {
+            id = fwt.42
+        }
+        change_variable = {
+            which = fwt_expansion_income
+            value = 10
+        }
+    }
+    option = {
+        name = fwt.4.increase_5
+        situation_event = {
+            id = fwt.42
+        }
+        change_variable = {
+            which = fwt_expansion_income
+            value = 5
+        }
+    }
+    option = {
+        name = fwt.4.increase_1
+        change_variable = {
+            which = fwt_expansion_income
+            value = 1
+        }
+        situation_event = {
+            id = fwt.42
+        }
+    }
+    option = {
+        name = fwt.4.current
+        allow = {
+            always = no
+        }
+    }
+    option = {
+        name = fwt.4.decrease_1
+        change_variable = {
+            which = fwt_expansion_income
+            value = -1
+        }
+        situation_event = {
+            id = fwt.42
+        }
+    }
+    option = {
+        name = fwt.4.decrease_5
+        change_variable = {
+            which = fwt_expansion_income
+            value = -5
+        }
+        situation_event = {
+            id = fwt.42
+        }
+    }
+    option = {
+        name = fwt.4.decrease_10
+        change_variable = {
+            which = fwt_expansion_income
+            value = -10
+        }
+        situation_event = {
+            id = fwt.42
+        }
+    }
+    option = {
+        name = fwt.close_menu
+        set_situation_approach = fwt_situation_continuous_expansion_approach_speed
+        if = {
+            limit = {
+                owner = {
+                    has_country_flag = auto_menu_open
+                }
+            }
+            owner = {
+                remove_country_flag = auto_menu_open
+            }
+        }
+    }
+}
+
+country_event = {
+    id = fwt.43
+    title = "fwt.43.maintenance.name"
+    desc = "fwt.43.maintenance.desc"
+    picture = GFX_evt_overgrown_city
+    location = from
+    show_sound = event_wind_ruins
+    hide_window = no
+    is_triggered_only = yes
+
+    option = {
+        name = fwt.43.default
+        allow = {
+            not = { has_country_flag = fwt_maintenance_default }
+        }
+        set_country_flag = fwt_maintenance_default
+        remove_country_flag = fwt_maintenance_alloy
+        remove_country_flag = fwt_maintenance_research
+        remove_country_flag = fwt_maintenance_unity
+        country_event = {
+            id = fwt.43
+        }
+    }
+    option = {
+        name = fwt.43.alloy
+        allow = {
+            not = { has_country_flag = fwt_maintenance_alloy }
+        }
+        set_country_flag = fwt_maintenance_alloy
+        remove_country_flag = fwt_maintenance_default
+        remove_country_flag = fwt_maintenance_research
+        remove_country_flag = fwt_maintenance_unity
+        country_event = {
+            id = fwt.43
+        }
+    }
+    option = {
+        name = fwt.43.research
+        allow = {
+            not = { has_country_flag = fwt_maintenance_research }
+        }
+        set_country_flag = fwt_maintenance_research
+        remove_country_flag = fwt_maintenance_alloy
+        remove_country_flag = fwt_maintenance_default
+        remove_country_flag = fwt_maintenance_unity
+        country_event = {
+            id = fwt.43
+        }
+    }
+    option = {
+        name = fwt.43.unity
+        allow = {
+            not = { has_country_flag = fwt_maintenance_unity }
+        }
+        set_country_flag = fwt_maintenance_unity
+        remove_country_flag = fwt_maintenance_alloy
+        remove_country_flag = fwt_maintenance_research
+        remove_country_flag = fwt_maintenance_default
+        country_event = {
+            id = fwt.43
+        }
+    }
+    option = {
+        name = fwt.43.count
+        country_event = {
+            id = fwt.431
+        }
+    }
+    option = {
+        name = fwt.close_menu
+        remove_country_flag = auto_menu_open
+    }
+}
+
+country_event = {
+    id = fwt.431
+    title = "fwt.431.expand.name"
+    desc = "fwt.431.expand.desc"
+    picture = GFX_evt_overgrown_city
+    location = from
+    show_sound = event_wind_ruins
+    hide_window = no
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                not = {
+                    is_variable_set = fwt_maintenance_count
+                }
+            }
+            set_variable = {
+                which = fwt_maintenance_count
+                value = 5
+            }
+        }
+    }
+    option = {
+        name = fwt.431.increase_3
+        country_event = {
+            id = fwt.431
+        }
+        change_variable = {
+            which = fwt_maintenance_count
+            value = 3
+        }
+    }
+    option = {
+        name = fwt.431.increase_1
+        change_variable = {
+            which = fwt_maintenance_count
+            value = 1
+        }
+        country_event = {
+            id = fwt.431
+        }
+    }
+    option = {
+        name = fwt.431.current
+        allow = {
+            always = no
+        }
+    }
+    option = {
+        name = fwt.431.decrease_1
+        change_variable = {
+            which = fwt_maintenance_count
+            value = -1
+        }
+        country_event = {
+            id = fwt.431
+        }
+    }
+    option = {
+        name = fwt.431.decrease_3
+        change_variable = {
+            which = fwt_maintenance_count
+            value = -3
+        }
+        country_event = {
+            id = fwt.431
+        }
+    }
+    option = {
+        name = fwt.close_menu
+        remove_country_flag = auto_menu_open
+    }
+}
+
+
+country_event = {
+    id = fwt.5
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = {
+        giga_has_frameworld_origin = yes
+    }
+    immediate = {
+        event_target:frame_expand@owner = {
+            planet_event = { id = fwt.51 days = 1 }
+        }
+    }
+}
+
+
+planet_event = {
+    id = fwt.51
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        # 100
+        set_variable = { which = fwt_pop_growth_rec value = trigger:num_pops }
+        multiply_variable = { which = fwt_pop_growth_rec value = owner.fwt_required_scaling }
+        change_variable = { which = fwt_pop_growth_rec value = 100 }
+
+        set_variable = { which = fwt_pop_growth_rec_back value = background_pops }
+        change_variable = { which = fwt_pop_growth_rec_back value = trigger:num_pops }
+        multiply_variable = { which = fwt_pop_growth_rec_back value = owner.fwt_required_scaling }
+        change_variable = { which = fwt_pop_growth_rec_back value = 100 }
+
+        divide_variable = { which = fwt_pop_growth_rec value = fwt_pop_growth_rec_back }
+
+        subtract_variable = { which = fwt_pop_growth_rec value = 1 }
+        multiply_variable = { which = fwt_pop_growth_rec value = -1 }
+
+        set_variable = { which = fwt_pop_growth_reduction value = modifier:pop_growth_speed_reduction }
+        change_variable = { which = fwt_pop_growth_reduction value = -1 }
+        multiply_variable = { which = fwt_pop_growth_rec value = -1 }
+        multiply_variable = { which = fwt_pop_growth_reduction value = fwt_pop_growth_rec }
+    }
+}
+
+
+situation_event = {
+    id = fwt.999
+    hide_window = yes
+    is_triggered_only = yes
+    immediate = {
+        #cwtools scripted effect aren't check properly so set flags to make it think it is set even those this is never triggered
+        set_situation_flag = giga_frameworld_expand_dec
+        set_situation_flag = giga_frameworld_expand_bulk_5_dec
+        set_situation_flag = giga_frameworld_expand_bulk_10_dec
+        set_situation_flag = giga_frameworld_expand_mass_dec
+        set_situation_flag = giga_frameworld_expand_mass_bulk_5_dec
+        set_situation_flag = giga_frameworld_reorganise_dec
+        set_situation_flag = giga_frameworld_consume_world_dec
+        set_situation_flag = frameworld_penrose_dec
+        set_situation_flag = giga_frameworld_decompressor_dec
+        set_situation_flag = giga_frameworld_advanced_city_dec
+        set_situation_flag = giga_frameworld_advanced_industrial_dec
+        set_situation_flag = frameworld_advanced_sanctuary_dec
+        set_situation_flag = giga_frameworld_gaia_dec
+        set_situation_flag = giga_frameworld_computing_complex_dec
+        set_situation_flag = frameworld_orbital_ring_dec
+        set_situation_flag = giga_frameworld_maginot_dec
+    }
+}

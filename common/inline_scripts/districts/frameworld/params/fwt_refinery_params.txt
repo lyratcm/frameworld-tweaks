@@ -1,0 +1,12 @@
+inline_script = {
+	script = districts/frameworld/giga_frameworld_refinery
+	time = $time$
+	cost = $cost$
+
+	fake_motes = $fake_motes$
+	fake_gases = $fake_gases$
+	fake_crystals = $fake_crystals$
+	#the second one will only run if the first doesn't get a value
+	mult = $mult$
+	mult = 1
+}

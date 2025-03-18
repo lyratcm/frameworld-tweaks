@@ -1,0 +1,6 @@
+test_variable = {
+    set_variable = {
+        which = test
+        value = $VALUE$
+    }
+}

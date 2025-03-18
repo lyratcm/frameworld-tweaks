@@ -1,0 +1,285 @@
+
+#gets the number of effective jobs
+fwt_district_distrcit_count_housing = {
+	base = 0.5
+	modifier = {
+		add = 0.5
+		owner = { is_gestalt = yes }
+	}
+	modifier = {
+		add = 0.25
+		owner = { has_technology = tech_housing_2 }
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+	mult = fwt_housing_completion
+}
+
+#gets the number of effective jobs
+fwt_district_distrcit_count_alloys = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+	mult = fwt_alloy_completion
+}
+
+#gets the number of effective jobs
+fwt_district_distrcit_count_consumer_goods = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+	mult = fwt_consumer_goods_completion
+}
+
+#gets the number of effective jobs
+fwt_district_distrcit_count_energy = {
+	base = 1
+	modifier = {
+		add = 0.5
+		owner = {
+			is_hive_empire = yes
+		}
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+	mult = fwt_energy_completion
+}
+
+#gets the number of effective jobs
+fwt_district_distrcit_count_minerals = {
+	base = 1
+	modifier = {
+		add = 0.5
+		owner = {
+			is_hive_empire = yes
+		}
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+	mult = fwt_mineral_completion
+}
+
+#gets the number of effective jobs
+fwt_district_distrcit_count_food = {
+	base = 1
+	modifier = {
+		add = 0.5
+		owner = {
+			is_hive_empire = yes
+		}
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+	mult = fwt_food_completion
+}
+
+#gets the number of effective jobs
+fwt_district_distrcit_count_trade = {
+	base = 1
+	modifier = {
+		add = 1
+		owner = {
+			has_active_tradition = tr_mercantile_commercial_enterprise
+		}
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+	mult = fwt_unity_trade_completion
+}
+
+#gets the number of effective jobs
+fwt_district_distrcit_count_unity = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+	modifier = {
+		mult = 5
+		owner = {
+			has_valid_civic = civic_machine_servitor
+		}
+	}
+	mult = fwt_unity_trade_completion
+}
+
+#gets the number of effective jobs
+fwt_district_distrcit_count_science = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+	mult = fwt_science_completion
+}
+
+#gets the number of effective jobs
+fwt_district_distrcit_count_anti_crime = {
+	base = 5
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+}
+
+#gets the number of effective jobs
+fwt_district_distrcit_count_amenities = {
+	base = 1
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+}
+
+fwt_district_distrcit_count_rare = {
+	base = 0
+	modifier = {
+		add = 1
+		owner = {
+			has_technology = tech_volatile_motes
+		}
+	}
+	modifier = {
+		add = 1
+		owner = {
+			has_technology = tech_exotic_gases
+		}
+	}
+	modifier = {
+		add = 1
+		owner = {
+			has_technology = tech_rare_crystals
+		}
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+	mult = fwt_rare_resources_completion
+}
+
+fwt_district_distrcit_count_sr = {
+	base = 2
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+}
+
+fwt_district_distrcit_count_nm = {
+	base = 2
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+}
+
+
+fwt_district_distrcit_count_st = {
+	base = 3
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+}
+
+
+fwt_district_distrcit_count_fortress = {
+	base = 2
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+	modifier = {
+		add = 1
+		owner = {
+			is_hive_empire = yes
+		}
+	}
+}
+
+
+fwt_district_distrcit_count_msg = {
+	base = 0.5
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+}
+
+
+fwt_district_distrcit_count_mpc = {
+	base = 0.5
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = mult
+	}
+}

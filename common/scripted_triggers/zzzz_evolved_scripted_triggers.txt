@@ -1,0 +1,13 @@
+tec_is_food_production_system = {
+	any_system_planet = {
+		OR = {
+			AND = {
+				is_colony = yes
+				tec_has_any_food_district = yes
+			}
+			has_resource = { type = food amount > 0 }
+			#to allow the frameworld to still benefit
+			is_frameworld_outpost_planet = yes
+		}
+	}
+}

@@ -1,0 +1,129 @@
+# resources = {
+# 	category = planet_metallurgists
+@catalytic_upkeep = 1.5
+@catalytic_output = 0.25
+
+
+	produces = {
+		alloys = @[ 3 * $SCALE$ ]
+	}
+
+	produces = {
+		trigger = {
+			owner = { is_robot_empire = yes }
+		}
+		alloys = @[ 1 * $SCALE$ ]
+	}
+
+
+	############### upkeep########
+	upkeep = {
+		trigger = {
+			owner = { is_catalytic_empire = no }
+		}
+		minerals = @[ 6 * $SCALE$ ]
+	}
+
+	upkeep = {
+		trigger = {
+			owner = { is_catalytic_empire = no }
+			owner = { is_robot_empire = yes }
+		}
+		minerals = @[ 2 * $SCALE$]
+	}
+
+	#####################################################
+	########## catalytic  ###############################
+	#####################################################
+	produces = {
+		trigger = {
+			owner = { is_catalytic_empire = yes }
+		}
+		alloys = @[ 3 * $SCALE$ ]
+		multiplier = @catalytic_output
+	}
+
+	produces = {
+		trigger = {
+			owner = { is_robot_empire = yes is_catalytic_empire = yes }
+		}
+		alloys = @[ 1 * $SCALE$ ]
+		multiplier = @catalytic_output
+	}
+
+	########  upkeep   ##############################
+
+	upkeep = {
+		trigger = {
+			owner = { is_catalytic_empire = yes }
+		}
+		food = @[ 6 * $SCALE$ ]
+		multiplier = @catalytic_upkeep
+	}
+
+	upkeep = {
+		trigger = {
+			owner = { is_robot_empire = yes is_catalytic_empire = yes }
+		}
+		food = @[ 2 * $SCALE$ ]
+		multiplier = @catalytic_upkeep
+	}
+
+	produces = {
+		trigger = {
+			planet = {
+				has_planet_flag = has_material_requisitorium
+			}
+		}
+		alloys = @requisitorium_alloys_reduction
+	}
+
+	upkeep = {
+		trigger = {
+			planet = {
+				has_planet_flag = has_material_requisitorium
+			}
+			owner = {
+				is_catalytic_empire = no
+			}
+		}
+		minerals = 1
+	}
+
+	upkeep = {
+		trigger = {
+			planet = {
+				has_planet_flag = has_material_requisitorium
+				owner = {
+					is_catalytic_empire = yes
+				}
+			}
+		}
+		food = 1
+		multiplier = @catalytic_upkeep
+	}
+	#half the effect of bonuses/reducitons
+	produces = {
+		alloys = -0.5
+		multiplier = modifier:planet_metallurgists_alloys_produces_add
+	}
+	upkeep = {
+		trigger = {
+			owner = {
+				is_catalytic_empire = no
+			}
+		}
+		minerals = -0.5
+		multiplier = modifier:planet_metallurgists_minerals_upkeep_add
+	}
+	upkeep = {
+		trigger = {
+			owner = {
+				is_catalytic_empire = yes
+			}
+		}
+		food = -0.5
+		multiplier = modifier:planet_metallurgists_food_upkeep_add
+	}
+
+# }

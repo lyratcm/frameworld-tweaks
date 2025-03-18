@@ -1,0 +1,39 @@
+# triggered_planet_modifier = {
+#     potential = {
+#         is_variable_set = fwt_planet_jobs_$MODIFIER$_produces_mult_var
+#     }
+#     multiplier = fwt_planet_jobs_$MODIFIER$_produces_mult_var
+#
+#     planet_jobs_$MODIFIER$_produces_mult = 1
+#     planet_jobs_$MODIFIER$_produces_mult_offset = 1
+# }
+
+triggered_planet_modifier = {
+    potential = {
+        is_variable_set = fwt_planet_jobs_$MODIFIER$_upkeep_mult_var
+    }
+    multiplier = fwt_planet_jobs_$MODIFIER$_upkeep_mult_var
+
+    planet_jobs_$MODIFIER$_upkeep_mult = 1
+    planet_jobs_$MODIFIER$_upkeep_mult_offset = 1
+}
+
+# triggered_planet_modifier = {
+#     potential = {
+#         is_variable_set = fwt_planet_jobs_productive_$MODIFIER$_produces_mult_var
+#     }
+#     multiplier = fwt_planet_jobs_productive_$MODIFIER$_produces_mult_var
+#
+#     planet_jobs_productive_$MODIFIER$_produces_mult = 1
+#     planet_jobs_productive_$MODIFIER$_produces_mult_offset = 1
+# }
+
+triggered_planet_modifier = {
+    potential = {
+        is_variable_set = fwt_planet_jobs_productive_$MODIFIER$_upkeep_mult_var
+    }
+    multiplier = fwt_planet_jobs_productive_$MODIFIER$_upkeep_mult_var
+
+    planet_jobs_productive_$MODIFIER$_upkeep_mult = 1
+    planet_jobs_productive_$MODIFIER$_upkeep_mult_offset = 1
+}

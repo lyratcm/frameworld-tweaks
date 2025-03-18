@@ -1,0 +1,30 @@
+#why is scripted variables FIOS but the rest of common isn't!!!
+# # initial cost for expansion decision
+# @giga_frameworld_expansion_cost_base = 415
+# incremental multiplier for expansion decision
+@giga_frameworld_expansion_cost_exponent = 1.10 #1.14 #1.15
+
+# @giga_frameworld_expansion_exponent_habitat = -0.03 #-0.02 -0.04
+@giga_frameworld_expansion_exponent_voidborne = -0.04 #-0.03 -0.04
+# bigger gain but spread over 2 techs
+@giga_frameworld_expansion_exponent_ringworld = -0.02 #-0.03
+@fwt_frameworld_expansion_exponent_mega_engineering = -0.02
+@giga_frameworld_expansion_cost_habitat_2 = -25 # -50
+@giga_frameworld_expansion_cost_habitat_3 = -25 # -50
+
+#an additional 100 cost reduction for a total of 180 #150 600 -> 450 # 
+@fwt_frameworld_expansion_cost_starbase_2 = -15
+@fwt_frameworld_expansion_cost_starbase_3 = -20
+@fwt_frameworld_expansion_cost_starbase_4 = -25
+@fwt_frameworld_expansion_cost_starbase_5 = -30
+@fwt_frameworld_expansion_cost_megashipyard = -40
+# #cost increase when you upgrade (increase to the old base at max tier)
+@fwt_frameworld_expansion_cost_habitat_upgrade = -10
+@fwt_frameworld_expansion_cost_city_upgrade = -10
+# @fwt_frameworld_expansion_cost_mega_engi_upgrade = 100
+
+#time that the frameworld expansion normally takes
+@fwt_frameworld_auto_expansion_time = 360
+
+# nanite expansion decision
+@giga_frameworld_nanites_expansion_cost_base = 50000

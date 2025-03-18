@@ -1,0 +1,21 @@
+building_icon = building_maintenance_depot
+clothes_texture_index = 2
+
+$PRE_TRIGGER$
+
+triggered_pop_modifier = {
+	pop_housing_usage_add = -1
+}
+
+
+weight = {
+	weight = @special_job_weight
+
+	modifier = {
+		factor = -10000
+
+		planet = {
+			giga_frameworld_has_expanded_maintenance_modifier = no
+		}
+	}
+}

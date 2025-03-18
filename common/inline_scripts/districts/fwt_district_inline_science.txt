@@ -1,0 +1,91 @@
+@advanced_cost = 600
+@advanced_rural_cost = 600
+@advanced_rare_cost = 30
+@advanced_upkeep = 3
+@advanced_rare_upkeep = 1
+@base_time = 240
+@city_time = 480
+@base_housing = 1
+@yes = 1
+@no = 0
+conversion_ratio = 1
+show_tech_unlock_if = {
+	giga_has_frameworld_origin = yes
+}
+is_capped_by_modifier = no
+
+base_buildtime = @[ city_time * $SIZE_COST$ * $SCALE$ ]
+
+resources = {
+	category = planet_districts_hab_research
+	cost = {
+		minerals = @[ advanced_cost * $SIZE_COST$ * $SCALE$ ]
+		exotic_gases = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+	}
+	#half advanced cost (so base) and 0x advanced so none of the for tier 1
+	upkeep = {
+		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
+		exotic_gases = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+	}
+	
+	# nanite upgrade
+	upkeep = {
+		trigger = {
+			frameworld_has_active_nanite_upgrade = yes
+		}
+		nanites = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+	}
+}
+
+planet_modifier = {
+	planet_housing_add = 1
+	planet_housing_add = @[ $SIZE$ * 0.125 ]
+}
+
+
+# inline_script = {
+# 	script = planet/research/giga_researcher_job_swap
+# 	jobs = 1
+# }
+inline_script = {
+	script = planet/research/giga_researcher_job_swap
+	jobs = 1
+
+	condition = "frameworld_has_active_nanite_upgrade = no"
+}
+
+# nanite upgrade
+inline_script = {
+	script = planet/research/giga_nanotech_researcher_job_swap
+	jobs = 1
+
+	condition = "frameworld_has_active_nanite_upgrade = yes"
+}
+
+ai_resource_production = {
+	physics_research = @[ 16 * $SIZE_COST$ ]
+	trigger = {
+		always = yes
+	}
+}
+
+ai_resource_production = {
+	society_research = @[ 16 * $SIZE_COST$ ]
+	trigger = {
+		always = yes
+	}
+}
+
+ai_resource_production = {
+	engineering_research = @[ 16 * $SIZE_COST$ ]
+	trigger = {
+		always = yes
+	}
+}
+
+ai_resource_production = {
+	ai_unobtainium = 1000
+	trigger = {
+		frameworld_want_science = yes
+	}
+}
