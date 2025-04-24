@@ -5,7 +5,7 @@
 @advanced_rare_upkeep = 1
 @base_time = 240
 @city_time = 480
-@base_housing = 1
+@base_housing = 100
 @yes = 1
 @no = 0
 
@@ -19,9 +19,9 @@ is_capped_by_modifier = no
 
 inline_script = {
 	script = planet/energy/giga_technician_job_swap
-	jobs = @[ 4 * $SIZE_COST$ ]
-	district = @[ 1 * $SIZE_COST$ ]
-	extra_hive_jobs = @[ 1 * $SIZE_COST$ ]
+	jobs = @[ 400 * $SIZE_COST$ ]
+	district = 1
+	extra_hive_jobs = @[ 100 * $SIZE_COST$ ]
 }
 
 base_buildtime = @[ city_time * $SIZE_COST$ * $SCALE$ ]
@@ -41,7 +41,7 @@ resources = {
 
 planet_modifier = {
 	planet_housing_add = @base_housing
-	planet_housing_add = @[ $SIZE$ * 0.125 ]
+	planet_housing_add = @[ $SIZE$ * 12.5 ]
 }
 
 
@@ -53,7 +53,7 @@ triggered_planet_modifier = {
 		}
 	}
 	modifier = {
-		planet_housing_add = 0.5
+		planet_housing_add = 50
 	}
 }
 
@@ -65,7 +65,7 @@ triggered_planet_modifier = {
 		}
 	}
 	modifier = {
-		planet_housing_add = 0.5
+		planet_housing_add = 50
 	}
 }
 

@@ -5,7 +5,7 @@
 @advanced_rare_upkeep = 1
 @base_time = 240
 @city_time = 480
-@base_housing = 1
+@base_housing = 100
 @yes = 1
 @no = 0
 conversion_ratio = 1
@@ -33,13 +33,13 @@ triggered_planet_modifier = {
 		}
 	}
 	modifier = {
-		job_maintenance_drone_add = @[ 2 * $SIZE_COST$ ]
+		job_maintenance_drone_add = @[ 200 * $SIZE_COST$ ]
 	}
 }
 
 inline_script = {
 	script = planet/consumer_goods/giga_artisan_job_swap
-	jobs = @[ 4 * $SIZE_COST$ ]
+	jobs = @[ 400 * $SIZE_COST$ ]
 }
 
 triggered_desc = {
@@ -80,7 +80,7 @@ resources = {
 
 planet_modifier = {
 	planet_housing_add = @base_housing
-	planet_housing_add = @[ $SIZE$ * 0.125 ]
+	planet_housing_add = @[ $SIZE$ * 12.5 ]
 }
 
 

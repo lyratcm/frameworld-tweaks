@@ -5,7 +5,7 @@
 @advanced_rare_upkeep = 1
 @base_time = 240
 @city_time = 480
-@base_housing = 1
+@base_housing = 100
 @yes = 1
 @no = 0
 
@@ -41,20 +41,20 @@ resources = {
 }
 
 planet_modifier = {
-	planet_housing_add = 1
-	planet_housing_add = @[ $SIZE$ * 0.125 ]
+	planet_housing_add = @base_housing
+	planet_housing_add = @[ $SIZE$ * 12.5 ]
 }
 
 inline_script = {
 	script = planet/research/giga_researcher_job_swap
-	jobs = @[ 4 * $SIZE_COST$ ]
+	jobs = @[ 400 * $SIZE_COST$ ]
 	district = 1
 	condition = "frameworld_has_active_nanite_upgrade = no"
 }
 
 inline_script = {
 	script = planet/research/giga_researcher_job_swap
-	jobs = @[ 2 * $SIZE_COST$ ]
+	jobs = @[ 200 * $SIZE_COST$ ]
 	district = @yes
 	description = @no
 
@@ -64,7 +64,7 @@ inline_script = {
 # nanite upgrade
 inline_script = {
 	script = planet/research/giga_nanotech_researcher_job_swap
-	jobs = @[ 4 * $SIZE_COST$ ]
+	jobs = @[ 400 * $SIZE_COST$ ]
 	district = 1
 	condition = "frameworld_has_active_nanite_upgrade = yes"
 }

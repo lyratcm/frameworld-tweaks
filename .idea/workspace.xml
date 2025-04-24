@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="">
+    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="Removing pop changes to allow for 4.0 changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/districts/giga_frameworld_districts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/districts/giga_frameworld_districts.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/deposits/job_size_inline.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/deposits/job_size_inline_base.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/deposits/job_size_modifier.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/deposits/job_size_per_pop.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/deposits/job_size_produces_type_inline.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/deposits/part/job_size_inline_part.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/frameworld/giga_frameworld_refinery.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/frameworld/giga_frameworld_refinery.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_alloy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_alloy.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_energy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_energy.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_factory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_factory.txt" afterDir="false" />
@@ -21,19 +16,6 @@
       <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_science.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_science.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_unity.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_unity.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_unity_params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_unity_params.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/events/fwt_job_size_inline.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/policies/fwt_inline_auto_fab.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/scripted_modifiers/fwt_generic_output_inline.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/scripted_modifiers/fwt_scripted_job_size.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/policies/fwt_policies.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pop_jobs/z_fwt_bb_ow.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pop_jobs/zz_giga_frameworld_jobs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/pop_jobs/zz_giga_frameworld_jobs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/script_values/fwt_job_size_district.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_effects/fwt_job_size_deposit_effect.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_modifiers/!!_giga_scripted_modifiers_planet.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_modifiers/!!_giga_scripted_modifiers_planet.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_triggers/fwt_job_check.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/static_modifiers/fwt_static_modifier.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/static_modifiers/fwt_static_modifier.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +72,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.sourceCode"
+    "settings.editor.selected.configurable": "pls"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -115,6 +97,19 @@
       <option name="presentableId" value="Default" />
       <updated>1725290472204</updated>
     </task>
+    <task id="LOCAL-00001" summary="Removing pop changes to allow for 4.0 changes">
+      <option name="closed" value="true" />
+      <created>1742320194222</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742320194222</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Removing pop changes to allow for 4.0 changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removing pop changes to allow for 4.0 changes" />
   </component>
 </project>

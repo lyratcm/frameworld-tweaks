@@ -54,7 +54,13 @@ district_giga_frameworld_city = {
 	icon = district_city
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	
+
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
 	show_on_uncolonized = {
 		exists = from
 		from = { is_gestalt = no }
@@ -91,7 +97,7 @@ district_giga_frameworld_city = {
 	}
 	
 	planet_modifier = {
-		planet_housing_add = 4
+		planet_housing_add = 400
 		planet_max_buildings_add = 1
 	}
 
@@ -103,13 +109,13 @@ district_giga_frameworld_city = {
 			}
 		}
 		modifier = {
-			planet_housing_add = -0.5
+			planet_housing_add = -50
 		}
 	}
 
 	inline_script = {
 		script = planet/maintenance/giga_clerk_job_swap
-		jobs = 1
+		jobs = 100
 		district = @yes
 	}
 
@@ -119,7 +125,7 @@ district_giga_frameworld_city = {
 			owner = { has_active_tradition = tr_prosperity_public_works }
 		}
 		modifier = {
-			planet_housing_add = 0.5
+			planet_housing_add = 50
 		}
 	}
 
@@ -131,7 +137,7 @@ district_giga_frameworld_city = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 0.5
+			planet_housing_add = 50
 		}
 	}
 
@@ -144,7 +150,7 @@ district_giga_frameworld_city = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 0.5
+			planet_housing_add = 50
 		}
 	}
 }
@@ -156,7 +162,13 @@ district_giga_frameworld_city_advanced = {
 	icon = district_city
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	
+
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
 	show_on_uncolonized = {
 		exists = from
 		from = { is_gestalt = no }
@@ -190,7 +202,7 @@ district_giga_frameworld_city_advanced = {
 		}
 	}
 	planet_modifier = {
-		planet_housing_add = 5
+		planet_housing_add = 500
 		planet_max_buildings_add = 2
 	}
 	triggered_planet_modifier = {
@@ -201,13 +213,13 @@ district_giga_frameworld_city_advanced = {
 			}
 		}
 		modifier = {
-			planet_housing_add = -1
+			planet_housing_add = -100
 		}
 	}
 
 	inline_script = {
 		script = planet/maintenance/giga_clerk_job_swap
-		jobs = 1
+		jobs = 100
 		district = @yes
 	}
 
@@ -217,7 +229,7 @@ district_giga_frameworld_city_advanced = {
 			owner = { has_active_tradition = tr_prosperity_public_works }
 		}
 		modifier = {
-			planet_housing_add = 1
+			planet_housing_add = 100
 		}
 	}
 
@@ -229,7 +241,7 @@ district_giga_frameworld_city_advanced = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 1
+			planet_housing_add = 100
 		}
 	}
 
@@ -242,7 +254,7 @@ district_giga_frameworld_city_advanced = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 1
+			planet_housing_add = 100
 		}
 	}
 }
@@ -254,7 +266,13 @@ district_giga_frameworld_hive = {
 	icon = district_hive
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	
+
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
 	show_on_uncolonized = {
 		from = { is_hive_empire = yes }
 		uses_district_set = giga_frameworld
@@ -288,8 +306,8 @@ district_giga_frameworld_hive = {
 	}
 	
 	planet_modifier = {
-		planet_housing_add = 4
-		job_maintenance_drone_add = 3
+		planet_housing_add = 400
+		job_maintenance_drone_add = 300
 		planet_max_buildings_add = 1
 	}
 	
@@ -299,7 +317,7 @@ district_giga_frameworld_hive = {
 			owner = { has_technology = tech_housing_1 }
 		}
 		modifier = {
-			planet_housing_add = 0.5
+			planet_housing_add = 50
 		}
 	}
 	
@@ -309,8 +327,8 @@ district_giga_frameworld_hive = {
 			owner = { has_technology = tech_housing_2 }
 		}
 		modifier = {
-			planet_housing_add = 0.5
-			job_maintenance_drone_add = 0.5
+			planet_housing_add = 50
+			job_maintenance_drone_add = 50
 		}
 	}
 	
@@ -320,7 +338,7 @@ district_giga_frameworld_hive = {
 			owner = { has_active_tradition = tr_prosperity_extended_hives }
 		}
 		modifier = {
-			planet_housing_add = 0.5
+			planet_housing_add = 50
 		}
 	}
 }
@@ -332,7 +350,13 @@ district_giga_frameworld_hive_advanced = {
 	icon = district_hive
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	
+
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
 	show_on_uncolonized = {
 		from = { is_hive_empire = yes }
 		uses_district_set = giga_frameworld
@@ -368,8 +392,8 @@ district_giga_frameworld_hive_advanced = {
 
 	triggered_planet_modifier = {
 		potential = { always = yes }
-		planet_housing_add = 5
-		job_maintenance_drone_add = 3
+		planet_housing_add = 500
+		job_maintenance_drone_add = 300
 		planet_max_buildings_add = 2
 	}
 	
@@ -379,7 +403,7 @@ district_giga_frameworld_hive_advanced = {
 			owner = { has_technology = tech_housing_1 }
 		}
 		modifier = {
-			planet_housing_add = 1
+			planet_housing_add = 100
 		}
 	}
 	
@@ -389,8 +413,8 @@ district_giga_frameworld_hive_advanced = {
 			owner = { has_technology = tech_housing_2 }
 		}
 		modifier = {
-			planet_housing_add = 1
-			job_maintenance_drone_add = 1
+			planet_housing_add = 100
+			job_maintenance_drone_add = 100
 		}
 	}
 	
@@ -400,7 +424,7 @@ district_giga_frameworld_hive_advanced = {
 			owner = { has_active_tradition = tr_prosperity_extended_hives }
 		}
 		modifier = {
-			planet_housing_add = 1
+			planet_housing_add = 100
 		}
 	}
 }
@@ -412,7 +436,13 @@ district_giga_frameworld_nexus = {
 	icon = district_nexus
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	
+
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
 	show_on_uncolonized = {
 		from = { is_machine_empire = yes }
 		uses_district_set = giga_frameworld
@@ -470,7 +500,7 @@ district_giga_frameworld_nexus = {
 	}
 	
 	planet_modifier = {
-		planet_housing_add = 4
+		planet_housing_add = 400
 		job_maintenance_drone_add = 3
 		planet_max_buildings_add = 1
 	}
@@ -481,7 +511,7 @@ district_giga_frameworld_nexus = {
 			owner = { has_technology = tech_housing_1 }
 		}
 		modifier = {
-			planet_housing_add = 0.5
+			planet_housing_add = 50
 		}
 	}
 	
@@ -491,8 +521,8 @@ district_giga_frameworld_nexus = {
 			owner = { has_technology = tech_housing_2 }
 		}
 		modifier = {
-			planet_housing_add = 0.5
-			job_maintenance_drone_add = 0.5
+			planet_housing_add = 50
+			job_maintenance_drone_add = 50
 		}
 	}
 	
@@ -502,7 +532,7 @@ district_giga_frameworld_nexus = {
 			owner = { has_active_tradition = tr_virtuality_4 }
 		}
 		modifier = {
-			job_maintenance_drone_add = 1
+			job_maintenance_drone_add = 100
 		}
 	}
 	
@@ -512,7 +542,7 @@ district_giga_frameworld_nexus = {
 			owner = { has_active_tradition = tr_prosperity_optimized_nexus }
 		}
 		modifier = {
-			planet_housing_add = 0.5
+			planet_housing_add = 500
 		}
 	}
 }
@@ -524,7 +554,13 @@ district_giga_frameworld_nexus_advanced = {
 	icon = district_nexus
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	
+
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
 	show_on_uncolonized = {
 		from = { is_machine_empire = yes }
 		uses_district_set = giga_frameworld
@@ -583,8 +619,8 @@ district_giga_frameworld_nexus_advanced = {
 
 	triggered_planet_modifier = {
 		potential = { always = yes }
-		planet_housing_add = 5
-		job_maintenance_drone_add = 3
+		planet_housing_add = 500
+		job_maintenance_drone_add = 300
 		planet_max_buildings_add = 2
 	}
 	
@@ -594,7 +630,7 @@ district_giga_frameworld_nexus_advanced = {
 			owner = { has_technology = tech_housing_1 }
 		}
 		modifier = {
-			planet_housing_add = 1
+			planet_housing_add = 100
 		}
 	}
 	
@@ -604,8 +640,8 @@ district_giga_frameworld_nexus_advanced = {
 			owner = { has_technology = tech_housing_2 }
 		}
 		modifier = {
-			planet_housing_add = 1
-			job_maintenance_drone_add = 1
+			planet_housing_add = 100
+			job_maintenance_drone_add = 100
 		}
 	}
 	
@@ -615,7 +651,7 @@ district_giga_frameworld_nexus_advanced = {
 			owner = { has_active_tradition = tr_virtuality_4 }
 		}
 		modifier = {
-			job_maintenance_drone_add = 2
+			job_maintenance_drone_add = 200
 		}
 	}
 	
@@ -625,7 +661,7 @@ district_giga_frameworld_nexus_advanced = {
 			owner = { has_active_tradition = tr_prosperity_optimized_nexus }
 		}
 		modifier = {
-			planet_housing_add = 1
+			planet_housing_add = 100
 		}
 	}
 }
@@ -2660,7 +2696,7 @@ district_giga_frameworld_anticrime = {
 	}
 	
 	planet_modifier = {
-		planet_housing_add = 1.5
+		planet_housing_add = 150
 	}
 	
 	triggered_planet_modifier = {
@@ -2669,7 +2705,7 @@ district_giga_frameworld_anticrime = {
 			owner = { is_gestalt = no }
 		}
 		modifier = {
-			job_enforcer_add = 5
+			job_enforcer_add = 500
 		}
 	}
 	
@@ -2679,7 +2715,7 @@ district_giga_frameworld_anticrime = {
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_patrol_drone_add = 5
+			job_patrol_drone_add = 500
 		}
 	}
 	
@@ -2773,7 +2809,7 @@ district_giga_frameworld_amenities = {
 	}
 	
 	planet_modifier = {
-		planet_housing_add = 1
+		planet_housing_add = 100
 	}
 	
 	triggered_planet_modifier = {
@@ -2782,7 +2818,7 @@ district_giga_frameworld_amenities = {
 			owner = { NOT = { has_valid_civic = civic_warrior_culture } }
 		}
 		modifier = {
-			job_entertainer_add = 1
+			job_entertainer_add = 100
 		}
 	}
 	
@@ -2792,7 +2828,7 @@ district_giga_frameworld_amenities = {
 			owner = { has_valid_civic = civic_warrior_culture }
 		}
 		modifier = {
-			job_duelist_add = 1
+			job_duelist_add = 100
 		}
 	}
 	
@@ -2886,8 +2922,8 @@ district_giga_frameworld_amenities_dystopian = {
 	}
 
 	planet_modifier = {
-		planet_housing_add = 1
-		planet_amenities_add = 1.5
+		planet_housing_add = 100
+		planet_amenities_add = 150
 	}
 	inline_script = {
 		script = "planet/rulers/giga_ruler_part_job_swap"
@@ -2979,8 +3015,8 @@ district_giga_frameworld_amenities_gestalt = {
 	}
 	
 	planet_modifier = {
-		planet_housing_add = 2
-		job_maintenance_drone_add = 3
+		planet_housing_add = 200
+		job_maintenance_drone_add = 300
 	}
 
 	triggered_planet_modifier = {
@@ -2989,7 +3025,7 @@ district_giga_frameworld_amenities_gestalt = {
 			owner = { has_technology = tech_housing_2 }
 		}
 		modifier = {
-			job_maintenance_drone_add = 1
+			job_maintenance_drone_add = 100
 		}
 	}
 
@@ -2998,8 +3034,8 @@ district_giga_frameworld_amenities_gestalt = {
 			has_planet_flag = frameworld_advanced_city
 		}
 		modifier = {
-			job_frame_maintenance_overseer_add = 1
-			job_maintenance_drone_add = -1
+			job_frame_maintenance_overseer_add = 100
+			job_maintenance_drone_add = -100
 		}
 	}
 	
@@ -3425,7 +3461,7 @@ district_giga_frameworld_negative_mass = {
 	}
 	
 	planet_modifier = {
-		planet_housing_add = 1.5
+		planet_housing_add = 150
 	}
 	
 	triggered_planet_modifier = {
@@ -3436,7 +3472,7 @@ district_giga_frameworld_negative_mass = {
 			}
 		}
 		modifier = {
-			job_ehof_energy_converter_add = 2
+			job_ehof_energy_converter_add = 200
 		}
 	}
 	
@@ -3448,7 +3484,7 @@ district_giga_frameworld_negative_mass = {
 			}
 		}
 		modifier = {
-			job_ehof_energy_converter_drone_add = 2
+			job_ehof_energy_converter_drone_add = 200
 		}
 	}
 	
@@ -3527,7 +3563,7 @@ district_giga_frameworld_supertensiles = {
 	}
 	
 	planet_modifier = {
-		planet_housing_add = 1.5
+		planet_housing_add = 150
 	}
 	
 	triggered_planet_modifier = {
@@ -3539,7 +3575,7 @@ district_giga_frameworld_supertensiles = {
 			}
 		}
 		modifier = {
-			job_giga_megaengineer_add = 1
+			job_giga_megaengineer_add = 100
 		}
 	}
 	
@@ -3551,7 +3587,7 @@ district_giga_frameworld_supertensiles = {
 			}
 		}
 		modifier = {
-			job_giga_megaengineer_drone_add = 1
+			job_giga_megaengineer_drone_add = 100
 		}
 	}
 
@@ -3563,7 +3599,7 @@ district_giga_frameworld_supertensiles = {
 			}
 		}
 		modifier = {
-			job_giga_amb_fe_acolyte_foundry_add = 1
+			job_giga_amb_fe_acolyte_foundry_add = 100
 		}
 	}
 	
@@ -3663,7 +3699,7 @@ district_giga_frameworld_fortress = {
 	}
 	
 	planet_modifier = {
-		planet_housing_add = 1.5
+		planet_housing_add = 150
 	}
 	
 	triggered_planet_modifier = {
@@ -3672,7 +3708,7 @@ district_giga_frameworld_fortress = {
 			owner = { is_gestalt = no }
 		}
 		modifier = {
-			job_soldier_add = 2
+			job_soldier_add = 200
 		}
 	}
 	
@@ -3682,7 +3718,7 @@ district_giga_frameworld_fortress = {
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_warrior_drone_add = 2
+			job_warrior_drone_add = 200
 		}
 	}
 	
@@ -3755,7 +3791,7 @@ district_giga_frameworld_maginot_shield_generators = {
 			owner = { is_gestalt = no }
 		}
 		modifier = {
-			job_maginot_shield_generator_operator_add = 0.5
+			job_maginot_shield_generator_operator_add = 50
 		}
 	}	
 	
@@ -3765,7 +3801,7 @@ district_giga_frameworld_maginot_shield_generators = {
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_maginot_shield_generator_operator_gestalt_add = 0.5
+			job_maginot_shield_generator_operator_gestalt_add = 50
 		}
 	}
 
@@ -3844,7 +3880,7 @@ district_giga_frameworld_maginot_planetary_cannons = {
 			owner = { is_gestalt = no }					
 		}
 		modifier = {
-			job_maginot_planetary_cannon_operator_add = 0.5
+			job_maginot_planetary_cannon_operator_add = 50
 		}
 	}
 	
@@ -3854,7 +3890,7 @@ district_giga_frameworld_maginot_planetary_cannons = {
 			owner = { is_gestalt = yes }					
 		}
 		modifier = {
-			job_maginot_planetary_cannon_operator_gestalt_add = 0.5
+			job_maginot_planetary_cannon_operator_gestalt_add = 50
 		}
 	}
 

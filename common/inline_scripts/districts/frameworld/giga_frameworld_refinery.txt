@@ -263,14 +263,14 @@ inline_script = {
     script = planet/refiners/giga_chemist_job_swap
     jobs = $fake_motes$
     district = @yes
-	multiplier_string = "multiplier = @[ 1 * $mult$ ]"
+	multiplier_string = "multiplier = @[ 100 * $mult$ ]"
 }
 inline_script = {
     script = planet/refiners/giga_chemist_job_swap
     jobs = @[1 - $fake_motes$]
     district = @yes
     condition = "owner = { has_technology = tech_volatile_motes }"
-	multiplier_string = "multiplier = @[ 1 * $mult$ ]"
+	multiplier_string = "multiplier = @[ 100 * $mult$ ]"
 }
 
 ########## GASES
@@ -279,14 +279,14 @@ inline_script = {
     script = planet/refiners/giga_gas_refiner_job_swap
     jobs = $fake_gases$
     district = @yes
-	multiplier_string = "multiplier = @[ 1 * $mult$ ]"
+	multiplier_string = "multiplier = @[ 100 * $mult$ ]"
 }
 inline_script = {
     script = planet/refiners/giga_gas_refiner_job_swap
     jobs = @[ 1 - $fake_gases$ ]
     district = @yes
     condition = "owner = { has_technology = tech_exotic_gases }"
-	multiplier_string = "multiplier = @[ 1 * $mult$ ]"
+	multiplier_string = "multiplier = @[ 100 * $mult$ ]"
 }
 
 ########## CRYSTALS
@@ -295,12 +295,12 @@ inline_script = {
     script = planet/refiners/giga_translucer_job_swap
     jobs = $fake_crystals$
     district = @yes
-	multiplier_string = "multiplier = @[ 1 * $mult$ ]"
+	multiplier_string = "multiplier = @[ 100 * $mult$ ]"
 }
 inline_script = {
     script = planet/refiners/giga_translucer_job_swap
     jobs = @[1 - $fake_crystals$]
     district = @yes
     condition = "owner = { has_technology = tech_rare_crystals }"
-	multiplier_string = "multiplier = @[ 1 * $mult$ ]"
+	multiplier_string = "multiplier = @[ 100 * $mult$ ]"
 }

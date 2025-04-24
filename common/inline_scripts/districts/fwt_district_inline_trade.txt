@@ -5,7 +5,7 @@
 @advanced_rare_upkeep = 1
 @base_time = 240
 @city_time = 480
-@base_housing = 1
+@base_housing = 100
 @yes = 1
 @no = 0
 conversion_ratio = 1
@@ -38,10 +38,10 @@ resources = {
 
 planet_modifier = {
 	planet_housing_add = @base_housing
-	planet_housing_add = @[ $SIZE$ * 0.25 ]
-	job_clerk_add =  @[ 4 * $SIZE_COST$ ]
-	job_trader_add = @[ 2 * $SIZE_COST$ ]
-	job_merchant_add = @[ 1 * $SIZE_COST$ ]
+	planet_housing_add = @[ $SIZE$ * 12.5 ]
+	job_clerk_add =  @[ 400 * $SIZE_COST$ ]
+	job_trader_add = @[ 200 * $SIZE_COST$ ]
+	job_merchant_add = @[ 100 * $SIZE_COST$ ]
 }
 
 triggered_planet_modifier = {
@@ -52,8 +52,8 @@ triggered_planet_modifier = {
 		}
 	}
 	modifier = {
-		job_trader_add = 1
-		planet_housing_add = @[ 0.25 * $SIZE_COST$ ]
+		job_trader_add = 100
+		planet_housing_add = @[ 25 * $SIZE_COST$ ]
 	}
 }
 
