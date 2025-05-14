@@ -8,12 +8,7 @@
 @base_housing = 100
 @yes = 1
 @no = 0
-conversion_ratio = 1
-show_tech_unlock_if = {
-	giga_has_frameworld_origin = yes
-}
 
-is_capped_by_modifier = no
 
 inline_script = {
 	script = planet/minerals/giga_miner_job_swap
@@ -44,19 +39,14 @@ triggered_planet_modifier = {
 		}
 	}
 	modifier = {
-		planet_housing_add = 0.5
+		planet_housing_add = 50
 	}
 }
 
 planet_modifier = {
-	planet_housing_add = @base_housing
-	planet_housing_add = @[ $SIZE$ * 12.5 ]
+	zone_building_slots_add = 3
 }
 
-
-ai_resource_production = {
-	minerals = @[12 * $SIZE_COST$ ]
-	trigger = {
-		always = yes
-	}
+inline_script = {
+	script = zones/shared_city_non_urban_zone_modifiers
 }

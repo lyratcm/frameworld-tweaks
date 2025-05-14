@@ -1,0 +1,52 @@
+include = {
+	zone_giga_frameworld_foundry
+	district_giga_frameworld_city
+	zone_giga_frameworld_foundry
+	district_giga_frameworld_factory
+	district_giga_frameworld_generator
+	district_giga_frameworld_mining
+	district_giga_frameworld_farming
+	district_giga_frameworld_trade
+	district_giga_frameworld_administrative
+	district_giga_frameworld_temple
+	district_giga_frameworld_synapse
+	district_giga_frameworld_simulation
+	district_giga_frameworld_sanctuary
+	district_giga_frameworld_science
+	district_giga_frameworld_anticrime
+	district_giga_frameworld_amenities
+	district_giga_frameworld_amenities_dystopian
+	district_giga_frameworld_amenities_gestalt
+	district_giga_frameworld_supertensiles
+}
+#only frameworld zones
+exclude = {
+	zone_default
+	zone_minerals
+	zone_food
+	zone_energy
+	zone_machine_replication
+	zone_hive_spawning
+	zone_urban
+	zone_industrial
+	zone_foundry
+	zone_factory
+	zone_unity
+	zone_unity_spiritualist
+	zone_research
+	zone_research_physics
+	zone_research_engineering
+	zone_research_society
+	zone_research_unity
+	zone_trade
+	zone_fortress
+	zone_urban_food
+	zone_urban_minerals
+	zone_urban_energy
+	zone_foundry_wilderness
+	zone_unity_wilderness
+	zone_research_wilderness
+	zone_research_unity_wilderness
+	zone_fortress_wilderness
+	zone_trade_wilderness
+}

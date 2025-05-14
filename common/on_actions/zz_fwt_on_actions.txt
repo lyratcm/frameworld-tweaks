@@ -13,8 +13,8 @@ on_tech_increased = {
 on_monthly_pulse_country = {
 	events = {
 		fwt.11
-		fwt_jobs.1
-		fwt_jobs.3
+		# fwt_jobs.1
+		# fwt_jobs.3
 		fwt.5
 	}
 }
@@ -71,12 +71,12 @@ on_destroy_star_system = {
 	}
 }
 
-
-# A pop has been added to the planet
-# Root = pop
-# From = planet
-on_pop_added = {
-	events = {
-		fwt_jobs.111
-	}
-}
+#
+# # A pop has been added to the planet
+# # Root = pop
+# # From = planet
+# on_pop_added = {
+# 	events = {
+# 		fwt_jobs.111
+# 	}
+# }

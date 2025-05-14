@@ -1,5 +1,4 @@
 namespace = giga_frameworld_origin
-
 @frameworld_outpost_disassembly_reward = 50
 
 ###############################################################################################################################################
@@ -17,11 +16,6 @@ country_event = {
     }
 
     immediate = {
-        # colony ship cost modifier OBSOLETE
-        #add_modifier = {
-        #	modifier = frameworld_origin_colony_cost
-        #}
-
         set_variable = {
             which = giga_frameworld_megastructure_cost
             value = 1
@@ -190,105 +184,154 @@ country_event = {
                 modifier = frameworld_building_wreck_fix
                 days = 3
             }
-
+            # add_district = district_giga_frameworld_urban_01
+            # add_zone = {
+            #     district = district_giga_frameworld_urban_01
+            #     zone = zone_giga_frameworld_foundry
+            #     zone_slot = 0
+            #     replace = no
+            # }
+            # add_building = {
+            #     district = district_giga_frameworld_urban_01
+            #     zone = zone_giga_frameworld_foundry
+            #     building = building_foundry_1
+            # }
+            remove_building = building_holo_theatres
+            adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_01 ZONE = zone_giga_frameworld_foundry BUILDING = building_foundry_1 }
+            if = {
+                limit = {
+                    owner = {
+                        country_uses_consumer_goods = yes
+                    }
+                }
+                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_02 ZONE = district_giga_frameworld_factory BUILDING = building_factory_1 }
+            }
+            else = {
+                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_02 ZONE = district_giga_frameworld_city BUILDING = building_factory_1 }
+            }
+            adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_03 ZONE = district_giga_frameworld_generator BUILDING = building_foundry_1 }
+            adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_04 ZONE = district_giga_frameworld_mining BUILDING = building_foundry_1 }
+            if = {
+                limit = {
+                    owner = {
+                        country_uses_food = yes
+                    }
+                }
+                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_farming BUILDING = building_foundry_1 }
+            }
+            else = {
+                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_city BUILDING = building_factory_1 }
+            }
+            adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_administrative BUILDING = building_foundry_1 }
+            adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_07 ZONE = district_giga_frameworld_science BUILDING = building_foundry_1 }
+            adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_08 ZONE = district_giga_frameworld_amenities BUILDING = building_foundry_1 }
+            if = {
+                limit = {
+                    has_global_flag = giga_buildcap_j
+                }
+                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_09 ZONE = district_giga_frameworld_supertensiles BUILDING = building_foundry_1 }
+            }
+            else = {
+                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_09 ZONE = district_giga_frameworld_trade BUILDING = building_foundry_1 }
+            }
             # city
-            while = {
-                limit = {
-                    has_district = district_city
-                }
-                add_district = district_giga_frameworld_city
-                remove_district = district_city
-            }
-            # hive
-            while = {
-                limit = {
-                    has_district = district_hive
-                }
-                add_district = district_giga_frameworld_hive
-                remove_district = district_hive
-            }
-            # nexus
-            while = {
-                limit = {
-                    has_district = district_nexus
-                }
-                add_district = district_giga_frameworld_nexus
-                remove_district = district_nexus
-            }
-
-            # industrial
-            while = {
-                limit = {
-                    has_district = district_industrial
-                }
-                if = {
-                    # alternate factory-foundry for normal empires
-                    limit = {
-                        owner = {
-                            or = {
-                                is_gestalt = no
-                                has_civic = civic_machine_obsessional_directive
-                                has_civic = civic_machine_servitor
-                            }
-                        }
-                    }
-                    if = {
-                        limit = { not = { has_planet_flag = foundry_next }}
-                        add_district = district_giga_frameworld_factory
-                        set_planet_flag = foundry_next
-                    }
-                    else = {
-                        add_district = district_giga_frameworld_foundry
-                        remove_planet_flag = foundry_next
-                    }
-                }
-                else = {
-                    # all foundry for gestalts, servitor can rely on their starting sanctuary
-                    add_district = district_giga_frameworld_foundry
-                }
-                remove_district = district_industrial
-            }
-            remove_planet_flag = foundry_next
-
-            # energy
-            while = {
-                limit = {
-                    has_district = district_generator
-                }
-                add_district = district_giga_frameworld_generator
-                remove_district = district_generator
-            }
-
-            # mining
-            while = {
-                limit = {
-                    has_district = district_mining
-                }
-                add_district = district_giga_frameworld_mining
-                remove_district = district_mining
-            }
-
-            # food
-            while = {
-                limit = {
-                    has_district = district_farming
-                }
-                add_district = district_giga_frameworld_farming
-                remove_district = district_farming
-            }
+            # while = {
+            #     limit = {
+            #         has_district = district_city
+            #     }
+            #     add_district = district_giga_frameworld_city
+            #     remove_district = district_city
+            # }
+            # # hive
+            # while = {
+            #     limit = {
+            #         has_district = district_hive
+            #     }
+            #     add_district = district_giga_frameworld_hive
+            #     remove_district = district_hive
+            # }
+            # # nexus
+            # while = {
+            #     limit = {
+            #         has_district = district_nexus
+            #     }
+            #     add_district = district_giga_frameworld_nexus
+            #     remove_district = district_nexus
+            # }
+            #
+            # # industrial
+            # while = {
+            #     limit = {
+            #         has_district = district_industrial
+            #     }
+            #     if = {
+            #         # alternate factory-foundry for normal empires
+            #         limit = {
+            #             owner = {
+            #                 or = {
+            #                     is_gestalt = no
+            #                     has_civic = civic_machine_obsessional_directive
+            #                     has_civic = civic_machine_servitor
+            #                 }
+            #             }
+            #         }
+            #         if = {
+            #             limit = { not = { has_planet_flag = foundry_next }}
+            #             add_district = district_giga_frameworld_factory
+            #             set_planet_flag = foundry_next
+            #         }
+            #         else = {
+            #             add_district = district_giga_frameworld_foundry
+            #             remove_planet_flag = foundry_next
+            #         }
+            #     }
+            #     else = {
+            #         # all foundry for gestalts, servitor can rely on their starting sanctuary
+            #         add_district = district_giga_frameworld_foundry
+            #     }
+            #     remove_district = district_industrial
+            # }
+            # remove_planet_flag = foundry_next
+            #
+            # # energy
+            # while = {
+            #     limit = {
+            #         has_district = district_generator
+            #     }
+            #     add_district = district_giga_frameworld_generator
+            #     remove_district = district_generator
+            # }
+            #
+            # # mining
+            # while = {
+            #     limit = {
+            #         has_district = district_mining
+            #     }
+            #     add_district = district_giga_frameworld_mining
+            #     remove_district = district_mining
+            # }
+            #
+            # # food
+            # while = {
+            #     limit = {
+            #         has_district = district_farming
+            #     }
+            #     add_district = district_giga_frameworld_farming
+            #     remove_district = district_farming
+            # }
             #####
             remove_modifier = frameworld_building_wreck_fix
-
-            # get rid of any bad districts or buildings which can't be supported
-            validate_planet_buildings_and_districts = yes
-
-            # fix unemployed pops from the initial district shuffle
-            every_owned_pop = {
-                limit = {
-                    is_unemployed = yes
-                }
-                clear_pop_category = yes
-            }
+            #
+            # # get rid of any bad districts or buildings which can't be supported
+            # validate_planet_buildings_and_districts = yes
+            #
+            # # fix unemployed pops from the initial district shuffle
+            # every_owned_pop = {
+            #     limit = {
+            #         is_unemployed = yes
+            #     }
+            #     clear_pop_category = yes
+            # }
             check_planet_employment = yes
 
             # set the maintenance mod on
@@ -316,66 +359,73 @@ planet_event = {
     hide_window = yes
 
     immediate = {
-        #machines need extra alloys for assembly
-        if = {
-            limit = {
-                owner = {
-                    or = {
-                        is_robot_empire = yes
-                        is_machine_empire = yes
-                        is_individual_machine = yes
-                    }
-                }
-            }
-            add_district = district_giga_frameworld_foundry
+        add_district = district_giga_frameworld_urban_01
+        add_zone = {
+            district = district_giga_frameworld_urban_01
+            zone = zone_giga_frameworld_foundry
+            zone_slot = 0
+            replace = no
         }
-        # extra food for catalytic
-        if = {
-            limit = {
-                num_districts = {
-                    type = district_giga_frameworld_generator
-                    value >= 2
-                }
-                not = {
-                    owner = {
-                        has_civic = civic_catalytic_processing
-                    }
-                }
-            }
-            add_district = district_giga_frameworld_mining
-            remove_district = district_giga_frameworld_generator
-        }
-        else_if = {
-            limit = {
-                num_districts = {
-                    type = district_giga_frameworld_generator
-                    value >= 2
-                }
-                owner = {
-                    has_civic = civic_catalytic_processing
-                }
-            }
-            add_district = district_giga_frameworld_farming
-            remove_district = district_giga_frameworld_generator
-        }
-        #some last tweaks to make starting numbers more even
-        if = {
-            limit = {
-                has_building = building_commercial_zone
-            }
-            remove_building = building_commercial_zone
-            add_building = building_foundry_1
-        }
+        # #machines need extra alloys for assembly
+        # if = {
+        #     limit = {
+        #         owner = {
+        #             or = {
+        #                 is_robot_empire = yes
+        #                 is_machine_empire = yes
+        #                 is_individual_machine = yes
+        #             }
+        #         }
+        #     }
+        #     add_district = district_giga_frameworld_foundry
+        # }
+        # # extra food for catalytic
+        # if = {
+        #     limit = {
+        #         num_districts = {
+        #             type = district_giga_frameworld_generator
+        #             value >= 2
+        #         }
+        #         not = {
+        #             owner = {
+        #                 has_civic = civic_catalytic_processing
+        #             }
+        #         }
+        #     }
+        #     add_district = district_giga_frameworld_mining
+        #     remove_district = district_giga_frameworld_generator
+        # }
+        # else_if = {
+        #     limit = {
+        #         num_districts = {
+        #             type = district_giga_frameworld_generator
+        #             value >= 2
+        #         }
+        #         owner = {
+        #             has_civic = civic_catalytic_processing
+        #         }
+        #     }
+        #     add_district = district_giga_frameworld_farming
+        #     remove_district = district_giga_frameworld_generator
+        # }
+        # #some last tweaks to make starting numbers more even
+        # if = {
+        #     limit = {
+        #         has_building = building_commercial_zone
+        #     }
+        #     remove_building = building_commercial_zone
+        #     add_building = building_foundry_1
+        # }
         # get rid of any bad districts or buildings which can't be supported
         validate_planet_buildings_and_districts = yes
 
-        # fix unemployed pops from the initial district shuffle
-        every_owned_pop = {
-            limit = {
-                is_unemployed = yes
-            }
-            clear_pop_category = yes
-        }
+        # # fix unemployed pops from the initial district shuffle
+        # every_owned_pop = {
+        #     limit = {
+        #         is_unemployed = yes
+        #     }
+        #     clear_pop_category = yes
+        # }
         check_planet_employment = yes
     }
 }

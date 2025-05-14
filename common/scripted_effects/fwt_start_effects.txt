@@ -1,0 +1,21 @@
+adding_district_zone_or_building = {
+    if = {
+        limit = {
+            num_districts = { type = $DISTRICT$ value = 0 }
+        }
+        add_district = $DISTRICT$
+    }
+    add_zone = {
+        district = $DISTRICT$
+        zone = $ZONE$
+        zone_slot = 0
+        replace = no
+    }
+    [[BUILDING]
+        add_building = {
+            district = $DISTRICT$
+            zone = $ZONE$
+            building = $BUILDING$
+        }
+    ]
+}

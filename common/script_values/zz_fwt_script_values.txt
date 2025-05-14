@@ -567,3 +567,23 @@ fwt_situation_finish_count = {
 	subtract = value:fwt_situation_finish_count_sub
 	divide = 100
 }
+
+
+
+giga_planet_density_offset_modifier_by_pops = {
+	weight = modifier:$modifier$
+	subtract = modifier:giga_$modifier$_offset
+	[[countCountry]
+		modifier = {
+			exists = owner
+			subtract = owner.modifier:giga_$modifier$_offset
+		}
+	]
+	[[positiveOnly]
+		min = 0
+	]
+	[[negativeOnly]
+		max = 0
+	]
+	multiply = value:giga_planet_density_by_pops|pops|$pops|20000$|
+}

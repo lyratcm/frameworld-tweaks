@@ -1,0 +1,7 @@
+slot_frameworld_urban_01 = {
+    inline_script = zones/fwt_zones_frameworld_urban
+
+    unlock = { # planet scope
+        uses_district_set = giga_frameworld
+    }
+}

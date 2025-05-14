@@ -8,18 +8,8 @@
 @base_housing = 100
 @yes = 1
 @no = 0
-conversion_ratio = 1
-show_tech_unlock_if = {
-	giga_has_frameworld_origin = yes
-	is_gestalt = no
-}
 
-is_capped_by_modifier = no
-
-prerequisites = {
-	#fall back tech that everyone will get
-	tech_interstellar_economics
-}
+show_in_tech = tech_interstellar_economics
 
 base_buildtime = @[ city_time * $SIZE_COST$ * $SCALE$ ]
 
@@ -35,13 +25,16 @@ resources = {
 		rare_crystals = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
 	}
 }
-
 planet_modifier = {
-	planet_housing_add = @base_housing
-	planet_housing_add = @[ $SIZE$ * 12.5 ]
-	job_clerk_add =  @[ 400 * $SIZE_COST$ ]
-	job_trader_add = @[ 200 * $SIZE_COST$ ]
-	job_merchant_add = @[ 100 * $SIZE_COST$ ]
+	zone_building_slots_add = 3
+}
+
+inline_script = {
+	script = zones/shared_city_non_urban_zone_modifiers
+}
+triggered_district_planet_modifier = {
+	job_trader_add = @[ 300 * $SIZE_COST$ ]
+	job_merchant_add = @[ 150 * $SIZE_COST$ ]
 }
 
 triggered_planet_modifier = {
@@ -63,17 +56,4 @@ triggered_desc = {
 
 triggered_desc = {
 	text = job_trader_effect_desc
-}
-
-ai_resource_production = {
-	energy = @[ 12 * $SIZE_COST$ ]
-	trigger = {
-		OR = {
-			num_unemployed >= 10
-			num_assigned_jobs = {
-				job = servant
-				value >= 10
-			}
-		}
-	}
 }

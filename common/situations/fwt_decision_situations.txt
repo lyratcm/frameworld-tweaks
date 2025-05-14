@@ -80,7 +80,7 @@ fwt_situation_continuous_expansion = {
 			# update entity and do all the math
 			hidden_effect = {
 				giga_frameworld_update_entity_with_fallback = yes
-				giga_frameworld_recalculate_variables = yes
+				# giga_frameworld_recalculate_variables = yes
 				frameworld_conduct_audit_check_ai = yes
 			}
 			remove_flags = { NAME = giga_frameworld_expand }
@@ -174,7 +174,8 @@ fwt_situation_continuous_expansion = {
 						# update entity and do all the math
 						hidden_effect = {
 							giga_frameworld_update_entity_with_fallback = yes
-							giga_frameworld_recalculate_variables = yes
+							#uncomment this once magiont stuff is added back
+							# giga_frameworld_recalculate_variables = yes
 							frameworld_conduct_audit_check_ai = yes
 						}
 						remove_flags = { NAME = giga_frameworld_expand }

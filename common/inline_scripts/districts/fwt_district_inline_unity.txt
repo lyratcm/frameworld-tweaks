@@ -33,14 +33,10 @@ inline_script = {
 	district = 1
 }
 
-planet_modifier = {
-	planet_housing_add = @base_housing
-	planet_housing_add = @[ $SIZE$ * 12.5 ]
+inline_script = {
+	script = zones/shared_city_non_urban_zone_modifiers
 }
 
-ai_resource_production = {
-	unity = @[ 4 * $SIZE_COST$ ]
-	trigger = {
-		always = yes
-	}
+planet_modifier = {
+	zone_building_slots_add = 3
 }

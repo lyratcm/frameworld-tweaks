@@ -1,0 +1,23 @@
+inline_script = {
+    script = planet/security/parts/giga_security_job_swap
+
+    jobs = $jobs$
+
+    add = "$mode$"
+    mode = @job_mode_add
+
+    type = "$type$"
+    type = @modifier_mode_planet
+
+    condition = "$condition$"
+    condition = ""
+
+    district = $district$
+    district = @no
+
+    description = $description$
+    description = @yes
+
+    multiplier_string = "$multiplier_string$"
+    multiplier_string = ""
+}

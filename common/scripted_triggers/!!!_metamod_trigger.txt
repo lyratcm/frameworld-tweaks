@@ -1,0 +1,4 @@
+#compat with my other mods
+megacorp_metamod_enable = {
+    always = no
+}

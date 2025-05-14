@@ -10,13 +10,6 @@
 @no = 0
 
 
-conversion_ratio = 1
-show_tech_unlock_if = {
-	giga_has_frameworld_origin = yes
-}
-
-is_capped_by_modifier = no
-
 inline_script = {
 	script = planet/energy/giga_technician_job_swap
 	jobs = @[ 400 * $SIZE_COST$ ]
@@ -40,8 +33,11 @@ resources = {
 }
 
 planet_modifier = {
-	planet_housing_add = @base_housing
-	planet_housing_add = @[ $SIZE$ * 12.5 ]
+	zone_building_slots_add = 3
+}
+
+inline_script = {
+	script = zones/shared_city_non_urban_zone_modifiers
 }
 
 
@@ -66,12 +62,5 @@ triggered_planet_modifier = {
 	}
 	modifier = {
 		planet_housing_add = 50
-	}
-}
-
-ai_resource_production = {
-	energy = @[ 8 * $SIZE_COST$ ]
-	trigger = {
-		always = yes
 	}
 }

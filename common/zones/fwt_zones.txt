@@ -1,0 +1,1115 @@
+district_giga_frameworld_city = {
+    base_buildtime = @city_time
+    icon = district_city
+
+    unlock = {
+        exists = from
+        from = { is_gestalt = no }
+        OR = {
+            uses_district_set = giga_frameworld
+        }
+        not = { has_planet_flag = frameworld_advanced_city_completed }
+    }
+
+    potential = {
+        exists = owner
+        owner = { is_gestalt = no }
+        uses_district_set = giga_frameworld
+        not = { has_planet_flag = frameworld_advanced_city_completed }
+    }
+
+    conversion_ratio = 1
+    convert_to = {
+        district_giga_frameworld_nexus
+        district_giga_frameworld_hive
+        district_giga_frameworld_city_advanced
+        district_giga_frameworld_nexus_advanced
+        district_giga_frameworld_hive_advanced
+    }
+
+    resources = {
+        category = planet_districts_cities
+        cost = {
+            minerals = @city_cost
+        }
+        upkeep = {
+            energy = @city_upkeep
+        }
+    }
+    include = {
+        all
+    }
+    excluded_building_sets = {
+        generator
+        mining
+        farming
+        knights
+        betharian
+    }
+    max_buildings = 3
+    triggered_district_planet_modifier = {
+        planet_housing_add = 400
+        # planet_max_buildings_add = 1
+    }
+    planet_modifier = {
+        zone_building_slots_add = 3
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_valid_civic = civic_agrarian_idyll
+            }
+        }
+        modifier = {
+            planet_housing_add = -50
+        }
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { has_active_tradition = tr_prosperity_public_works }
+        }
+        modifier = {
+            planet_housing_add = 50
+        }
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_housing_1
+            }
+        }
+        modifier = {
+            planet_housing_add = 50
+        }
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                has_technology = tech_housing_2
+                NOT = { has_valid_civic = civic_agrarian_idyll }
+            }
+        }
+        modifier = {
+            planet_housing_add = 50
+        }
+    }
+}
+
+zone_giga_frameworld_foundry = {
+    icon = GFX_colony_type_foundry
+    base_buildtime = @zone_buildtime
+    potential = {
+        exists = owner
+        uses_district_set = giga_frameworld
+        not = { has_planet_flag = frameworld_advanced_city_completed }
+        not = { has_planet_flag = frameworld_advanced_industrial_completed }
+    }
+
+
+    unlock = { # planet scope
+        hidden_trigger = { exists = owner }
+        exists = from
+        uses_district_set = giga_frameworld
+        not = { has_planet_flag = frameworld_advanced_city_completed }
+        not = { has_planet_flag = frameworld_advanced_industrial_completed }
+    }
+
+
+    resources = {
+        category = planet_zones
+        cost = {
+            minerals = @zone_cost
+        }
+    }
+
+    included_building_sets = {
+        foundry
+        automation
+        origin
+    }
+
+    inline_script = {
+        script = districts/params/fwt_district_inline_alloy_params
+    }
+}
+
+district_giga_frameworld_factory = {
+	icon = district_arcology_civilian_industry
+    unlock = {
+		exists = from
+		uses_district_set = giga_frameworld
+		not = {  has_planet_flag = frameworld_advanced_city_completed }
+		not = { has_planet_flag = frameworld_advanced_industrial_completed }
+		from = {
+			or = {
+				is_gestalt = no
+				has_valid_civic = civic_machine_servitor
+				country_uses_consumer_goods = yes
+			}
+		}
+	}
+
+	potential = {
+		exists = owner
+		uses_district_set = giga_frameworld
+		not = {  has_planet_flag = frameworld_advanced_city_completed }
+		not = { has_planet_flag = frameworld_advanced_industrial_completed }
+		owner = {
+			or = {
+				is_gestalt = no
+				has_valid_civic = civic_machine_servitor
+				country_uses_consumer_goods = yes
+			}
+		}
+	}
+
+    included_building_sets = {
+        factory
+        automation
+        origin
+    }
+
+    show_in_tech = tech_basic_industry
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_factory_params
+	}
+}
+
+district_giga_frameworld_generator = {
+	icon = district_hab_energy
+
+    unlock = {
+		uses_district_set = giga_frameworld
+		not = { has_planet_flag = frameworld_habitat_completed }
+		not = { has_planet_flag = frameworld_penrose_completed }
+	}
+
+	potential = {
+		uses_district_set = giga_frameworld
+		not = { has_planet_flag = frameworld_habitat_completed }
+		not = { has_planet_flag = frameworld_penrose_completed }
+	}
+
+    show_in_tech = tech_power_plant_1
+
+    included_building_sets = {
+        generator
+        fallen_empire_generator
+        automation
+    }
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_energy_params
+	}
+
+	convert_to = {
+		district_giga_frameworld_penrose
+		district_giga_frameworld_hab_generator
+	}
+}
+
+district_giga_frameworld_mining = {
+	icon = district_hab_mining
+
+    unlock = {
+		uses_district_set = giga_frameworld
+		not = { has_planet_flag = frameworld_habitat_completed }
+		not = { has_planet_flag = frameworld_decompressor_completed }
+	}
+
+	potential = {
+		uses_district_set = giga_frameworld
+		not = {	has_planet_flag = frameworld_habitat_completed }
+		not = { has_planet_flag = frameworld_decompressor_completed }
+	}
+
+    show_in_tech = tech_mechanized_mining
+
+    included_building_sets = {
+        mining
+        fallen_empire_mining
+        automation
+    }
+
+	convert_to = {
+		district_giga_frameworld_strip_mine
+		district_giga_frameworld_hab_mining
+	}
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_minerals_params
+	}
+}
+
+district_giga_frameworld_farming = {
+	icon = district_farming
+
+    unlock = {
+		uses_district_set = giga_frameworld
+		not = { has_planet_flag = frameworld_habitat_completed }
+		not = {
+			has_planet_flag = frameworld_yggdrasil_orchid_completed
+		}
+	}
+
+	potential = {
+		uses_district_set = giga_frameworld
+		not = { has_planet_flag = frameworld_habitat_completed }
+		not = {
+			has_planet_flag = frameworld_yggdrasil_orchid_completed
+		}
+	}
+
+    show_in_tech = tech_industrial_farming
+
+    included_building_sets = {
+        farming
+        hydroponics
+        automation
+        fallen_empire_farming
+    }
+
+
+
+	convert_to = {
+		district_giga_frameworld_yggdrasil
+		district_giga_frameworld_hab_farming
+	}
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_food_params
+	}
+}
+
+district_giga_frameworld_trade = {
+	icon = district_hab_commercial
+
+    unlock = {
+		exists = from
+		from = {
+			is_gestalt = no
+			or = {
+				is_megacorp = yes
+				has_technology = "tech_interstellar_economics"
+			}
+		}
+		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
+		not = { has_planet_flag = frameworld_advanced_city_completed }
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			or = {
+				is_megacorp = yes
+				has_technology = "tech_interstellar_economics"
+			}
+		}
+		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
+		not = { has_planet_flag = frameworld_advanced_city_completed }
+		uses_district_set = giga_frameworld
+	}
+
+    included_building_sets = {
+        urban
+        trade
+        automation
+        origin
+    }
+
+
+
+	convert_to = {
+		district_giga_frameworld_generator
+		district_giga_frameworld_ecu_trade
+		district_giga_frameworld_advanced_trade
+	}
+
+	inline_script = {
+		script =  districts/params/fwt_district_inline_trade_params
+	}
+}
+
+district_giga_frameworld_administrative = {
+	icon = district_arcology_administrative
+
+    unlock = {
+		exists = from
+		from = {
+			is_gestalt = no
+			giga_country_uses_priests = no
+			has_technology = "tech_colonial_bureaucracy"
+		}
+		not = { has_planet_flag = frameworld_advanced_city_completed }
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			giga_country_uses_priests = no
+			has_technology = "tech_colonial_bureaucracy"
+		}
+		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
+		not = { has_planet_flag = frameworld_advanced_city_completed }
+		uses_district_set = giga_frameworld
+	}
+
+    show_in_tech = tech_planetary_government
+
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_unity_params
+		JOB = "planet/unity/giga_bureaucrat_swap"
+	}
+
+    included_building_sets = {
+        unity
+        automation
+        origin
+    }
+
+
+
+	convert_to = {
+		district_giga_frameworld_sanctuary_advanced
+		district_giga_frameworld_sanctuary
+		district_giga_frameworld_advanced_simulation
+		district_giga_frameworld_ecu_simulation
+		district_giga_frameworld_advanced_synapse
+		district_giga_frameworld_ecu_synapse
+		district_giga_frameworld_advanced_temple
+		district_giga_frameworld_ecu_temple
+	}
+}
+
+district_giga_frameworld_temple = {
+	icon = district_arcology_administrative
+
+    unlock = {
+		exists = from
+		from = {
+			is_gestalt = no
+			giga_country_uses_priests = yes
+		}
+		uses_district_set = giga_frameworld
+		not = { has_planet_flag = frameworld_advanced_city_completed }
+		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			giga_country_uses_priests = yes
+			has_technology = "tech_holographic_rituals"
+		}
+		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
+		uses_district_set = giga_frameworld
+		not = { has_planet_flag = frameworld_advanced_city_completed }
+	}
+
+    show_in_tech = tech_planetary_government
+
+	convert_to = {
+		district_giga_frameworld_sanctuary_advanced
+		district_giga_frameworld_sanctuary
+		district_giga_frameworld_advanced_simulation
+		district_giga_frameworld_ecu_simulation
+		district_giga_frameworld_advanced_synapse
+		district_giga_frameworld_ecu_synapse
+		district_giga_frameworld_advanced_temple
+		district_giga_frameworld_advanced_administrative
+		district_giga_frameworld_ecu_administrative
+	}
+	inline_script = {
+		script = districts/params/fwt_district_inline_unity_params
+		JOB = "planet/unity/giga_priest_swap"
+	}
+}
+
+# hive unity
+district_giga_frameworld_synapse = {
+	icon = district_arcology_administrative
+
+    unlock = {
+		exists = from
+		from = {
+			is_hive_empire = yes
+			has_technology = "tech_hive_cluster"
+		}
+		not = { has_planet_flag = frameworld_advanced_city_completed }
+		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+			has_technology = "tech_hive_cluster"
+		}
+		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
+		not = { has_planet_flag = frameworld_advanced_city_completed }
+		uses_district_set = giga_frameworld
+	}
+
+    show_in_tech = tech_hive_node
+
+	convert_to = {
+		district_giga_frameworld_sanctuary_advanced
+		district_giga_frameworld_sanctuary
+		district_giga_frameworld_advanced_simulation
+		district_giga_frameworld_ecu_simulation
+		district_giga_frameworld_advanced_synapse
+		district_giga_frameworld_advanced_temple
+		district_giga_frameworld_ecu_temple
+		district_giga_frameworld_advanced_administrative
+		district_giga_frameworld_ecu_administrative
+	}
+	inline_script = {
+		script = districts/params/fwt_district_inline_unity_params
+		JOB = "planet/unity/giga_gestalt_unity_job_swap"
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_domination_synaptic_extensions
+			}
+		}
+		modifier = {
+			planet_housing_add = 2
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_edict = synaptic_reinforcement
+			}
+		}
+		job_maintenance_drone_add = 1
+	}
+
+	triggered_desc = {
+		text = job_synapse_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_edict = synaptic_reinforcement
+			}
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+}
+
+district_giga_frameworld_simulation = {
+	icon = district_arcology_administrative
+
+	unlock = {
+		exists = from
+		from = {
+			is_machine_empire = yes
+			NOT = { has_valid_civic = civic_machine_servitor }
+			has_technology = "tech_colonial_bureaucracy"
+		}
+		not = { has_planet_flag = frameworld_advanced_city_completed }
+		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			NOT = { has_valid_civic = civic_machine_servitor }
+			has_technology = "tech_colonial_bureaucracy"
+		}
+		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
+		not = { has_planet_flag = frameworld_advanced_city_completed }
+		uses_district_set = giga_frameworld
+	}
+
+    show_in_tech = tech_planetary_government
+
+	convert_to = {
+		district_giga_frameworld_sanctuary_advanced
+		district_giga_frameworld_sanctuary
+		district_giga_frameworld_advanced_simulation
+		district_giga_frameworld_advanced_synapse
+		district_giga_frameworld_ecu_synapse
+		district_giga_frameworld_advanced_temple
+		district_giga_frameworld_ecu_temple
+		district_giga_frameworld_advanced_administrative
+		district_giga_frameworld_ecu_administrative
+	}
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_unity_params
+		JOB = "planet/unity/giga_gestalt_unity_job_swap"
+	}
+}
+
+district_giga_frameworld_sanctuary = {
+	icon = district_arcology_administrative
+
+	unlock = {
+		exists = from
+		from = {
+			is_machine_empire = yes
+			has_valid_civic = civic_machine_servitor
+			has_technology = "tech_paradise_dome"
+		}
+		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
+		not = { has_planet_flag = frameworld_advanced_sanctuary_completed }
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			has_valid_civic = civic_machine_servitor
+			has_technology = "tech_paradise_dome"
+		}
+		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
+		not = { has_planet_flag = frameworld_advanced_sanctuary_completed }
+		uses_district_set = giga_frameworld
+	}
+
+    show_in_tech = tech_planetary_government
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_unity_params
+
+		#lyra added to fit script
+		JOB = "districts/fwt_bio_trophy_job_swap"
+	}
+
+
+	convert_to = {
+		district_giga_frameworld_sanctuary_advanced
+		district_giga_frameworld_advanced_simulation
+		district_giga_frameworld_ecu_simulation
+		district_giga_frameworld_advanced_synapse
+		district_giga_frameworld_ecu_synapse
+		district_giga_frameworld_advanced_temple
+		district_giga_frameworld_ecu_temple
+		district_giga_frameworld_advanced_administrative
+		district_giga_frameworld_ecu_administrative
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			always = yes
+		}
+		planet_housing_add = -1
+	}
+
+	triggered_desc = {
+		text = job_bio_trophy_effect_desc
+	}
+}
+
+district_giga_frameworld_science = {
+	icon = district_hab_science
+
+	unlock = {
+		exists = from
+		not = {
+			has_planet_flag = frameworld_computing_complex_completed
+		}
+		not = { has_planet_flag = frameworld_habitat_completed }
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		not = {
+			has_planet_flag = frameworld_computing_complex_completed
+		}
+		not = { has_planet_flag = frameworld_habitat_completed }
+		uses_district_set = giga_frameworld
+	}
+
+    show_in_tech = tech_basic_science_lab_1
+
+	triggered_planet_modifier = {
+		potential = {
+			not = {
+				owner = {
+					has_technology = "tech_basic_science_lab_2"
+				}
+			}
+		}
+		modifier = {
+			planet_housing_add = 1
+		}
+	}
+
+    included_building_sets = {
+        research
+        automation
+        origin
+    }
+
+    planet_modifier = {
+        zone_building_slots_add = 3
+    }
+
+    inline_script = {
+        script = zones/shared_city_non_urban_zone_modifiers
+    }
+
+	convert_to = {
+		district_giga_frameworld_hab_science
+		district_giga_frameworld_science_computer
+	}
+	#base
+	inline_script = {
+		script = districts/params/fwt_district_inline_science_params
+	}
+}
+
+district_giga_frameworld_anticrime = {
+	base_buildtime = @advanced_time
+	icon = district_penrose_generator
+
+	unlock = {
+		exists = from
+		from = {
+			has_technology = "tech_colonial_centralization"
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			has_technology = "tech_colonial_centralization"
+		}
+		uses_district_set = giga_frameworld
+	}
+
+    show_in_tech = tech_colonial_centralization
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @advanced_cost
+			volatile_motes = @advanced_rare_cost
+		}
+		upkeep = {
+			energy = @advanced_upkeep
+			volatile_motes = @advanced_rare_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 150
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		modifier = {
+			job_enforcer_add = 500
+		}
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		modifier = {
+			job_patrol_drone_add = 500
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = no }
+		}
+		text = job_enforcer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { is_gestalt = yes }
+		}
+		text = job_patrol_drone_effect_desc
+	}
+}
+
+# amenities
+
+district_giga_frameworld_amenities = {
+	base_buildtime = @advanced_time
+	icon = district_arcology_leisure
+
+	unlock = {
+		exists = from
+		from = {
+			is_gestalt = no
+			NOT = { has_valid_civic = civic_dystopian_society }
+			has_technology = tech_hyper_entertainment_forum
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			NOT = { has_valid_civic = civic_dystopian_society }
+			has_technology = tech_hyper_entertainment_forum
+		}
+		uses_district_set = giga_frameworld
+	}
+
+    show_in_tech = tech_hyper_entertainment_forum
+
+	conversion_ratio = 1.0
+	convert_to = {
+		district_giga_frameworld_amenities_dystopian
+		district_giga_frameworld_amenities_gestalt
+	}
+
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @advanced_cost
+			exotic_gases = @advanced_rare_cost
+		}
+		upkeep = {
+			energy = @advanced_upkeep
+			exotic_gases = @advanced_rare_upkeep
+		}
+	}
+
+    planet_modifier = {
+        zone_building_slots_add = 3
+    }
+
+    inline_script = {
+        script = zones/shared_city_non_urban_zone_modifiers
+    }
+
+    triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { NOT = { has_valid_civic = civic_warrior_culture } }
+		}
+		modifier = {
+			job_entertainer_add = 100
+		}
+	}
+
+    triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_valid_civic = civic_warrior_culture }
+		}
+		modifier = {
+			job_duelist_add = 100
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { NOT = { has_valid_civic = civic_warrior_culture } }
+		}
+		text = job_entertainer_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = { has_valid_civic = civic_warrior_culture }
+		}
+		text = job_duelist_effect_desc
+	}
+}
+
+###############################################################################################################
+
+# dystopian amenities
+
+district_giga_frameworld_amenities_dystopian = {
+	base_buildtime = @advanced_time
+	icon = district_arcology_leisure
+
+	unlock = {
+		exists = from
+		from = {
+			is_gestalt = no
+			has_valid_civic = civic_dystopian_society
+			has_technology = tech_colonial_centralization
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			has_valid_civic = civic_dystopian_society
+			has_technology = tech_colonial_centralization
+		}
+		uses_district_set = giga_frameworld
+	}
+
+    show_in_tech = tech_colonial_centralization
+
+	convert_to = {
+		district_giga_frameworld_amenities
+		district_giga_frameworld_amenities_gestalt
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @[ advanced_cost * 2 ]
+			rare_crystals = @advanced_rare_cost
+			exotic_gases = @advanced_rare_cost
+		}
+		upkeep = {
+			energy = @[ advanced_upkeep * 2 ]
+			rare_crystals = @advanced_rare_upkeep
+			exotic_gases = @advanced_rare_upkeep
+		}
+	}
+
+	triggered_desc = {
+		trigger = { always = yes }
+		text = district_giga_frameworld_amenities_dystopian_limit
+	}
+
+	planet_modifier = {
+		planet_housing_add = 100
+		planet_amenities_add = 150
+	}
+	inline_script = {
+		script = "planet/rulers/giga_ruler_part_job_swap"
+		jobs = 2
+		district = @yes
+		condition = "owner = { is_gestalt = no }"
+	}
+}
+
+###############################################################################################################
+
+# gestalt amenities
+district_giga_frameworld_amenities_gestalt = {
+	base_buildtime = @advanced_time
+	icon = district_arcology_leisure
+
+	unlock = {
+		exists = from
+		from = {
+			is_gestalt = yes
+			has_technology = "tech_unity_of_purpose"
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = yes
+			has_technology = "tech_unity_of_purpose"
+		}
+		uses_district_set = giga_frameworld
+	}
+
+    show_in_tech = tech_unity_of_purpose
+
+	convert_to = {
+		district_giga_frameworld_amenities_dystopian
+		district_giga_frameworld_amenities
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = @advanced_cost
+			rare_crystals = @advanced_rare_cost
+		}
+		upkeep = {
+			energy = @advanced_upkeep
+			rare_crystals = @advanced_rare_upkeep
+		}
+	}
+    planet_modifier = {
+        zone_building_slots_add = 3
+    }
+
+    inline_script = {
+        script = zones/shared_city_non_urban_zone_modifiers
+    }
+
+    triggered_district_planet_modifier = {
+		job_maintenance_drone_add = 300
+	}
+
+    triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = tech_housing_2 }
+		}
+		modifier = {
+			job_maintenance_drone_add = 100
+		}
+	}
+
+    triggered_district_planet_modifier = {
+		potential = {
+			has_planet_flag = frameworld_advanced_city
+		}
+		modifier = {
+			job_frame_maintenance_overseer_add = 100
+			job_maintenance_drone_add = -100
+		}
+	}
+
+	triggered_desc = {
+		text = job_maintenance_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			has_deposit = d_frameworld_advanced_nexus
+		}
+		text = job_frame_maintenance_overseer_effect_desc
+	}
+}
+
+district_giga_frameworld_supertensiles = {
+	base_buildtime = @b2_time
+	icon = district_giga_supertensiles
+	is_capped_by_modifier = no
+
+    show_in_tech = giga_tech_amb_supertensiles
+
+	unlock = {
+		has_global_flag = @giga_amb_flag
+		exists = from
+		from = {
+			has_technology = giga_tech_amb_supertensiles
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		has_global_flag = @giga_amb_flag
+		exists = owner
+		owner = {
+			has_technology = giga_tech_amb_supertensiles
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	resources = {
+		category = planet_districts_industrial
+		cost = {
+			minerals = @b2_minerals
+		}
+		upkeep = {
+			energy = @b2_upkeep
+		}
+	}
+
+	planet_modifier = {
+		planet_housing_add = 150
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		modifier = {
+			job_giga_megaengineer_add = 100
+		}
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		modifier = {
+			job_giga_megaengineer_drone_add = 100
+		}
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		modifier = {
+			job_giga_amb_fe_acolyte_foundry_add = 100
+		}
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = no
+				is_fallen_empire_spiritualist = no
+			}
+		}
+		text = job_giga_megaengineer_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_gestalt = yes
+			}
+		}
+		text = job_giga_megaengineer_drone_effect_desc
+	}
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_fallen_empire_spiritualist = yes
+			}
+		}
+		text = job_giga_amb_fe_acolyte_foundry_effect_desc
+	}
+}
+

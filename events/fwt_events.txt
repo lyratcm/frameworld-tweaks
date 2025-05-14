@@ -10,6 +10,8 @@ country_event = {
         giga_has_frameworld_origin = yes
     }
     immediate = {
+        #backup as can't seem to trigger the event via an onaction
+        country_event = { id = giga_frameworld_origin.000 days = 32 }
         random_planet_within_border = {
             limit = {
                 exists = owner
@@ -29,17 +31,17 @@ country_event = {
                     }
                     set_variable = {
                         which = fwt_growth_ceiling
-                        value = 1.7
+                        value = 5
                     }
                     set_variable = {
                         which = fwt_required_scaling
-                        value = 0.25
+                        value = 0.2
                     }
                 }
                 else = {
                     set_variable = {
                         which = fwt_growth_ceiling
-                        value = 1.5
+                        value = 5
                     }
                     set_variable = {
                         which = fwt_required_scaling
@@ -61,8 +63,8 @@ country_event = {
             set_variable = { which = frame_expansion_scale value = 2 }
             set_variable = { which = background_pops value = 0 }
             set_variable = { which = fwt_maintance_scale value = 0.5 }
-            add_deposit = d_fwt_job_size
-            planet_event = { id = fwt_jobs.31 }
+            # add_deposit = d_fwt_job_size
+            # planet_event = { id = fwt_jobs.31 }
             save_global_event_target_as = frame_expand@owner
             add_modifier = {
                 modifier = fwt_job_size_info
@@ -70,12 +72,12 @@ country_event = {
             add_modifier = {
                 modifier = fwt_speed_unemploy_info
                 multiplier = -100000000
-                days = 40
+                days = 70
             }
-            planet_event = {
-                id = fwt_jobs.31
-                days = 61
-            }
+            # planet_event = {
+            #     id = fwt_jobs.31
+            #     days = 61
+            # }
             #normal empires start with a little to much cg little to few minerals
             if = {
                 limit = {
@@ -907,154 +909,154 @@ situation_event = {
     }
 }
 
-country_event = {
-    id = fwt.43
-    title = "fwt.43.maintenance.name"
-    desc = "fwt.43.maintenance.desc"
-    picture = GFX_evt_overgrown_city
-    location = from
-    show_sound = event_wind_ruins
-    hide_window = no
-    is_triggered_only = yes
-
-    option = {
-        name = fwt.43.default
-        allow = {
-            not = { has_country_flag = fwt_maintenance_default }
-        }
-        set_country_flag = fwt_maintenance_default
-        remove_country_flag = fwt_maintenance_alloy
-        remove_country_flag = fwt_maintenance_research
-        remove_country_flag = fwt_maintenance_unity
-        country_event = {
-            id = fwt.43
-        }
-    }
-    option = {
-        name = fwt.43.alloy
-        allow = {
-            not = { has_country_flag = fwt_maintenance_alloy }
-        }
-        set_country_flag = fwt_maintenance_alloy
-        remove_country_flag = fwt_maintenance_default
-        remove_country_flag = fwt_maintenance_research
-        remove_country_flag = fwt_maintenance_unity
-        country_event = {
-            id = fwt.43
-        }
-    }
-    option = {
-        name = fwt.43.research
-        allow = {
-            not = { has_country_flag = fwt_maintenance_research }
-        }
-        set_country_flag = fwt_maintenance_research
-        remove_country_flag = fwt_maintenance_alloy
-        remove_country_flag = fwt_maintenance_default
-        remove_country_flag = fwt_maintenance_unity
-        country_event = {
-            id = fwt.43
-        }
-    }
-    option = {
-        name = fwt.43.unity
-        allow = {
-            not = { has_country_flag = fwt_maintenance_unity }
-        }
-        set_country_flag = fwt_maintenance_unity
-        remove_country_flag = fwt_maintenance_alloy
-        remove_country_flag = fwt_maintenance_research
-        remove_country_flag = fwt_maintenance_default
-        country_event = {
-            id = fwt.43
-        }
-    }
-    option = {
-        name = fwt.43.count
-        country_event = {
-            id = fwt.431
-        }
-    }
-    option = {
-        name = fwt.close_menu
-        remove_country_flag = auto_menu_open
-    }
-}
-
-country_event = {
-    id = fwt.431
-    title = "fwt.431.expand.name"
-    desc = "fwt.431.expand.desc"
-    picture = GFX_evt_overgrown_city
-    location = from
-    show_sound = event_wind_ruins
-    hide_window = no
-    is_triggered_only = yes
-
-    immediate = {
-        if = {
-            limit = {
-                not = {
-                    is_variable_set = fwt_maintenance_count
-                }
-            }
-            set_variable = {
-                which = fwt_maintenance_count
-                value = 5
-            }
-        }
-    }
-    option = {
-        name = fwt.431.increase_3
-        country_event = {
-            id = fwt.431
-        }
-        change_variable = {
-            which = fwt_maintenance_count
-            value = 3
-        }
-    }
-    option = {
-        name = fwt.431.increase_1
-        change_variable = {
-            which = fwt_maintenance_count
-            value = 1
-        }
-        country_event = {
-            id = fwt.431
-        }
-    }
-    option = {
-        name = fwt.431.current
-        allow = {
-            always = no
-        }
-    }
-    option = {
-        name = fwt.431.decrease_1
-        change_variable = {
-            which = fwt_maintenance_count
-            value = -1
-        }
-        country_event = {
-            id = fwt.431
-        }
-    }
-    option = {
-        name = fwt.431.decrease_3
-        change_variable = {
-            which = fwt_maintenance_count
-            value = -3
-        }
-        country_event = {
-            id = fwt.431
-        }
-    }
-    option = {
-        name = fwt.close_menu
-        remove_country_flag = auto_menu_open
-    }
-}
+# country_event = {
+#     id = fwt.43
+#     title = "fwt.43.maintenance.name"
+#     desc = "fwt.43.maintenance.desc"
+#     picture = GFX_evt_overgrown_city
+#     location = from
+#     show_sound = event_wind_ruins
+#     hide_window = no
+#     is_triggered_only = yes
+#
+#     option = {
+#         name = fwt.43.default
+#         allow = {
+#             not = { has_country_flag = fwt_maintenance_default }
+#         }
+#         set_country_flag = fwt_maintenance_default
+#         remove_country_flag = fwt_maintenance_alloy
+#         remove_country_flag = fwt_maintenance_research
+#         remove_country_flag = fwt_maintenance_unity
+#         country_event = {
+#             id = fwt.43
+#         }
+#     }
+#     option = {
+#         name = fwt.43.alloy
+#         allow = {
+#             not = { has_country_flag = fwt_maintenance_alloy }
+#         }
+#         set_country_flag = fwt_maintenance_alloy
+#         remove_country_flag = fwt_maintenance_default
+#         remove_country_flag = fwt_maintenance_research
+#         remove_country_flag = fwt_maintenance_unity
+#         country_event = {
+#             id = fwt.43
+#         }
+#     }
+#     option = {
+#         name = fwt.43.research
+#         allow = {
+#             not = { has_country_flag = fwt_maintenance_research }
+#         }
+#         set_country_flag = fwt_maintenance_research
+#         remove_country_flag = fwt_maintenance_alloy
+#         remove_country_flag = fwt_maintenance_default
+#         remove_country_flag = fwt_maintenance_unity
+#         country_event = {
+#             id = fwt.43
+#         }
+#     }
+#     option = {
+#         name = fwt.43.unity
+#         allow = {
+#             not = { has_country_flag = fwt_maintenance_unity }
+#         }
+#         set_country_flag = fwt_maintenance_unity
+#         remove_country_flag = fwt_maintenance_alloy
+#         remove_country_flag = fwt_maintenance_research
+#         remove_country_flag = fwt_maintenance_default
+#         country_event = {
+#             id = fwt.43
+#         }
+#     }
+#     option = {
+#         name = fwt.43.count
+#         country_event = {
+#             id = fwt.431
+#         }
+#     }
+#     option = {
+#         name = fwt.close_menu
+#         remove_country_flag = auto_menu_open
+#     }
+# }
+#
+# country_event = {
+#     id = fwt.431
+#     title = "fwt.431.expand.name"
+#     desc = "fwt.431.expand.desc"
+#     picture = GFX_evt_overgrown_city
+#     location = from
+#     show_sound = event_wind_ruins
+#     hide_window = no
+#     is_triggered_only = yes
+#
+#     immediate = {
+#         if = {
+#             limit = {
+#                 not = {
+#                     is_variable_set = fwt_maintenance_count
+#                 }
+#             }
+#             set_variable = {
+#                 which = fwt_maintenance_count
+#                 value = 5
+#             }
+#         }
+#     }
+#     option = {
+#         name = fwt.431.increase_3
+#         country_event = {
+#             id = fwt.431
+#         }
+#         change_variable = {
+#             which = fwt_maintenance_count
+#             value = 3
+#         }
+#     }
+#     option = {
+#         name = fwt.431.increase_1
+#         change_variable = {
+#             which = fwt_maintenance_count
+#             value = 1
+#         }
+#         country_event = {
+#             id = fwt.431
+#         }
+#     }
+#     option = {
+#         name = fwt.431.current
+#         allow = {
+#             always = no
+#         }
+#     }
+#     option = {
+#         name = fwt.431.decrease_1
+#         change_variable = {
+#             which = fwt_maintenance_count
+#             value = -1
+#         }
+#         country_event = {
+#             id = fwt.431
+#         }
+#     }
+#     option = {
+#         name = fwt.431.decrease_3
+#         change_variable = {
+#             which = fwt_maintenance_count
+#             value = -3
+#         }
+#         country_event = {
+#             id = fwt.431
+#         }
+#     }
+#     option = {
+#         name = fwt.close_menu
+#         remove_country_flag = auto_menu_open
+#     }
+# }
 
 
 country_event = {

@@ -4,9 +4,9 @@ add_decision_time = {
 	[[NAME2] frame_add_mult_tooltip = { NAME2 = $NAME2$ } ]
 	[[NAME_SIZE1] frame_add_mult_tooltip = { NAME_SIZE1 = $NAME_SIZE1$ } ]
 	[[NAME_DEPOSIT] frame_add_mult_tooltip = { NAME_DEPOSIT = $NAME_DEPOSIT$ } ]
-	
+
 	hidden_effect = {
-		#[[]] means that there doesn't have to be all the parameters but the script still works without errors  
+		#[[]] means that there doesn't have to be all the parameters but the script still works without errors
 		[[TIME]
 			owner = {
 				set_variable = {
@@ -24,7 +24,7 @@ add_decision_time = {
 		]
 	}
 	#lazyness so i don't need to update old situation to account for this
-	[[!SITUATION_TYPE] 
+	[[!SITUATION_TYPE]
 		owner = {
 			start_situation = {
 				type = giga_situation_frameworld_decisions
@@ -41,7 +41,7 @@ add_decision_time = {
 			}
 		}
 	]
-	[[SITUATION_TYPE] 
+	[[SITUATION_TYPE]
 		owner = {
 			start_situation = {
 				type = $SITUATION_TYPE$
@@ -141,22 +141,22 @@ fwt_trigger_effects_situation = {
 	switch = {
 		trigger = has_situation_flag
 		#move these here bc of issues with recursion depth
-		giga_frameworld_expand_dec = { 	
+		giga_frameworld_expand_dec = {
 			custom_tooltip = frameworld_line
 			event_target:frame_expand@owner = {
 				remove_planet_flag = giga_frameworld_expand_queued
-				giga_frameworld_expand_deposit = { 
-					DEPOSIT = d_frameworld_expansion 
+				giga_frameworld_expand_deposit = {
+					DEPOSIT = d_frameworld_expansion
 					VAR = giga_frameworld_expansions
 				}
 				custom_tooltip = frameworld_line
-				giga_frameworld_expand_deposit = { 
-					DEPOSIT = d_frameworld_structure_expansion 
+				giga_frameworld_expand_deposit = {
+					DEPOSIT = d_frameworld_structure_expansion
 					VAR = giga_frameworld_structure_expansions
 				}
 				custom_tooltip = frameworld_line
 				change_planet_size = 1
-			
+
 				# update entity and do all the math
 				hidden_effect = {
 					giga_frameworld_update_entity_with_fallback = yes
@@ -166,47 +166,47 @@ fwt_trigger_effects_situation = {
 				remove_flags = { NAME = giga_frameworld_expand }
 			}
 		}
-		giga_frameworld_expand_mass_dec = { 	
+		giga_frameworld_expand_mass_dec = {
 			custom_tooltip = frameworld_line
 			event_target:frame_expand@owner = {
-				giga_frameworld_expand_deposit = { 
-					DEPOSIT = d_frameworld_expansion 
+				giga_frameworld_expand_deposit = {
+					DEPOSIT = d_frameworld_expansion
 					VAR = giga_frameworld_expansions
 				}
 				custom_tooltip = frameworld_line
-				giga_frameworld_expand_deposit = { 
+				giga_frameworld_expand_deposit = {
 					DEPOSIT = d_frameworld_planet
 					VAR = giga_frameworld_planets
 				}
 				custom_tooltip = frameworld_line
 				change_planet_size = 1
-		
+
 				hidden_effect = {
 					giga_frameworld_update_entity_with_fallback = yes
 					giga_frameworld_recalculate_variables = yes
 					frameworld_conduct_audit_check_ai = yes
 				}
 				remove_flags = { NAME = giga_frameworld_expand_mass }
-			} 
+			}
 		}
-		giga_frameworld_expand_mass_bulk_5_dec = { 	
+		giga_frameworld_expand_mass_bulk_5_dec = {
 			custom_tooltip = frameworld_line
 			event_target:frame_expand@owner = {
-				giga_frameworld_expand_deposit = { 
-					DEPOSIT = d_frameworld_expansion 
+				giga_frameworld_expand_deposit = {
+					DEPOSIT = d_frameworld_expansion
 					VAR = giga_frameworld_expansions
 					COUNT = 5
 				}
 				custom_tooltip = frameworld_line
-				giga_frameworld_expand_deposit = { 
+				giga_frameworld_expand_deposit = {
 					DEPOSIT = d_frameworld_planet
 					VAR = giga_frameworld_planets
 					COUNT = 5
 				}
 				custom_tooltip = frameworld_line
 				change_planet_size = 5
-		
-				hidden_effect = { 
+
+				hidden_effect = {
 					giga_frameworld_update_entity_with_fallback = yes
 					giga_frameworld_recalculate_variables = yes
 					frameworld_conduct_audit_check_ai = yes
@@ -215,23 +215,23 @@ fwt_trigger_effects_situation = {
 				remove_flags = { NAME = giga_frameworld_expand_mass_bulk_5 }
 			}
 		}
-		giga_frameworld_expand_mass_bulk_10_dec = { 	
+		giga_frameworld_expand_mass_bulk_10_dec = {
 			custom_tooltip = frameworld_line
 			event_target:frame_expand@owner = {
-				giga_frameworld_expand_deposit = { 
-					DEPOSIT = d_frameworld_expansion 
+				giga_frameworld_expand_deposit = {
+					DEPOSIT = d_frameworld_expansion
 					VAR = giga_frameworld_expansions
 					COUNT = 10
 				}
 				custom_tooltip = frameworld_line
-				giga_frameworld_expand_deposit = { 
+				giga_frameworld_expand_deposit = {
 					DEPOSIT = d_frameworld_planet
 					VAR = giga_frameworld_planets
 					COUNT = 10
 				}
 				custom_tooltip = frameworld_line
 				change_planet_size = 10
-		
+
 				hidden_effect = {
 					giga_frameworld_update_entity_with_fallback = yes
 					giga_frameworld_recalculate_variables = yes
@@ -241,29 +241,29 @@ fwt_trigger_effects_situation = {
 				remove_flags = { NAME = giga_frameworld_expand_mass_bulk_10 }
 			}
 		}
-		giga_frameworld_reorganise_dec = { 	
+		giga_frameworld_reorganise_dec = {
 			custom_tooltip = frameworld_line
 			event_target:frame_expand@owner = {
-				giga_frameworld_expand_deposit = { 
-					DEPOSIT = d_frameworld_expansion 
+				giga_frameworld_expand_deposit = {
+					DEPOSIT = d_frameworld_expansion
 					VAR = giga_frameworld_expansions
 				}
 				custom_tooltip = frameworld_line
-				giga_frameworld_expand_deposit = { 
+				giga_frameworld_expand_deposit = {
 					DEPOSIT = d_frameworld_reorganise_expansion
 					VAR = giga_frameworld_reorganise_expansions
 				}
 				custom_tooltip = frameworld_line
 				change_planet_size = 1
-		
+
 				hidden_effect = {
 					giga_frameworld_update_entity_with_fallback = yes
 					frameworld_conduct_audit_check_ai = yes
 				}
 				remove_flags = { NAME = giga_frameworld_reorganise }
-			} 
+			}
 		}
-		giga_frameworld_consume_world_dec = { 	
+		giga_frameworld_consume_world_dec = {
 			event_target:frame_expand@owner = {
 				remove_flags = { NAME = giga_frameworld_consume_world }
 				giga_frameworld_expand_deposit = {
@@ -277,9 +277,9 @@ fwt_trigger_effects_situation = {
 				}
 				custom_tooltip = frameworld_line
 				change_planet_size = 1
-		
+
 				custom_tooltip = frameworld_line
-		
+
 				hidden_effect = {
 					from = {
 						random_owned_fleet = {
@@ -293,7 +293,7 @@ fwt_trigger_effects_situation = {
 						}
 					}
 				}
-		
+
 				if = {
 					limit = {
 						has_bug_branch = yes
@@ -311,7 +311,7 @@ fwt_trigger_effects_situation = {
 								localization = MESSAGE_BUGGED_MACHINE_TERRAVORE_CONSUME_WORLD_POP_TEXT
 								days = 30
 								target = event_target:consumed_world
-		
+
 								variable = {
 									type = name
 									localization = PLANET
@@ -328,13 +328,13 @@ fwt_trigger_effects_situation = {
 									max = @tier1materialmax
 								}
 							}
-		
+
 							create_message = {
 								type = MESSAGE_TERRAVORE_CONSUME_WORLD
 								localization = MESSAGE_BUGGED_MACHINE_TERRAVORE_CONSUME_WORLD_MINERALS_TEXT
 								days = 30
 								target = event_target:consumed_world
-		
+
 								variable = {
 									type = name
 									localization = PLANET
@@ -351,13 +351,13 @@ fwt_trigger_effects_situation = {
 									max = @tier1materialmax
 								}
 							}
-		
+
 							create_message = {
 								type = MESSAGE_TERRAVORE_CONSUME_WORLD
 								localization = MESSAGE_BUGGED_MACHINE_TERRAVORE_CONSUME_WORLD_ALLOYS_TEXT
 								days = 30
 								target = event_target:consumed_world
-		
+
 								variable = {
 									type = name
 									localization = PLANET
@@ -373,13 +373,13 @@ fwt_trigger_effects_situation = {
 							create_pop = {
 								species = owner_main_species
 							}
-		
+
 							create_message = {
 								type = MESSAGE_TERRAVORE_CONSUME_WORLD
 								localization = MESSAGE_TERRAVORE_CONSUME_WORLD_POP_TEXT
 								days = 30
 								target = event_target:consumed_world
-		
+
 								variable = {
 									type = name
 									localization = PLANET
@@ -396,13 +396,13 @@ fwt_trigger_effects_situation = {
 									max = @tier1materialmax
 								}
 							}
-		
+
 							create_message = {
 								type = MESSAGE_TERRAVORE_CONSUME_WORLD
 								localization = MESSAGE_TERRAVORE_CONSUME_WORLD_MINERALS_TEXT
 								days = 30
 								target = event_target:consumed_world
-		
+
 								variable = {
 									type = name
 									localization = PLANET
@@ -419,13 +419,13 @@ fwt_trigger_effects_situation = {
 									max = @tier1materialmax
 								}
 							}
-		
+
 							create_message = {
 								type = MESSAGE_TERRAVORE_CONSUME_WORLD
 								localization = MESSAGE_TERRAVORE_CONSUME_WORLD_ALLOYS_TEXT
 								days = 30
 								target = event_target:consumed_world
-		
+
 								variable = {
 									type = name
 									localization = PLANET
@@ -436,14 +436,14 @@ fwt_trigger_effects_situation = {
 					}
 				}
 				reroll_random = yes
-		
+
 				custom_tooltip = giga_frameworld_consume_world_effect
-		
+
 				hidden_effect = {
 					giga_frameworld_update_entity_with_fallback = yes
 					frameworld_conduct_audit_check_ai = yes
 				}
-			} 
+			}
 		}
 		frameworld_penrose_dec = { frameworld_penrose = yes }
 		giga_frameworld_decompressor_dec = { giga_frameworld_decompressor = yes }
@@ -454,7 +454,7 @@ fwt_trigger_effects_situation = {
 		giga_frameworld_computing_complex_dec = { giga_frameworld_computing_complex = yes }
 		giga_frameworld_expand_infrastructure_dec = { giga_frameworld_expand_infrastructure = yes }
 		frameworld_orbital_ring_dec = { giga_frameworld_orbital_ring_upgrade = yes }
-		frameworld_maginot_dec = { 	
+		frameworld_maginot_dec = {
 			event_target:frame_expand@owner = {
 				custom_tooltip = giga_frameworld_upgrade_desc
 				custom_tooltip = giga_frameworld_maginot_effect
@@ -463,10 +463,10 @@ fwt_trigger_effects_situation = {
 				hidden_effect = {
 					set_planet_flag = frameworld_maginot
 				}
-		
+
 				custom_tooltip = frameworld_line
 				custom_tooltip = giga_frameworld_upgrade_upkeep
-		
+
 				hidden_effect = {
 					giga_frameworld_spawn_maginot_defensive_stations = {
 						WHO = owner
@@ -474,11 +474,11 @@ fwt_trigger_effects_situation = {
 					init_giga_maginot = yes
 					giga_frameworld_update_maginot_deposits = yes
 				}
-		
+
 				save_event_target_as = giga_planet
 				hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.013 } } }
 				add_completion_flag = { NAME = maginot }
-			} 
+			}
 		}
 		frameworld_habitat_dec = { giga_frameworld_habitat = yes }
 		yggdrasil_orchid_dec = { giga_frameworld_yggdrasil_orchid = yes }
@@ -567,333 +567,333 @@ fwt_trigger_effects_situation = {
 	}
 	destroy_situation = this
 }
-
-frameworld_penrose = {
-	event_target:frame_expand@owner = {
-		custom_tooltip = giga_frameworld_penrose_effect
-		remove_flags = { NAME = frameworld_penrose }
-		hidden_effect = {
-			
-			solar_system = {
-				spawn_megastructure = {
-					type = frameworld_penrose_0
-					owner = owner
-					planet = star
-				}
-				save_event_target_as = giga_system
-			}
-
-			if = {
-				limit = { exists = owner }
-				owner = {
-					country_event = {
-						id = giga_frameworld_origin.001
-					}
-				}
-			}
-			add_completion_flag = { NAME = penrose }
-		}
-		frame_size_gal_wonders = yes
-		change_variable = { which = fwt_energy_completion value = 2 }
-	}
-}
-
-giga_frameworld_decompressor = {
-	event_target:frame_expand@owner = {
-		set_planet_flag = frameworld_decompressor 
-		custom_tooltip = giga_frameworld_decompressor_effect
-		hidden_effect = {
-			remove_flags = { NAME = giga_frameworld_decompressor }
-			
-			solar_system = {
-				spawn_megastructure = {
-					type = frameworld_decompressor_0
-					owner = owner
-					planet = star
-				}
-				save_event_target_as = giga_system
-			}
-
-			if = {
-				limit = { exists = owner }
-				owner = {
-					country_event = {
-						id = giga_frameworld_origin.004
-					}
-				}
-			}
-		}
-		frame_size_gal_wonders = yes
-		add_completion_flag = { NAME = decompressor }
-		change_variable = { which = fwt_mineral_completion value = 2 }
-	}
-}
-
-giga_frameworld_advanced_city = {
-	event_target:frame_expand@owner = {
-		remove_flags = { NAME = giga_frameworld_advanced_city }
-		custom_tooltip = giga_frameworld_upgrade_desc
-		if = {
-			limit = {
-				owner = {
-					is_hive_empire = yes
-				}
-			}
-			custom_tooltip = giga_frameworld_advanced_hive_effect
-			add_deposit = d_frameworld_advanced_hive
-		}
-		else_if = {
-			limit = {
-				owner = {
-					is_machine_empire = yes
-				}
-			}
-			custom_tooltip = giga_frameworld_advanced_nexus_effect
-			add_deposit = d_frameworld_advanced_nexus
-		}
-		else = {
-			custom_tooltip = giga_frameworld_advanced_city_effect
-			add_deposit = d_frameworld_advanced_city
-		}
-		
-		hidden_effect = {
-			add_modifier = {
-				modifier = frameworld_building_wreck_fix
-			}
-		}
-
-		hidden_effect = {
-			set_planet_flag = frameworld_advanced_city
-			validate_planet_buildings_and_districts = yes
-		}
-
-		hidden_effect = {
-			remove_modifier = frameworld_building_wreck_fix
-		}
-
-		save_event_target_as = giga_planet
-		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.007 } } }
-		add_completion_flag = { NAME = advanced_city }
-		frame_size_gal_wonders = yes
-		change_variable = { which = frame_expansion_scale value = 1 }
-		change_variable = { which = fwt_housing_completion value = 1 }
-		change_variable = { which = fwt_alloy_completion value = 1 }
-		change_variable = { which = fwt_consumer_goods_completion value = 1 }
-		change_variable = { which = fwt_unity_trade_completion value = 1 }
-		change_variable = { which = fwt_rare_resources_completion value = 1 }
-	}
-	if = {
-		limit = {
-			owner = {
-				not = {
-					has_technology = tech_habitat_1
-				}
-			}
-		}
-		owner = {
-			add_research_option = tech_habitat_1
-		}
-	}
-}
-
-giga_frameworld_advanced_industrial = {
-	event_target:frame_expand@owner = {
-		custom_tooltip = giga_frameworld_upgrade_desc
-		custom_tooltip = giga_frameworld_advanced_industrial_foundry_effect
-		remove_flags = { NAME = giga_frameworld_advanced_industrial }
-		if = {
-			limit = {
-				owner = {
-					or = {
-						is_gestalt = no
-						has_valid_civic = civic_machine_servitor
-						country_uses_consumer_goods = yes
-					}
-				}
-			}
-			custom_tooltip = frameworld_line
-			custom_tooltip = giga_frameworld_advanced_industrial_factory_effect
-		}
-		
-		hidden_effect = {
-			add_deposit = d_frameworld_advanced_industrial
-			set_planet_flag = frameworld_advanced_industrial
-			validate_planet_buildings_and_districts = yes
-		}
-		frame_size_gal_wonders = yes
-		add_completion_flag = { NAME = advanced_industrial }
-		save_event_target_as = giga_planet
-		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.008 } } }
-		change_variable = { which = fwt_alloy_completion value = 2 }
-		change_variable = { which = fwt_consumer_goods_completion value = 2 }
-		set_planet_flag = frameworld_advanced_industrial_completed
-	}
-}
-
-giga_frameworld_advanced_sanctuary = {
-	event_target:frame_expand@owner = {
-		remove_flags = { NAME = giga_frameworld_advanced_city }
-		custom_tooltip = giga_frameworld_upgrade_desc
-		custom_tooltip = giga_frameworld_advanced_sanctuary_effect
-
-		hidden_effect = {
-			add_deposit = d_frameworld_advanced_sanctuary
-			set_planet_flag = frameworld_advanced_sanctuary
-			validate_planet_buildings_and_districts = yes
-		}
-		save_event_target_as = giga_planet
-		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.009 } } }
-		add_completion_flag = { NAME = advanced_sanctuary }
-		change_variable = { which = fwt_consumer_sanctuary_completion value = 1 }
-	}
-}
-
-giga_frameworld_gaia = {
-	event_target:frame_expand@owner = {
-		remove_flags = { NAME = giga_frameworld_gaia }
-		remove_planet_flag = frameworld_gaia
-		custom_tooltip = giga_frameworld_upgrade_desc
-		add_deposit = d_frameworld_gaia
-		hidden_effect = {
-			set_planet_flag = frameworld_gaia
-		}
-		frame_size_gal_wonders = yes
-		save_event_target_as = giga_planet
-		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.010 } } }
-		add_completion_flag = { NAME = gaia }
-	}
-}
-
-giga_frameworld_computing_complex = {
-	event_target:frame_expand@owner = {
-		remove_flags = { NAME = giga_frameworld_computing_complex }
-		custom_tooltip = giga_frameworld_upgrade_desc
-		add_deposit = d_frameworld_computing_complex
-		hidden_effect = {
-			set_planet_flag = frameworld_computing_complex
-		}
-		frame_size_gal_wonders = yes
-		save_event_target_as = giga_planet
-		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.011 } } }
-		add_completion_flag = { NAME = computing_complex }
-		change_variable = { which = fwt_science_completion value = 2 }
-	}
-}
-
-giga_frameworld_expand_infrastructure = {
-	event_target:frame_expand@owner = {
-		remove_flags = { NAME = giga_frameworld_expand_infrastructure }
-		custom_tooltip = giga_frameworld_upgrade_desc
-		add_deposit = d_frameworld_expanded_infrastructure
-		
-		hidden_effect = {
-			if = {
-				limit = {
-					has_planet_flag = frameworld_expanded_infrastructure_1
-				}
-				set_planet_flag = frameworld_expanded_infrastructure_2
-			}
-			else = {
-				set_planet_flag = frameworld_expanded_infrastructure_1
-			}
-		}
-
-		save_event_target_as = giga_planet
-		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.012 } } }
-		add_completion_flag = { NAME = expand_infrastructure }
-	}
-}
-
-giga_frameworld_orbital_ring_upgrade = {
-	event_target:frame_expand@owner = {
-		remove_flags = { NAME = frameworld_orbital_ring }
-		custom_tooltip = giga_frameworld_upgrade_desc
-		add_deposit = d_frameworld_orbital_ring
-		hidden_effect = {
-			set_planet_flag = frameworld_orbital_ring_built
-		}
-
-		save_event_target_as = giga_planet
-		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.014 } } }
-		add_completion_flag = { NAME = orbital_ring }
-		set_planet_flag = frameworld_orbital_ring
-	}
-}
-
-giga_frameworld_habitat = {
-	event_target:frame_expand@owner = {
-		remove_flags = { NAME = frameworld_habitat }
-		custom_tooltip = giga_frameworld_upgrade_desc
-		# add_deposit = d_frameworld_habitat
-		save_event_target_as = giga_planet
-		# hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.014 } } }
-		add_completion_flag = { NAME = habitat }
-		change_variable = { which = frame_expansion_scale value = 1 }
-	}
-	if = {
-		limit = { owner = { not = { has_technology = tech_housing_2 } } }
-		owner = { add_research_option = tech_housing_2 }
-	}
-	change_variable = { which = fwt_energy_completion value = 1 }
-	change_variable = { which = fwt_mineral_completion value = 1 }
-	change_variable = { which = fwt_food_completion value = 1 }
-	change_variable = { which = fwt_science_completion value = 1 }
-}
-
-giga_frameworld_interstellar_assembly = {
-	event_target:frame_expand@owner = {
-		remove_flags = { NAME = interstellar_assembly }
-		custom_tooltip = giga_frameworld_upgrade_desc
-		# add_deposit = d_frameworld_interstellar_assembly
-		save_event_target_as = giga_planet
-		frame_size_gal_wonders = yes
-		# hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.014 } } }
-		add_completion_flag = { NAME = interstellar_assembly }
-		change_variable = { which = fwt_unity_trade_completion value = 2 }
-	}
-}
-
-giga_frameworld_yggdrasil_orchid = {
-	event_target:frame_expand@owner = {
-		remove_flags = { NAME = yggdrasil_orchid }
-		custom_tooltip = giga_frameworld_upgrade_desc
-		# add_deposit = d_frameworld_yggdrasil_orchid
-		save_event_target_as = giga_planet
-		frame_size_gal_wonders = yes
-		# hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.014 } } }
-		add_completion_flag = { NAME = yggdrasil_orchid }
-		change_variable = { which = fwt_food_completion value = 2 }
-	}
-}
-
-giga_frameworld_expand_nanites = {
-		giga_frameworld_expand_deposit = {
-		DEPOSIT = d_frameworld_expansion
-		VAR = giga_frameworld_expansions
-	}
-	custom_tooltip = frameworld_line
-	giga_frameworld_expand_deposit = {
-		DEPOSIT = d_frameworld_nanite_expansion
-		VAR = giga_frameworld_nanite_expansions
-	}
-	custom_tooltip = frameworld_line
-	change_planet_size = 1
-
-	hidden_effect = {
-		giga_frameworld_update_entity_with_fallback = yes
-		giga_frameworld_recalculate_variables = yes
-		frameworld_conduct_audit_check_ai = yes
-	}
-}
-
-# giga_frameworld_expand_bulk_10 = {
+#
+# frameworld_penrose = {
 # 	event_target:frame_expand@owner = {
-
+# 		custom_tooltip = giga_frameworld_penrose_effect
+# 		remove_flags = { NAME = frameworld_penrose }
+# 		hidden_effect = {
+#
+# 			solar_system = {
+# 				spawn_megastructure = {
+# 					type = frameworld_penrose_0
+# 					owner = owner
+# 					planet = star
+# 				}
+# 				save_event_target_as = giga_system
+# 			}
+#
+# 			if = {
+# 				limit = { exists = owner }
+# 				owner = {
+# 					country_event = {
+# 						id = giga_frameworld_origin.001
+# 					}
+# 				}
+# 			}
+# 			add_completion_flag = { NAME = penrose }
+# 		}
+# 		frame_size_gal_wonders = yes
+# 		change_variable = { which = fwt_energy_completion value = 2 }
 # 	}
 # }
-
-
-print_test = {
-	log = "[value:fwt_decision_time][this.fwt_decision_time]"
-}
-
+#
+# giga_frameworld_decompressor = {
+# 	event_target:frame_expand@owner = {
+# 		set_planet_flag = frameworld_decompressor
+# 		custom_tooltip = giga_frameworld_decompressor_effect
+# 		hidden_effect = {
+# 			remove_flags = { NAME = giga_frameworld_decompressor }
+#
+# 			solar_system = {
+# 				spawn_megastructure = {
+# 					type = frameworld_decompressor_0
+# 					owner = owner
+# 					planet = star
+# 				}
+# 				save_event_target_as = giga_system
+# 			}
+#
+# 			if = {
+# 				limit = { exists = owner }
+# 				owner = {
+# 					country_event = {
+# 						id = giga_frameworld_origin.004
+# 					}
+# 				}
+# 			}
+# 		}
+# 		frame_size_gal_wonders = yes
+# 		add_completion_flag = { NAME = decompressor }
+# 		change_variable = { which = fwt_mineral_completion value = 2 }
+# 	}
+# }
+#
+# giga_frameworld_advanced_city = {
+# 	event_target:frame_expand@owner = {
+# 		remove_flags = { NAME = giga_frameworld_advanced_city }
+# 		custom_tooltip = giga_frameworld_upgrade_desc
+# 		if = {
+# 			limit = {
+# 				owner = {
+# 					is_hive_empire = yes
+# 				}
+# 			}
+# 			custom_tooltip = giga_frameworld_advanced_hive_effect
+# 			add_deposit = d_frameworld_advanced_hive
+# 		}
+# 		else_if = {
+# 			limit = {
+# 				owner = {
+# 					is_machine_empire = yes
+# 				}
+# 			}
+# 			custom_tooltip = giga_frameworld_advanced_nexus_effect
+# 			add_deposit = d_frameworld_advanced_nexus
+# 		}
+# 		else = {
+# 			custom_tooltip = giga_frameworld_advanced_city_effect
+# 			add_deposit = d_frameworld_advanced_city
+# 		}
+#
+# 		hidden_effect = {
+# 			add_modifier = {
+# 				modifier = frameworld_building_wreck_fix
+# 			}
+# 		}
+#
+# 		hidden_effect = {
+# 			set_planet_flag = frameworld_advanced_city
+# 			validate_planet_buildings_and_districts = yes
+# 		}
+#
+# 		hidden_effect = {
+# 			remove_modifier = frameworld_building_wreck_fix
+# 		}
+#
+# 		save_event_target_as = giga_planet
+# 		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.007 } } }
+# 		add_completion_flag = { NAME = advanced_city }
+# 		frame_size_gal_wonders = yes
+# 		change_variable = { which = frame_expansion_scale value = 1 }
+# 		change_variable = { which = fwt_housing_completion value = 1 }
+# 		change_variable = { which = fwt_alloy_completion value = 1 }
+# 		change_variable = { which = fwt_consumer_goods_completion value = 1 }
+# 		change_variable = { which = fwt_unity_trade_completion value = 1 }
+# 		change_variable = { which = fwt_rare_resources_completion value = 1 }
+# 	}
+# 	if = {
+# 		limit = {
+# 			owner = {
+# 				not = {
+# 					has_technology = tech_habitat_1
+# 				}
+# 			}
+# 		}
+# 		owner = {
+# 			add_research_option = tech_habitat_1
+# 		}
+# 	}
+# }
+#
+# giga_frameworld_advanced_industrial = {
+# 	event_target:frame_expand@owner = {
+# 		custom_tooltip = giga_frameworld_upgrade_desc
+# 		custom_tooltip = giga_frameworld_advanced_industrial_foundry_effect
+# 		remove_flags = { NAME = giga_frameworld_advanced_industrial }
+# 		if = {
+# 			limit = {
+# 				owner = {
+# 					or = {
+# 						is_gestalt = no
+# 						has_valid_civic = civic_machine_servitor
+# 						country_uses_consumer_goods = yes
+# 					}
+# 				}
+# 			}
+# 			custom_tooltip = frameworld_line
+# 			custom_tooltip = giga_frameworld_advanced_industrial_factory_effect
+# 		}
+#
+# 		hidden_effect = {
+# 			add_deposit = d_frameworld_advanced_industrial
+# 			set_planet_flag = frameworld_advanced_industrial
+# 			validate_planet_buildings_and_districts = yes
+# 		}
+# 		frame_size_gal_wonders = yes
+# 		add_completion_flag = { NAME = advanced_industrial }
+# 		save_event_target_as = giga_planet
+# 		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.008 } } }
+# 		change_variable = { which = fwt_alloy_completion value = 2 }
+# 		change_variable = { which = fwt_consumer_goods_completion value = 2 }
+# 		set_planet_flag = frameworld_advanced_industrial_completed
+# 	}
+# }
+#
+# giga_frameworld_advanced_sanctuary = {
+# 	event_target:frame_expand@owner = {
+# 		remove_flags = { NAME = giga_frameworld_advanced_city }
+# 		custom_tooltip = giga_frameworld_upgrade_desc
+# 		custom_tooltip = giga_frameworld_advanced_sanctuary_effect
+#
+# 		hidden_effect = {
+# 			add_deposit = d_frameworld_advanced_sanctuary
+# 			set_planet_flag = frameworld_advanced_sanctuary
+# 			validate_planet_buildings_and_districts = yes
+# 		}
+# 		save_event_target_as = giga_planet
+# 		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.009 } } }
+# 		add_completion_flag = { NAME = advanced_sanctuary }
+# 		change_variable = { which = fwt_consumer_sanctuary_completion value = 1 }
+# 	}
+# }
+#
+# giga_frameworld_gaia = {
+# 	event_target:frame_expand@owner = {
+# 		remove_flags = { NAME = giga_frameworld_gaia }
+# 		remove_planet_flag = frameworld_gaia
+# 		custom_tooltip = giga_frameworld_upgrade_desc
+# 		add_deposit = d_frameworld_gaia
+# 		hidden_effect = {
+# 			set_planet_flag = frameworld_gaia
+# 		}
+# 		frame_size_gal_wonders = yes
+# 		save_event_target_as = giga_planet
+# 		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.010 } } }
+# 		add_completion_flag = { NAME = gaia }
+# 	}
+# }
+#
+# giga_frameworld_computing_complex = {
+# 	event_target:frame_expand@owner = {
+# 		remove_flags = { NAME = giga_frameworld_computing_complex }
+# 		custom_tooltip = giga_frameworld_upgrade_desc
+# 		add_deposit = d_frameworld_computing_complex
+# 		hidden_effect = {
+# 			set_planet_flag = frameworld_computing_complex
+# 		}
+# 		frame_size_gal_wonders = yes
+# 		save_event_target_as = giga_planet
+# 		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.011 } } }
+# 		add_completion_flag = { NAME = computing_complex }
+# 		change_variable = { which = fwt_science_completion value = 2 }
+# 	}
+# }
+#
+# giga_frameworld_expand_infrastructure = {
+# 	event_target:frame_expand@owner = {
+# 		remove_flags = { NAME = giga_frameworld_expand_infrastructure }
+# 		custom_tooltip = giga_frameworld_upgrade_desc
+# 		add_deposit = d_frameworld_expanded_infrastructure
+#
+# 		hidden_effect = {
+# 			if = {
+# 				limit = {
+# 					has_planet_flag = frameworld_expanded_infrastructure_1
+# 				}
+# 				set_planet_flag = frameworld_expanded_infrastructure_2
+# 			}
+# 			else = {
+# 				set_planet_flag = frameworld_expanded_infrastructure_1
+# 			}
+# 		}
+#
+# 		save_event_target_as = giga_planet
+# 		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.012 } } }
+# 		add_completion_flag = { NAME = expand_infrastructure }
+# 	}
+# }
+#
+# giga_frameworld_orbital_ring_upgrade = {
+# 	event_target:frame_expand@owner = {
+# 		remove_flags = { NAME = frameworld_orbital_ring }
+# 		custom_tooltip = giga_frameworld_upgrade_desc
+# 		add_deposit = d_frameworld_orbital_ring
+# 		hidden_effect = {
+# 			set_planet_flag = frameworld_orbital_ring_built
+# 		}
+#
+# 		save_event_target_as = giga_planet
+# 		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.014 } } }
+# 		add_completion_flag = { NAME = orbital_ring }
+# 		set_planet_flag = frameworld_orbital_ring
+# 	}
+# }
+#
+# giga_frameworld_habitat = {
+# 	event_target:frame_expand@owner = {
+# 		remove_flags = { NAME = frameworld_habitat }
+# 		custom_tooltip = giga_frameworld_upgrade_desc
+# 		# add_deposit = d_frameworld_habitat
+# 		save_event_target_as = giga_planet
+# 		# hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.014 } } }
+# 		add_completion_flag = { NAME = habitat }
+# 		change_variable = { which = frame_expansion_scale value = 1 }
+# 	}
+# 	if = {
+# 		limit = { owner = { not = { has_technology = tech_housing_2 } } }
+# 		owner = { add_research_option = tech_housing_2 }
+# 	}
+# 	change_variable = { which = fwt_energy_completion value = 1 }
+# 	change_variable = { which = fwt_mineral_completion value = 1 }
+# 	change_variable = { which = fwt_food_completion value = 1 }
+# 	change_variable = { which = fwt_science_completion value = 1 }
+# }
+#
+# giga_frameworld_interstellar_assembly = {
+# 	event_target:frame_expand@owner = {
+# 		remove_flags = { NAME = interstellar_assembly }
+# 		custom_tooltip = giga_frameworld_upgrade_desc
+# 		# add_deposit = d_frameworld_interstellar_assembly
+# 		save_event_target_as = giga_planet
+# 		frame_size_gal_wonders = yes
+# 		# hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.014 } } }
+# 		add_completion_flag = { NAME = interstellar_assembly }
+# 		change_variable = { which = fwt_unity_trade_completion value = 2 }
+# 	}
+# }
+#
+# giga_frameworld_yggdrasil_orchid = {
+# 	event_target:frame_expand@owner = {
+# 		remove_flags = { NAME = yggdrasil_orchid }
+# 		custom_tooltip = giga_frameworld_upgrade_desc
+# 		# add_deposit = d_frameworld_yggdrasil_orchid
+# 		save_event_target_as = giga_planet
+# 		frame_size_gal_wonders = yes
+# 		# hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.014 } } }
+# 		add_completion_flag = { NAME = yggdrasil_orchid }
+# 		change_variable = { which = fwt_food_completion value = 2 }
+# 	}
+# }
+#
+# giga_frameworld_expand_nanites = {
+# 		giga_frameworld_expand_deposit = {
+# 		DEPOSIT = d_frameworld_expansion
+# 		VAR = giga_frameworld_expansions
+# 	}
+# 	custom_tooltip = frameworld_line
+# 	giga_frameworld_expand_deposit = {
+# 		DEPOSIT = d_frameworld_nanite_expansion
+# 		VAR = giga_frameworld_nanite_expansions
+# 	}
+# 	custom_tooltip = frameworld_line
+# 	change_planet_size = 1
+#
+# 	hidden_effect = {
+# 		giga_frameworld_update_entity_with_fallback = yes
+# 		giga_frameworld_recalculate_variables = yes
+# 		frameworld_conduct_audit_check_ai = yes
+# 	}
+# }
+#
+# # giga_frameworld_expand_bulk_10 = {
+# # 	event_target:frame_expand@owner = {
+#
+# # 	}
+# # }
+#
+#
+# print_test = {
+# 	log = "[value:fwt_decision_time][this.fwt_decision_time]"
+# }
+#
