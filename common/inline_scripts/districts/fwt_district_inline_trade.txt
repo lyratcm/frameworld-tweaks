@@ -30,11 +30,11 @@ planet_modifier = {
 }
 
 inline_script = {
-	script = zones/shared_city_non_urban_zone_modifiers
+	script = zones/shared_frameworld_non_urban_zone_modifiers
 }
 triggered_district_planet_modifier = {
-	job_trader_add = @[ 300 * $SIZE_COST$ ]
-	job_merchant_add = @[ 150 * $SIZE_COST$ ]
+	job_trader_add = 225
+	job_merchant_add = 75
 }
 
 triggered_planet_modifier = {

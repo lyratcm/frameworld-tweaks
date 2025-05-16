@@ -8,9 +8,6 @@
 @base_housing = 100
 @yes = 1
 @no = 0
-#having it always be half does mess with the frameworld being taken by war but considering it loses most of it bonuses on conquest anyway its not much of an issue
-conversion_ratio = 1
-is_capped_by_modifier = no
 
 base_buildtime = @[ city_time * $SIZE_COST$ * $SCALE$ ]
 
@@ -29,12 +26,12 @@ resources = {
 
 inline_script = {
 	script = $JOB$
-	jobs = @[ 400 * $SIZE_COST$ ]
+	jobs = @frameworld_jobs_base
 	district = 1
 }
 
 inline_script = {
-	script = zones/shared_city_non_urban_zone_modifiers
+	script = zones/shared_frameworld_non_urban_zone_modifiers
 }
 
 planet_modifier = {

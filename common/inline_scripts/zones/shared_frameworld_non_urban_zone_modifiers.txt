@@ -1,0 +1,3 @@
+triggered_district_planet_modifier = {
+    planet_housing_add = @frameworld_housing_non_urban
+}

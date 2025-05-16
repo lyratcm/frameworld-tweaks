@@ -3,8 +3,8 @@ district_giga_frameworld_city = {
     icon = district_city
 
     unlock = {
-        exists = from
-        from = { is_gestalt = no }
+        exists = owner
+		owner = { is_gestalt = no }
         OR = {
             uses_district_set = giga_frameworld
         }
@@ -102,9 +102,8 @@ district_giga_frameworld_city = {
     }
 }
 
-zone_giga_frameworld_foundry = {
+district_giga_frameworld_foundry = {
     icon = GFX_colony_type_foundry
-    base_buildtime = @zone_buildtime
     potential = {
         exists = owner
         uses_district_set = giga_frameworld
@@ -143,11 +142,11 @@ zone_giga_frameworld_foundry = {
 district_giga_frameworld_factory = {
 	icon = district_arcology_civilian_industry
     unlock = {
-		exists = from
+		exists = owner
 		uses_district_set = giga_frameworld
 		not = {  has_planet_flag = frameworld_advanced_city_completed }
 		not = { has_planet_flag = frameworld_advanced_industrial_completed }
-		from = {
+		owner = {
 			or = {
 				is_gestalt = no
 				has_valid_civic = civic_machine_servitor
@@ -293,8 +292,8 @@ district_giga_frameworld_trade = {
 	icon = district_hab_commercial
 
     unlock = {
-		exists = from
-		from = {
+		exists = owner
+		owner = {
 			is_gestalt = no
 			or = {
 				is_megacorp = yes
@@ -344,8 +343,8 @@ district_giga_frameworld_administrative = {
 	icon = district_arcology_administrative
 
     unlock = {
-		exists = from
-		from = {
+		exists = owner
+		owner = {
 			is_gestalt = no
 			giga_country_uses_priests = no
 			has_technology = "tech_colonial_bureaucracy"
@@ -371,7 +370,7 @@ district_giga_frameworld_administrative = {
 
 	inline_script = {
 		script = districts/params/fwt_district_inline_unity_params
-		JOB = "planet/unity/giga_bureaucrat_swap"
+		JOB = "planet/unity/fwt_bureaucrat_swap"
 	}
 
     included_building_sets = {
@@ -398,8 +397,8 @@ district_giga_frameworld_temple = {
 	icon = district_arcology_administrative
 
     unlock = {
-		exists = from
-		from = {
+		exists = owner
+		owner = {
 			is_gestalt = no
 			giga_country_uses_priests = yes
 		}
@@ -435,7 +434,7 @@ district_giga_frameworld_temple = {
 	}
 	inline_script = {
 		script = districts/params/fwt_district_inline_unity_params
-		JOB = "planet/unity/giga_priest_swap"
+		JOB = "planet/unity/fwt_priest_swap"
 	}
 }
 
@@ -444,8 +443,8 @@ district_giga_frameworld_synapse = {
 	icon = district_arcology_administrative
 
     unlock = {
-		exists = from
-		from = {
+		exists = owner
+		owner = {
 			is_hive_empire = yes
 			has_technology = "tech_hive_cluster"
 		}
@@ -480,9 +479,9 @@ district_giga_frameworld_synapse = {
 	}
 	inline_script = {
 		script = districts/params/fwt_district_inline_unity_params
-		JOB = "planet/unity/giga_gestalt_unity_job_swap"
+		JOB = "planet/unity/fwt_gestalt_unity_job_swap"
 	}
-	triggered_planet_modifier = {
+	triggered_district_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = {
@@ -490,18 +489,18 @@ district_giga_frameworld_synapse = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 2
+			planet_housing_add = 200
 		}
 	}
 
-	triggered_planet_modifier = {
+	triggered_district_planet_modifier = {
 		potential = {
 			exists = owner
 			owner = {
 				has_edict = synaptic_reinforcement
 			}
 		}
-		job_maintenance_drone_add = 1
+		job_maintenance_drone_add = @[ 100 * 1.25 ]
 	}
 
 	triggered_desc = {
@@ -523,8 +522,8 @@ district_giga_frameworld_simulation = {
 	icon = district_arcology_administrative
 
 	unlock = {
-		exists = from
-		from = {
+		exists = owner
+		owner = {
 			is_machine_empire = yes
 			NOT = { has_valid_civic = civic_machine_servitor }
 			has_technology = "tech_colonial_bureaucracy"
@@ -562,7 +561,7 @@ district_giga_frameworld_simulation = {
 
 	inline_script = {
 		script = districts/params/fwt_district_inline_unity_params
-		JOB = "planet/unity/giga_gestalt_unity_job_swap"
+		JOB = "planet/unity/fwt_gestalt_unity_job_swap"
 	}
 }
 
@@ -570,8 +569,8 @@ district_giga_frameworld_sanctuary = {
 	icon = district_arcology_administrative
 
 	unlock = {
-		exists = from
-		from = {
+		exists = owner
+		owner = {
 			is_machine_empire = yes
 			has_valid_civic = civic_machine_servitor
 			has_technology = "tech_paradise_dome"
@@ -594,7 +593,6 @@ district_giga_frameworld_sanctuary = {
 	}
 
     show_in_tech = tech_planetary_government
-
 	inline_script = {
 		script = districts/params/fwt_district_inline_unity_params
 
@@ -615,11 +613,11 @@ district_giga_frameworld_sanctuary = {
 		district_giga_frameworld_ecu_administrative
 	}
 
-	triggered_planet_modifier = {
+	triggered_district_planet_modifier = {
 		potential = {
 			always = yes
 		}
-		planet_housing_add = -1
+		planet_housing_add = -100
 	}
 
 	triggered_desc = {
@@ -631,7 +629,7 @@ district_giga_frameworld_science = {
 	icon = district_hab_science
 
 	unlock = {
-		exists = from
+		exists = owner
 		not = {
 			has_planet_flag = frameworld_computing_complex_completed
 		}
@@ -650,7 +648,7 @@ district_giga_frameworld_science = {
 
     show_in_tech = tech_basic_science_lab_1
 
-	triggered_planet_modifier = {
+	triggered_district_planet_modifier = {
 		potential = {
 			not = {
 				owner = {
@@ -659,7 +657,7 @@ district_giga_frameworld_science = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 1
+			planet_housing_add = 100
 		}
 	}
 
@@ -667,14 +665,6 @@ district_giga_frameworld_science = {
         research
         automation
         origin
-    }
-
-    planet_modifier = {
-        zone_building_slots_add = 3
-    }
-
-    inline_script = {
-        script = zones/shared_city_non_urban_zone_modifiers
     }
 
 	convert_to = {
@@ -692,8 +682,8 @@ district_giga_frameworld_anticrime = {
 	icon = district_penrose_generator
 
 	unlock = {
-		exists = from
-		from = {
+		exists = owner
+		owner = {
 			has_technology = "tech_colonial_centralization"
 		}
 		uses_district_set = giga_frameworld
@@ -721,8 +711,8 @@ district_giga_frameworld_anticrime = {
 		}
 	}
 
-	planet_modifier = {
-		planet_housing_add = 150
+	inline_script = {
+		script = zones/shared_frameworld_non_urban_zone_modifiers
 	}
 
 	triggered_district_planet_modifier = {
@@ -731,7 +721,7 @@ district_giga_frameworld_anticrime = {
 			owner = { is_gestalt = no }
 		}
 		modifier = {
-			job_enforcer_add = 500
+			job_enforcer_add = @frameworld_jobs_base
 		}
 	}
 
@@ -741,7 +731,7 @@ district_giga_frameworld_anticrime = {
 			owner = { is_gestalt = yes }
 		}
 		modifier = {
-			job_patrol_drone_add = 500
+			job_patrol_drone_add = @frameworld_jobs_base
 		}
 	}
 
@@ -769,8 +759,8 @@ district_giga_frameworld_amenities = {
 	icon = district_arcology_leisure
 
 	unlock = {
-		exists = from
-		from = {
+		exists = owner
+		owner = {
 			is_gestalt = no
 			NOT = { has_valid_civic = civic_dystopian_society }
 			has_technology = tech_hyper_entertainment_forum
@@ -790,12 +780,16 @@ district_giga_frameworld_amenities = {
 
     show_in_tech = tech_hyper_entertainment_forum
 
-	conversion_ratio = 1.0
 	convert_to = {
 		district_giga_frameworld_amenities_dystopian
 		district_giga_frameworld_amenities_gestalt
 	}
 
+	included_building_sets = {
+		amenity
+		automation
+		origin
+	}
 
 	resources = {
 		category = planet_districts
@@ -814,7 +808,7 @@ district_giga_frameworld_amenities = {
     }
 
     inline_script = {
-        script = zones/shared_city_non_urban_zone_modifiers
+        script = zones/shared_frameworld_non_urban_zone_modifiers
     }
 
     triggered_district_planet_modifier = {
@@ -823,7 +817,7 @@ district_giga_frameworld_amenities = {
 			owner = { NOT = { has_valid_civic = civic_warrior_culture } }
 		}
 		modifier = {
-			job_entertainer_add = 100
+			job_entertainer_add = @frameworld_jobs_base
 		}
 	}
 
@@ -833,7 +827,7 @@ district_giga_frameworld_amenities = {
 			owner = { has_valid_civic = civic_warrior_culture }
 		}
 		modifier = {
-			job_duelist_add = 100
+			job_duelist_add = @frameworld_jobs_base
 		}
 	}
 
@@ -863,8 +857,8 @@ district_giga_frameworld_amenities_dystopian = {
 	icon = district_arcology_leisure
 
 	unlock = {
-		exists = from
-		from = {
+		exists = owner
+		owner = {
 			is_gestalt = no
 			has_valid_civic = civic_dystopian_society
 			has_technology = tech_colonial_centralization
@@ -903,18 +897,28 @@ district_giga_frameworld_amenities_dystopian = {
 		}
 	}
 
+	included_building_sets = {
+		amenity
+		automation
+		origin
+	}
+
 	triggered_desc = {
 		trigger = { always = yes }
 		text = district_giga_frameworld_amenities_dystopian_limit
 	}
 
-	planet_modifier = {
-		planet_housing_add = 100
-		planet_amenities_add = 150
+	inline_script = {
+		script = zones/shared_frameworld_non_urban_zone_modifiers
+	}
+
+	triggered_district_planet_modifier = {
+		potential = { always = yes }
+		planet_amenities_add = 200
 	}
 	inline_script = {
-		script = "planet/rulers/giga_ruler_part_job_swap"
-		jobs = 2
+		script = "planet/rulers/fwt_ruler_part_job_swap"
+		jobs = @frameworld_jobs_base
 		district = @yes
 		condition = "owner = { is_gestalt = no }"
 	}
@@ -928,8 +932,8 @@ district_giga_frameworld_amenities_gestalt = {
 	icon = district_arcology_leisure
 
 	unlock = {
-		exists = from
-		from = {
+		exists = owner
+		owner = {
 			is_gestalt = yes
 			has_technology = "tech_unity_of_purpose"
 		}
@@ -970,9 +974,15 @@ district_giga_frameworld_amenities_gestalt = {
     inline_script = {
         script = zones/shared_city_non_urban_zone_modifiers
     }
+	
+	included_building_sets = {
+		amenity
+		automation
+		origin
+	}
 
     triggered_district_planet_modifier = {
-		job_maintenance_drone_add = 300
+		job_maintenance_drone_add = @frameworld_jobs_base
 	}
 
     triggered_district_planet_modifier = {
@@ -981,7 +991,7 @@ district_giga_frameworld_amenities_gestalt = {
 			owner = { has_technology = tech_housing_2 }
 		}
 		modifier = {
-			job_maintenance_drone_add = 100
+			job_maintenance_drone_add = @[ 100 * 1.25 ]
 		}
 	}
 
@@ -990,8 +1000,8 @@ district_giga_frameworld_amenities_gestalt = {
 			has_planet_flag = frameworld_advanced_city
 		}
 		modifier = {
-			job_frame_maintenance_overseer_add = 100
-			job_maintenance_drone_add = -100
+			job_frame_maintenance_overseer_add = @[ 100 * 1.25 ]
+			job_maintenance_drone_add = @[ -100 * 1.25 ]
 		}
 	}
 
@@ -1010,14 +1020,13 @@ district_giga_frameworld_amenities_gestalt = {
 district_giga_frameworld_supertensiles = {
 	base_buildtime = @b2_time
 	icon = district_giga_supertensiles
-	is_capped_by_modifier = no
 
     show_in_tech = giga_tech_amb_supertensiles
 
 	unlock = {
 		has_global_flag = @giga_amb_flag
-		exists = from
-		from = {
+		exists = owner
+		owner = {
 			has_technology = giga_tech_amb_supertensiles
 		}
 		uses_district_set = giga_frameworld
@@ -1055,7 +1064,7 @@ district_giga_frameworld_supertensiles = {
 			}
 		}
 		modifier = {
-			job_giga_megaengineer_add = 100
+			job_giga_megaengineer_add = @frameworld_jobs_base
 		}
 	}
 
@@ -1067,7 +1076,7 @@ district_giga_frameworld_supertensiles = {
 			}
 		}
 		modifier = {
-			job_giga_megaengineer_drone_add = 100
+			job_giga_megaengineer_drone_add = @frameworld_jobs_base
 		}
 	}
 
@@ -1079,7 +1088,7 @@ district_giga_frameworld_supertensiles = {
 			}
 		}
 		modifier = {
-			job_giga_amb_fe_acolyte_foundry_add = 100
+			job_giga_amb_fe_acolyte_foundry_add = @frameworld_jobs_base
 		}
 	}
 

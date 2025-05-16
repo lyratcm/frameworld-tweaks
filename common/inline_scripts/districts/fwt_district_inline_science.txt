@@ -41,15 +41,15 @@ inline_script = {
 }
 
 inline_script = {
-	script = planet/research/giga_researcher_job_swap
-	jobs = @[ 400 * $SIZE_COST$ ]
+	script = planet/research/fwt_researcher_job_swap
+	jobs = @[ 201 * $SIZE_COST$ ]
 	district = @yes
 	condition = "frameworld_has_active_nanite_upgrade = no"
 }
 
 inline_script = {
-	script = planet/research/giga_researcher_job_swap
-	jobs = @[ 200 * $SIZE_COST$ ]
+	script = planet/research/fwt_researcher_job_swap
+	jobs = @[ 102 * $SIZE_COST$ ]
 	district = @yes
 	description = @no
 
@@ -58,8 +58,8 @@ inline_script = {
 
 # nanite upgrade
 inline_script = {
-	script = planet/research/giga_nanotech_researcher_job_swap
-	jobs = @[ 400 * $SIZE_COST$ ]
+	script = planet/research/fwt_nanotech_researcher_job_swap
+	jobs = @frameworld_jobs_base
 	district = 1
 	condition = "frameworld_has_active_nanite_upgrade = yes"
 }

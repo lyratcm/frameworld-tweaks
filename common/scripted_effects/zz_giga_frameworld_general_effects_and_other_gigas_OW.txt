@@ -461,3 +461,16 @@
 # 	# 	check_planet_employment = yes
 # 	# }
 # }
+
+#temp overwrite till ai check is fixed
+frameworld_conduct_audit_check_ai = {
+    # if = {
+    #     limit = {
+    #         exists = owner
+    #         owner = {
+    #             is_ai = yes
+    #         }
+    #     }
+    #     frameworld_conduct_audit = yes
+    # }
+}

@@ -1,7 +1,6 @@
 include = {
-	zone_giga_frameworld_foundry
 	district_giga_frameworld_city
-	zone_giga_frameworld_foundry
+	district_giga_frameworld_foundry
 	district_giga_frameworld_factory
 	district_giga_frameworld_generator
 	district_giga_frameworld_mining

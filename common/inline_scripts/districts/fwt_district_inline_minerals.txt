@@ -11,8 +11,8 @@
 
 
 inline_script = {
-	script = planet/minerals/giga_miner_job_swap
-	jobs = @[ 400 * $SIZE_COST$ ]
+	script = planet/minerals/fwt_miner_job_swap
+	jobs = @frameworld_jobs_base
 	district = 1
 	extra_hive_jobs = @[ 100 * $SIZE_COST$ ]
 }
@@ -48,5 +48,5 @@ planet_modifier = {
 }
 
 inline_script = {
-	script = zones/shared_city_non_urban_zone_modifiers
+	script = zones/shared_frameworld_non_urban_zone_modifiers
 }

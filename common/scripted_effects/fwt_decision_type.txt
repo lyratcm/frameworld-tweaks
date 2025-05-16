@@ -445,44 +445,44 @@ fwt_trigger_effects_situation = {
 				}
 			}
 		}
-		frameworld_penrose_dec = { frameworld_penrose = yes }
-		giga_frameworld_decompressor_dec = { giga_frameworld_decompressor = yes }
-		giga_frameworld_advanced_city_dec = { giga_frameworld_advanced_city = yes}
-		giga_frameworld_advanced_industrial_dec = { giga_frameworld_advanced_industrial = yes}
-		frameworld_advanced_sanctuary_dec = { giga_frameworld_advanced_sanctuary = yes}
-		giga_frameworld_gaia_dec = { giga_frameworld_gaia = yes }
-		giga_frameworld_computing_complex_dec = { giga_frameworld_computing_complex = yes }
-		giga_frameworld_expand_infrastructure_dec = { giga_frameworld_expand_infrastructure = yes }
-		frameworld_orbital_ring_dec = { giga_frameworld_orbital_ring_upgrade = yes }
-		frameworld_maginot_dec = {
-			event_target:frame_expand@owner = {
-				custom_tooltip = giga_frameworld_upgrade_desc
-				custom_tooltip = giga_frameworld_maginot_effect
-				remove_flags = { NAME = frameworld_maginot }
-				add_deposit = d_frameworld_maginot
-				hidden_effect = {
-					set_planet_flag = frameworld_maginot
-				}
-
-				custom_tooltip = frameworld_line
-				custom_tooltip = giga_frameworld_upgrade_upkeep
-
-				hidden_effect = {
-					giga_frameworld_spawn_maginot_defensive_stations = {
-						WHO = owner
-					}
-					init_giga_maginot = yes
-					giga_frameworld_update_maginot_deposits = yes
-				}
-
-				save_event_target_as = giga_planet
-				hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.013 } } }
-				add_completion_flag = { NAME = maginot }
-			}
-		}
-		frameworld_habitat_dec = { giga_frameworld_habitat = yes }
-		yggdrasil_orchid_dec = { giga_frameworld_yggdrasil_orchid = yes }
-		interstellar_assembly_dec = { giga_frameworld_interstellar_assembly = yes }
+		# frameworld_penrose_dec = { frameworld_penrose = yes }
+		# giga_frameworld_decompressor_dec = { giga_frameworld_decompressor = yes }
+		# giga_frameworld_advanced_city_dec = { giga_frameworld_advanced_city = yes}
+		# giga_frameworld_advanced_industrial_dec = { giga_frameworld_advanced_industrial = yes}
+		# frameworld_advanced_sanctuary_dec = { giga_frameworld_advanced_sanctuary = yes}
+		# giga_frameworld_gaia_dec = { giga_frameworld_gaia = yes }
+		# giga_frameworld_computing_complex_dec = { giga_frameworld_computing_complex = yes }
+		# giga_frameworld_expand_infrastructure_dec = { giga_frameworld_expand_infrastructure = yes }
+		# frameworld_orbital_ring_dec = { giga_frameworld_orbital_ring_upgrade = yes }
+		# frameworld_maginot_dec = {
+		# 	event_target:frame_expand@owner = {
+		# 		custom_tooltip = giga_frameworld_upgrade_desc
+		# 		custom_tooltip = giga_frameworld_maginot_effect
+		# 		remove_flags = { NAME = frameworld_maginot }
+		# 		add_deposit = d_frameworld_maginot
+		# 		hidden_effect = {
+		# 			set_planet_flag = frameworld_maginot
+		# 		}
+		#
+		# 		custom_tooltip = frameworld_line
+		# 		custom_tooltip = giga_frameworld_upgrade_upkeep
+		#
+		# 		hidden_effect = {
+		# 			giga_frameworld_spawn_maginot_defensive_stations = {
+		# 				WHO = owner
+		# 			}
+		# 			init_giga_maginot = yes
+		# 			giga_frameworld_update_maginot_deposits = yes
+		# 		}
+		#
+		# 		save_event_target_as = giga_planet
+		# 		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.013 } } }
+		# 		add_completion_flag = { NAME = maginot }
+		# 	}
+		# }
+		# frameworld_habitat_dec = { giga_frameworld_habitat = yes }
+		# yggdrasil_orchid_dec = { giga_frameworld_yggdrasil_orchid = yes }
+		# interstellar_assembly_dec = { giga_frameworld_interstellar_assembly = yes }
 		giga_frameworld_expand_nanites = {
 			event_target:frame_expand@owner = {
 				giga_frameworld_expand_deposit = {

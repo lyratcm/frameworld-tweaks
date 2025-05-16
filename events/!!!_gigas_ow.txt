@@ -197,7 +197,7 @@ country_event = {
             #     building = building_foundry_1
             # }
             remove_building = building_holo_theatres
-            adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_01 ZONE = zone_giga_frameworld_foundry BUILDING = building_foundry_1 }
+            adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_01 ZONE = district_giga_frameworld_foundry BUILDING = building_foundry_1 }
             if = {
                 limit = {
                     owner = {

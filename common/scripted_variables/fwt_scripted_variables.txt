@@ -1,0 +1,2 @@
+@frameworld_housing_non_urban = 300
+@frameworld_jobs_base = 300

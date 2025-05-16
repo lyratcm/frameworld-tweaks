@@ -24,8 +24,8 @@ triggered_district_planet_modifier = {
 }
 
 inline_script = {
-	script = planet/consumer_goods/giga_artisan_job_swap
-	jobs = @[ 400 * $SIZE_COST$ ]
+	script = planet/consumer_goods/fwt_artisan_job_swap
+	jobs = @frameworld_jobs_base
 }
 
 triggered_desc = {
@@ -65,7 +65,7 @@ resources = {
 }
 
 inline_script = {
-	script = zones/shared_city_non_urban_zone_modifiers
+	script = zones/shared_frameworld_non_urban_zone_modifiers
 }
 
 planet_modifier = {

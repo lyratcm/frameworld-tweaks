@@ -23,8 +23,8 @@ triggered_district_planet_modifier = {
 }
 
 inline_script = {
-	script = planet/alloys/giga_foundry_job_swap
-	jobs = @[ 400 * $SIZE_COST$ ]
+	script = planet/alloys/fwt_foundry_job_swap
+	jobs = @frameworld_jobs_base
 }
 
 triggered_desc = {
@@ -76,9 +76,11 @@ resources = {
 		alloys = @[ 10 * $SIZE$ ]
 	}
 }
+
 planet_modifier = {
 	zone_building_slots_add = 3
 }
+
 inline_script = {
-	script = zones/shared_city_non_urban_zone_modifiers
+	script = zones/shared_frameworld_non_urban_zone_modifiers
 }
