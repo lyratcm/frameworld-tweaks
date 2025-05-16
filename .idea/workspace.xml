@@ -4,73 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="added new districts/zones and gave them pops">
-      <change afterPath="$PROJECT_DIR$/common/inline_scripts/generic_parts/fwt_toggled_job_and_desc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/inline_scripts/zones/shared_frameworld_non_urban_zone_modifiers.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/scripted_variables/fwt_scripted_variables.txt" afterDir="false" />
+    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="all districts/jobs now work and inlines are split from gigas to avoid issues with buildings that use the same code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_alloy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_alloy.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_energy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_energy.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_factory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_factory.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_food.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_food.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_minerals.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_minerals.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/districts/giga_frameworld_districts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/districts/giga_frameworld_districts.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_science.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_science.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_unity.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_unity.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/parts/fwt_bio_trophy_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/parts/fwt_bio_trophy_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/alloys/giga_foundry_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/alloys/fwt_foundry_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/alloys/parts/giga_foundry_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/alloys/parts/fwt_foundry_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/catalyst/giga_catalyst_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/catalyst/parts/giga_catalyst_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/consumer_goods/giga_artisan_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/consumer_goods/fwt_artisan_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/consumer_goods/parts/giga_artisan_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/consumer_goods/parts/fwt_artisan_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/energy/giga_technician_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/energy/fwt_technician_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/energy/parts/giga_technician_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/energy/parts/fwt_technician_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/food/giga_farmer_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/food/fwt_farmer_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/food/parts/giga_farmer_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/food/parts/fwt_farmer_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/industrial/giga_industrial_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/industrial/parts/giga_industrial_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/maintenance/giga_city_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/maintenance/giga_clerk_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/maintenance/giga_maintenance_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/maintenance/parts/giga_city_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/maintenance/parts/giga_clerk_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/maintenance/parts/giga_maintenance_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/minerals/giga_all_miners_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/minerals/giga_matter_synth_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/minerals/giga_miner_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/minerals/fwt_miner_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/minerals/giga_scrap_miner_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/minerals/parts/giga_all_miners_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/minerals/parts/giga_matter_synth_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/minerals/parts/giga_miner_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/minerals/parts/fwt_miner_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/minerals/parts/giga_scrap_miner_job_swap.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/research/giga_nanotech_researcher_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/research/fwt_nanotech_researcher_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/research/giga_researcher_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/research/fwt_researcher_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/giga_biologist_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_biologist_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/giga_engineer_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_engineer_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/giga_nanotech_researcher_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_nanotech_researcher_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/giga_physicist_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_physicist_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/giga_researcher_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_researcher_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/giga_ruler_part_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/giga_ruler_part_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/giga_politician_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_politician_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/giga_politician_jobs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_politician_jobs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/giga_ruler_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_ruler_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/giga_ruler_part_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_ruler_part_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/giga_ruler_swap_jobs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_ruler_swap_jobs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/unity/giga_bureaucrat_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/unity/fwt_bureaucrat_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/unity/giga_gestalt_unity_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/unity/fwt_gestalt_unity_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/unity/giga_priest_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/unity/fwt_priest_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/giga_bureaucrat_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/fwt_bureaucrat_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/giga_cult_priest_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/fwt_cult_priest_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/giga_gestalt_unity_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/fwt_gestalt_unity_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/giga_non_cult_priest_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/fwt_non_cult_priest_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/giga_priest_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/fwt_priest_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_nanotech_researcher_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_nanotech_researcher_job_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_researcher_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_researcher_job_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/fwt_ruler_part_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/fwt_ruler_part_job_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_politician_jobs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_politician_jobs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_ruler_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_ruler_job_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_ruler_part_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_ruler_part_job_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_ruler_swap_jobs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_ruler_swap_jobs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/unity/fwt_priest_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/unity/fwt_priest_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/fwt_non_cult_priest_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/fwt_non_cult_priest_swap.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/inline_scripts/zones/fwt_zones_frameworld_urban.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/zones/fwt_zones_frameworld_urban.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_effects/fwt_decision_type.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/fwt_decision_type.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_triggers/zz_giga_assembly_triggers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_triggers/zz_giga_assembly_triggers.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/zones/fwt_zones.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/zones/fwt_zones.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/fwt_events.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/fwt_events.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,12 +124,21 @@
       <option name="project" value="LOCAL" />
       <updated>1747242465334</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="all districts/jobs now work and inlines are split from gigas to avoid issues with buildings that use the same code">
+      <option name="closed" value="true" />
+      <created>1747408003998</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747408003998</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Removing pop changes to allow for 4.0 changes" />
     <MESSAGE value="added new districts/zones and gave them pops" />
-    <option name="LAST_COMMIT_MESSAGE" value="added new districts/zones and gave them pops" />
+    <MESSAGE value="all districts/jobs now work and inlines are split from gigas to avoid issues with buildings that use the same code" />
+    <option name="LAST_COMMIT_MESSAGE" value="all districts/jobs now work and inlines are split from gigas to avoid issues with buildings that use the same code" />
   </component>
 </project>

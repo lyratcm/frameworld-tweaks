@@ -42,17 +42,18 @@ inline_script = {
 
 inline_script = {
 	script = planet/research/fwt_researcher_job_swap
-	jobs = @[ 201 * $SIZE_COST$ ]
+	jobs = @[ 200.01 * $SIZE_COST$ ]
 	district = @yes
+	mode = @job_mode_add
 	condition = "frameworld_has_active_nanite_upgrade = no"
 }
 
 inline_script = {
 	script = planet/research/fwt_researcher_job_swap
-	jobs = @[ 102 * $SIZE_COST$ ]
+	jobs = @[ 100.02 * $SIZE_COST$ ]
 	district = @yes
 	description = @no
-
+	mode = @job_mode_add
 	condition = "frameworld_has_active_nanite_upgrade = no"
 }
 

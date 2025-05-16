@@ -671,7 +671,7 @@ district_giga_frameworld_nexus_advanced = {
 
 district_giga_frameworld_urban_01 = {
 	icon = district_arcology_housing_secondary
-	base_buildtime = 600
+	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 	default_starting_district = yes
@@ -755,7 +755,7 @@ district_giga_frameworld_urban_01 = {
 
 district_giga_frameworld_urban_02 = {
 	icon = district_arcology_housing_secondary
-	base_buildtime = 600
+	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 	default_starting_district = yes
@@ -837,7 +837,7 @@ district_giga_frameworld_urban_02 = {
 
 district_giga_frameworld_urban_03 = {
 	icon = district_arcology_housing_secondary
-	base_buildtime = 600
+	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 	default_starting_district = yes
@@ -919,7 +919,7 @@ district_giga_frameworld_urban_03 = {
 
 district_giga_frameworld_urban_04 = {
 	icon = district_arcology_housing_secondary
-	base_buildtime = 600
+	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 	default_starting_district = yes
@@ -1001,7 +1001,7 @@ district_giga_frameworld_urban_04 = {
 
 district_giga_frameworld_urban_05 = {
 	icon = district_arcology_housing_secondary
-	base_buildtime = 600
+	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 	default_starting_district = yes
@@ -1083,7 +1083,7 @@ district_giga_frameworld_urban_05 = {
 
 district_giga_frameworld_urban_06 = {
 	icon = district_arcology_housing_secondary
-	base_buildtime = 600
+	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 	default_starting_district = yes
@@ -1165,7 +1165,7 @@ district_giga_frameworld_urban_06 = {
 
 district_giga_frameworld_urban_07 = {
 	icon = district_arcology_housing_secondary
-	base_buildtime = 600
+	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 	default_starting_district = yes
@@ -1247,7 +1247,7 @@ district_giga_frameworld_urban_07 = {
 
 district_giga_frameworld_urban_08 = {
 	icon = district_arcology_housing_secondary
-	base_buildtime = 600
+	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 	default_starting_district = yes
@@ -1329,7 +1329,7 @@ district_giga_frameworld_urban_08 = {
 
 district_giga_frameworld_urban_09 = {
 	icon = district_arcology_housing_secondary
-	base_buildtime = 600
+	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 	default_starting_district = yes

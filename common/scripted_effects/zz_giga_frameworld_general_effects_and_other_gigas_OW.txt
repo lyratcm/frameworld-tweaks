@@ -474,3 +474,139 @@ frameworld_conduct_audit_check_ai = {
     #     frameworld_conduct_audit = yes
     # }
 }
+#temp overwrite till maginoit is worked out
+# planet scope
+giga_frameworld_recalculate_variables = {
+    # cost mult to 1
+    giga_frameworld_reset_variables = yes
+
+    # recalculate the exponent
+    giga_frameworld_recalculate_exponent = yes
+
+    # deal with calculating base cost
+    set_variable = {
+        which = giga_frameworld_expansion_cost_base
+        value = @giga_frameworld_expansion_cost_base
+    }
+
+    if = {
+        limit = {
+            exists = owner
+            owner = {
+                has_technology = tech_habitat_2
+            }
+        }
+        change_variable = {
+            which = giga_frameworld_expansion_cost_base
+            value = @giga_frameworld_expansion_cost_habitat_2
+        }
+    }
+
+    if = {
+        limit = {
+            exists = owner
+            owner = {
+                has_technology = tech_habitat_3
+            }
+        }
+        change_variable = {
+            which = giga_frameworld_expansion_cost_base
+            value = @giga_frameworld_expansion_cost_habitat_3
+        }
+    }
+
+    # recalculate multiplier from expansion count
+    if = {
+        limit = {
+            is_variable_set = giga_frameworld_structure_expansions
+        }
+        while = {
+            count = giga_frameworld_structure_expansions
+
+            multiply_variable = {
+                which = giga_frameworld_expansion_cost_multiplier
+                value = giga_frameworld_expansion_cost_exponent
+            }
+        }
+    }
+
+    # set up the bulk buy options
+    set_variable = {
+        # temp value for our mult
+        which = giga_frameworld_expansion_multiplier_bulk
+        value = giga_frameworld_expansion_cost_multiplier
+    }
+    set_variable = {
+        # +5 starts with the +1 cost
+        which = giga_frameworld_expansion_bulk_5_cost_multiplier
+        value = giga_frameworld_expansion_cost_multiplier
+    }
+
+    while = {
+        count = 4 # the current mult is for +1 so for +5 we need 4 more
+        multiply_variable = {
+            # increase our temp multiplier
+            which = giga_frameworld_expansion_multiplier_bulk
+            value = giga_frameworld_expansion_cost_exponent
+        }
+        change_variable = {
+            # add the cost to our bulk cost
+            which = giga_frameworld_expansion_bulk_5_cost_multiplier
+            value = giga_frameworld_expansion_multiplier_bulk
+        }
+    }
+
+    set_variable = {
+        # +10 starts with the +5 cost
+        which = giga_frameworld_expansion_bulk_10_cost_multiplier
+        value = giga_frameworld_expansion_bulk_5_cost_multiplier
+    }
+
+    while = {
+        count = 5 # increment 5 more times to get to +10
+        multiply_variable = {
+            # increase temp multiplier
+            which = giga_frameworld_expansion_multiplier_bulk
+            value = giga_frameworld_expansion_cost_exponent
+        }
+        change_variable = {
+            # add to bulk cost
+            which = giga_frameworld_expansion_bulk_10_cost_multiplier
+            value = giga_frameworld_expansion_multiplier_bulk
+        }
+    }
+
+    # tooltip variables
+    set_variable = {
+        which = giga_frameworld_expansion_cost_multiplier_tooltip
+        value = giga_frameworld_expansion_cost_multiplier
+    }
+    round_variable_to_closest = {
+        which = giga_frameworld_expansion_cost_multiplier_tooltip
+        value = 0.01
+    }
+
+    set_variable = {
+        which = giga_frameworld_expansion_bulk_5_cost_multiplier_tooltip
+        value = giga_frameworld_expansion_bulk_5_cost_multiplier
+    }
+    round_variable_to_closest = {
+        which = giga_frameworld_expansion_bulk_5_cost_multiplier_tooltip
+        value = 0.01
+    }
+
+    set_variable = {
+        which = giga_frameworld_expansion_bulk_10_cost_multiplier_tooltip
+        value = giga_frameworld_expansion_bulk_10_cost_multiplier
+    }
+    round_variable_to_closest = {
+        which = giga_frameworld_expansion_bulk_10_cost_multiplier_tooltip
+        value = 0.01
+    }
+
+    # recalculate "we have lots of alloys AI buffer"
+    giga_frameworld_recalculate_buffer = yes
+
+    # # recalculate maginot district cap
+    # giga_frameworld_update_maginot_deposits = yes
+}

@@ -467,7 +467,7 @@ fwt_district_job_count_sub = {
 }
 
 fwt_district_job_count = {
-	weight = trigger:num_pops
+	weight = trigger:pop_amount
 	subtract = trigger:num_districts
 	# gives jobs not from districts
 	divide = frame_expansion_scale
@@ -498,7 +498,7 @@ fwt_job_effectivness = {
 
 # pops relative to fake pops for scaling modifiers tied to a pop
 fwt_pop_effectivness = {
-	weight = trigger:num_pops
+	weight = trigger:pop_amount
 	divide = background_pops
 }
 

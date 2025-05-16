@@ -7,7 +7,6 @@ include = {
 	district_giga_frameworld_farming
 	district_giga_frameworld_trade
 	district_giga_frameworld_administrative
-	district_giga_frameworld_temple
 	district_giga_frameworld_synapse
 	district_giga_frameworld_simulation
 	district_giga_frameworld_sanctuary

@@ -21,6 +21,6 @@ inline_script = {
     multiplier_string = "$multiplier_string$"
     multiplier_string = ""
 
-    type = $type$
-    type = planet
+    type = "$type$"
+    type = "planet"
 }

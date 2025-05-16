@@ -66,9 +66,9 @@ country_event = {
             # add_deposit = d_fwt_job_size
             # planet_event = { id = fwt_jobs.31 }
             save_global_event_target_as = frame_expand@owner
-            add_modifier = {
-                modifier = fwt_job_size_info
-            }
+            # add_modifier = {
+            #     modifier = fwt_job_size_info
+            # }
             add_modifier = {
                 modifier = fwt_speed_unemploy_info
                 multiplier = -100000000
@@ -85,10 +85,10 @@ country_event = {
                         is_gestalt = no
                     }
                 }
-                add_district = district_giga_frameworld_factory
+                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_02 ZONE = district_giga_frameworld_factory }
             }
             else = {
-                add_district = district_giga_frameworld_mining
+                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_04 ZONE = district_giga_frameworld_mining }
             }
             if = {
                 limit = {
@@ -101,10 +101,18 @@ country_event = {
                             is_lithoid = yes
                         }
                     }
-                    add_district = district_giga_frameworld_mining
+                    adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_04 ZONE = district_giga_frameworld_mining }
+                }
+                else_if = {
+                    limit = {
+                        owner = {
+                            country_uses_food = yes
+                        }
+                    }
+                    adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_farming }
                 }
                 else = {
-                    add_district = district_giga_frameworld_farming
+                    adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_03 ZONE = district_giga_frameworld_generator }
                 }
             }
         }
@@ -1082,12 +1090,12 @@ planet_event = {
 
     immediate = {
         # 100
-        set_variable = { which = fwt_pop_growth_rec value = trigger:num_pops }
+        set_variable = { which = fwt_pop_growth_rec value = trigger:pop_amount  }
         multiply_variable = { which = fwt_pop_growth_rec value = owner.fwt_required_scaling }
         change_variable = { which = fwt_pop_growth_rec value = 100 }
 
         set_variable = { which = fwt_pop_growth_rec_back value = background_pops }
-        change_variable = { which = fwt_pop_growth_rec_back value = trigger:num_pops }
+        change_variable = { which = fwt_pop_growth_rec_back value = trigger:pop_amount }
         multiply_variable = { which = fwt_pop_growth_rec_back value = owner.fwt_required_scaling }
         change_variable = { which = fwt_pop_growth_rec_back value = 100 }
 
@@ -1096,7 +1104,7 @@ planet_event = {
         subtract_variable = { which = fwt_pop_growth_rec value = 1 }
         multiply_variable = { which = fwt_pop_growth_rec value = -1 }
 
-        set_variable = { which = fwt_pop_growth_reduction value = modifier:pop_growth_speed_reduction }
+        set_variable = { which = fwt_pop_growth_reduction value = modifier:logistic_growth_mult }
         change_variable = { which = fwt_pop_growth_reduction value = -1 }
         multiply_variable = { which = fwt_pop_growth_rec value = -1 }
         multiply_variable = { which = fwt_pop_growth_reduction value = fwt_pop_growth_rec }

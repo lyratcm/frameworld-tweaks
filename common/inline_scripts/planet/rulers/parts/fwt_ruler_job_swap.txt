@@ -9,6 +9,7 @@ inline_script = {
     district = $district$
     description = @[ $description$ * $politician_description$ ]
     multiplier_string = "$multiplier_string$"
+    type = "$type$"
 }
 
 inline_script = {
@@ -19,4 +20,5 @@ inline_script = {
     district = $district$
     description = $description$
     multiplier_string = "$multiplier_string$"
+    type = "$type$"
 }

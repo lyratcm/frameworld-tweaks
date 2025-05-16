@@ -346,7 +346,6 @@ district_giga_frameworld_administrative = {
 		exists = owner
 		owner = {
 			is_gestalt = no
-			giga_country_uses_priests = no
 			has_technology = "tech_colonial_bureaucracy"
 		}
 		not = { has_planet_flag = frameworld_advanced_city_completed }
@@ -357,7 +356,6 @@ district_giga_frameworld_administrative = {
 		exists = owner
 		owner = {
 			is_gestalt = no
-			giga_country_uses_priests = no
 			has_technology = "tech_colonial_bureaucracy"
 		}
 		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
@@ -393,50 +391,50 @@ district_giga_frameworld_administrative = {
 	}
 }
 
-district_giga_frameworld_temple = {
-	icon = district_arcology_administrative
-
-    unlock = {
-		exists = owner
-		owner = {
-			is_gestalt = no
-			giga_country_uses_priests = yes
-		}
-		uses_district_set = giga_frameworld
-		not = { has_planet_flag = frameworld_advanced_city_completed }
-		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
-	}
-
-	potential = {
-		exists = owner
-		owner = {
-			is_gestalt = no
-			giga_country_uses_priests = yes
-			has_technology = "tech_holographic_rituals"
-		}
-		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
-		uses_district_set = giga_frameworld
-		not = { has_planet_flag = frameworld_advanced_city_completed }
-	}
-
-    show_in_tech = tech_planetary_government
-
-	convert_to = {
-		district_giga_frameworld_sanctuary_advanced
-		district_giga_frameworld_sanctuary
-		district_giga_frameworld_advanced_simulation
-		district_giga_frameworld_ecu_simulation
-		district_giga_frameworld_advanced_synapse
-		district_giga_frameworld_ecu_synapse
-		district_giga_frameworld_advanced_temple
-		district_giga_frameworld_advanced_administrative
-		district_giga_frameworld_ecu_administrative
-	}
-	inline_script = {
-		script = districts/params/fwt_district_inline_unity_params
-		JOB = "planet/unity/fwt_priest_swap"
-	}
-}
+# district_giga_frameworld_temple = {
+# 	icon = district_arcology_administrative
+#
+#     unlock = {
+# 		exists = owner
+# 		owner = {
+# 			is_gestalt = no
+# 			giga_country_uses_priests = yes
+# 		}
+# 		uses_district_set = giga_frameworld
+# 		not = { has_planet_flag = frameworld_advanced_city_completed }
+# 		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
+# 	}
+#
+# 	potential = {
+# 		exists = owner
+# 		owner = {
+# 			is_gestalt = no
+# 			giga_country_uses_priests = yes
+# 			has_technology = "tech_holographic_rituals"
+# 		}
+# 		not = { has_planet_flag = frameworld_interstellar_assembly_completed }
+# 		uses_district_set = giga_frameworld
+# 		not = { has_planet_flag = frameworld_advanced_city_completed }
+# 	}
+#
+#     show_in_tech = tech_planetary_government
+#
+# 	convert_to = {
+# 		district_giga_frameworld_sanctuary_advanced
+# 		district_giga_frameworld_sanctuary
+# 		district_giga_frameworld_advanced_simulation
+# 		district_giga_frameworld_ecu_simulation
+# 		district_giga_frameworld_advanced_synapse
+# 		district_giga_frameworld_ecu_synapse
+# 		district_giga_frameworld_advanced_temple
+# 		district_giga_frameworld_advanced_administrative
+# 		district_giga_frameworld_ecu_administrative
+# 	}
+# 	inline_script = {
+# 		script = districts/params/fwt_district_inline_unity_params
+# 		JOB = "planet/unity/fwt_priest_swap"
+# 	}
+# }
 
 # hive unity
 district_giga_frameworld_synapse = {
@@ -477,10 +475,18 @@ district_giga_frameworld_synapse = {
 		district_giga_frameworld_advanced_administrative
 		district_giga_frameworld_ecu_administrative
 	}
+
+	included_building_sets = {
+		unity
+		automation
+		origin
+	}
+
 	inline_script = {
 		script = districts/params/fwt_district_inline_unity_params
 		JOB = "planet/unity/fwt_gestalt_unity_job_swap"
 	}
+
 	triggered_district_planet_modifier = {
 		potential = {
 			exists = owner
@@ -559,6 +565,12 @@ district_giga_frameworld_simulation = {
 		district_giga_frameworld_ecu_administrative
 	}
 
+	included_building_sets = {
+		unity
+		automation
+		origin
+	}
+
 	inline_script = {
 		script = districts/params/fwt_district_inline_unity_params
 		JOB = "planet/unity/fwt_gestalt_unity_job_swap"
@@ -611,6 +623,12 @@ district_giga_frameworld_sanctuary = {
 		district_giga_frameworld_ecu_temple
 		district_giga_frameworld_advanced_administrative
 		district_giga_frameworld_ecu_administrative
+	}
+
+	included_building_sets = {
+		unity
+		automation
+		origin
 	}
 
 	triggered_district_planet_modifier = {
@@ -709,6 +727,12 @@ district_giga_frameworld_anticrime = {
 			energy = @advanced_upkeep
 			volatile_motes = @advanced_rare_upkeep
 		}
+	}
+
+	included_building_sets = {
+		government
+		automation
+		origin
 	}
 
 	inline_script = {
@@ -916,6 +940,7 @@ district_giga_frameworld_amenities_dystopian = {
 		potential = { always = yes }
 		planet_amenities_add = 200
 	}
+
 	inline_script = {
 		script = "planet/rulers/fwt_ruler_part_job_swap"
 		jobs = @frameworld_jobs_base
@@ -1051,7 +1076,13 @@ district_giga_frameworld_supertensiles = {
 		}
 	}
 
-	planet_modifier = {
+	included_building_sets = {
+		foundry
+		automation
+		origin
+	}
+
+	triggered_district_planet_modifier = {
 		planet_housing_add = 150
 	}
 
