@@ -1,5 +1,6 @@
 triggered_district_planet_modifier = {
     potential = { always = yes }
-    planet_housing_add = 700
-    job_bio_trophy_add = 1000
+    planet_housing_add = 600
+    job_bio_trophy_add = 500
+    job_coordinator_add = 100
 }

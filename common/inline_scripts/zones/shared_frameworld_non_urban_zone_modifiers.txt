@@ -1,3 +1,5 @@
 triggered_district_planet_modifier = {
+    potential = { always = yes }
     planet_housing_add = @frameworld_housing_non_urban
+    mult = frame_expansion_scale
 }

@@ -3,7 +3,6 @@ resources = {
     cost = {
         alloys = @giga_frameworld_expansion_cost_base
 		multiplier = $NAME$_cost_multiplier
-
     }
     
 	inline_script = {

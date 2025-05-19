@@ -25,6 +25,7 @@ triggered_district_planet_modifier = {
 inline_script = {
 	script = planet/alloys/fwt_foundry_job_swap
 	jobs = @frameworld_jobs_base
+	multiplier_string = "mult = fwt_alloy_completion"
 }
 
 triggered_desc = {
@@ -44,14 +45,26 @@ resources = {
 	category = planet_districts_industrial
 	cost = {
 		minerals = @[ advanced_cost * $SIZE_COST$ * $SCALE$ ]
+		mult = fwt_alloy_completion
+	}
+	cost = {
+		trigger = {
+			check_variable = { which = fwt_alloy_completion value > 1 }
+		}
 		volatile_motes = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_alloy_completion
 	}
 	#half advanced cost (so base) and 0x advanced so none of the for tier 1
 	upkeep = {
 		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
+		mult = fwt_alloy_completion
+	}
+	upkeep = {
+		trigger = {
+			check_variable = { which = fwt_alloy_completion value > 1 }
+		}
 		volatile_motes = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
 	}
-	
 	upkeep = {
 		trigger = {
 			exists = owner
@@ -60,6 +73,7 @@ resources = {
 			}
 		}
 		energy = 2
+		mult = fwt_alloy_completion
 	}
 	# nanite upgrade
 	upkeep = {
@@ -67,13 +81,21 @@ resources = {
 			frameworld_has_active_nanite_upgrade = yes
 		}
 		energy = @[ 20 * $SIZE$ ]
+		mult = fwt_alloy_completion
+	}
+	upkeep = {
+		trigger = {
+			check_variable = { which = fwt_alloy_completion value > 1 }
+		}
 		nanites = @[ 2 * $SIZE$ ]
+		mult = fwt_alloy_completion
 	}
 	produces = {
 		trigger = {
 			frameworld_has_active_nanite_upgrade = yes
 		}
 		alloys = @[ 10 * $SIZE$ ]
+		mult = fwt_alloy_completion
 	}
 }
 

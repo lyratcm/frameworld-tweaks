@@ -88,7 +88,7 @@ fwt_situation_continuous_expansion = {
 		owner = {
 			set_variable = {
 				which = fwt_expansion_income
-				value = prev.fwt_expansion_income
+				value = root.fwt_expansion_income
 			}
 		}
 		#might fix any jank with more than end of situation

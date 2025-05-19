@@ -343,8 +343,9 @@ d_frameworld_expansion = {
         }
         multiplier = giga_frameworld_expansions
 
+        planet_building_capacity_add = 0.1
         giga_frameworld_growth_jobs_add = 0.2
-        pop_growth_speed = 0.025
+        logistic_growth_mult  = 0.025
         planet_decision_enact_speed_mult = 0.02
         planet_army_build_speed_mult = 0.02
         pop_purge_speed = 0.02
@@ -352,16 +353,16 @@ d_frameworld_expansion = {
     }
     triggered_planet_modifier = {
         potential = {
-            has_planet_flag = frameworld_habitat_completed
-            has_planet_flag = frameworld_advanced_city_completed
+            check_variable = { which = frame_expansion_scale value >= 2 }
 			owner = {
 				giga_has_frameworld_origin = yes
 			}
         }
         multiplier = giga_frameworld_expansions
 
+        planet_building_capacity_add = 0.05
         giga_frameworld_growth_jobs_add = 0.1
-        pop_growth_speed = 0.0125
+        logistic_growth_mult = 0.0125
         planet_decision_enact_speed_mult = 0.01
         planet_army_build_speed_mult = 0.01
         pop_purge_speed = 0.01
@@ -369,6 +370,7 @@ d_frameworld_expansion = {
     }
 	triggered_planet_modifier = {
         potential = {
+            check_variable = { which = frame_expansion_scale value >= 4 }
             exists = owner
             owner = {
 				has_galactic_wonders = yes
@@ -377,25 +379,15 @@ d_frameworld_expansion = {
         }
         multiplier = giga_frameworld_expansions
 
+        planet_building_capacity_add = 0.75
         giga_frameworld_growth_jobs_add = 0.15
-        pop_growth_speed = 0.01825
+        logistic_growth_mult = 0.01825
         planet_decision_enact_speed_mult = 0.15
 		#extra build speed as pop growth will be getting out of control
 		planet_building_build_speed_mult = 0.02
         planet_army_build_speed_mult = 0.15
         pop_purge_speed = 0.15
         giga_pop_assimilation_speed = 0.15
-    }
-	triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                giga_has_frameworld_origin = yes
-            }
-        }
-        multiplier = value:fwt_expansion_build_scaling
-
-        planet_building_build_speed_mult = 0.02
     }
 }
 
@@ -423,8 +415,9 @@ d_frameworld_expansion_tooltip = {
         }
         multiplier = giga_frameworld_expansions
 
+        planet_building_capacity_add = 0.1
         giga_frameworld_growth_jobs_add = 0.2
-        pop_growth_speed = 0.025
+        logistic_growth_mult = 0.025
         planet_decision_enact_speed_mult = 0.02
         planet_army_build_speed_mult = 0.02
         pop_purge_speed = 0.02
@@ -432,29 +425,13 @@ d_frameworld_expansion_tooltip = {
     }
 	triggered_planet_modifier = {
         potential = {
-            exists = owner
-            owner = {
-				has_galactic_wonders = yes
-            }
+            check_variable = { which = frame_expansion_scale value > 1 }
         }
         multiplier = giga_frameworld_expansions
 
-        giga_frameworld_growth_jobs_add = 0.15
-        pop_growth_speed = 0.01875
-        planet_decision_enact_speed_mult = 0.02
-        planet_army_build_speed_mult = 0.02
-        pop_purge_speed = 0.02
-        giga_pop_assimilation_speed = 0.02
-    }
-	triggered_planet_modifier = {
-        potential = {
-			has_planet_flag = frameworld_habitat_completed
-			has_planet_flag = frameworld_advanced_city_completed
-        }
-        multiplier = giga_frameworld_expansions
-
+        planet_building_capacity_add = 0.05
         giga_frameworld_growth_jobs_add = 0.1
-        pop_growth_speed = 0.0125
+        logistic_growth_mult = 0.0125
         planet_decision_enact_speed_mult = 0.01
         planet_army_build_speed_mult = 0.01
         pop_purge_speed = 0.01
@@ -462,14 +439,20 @@ d_frameworld_expansion_tooltip = {
     }
 	triggered_planet_modifier = {
         potential = {
-            exists = owner
-            owner = {
-                giga_has_frameworld_origin = yes
-            }
+            check_variable = { which = frame_expansion_scale value >= 4 }
+            giga_has_frameworld_origin = yes
         }
-        multiplier = value:fwt_expansion_build_scaling
+        multiplier = giga_frameworld_expansions
 
+        planet_building_capacity_add = 0.75
+        giga_frameworld_growth_jobs_add = 0.15
+        logistic_growth_mult = 0.01825
+        planet_decision_enact_speed_mult = 0.15
+        #extra build speed as pop growth will be getting out of control
         planet_building_build_speed_mult = 0.02
+        planet_army_build_speed_mult = 0.15
+        pop_purge_speed = 0.15
+        giga_pop_assimilation_speed = 0.15
     }
 }
 
@@ -511,49 +494,63 @@ d_frameworld_reorganise_expansion = {
     }
 
     triggered_planet_modifier = {
-        potential = { always = yes }
-        multiplier = giga_frameworld_reorganise_expansions
-
-        giga_frameworld_growth_jobs_add = 1
-        planet_building_build_speed_mult = 0.1
-        planet_decision_enact_speed_mult = 0.1
-        planet_army_build_speed_mult = 0.1
-        pop_purge_speed = 0.1
-        giga_pop_assimilation_speed = 0.1
-    }
-	triggered_planet_modifier = {
         potential = {
             exists = owner
             owner = {
-				has_galactic_wonders = yes
+                giga_has_frameworld_origin = yes
             }
         }
         multiplier = giga_frameworld_reorganise_expansions
 
-        giga_frameworld_growth_jobs_add = 1.5
-        pop_growth_speed = 0.1875
-        planet_decision_enact_speed_mult = 0.2
-        planet_army_build_speed_mult = 0.2
-        pop_purge_speed = 0.2
-        giga_pop_assimilation_speed = 0.2
-    }
-	triggered_planet_modifier = {
-        potential = {
-			has_planet_flag = frameworld_habitat_completed
-			has_planet_flag = frameworld_advanced_city_completed
-        }
-        multiplier = giga_frameworld_reorganise_expansions
-
-        giga_frameworld_growth_jobs_add = 1
-        pop_growth_speed = 0.125
-        planet_decision_enact_speed_mult = 0.1
-        planet_army_build_speed_mult = 0.1
-        pop_purge_speed = 0.1
-        giga_pop_assimilation_speed = 0.1
+        planet_building_capacity_add = 0.2
+        giga_frameworld_growth_jobs_add = 0.4
+        logistic_growth_mult  = 0.05
+        planet_decision_enact_speed_mult = 0.04
+        planet_army_build_speed_mult = 0.04
+        pop_purge_speed = 0.04
+        giga_pop_assimilation_speed = 0.04
     }
     triggered_planet_modifier = {
         potential = {
-            any_owned_pop = {
+            check_variable = { which = frame_expansion_scale value >= 2 }
+            owner = {
+                giga_has_frameworld_origin = yes
+            }
+        }
+        multiplier = giga_frameworld_reorganise_expansions
+
+        planet_building_capacity_add = 0.1
+        giga_frameworld_growth_jobs_add = 0.2
+        logistic_growth_mult = 0.025
+        planet_decision_enact_speed_mult = 0.02
+        planet_army_build_speed_mult = 0.02
+        pop_purge_speed = 0.02
+        giga_pop_assimilation_speed = 0.02
+    }
+    triggered_planet_modifier = {
+        potential = {
+            check_variable = { which = frame_expansion_scale value >= 4 }
+            exists = owner
+            owner = {
+                has_galactic_wonders = yes
+                giga_has_frameworld_origin = yes
+            }
+        }
+        multiplier = giga_frameworld_reorganise_expansions
+
+        planet_building_capacity_add = 1.5
+        giga_frameworld_growth_jobs_add = 0.30
+        logistic_growth_mult = 0.037
+        planet_decision_enact_speed_mult = 0.3
+        #extra build speed as pop growth will be getting out of control
+        planet_building_build_speed_mult = 0.04
+        planet_army_build_speed_mult = 0.3
+        pop_purge_speed = 0.3
+        giga_pop_assimilation_speed = 0.3
+    }
+    triggered_planet_modifier = {
+        potential = {
+            any_owned_pop_group = {
                 has_auto_modding_trait = yes
             }
         }
@@ -571,52 +568,69 @@ d_frameworld_reorganise_expansion_tooltip = {
     drop_weight = { weight = 0 }
     potential = { always = no }
 
-	triggered_planet_modifier = {
+    triggered_planet_modifier = {
         potential = {
             exists = owner
             owner = {
-				has_galactic_wonders = yes
+                giga_has_frameworld_origin = yes
             }
         }
-        multiplier = giga_frameworld_expansions
+        multiplier = giga_frameworld_reorganise_expansions
 
-        giga_frameworld_growth_jobs_add = 1.5
-        pop_growth_speed = 0.1875
-        planet_decision_enact_speed_mult = 0.2
-        planet_army_build_speed_mult = 0.2
-        pop_purge_speed = 0.2
-        giga_pop_assimilation_speed = 0.2
+        planet_building_capacity_add = 0.2
+        giga_frameworld_growth_jobs_add = 0.4
+        logistic_growth_mult  = 0.05
+        planet_decision_enact_speed_mult = 0.04
+        planet_army_build_speed_mult = 0.04
+        pop_purge_speed = 0.04
+        giga_pop_assimilation_speed = 0.04
     }
-	triggered_planet_modifier = {
+    triggered_planet_modifier = {
         potential = {
-			has_planet_flag = frameworld_habitat_completed
-			has_planet_flag = frameworld_advanced_city_completed
+            check_variable = { which = frame_expansion_scale value >= 2 }
+            owner = {
+                giga_has_frameworld_origin = yes
+            }
         }
-        multiplier = giga_frameworld_expansions
+        multiplier = giga_frameworld_reorganise_expansions
 
-        giga_frameworld_growth_jobs_add = 1
-        pop_growth_speed = 0.125
-        planet_decision_enact_speed_mult = 0.1
-        planet_army_build_speed_mult = 0.1
-        pop_purge_speed = 0.1
-        giga_pop_assimilation_speed = 0.1
+        planet_building_capacity_add = 0.1
+        giga_frameworld_growth_jobs_add = 0.2
+        logistic_growth_mult = 0.025
+        planet_decision_enact_speed_mult = 0.02
+        planet_army_build_speed_mult = 0.02
+        pop_purge_speed = 0.02
+        giga_pop_assimilation_speed = 0.02
     }
-
-    triggered_planet_modifier = {
-        potential = { always = yes }
-        planet_building_build_speed_mult = 0.1
-        planet_decision_enact_speed_mult = 0.1
-        planet_army_build_speed_mult = 0.1
-        pop_purge_speed = 0.1
-        giga_pop_assimilation_speed = 0.1
-    }
-
     triggered_planet_modifier = {
         potential = {
-            any_owned_pop = {
+            check_variable = { which = frame_expansion_scale value >= 4 }
+            exists = owner
+            owner = {
+                has_galactic_wonders = yes
+                giga_has_frameworld_origin = yes
+            }
+        }
+        multiplier = giga_frameworld_reorganise_expansions
+
+        planet_building_capacity_add = 1.5
+        giga_frameworld_growth_jobs_add = 0.30
+        logistic_growth_mult = 0.037
+        planet_decision_enact_speed_mult = 0.3
+        #extra build speed as pop growth will be getting out of control
+        planet_building_build_speed_mult = 0.04
+        planet_army_build_speed_mult = 0.3
+        pop_purge_speed = 0.3
+        giga_pop_assimilation_speed = 0.3
+    }
+    triggered_planet_modifier = {
+        potential = {
+            any_owned_pop_group = {
                 has_auto_modding_trait = yes
             }
         }
+        multiplier = giga_frameworld_reorganise_expansions
+
         auto_mod_monthly_add = 0.25
     }
 }
@@ -647,35 +661,60 @@ d_frameworld_nanite_expansion = {
         planet_districts_produces_mult = 0.02
     }
 
-	triggered_planet_modifier = {
+    triggered_planet_modifier = {
         potential = {
             exists = owner
             owner = {
-				has_galactic_wonders = yes
+                giga_has_frameworld_origin = yes
             }
         }
-        multiplier = giga_frameworld_nanite_expansions
+        multiplier = giga_frameworld_expansions
 
-        giga_frameworld_growth_jobs_add = 1.5
-        pop_growth_speed = 0.1875
-        planet_decision_enact_speed_mult = 0.2
-        planet_army_build_speed_mult = 0.2
-        pop_purge_speed = 0.2
-        giga_pop_assimilation_speed = 0.2
+        planet_building_capacity_add = 0.1
+        giga_frameworld_growth_jobs_add = 0.2
+        logistic_growth_mult  = 0.025
+        planet_decision_enact_speed_mult = 0.02
+        planet_army_build_speed_mult = 0.02
+        pop_purge_speed = 0.02
+        giga_pop_assimilation_speed = 0.02
     }
-	triggered_planet_modifier = {
+    triggered_planet_modifier = {
         potential = {
-			has_planet_flag = frameworld_habitat_completed
-			has_planet_flag = frameworld_advanced_city_completed
+            check_variable = { which = frame_expansion_scale value >= 2 }
+            owner = {
+                giga_has_frameworld_origin = yes
+            }
         }
-        multiplier = giga_frameworld_nanite_expansions
+        multiplier = giga_frameworld_expansions
 
-        giga_frameworld_growth_jobs_add = 1
-        pop_growth_speed = 0.125
-        planet_decision_enact_speed_mult = 0.1
-        planet_army_build_speed_mult = 0.1
-        pop_purge_speed = 0.1
-        giga_pop_assimilation_speed = 0.1
+        planet_building_capacity_add = 0.05
+        giga_frameworld_growth_jobs_add = 0.1
+        logistic_growth_mult = 0.0125
+        planet_decision_enact_speed_mult = 0.01
+        planet_army_build_speed_mult = 0.01
+        pop_purge_speed = 0.01
+        giga_pop_assimilation_speed = 0.01
+    }
+    triggered_planet_modifier = {
+        potential = {
+            check_variable = { which = frame_expansion_scale value >= 4 }
+            exists = owner
+            owner = {
+                has_galactic_wonders = yes
+                giga_has_frameworld_origin = yes
+            }
+        }
+        multiplier = giga_frameworld_expansions
+
+        planet_building_capacity_add = 0.75
+        giga_frameworld_growth_jobs_add = 0.15
+        logistic_growth_mult = 0.01825
+        planet_decision_enact_speed_mult = 0.15
+        #extra build speed as pop growth will be getting out of control
+        planet_building_build_speed_mult = 0.02
+        planet_army_build_speed_mult = 0.15
+        pop_purge_speed = 0.15
+        giga_pop_assimilation_speed = 0.15
     }
 }
 
@@ -744,8 +783,8 @@ d_frameworld_admin = {
 			}
 		}
 		# job_frameworld_defender_add = 2
-		job_frameworld_defender_per_pop = 0.02
-		planet_housing_add = 5
+		# job_frameworld_defender_per_pop = 0.02
+		planet_housing_add = 500
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -756,7 +795,7 @@ d_frameworld_admin = {
 				not = { has_valid_civic = civic_dystopian_society }
 			}
 		}
-		job_entertainer_add = 1
+		job_entertainer_add = 100
 	}
 
 	####################################################################################################################
@@ -777,7 +816,7 @@ d_frameworld_admin = {
 			giga_planet_has_zombie_assembly_facilities = no
 		}
 
-		job_giga_extra_healthcare_add = 1
+		job_giga_extra_healthcare_add = 100
 
 		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
@@ -798,7 +837,7 @@ d_frameworld_admin = {
 			giga_planet_has_zombie_assembly_facilities = no
 		}
 
-		job_roboticist_add = 0.5
+		job_roboticist_add = 50
 
 		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0|
 	}
@@ -815,7 +854,7 @@ d_frameworld_admin = {
 			giga_planet_has_zombie_assembly_facilities = no
 		}
 
-		job_giga_extra_healthcare_add = 1
+		job_giga_extra_healthcare_add = 100
 
 		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0.5|
 	}
@@ -835,7 +874,7 @@ d_frameworld_admin = {
 			giga_planet_has_zombie_assembly_facilities = no
 		}
 
-		job_giga_cloning_add = 0.5
+		job_giga_cloning_add = 50
 
 		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0|
 	}
@@ -851,7 +890,7 @@ d_frameworld_admin = {
 			giga_planet_has_zombie_assembly_facilities = no
 		}
 
-		job_giga_extra_healthcare_add = 1
+		job_giga_extra_healthcare_add = 100
 
 		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0.5|
 	}
@@ -870,7 +909,7 @@ d_frameworld_admin = {
 			giga_planet_has_zombie_assembly_facilities = yes
 		}
 
-		job_reassigner_add = 0.5
+		job_reassigner_add = 50
 
 		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|8|fraction|0.25|offset|0.75|
 	}
@@ -885,7 +924,7 @@ d_frameworld_admin = {
 			giga_planet_has_zombie_assembly_facilities = yes
 		}
 
-		job_giga_extra_healthcare_add = 1
+		job_giga_extra_healthcare_add = 100
 
 		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|8|fraction|0.75|offset|0|
 	}
@@ -903,7 +942,7 @@ d_frameworld_admin = {
 			}
 		}
 
-		job_roboticist_add = 0.5
+		job_roboticist_add = 500
 
 		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
@@ -918,7 +957,7 @@ d_frameworld_admin = {
 			}
 		}
 
-		job_roboticist_add = 0.25
+		job_roboticist_add = 25
 
 		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
@@ -1015,10 +1054,10 @@ d_frameworld_hive = {
 				giga_has_frameworld_origin = yes
 			}
 		}
-		job_maintenance_drone_add = 1
+		job_maintenance_drone_add = 100
 		# job_frameworld_defender_drone_add = 2
-		job_frameworld_defender_drone_per_pop = 0.02
-		planet_housing_add = 5
+		# job_frameworld_defender_drone_per_pop = 0.02
+		planet_housing_add = 500
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -1028,7 +1067,7 @@ d_frameworld_hive = {
 				giga_has_frameworld_origin = yes
 			}
 		}
-		job_spawning_drone_add = 0.5
+		job_spawning_drone_add = 500
 
 		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
@@ -1132,10 +1171,10 @@ d_frameworld_core = {
 				giga_has_frameworld_origin = yes
 			}
 		}
-		job_maintenance_drone_add = 1
+		job_maintenance_drone_add = 100
 		# job_frameworld_defender_drone_add = 2
-		job_frameworld_defender_drone_per_pop = 0.02
-		planet_housing_add = 5
+		# job_frameworld_defender_drone_per_pop = 0.02
+		planet_housing_add = 500
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -1146,7 +1185,7 @@ d_frameworld_core = {
 			}
 			not = { has_modifier = frameworld_crucible }
 		}
-		job_replicator_add = 1
+		job_replicator_add = 100
 
 		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
@@ -1161,7 +1200,7 @@ d_frameworld_core = {
 			has_modifier = frameworld_crucible
 		}
 
-		job_giga_extra_crucible_drone_add = 0.5
+		job_giga_extra_crucible_drone_add = 50
 
 		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0|
 	}
@@ -1175,7 +1214,7 @@ d_frameworld_core = {
 			has_modifier = frameworld_crucible
 		}
 
-		job_replicator_add = 1
+		job_replicator_add = 100
 
 		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0.5|
 	}

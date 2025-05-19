@@ -15,12 +15,27 @@ resources = {
 	category = planet_districts_hab_research
 	cost = {
 		minerals = @[ advanced_cost * $SIZE_COST$ * $SCALE$ ]
-		rare_crystals = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_consumer_unity_trade_completion
 	}
 	#half advanced cost (so base) and 0x advanced so none of the for tier 1
 	upkeep = {
 		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
+		mult = fwt_consumer_unity_trade_completion
+	}
+	cost = {
+		trigger = {
+			check_variable = { which = fwt_unity_trade_completion value > 1 }
+		}
+		rare_crystals = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_consumer_unity_trade_completion
+	}
+	#half advanced cost (so base) and 0x advanced so none of the for tier 1
+	upkeep = {
+		trigger = {
+			check_variable = { which = fwt_unity_trade_completion value > 1 }
+		}
 		rare_crystals = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+		mult = fwt_consumer_unity_trade_completion
 	}
 }
 
@@ -28,6 +43,7 @@ inline_script = {
 	script = $JOB$
 	jobs = @frameworld_jobs_base
 	district = 1
+	multiplier_string = "mult = fwt_consumer_unity_trade_completion"
 }
 
 inline_script = {

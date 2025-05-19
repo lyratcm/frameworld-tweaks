@@ -9,7 +9,7 @@ adding_district_zone_or_building = {
         district = $DISTRICT$
         zone = $ZONE$
         zone_slot = 0
-        replace = no
+        replace = yes
     }
     [[BUILDING]
         add_building = {

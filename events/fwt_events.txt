@@ -35,7 +35,7 @@ country_event = {
                     }
                     set_variable = {
                         which = fwt_required_scaling
-                        value = 0.2
+                        value = 0.25
                     }
                 }
                 else = {
@@ -55,13 +55,14 @@ country_event = {
             set_variable = { which = fwt_food_completion value = 1 }
             set_variable = { which = fwt_alloy_completion value = 1 }
             set_variable = { which = fwt_consumer_goods_completion value = 1 }
-            set_variable = { which = fwt_consumer_unity_trade_completion value = 1 }
-            set_variable = { which = fwt_consumer_sanctuary_completion value = 1 }
-            set_variable = { which = fwt_consumer_science_completion value = 1 }
-            set_variable = { which = fwt_consumer_rare_resources_completion value = 1 }
+            set_variable = { which = fwt_unity_trade_completion value = 1 }
+            set_variable = { which = fwt_sanctuary_completion value = 1 }
+            set_variable = { which = fwt_science_completion value = 1 }
+            set_variable = { which = fwt_rare_resources_completion value = 1 }
+            set_variable = { which = fwt_city_completion value = 1 }
             # code for my job scaling
-            set_variable = { which = frame_expansion_scale value = 2 }
-            set_variable = { which = background_pops value = 0 }
+            set_variable = { which = frame_expansion_scale value = 1 }
+            # set_variable = { which = background_pops value = 0 }
             set_variable = { which = fwt_maintance_scale value = 0.5 }
             # add_deposit = d_fwt_job_size
             # planet_event = { id = fwt_jobs.31 }
@@ -78,48 +79,48 @@ country_event = {
             #     id = fwt_jobs.31
             #     days = 61
             # }
-            #normal empires start with a little to much cg little to few minerals
-            if = {
-                limit = {
-                    owner = {
-                        is_gestalt = no
-                    }
-                }
-                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_02 ZONE = district_giga_frameworld_factory }
-            }
-            else = {
-                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_04 ZONE = district_giga_frameworld_mining }
-            }
-            if = {
-                limit = {
-                    #evovled adds more upkeep traits so give them more food
-                    has_global_flag = stellarisevolved
-                }
-                if = {
-                    limit = {
-                        owner_main_species = {
-                            is_lithoid = yes
-                        }
-                    }
-                    adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_04 ZONE = district_giga_frameworld_mining }
-                }
-                else_if = {
-                    limit = {
-                        owner = {
-                            country_uses_food = yes
-                        }
-                    }
-                    adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_farming }
-                }
-                else = {
-                    adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_03 ZONE = district_giga_frameworld_generator }
-                }
-            }
+            #     #normal empires start with a little to much cg little to few minerals
+            #     if = {
+            #         limit = {
+            #             owner = {
+            #                 is_gestalt = no
+            #             }
+            #         }
+            #         adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_02 ZONE = district_giga_frameworld_factory }
+            #     }
+            #     else = {
+            #         adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_04 ZONE = district_giga_frameworld_mining }
+            #     }
+            #     if = {
+            #         limit = {
+            #             #evovled adds more upkeep traits so give them more food
+            #             has_global_flag = stellarisevolved
+            #         }
+            #         if = {
+            #             limit = {
+            #                 owner_main_species = {
+            #                     is_lithoid = yes
+            #                 }
+            #             }
+            #             adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_04 ZONE = district_giga_frameworld_mining }
+            #         }
+            #         else_if = {
+            #             limit = {
+            #                 owner = {
+            #                     country_uses_food = yes
+            #                 }
+            #             }
+            #             adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_farming }
+            #         }
+            #         else = {
+            #             adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_03 ZONE = district_giga_frameworld_generator }
+            #         }
+            #     }
+            # }
+            set_variable = { which = fwt_maintenance_count value = 1 }
         }
         set_variable = { which = fwt_expansion_income value = 60 }
-        set_variable = { which = fwt_maintenance_count value = 1 }
         set_country_flag = fwt_maintenance_default
-
     }
 }
 
@@ -840,6 +841,12 @@ situation_event = {
         situation_event = {
             id = fwt.42
         }
+        owner = {
+            change_variable = {
+                which = fwt_expansion_income
+                value = 10
+            }
+        }
         change_variable = {
             which = fwt_expansion_income
             value = 10
@@ -849,6 +856,12 @@ situation_event = {
         name = fwt.4.increase_5
         situation_event = {
             id = fwt.42
+        }
+        owner = {
+            change_variable = {
+                which = fwt_expansion_income
+                value = 5
+            }
         }
         change_variable = {
             which = fwt_expansion_income
@@ -860,6 +873,12 @@ situation_event = {
         change_variable = {
             which = fwt_expansion_income
             value = 1
+        }
+        owner = {
+            change_variable = {
+                which = fwt_expansion_income
+                value = 1
+            }
         }
         situation_event = {
             id = fwt.42
@@ -877,6 +896,12 @@ situation_event = {
             which = fwt_expansion_income
             value = -1
         }
+        owner = {
+            change_variable = {
+                which = fwt_expansion_income
+                value = -1
+            }
+        }
         situation_event = {
             id = fwt.42
         }
@@ -887,6 +912,12 @@ situation_event = {
             which = fwt_expansion_income
             value = -5
         }
+        owner = {
+            change_variable = {
+                which = fwt_expansion_income
+                value = -5
+            }
+        }
         situation_event = {
             id = fwt.42
         }
@@ -896,6 +927,12 @@ situation_event = {
         change_variable = {
             which = fwt_expansion_income
             value = -10
+        }
+        owner = {
+            change_variable = {
+                which = fwt_expansion_income
+                value = -10
+            }
         }
         situation_event = {
             id = fwt.42

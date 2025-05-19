@@ -116,24 +116,14 @@ remove_flags = {
 
 frame_size_gal_wonders = {
 	if = {
-		#cap at 8x but allow it to increase for the first 5
 		limit = {
-			event_target:frame_expand@owner = {
-				check_variable = {
-					which = frame_expansion_scale value >= 8
-				}
-			}
+			check_variable = { which = fwt_mega_completed value >= 3 }
+			has_galactic_wonders = yes
 		}
-		event_target:frame_expand@owner = {
-			set_variable = {
-				which = frame_expansion_scale value = 8
-			}
-		}
+		set_variable = { which = frame_expansion_scale value = 4 }
 	}
 	else = {
-		change_variable = {
-			which = frame_expansion_scale value = 0.8
-		}
+		change_variable = { which = fwt_mega_completed value = 1 }
 	}
 }
 
@@ -744,7 +734,7 @@ fwt_trigger_effects_situation = {
 # 		save_event_target_as = giga_planet
 # 		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.009 } } }
 # 		add_completion_flag = { NAME = advanced_sanctuary }
-# 		change_variable = { which = fwt_consumer_sanctuary_completion value = 1 }
+# 		change_variable = { which = fwt_sanctuary_completion value = 1 }
 # 	}
 # }
 #

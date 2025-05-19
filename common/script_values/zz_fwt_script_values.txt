@@ -243,25 +243,25 @@ fwt_total_pops_trigger = {
 }
 
 
-#### expansion scaling ########
-fwt_expansion_build_scaling = {
-	weight = giga_frameworld_expansions
-	multiply = value:fwt_expansion_mult
-}
-
-fwt_expansion_mult = {
-	weight = giga_frameworld_expansions
-	divide = value:fwt_expansion_mult_reduction
-	add = 1
-}
-# base is 1/20th but increase that as you expand more
-# still need to make this scale worst
-#maybe its fine with new scaling
-fwt_expansion_mult_reduction = {
-	weight = giga_frameworld_expansions
-	divide = 5
-	add = 20
-}
+# #### expansion scaling ########
+# fwt_expansion_build_scaling = {
+# 	weight = giga_frameworld_expansions
+# 	multiply = value:fwt_expansion_mult
+# }
+#
+# fwt_expansion_mult = {
+# 	weight = giga_frameworld_expansions
+# 	divide = value:fwt_expansion_mult_reduction
+# 	add = 1
+# }
+# # base is 1/20th but increase that as you expand more
+# # still need to make this scale worst
+# #maybe its fine with new scaling
+# fwt_expansion_mult_reduction = {
+# 	weight = giga_frameworld_expansions
+# 	divide = 5
+# 	add = 20
+# }
 
 ##### maintenance job switches #############
 giga_frameworld_expanded_maintenance_multiplier = {
@@ -566,10 +566,11 @@ fwt_situation_finish_count = {
 	weight = trigger:situation_monthly_progress
 	subtract = value:fwt_situation_finish_count_sub
 	divide = 100
+	min = 1
 }
 
 
-
+#temp till code switch
 giga_planet_density_offset_modifier_by_pops = {
 	weight = modifier:$modifier$
 	subtract = modifier:giga_$modifier$_offset
@@ -586,4 +587,27 @@ giga_planet_density_offset_modifier_by_pops = {
 		max = 0
 	]
 	multiply = value:giga_planet_density_by_pops|pops|$pops|20000$|
+}
+
+######################################################
+
+giga_planet_density_offset_jobs_by_pops = {
+	complex_trigger_modifier = {
+		trigger = num_assigned_jobs
+		parameters = {
+			job = $job$
+		}
+		mode = weight
+	}
+	multiply = value:giga_planet_density_by_pops|pops|$pops|20000$|
+}
+
+giga_planet_density_offset_by_bio_trophies = {
+	weight = value:giga_planet_density_count_bio_trophies
+	multiply = value:giga_planet_density_by_pops|pops|$pops|20000$|
+}
+
+fwt_expansion_cost = {
+	weight = giga_frameworld_expansion_cost_base
+	mult = giga_frameworld_expansion_cost_exponent
 }

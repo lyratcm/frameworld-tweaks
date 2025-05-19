@@ -1,6 +1,6 @@
 #why is scripted variables FIOS but the rest of common isn't!!!
 # # initial cost for expansion decision
-# @giga_frameworld_expansion_cost_base = 415
+@giga_frameworld_expansion_cost_base = 550
 # incremental multiplier for expansion decision
 @giga_frameworld_expansion_cost_exponent = 1.10 #1.14 #1.15
 
@@ -13,7 +13,7 @@
 @giga_frameworld_expansion_cost_habitat_3 = -25 # -50
 
 #an additional 100 cost reduction for a total of 180 #150 600 -> 450 # 
-@fwt_frameworld_expansion_cost_starbase_2 = -15
+@fwt_frameworld_expansion_cost_starbase_2 = 0
 @fwt_frameworld_expansion_cost_starbase_3 = -20
 @fwt_frameworld_expansion_cost_starbase_4 = -25
 @fwt_frameworld_expansion_cost_starbase_5 = -30

@@ -10,36 +10,36 @@ giga_frameworld_expand = {
 	icon = decision_frameworld_expand
 	owned_planets_only = yes
 	
-	enactment_time = 0
+	enactment_time = 360
 
-	inline_script = {
-		script = decisions/fwt_inlines_expansion_costs
-		NAME = giga_frameworld_expansion
-	}
-
-	# resources = {
-	# 	category = megastructures_frameworld
-	# 	cost = {
-	# 		alloys = @giga_frameworld_expansion_cost_base
-	# 		multiplier = giga_frameworld_expansion_cost_multiplier
-	# 	}
-	# 	cost = {
-	# 		trigger = {
-	# 			exists = owner
-	# 			owner = { has_technology = tech_habitat_2 }
-	# 		}
-	# 		alloys = @giga_frameworld_expansion_cost_habitat_2
-	# 		multiplier = giga_frameworld_expansion_cost_multiplier
-	# 	}
-	# 	cost = {
-	# 		trigger = {
-	# 			exists = owner
-	# 			owner = { has_technology = tech_habitat_3 }
-	# 		}
-	# 		alloys = @giga_frameworld_expansion_cost_habitat_3
-	# 		multiplier = giga_frameworld_expansion_cost_multiplier
-	# 	}
+	# inline_script = {
+	# 	script = decisions/fwt_inlines_expansion_costs
+	# 	NAME = giga_frameworld_expansion
 	# }
+
+	resources = {
+		category = megastructures_frameworld
+		cost = {
+			alloys = 1
+			multiplier = giga_frameworld_expansion_cost_multiplier_dec
+		}
+		# cost = {
+		# 	trigger = {
+		# 		exists = owner
+		# 		owner = { has_technology = tech_habitat_2 }
+		# 	}
+		# 	alloys = @giga_frameworld_expansion_cost_habitat_2
+		# 	multiplier = giga_frameworld_expansion_cost_multiplier
+		# }
+		# cost = {
+		# 	trigger = {
+		# 		exists = owner
+		# 		owner = { has_technology = tech_habitat_3 }
+		# 	}
+		# 	alloys = @giga_frameworld_expansion_cost_habitat_3
+		# 	multiplier = giga_frameworld_expansion_cost_multiplier
+		# }
+	}
 	
 	potential = {
 		is_variable_set = giga_frameworld_structure_expansions
@@ -53,38 +53,38 @@ giga_frameworld_expand = {
 	allow = {
 		custom_tooltip_fail = {
 			text = giga_frameworld_expand_concurrent
-			not = { has_planet_flag = giga_frameworld_expand_queued }
+			# not = { has_planet_flag = giga_frameworld_expand_queued }
 		}
 	}
 
 	effect = {
-		add_decision_time = { 
-			TIME = 360 
-			NAME = giga_frameworld_expand 
-			NAME1 = d_frameworld_expansion 
-			NAME2 = d_frameworld_structure_expansion
-			NAME_SIZE1 = 1
+		# add_decision_time = {
+		# 	TIME = 360
+		# 	NAME = giga_frameworld_expand
+		# 	NAME1 = d_frameworld_expansion
+		# 	NAME2 = d_frameworld_structure_expansion
+		# 	NAME_SIZE1 = 1
+		# }
+		custom_tooltip = frameworld_line
+		giga_frameworld_expand_deposit = {
+			DEPOSIT = d_frameworld_expansion
+			VAR = giga_frameworld_expansions
 		}
 		custom_tooltip = frameworld_line
-		# giga_frameworld_expand_deposit = { 
-		# 	DEPOSIT = d_frameworld_expansion 
-		# 	VAR = giga_frameworld_expansions
-		# }
-		# custom_tooltip = frameworld_line
-		# giga_frameworld_expand_deposit = { 
-		# 	DEPOSIT = d_frameworld_structure_expansion 
-		# 	VAR = giga_frameworld_structure_expansions
-		# }
-		# custom_tooltip = frameworld_line
-		# change_planet_size = 1
-
-		# # update entity and do all the math
-		# hidden_effect = {
-		# 	giga_frameworld_update_entity_with_fallback = yes
-		# 	giga_frameworld_recalculate_variables = yes
-		# 	frameworld_conduct_audit_check_ai = yes
-		# }
-		# save_global_event_target_as = frame_expand@owner
+		giga_frameworld_expand_deposit = {
+			DEPOSIT = d_frameworld_structure_expansion
+			VAR = giga_frameworld_structure_expansions
+		}
+		custom_tooltip = frameworld_line
+		change_planet_size = 1
+		change_variable = { which = fwt_in_queue_expand value = -1 }
+		# update entity and do all the math
+		hidden_effect = {
+			giga_frameworld_update_entity_with_fallback = yes
+			giga_frameworld_recalculate_variables = yes
+			frameworld_conduct_audit_check_ai = yes
+		}
+		save_global_event_target_as = frame_expand@owner
 		# set_planet_flag = giga_frameworld_expand_queued
 		# set_planet_flag = giga_frameworld_expand_dec
 		# owner = {
@@ -92,15 +92,21 @@ giga_frameworld_expand = {
 		# 		type = giga_situation_frameworld_decisions
 		# 	}
 		# }
+
 		# remove_planet_flag = giga_frameworld_expand_queued
 	}
 
-	# on_queued = {
-	# 	set_planet_flag = giga_frameworld_expand_queued
-	# }
-	# on_unqueued = {
-	# 	remove_planet_flag = giga_frameworld_expand_queued
-	# }
+	on_queued = {
+		#flag removed to allow multi in queue and added code to account for that
+		# set_planet_flag = giga_frameworld_expand_queued
+		change_variable = { which = fwt_in_queue_expand value = 1 }
+		giga_frameworld_recalculate_variables = yes
+	}
+	on_unqueued = {
+		# remove_planet_flag = giga_frameworld_expand_queued
+		change_variable = { which = fwt_in_queue_expand value = -1 }
+		giga_frameworld_recalculate_variables = yes
+	}
 	
 	ai_weight = {
 		weight = 10

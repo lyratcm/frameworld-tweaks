@@ -9,7 +9,7 @@ d_fwt_total_pop_gain = {
 
 }
 
-#
+
 # d_fwt_job_size = {
 #     # a modification of the job size deposit to include output bonuses and extra output from supported mods
 #     # (currently ethics and civic bug branch, tbd evolved)

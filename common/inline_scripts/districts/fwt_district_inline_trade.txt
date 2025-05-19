@@ -17,12 +17,27 @@ resources = {
 	category = planet_districts_hab_trade
 	cost = {
 		minerals = @[ advanced_cost * $SIZE_COST$ * $SCALE$ ]
-		rare_crystals = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_unity_trade_completion
 	}
 	#half advanced cost (so base) and 0x advanced so none of the for tier 1
 	upkeep = {
 		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
+		mult = fwt_unity_trade_completion
+	}
+	cost = {
+		trigger = {
+			check_variable = { which = fwt_unity_trade_completion value > 1 }
+		}
+		rare_crystals = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_unity_trade_completion
+	}
+	#half advanced cost (so base) and 0x advanced so none of the for tier 1
+	upkeep = {
+		trigger = {
+			check_variable = { which = fwt_unity_trade_completion value > 1 }
+		}
 		rare_crystals = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+		mult = fwt_unity_trade_completion
 	}
 }
 planet_modifier = {
@@ -35,6 +50,7 @@ inline_script = {
 triggered_district_planet_modifier = {
 	job_trader_add = 225
 	job_merchant_add = 75
+	mult = fwt_unity_trade_completion
 }
 
 triggered_planet_modifier = {

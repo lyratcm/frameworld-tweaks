@@ -15,6 +15,7 @@ inline_script = {
 	jobs = @frameworld_jobs_base
 	district = 1
 	extra_hive_jobs = @[ 100 * $SIZE_COST$ ]
+	multiplier_string = "mult = fwt_energy_completion"
 }
 
 base_buildtime = @[ city_time * $SIZE_COST$ * $SCALE$ ]
@@ -23,12 +24,26 @@ resources = {
 	category = planet_districts
 	cost = {
 		minerals = @[ advanced_rural_cost * $SIZE_COST$ * $SCALE$ ]
-		exotic_gases = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_energy_completion
 	}
 	#half advanced cost (so base) and 0x advanced so none of the for tier 1
 	upkeep = {
 		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
+		mult = fwt_energy_completion
+	}
+	upkeep = {
+		trigger = {
+			check_variable = { which = fwt_mineral_completion value > 1 }
+		}
 		exotic_gases = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+		mult = fwt_energy_completion
+	}
+	cost = {
+		trigger = {
+			check_variable = { which = fwt_mineral_completion value > 1 }
+		}
+		exotic_gases = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_energy_completion
 	}
 }
 

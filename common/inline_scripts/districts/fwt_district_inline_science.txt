@@ -15,20 +15,35 @@ resources = {
 	category = planet_districts_hab_research
 	cost = {
 		minerals = @[ advanced_cost * $SIZE_COST$ * $SCALE$ ]
-		exotic_gases = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_science_completion
 	}
 	#half advanced cost (so base) and 0x advanced so none of the for tier 1
 	upkeep = {
 		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
-		exotic_gases = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+		mult = fwt_science_completion
 	}
-	
+	cost = {
+		trigger = {
+			check_variable = { which = fwt_science_completion value > 1 }
+		}
+		exotic_gases = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_science_completion
+	}
+	#half advanced cost (so base) and 0x advanced so none of the for tier 1
+	upkeep = {
+		trigger = {
+			check_variable = { which = fwt_science_completion value > 1 }
+		}
+		exotic_gases = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+		mult = fwt_science_completion
+	}
 	# nanite upgrade
 	upkeep = {
 		trigger = {
 			frameworld_has_active_nanite_upgrade = yes
 		}
 		nanites = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+		mult = fwt_science_completion
 	}
 }
 
@@ -42,19 +57,21 @@ inline_script = {
 
 inline_script = {
 	script = planet/research/fwt_researcher_job_swap
-	jobs = @[ 200.01 * $SIZE_COST$ ]
+	jobs = @[ 400.01 * $SIZE_COST$ ]
 	district = @yes
 	mode = @job_mode_add
 	condition = "frameworld_has_active_nanite_upgrade = no"
+	multiplier_string = "mult = fwt_science_completion"
 }
 
 inline_script = {
 	script = planet/research/fwt_researcher_job_swap
-	jobs = @[ 100.02 * $SIZE_COST$ ]
+	jobs = @[ 200.02 * $SIZE_COST$ ]
 	district = @yes
 	description = @no
 	mode = @job_mode_add
 	condition = "frameworld_has_active_nanite_upgrade = no"
+	multiplier_string = "mult = fwt_science_completion"
 }
 
 # nanite upgrade
@@ -63,4 +80,5 @@ inline_script = {
 	jobs = @frameworld_jobs_base
 	district = 1
 	condition = "frameworld_has_active_nanite_upgrade = yes"
+	multiplier_string = "mult = fwt_science_completion"
 }
