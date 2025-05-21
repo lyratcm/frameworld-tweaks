@@ -3,7 +3,7 @@ inline_script = {
 
     file = "districts/parts/fwt_bio_trophy_job_swap"
 
-    jobs = @[ $jobs$ * 3 ]
+    jobs = $jobs$
     virtual_mult = 0.5
 
     add = "$mode$"

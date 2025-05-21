@@ -1,0 +1,8 @@
+frameworld_outpost_build = {
+    #use kilo instead to benefit from the traditions/mega build cost
+    parent = giga_kilostructures
+    modifier_category = megastructure
+    generate_mult_modifiers = {
+        cost
+    }
+}

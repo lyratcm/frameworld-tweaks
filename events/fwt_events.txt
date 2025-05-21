@@ -11,7 +11,6 @@ country_event = {
     }
     immediate = {
         #backup as can't seem to trigger the event via an onaction
-        country_event = { id = giga_frameworld_origin.000 days = 32 }
         random_planet_within_border = {
             limit = {
                 exists = owner
@@ -20,7 +19,16 @@ country_event = {
                 }
                 giga_is_frame_world = yes
             }
+            fwt_clear_district = { district = district_generator }
+            fwt_clear_district = { district = district_mining }
+            fwt_clear_district = { district = district_farming }
+            fwt_clear_district = { district = district_city }
+            fwt_clear_district = { district = district_hive }
+            fwt_clear_district = { district = district_nexus }
+            save_global_event_target_as = frame_expand@owner
             owner = {
+                set_variable = { which = fwt_expansion_income value = 60 }
+                set_country_flag = fwt_maintenance_default
                 set_variable = {
                     which = fwt_decision_time
                     value = 360
@@ -64,63 +72,18 @@ country_event = {
             set_variable = { which = frame_expansion_scale value = 1 }
             # set_variable = { which = background_pops value = 0 }
             set_variable = { which = fwt_maintance_scale value = 0.5 }
-            # add_deposit = d_fwt_job_size
-            # planet_event = { id = fwt_jobs.31 }
-            save_global_event_target_as = frame_expand@owner
-            # add_modifier = {
-            #     modifier = fwt_job_size_info
-            # }
             add_modifier = {
                 modifier = fwt_speed_unemploy_info
                 multiplier = -100000000
-                days = 70
+                days = 40
             }
-            # planet_event = {
-            #     id = fwt_jobs.31
-            #     days = 61
-            # }
-            #     #normal empires start with a little to much cg little to few minerals
-            #     if = {
-            #         limit = {
-            #             owner = {
-            #                 is_gestalt = no
-            #             }
-            #         }
-            #         adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_02 ZONE = district_giga_frameworld_factory }
-            #     }
-            #     else = {
-            #         adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_04 ZONE = district_giga_frameworld_mining }
-            #     }
-            #     if = {
-            #         limit = {
-            #             #evovled adds more upkeep traits so give them more food
-            #             has_global_flag = stellarisevolved
-            #         }
-            #         if = {
-            #             limit = {
-            #                 owner_main_species = {
-            #                     is_lithoid = yes
-            #                 }
-            #             }
-            #             adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_04 ZONE = district_giga_frameworld_mining }
-            #         }
-            #         else_if = {
-            #             limit = {
-            #                 owner = {
-            #                     country_uses_food = yes
-            #                 }
-            #             }
-            #             adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_farming }
-            #         }
-            #         else = {
-            #             adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_03 ZONE = district_giga_frameworld_generator }
-            #         }
-            #     }
-            # }
             set_variable = { which = fwt_maintenance_count value = 1 }
         }
-        set_variable = { which = fwt_expansion_income value = 60 }
-        set_country_flag = fwt_maintenance_default
+        country_event = { id = giga_frameworld_origin.000 }
+    }
+    after = {
+        # clear the conquered modifier which apparently gets executed BEFORE the start event
+        remove_modifier = frameworld_conquered
     }
 }
 
@@ -238,7 +201,7 @@ country_event = {
                     giga_has_frameworld_origin = yes
                 }
                 set_variable = { which = fwt_growth_ceiling value = root.fwt_growth_ceiling }
-                event_target:frame_expand@owner = {
+                event_target:frame_expand@this = {
                     set_variable = { which = fwt_growth_ceiling value = root.fwt_growth_ceiling }
                 }
             }
@@ -332,7 +295,7 @@ country_event = {
                     giga_has_frameworld_origin = yes
                 }
                 set_variable = { which = fwt_required_scaling value = root.fwt_required_scaling }
-                event_target:frame_expand@owner = {
+                event_target:frame_expand@this = {
                     set_variable = { which = fwt_growth_ceiling value = root.fwt_required_scaling }
                 }
             }
@@ -341,7 +304,7 @@ country_event = {
             limit = {
                 giga_has_frameworld_origin = yes
             }
-            event_target:frame_expand@owner = {
+            event_target:frame_expand@this = {
                 giga_extra_growth_setup = yes
             }
         }

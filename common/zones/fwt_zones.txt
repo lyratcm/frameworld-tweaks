@@ -6,10 +6,11 @@
 @advanced_rare_cost = 30
 @advanced_upkeep = 3
 @advanced_rare_upkeep = 1
+@advanced_time = 720
 
 district_giga_frameworld_city = {
     base_buildtime = @city_time
-    icon = district_city
+    icon = GFX_colony_type_urban
 
     unlock = {
 		uses_district_set = giga_frameworld
@@ -107,7 +108,7 @@ district_giga_frameworld_city = {
 }
 
 district_giga_frameworld_foundry = {
-    icon = GFX_colony_type_foundry
+    icon = GFX_colony_type_habitat_foundry
     potential = {
         uses_district_set = giga_frameworld
     }
@@ -128,7 +129,7 @@ district_giga_frameworld_foundry = {
 }
 
 district_giga_frameworld_factory = {
-	icon = district_arcology_civilian_industry
+	icon = GFX_colony_type_habitat_factory
     unlock = {
 		exists = owner
 		uses_district_set = giga_frameworld
@@ -167,7 +168,7 @@ district_giga_frameworld_factory = {
 }
 
 district_giga_frameworld_generator = {
-	icon = district_hab_energy
+	icon = GFX_colony_type_habitat_energy
 
     unlock = {
 		uses_district_set = giga_frameworld
@@ -191,7 +192,7 @@ district_giga_frameworld_generator = {
 }
 
 district_giga_frameworld_mining = {
-	icon = district_hab_mining
+	icon = GFX_colony_type_habitat_mining
 
     unlock = {
 		uses_district_set = giga_frameworld
@@ -215,7 +216,7 @@ district_giga_frameworld_mining = {
 }
 
 district_giga_frameworld_farming = {
-	icon = district_farming
+	icon = GFX_colony_type_habitat_farming
 
     unlock = {
 		uses_district_set = giga_frameworld
@@ -240,7 +241,7 @@ district_giga_frameworld_farming = {
 }
 
 district_giga_frameworld_trade = {
-	icon = district_hab_commercial
+	icon = GFX_colony_type_habitat_trade
 
     unlock = {
 		exists = owner
@@ -276,7 +277,7 @@ district_giga_frameworld_trade = {
 }
 
 district_giga_frameworld_administrative = {
-	icon = district_arcology_administrative
+	icon = GFX_colony_type_bureaucratic
 
     unlock = {
 		exists = owner
@@ -317,7 +318,7 @@ district_giga_frameworld_administrative = {
 
 # hive unity
 district_giga_frameworld_synapse = {
-	icon = district_arcology_administrative
+	icon = GFX_colony_type_bureaucratic
 
     unlock = {
 		exists = owner
@@ -392,7 +393,7 @@ district_giga_frameworld_synapse = {
 }
 
 district_giga_frameworld_simulation = {
-	icon = district_arcology_administrative
+	icon = GFX_colony_type_bureaucratic
 
 	unlock = {
 		exists = owner
@@ -433,7 +434,7 @@ district_giga_frameworld_simulation = {
 }
 
 district_giga_frameworld_sanctuary = {
-	icon = district_arcology_administrative
+	icon = GFX_colony_type_bureaucratic
 
 	unlock = {
 		exists = owner
@@ -454,23 +455,17 @@ district_giga_frameworld_sanctuary = {
 	}
 
     show_in_tech = tech_planetary_government
+
 	inline_script = {
 		script = districts/params/fwt_district_inline_unity_params
-
 		#lyra added to fit script
 		JOB = "districts/fwt_bio_trophy_job_swap"
 	}
 
 	convert_to = {
-		district_giga_frameworld_sanctuary_advanced
-		district_giga_frameworld_advanced_simulation
-		district_giga_frameworld_ecu_simulation
-		district_giga_frameworld_advanced_synapse
-		district_giga_frameworld_ecu_synapse
-		district_giga_frameworld_advanced_temple
-		district_giga_frameworld_ecu_temple
-		district_giga_frameworld_advanced_administrative
-		district_giga_frameworld_ecu_administrative
+		district_giga_frameworld_simulation
+		district_giga_frameworld_synapse
+		district_giga_frameworld_administrative
 	}
 
 	included_building_sets = {
@@ -479,20 +474,13 @@ district_giga_frameworld_sanctuary = {
 		origin
 	}
 
-	triggered_district_planet_modifier = {
-		potential = {
-			always = yes
-		}
-		planet_housing_add = -100
-	}
-
 	triggered_desc = {
 		text = job_bio_trophy_effect_desc
 	}
 }
 
 district_giga_frameworld_science = {
-	icon = district_hab_science
+	icon = GFX_colony_type_habitat_research
 
 	unlock = {
 		uses_district_set = giga_frameworld
@@ -518,7 +506,7 @@ district_giga_frameworld_science = {
 # amenities
 district_giga_frameworld_amenities = {
 	base_buildtime = @advanced_time
-	icon = district_arcology_leisure
+	icon = GFX_colony_type_habitat_leisure
 
 	unlock = {
 		exists = owner
@@ -563,14 +551,14 @@ district_giga_frameworld_amenities = {
 		}
 		cost = {
 			trigger = {
-				check_variable = { which = fwt_science_completion value > 1 }
+				check_variable = { which = fwt_unity_trade_completion value > 1 }
 			}
 			exotic_gases = @advanced_rare_cost
 			mult = fwt_unity_trade_completion
 		}
 		upkeep = {
 			trigger = {
-				check_variable = { which = fwt_science_completion value > 1 }
+				check_variable = { which = fwt_unity_trade_completion value > 1 }
 			}
 			exotic_gases = @advanced_rare_upkeep
 			mult = fwt_unity_trade_completion
@@ -629,7 +617,7 @@ district_giga_frameworld_amenities = {
 
 district_giga_frameworld_amenities_dystopian = {
 	base_buildtime = @advanced_time
-	icon = district_arcology_leisure
+	icon = GFX_colony_type_habitat_leisure
 
 	unlock = {
 		exists = owner
@@ -715,7 +703,7 @@ district_giga_frameworld_amenities_dystopian = {
 # gestalt amenities
 district_giga_frameworld_amenities_gestalt = {
 	base_buildtime = @advanced_time
-	icon = district_arcology_leisure
+	icon = GFX_colony_type_habitat_leisure
 
 	unlock = {
 		exists = owner

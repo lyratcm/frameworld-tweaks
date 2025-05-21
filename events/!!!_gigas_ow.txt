@@ -16,16 +16,11 @@ country_event = {
     }
 
     immediate = {
-        set_variable = {
-            which = giga_frameworld_megastructure_cost
-            value = 1
-        }
+        set_variable = { which = giga_frameworld_megastructure_cost value = 1 }
 
         ##### set up documentation
 
-        begin_event_chain = {
-            event_chain = giga_frameworld_docs_chain
-        }
+        begin_event_chain = { event_chain = giga_frameworld_docs_chain }
 
         create_point_of_interest = {
             id = giga_frameworld_docs_chain.1
@@ -94,16 +89,10 @@ country_event = {
         ##### END DOCS
 
         # start outpost situation
-        start_situation = {
-            type = giga_situation_frameworld_outposts
-            target = capital_scope
-        }
+        start_situation = { type = giga_situation_frameworld_outposts target = capital_scope }
 
         # set up AI variables
-        set_variable = {
-            which = frameworld_ai_outpost_candidate_count
-            value = 0
-        }
+        set_variable = { which = frameworld_ai_outpost_candidate_count value = 0 }
 
         #event_target:giga_global_situation_country = {
         #	start_situation = {
@@ -123,9 +112,7 @@ country_event = {
             remove_modifier = frameworld_conquered
 
             # fix the entity
-            giga_frameworld_update_entity_with_fallback = {
-                WHO = root
-            }
+            giga_frameworld_update_entity_with_fallback = { WHO = root }
 
             # spawn defensive stations
             giga_frameworld_spawn_starting_defensive_stations = { WHO = root }
@@ -169,9 +156,7 @@ country_event = {
 
             # environmentalist nature preserve
             if = {
-                limit = {
-                    root = { giga_is_environmentalist = yes }
-                }
+                limit = { root = { giga_is_environmentalist = yes } }
                 remove_building = building_ranger_lodge
                 add_deposit = d_frameworld_nature_preserve
             }
@@ -185,139 +170,98 @@ country_event = {
                 days = 3
             }
             remove_building = building_holo_theatres
-            adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_01 ZONE = district_giga_frameworld_foundry BUILDING = building_foundry_1 }
+            fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_01 ZONE = district_giga_frameworld_foundry }
             add_district = district_giga_frameworld_urban_01
             if = {
-                limit = {
-                    owner = {
-                        country_uses_consumer_goods = yes
-                    }
-                }
-                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_02 ZONE = district_giga_frameworld_factory }
+                limit = { owner = { country_uses_consumer_goods = yes } }
+                fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_02 ZONE = district_giga_frameworld_factory }
             }
             else = {
-                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_02 ZONE = district_giga_frameworld_city }
+                fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_02 ZONE = district_giga_frameworld_city }
             }
-            adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_03 ZONE = district_giga_frameworld_generator }
+            fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_03 ZONE = district_giga_frameworld_generator }
             if = {
-                limit = {
-                    owner = {
-                        is_gestalt = yes
-                    }
-                }
+                limit = { owner = { is_gestalt = yes } }
                 add_district = district_giga_frameworld_urban_03
             }
-            adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_04 ZONE = district_giga_frameworld_mining }
-            add_district = district_giga_frameworld_urban_04
+            fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_04 ZONE = district_giga_frameworld_mining }
             if = {
-                limit = {
-                    owner = {
-                        is_catalytic_empire = no
-                    }
-                }
+                limit = { owner = { is_catalytic_empire = no } }
+                add_district = district_giga_frameworld_urban_04
                 add_district = district_giga_frameworld_urban_04
                 add_district = district_giga_frameworld_urban_04
             }
             else = {
                 add_district = district_giga_frameworld_urban_05
                 add_district = district_giga_frameworld_urban_05
+                add_district = district_giga_frameworld_urban_05
+                add_district = district_giga_frameworld_urban_05
             }
             if = {
-                limit = {
-                    owner = {
-                        country_uses_food = yes
-                    }
-                }
-                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_farming }
+                limit = { owner = { country_uses_food = yes } }
+                fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_farming }
                 if = {
-                    limit = {
-                        owner = {
-                            not = {
-                                has_civic = civic_machine_servitor
-                            }
-                        }
-                    }
+                    limit = { owner = { not = { has_civic = civic_machine_servitor } } }
                     add_district = district_giga_frameworld_urban_05
                 }
             }
             else = {
-                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_city }
+                fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_city }
             }
             if = {
-                limit = {
-                    owner = {
-                        is_gestalt = no
-                    }
-                }
-                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_administrative }
+                limit = { owner = { is_gestalt = no } }
+                fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_administrative }
             }
             else_if = {
-                limit = {
-                    owner = {
-                        has_civic = civic_machine_servitor
-                    }
-                }
-                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_sanctuary }
+                limit = { owner = { has_civic = civic_machine_servitor } }
+                fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_sanctuary }
             }
             else_if = {
-                limit = {
-                    owner = {
-                        is_machine_empire = yes
-                    }
-                }
-                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_simulation  }
+                limit = { owner = { is_machine_empire = yes } }
+                fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_simulation  }
             }
             else_if = {
-                limit = {
-                    owner = {
-                        is_hive_empire = yes
-                    }
-                }
-                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_synapse  }
+                limit = { owner = { is_hive_empire = yes } }
+                fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_synapse  }
             }
-            adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_07 ZONE = district_giga_frameworld_science }
-            add_district = district_giga_frameworld_science
             if = {
-                limit = {
-                    owner = {
-                        is_gestalt = no
-                    }
+                limit = { owner = { not = { has_civic = civic_machine_servitor } } }
+                add_building = {
+                    district = district_giga_frameworld_urban_01
+                    zone = district_giga_frameworld_foundry
+                    building = building_foundry_1
                 }
-                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_08 ZONE = district_giga_frameworld_amenities }
+            }
+            else = {
+                add_district = district_giga_frameworld_urban_06
+            }
+            fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_07 ZONE = district_giga_frameworld_science }
+            # add_district = district_giga_frameworld_science
+            if = {
+                limit = { owner = { is_gestalt = no } }
+                fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_08 ZONE = district_giga_frameworld_amenities }
             }
             else_if = {
-                limit = {
-                    owner = {
-                        is_gestalt = yes
-                    }
-                }
-                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_08 ZONE = district_giga_frameworld_amenities_gestalt }
+                limit = { owner = { is_gestalt = yes } }
+                fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_08 ZONE = district_giga_frameworld_amenities_gestalt }
             }
             else_if = {
-                limit = {
-                    owner = {
-                        has_civic = civic_dystopian_society
-                    }
-                }
-                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_08 ZONE = district_giga_frameworld_amenities_dystopian }
+                limit = { owner = { has_civic = civic_dystopian_society } }
+                fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_08 ZONE = district_giga_frameworld_amenities_dystopian }
             }
             # will be a metallurgist bonus at vanilla rates
             # if = {
             #     limit = {
             #         has_global_flag = giga_buildcap_j
             #     }
-            #     adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_09 ZONE = district_giga_frameworld_supertensiles  }
+            #     fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_09 ZONE = district_giga_frameworld_supertensiles  }
             # }
             if = {
-                limit = {
-                    owner = {
-                        is_gestalt = no
-                    }
-                }
-                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_09 ZONE = district_giga_frameworld_trade }
+                limit = { owner = { is_gestalt = no } }
+                fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_09 ZONE = district_giga_frameworld_trade }
             }
             else = {
-                adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_09 ZONE = district_giga_frameworld_city }
+                fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_09 ZONE = district_giga_frameworld_city }
             }
             # city
             # while = {
@@ -406,21 +350,14 @@ country_event = {
             # }
             #####
             remove_modifier = frameworld_building_wreck_fix
-            #
-            # # get rid of any bad districts or buildings which can't be supported
-            # validate_planet_buildings_and_districts = yes
-            #
-            # # fix unemployed pops from the initial district shuffle
-            # every_owned_pop = {
-            #     limit = {
-            #         is_unemployed = yes
-            #     }
-            #     clear_pop_category = yes
-            # }
+
+            # get rid of any bad districts or buildings which can't be supported
+            validate_planet_buildings_and_districts = yes
+
             check_planet_employment = yes
 
-            # set the maintenance mod on
-            giga_frameworld_apply_expanded_maintenance_modifier = yes
+            # # set the maintenance mod on
+            # giga_frameworld_apply_expanded_maintenance_modifier = yes
 
             #lyra do my set setup values popup first then use those values
             owner = {
@@ -428,90 +365,13 @@ country_event = {
                     id = fwt.121
                 }
             }
-            # planet_event = {
-            #     id = giga_frameworld_origin.0001
-            #     days = 1
-            # }
             # # set up extra growth mechanics
             # giga_extra_growth_setup = yes
         }
     }
-}
-
-planet_event = {
-    id = giga_frameworld_origin.0001
-    is_triggered_only = yes
-    hide_window = yes
-
-    immediate = {
-        add_district = district_giga_frameworld_urban_01
-        add_zone = {
-            district = district_giga_frameworld_urban_01
-            zone = zone_giga_frameworld_foundry
-            zone_slot = 0
-            replace = no
-        }
-        # #machines need extra alloys for assembly
-        # if = {
-        #     limit = {
-        #         owner = {
-        #             or = {
-        #                 is_robot_empire = yes
-        #                 is_machine_empire = yes
-        #                 is_individual_machine = yes
-        #             }
-        #         }
-        #     }
-        #     add_district = district_giga_frameworld_foundry
-        # }
-        # # extra food for catalytic
-        # if = {
-        #     limit = {
-        #         num_districts = {
-        #             type = district_giga_frameworld_generator
-        #             value >= 2
-        #         }
-        #         not = {
-        #             owner = {
-        #                 has_civic = civic_catalytic_processing
-        #             }
-        #         }
-        #     }
-        #     add_district = district_giga_frameworld_mining
-        #     remove_district = district_giga_frameworld_generator
-        # }
-        # else_if = {
-        #     limit = {
-        #         num_districts = {
-        #             type = district_giga_frameworld_generator
-        #             value >= 2
-        #         }
-        #         owner = {
-        #             has_civic = civic_catalytic_processing
-        #         }
-        #     }
-        #     add_district = district_giga_frameworld_farming
-        #     remove_district = district_giga_frameworld_generator
-        # }
-        # #some last tweaks to make starting numbers more even
-        # if = {
-        #     limit = {
-        #         has_building = building_commercial_zone
-        #     }
-        #     remove_building = building_commercial_zone
-        #     add_building = building_foundry_1
-        # }
-        # get rid of any bad districts or buildings which can't be supported
-        validate_planet_buildings_and_districts = yes
-
-        # # fix unemployed pops from the initial district shuffle
-        # every_owned_pop = {
-        #     limit = {
-        #         is_unemployed = yes
-        #     }
-        #     clear_pop_category = yes
-        # }
-        check_planet_employment = yes
+    after = {
+        # clear the conquered modifier which apparently gets executed BEFORE the start event
+        remove_modifier = frameworld_conquered
     }
 }
 
@@ -790,9 +650,10 @@ country_event = {
 		every_owned_planet = {
 			limit = {
 				nor = {
-					is_same_value = event_target:target_frameworld
+					is_same_value = event_target:giga_frameworld@root
 					is_planet_class = pc_cosmogenesis_world
 				}
+                giga_is_frame_world = no
 				has_orbital_bombardment = no
 				is_occupied_flag = no
 				is_under_colonization = no
@@ -833,7 +694,7 @@ country_event = {
 					}
 				}
 				while = {
-					# 5% or 4, whichever is more
+					# 5% or 400, whichever is more
 					count = value:giga_frameworld_resettlement_count
 					random_owned_pop_group = {
 						limit = {
@@ -858,23 +719,30 @@ country_event = {
 						has_virtual_species_trait = yes
 					}
 				}
-				while = {
-					# 5% or 4, whichever is more
-					count = value:giga_frameworld_resettlement_count
-					random_owned_pop_group = {
-						limit = {
-							is_robotic_species = yes
-							has_virtual_species_trait = yes
-						}
-						kill_pop = yes
-					}
-				}
+                random_owned_pop_group = {
+                    limit = {
+                        is_robotic_species = yes
+                        has_virtual_species_trait = yes
+                    }
+                    kill_pop_group = { pop_group = this amount = value:giga_frameworld_resettlement_count }
+                }
+				# while = {
+				# 	# 5% or 4, whichever is more
+				# 	count = value:giga_frameworld_resettlement_count
+				# 	random_owned_pop_group = {
+				# 		limit = {
+				# 			is_robotic_species = yes
+				# 			has_virtual_species_trait = yes
+				# 		}
+                #         kill_pop_group = { pop_group = this  }
+				# 	}
+				# }
 			}
 
 			# if there are no pops left, clear out the planet and place an outpost
 			if = {
 				limit = {
-					num_pops = 0
+                    pop_amount = 0
 				}
 
 				#remove_all_buildings = yes
@@ -1231,16 +1099,18 @@ planet_event = {
 	hide_window = yes
 
 	trigger = {
-		from = {
+		owner = {
 			giga_has_frameworld_origin = yes
 		}
+        giga_is_frame_world = no
 		nor = {
-			has_planet_flag = giga_frameworld@from
+			has_planet_flag = giga_frameworld@owner
 			is_planet_class = pc_cosmogenesis_world
 		}
 	}
 
 	immediate = {
+        log = "happened"
 		add_modifier = {
 			modifier = frameworld_conquered
 			clear_on_owner_change = yes
@@ -1626,16 +1496,10 @@ country_event = {
 			}
 
 			export_trigger_value_to_variable = {
-				trigger = count_owned_pop
+				trigger = count_owned_pop_amount
 				parameters = {
 					limit = {
-						or = {
-							has_job = frame_maintenance_drone
-							and = {
-								is_unemployed = yes
-								is_pop_category = simple_drone
-							}
-						}
+						is_unemployed = yes
 					}
 				}
 				variable = giga_frameworld_unemployed
@@ -2072,7 +1936,7 @@ planet_event = {
 			WHO = owner
 		}
 		init_giga_maginot = yes
-		giga_frameworld_update_maginot_deposits = yes
+		# giga_frameworld_update_maginot_deposits = yes
 	}
 }
 

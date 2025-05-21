@@ -15,8 +15,15 @@ giga_extra_healthcare = {
 
     tags = { pop_assembly }
 
-    planet_modifier = {
+    triggered_planet_pop_group_modifier_for_all = {
         bonus_pop_growth = 0.8
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        fake_pop_growth_mod = 0.8
     }
 
     resources = {
@@ -117,8 +124,15 @@ giga_extra_crucible_drone = {
 
     tags = { pop_assembly }
 
-    planet_modifier = {
+    triggered_planet_pop_group_modifier_for_all = {
         bonus_pop_growth = 2
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        fake_pop_growth_mod = 2
     }
 
     triggered_planet_modifier = {
@@ -193,11 +207,19 @@ giga_cloning = {
     tags = { pop_assembly }
 
     possible_precalc = can_fill_specialist_job
-
-    planet_modifier = {
+    triggered_planet_pop_group_modifier_for_all = {
+        potential = { always = yes }
         bonus_pop_growth = 2
     }
+
     triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        fake_pop_growth_mod = 2
+    }
+
+    triggered_planet_pop_group_modifier_for_all = {
         potential = {
             exists = planet
             planet = {
@@ -210,6 +232,18 @@ giga_cloning = {
         bonus_pop_growth = 1
     }
 
+    triggered_planet_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                exists = owner
+                owner = {
+                    has_tradition = tr_cloning_adopt
+                }
+            }
+        }
+        fake_pop_growth_mod = 1
+    }
     resources = {
         category = planet_jobs
         upkeep = {

@@ -966,18 +966,18 @@ d_frameworld_admin = {
 	####################################################################################################################
 	####################################################################################################################
 
-	# dystopian leisure districts
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-				has_valid_civic = civic_dystopian_society
-			}
-		}
-		district_giga_frameworld_amenities_dystopian_max = 0.01
-		multiplier = trigger:pop_amount
-    }
+	# # dystopian leisure districts
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = {
+	# 			is_regular_empire = yes
+	# 			has_valid_civic = civic_dystopian_society
+	# 		}
+	# 	}
+	# 	district_giga_frameworld_amenities_dystopian_max = 0.01
+	# 	multiplier = trigger:pop_amount
+    # }
 
 	# maginot district caps
 	triggered_planet_modifier = {

@@ -589,6 +589,11 @@ giga_planet_density_offset_modifier_by_pops = {
 	multiply = value:giga_planet_density_by_pops|pops|$pops|20000$|
 }
 
+fwt_expansion_cost = {
+	weight = giga_frameworld_expansion_cost_base
+	mult = giga_frameworld_expansion_cost_exponent
+}
+
 ######################################################
 
 giga_planet_density_offset_jobs_by_pops = {
@@ -607,7 +612,43 @@ giga_planet_density_offset_by_bio_trophies = {
 	multiply = value:giga_planet_density_by_pops|pops|$pops|20000$|
 }
 
-fwt_expansion_cost = {
-	weight = giga_frameworld_expansion_cost_base
-	mult = giga_frameworld_expansion_cost_exponent
+giga_frameworld_outpost_growth_job_upkeep = {
+	base = 1
+	[[!checkType]
+		complex_trigger_modifier = {
+			trigger = num_assigned_jobs
+			parameters = {
+				job = $job$
+			}
+			trigger_scope = target
+			mode = mult
+		}
+	]
+	[[checkType]
+		complex_trigger_modifier = {
+			trigger = count_owned_pop_amount
+			parameters = {
+				limit = {
+					has_job = $job$
+					is_lithoid = $lithoid|no$
+				}
+			}
+			trigger_scope = target
+			mode = mult
+		}
+	]
+	divide = 100
+	mult = value:giga_frameworld_outpost_growth_count
+	[[modifier]
+		mult = target.value:scripted_modifier_mult|MODIFIER|$modifier$|
+	]
+}
+
+# number of pops resettled per month to the frameworld
+# 5% or 400, whichever is more. Breakpoint is 400 / 0.05 = 8000
+giga_frameworld_resettlement_count = {
+	weight = trigger:pop_amount
+	mult = 0.05
+	round = yes
+	min = 400
 }
