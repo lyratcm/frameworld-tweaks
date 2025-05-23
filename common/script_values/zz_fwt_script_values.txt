@@ -604,11 +604,13 @@ giga_planet_density_offset_jobs_by_pops = {
 		}
 		mode = weight
 	}
+	divide = 100
 	multiply = value:giga_planet_density_by_pops|pops|$pops|20000$|
 }
 
 giga_planet_density_offset_by_bio_trophies = {
 	weight = value:giga_planet_density_count_bio_trophies
+	divide = 100
 	multiply = value:giga_planet_density_by_pops|pops|$pops|20000$|
 }
 

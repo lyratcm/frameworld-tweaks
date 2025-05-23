@@ -153,12 +153,13 @@ d_giga_job_upkeep = {
 
 		multiplier = value:giga_planet_density_offset_bureaucrats_by_pops
 	}
+
 	triggered_planet_modifier = {
 		potential = { exists = owner owner = { is_machine_empire = yes has_tradition = tr_modularity_4 } }
 
 		planet_jobs_simple_drone_produces_mult = 0.02
 
-		multiplier = value:giga_planet_density_offset_jobs_by_pops|job|coordinator|
+        multiplier = value:giga_planet_density_offset_jobs_by_pops|job|coordinator|
 	}
 
 

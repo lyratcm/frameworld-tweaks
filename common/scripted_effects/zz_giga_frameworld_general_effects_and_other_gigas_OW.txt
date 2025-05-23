@@ -10,92 +10,97 @@ giga_frameworld_recalculate_exponent = {
 		limit = {
 			exists = owner
 		}
+		# owner = {
+		# 	if = {
+		# 		limit = {
+		# 			event_target:frame_expand@this = {
+		# 				has_planet_flag = frameworld_habitat_completed
+		# 			}
+		# 		}
+		# 		prev = {
+		# 			change_variable = {
+		# 				which = giga_frameworld_expansion_cost_exponent
+		# 				value = @fwt_frameworld_expansion_cost_habitat_upgrade
+		# 			}
+		# 		}
+		# 	}
 
-		owner = {
-			if = {
-				limit = {
-					event_target:frame_expand@this = {
-						has_planet_flag = frameworld_habitat_completed
-					}
-				}
-				prev = {
-					change_variable = {
-						which = giga_frameworld_expansion_cost_exponent
-						value = @fwt_frameworld_expansion_cost_habitat_upgrade
-					}
-				}
-			}
-
-			if = {
-				limit = {
+		if = {
+			limit = {
+				owner = {
 					has_ascension_perk = ap_voidborn
 				}
-				prev = {
-					change_variable = {
-						which = giga_frameworld_expansion_cost_exponent
-						value = @giga_frameworld_expansion_exponent_voidborne
-					}
+
+			}
+			prev = {
+				change_variable = {
+					which = giga_frameworld_expansion_cost_exponent
+					value = @giga_frameworld_expansion_exponent_voidborne
 				}
 			}
+		}
 
-			if = {
-				limit = {
+		if = {
+			limit = {
+				owner = {
 					has_technology = tech_ring_world
 				}
-				prev = {
-					change_variable = {
-						which = giga_frameworld_expansion_cost_exponent
-						value = @giga_frameworld_expansion_exponent_ringworld
-					}
+			}
+			prev = {
+				change_variable = {
+					which = giga_frameworld_expansion_cost_exponent
+					value = @giga_frameworld_expansion_exponent_ringworld
 				}
 			}
+		}
 
-			if = {
-				limit = {
+		if = {
+			limit = {
+				owner = {
 					has_technology = tech_mega_engineering
 				}
-				prev = {
-					change_variable = {
-						which = giga_frameworld_expansion_cost_exponent
-						value = @fwt_frameworld_expansion_exponent_mega_engineering
-					}
+			}
+			prev = {
+				change_variable = {
+					which = giga_frameworld_expansion_cost_exponent
+					value = @fwt_frameworld_expansion_exponent_mega_engineering
 				}
 			}
-
-			if = {
-				limit = {
-					event_target:frame_expand@this = {
-						has_planet_flag = frameworld_expand_infrastructure_completed
-					}
-				}
-				prev = {
-					change_variable = {
-						which = giga_frameworld_expansion_cost_exponent
-						value = @fwt_frameworld_expansion_cost_city_upgrade
-					}
-				}
-			}
-
-			# if = {
-			# 	limit = {
-			# 		event_target:frameworld = {
-			# 			has_planet_flag = frameworld_interstellar_assembly_completed
-			# 			has_planet_flag = frameworld_yggdrasil_orchid_completed
-			# 			has_planet_flag = frameworld_computing_complex_completed
-			# 			has_planet_flag = frameworld_interstellar_assembly_completed
-			# 			has_planet_flag = frameworld_advanced_industrial_completed
-			# 			has_planet_flag = frameworld_decompressor_completed
-			# 			has_planet_flag = frameworld_penrose_completed
-			# 		}
-			# 	}
-			# 	prev = {
-			# 		change_variable = {
-			# 			which = giga_frameworld_expansion_cost_exponent
-			# 			value = @fwt_frameworld_expansion_cost_mega_engi_upgrade
-			# 		}
-			# 	}
-			# }
 		}
+
+		# if = {
+		# 	limit = {
+		# 		event_target:frame_expand@this = {
+		# 			has_planet_flag = frameworld_expand_infrastructure_completed
+		# 		}
+		# 	}
+		# 	prev = {
+		# 		change_variable = {
+		# 			which = giga_frameworld_expansion_cost_exponent
+		# 			value = @fwt_frameworld_expansion_cost_city_upgrade
+		# 		}
+		# 	}
+		# }
+		#
+		# if = {
+		# 	limit = {
+		# 		event_target:frameworld = {
+		# 			has_planet_flag = frameworld_interstellar_assembly_completed
+		# 			has_planet_flag = frameworld_yggdrasil_orchid_completed
+		# 			has_planet_flag = frameworld_computing_complex_completed
+		# 			has_planet_flag = frameworld_interstellar_assembly_completed
+		# 			has_planet_flag = frameworld_advanced_industrial_completed
+		# 			has_planet_flag = frameworld_decompressor_completed
+		# 			has_planet_flag = frameworld_penrose_completed
+		# 		}
+		# 	}
+		# 	prev = {
+		# 		change_variable = {
+		# 			which = giga_frameworld_expansion_cost_exponent
+		# 			value = @fwt_frameworld_expansion_cost_mega_engi_upgrade
+		# 		}
+		# 	}
+		# }
 	}
 }
 
@@ -220,7 +225,8 @@ giga_frameworld_recalculate_variables = {
 	}
 
 	set_variable = { which = giga_frameworld_expansion_cost_multiplier_dec value = giga_frameworld_expansion_cost_multiplier }
-	# recalculate multiplier from expansion count
+
+	# recalculate total decision cost from from expansion count
 	while = {
 		count = fwt_in_queue_expand
 
@@ -229,7 +235,9 @@ giga_frameworld_recalculate_variables = {
 			value = giga_frameworld_expansion_cost_exponent
 		}
 	}
+
 	multiply_variable = { which = giga_frameworld_expansion_cost_multiplier_dec value = giga_frameworld_expansion_cost_base }
+
 	# set up the bulk buy options
 	set_variable = {
 		# temp value for our mult
@@ -281,6 +289,7 @@ giga_frameworld_recalculate_variables = {
 		which = giga_frameworld_expansion_cost_multiplier_tooltip
 		value = giga_frameworld_expansion_cost_multiplier
 	}
+
 	round_variable_to_closest = {
 		which = giga_frameworld_expansion_cost_multiplier_tooltip
 		value = 0.01
@@ -290,6 +299,7 @@ giga_frameworld_recalculate_variables = {
 		which = giga_frameworld_expansion_bulk_5_cost_multiplier_tooltip
 		value = giga_frameworld_expansion_bulk_5_cost_multiplier
 	}
+
 	round_variable_to_closest = {
 		which = giga_frameworld_expansion_bulk_5_cost_multiplier_tooltip
 		value = 0.01
@@ -299,6 +309,7 @@ giga_frameworld_recalculate_variables = {
 		which = giga_frameworld_expansion_bulk_10_cost_multiplier_tooltip
 		value = giga_frameworld_expansion_bulk_10_cost_multiplier
 	}
+
 	round_variable_to_closest = {
 		which = giga_frameworld_expansion_bulk_10_cost_multiplier_tooltip
 		value = 0.01

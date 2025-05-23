@@ -1,5 +1,5 @@
 #why is scripted variables FIOS but the rest of common isn't!!!
-# # initial cost for expansion decision
+# initial cost for expansion decision
 @giga_frameworld_expansion_cost_base = 550
 # incremental multiplier for expansion decision
 @giga_frameworld_expansion_cost_exponent = 1.10 #1.14 #1.15

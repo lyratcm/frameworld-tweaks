@@ -64,7 +64,7 @@
 	district_giga_frameworld_penrose_desc:0 "Massive facilities where particles are injected into the $pc_black_hole$'s ergosphere to extract energy from its angular momentum."
 
   giga_frameworld_penrose:99 "$name_dyson_swarm$"
-  giga_frameworld_penrose_effect:99 "Begins construction of a multi stage Megastructure which, once completed, will replace the $pc_giga_frameworld$'s §Y$district_giga_frameworld_generator_plural$§! with a smaller number of significantly more powerful §Y$district_giga_frameworld_penrose_plural$§!.\n\n§Y$district_giga_frameworld_penrose_plural$§! provide additional £job_technician£§Y[owner.GetTechnician] jobs§! but are more expensive than the districts they replace.\n\n$frameworld_penrose_fake_tooltip$"
+  giga_frameworld_penrose_effect:99 "Begins construction of a multi stage Megastructure which, once completed, will upgrade the generator specializations doubling their output (for a total of 4x).\n\n$frameworld_penrose_fake_tooltip$"
   giga_frameworld_penrose_desc:99 "A large mirror built around the system's $pc_black_hole$, designed to exploit superradiant scattering, generating energy with astonishing efficiency."
 
  ################### decommpresser overwrite ###########################################################################################
@@ -100,18 +100,24 @@
 
 
  giga_frameworld_decompressor:99 "$name_auto_stripmine$"
- giga_frameworld_decompressor_effect:99 "Begins construction of a multi stage Megastructure which, once completed, will replace the $pc_giga_frameworld$'s §Y$district_giga_frameworld_mining_plural$§! with a smaller number of significantly more powerful §Y$district_giga_frameworld_decompressor_plural$§!.\n\n§Y$district_giga_frameworld_decompressor_plural$§! provide additional £job_miner£§Y[owner.GetMiner] jobs§! but are more expensive than the districts they replace."
+ giga_frameworld_decompressor_effect:99 "Begins construction of a multi stage Megastructure which, once completed, will upgrade the mining specializations doubling their output (for a total of 4x)."
  giga_frameworld_stripmine_desc:99 "A gravity lensing facility which twists gravitational fields into drills capable of extracting material from the $pc_black_hole$"
 
- giga_frameworld_habitat_upgrade:0 "Habitat intergation"
- giga_frameworld_habitat_desc:0 "Begin Constrction of habitat like upgrades to our frame world to imorove the effectivness of some of our distrcits (minerals, energy, food, research)"
- giga_frameworld_habitat_effect:0 "REPLACE_ME"
+
+
+ giga_frameworld_gaia_effect:0 "Increases the planets job production, base food output per 100 jobs, happiness and habitability"
+ giga_frameworld_computing_complex_effect:0 "Upgrades the Research specializations doubling their jobs (for a total of 4x)"
+ giga_frameworld_expand_infrastructure_effect:0 "Increases the planets max districts by 5%"
+ giga_frameworld_orbital_ring_upgrade_effect:0 "Gives the benefits of a orbital ring like those found in ringworlds"
+ giga_frameworld_habitat_upgrade:0 "Habitat integration"
+ giga_frameworld_habitat_desc:0 "Begin Construction of habitat like upgrades to our frame world to improve the effectiveness of some of our specializations (minerals, energy, food, research)"
+ giga_frameworld_habitat_effect:0 "Upgrades the Generator, mining, Agriculture and research specializations doubling their output (for a total of 2x)"
  giga_frameworld_interstellar_assembly:0 "Interstellar Assembly upgrade"
- giga_frameworld_interstellar_assembly_desc:0 "Begin Construction of an Interstellar Assembly upgrade to encahance the abilites of our trade and unity"
- giga_frameworld_interstellar_assembly_effect:0 "REPLACE_ME"
- giga_frameworld_yggdrasil_orchid:0 "Yggdrasil Orchid intergration"
- giga_frameworld_yggdrasil_orchid_desc:0 "Begin Constrction of habitat like upgrades to our frame world to improve the effectivness of our food distrcits"
- giga_frameworld_yggdrasil_orchid_effect:0 "REPLACE_ME"
+ giga_frameworld_interstellar_assembly_desc:0 "Begin Construction of an Interstellar Assembly upgrade to enhance the abilities of our trade and unity specializations (for a total of 4x)"
+ giga_frameworld_interstellar_assembly_effect:0 "Upgrades the Agriculture, unity, trade and sanctuary specializations doubling their output (for a total of 4x)"
+ giga_frameworld_yggdrasil_orchid:0 "Yggdrasil Orchid integration"
+ giga_frameworld_yggdrasil_orchid_desc:0 "Begin Construction of habitat like upgrades to our frame world to improve the effectiveness of our food districts"
+ giga_frameworld_yggdrasil_orchid_effect:0 "Upgrades the Agriculture district doubling its output"
  district_giga_frameworld_ecu_foundry:0 "Ecumenopolis $district_giga_frameworld_foundry$"
  district_giga_frameworld_ecu_foundry_desc:0 "$district_giga_frameworld_foundry_desc$ "
  district_giga_frameworld_ecu_foundry_plural:0 "Ecumenopolis $district_giga_frameworld_foundry_plural$"
@@ -163,3 +169,12 @@
  district_giga_frameworld_ecu_refinery:0 "Advanced $district_giga_frameworld_refinery$"
  district_giga_frameworld_ecu_refinery_desc:0 "$district_giga_frameworld_refinery_desc$"
  district_giga_frameworld_ecu_refinery_plural:0 "Advanced $district_giga_frameworld_refinery_plural$"
+
+
+
+ #temp ow
+ giga_frameworld_advanced_industrial_foundry_effect:0 "Upgrades the foundry and city specializations doubling their output (for a total of 4x)."
+ giga_frameworld_advanced_industrial_factory_effect:0 "Upgrades the factory specializations doubling their output (for a total of 4x)."
+ giga_frameworld_advanced_city_effect:0 "Upgrades the foundry, factory, unity, trade, sanctuary and city specializations doubling their output (for a total of 2x). It also allows the frameworld to have the same planet bonuses as an ecu"
+ # giga_frameworld_advanced_nexus_effect:0 "Upgrades the foundry, factory, unity, trade, sanctuary and city specializations doubling their output (for a total of 2x)."
+ # giga_frameworld_advanced_hive_effect:0 "Upgrades the foundry, factory, unity, trade, sanctuary and city specializations doubling their output (for a total of 2x)."
