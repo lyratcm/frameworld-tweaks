@@ -1,6 +1,3 @@
-fwt_job_size_info = {
-}
-
 fwt_speed_unemploy_info = {
     pop_demotion_time_mult = 1
 }

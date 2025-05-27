@@ -4,21 +4,24 @@
 # incremental multiplier for expansion decision
 @giga_frameworld_expansion_cost_exponent = 1.10 #1.14 #1.15
 
-# @giga_frameworld_expansion_exponent_habitat = -0.03 #-0.02 -0.04
-@giga_frameworld_expansion_exponent_voidborne = -0.04 #-0.03 -0.04
-# bigger gain but spread over 2 techs
-@giga_frameworld_expansion_exponent_ringworld = -0.02 #-0.03
-@fwt_frameworld_expansion_exponent_mega_engineering = -0.02
+# hab tech unlock hab upgrade now
+# @giga_frameworld_expansion_exponent_habitat = -0.03  -0.04
+@giga_frameworld_expansion_exponent_voidborne = -0.02 #-0.04
+# spread over 2 techs
+@fwt_frameworld_expansion_exponent_mega_engineering = -0.01
+@giga_frameworld_expansion_exponent_ringworld = -0.01 #-0.03
+
+
 @giga_frameworld_expansion_cost_habitat_2 = -25 # -50
 @giga_frameworld_expansion_cost_habitat_3 = -25 # -50
-
-#an additional 100 cost reduction for a total of 180 #150 600 -> 450 # 
-@fwt_frameworld_expansion_cost_starbase_2 = 0
-@fwt_frameworld_expansion_cost_starbase_3 = -20
-@fwt_frameworld_expansion_cost_starbase_4 = -25
-@fwt_frameworld_expansion_cost_starbase_5 = -30
+# an additional 100 cost reduction for a total of 180 #150 #100 550 -> 400
+# @fwt_frameworld_expansion_cost_starbase_2 = -10
+@fwt_frameworld_expansion_cost_starbase_3 = -15
+@fwt_frameworld_expansion_cost_starbase_4 = -20
+@fwt_frameworld_expansion_cost_starbase_5 = -25
 @fwt_frameworld_expansion_cost_megashipyard = -40
-# #cost increase when you upgrade (increase to the old base at max tier)
+
+#cost increase when you upgrade (increase to the old base at max tier)
 @fwt_frameworld_expansion_cost_habitat_upgrade = -10
 @fwt_frameworld_expansion_cost_city_upgrade = -10
 # @fwt_frameworld_expansion_cost_mega_engi_upgrade = 100

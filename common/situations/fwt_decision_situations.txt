@@ -14,6 +14,7 @@ giga_situation_frameworld_decisions = {
 			desc = giga_situation_frameworld_outposts_expansion_decision_speed
 		}
 	}
+
     on_progress_complete = {
 		fwt_trigger_effects_situation = yes
 	}
@@ -573,5 +574,5 @@ fwt_situation_frameworld_continuous_harvest = {
 			limit = { is_variable_set = fwt_situation_frameworld_continuous_harvest_progress }
 			add_situation_progress = owner.fwt_situation_frameworld_continuous_harvest_progress
 		}
-	}					#Effects when the Situation is created
+	}
 }

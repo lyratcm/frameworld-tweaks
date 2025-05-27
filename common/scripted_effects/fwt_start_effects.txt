@@ -28,3 +28,19 @@ fwt_clear_district = {
         remove_district = $district$
     }
 }
+
+fwt_half_district = {
+    export_trigger_value_to_variable = {
+        trigger = num_districts
+        parameters = {
+            type = $DISTRICT$
+        }
+        variable = fwt_dist_count_temp
+    }
+    divide_variable = { which = fwt_dist_count_temp value = 2 }
+    round_variable = fwt_dist_count_temp
+    while = {
+        count = fwt_dist_count_temp
+        remove_district = $DISTRICT$
+    }
+}

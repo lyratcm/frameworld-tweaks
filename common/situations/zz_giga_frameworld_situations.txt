@@ -316,18 +316,19 @@ giga_situation_frameworld_outposts = {
     triggered_target_modifier = {
         potential = { root.owner = { giga_is_fully_virtual_empire = no } }
 
-        giga_frameworld_growth_jobs_add = 0.5
+        giga_frameworld_growth_jobs_add = 1
 
         multiplier = root.owner.value:giga_frameworld_outpost_count
     }
 
     # growth
     triggered_target_modifier = {
-        planet_pop_assembly_organic_reduction = -0.1
-        planet_pop_assembly_reduction = -0.1
-        pop_growth_speed_reduction = -0.1
-
-        multiplier = value:giga_frameworld_outpost_growth_count
+        pop_bonus_workforce_mult = 0.05
+        # planet_pop_assembly_organic_reduction = -0.1
+        # planet_pop_assembly_reduction = -0.1
+        # pop_growth_speed_reduction = -0.1
+        multiplier = owner.value:giga_frameworld_outpost_count
+        # multiplier = value:giga_frameworld_outpost_growth_count
     }
 
     # virtual stuff
@@ -338,6 +339,7 @@ giga_situation_frameworld_outposts = {
 
         multiplier = root.owner.value:giga_frameworld_outpost_count
     }
+
     triggered_target_modifier = {
         potential = {
             root.owner = {
@@ -345,11 +347,12 @@ giga_situation_frameworld_outposts = {
                 is_gestalt = no
             }
         }
-
-        job_clerk_add = 2
-
+        #clerks have more or less been removed
+        job_patrol_drone_add = 200
+        # job_clerk_add = 200
         multiplier = root.owner.value:giga_frameworld_outpost_count
     }
+
     triggered_target_modifier = {
         potential = {
             root.owner = {
@@ -357,8 +360,9 @@ giga_situation_frameworld_outposts = {
                 is_gestalt = yes
             }
         }
-
-        job_maintenance_drone_add = 2
+        #maintenance drones are just civilians now
+        job_patrol_drone_add = 200
+        # job_maintenance_drone_add = 200
 
         multiplier = root.owner.value:giga_frameworld_outpost_count
     }

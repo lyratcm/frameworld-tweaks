@@ -11,11 +11,9 @@ include = {
 	district_giga_frameworld_simulation
 	district_giga_frameworld_sanctuary
 	district_giga_frameworld_science
-	district_giga_frameworld_anticrime
 	district_giga_frameworld_amenities
 	district_giga_frameworld_amenities_dystopian
 	district_giga_frameworld_amenities_gestalt
-	district_giga_frameworld_supertensiles
 }
 #only frameworld zones
 exclude = {

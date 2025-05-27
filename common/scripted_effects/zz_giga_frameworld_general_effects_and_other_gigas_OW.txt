@@ -17,11 +17,9 @@ giga_frameworld_recalculate_exponent = {
 		# 				has_planet_flag = frameworld_habitat_completed
 		# 			}
 		# 		}
-		# 		prev = {
-		# 			change_variable = {
-		# 				which = giga_frameworld_expansion_cost_exponent
-		# 				value = @fwt_frameworld_expansion_cost_habitat_upgrade
-		# 			}
+		# 		change_variable = {
+		# 			which = giga_frameworld_expansion_cost_exponent
+		# 			value = @fwt_frameworld_expansion_cost_habitat_upgrade
 		# 		}
 		# 	}
 
@@ -32,11 +30,9 @@ giga_frameworld_recalculate_exponent = {
 				}
 
 			}
-			prev = {
-				change_variable = {
-					which = giga_frameworld_expansion_cost_exponent
-					value = @giga_frameworld_expansion_exponent_voidborne
-				}
+			change_variable = {
+				which = giga_frameworld_expansion_cost_exponent
+				value = @giga_frameworld_expansion_exponent_voidborne
 			}
 		}
 
@@ -46,11 +42,9 @@ giga_frameworld_recalculate_exponent = {
 					has_technology = tech_ring_world
 				}
 			}
-			prev = {
-				change_variable = {
-					which = giga_frameworld_expansion_cost_exponent
-					value = @giga_frameworld_expansion_exponent_ringworld
-				}
+			change_variable = {
+				which = giga_frameworld_expansion_cost_exponent
+				value = @giga_frameworld_expansion_exponent_ringworld
 			}
 		}
 
@@ -60,11 +54,9 @@ giga_frameworld_recalculate_exponent = {
 					has_technology = tech_mega_engineering
 				}
 			}
-			prev = {
-				change_variable = {
-					which = giga_frameworld_expansion_cost_exponent
-					value = @fwt_frameworld_expansion_exponent_mega_engineering
-				}
+			change_variable = {
+				which = giga_frameworld_expansion_cost_exponent
+				value = @fwt_frameworld_expansion_exponent_mega_engineering
 			}
 		}
 
@@ -74,14 +66,12 @@ giga_frameworld_recalculate_exponent = {
 		# 			has_planet_flag = frameworld_expand_infrastructure_completed
 		# 		}
 		# 	}
-		# 	prev = {
-		# 		change_variable = {
-		# 			which = giga_frameworld_expansion_cost_exponent
-		# 			value = @fwt_frameworld_expansion_cost_city_upgrade
-		# 		}
+		# 	change_variable = {
+		# 		which = giga_frameworld_expansion_cost_exponent
+		# 		value = @fwt_frameworld_expansion_cost_city_upgrade
 		# 	}
 		# }
-		#
+
 		# if = {
 		# 	limit = {
 		# 		event_target:frameworld = {
@@ -94,11 +84,9 @@ giga_frameworld_recalculate_exponent = {
 		# 			has_planet_flag = frameworld_penrose_completed
 		# 		}
 		# 	}
-		# 	prev = {
-		# 		change_variable = {
-		# 			which = giga_frameworld_expansion_cost_exponent
-		# 			value = @fwt_frameworld_expansion_cost_mega_engi_upgrade
-		# 		}
+		# 	change_variable = {
+		# 		which = giga_frameworld_expansion_cost_exponent
+		# 		value = @fwt_frameworld_expansion_cost_mega_engi_upgrade
 		# 	}
 		# }
 	}
@@ -144,18 +132,18 @@ giga_frameworld_recalculate_variables = {
 		}
 	}
 
-	if = {
-		limit = {
-			exists = owner
-			owner = {
-				has_technology = tech_starbase_2
-			}
-		}
-		change_variable = {
-			which = giga_frameworld_expansion_cost_base
-			value = @fwt_frameworld_expansion_cost_starbase_2
-		}
-	}
+	# if = {
+	# 	limit = {
+	# 		exists = owner
+	# 		owner = {
+	# 			has_technology = tech_starbase_2
+	# 		}
+	# 	}
+	# 	change_variable = {
+	# 		which = giga_frameworld_expansion_cost_base
+	# 		value = @fwt_frameworld_expansion_cost_starbase_2
+	# 	}
+	# }
 
 	if = {
 		limit = {
@@ -322,42 +310,42 @@ giga_frameworld_recalculate_variables = {
 	# giga_frameworld_update_maginot_deposits = yes
 }
 
-#
-# # disabled as those job aren't wanted
-# giga_frameworld_apply_expanded_maintenance_modifier = {
-# 	# if = {
-# 	# 	limit = {
-# 	# 		giga_frameworld_has_expanded_maintenance_modifier = no
-# 	# 	}
-# 	# 	if = {
-# 	# 		limit = {
-# 	# 			exists = owner
-# 	# 			owner = { is_gestalt = yes }
-# 	# 		}
-# 	# 		add_modifier = {
-# 	# 			modifier = frameworld_expanded_maintenance_protocol_gestalt
-# 	# 			clear_on_owner_change = yes
-# 	# 		}
-# 	# 	}
-# 	# 	else = {
-# 	# 		add_modifier = {
-# 	# 			modifier = frameworld_expanded_maintenance_protocol
-# 	# 			clear_on_owner_change = yes
-# 	# 		}
-# 	# 	}
-# 	# }
-# 	# hidden_effect = {
-# 	# 	if = {
-# 	# 		limit = {
-# 	# 			not = {
-# 	# 				has_deposit = d_frameworld_expanded_maintenance_protocol
-# 	# 			}
-# 	# 		}
-# 	# 		add_deposit = d_frameworld_expanded_maintenance_protocol
-# 	# 	}
-# 	# 	check_planet_employment = yes
-# 	# }
-# }
+
+# disabled as those job aren't wanted
+giga_frameworld_apply_expanded_maintenance_modifier = {
+	# if = {
+	# 	limit = {
+	# 		giga_frameworld_has_expanded_maintenance_modifier = no
+	# 	}
+	# 	if = {
+	# 		limit = {
+	# 			exists = owner
+	# 			owner = { is_gestalt = yes }
+	# 		}
+	# 		add_modifier = {
+	# 			modifier = frameworld_expanded_maintenance_protocol_gestalt
+	# 			clear_on_owner_change = yes
+	# 		}
+	# 	}
+	# 	else = {
+	# 		add_modifier = {
+	# 			modifier = frameworld_expanded_maintenance_protocol
+	# 			clear_on_owner_change = yes
+	# 		}
+	# 	}
+	# }
+	# hidden_effect = {
+	# 	if = {
+	# 		limit = {
+	# 			not = {
+	# 				has_deposit = d_frameworld_expanded_maintenance_protocol
+	# 			}
+	# 		}
+	# 		add_deposit = d_frameworld_expanded_maintenance_protocol
+	# 	}
+	# 	check_planet_employment = yes
+	# }
+}
 
 #temp overwrite till ai check is fixed
 frameworld_conduct_audit_check_ai = {
@@ -487,4 +475,43 @@ frameworld_conduct_audit = {
 	# # 		variable = frameworld_simulation_districts
 	# # 	}
 	# # }
+}
+
+giga_frameworld_create_outpost = {
+	$planet$ = {
+		save_event_target_as = outpost_planet
+		giga_frameworld_set_outpost_flags = yes
+	}
+	$owner$ = { save_event_target_as = outpost_owner }
+
+	create_fleet = {
+		effect = {
+			set_owner = event_target:outpost_owner
+			create_ship = {
+				random_existing_design = frameworld_planetary_outpost
+				effect = {
+					set_disable_at_health = 0.05
+					set_name = {
+						key = frameworld_planetary_outpost_name
+						variable_string = "\\[outpost_planet.GetName]"
+					}
+				}
+			}
+			save_event_target_as = target_orbital
+			fleet = {
+				set_location = {
+					target = event_target:outpost_planet
+				}
+				set_fleet_flag = @giga_frameworld_outpost_fleet_flag
+				set_name = {
+					key = frameworld_planetary_outpost_name
+					variable_string = "\\[outpost_planet.GetName]"
+				}
+			}
+		}
+	}
+
+	$planet$ = {
+		giga_frameworld_outpost_set_planet_class = yes
+	}
 }

@@ -344,7 +344,7 @@ d_frameworld_expansion = {
         }
         multiplier = giga_frameworld_expansions
 
-        planet_building_capacity_add = 0.1
+        planet_building_capacity_add = 0.05
         giga_frameworld_growth_jobs_add = 0.2
         logistic_growth_mult  = 0.025
         planet_decision_enact_speed_mult = 0.02
@@ -361,7 +361,7 @@ d_frameworld_expansion = {
         }
         multiplier = giga_frameworld_expansions
 
-        planet_building_capacity_add = 0.05
+        planet_building_capacity_add = 0.025
         giga_frameworld_growth_jobs_add = 0.1
         logistic_growth_mult = 0.0125
         planet_decision_enact_speed_mult = 0.01
@@ -380,7 +380,7 @@ d_frameworld_expansion = {
         }
         multiplier = giga_frameworld_expansions
 
-        planet_building_capacity_add = 0.75
+        planet_building_capacity_add = 0.375
         giga_frameworld_growth_jobs_add = 0.15
         logistic_growth_mult = 0.01825
         planet_decision_enact_speed_mult = 0.15

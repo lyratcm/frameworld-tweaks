@@ -5,18 +5,13 @@ country_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        exists = owner
-        giga_has_frameworld_origin = yes
-    }
+    trigger = { giga_has_frameworld_origin = yes }
     immediate = {
         #backup as can't seem to trigger the event via an onaction
         random_planet_within_border = {
             limit = {
                 exists = owner
-                owner = {
-                    giga_has_frameworld_origin = yes
-                }
+                owner = { giga_has_frameworld_origin = yes }
                 giga_is_frame_world = yes
             }
             fwt_clear_district = { district = district_generator }
@@ -27,16 +22,17 @@ country_event = {
             fwt_clear_district = { district = district_nexus }
             save_global_event_target_as = frame_expand@owner
             owner = {
-                set_variable = { which = fwt_expansion_income value = 60 }
+                set_variable = {
+                    which = fwt_expansion_income
+                    value = 60
+                }
                 set_country_flag = fwt_maintenance_default
                 set_variable = {
                     which = fwt_decision_time
                     value = 360
                 }
                 if = {
-                    limit = {
-                        megacorp_metamod_enable = yes
-                    }
+                    limit = { megacorp_metamod_enable = yes }
                     set_variable = {
                         which = fwt_growth_ceiling
                         value = 5
@@ -58,26 +54,64 @@ country_event = {
                 }
             }
             #used in some places for mult if gigas needed it
-            set_variable = { which = fwt_energy_completion value = 1 }
-            set_variable = { which = fwt_mineral_completion value = 1 }
-            set_variable = { which = fwt_food_completion value = 1 }
-            set_variable = { which = fwt_alloy_completion value = 1 }
-            set_variable = { which = fwt_consumer_goods_completion value = 1 }
-            set_variable = { which = fwt_unity_trade_completion value = 1 }
-            set_variable = { which = fwt_sanctuary_completion value = 1 }
-            set_variable = { which = fwt_science_completion value = 1 }
-            set_variable = { which = fwt_rare_resources_completion value = 1 }
-            set_variable = { which = fwt_city_completion value = 1 }
+            set_variable = {
+                which = fwt_energy_completion
+                value = 1
+            }
+            set_variable = {
+                which = fwt_mineral_completion
+                value = 1
+            }
+            set_variable = {
+                which = fwt_food_completion
+                value = 1
+            }
+            set_variable = {
+                which = fwt_alloy_completion
+                value = 1
+            }
+            set_variable = {
+                which = fwt_consumer_goods_completion
+                value = 1
+            }
+            set_variable = {
+                which = fwt_unity_trade_completion
+                value = 1
+            }
+            set_variable = {
+                which = fwt_sanctuary_completion
+                value = 1 }
+            set_variable = {
+                which = fwt_science_completion
+                value = 1
+            }
+            set_variable = {
+                which = fwt_rare_resources_completion
+                value = 1
+            }
+            set_variable = {
+                which = fwt_city_completion
+                value = 1
+            }
             # code for my job scaling
-            set_variable = { which = frame_expansion_scale value = 1 }
+            set_variable = {
+                which = frame_expansion_scale
+                value = 1
+            }
             # set_variable = { which = background_pops value = 0 }
-            set_variable = { which = fwt_maintance_scale value = 0.5 }
+            set_variable = {
+                which = fwt_maintance_scale
+                value = 0.5
+            }
             add_modifier = {
                 modifier = fwt_speed_unemploy_info
                 multiplier = -100000000
                 days = 40
             }
-            set_variable = { which = fwt_maintenance_count value = 1 }
+            set_variable = {
+                which = fwt_maintenance_count
+                value = 1
+            }
         }
         country_event = { id = giga_frameworld_origin.000 }
     }
@@ -93,21 +127,12 @@ country_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        exists = owner
-        giga_has_frameworld_origin = yes
-    }
+    trigger = { giga_has_frameworld_origin = yes }
     immediate = {
         #backup in case it breaks, if your capital isn't the frameworld something is wrong but don't want to break it further
         if = {
-            limit = {
-                capital_scope = {
-                    giga_is_frame_world = yes
-                }
-            }
-            capital_scope = {
-                save_global_event_target_as = frame_expand@owner
-            }
+            limit = { capital_scope = { giga_is_frame_world = yes } }
+            capital_scope = { save_global_event_target_as = frame_expand@owner }
         }
     }
 }
@@ -121,15 +146,10 @@ country_event = {
     is_triggered_only = yes
     picture = GFX_evt_overgrown_city
 
-    trigger = {
-        #should only be 1 empire
-        has_country_flag = giga_host
-    }
+    trigger = { has_country_flag = giga_host }
     option = {
         name = fwt.12.increase_1
-        country_event = {
-            id = fwt.121
-        }
+        country_event = { id = fwt.121 }
         change_variable = {
             which = fwt_growth_ceiling
             value = 0.1
@@ -137,9 +157,7 @@ country_event = {
     }
     option = {
         name = fwt.12.increase_05
-        country_event = {
-            id = fwt.121
-        }
+        country_event = { id = fwt.121 }
         change_variable = {
             which = fwt_growth_ceiling
             value = 0.05
@@ -147,12 +165,10 @@ country_event = {
     }
     option = {
         name = fwt.12.increase_01
+        country_event = { id = fwt.121 }
         change_variable = {
             which = fwt_growth_ceiling
             value = 0.01
-        }
-        country_event = {
-            id = fwt.121
         }
     }
     option = {
@@ -163,52 +179,51 @@ country_event = {
     }
     option = {
         name = fwt.12.decrease_01
+        country_event = { id = fwt.121 }
         change_variable = {
             which = fwt_growth_ceiling
             value = -0.01
         }
-        country_event = {
-            id = fwt.121
-        }
     }
     option = {
         name = fwt.12.decrease_05
+        country_event = { id = fwt.121 }
         change_variable = {
             which = fwt_growth_ceiling
             value = -0.05
         }
-        country_event = {
-            id = fwt.121
-        }
     }
     option = {
         name = fwt.12.decrease_1
+        country_event = { id = fwt.121 }
         change_variable = {
             which = fwt_growth_ceiling
             value = -0.1
-        }
-        country_event = {
-            id = fwt.121
         }
     }
     option = {
         name = fwt.close_menu
         event_target:giga_global_situation_country = {
             #is the scope the situation is created in
-            set_variable = { which = fwt_growth_ceiling value = root.fwt_growth_ceiling }
+            set_variable = {
+                which = fwt_growth_ceiling
+                value = root.fwt_growth_ceiling
+            }
             every_country = {
-                limit = {
-                    giga_has_frameworld_origin = yes
+                limit = { giga_has_frameworld_origin = yes }
+                set_variable = {
+                    which = fwt_growth_ceiling
+                    value = root.fwt_growth_ceiling
                 }
-                set_variable = { which = fwt_growth_ceiling value = root.fwt_growth_ceiling }
                 event_target:frame_expand@this = {
-                    set_variable = { which = fwt_growth_ceiling value = root.fwt_growth_ceiling }
+                    set_variable = {
+                        which = fwt_growth_ceiling
+                        value = root.fwt_growth_ceiling
+                    }
                 }
             }
         }
-        country_event = {
-            id = fwt.122
-        }
+        country_event = { id = fwt.122 }
     }
 }
 
@@ -222,9 +237,7 @@ country_event = {
 
     option = {
         name = fwt.12.increase_1
-        country_event = {
-            id = fwt.122
-        }
+        country_event = { id = fwt.122 }
         change_variable = {
             which = fwt_required_scaling
             value = 0.1
@@ -232,9 +245,7 @@ country_event = {
     }
     option = {
         name = fwt.12.increase_05
-        country_event = {
-            id = fwt.122
-        }
+        country_event = { id = fwt.122 }
         change_variable = {
             which = fwt_required_scaling
             value = 0.05
@@ -246,67 +257,60 @@ country_event = {
             which = fwt_required_scaling
             value = 0.01
         }
-        country_event = {
-            id = fwt.122
-        }
+        country_event = { id = fwt.122 }
     }
     option = {
         name = fwt.12.current_required_scaling
-        allow = {
-            always = no
-        }
+        allow = { always = no }
     }
     option = {
         name = fwt.12.decrease_01
+        country_event = { id = fwt.122 }
         change_variable = {
             which = fwt_required_scaling
             value = -0.01
         }
-        country_event = {
-            id = fwt.122
-        }
     }
     option = {
         name = fwt.12.decrease_05
+        country_event = { id = fwt.122 }
         change_variable = {
             which = fwt_required_scaling
             value = -0.5
         }
-        country_event = {
-            id = fwt.122
-        }
     }
     option = {
         name = fwt.12.decrease_1
+        country_event = { id = fwt.122 }
         change_variable = {
             which = fwt_required_scaling
             value = -0.1
-        }
-        country_event = {
-            id = fwt.122
         }
     }
     option = {
         name = fwt.close_menu
         event_target:giga_global_situation_country = {
-            set_variable = { which = fwt_required_scaling value = root.fwt_required_scaling }
+            set_variable = {
+                which = fwt_required_scaling
+                value = root.fwt_required_scaling
+            }
             every_country = {
-                limit = {
-                    giga_has_frameworld_origin = yes
+                limit = { giga_has_frameworld_origin = yes }
+                set_variable = {
+                    which = fwt_required_scaling
+                    value = root.fwt_required_scaling
                 }
-                set_variable = { which = fwt_required_scaling value = root.fwt_required_scaling }
                 event_target:frame_expand@this = {
-                    set_variable = { which = fwt_growth_ceiling value = root.fwt_required_scaling }
+                    set_variable = {
+                        which = fwt_growth_ceiling
+                        value = root.fwt_required_scaling
+                    }
                 }
             }
         }
         every_country = {
-            limit = {
-                giga_has_frameworld_origin = yes
-            }
-            event_target:frame_expand@this = {
-                giga_extra_growth_setup = yes
-            }
+            limit = { giga_has_frameworld_origin = yes }
+            event_target:frame_expand@this = { giga_extra_growth_setup = yes }
         }
     }
 }
@@ -317,10 +321,7 @@ situation_event = {
     is_triggered_only = yes
     immediate = {
         if = {
-            limit = {
-                #98 > 95
-                situation_progress > value:fwt_situation_end_less_than_month
-            }
+            limit = { situation_progress > value:fwt_situation_end_less_than_month }
             set_variable = {
                 which = fwt_days_left_timer
                 value = value:fwt_situation_end_days_left
@@ -349,7 +350,10 @@ situation_event = {
             }
         }
         #% of total income to use on situation
-        set_variable = { which = fwt_situation_continuous_total_revenue_sub value = owner.fwt_situation_continuous_total_revenue_sub }
+        set_variable = {
+            which = fwt_situation_continuous_total_revenue_sub
+            value = owner.fwt_situation_continuous_total_revenue_sub
+        }
         multiply_variable = {
             which = fwt_situation_continuous_total_revenue_sub
             value = value:fwt_situation_continuous_pol_speed
@@ -370,7 +374,6 @@ situation_event = {
         if = {
             limit = {
                 check_variable = {
-                    #5
                     which = fwt_days_left_timer
                     value < 1
                 }
@@ -412,7 +415,9 @@ situation_event = {
                         }
                     }
                     #might fix any jank with more than end of situation
-                    owner = { start_situation = { type = fwt_situation_continuous_expansion } }
+                    owner = {
+                        start_situation = { type = fwt_situation_continuous_expansion }
+                    }
                     destroy_situation = this
                 }
             }
@@ -439,20 +444,17 @@ country_event = {
             last_increased_tech = tech_habitat_1
             last_increased_tech = tech_habitat_2
         }
-        exists = owner
         giga_has_frameworld_origin = yes
     }
 
     immediate = {
         #while this is faster than normal if a frameworld isn't taking the voidborne their losing out anyway so it isn't a issue
         if = {
-            limit = {
-                last_increased_tech = tech_habitat_1
-            }
+            limit = { last_increased_tech = tech_habitat_1 }
             add_research_option = tech_habitat_2
         }
+        #when researching the hab 2 tech give tech option for the hab 3 tech, as can't roll habs with no habs and overwriting tech files required overwriting all
         else = {
-            #when researching the hab 2 tech give tech option for the hab 3 tech, as can't roll habs with no habs and overwriting tech files required overwriting all
             add_research_option = tech_habitat_3
         }
     }
@@ -469,20 +471,10 @@ country_event = {
     is_triggered_only = yes
 
     option = {
-        allow = {
-            not = {
-                any_situation = {
-                    is_situation_type = fwt_situation_frameworld_continuous_harvest
-                }
-            }
-        }
+        allow = { not = { any_situation = { is_situation_type = fwt_situation_frameworld_continuous_harvest } } }
         name = fwt.4.asteroid
-        start_situation = {
-            type = fwt_situation_frameworld_continuous_harvest
-        }
-        country_event = {
-            id = fwt.4
-        }
+        start_situation = { type = fwt_situation_frameworld_continuous_harvest }
+        country_event = { id = fwt.4 }
     }
     # option = {
     # 	name = fwt.4.maintenance
@@ -494,20 +486,10 @@ country_event = {
     # 	}
     # }
     option = {
-        allow = {
-            not = {
-                any_situation = {
-                    is_situation_type = fwt_situation_continuous_expansion
-                }
-            }
-        }
+        allow = { not = { any_situation = { is_situation_type = fwt_situation_continuous_expansion } } }
         name = fwt.4.auto_expand
-        start_situation = {
-            type = fwt_situation_continuous_expansion
-        }
-        country_event = {
-            id = fwt.4
-        }
+        start_situation = { type = fwt_situation_continuous_expansion }
+        country_event = { id = fwt.4 }
     }
     option = {
         name = fwt.close_menu
@@ -536,42 +518,26 @@ country_event = {
                 }
             }
         }
-        owner = {
-            set_country_flag = fwt_asteroid_harvesting
-        }
-        country_event = {
-            id = fwt.41
-        }
+        owner = { set_country_flag = fwt_asteroid_harvesting }
+        country_event = { id = fwt.41 }
     }
     option = {
         name = fwt.41.enable_1
-        allow = {
-            owner = {
-                not = { has_country_flag = fwt_asteroid_harvesting_1 }
-            }
-        }
+        allow = { owner = { not = { has_country_flag = fwt_asteroid_harvesting_1 } } }
         owner = {
             set_country_flag = fwt_asteroid_harvesting
             set_country_flag = fwt_asteroid_harvesting_1
         }
-        country_event = {
-            id = fwt.41
-        }
+        country_event = { id = fwt.41 }
     }
     option = {
         name = fwt.41.disable
-        allow = {
-            owner = {
-                has_country_flag = fwt_asteroid_harvesting
-            }
-        }
+        allow = { owner = { has_country_flag = fwt_asteroid_harvesting } }
         owner = {
             remove_country_flag = fwt_asteroid_harvesting
             remove_country_flag = fwt_asteroid_harvesting_1
         }
-        country_event = {
-            id = fwt.41
-        }
+        country_event = { id = fwt.41 }
     }
     option = {
         name = fwt.close_menu
@@ -587,23 +553,11 @@ ship_event = {
         if = {
             limit = {
                 exists = from
-                from = {
-                    is_scope_type = country
-                }
+                from = { is_scope_type = country }
             }
-            from = {
-                country_event = {
-                    id = fwt.412
-                }
-            }
+            from = { country_event = { id = fwt.412 } }
         }
-        else = {
-            owner = {
-                country_event = {
-                    id = fwt.412
-                }
-            }
-        }
+        else = { owner = { country_event = { id = fwt.412 } } }
     }
 }
 
@@ -613,11 +567,7 @@ system_event = {
     is_triggered_only = yes
 
     immediate = {
-        owner = {
-            country_event = {
-                id = fwt.412
-            }
-        }
+        owner = { country_event = { id = fwt.412 } }
     }
 }
 
@@ -628,9 +578,7 @@ country_event = {
 
     immediate = {
         if = {
-            limit = {
-                has_country_flag = has_more_asteroids
-            }
+            limit = { has_country_flag = has_more_asteroids}
             if = {
                 limit = {
                     has_country_flag = fwt_asteroid_harvesting
@@ -801,9 +749,7 @@ situation_event = {
 
     option = {
         name = fwt.4.increase_10
-        situation_event = {
-            id = fwt.42
-        }
+        situation_event = { id = fwt.42 }
         owner = {
             change_variable = {
                 which = fwt_expansion_income
@@ -817,9 +763,7 @@ situation_event = {
     }
     option = {
         name = fwt.4.increase_5
-        situation_event = {
-            id = fwt.42
-        }
+        situation_event = { id = fwt.42 }
         owner = {
             change_variable = {
                 which = fwt_expansion_income
@@ -843,9 +787,7 @@ situation_event = {
                 value = 1
             }
         }
-        situation_event = {
-            id = fwt.42
-        }
+        situation_event = { id = fwt.42 }
     }
     option = {
         name = fwt.4.current
@@ -865,9 +807,7 @@ situation_event = {
                 value = -1
             }
         }
-        situation_event = {
-            id = fwt.42
-        }
+        situation_event = { id = fwt.42 }
     }
     option = {
         name = fwt.4.decrease_5
@@ -881,9 +821,7 @@ situation_event = {
                 value = -5
             }
         }
-        situation_event = {
-            id = fwt.42
-        }
+        situation_event = { id = fwt.42 }
     }
     option = {
         name = fwt.4.decrease_10
@@ -897,174 +835,17 @@ situation_event = {
                 value = -10
             }
         }
-        situation_event = {
-            id = fwt.42
-        }
+        situation_event = { id = fwt.42 }
     }
     option = {
         name = fwt.close_menu
         set_situation_approach = fwt_situation_continuous_expansion_approach_speed
         if = {
-            limit = {
-                owner = {
-                    has_country_flag = auto_menu_open
-                }
-            }
-            owner = {
-                remove_country_flag = auto_menu_open
-            }
+            limit = { owner = { has_country_flag = auto_menu_open } }
+            owner = { remove_country_flag = auto_menu_open }
         }
     }
 }
-
-# country_event = {
-#     id = fwt.43
-#     title = "fwt.43.maintenance.name"
-#     desc = "fwt.43.maintenance.desc"
-#     picture = GFX_evt_overgrown_city
-#     location = from
-#     show_sound = event_wind_ruins
-#     hide_window = no
-#     is_triggered_only = yes
-#
-#     option = {
-#         name = fwt.43.default
-#         allow = {
-#             not = { has_country_flag = fwt_maintenance_default }
-#         }
-#         set_country_flag = fwt_maintenance_default
-#         remove_country_flag = fwt_maintenance_alloy
-#         remove_country_flag = fwt_maintenance_research
-#         remove_country_flag = fwt_maintenance_unity
-#         country_event = {
-#             id = fwt.43
-#         }
-#     }
-#     option = {
-#         name = fwt.43.alloy
-#         allow = {
-#             not = { has_country_flag = fwt_maintenance_alloy }
-#         }
-#         set_country_flag = fwt_maintenance_alloy
-#         remove_country_flag = fwt_maintenance_default
-#         remove_country_flag = fwt_maintenance_research
-#         remove_country_flag = fwt_maintenance_unity
-#         country_event = {
-#             id = fwt.43
-#         }
-#     }
-#     option = {
-#         name = fwt.43.research
-#         allow = {
-#             not = { has_country_flag = fwt_maintenance_research }
-#         }
-#         set_country_flag = fwt_maintenance_research
-#         remove_country_flag = fwt_maintenance_alloy
-#         remove_country_flag = fwt_maintenance_default
-#         remove_country_flag = fwt_maintenance_unity
-#         country_event = {
-#             id = fwt.43
-#         }
-#     }
-#     option = {
-#         name = fwt.43.unity
-#         allow = {
-#             not = { has_country_flag = fwt_maintenance_unity }
-#         }
-#         set_country_flag = fwt_maintenance_unity
-#         remove_country_flag = fwt_maintenance_alloy
-#         remove_country_flag = fwt_maintenance_research
-#         remove_country_flag = fwt_maintenance_default
-#         country_event = {
-#             id = fwt.43
-#         }
-#     }
-#     option = {
-#         name = fwt.43.count
-#         country_event = {
-#             id = fwt.431
-#         }
-#     }
-#     option = {
-#         name = fwt.close_menu
-#         remove_country_flag = auto_menu_open
-#     }
-# }
-#
-# country_event = {
-#     id = fwt.431
-#     title = "fwt.431.expand.name"
-#     desc = "fwt.431.expand.desc"
-#     picture = GFX_evt_overgrown_city
-#     location = from
-#     show_sound = event_wind_ruins
-#     hide_window = no
-#     is_triggered_only = yes
-#
-#     immediate = {
-#         if = {
-#             limit = {
-#                 not = {
-#                     is_variable_set = fwt_maintenance_count
-#                 }
-#             }
-#             set_variable = {
-#                 which = fwt_maintenance_count
-#                 value = 5
-#             }
-#         }
-#     }
-#     option = {
-#         name = fwt.431.increase_3
-#         country_event = {
-#             id = fwt.431
-#         }
-#         change_variable = {
-#             which = fwt_maintenance_count
-#             value = 3
-#         }
-#     }
-#     option = {
-#         name = fwt.431.increase_1
-#         change_variable = {
-#             which = fwt_maintenance_count
-#             value = 1
-#         }
-#         country_event = {
-#             id = fwt.431
-#         }
-#     }
-#     option = {
-#         name = fwt.431.current
-#         allow = {
-#             always = no
-#         }
-#     }
-#     option = {
-#         name = fwt.431.decrease_1
-#         change_variable = {
-#             which = fwt_maintenance_count
-#             value = -1
-#         }
-#         country_event = {
-#             id = fwt.431
-#         }
-#     }
-#     option = {
-#         name = fwt.431.decrease_3
-#         change_variable = {
-#             which = fwt_maintenance_count
-#             value = -3
-#         }
-#         country_event = {
-#             id = fwt.431
-#         }
-#     }
-#     option = {
-#         name = fwt.close_menu
-#         remove_country_flag = auto_menu_open
-#     }
-# }
 
 
 country_event = {
@@ -1072,14 +853,8 @@ country_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        giga_has_frameworld_origin = yes
-    }
-    immediate = {
-        event_target:frame_expand@owner = {
-            planet_event = { id = fwt.51 days = 1 }
-        }
-    }
+    trigger = { giga_has_frameworld_origin = yes }
+    immediate = { event_target:frame_expand@owner = { planet_event = { id = fwt.51 days = 1 } } }
 }
 
 
@@ -1090,27 +865,68 @@ planet_event = {
 
     immediate = {
         # 100
-        set_variable = { which = fwt_pop_growth_rec value = trigger:pop_amount  }
-        multiply_variable = { which = fwt_pop_growth_rec value = owner.fwt_required_scaling }
-        change_variable = { which = fwt_pop_growth_rec value = 100 }
+        set_variable = {
+            which = fwt_pop_growth_rec
+            value = trigger:pop_amount
+        }
+        multiply_variable = {
+            which = fwt_pop_growth_rec
+            value = owner.fwt_required_scaling
+        }
+        change_variable = {
+            which = fwt_pop_growth_rec
+            value = 100
+        }
 
-        set_variable = { which = fwt_pop_growth_rec_back value = background_pops }
-        change_variable = { which = fwt_pop_growth_rec_back value = trigger:pop_amount }
-        multiply_variable = { which = fwt_pop_growth_rec_back value = owner.fwt_required_scaling }
-        change_variable = { which = fwt_pop_growth_rec_back value = 100 }
+        set_variable = {
+            which = fwt_pop_growth_rec_back
+            value = background_pops
+        }
+        change_variable = {
+            which = fwt_pop_growth_rec_back
+            value = trigger:pop_amount
+        }
+        multiply_variable = {
+            which = fwt_pop_growth_rec_back
+            value = owner.fwt_required_scaling
+        }
+        change_variable = {
+            which = fwt_pop_growth_rec_back
+            value = 100
+        }
 
-        divide_variable = { which = fwt_pop_growth_rec value = fwt_pop_growth_rec_back }
+        divide_variable = {
+            which = fwt_pop_growth_rec
+            value = fwt_pop_growth_rec_back
+        }
 
-        subtract_variable = { which = fwt_pop_growth_rec value = 1 }
-        multiply_variable = { which = fwt_pop_growth_rec value = -1 }
+        subtract_variable = {
+            which = fwt_pop_growth_rec
+            value = 1
+        }
+        multiply_variable = {
+            which = fwt_pop_growth_rec
+            value = -1
+        }
 
-        set_variable = { which = fwt_pop_growth_reduction value = modifier:logistic_growth_mult }
-        change_variable = { which = fwt_pop_growth_reduction value = -1 }
-        multiply_variable = { which = fwt_pop_growth_rec value = -1 }
-        multiply_variable = { which = fwt_pop_growth_reduction value = fwt_pop_growth_rec }
+        set_variable = {
+            which = fwt_pop_growth_reduction
+            value = modifier:logistic_growth_mult
+        }
+        change_variable = {
+            which = fwt_pop_growth_reduction
+            value = -1
+        }
+        multiply_variable = {
+            which = fwt_pop_growth_rec
+            value = -1
+        }
+        multiply_variable = {
+            which = fwt_pop_growth_reduction
+            value = fwt_pop_growth_rec
+        }
     }
 }
-
 
 situation_event = {
     id = fwt.999

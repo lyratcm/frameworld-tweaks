@@ -98,7 +98,7 @@ giga_extra_healthcare = {
             owner = { not = { has_valid_civic = civic_private_healthcare_corporate } }
             weight = value:giga_specialist_no_resource_weight|JOB|giga_extra_healthcare|INDENTURED|0.5|AMENITIES|yes|
         }
-        multiply = 2
+        multiply = 10
     }
 
     inline_script = jobs/automodding_priority_amenities
@@ -267,5 +267,6 @@ giga_cloning = {
 
     weight = {
         weight = value:giga_specialist_no_resource_weight|JOB|giga_cloning|INDENTURED|0.5|
+        mult = 10
     }
 }

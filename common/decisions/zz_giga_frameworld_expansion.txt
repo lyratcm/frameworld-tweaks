@@ -94,6 +94,7 @@ giga_frameworld_expand = {
 		# }
 
 		# remove_planet_flag = giga_frameworld_expand_queued
+
 	}
 
 	on_queued = {

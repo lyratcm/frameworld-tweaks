@@ -12,13 +12,9 @@ district_giga_frameworld_city = {
     base_buildtime = @city_time
     icon = GFX_colony_type_urban
 
-    unlock = {
-		uses_district_set = giga_frameworld
-    }
+    unlock = { uses_district_set = giga_frameworld }
 
-    potential = {
-        uses_district_set = giga_frameworld
-    }
+    potential = { uses_district_set = giga_frameworld }
 
     resources = {
         category = planet_districts_cities
@@ -31,15 +27,9 @@ district_giga_frameworld_city = {
 			mult = fwt_city_completion
         }
     }
+
     include = {
         all
-    }
-    excluded_building_sets = {
-        generator
-        mining
-        farming
-        knights
-        betharian
     }
 
     max_buildings = 3
@@ -533,10 +523,8 @@ district_giga_frameworld_amenities = {
 		district_giga_frameworld_amenities_gestalt
 	}
 
-	included_building_sets = {
-		amenity
-		automation
-		origin
+	include = {
+		all
 	}
 
 	resources = {
@@ -670,10 +658,8 @@ district_giga_frameworld_amenities_dystopian = {
 		}
 	}
 
-	included_building_sets = {
-		amenity
-		automation
-		origin
+	include = {
+		all
 	}
 
 	triggered_desc = {
@@ -760,15 +746,13 @@ district_giga_frameworld_amenities_gestalt = {
     inline_script = {
         script = zones/shared_city_non_urban_zone_modifiers
     }
-	
-	included_building_sets = {
-		amenity
-		automation
-		origin
+
+	include = {
+		all
 	}
 
     triggered_district_planet_modifier = {
-		job_logistics_drone_add = @frameworld_jobs_base
+		job_patrol_drone_add = @frameworld_jobs_base
 		mult = fwt_unity_trade_completion
 	}
 
@@ -791,211 +775,22 @@ district_giga_frameworld_amenities_gestalt = {
 	# 		job_maintenance_drone_add = @[ -100 * 1.25 ]
 	# 	}
 	# }
-
-	triggered_desc = {
-		text = job_maintenance_drone_effect_desc
-	}
-
+	#
+	# triggered_desc = {
+	# 	text = job_maintenance_drone_effect_desc
+	# }
+	#
+	# triggered_desc = {
+	# 	trigger = {
+	# 		has_deposit = d_frameworld_advanced_nexus
+	# 	}
+	# 	text = job_frame_maintenance_overseer_effect_desc
+	# }
 	triggered_desc = {
 		trigger = {
-			has_deposit = d_frameworld_advanced_nexus
+			exists = owner
+			owner = { is_gestalt = yes }
 		}
-		text = job_frame_maintenance_overseer_effect_desc
+		text = job_patrol_drone_effect_desc
 	}
 }
-
-# district_giga_frameworld_supertensiles = {
-# 	base_buildtime = @b2_time
-# 	icon = district_giga_supertensiles
-#
-#     show_in_tech = giga_tech_amb_supertensiles
-#
-# 	unlock = {
-# 		has_global_flag = @giga_amb_flag
-# 		exists = owner
-# 		owner = {
-# 			has_technology = giga_tech_amb_supertensiles
-# 		}
-# 		uses_district_set = giga_frameworld
-# 	}
-#
-# 	potential = {
-# 		has_global_flag = @giga_amb_flag
-# 		exists = owner
-# 		owner = {
-# 			has_technology = giga_tech_amb_supertensiles
-# 		}
-# 		uses_district_set = giga_frameworld
-# 	}
-#
-# 	resources = {
-# 		category = planet_districts_industrial
-# 		cost = {
-# 			minerals = @b2_minerals
-# 		}
-# 		upkeep = {
-# 			energy = @b2_upkeep
-# 		}
-# 	}
-#
-# 	included_building_sets = {
-# 		foundry
-# 		automation
-# 		origin
-# 	}
-#
-# 	triggered_district_planet_modifier = {
-# 		planet_housing_add = 150
-# 		mult = fwt_alloy_completion
-# 	}
-#
-# 	triggered_district_planet_modifier = {
-# 		potential = {
-# 			exists = owner
-# 			owner = {
-# 				is_gestalt = no
-# 				is_fallen_empire_spiritualist = no
-# 			}
-# 		}
-# 		modifier = {
-# 			job_giga_megaengineer_add = @frameworld_jobs_base
-# 		}
-# 		mult = fwt_alloy_completion
-# 	}
-#
-# 	triggered_district_planet_modifier = {
-# 		potential = {
-# 			exists = owner
-# 			owner = {
-# 				is_gestalt = yes
-# 			}
-# 		}
-# 		modifier = {
-# 			job_giga_megaengineer_drone_add = @frameworld_jobs_base
-# 		}
-# 		mult = fwt_alloy_completion
-# 	}
-#
-# 	triggered_district_planet_modifier = {
-# 		potential = {
-# 			exists = owner
-# 			owner = {
-# 				is_fallen_empire_spiritualist = yes
-# 			}
-# 		}
-# 		modifier = {
-# 			job_giga_amb_fe_acolyte_foundry_add = @frameworld_jobs_base
-# 		}
-# 		mult = fwt_alloy_completion
-# 	}
-#
-# 	triggered_desc = {
-# 		trigger = {
-# 			exists = owner
-# 			owner = {
-# 				is_gestalt = no
-# 				is_fallen_empire_spiritualist = no
-# 			}
-# 		}
-# 		text = job_giga_megaengineer_effect_desc
-# 	}
-# 	triggered_desc = {
-# 		trigger = {
-# 			exists = owner
-# 			owner = {
-# 				is_gestalt = yes
-# 			}
-# 		}
-# 		text = job_giga_megaengineer_drone_effect_desc
-# 	}
-# 	triggered_desc = {
-# 		trigger = {
-# 			exists = owner
-# 			owner = {
-# 				is_fallen_empire_spiritualist = yes
-# 			}
-# 		}
-# 		text = job_giga_amb_fe_acolyte_foundry_effect_desc
-# 	}
-# }
-
-# district_giga_frameworld_anticrime = {
-# 	base_buildtime = @advanced_time
-# 	icon = district_penrose_generator
-#
-# 	unlock = {
-# 		exists = owner
-# 		owner = {
-# 			has_technology = "tech_colonial_centralization"
-# 		}
-# 		uses_district_set = giga_frameworld
-# 	}
-#
-# 	potential = {
-# 		exists = owner
-# 		owner = {
-# 			has_technology = "tech_colonial_centralization"
-# 		}
-# 		uses_district_set = giga_frameworld
-# 	}
-#
-#     show_in_tech = tech_colonial_centralization
-#
-# 	resources = {
-# 		category = planet_districts
-# 		cost = {
-# 			minerals = @advanced_cost
-# 			volatile_motes = @advanced_rare_cost
-# 		}
-# 		upkeep = {
-# 			energy = @advanced_upkeep
-# 			volatile_motes = @advanced_rare_upkeep
-# 		}
-# 	}
-#
-# 	included_building_sets = {
-# 		government
-# 		automation
-# 		origin
-# 	}
-#
-# 	inline_script = {
-# 		script = zones/shared_frameworld_non_urban_zone_modifiers
-# 	}
-#
-# 	triggered_district_planet_modifier = {
-# 		potential = {
-# 			exists = owner
-# 			owner = { is_gestalt = no }
-# 		}
-# 		modifier = {
-# 			job_enforcer_add = @frameworld_jobs_base
-# 		}
-# 	}
-#
-# 	triggered_district_planet_modifier = {
-# 		potential = {
-# 			exists = owner
-# 			owner = { is_gestalt = yes }
-# 		}
-# 		modifier = {
-# 			job_patrol_drone_add = @frameworld_jobs_base
-# 		}
-# 	}
-#
-# 	triggered_desc = {
-# 		trigger = {
-# 			exists = owner
-# 			owner = { is_gestalt = no }
-# 		}
-# 		text = job_enforcer_effect_desc
-# 	}
-#
-# 	triggered_desc = {
-# 		trigger = {
-# 			exists = owner
-# 			owner = { is_gestalt = yes }
-# 		}
-# 		text = job_patrol_drone_effect_desc
-# 	}
-# }

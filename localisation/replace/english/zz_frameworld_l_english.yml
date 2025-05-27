@@ -1,123 +1,130 @@
 ﻿l_english:
 
-	giga_frameworld_expand_upgrade_5:0 "\n    £engineering£§Y$tech_ring_world$§!: $giga_frameworld_expand_factor$ §G-0.04x§!"
+  giga_frameworld_expand_upgrade_5:0 "\n    £engineering£§Y$tech_ring_world$§!: $giga_frameworld_expand_factor$ §G-0.01x§!"
+  giga_frameworld_expand_base_discount_mod_1:0 "\n    $tech_habitat_2$: §G-25§!"
+  giga_frameworld_expand_base_discount_mod_2:0 "\n    $tech_habitat_3$: §G-25§!"
 
-	giga_frameworld_expand:0 "$giga_frameworld_expand_name$§B§!"
-	giga_frameworld_expand_desc:0 "§T$giga_frameworld_expand_desc_cost$\n\n$giga_frameworld_expand_base$: £alloys£§Y[capital_scope.giga_frameworld_expansion_cost_base]§!\n    Base: £alloys£§Y600§![owner.FrameworldExpansionCost1][owner.FrameworldExpansionCost2][owner.FrameworldExpansionCost3][owner.FrameworldExpansionCost4][owner.FrameworldExpansionCost5][owner.FrameworldExpansionCost6][owner.FrameworldExpansionCost7]\n\n$giga_frameworld_expand_factor$: §Y[capital_scope.giga_frameworld_expansion_cost_exponent]x§!\n    Base: §Y1.14x§![owner.FrameworldExpansionMult1][owner.FrameworldExpansionMult2][owner.FrameworldExpansionMult3][owner.FrameworldExpansionMult4]\n\n$giga_frameworld_expand_fabricated$: §Y[capital_scope.giga_frameworld_structure_expansions]§!\n$giga_frameworld_expand_total$: §Y[capital_scope.giga_frameworld_expansion_cost_multiplier_tooltip]x§![this.FrameworldExpansionUpgradesTitle][this.FrameworldExpansionUpgrades1][this.FrameworldExpansionUpgrades2][this.FrameworldExpansionUpgrades3][this.FrameworldExpansionUpgrades4][this.FrameworldExpansionUpgrades5][this.FrameworldExpansionUpgrades6][this.FrameworldExpansionUpgrades7][this.FrameworldExpansionUpgrades8][this.FrameworldExpansionUpgrades9][this.FrameworldExpansionUpgrades10][this.FrameworldExpansionUpgrades11]§!\n§T--------------§!\n$giga_frameworld_expand_desc_fluff$"
+  giga_frameworld_expand_multiplier_discount_mod_2:0 "\n    $ap_voidborn$: §G-0.025x§!"
+  giga_frameworld_expand_multiplier_discount_mod_3:0 "\n    $tech_ring_world$: §G-0.01x§!"
 
-	giga_frameworld_expand_bulk_5:0 "$giga_frameworld_expand_name$ §B§!§Yx5§!"
-	giga_frameworld_expand_bulk_5_desc:0 "§T$giga_frameworld_expand_desc_cost$\n\n$giga_frameworld_expand_bulk_5_info$ $giga_frameworld_expand_bulk_cost_info$\n\n$giga_frameworld_expand_base$: £alloys£§Y[capital_scope.giga_frameworld_expansion_cost_base]§!\n    Base: £alloys£§Y600§![owner.FrameworldExpansionCost1][owner.FrameworldExpansionCost2][owner.FrameworldExpansionCost3][owner.FrameworldExpansionCost4][owner.FrameworldExpansionCost5][owner.FrameworldExpansionCost6][owner.FrameworldExpansionCost7]\n\n$giga_frameworld_expand_factor$: §Y[capital_scope.giga_frameworld_expansion_cost_exponent]x§!\n    Base: §Y1.14x§![owner.FrameworldExpansionMult1][owner.FrameworldExpansionMult2][owner.FrameworldExpansionMult3][owner.FrameworldExpansionMult4]\n\n$giga_frameworld_expand_fabricated$: §Y[capital_scope.giga_frameworld_structure_expansions]§!\n$giga_frameworld_expand_total$: §Y[capital_scope.giga_frameworld_expansion_cost_multiplier_tooltip]x§![this.FrameworldExpansionUpgradesTitle][this.FrameworldExpansionUpgrades1][this.FrameworldExpansionUpgrades2][this.FrameworldExpansionUpgrades3][this.FrameworldExpansionUpgrades4][this.FrameworldExpansionUpgrades5][this.FrameworldExpansionUpgrades6][this.FrameworldExpansionUpgrades7][this.FrameworldExpansionUpgrades8][this.FrameworldExpansionUpgrades9][this.FrameworldExpansionUpgrades10][this.FrameworldExpansionUpgrades11]§!\n§T--------------§!\n$giga_frameworld_expand_desc_fluff$"
+  giga_frameworld_expand:0 "$giga_frameworld_expand_name$§B§!"
+  giga_frameworld_expand_desc:0 "§T$giga_frameworld_expand_desc_cost$\n\n$giga_frameworld_expand_base$: £alloys£§Y[capital_scope.giga_frameworld_expansion_cost_base]§!\n    Base: £alloys£§Y550§![owner.FrameworldExpansionCost1][owner.FrameworldExpansionCost2][owner.FrameworldExpansionCost4][owner.FrameworldExpansionCost5][owner.FrameworldExpansionCost6][owner.FrameworldExpansionCost7]\n\n$giga_frameworld_expand_factor$: §Y[capital_scope.giga_frameworld_expansion_cost_exponent]x§!\n    Base: §Y1.11x§![owner.FrameworldExpansionMult2][owner.FrameworldExpansionMult3][owner.FrameworldExpansionMult4]\n\n$giga_frameworld_expand_fabricated$: §Y[capital_scope.giga_frameworld_structure_expansions]§!\n$giga_frameworld_expand_total$: §Y[capital_scope.giga_frameworld_expansion_cost_multiplier_tooltip]x§![this.FrameworldExpansionUpgradesTitle][this.FrameworldExpansionUpgrades1][this.FrameworldExpansionUpgrades2][this.FrameworldExpansionUpgrades3][this.FrameworldExpansionUpgrades4][this.FrameworldExpansionUpgrades5][this.FrameworldExpansionUpgrades7][this.FrameworldExpansionUpgrades8][this.FrameworldExpansionUpgrades9][this.FrameworldExpansionUpgrades10][this.FrameworldExpansionUpgrades11]§!\n§T--------------§!\n$giga_frameworld_expand_desc_fluff$"
 
-	giga_frameworld_expand_bulk_10:0 "$giga_frameworld_expand_name$ §E§!§Yx10§!"
-	giga_frameworld_expand_bulk_10_desc:0 "§T$giga_frameworld_expand_desc_cost$\n\n$giga_frameworld_expand_bulk_10_info$ $giga_frameworld_expand_bulk_cost_info$\n\n$giga_frameworld_expand_base$: £alloys£§Y[capital_scope.giga_frameworld_expansion_cost_base]§!\n    Base: £alloys£§Y600§![owner.FrameworldExpansionCost1][owner.FrameworldExpansionCost2][owner.FrameworldExpansionCost3][owner.FrameworldExpansionCost4][owner.FrameworldExpansionCost5][owner.FrameworldExpansionCost6][owner.FrameworldExpansionCost7]\n\n$giga_frameworld_expand_factor$: §Y[capital_scope.giga_frameworld_expansion_cost_exponent]x§!\n    Base: §Y1.14x§![owner.FrameworldExpansionMult1][owner.FrameworldExpansionMult2][owner.FrameworldExpansionMult3][owner.FrameworldExpansionMult4]\n\n$giga_frameworld_expand_fabricated$: §Y[capital_scope.giga_frameworld_structure_expansions]§!\n$giga_frameworld_expand_total$: §Y[capital_scope.giga_frameworld_expansion_cost_multiplier_tooltip]x§![this.FrameworldExpansionUpgradesTitle][this.FrameworldExpansionUpgrades1][this.FrameworldExpansionUpgrades2][this.FrameworldExpansionUpgrades3][this.FrameworldExpansionUpgrades4][this.FrameworldExpansionUpgrades5][this.FrameworldExpansionUpgrades6][this.FrameworldExpansionUpgrades7][this.FrameworldExpansionUpgrades8][this.FrameworldExpansionUpgrades9][this.FrameworldExpansionUpgrades10][this.FrameworldExpansionUpgrades11]§!\n§T--------------§!\n$giga_frameworld_expand_desc_fluff$"
+  giga_frameworld_expand_bulk_5:0 "$giga_frameworld_expand_name$ §B§!§Yx5§!"
+  giga_frameworld_expand_bulk_5_desc:0 "§T$giga_frameworld_expand_desc_cost$\n\n$giga_frameworld_expand_bulk_5_info$ $giga_frameworld_expand_bulk_cost_info$\n\n$giga_frameworld_expand_base$: £alloys£§Y[capital_scope.giga_frameworld_expansion_cost_base]§!\n    Base: £alloys£§Y600§![owner.FrameworldExpansionCost1][owner.FrameworldExpansionCost2][owner.FrameworldExpansionCost3][owner.FrameworldExpansionCost4][owner.FrameworldExpansionCost5][owner.FrameworldExpansionCost6][owner.FrameworldExpansionCost7]\n\n$giga_frameworld_expand_factor$: §Y[capital_scope.giga_frameworld_expansion_cost_exponent]x§!\n    Base: §Y1.14x§![owner.FrameworldExpansionMult1][owner.FrameworldExpansionMult2][owner.FrameworldExpansionMult3][owner.FrameworldExpansionMult4]\n\n$giga_frameworld_expand_fabricated$: §Y[capital_scope.giga_frameworld_structure_expansions]§!\n$giga_frameworld_expand_total$: §Y[capital_scope.giga_frameworld_expansion_cost_multiplier_tooltip]x§![this.FrameworldExpansionUpgradesTitle][this.FrameworldExpansionUpgrades1][this.FrameworldExpansionUpgrades2][this.FrameworldExpansionUpgrades3][this.FrameworldExpansionUpgrades4][this.FrameworldExpansionUpgrades5][this.FrameworldExpansionUpgrades6][this.FrameworldExpansionUpgrades7][this.FrameworldExpansionUpgrades8][this.FrameworldExpansionUpgrades9][this.FrameworldExpansionUpgrades10][this.FrameworldExpansionUpgrades11]§!\n§T--------------§!\n$giga_frameworld_expand_desc_fluff$"
+
+  giga_frameworld_expand_bulk_10:0 "$giga_frameworld_expand_name$ §E§!§Yx10§!"
+  giga_frameworld_expand_bulk_10_desc:0 "§T$giga_frameworld_expand_desc_cost$\n\n$giga_frameworld_expand_bulk_10_info$ $giga_frameworld_expand_bulk_cost_info$\n\n$giga_frameworld_expand_base$: £alloys£§Y[capital_scope.giga_frameworld_expansion_cost_base]§!\n    Base: £alloys£§Y600§![owner.FrameworldExpansionCost1][owner.FrameworldExpansionCost2][owner.FrameworldExpansionCost3][owner.FrameworldExpansionCost4][owner.FrameworldExpansionCost5][owner.FrameworldExpansionCost6][owner.FrameworldExpansionCost7]\n\n$giga_frameworld_expand_factor$: §Y[capital_scope.giga_frameworld_expansion_cost_exponent]x§!\n    Base: §Y1.14x§![owner.FrameworldExpansionMult1][owner.FrameworldExpansionMult2][owner.FrameworldExpansionMult3][owner.FrameworldExpansionMult4]\n\n$giga_frameworld_expand_fabricated$: §Y[capital_scope.giga_frameworld_structure_expansions]§!\n$giga_frameworld_expand_total$: §Y[capital_scope.giga_frameworld_expansion_cost_multiplier_tooltip]x§![this.FrameworldExpansionUpgradesTitle][this.FrameworldExpansionUpgrades1][this.FrameworldExpansionUpgrades2][this.FrameworldExpansionUpgrades3][this.FrameworldExpansionUpgrades4][this.FrameworldExpansionUpgrades5][this.FrameworldExpansionUpgrades6][this.FrameworldExpansionUpgrades7][this.FrameworldExpansionUpgrades8][this.FrameworldExpansionUpgrades9][this.FrameworldExpansionUpgrades10][this.FrameworldExpansionUpgrades11]§!\n§T--------------§!\n$giga_frameworld_expand_desc_fluff$"
 
 
-	giga_frameworld_expand_base_discount_mod_3:0 "\n    $tech_starbase_2$: §G-10§!"
-	giga_frameworld_expand_base_discount_mod_4:0 "\n    $tech_starbase_3$: §G-15§!"
-	giga_frameworld_expand_base_discount_mod_5:0 "\n    $tech_starbase_4$: §G-20§!"
-	giga_frameworld_expand_base_discount_mod_6:0 "\n    $tech_starbase_5$: §G-25§!"
-	giga_frameworld_expand_base_discount_mod_7:0 "\n    $tech_mega_shipyard$: §G-30§!"
-	giga_frameworld_expand_multiplier_discount_mod_4:0 "\n    $tech_mega_engineering$: §G-0.02x§!"
+  giga_frameworld_expand_base_discount_mod_3:0 "\n    $tech_starbase_2$: §G-10§!"
+  giga_frameworld_expand_base_discount_mod_4:0 "\n    $tech_starbase_3$: §G-15§!"
+  giga_frameworld_expand_base_discount_mod_5:0 "\n    $tech_starbase_4$: §G-20§!"
+  giga_frameworld_expand_base_discount_mod_6:0 "\n    $tech_starbase_5$: §G-25§!"
+  giga_frameworld_expand_base_discount_mod_7:0 "\n    $tech_mega_shipyard$: §G-40§!"
+  giga_frameworld_expand_multiplier_discount_mod_4:0 "\n    $tech_mega_engineering$: §G-0.02x§!"
 
-	giga_frameworld_expand_upgrade_6:0 "\n    £engineering£§Y$tech_starbase_2$§!: $giga_frameworld_expand_factor$ §G-10x§!"
-	giga_frameworld_expand_upgrade_7:0 "\n    £engineering£§Y$tech_starbase_3$§!: $giga_frameworld_expand_factor$ §G-15§!"
-	giga_frameworld_expand_upgrade_8:0 "\n    £engineering£§Y$tech_starbase_4$§!: $giga_frameworld_expand_factor$ §G-20§!"
-	giga_frameworld_expand_upgrade_9:0 "\n    £engineering£§Y$tech_starbase_5$§!: $giga_frameworld_expand_factor$ §G-25§!"
-	giga_frameworld_expand_upgrade_10:0 "\n    £engineering£§Y$tech_mega_shipyard$§!: $giga_frameworld_expand_factor$ §G-30§!"
-	giga_frameworld_expand_upgrade_11:0 "\n    £engineering£§Y$tech_mega_engineering$§!: $giga_frameworld_expand_factor$ §G-0.02x§!"
-
- ################### decommpresser overwrite ###########################################################################################
-
-	giga_frameworld_dyson_swarm:0 "$d_frameworld_penrose$"
-	giga_frameworld_dyson_swarm_effect:0 "Begins construction of a multi stage Megastructure which, once completed, will replace the $pc_giga_frameworld$'s §Y$district_giga_frameworld_generator_plural$§! with a smaller number of significantly more powerful §Y$district_giga_frameworld_penrose_plural$§!.\n\n§Y$district_giga_frameworld_penrose_plural$§! provide additional £job_technician£§Y[owner.GetTechnician] jobs§! but are more expensive than the districts they replace.\n\n$frameworld_penrose_fake_tooltip$"
-	giga_frameworld_dyson_swarm_desc:0 "A large mirror built around the system's $pc_black_hole$, designed to exploit superradiant scattering, generating energy with astonishing efficiency."
-
-  name_dyson_swarm:0 "Dyson Swarm"
-
-	d_frameworld_penrose:0 "Integrated $name_dyson_swarm$"
-	d_frameworld_penrose_desc:0 "A large mirror built around the system's $pc_black_hole$, exploiting superradiant scattering to generate energy with astonishing efficiency."
-
-	giga_frameworld_origin.001.name:0 "$name_dyson_swarm$ Frame Built"
-	giga_frameworld_origin.001.desc:0 "The frame for a future $name_dyson_swarm$ has been built around [giga_system.star.GetName]. This skeletal frame will one day hold massive mirrors, built with the most reflective materials we can possibly think of. Once we finish constructing those mirrors and accompanying particle injection and capture systems, we will be able to start harvesting the $pc_black_hole$'s rotational energy."
-	giga_frameworld_origin.001.a:0 "Wonderful."
-
-	giga_frameworld_origin.002.name:0 "Partial $name_dyson_swarm$ Built"
-	giga_frameworld_origin.002.desc:0 "Half of the gigantic mirrors have now been installed on the frame enclosing [giga_system.star.GetName], and the particle injectors are partially complete. Further work is required to finish the structure before we can make proper use of it."
-	giga_frameworld_origin.002.a:0 "Excellent."
-
-	giga_frameworld_origin.003.name:0 "Integrated $name_dyson_swarm$ Completed"
-	giga_frameworld_origin.003.desc:0 "With the installation of the final mirror panels, [giga_system.star.GetName] is now fully enclosed. We can now start to harvest the rotational energy of the $pc_black_hole$."
-	giga_frameworld_origin.003.a:0 "Marvelous!"
-
-	# penrose upgrade
-	frameworld_penrose_0:0 "$name_dyson_swarm$ Frame"
-	frameworld_penrose_0_DESC:0 "$penrose_sphere_1_DESC$"
-
-	frameworld_penrose_1:0 "Partial $name_dyson_swarm$"
-	frameworld_penrose_1_DESC:0 "A partially constructed $name_dyson_swarm$ - Partial mirror panel coverage and incomplete particle injectors."
-
-	frameworld_penrose_2:0 "$name_dyson_swarm$"
-	frameworld_penrose_2_DESC:0 "Fully enclosed with mirrors, energy can now be generated with the $pc_black_hole$'s ergosphere."
-
-	district_giga_frameworld_penrose:0 "Dyson Swarm Subnode"
-	district_giga_frameworld_penrose_plural:0 "Dyson Swarm Subnodes"
-	district_giga_frameworld_penrose_desc:0 "Massive facilities where particles are injected into the $pc_black_hole$'s ergosphere to extract energy from its angular momentum."
-
-  giga_frameworld_penrose:99 "$name_dyson_swarm$"
-  giga_frameworld_penrose_effect:99 "Begins construction of a multi stage Megastructure which, once completed, will upgrade the generator specializations doubling their output (for a total of 4x).\n\n$frameworld_penrose_fake_tooltip$"
-  giga_frameworld_penrose_desc:99 "A large mirror built around the system's $pc_black_hole$, designed to exploit superradiant scattering, generating energy with astonishing efficiency."
+  giga_frameworld_expand_upgrade_6:0 "\n    £engineering£§Y$tech_starbase_2$§!: $giga_frameworld_expand_factor$ §G-10x§!"
+  giga_frameworld_expand_upgrade_7:0 "\n    £engineering£§Y$tech_starbase_3$§!: $giga_frameworld_expand_factor$ §G-15§!"
+  giga_frameworld_expand_upgrade_8:0 "\n    £engineering£§Y$tech_starbase_4$§!: $giga_frameworld_expand_factor$ §G-20§!"
+  giga_frameworld_expand_upgrade_9:0 "\n    £engineering£§Y$tech_starbase_5$§!: $giga_frameworld_expand_factor$ §G-25§!"
+  giga_frameworld_expand_upgrade_10:0 "\n    £engineering£§Y$tech_mega_shipyard$§!: $giga_frameworld_expand_factor$ §G-30§!"
+  giga_frameworld_expand_upgrade_11:0 "\n    £engineering£§Y$tech_mega_engineering$§!: $giga_frameworld_expand_factor$ §G-0.40x§!"
 
  ################### decommpresser overwrite ###########################################################################################
 
-	district_giga_frameworld_strip_mine:0 "Strip Mining Subnode"
-	district_giga_frameworld_strip_mine_plural:0 "Strip Mining Subnodes"
-	district_giga_frameworld_strip_mine_desc:0 "Colossal facilities in the $name_auto_stripmine$ processing ring, where reclaimed matter is processed into usable minerals."
+ giga_frameworld_dyson_swarm:0 "$d_frameworld_penrose$"
+ giga_frameworld_dyson_swarm_effect:0 "Upgrades the $pc_giga_frameworld$'s §Y$district_giga_frameworld_generator_plural$§! half the number of §Y$district_giga_frameworld_penrose_plural$§!.\n\n§Y$district_giga_frameworld_penrose_plural$§! provide double the £job_technician£§Y[owner.GetTechnician] jobs§! but are more expensive than the districts they replace.\n\n$frameworld_penrose_fake_tooltip$"
+ giga_frameworld_dyson_swarm_desc:0 "A large mirror built around the system's $pc_black_hole$, designed to exploit superradiant scattering, generating energy with astonishing efficiency."
 
-	d_frameworld_decompressor:0 "Integrated $name_auto_stripmine$"
-	d_frameworld_decompressor_desc:0 "Bores of twisted gravity tunnel into the singularity and draw decompressed matter into a dedicated processing ring."
+ name_dyson_swarm:0 "Dyson Swarm"
 
-	# decompressor upgrade
-	frameworld_decompressor_0:0 "$name_auto_stripmine$ Structural Supports"
-	frameworld_decompressor_0_DESC:0 "Superstructure designed to support a huge ring of material processing facilities above the system's $pc_black_hole$."
+  d_frameworld_penrose:0 "Integrated $name_dyson_swarm$"
+  d_frameworld_penrose_desc:0 "A large mirror built around the system's $pc_black_hole$, exploiting superradiant scattering to generate energy with astonishing efficiency."
 
-	frameworld_decompressor_1:0 "$name_auto_stripmine$ Processing Ring"
-	frameworld_decompressor_1_DESC:0 "A colossal facility dedicated to processing extracted material into usable minerals."
+  giga_frameworld_origin.001.name:0 "$name_dyson_swarm$ Frame Built"
+  giga_frameworld_origin.001.desc:0 "The frame for a future $name_dyson_swarm$ has been built around [giga_system.star.GetName]. This skeletal frame will one day hold massive mirrors, built with the most reflective materials we can possibly think of. Once we finish constructing those mirrors and accompanying particle injection and capture systems, we will be able to start harvesting the $pc_black_hole$'s rotational energy."
+  giga_frameworld_origin.001.a:0 "Wonderful."
 
-	frameworld_decompressor_2:0 "$name_auto_stripmine$ Bore Array"
-	frameworld_decompressor_2_DESC:0 "An array of gravity lensing facilities which twist gravitational fields into drills capable of extracting material from the $pc_black_hole$."
+  giga_frameworld_origin.002.name:0 "Partial $name_dyson_swarm$ Built"
+  giga_frameworld_origin.002.desc:0 "Half of the gigantic mirrors have now been installed on the frame enclosing [giga_system.star.GetName], and the particle injectors are partially complete. Further work is required to finish the structure before we can make proper use of it."
+  giga_frameworld_origin.002.a:0 "Excellent."
 
-	giga_frameworld_origin.004.name:0 "$name_auto_stripmine$ Structural Supports Built"
-	giga_frameworld_origin.004.desc:0 "To extract matter from [giga_system.star.GetName] we first need a secure base to build the facility on. Anchor struts have been built from the $pc_giga_frameworld$ superstructure to a region above [giga_system.star.GetName]'s event horizon, where a huge processing ring will eventually support the gravitational bore apparatus."
-	giga_frameworld_origin.004.a:0 "Wonderful."
+  giga_frameworld_origin.003.name:0 "Integrated $name_dyson_swarm$ Completed"
+  giga_frameworld_origin.003.desc:0 "With the installation of the final mirror panels, [giga_system.star.GetName] is now fully enclosed. We can now start to harvest the rotational energy of the $pc_black_hole$."
+  giga_frameworld_origin.003.a:0 "Marvelous!"
 
-	giga_frameworld_origin.005.name:0 "$name_auto_stripmine$ Processing Ring Built"
-	giga_frameworld_origin.005.desc:0 "Built on the existing structural supports, this processing ring houses huge refineries and smelteries which will convert the matter extracted from [giga_system.star.GetName] into usable minerals. All that remains is mounting the decompression apparatus, which will use focused areas of twisted gravity to create vast drills whose bores are made of redirected and concentrated gravitational force."
-	giga_frameworld_origin.005.a:0 "Excellent."
+  # penrose upgrade
+  frameworld_penrose_0:0 "$name_dyson_swarm$ Frame"
+  frameworld_penrose_0_DESC:0 "$penrose_sphere_1_DESC$"
 
-	giga_frameworld_origin.006.name:0 "Integrated $name_auto_stripmine$ Completed"
-	giga_frameworld_origin.006.desc:0 "With the completion of the gravitational bore array, the $name_auto_stripmine$ above [giga_system.star.GetName] is now complete, allowing us unprecedented access to the matter previously thought trapped forever within its event horizon. We can now start to harvest minerals from [giga_system.star.GetName] directly."
-	giga_frameworld_origin.006.a:0 "Marvelous!"
+  frameworld_penrose_1:0 "Partial $name_dyson_swarm$"
+  frameworld_penrose_1_DESC:0 "A partially constructed $name_dyson_swarm$ - Partial mirror panel coverage and incomplete particle injectors."
+
+  frameworld_penrose_2:0 "$name_dyson_swarm$"
+  frameworld_penrose_2_DESC:0 "Fully enclosed with mirrors, energy can now be generated with the $pc_black_hole$'s ergosphere."
+
+  district_giga_frameworld_penrose:0 "Dyson Swarm Subnode"
+  district_giga_frameworld_penrose_plural:0 "Dyson Swarm Subnodes"
+  district_giga_frameworld_penrose_desc:0 "Massive facilities where particles are injected into the $pc_black_hole$'s ergosphere to extract energy from its angular momentum."
+
+ giga_frameworld_penrose:99 "$name_dyson_swarm$"
+ giga_frameworld_penrose_effect:99 "Begins construction of a multi stage Megastructure which, once completed, will upgrade the generator specializations doubling their output (for a total of 4x).\n\n$frameworld_penrose_fake_tooltip$"
+ giga_frameworld_penrose_desc:99 "A large mirror built around the system's $pc_black_hole$, designed to exploit superradiant scattering, generating energy with astonishing efficiency."
+
+ ################### decommpresser overwrite ###########################################################################################
+
+  district_giga_frameworld_strip_mine:0 "Strip Mining Subnode"
+  district_giga_frameworld_strip_mine_plural:0 "Strip Mining Subnodes"
+  district_giga_frameworld_strip_mine_desc:0 "Colossal facilities in the $name_auto_stripmine$ processing ring, where reclaimed matter is processed into usable minerals."
+
+  d_frameworld_decompressor:0 "Integrated $name_auto_stripmine$"
+  d_frameworld_decompressor_desc:0 "Bores of twisted gravity tunnel into the singularity and draw decompressed matter into a dedicated processing ring."
+
+  # decompressor upgrade
+  frameworld_decompressor_0:0 "$name_auto_stripmine$ Structural Supports"
+  frameworld_decompressor_0_DESC:0 "Superstructure designed to support a huge ring of material processing facilities above the system's $pc_black_hole$."
+
+  frameworld_decompressor_1:0 "$name_auto_stripmine$ Processing Ring"
+  frameworld_decompressor_1_DESC:0 "A colossal facility dedicated to processing extracted material into usable minerals."
+
+  frameworld_decompressor_2:0 "$name_auto_stripmine$ Bore Array"
+  frameworld_decompressor_2_DESC:0 "An array of gravity lensing facilities which twist gravitational fields into drills capable of extracting material from the $pc_black_hole$."
+
+  giga_frameworld_origin.004.name:0 "$name_auto_stripmine$ Structural Supports Built"
+  giga_frameworld_origin.004.desc:0 "To extract matter from [giga_system.star.GetName] we first need a secure base to build the facility on. Anchor struts have been built from the $pc_giga_frameworld$ superstructure to a region above [giga_system.star.GetName]'s event horizon, where a huge processing ring will eventually support the gravitational bore apparatus."
+  giga_frameworld_origin.004.a:0 "Wonderful."
+
+  giga_frameworld_origin.005.name:0 "$name_auto_stripmine$ Processing Ring Built"
+  giga_frameworld_origin.005.desc:0 "Built on the existing structural supports, this processing ring houses huge refineries and smelteries which will convert the matter extracted from [giga_system.star.GetName] into usable minerals. All that remains is mounting the decompression apparatus, which will use focused areas of twisted gravity to create vast drills whose bores are made of redirected and concentrated gravitational force."
+  giga_frameworld_origin.005.a:0 "Excellent."
+
+  giga_frameworld_origin.006.name:0 "Integrated $name_auto_stripmine$ Completed"
+  giga_frameworld_origin.006.desc:0 "With the completion of the gravitational bore array, the $name_auto_stripmine$ above [giga_system.star.GetName] is now complete, allowing us unprecedented access to the matter previously thought trapped forever within its event horizon. We can now start to harvest minerals from [giga_system.star.GetName] directly."
+  giga_frameworld_origin.006.a:0 "Marvelous!"
 
 
  giga_frameworld_decompressor:99 "$name_auto_stripmine$"
- giga_frameworld_decompressor_effect:99 "Begins construction of a multi stage Megastructure which, once completed, will upgrade the mining specializations doubling their output (for a total of 4x)."
+ giga_frameworld_decompressor_effect:99 "Begins construction of a multi stage Megastructure which, once completed, will upgrade the $district_giga_frameworld_mining$ doubling their £job_miner£§Y[owner.GetMiner] jobs§! (for a total of 4x)."
  giga_frameworld_stripmine_desc:99 "A gravity lensing facility which twists gravitational fields into drills capable of extracting material from the $pc_black_hole$"
 
-
-
- giga_frameworld_gaia_effect:0 "Increases the planets job production, base food output per 100 jobs, happiness and habitability"
- giga_frameworld_computing_complex_effect:0 "Upgrades the Research specializations doubling their jobs (for a total of 4x)"
+ district_giga_frameworld_trade_job_swap:0 "£job_trader£§Y$job_trader$§!, "
+ fwt_santuary_jobs:0 "£job_bio_trophy£§Y$job_bio_trophy$§!, £job_coordinator£§Y$job_coordinatory$§!"
+ fwt_science_job:0 "£job_biologist£§Y[owner.GetBiologyJob]§!, £job_physicist£§Y[owner.GetPhysicsJob]§!, £job_engineer£§Y[owner.GetEngineerJob]§!"
+ giga_frameworld_gaia_effect:0 "Increases the planets job production, £job_farmer£§Y[owner.GetFarmer]§! base output, happiness and habitability"
+ giga_frameworld_computing_complex_effect:0 "Upgrades the $district_giga_frameworld_science$ specializations doubling their £job_biologist£§Y$job_biologist$§! £job_physicist£§Y$job_physicist$§!£job_engineer£§Y$job_engineer$§! jobs but halving the number of districts and increasing their upkeep (for a total of 4x)"
  giga_frameworld_expand_infrastructure_effect:0 "Increases the planets max districts by 5%"
- giga_frameworld_orbital_ring_upgrade_effect:0 "Gives the benefits of a orbital ring like those found in ringworlds"
+ giga_frameworld_orbital_ring_upgrade_effect:0 "Gives the benefits of a $orbital_ring$ like those found in $ring_world_restored$"
  giga_frameworld_habitat_upgrade:0 "Habitat integration"
- giga_frameworld_habitat_desc:0 "Begin Construction of habitat like upgrades to our frame world to improve the effectiveness of some of our specializations (minerals, energy, food, research)"
- giga_frameworld_habitat_effect:0 "Upgrades the Generator, mining, Agriculture and research specializations doubling their output (for a total of 2x)"
+ giga_frameworld_habitat_desc:0 "Begin Construction of habitat like upgrades to our frameworld to improve the effectiveness of our $district_giga_frameworld_science$, $district_giga_frameworld_mining$ $district_giga_frameworld_mining$, $district_giga_frameworld_generator$and $district_giga_frameworld_farming$ doubling their  specializations (minerals, energy, food, research)"
+ giga_frameworld_habitat_effect:0 "Upgrades the $district_giga_frameworld_generator$, $district_giga_frameworld_mining$, $district_giga_frameworld_farming$ and $district_giga_frameworld_science$ specializations doubling their $fwt_science_job$ £job_farmer£§Y$[owner.GetFarmer]$§! £job_miner£§Y$[owner.GetMiner]$§! £job_technician£§Y$[owner.GetTechnician]$§! jobs but halving the number of districts and increasing their upkeep (for a total of 2x)"
  giga_frameworld_interstellar_assembly:0 "Interstellar Assembly upgrade"
- giga_frameworld_interstellar_assembly_desc:0 "Begin Construction of an Interstellar Assembly upgrade to enhance the abilities of our trade and unity specializations (for a total of 4x)"
- giga_frameworld_interstellar_assembly_effect:0 "Upgrades the Agriculture, unity, trade and sanctuary specializations doubling their output (for a total of 4x)"
+ giga_frameworld_interstellar_assembly_desc:0 "Begin Construction of an Interstellar Assembly upgrade to enhance the abilities of our [this.district_giga_frameworld_trade_spec][this.fwt_frameworld_unity_spec] and $district_giga_frameworld_sanctuary$ specializations doubling their [this.district_giga_frameworld_trade_job_spec]$fwt_santuary_jobs$ and £job_bureaucrat£§Y$[owner.GetBureaucrat]$§! jobs but halfing the number of districts and increasing the upkeep (for a total of 4x)"
+ district_giga_frameworld_trade_swap:0 "$district_giga_frameworld_trade$, "
+ giga_frameworld_interstellar_assembly_effect:0 "Upgrades the [this.fwt_frameworld_factory_spec][this.fwt_frameworld_unity_spec] and $district_giga_frameworld_sanctuary$ specializations doubling [this.district_giga_frameworld_trade_job_spec]$fwt_santuary_jobs$ and £job_bureaucrat£§Y$[owner.GetBureaucrat]$§! jobs but halving the number of districts and increasing the upkeep (for a total of 4x)"
  giga_frameworld_yggdrasil_orchid:0 "Yggdrasil Orchid integration"
  giga_frameworld_yggdrasil_orchid_desc:0 "Begin Construction of habitat like upgrades to our frame world to improve the effectiveness of our food districts"
- giga_frameworld_yggdrasil_orchid_effect:0 "Upgrades the Agriculture district doubling its output"
+ giga_frameworld_yggdrasil_orchid_effect:0 "Upgrades the $district_giga_frameworld_farming$ doubling the £job_farmer£§Y$[owner.GetFarmer]$§! jobs but halving the number of districts and increasing the upkeep (for a total of 4x)"
  district_giga_frameworld_ecu_foundry:0 "Ecumenopolis $district_giga_frameworld_foundry$"
  district_giga_frameworld_ecu_foundry_desc:0 "$district_giga_frameworld_foundry_desc$ "
  district_giga_frameworld_ecu_foundry_plural:0 "Ecumenopolis $district_giga_frameworld_foundry_plural$"
@@ -169,12 +176,18 @@
  district_giga_frameworld_ecu_refinery:0 "Advanced $district_giga_frameworld_refinery$"
  district_giga_frameworld_ecu_refinery_desc:0 "$district_giga_frameworld_refinery_desc$"
  district_giga_frameworld_ecu_refinery_plural:0 "Advanced $district_giga_frameworld_refinery_plural$"
+ fwt_null_loc:0 ""
 
-
-
+ district_giga_frameworld_factory_swap:0 "$district_giga_frameworld_factory$, "
+ district_giga_frameworld_factory_job_swap:0 "[owner.fwt_GetArtisanIcon]§Y$[owner.GetArtisan]$§!, "
  #temp ow
- giga_frameworld_advanced_industrial_foundry_effect:0 "Upgrades the foundry and city specializations doubling their output (for a total of 4x)."
- giga_frameworld_advanced_industrial_factory_effect:0 "Upgrades the factory specializations doubling their output (for a total of 4x)."
- giga_frameworld_advanced_city_effect:0 "Upgrades the foundry, factory, unity, trade, sanctuary and city specializations doubling their output (for a total of 2x). It also allows the frameworld to have the same planet bonuses as an ecu"
+ coordinator_icon:0 "[coordinator.geticon]"
+ politician_icon:0 "[politician.GetIcon]"
+ entertainer_icon:0 "[entertainer.GetIcon]"
+
+
+ giga_frameworld_advanced_industrial_foundry_effect:0 "Upgrades the [this.fwt_frameworld_factory_spec]$district_giga_frameworld_foundry$ and $district_giga_frameworld_city$ specializations doubling their $district_giga_frameworld_factory_job_swap$[owner.fwt_GetFoundryIcon]§Y$[owner.GetAlloyProducer]$§! and $MOD_PLANET_HOUSING_ADD$ housing but halving the number of districts and increasing their upkeep (for a total of 4x)."
+ giga_frameworld_advanced_city_effect:0 "Upgrades the $district_giga_frameworld_foundry$, [this.fwt_frameworld_factory_spec][this.fwt_frameworld_unity_spec], $district_giga_frameworld_trade$, $district_giga_frameworld_sanctuary$, [this.fwt_frameworld_amenities_spec] and $district_giga_frameworld_city$ specializations doubling their $district_giga_frameworld_factory_job_swap$[owner.fwt_GetFoundryIcon]§Y$[owner.GetAlloyProducer]$§!, £job_bureaucrat£§Y$[owner.GetBureaucrat]$§!, [this.district_giga_frameworld_trade_job_spec]$fwt_santuary_jobs$ and [this.fwt_frameworld_amenities_job_spec] jobs but halving their districts and increasing their upkeep (for a total of 2x). It also allows the frameworld to have the same planet bonuses as an ecu"
+
  # giga_frameworld_advanced_nexus_effect:0 "Upgrades the foundry, factory, unity, trade, sanctuary and city specializations doubling their output (for a total of 2x)."
  # giga_frameworld_advanced_hive_effect:0 "Upgrades the foundry, factory, unity, trade, sanctuary and city specializations doubling their output (for a total of 2x)."

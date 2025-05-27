@@ -56,7 +56,7 @@ district_giga_frameworld_city = {
 	icon = district_city
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	default_starting_district = yes
+	# default_starting_district = yes
 
 	zone_slots = {
 		slot_city_government
@@ -81,6 +81,7 @@ district_giga_frameworld_city = {
 	}
 	
 	conversion_ratio = 1
+
 	convert_to = {
 		district_giga_frameworld_nexus
 		district_giga_frameworld_hive
@@ -161,7 +162,6 @@ district_giga_frameworld_city = {
 			job_enforcer_add = @enforcer_add
 		}
 	}
-
 }
 
 ###############################################################################################################
@@ -171,6 +171,7 @@ district_giga_frameworld_hive = {
 	icon = district_hive
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
+	# default_starting_district = yes
 
 	zone_slots = {
 		slot_city_government
@@ -265,6 +266,7 @@ district_giga_frameworld_nexus = {
 	icon = district_nexus
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
+	# default_starting_district = yes
 
 	zone_slots = {
 		slot_city_government
@@ -397,7 +399,6 @@ district_giga_frameworld_urban_01 = {
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	default_starting_district = yes
 
 	zone_slots = {
 		slot_frameworld_urban_01
@@ -413,7 +414,6 @@ district_giga_frameworld_urban_02 = {
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	default_starting_district = yes
 
 	zone_slots = {
 		slot_frameworld_urban_01
@@ -429,7 +429,6 @@ district_giga_frameworld_urban_03 = {
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	default_starting_district = yes
 
 	zone_slots = {
 		slot_frameworld_urban_01
@@ -445,7 +444,6 @@ district_giga_frameworld_urban_04 = {
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	default_starting_district = yes
 
 	zone_slots = {
 		slot_frameworld_urban_01
@@ -461,7 +459,6 @@ district_giga_frameworld_urban_05 = {
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	default_starting_district = yes
 
 	zone_slots = {
 		slot_frameworld_urban_01
@@ -477,7 +474,6 @@ district_giga_frameworld_urban_06 = {
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	default_starting_district = yes
 
 	zone_slots = {
 		slot_frameworld_urban_01
@@ -493,7 +489,6 @@ district_giga_frameworld_urban_07 = {
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	default_starting_district = yes
 
 	zone_slots = {
 		slot_frameworld_urban_01
@@ -509,7 +504,6 @@ district_giga_frameworld_urban_08 = {
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	default_starting_district = yes
 
 	zone_slots = {
 		slot_frameworld_urban_01
@@ -526,7 +520,6 @@ district_giga_frameworld_urban_09 = {
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	default_starting_district = yes
 
 	zone_slots = {
 		slot_frameworld_urban_01

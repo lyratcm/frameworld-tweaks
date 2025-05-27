@@ -21,11 +21,3 @@ country_situations_harvest = {
 	parent = country_situations_fwt
 	modifier_category = country
 }
-
-fwt_maintenance_cat = {
-	# generate_add_modifiers = {
-	# 	upkeep
-	# }
-	# parent = country_situations_fwt
-	modifier_category = pop
-}

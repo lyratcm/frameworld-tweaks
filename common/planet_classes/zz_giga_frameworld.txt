@@ -20,7 +20,7 @@ pc_giga_frameworld = {
 	spawn_odds = 0
 	
 	modifier = {
-    	pop_environment_tolerance = 0.70
+    	pop_environment_tolerance = 1
 	}
 
 	extra_orbit_size = 0

@@ -163,3 +163,8 @@
  fwt.122.growth.name:0 "Galaxy growth scaling stats"
  fwt.121.growth.desc:0 "Please input the galaxy settings for growth ceiling, this is required to calculate frameworld pop creation"
  fwt.122.growth.desc:0 "Please input the galaxy settings for growth scaling, this is required to calculate frameworld pop creation"
+
+ fwt_auto_expand: "Start expanding the frameworld automatically"
+ fwt_auto_expand_desc: "A percentage of our alloys will be spent each month to expand the frameworld automatically"
+ fwt_auto_harvest: "Start harvesting asteroid automatically"
+ fwt_auto_harvest_desc: "Some of out energy credits will be spent each month to automatically harvest asteroids"
