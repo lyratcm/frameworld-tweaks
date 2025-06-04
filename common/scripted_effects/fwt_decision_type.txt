@@ -108,13 +108,13 @@ remove_flags = {
 frame_size_gal_wonders = {
 	if = {
 		limit = {
-			check_variable = { which = fwt_mega_completed value >= 3 }
+			check_variable = { which = frame_expansion_upgrade value >= 3 }
 			has_galactic_wonders = yes
 		}
 		set_variable = { which = frame_expansion_scale value = 4 }
 	}
 	else = {
-		change_variable = { which = fwt_mega_completed value = 1 }
+		change_variable = { which = frame_expansion_upgrade value = 1 }
 	}
 }
 

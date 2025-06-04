@@ -11,6 +11,8 @@
 
 base_buildtime = @[ city_time * $SIZE_COST$ * $SCALE$ ]
 
+
+
 resources = {
 	category = planet_districts_hab_research
 	cost = {

@@ -38,7 +38,7 @@ fwt_half_district = {
         variable = fwt_dist_count_temp
     }
     divide_variable = { which = fwt_dist_count_temp value = 2 }
-    round_variable = fwt_dist_count_temp
+    floor_variable = fwt_dist_count_temp
     while = {
         count = fwt_dist_count_temp
         remove_district = $DISTRICT$

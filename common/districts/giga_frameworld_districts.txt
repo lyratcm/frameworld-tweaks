@@ -533,6 +533,60 @@ district_giga_frameworld_urban_09 = {
 }
 
 
+district_giga_frameworld_extra_01 = {
+	icon = district_rw_commercial
+	base_buildtime = @base_time
+	is_capped_by_modifier = no
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_frameworld_urban_01
+	}
+
+
+	inline_script = {
+		script = zones/shared_frameworld_urban_modifiers
+		POTENTIAL = "has_planet_flag = frameworld_advanced_city"
+	}
+
+}
+
+district_giga_frameworld_extra_02 = {
+	icon = district_rw_commercial
+	base_buildtime = @base_time
+	is_capped_by_modifier = no
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_frameworld_urban_01
+	}
+
+
+	inline_script = {
+		script = zones/shared_frameworld_urban_modifiers
+		POTENTIAL = "has_planet_flag = frameworld_advanced_city"
+	}
+
+}
+
+district_giga_frameworld_extra_03 = {
+	icon = district_rw_commercial
+	base_buildtime = @base_time
+	is_capped_by_modifier = no
+	exempt_from_ai_planet_specialization = yes
+
+	zone_slots = {
+		slot_frameworld_urban_01
+	}
+
+
+	inline_script = {
+		script = zones/shared_frameworld_urban_modifiers
+		POTENTIAL = "has_planet_flag = frameworld_advanced_city"
+	}
+
+}
+
 ###############################################################################################################
 
 # district_giga_frameworld_nexus_advanced = {

@@ -23,6 +23,16 @@ triggered_district_planet_modifier = {
 	}
 }
 
+included_building_sets = {
+	factory
+	automation
+	origin
+}
+
+inline_script = {
+	script = zones/fwt_exclude_building
+}
+
 inline_script = {
 	script = planet/consumer_goods/fwt_artisan_job_swap
 	jobs = @frameworld_jobs_base

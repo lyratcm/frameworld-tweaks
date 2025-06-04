@@ -33,11 +33,11 @@ fwt_auto_expand = {
 
 	potential = {
 		exists = owner
-		owner = { giga_has_frameworld_origin = yes }
-		giga_is_frame_world = yes
-		not = {
-			country_has_situation = { SITUATION = fwt_situation_continuous_expansion }
+		owner = {
+			giga_has_frameworld_origin = yes
+			not = { country_has_situation = { SITUATION = fwt_situation_continuous_expansion } }
 		}
+		giga_is_frame_world = yes
 	}
 
 	effect = {
@@ -57,11 +57,11 @@ fwt_auto_harvest = {
 
 	potential = {
 		exists = owner
-		owner = { giga_has_frameworld_origin = yes }
-		giga_is_frame_world = yes
-		not = {
-			country_has_situation = { SITUATION = fwt_situation_frameworld_continuous_harvest }
+		owner = {
+			giga_has_frameworld_origin = yes
+			not = { country_has_situation = { SITUATION = fwt_situation_continuous_expansion } }
 		}
+		giga_is_frame_world = yes
 	}
 
 	effect = {

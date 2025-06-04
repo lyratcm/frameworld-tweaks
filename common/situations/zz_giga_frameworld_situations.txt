@@ -316,19 +316,17 @@ giga_situation_frameworld_outposts = {
     triggered_target_modifier = {
         potential = { root.owner = { giga_is_fully_virtual_empire = no } }
 
-        giga_frameworld_growth_jobs_add = 1
-
+        giga_frameworld_growth_jobs_add = 50
         multiplier = root.owner.value:giga_frameworld_outpost_count
     }
 
-    # growth
+    # growth/efficiency
     triggered_target_modifier = {
-        pop_bonus_workforce_mult = 0.05
         # planet_pop_assembly_organic_reduction = -0.1
         # planet_pop_assembly_reduction = -0.1
         # pop_growth_speed_reduction = -0.1
-        multiplier = owner.value:giga_frameworld_outpost_count
-        # multiplier = value:giga_frameworld_outpost_growth_count
+        pop_bonus_workforce_mult = 0.1
+        multiplier = value:giga_frameworld_outpost_growth_count
     }
 
     # virtual stuff
@@ -348,7 +346,7 @@ giga_situation_frameworld_outposts = {
             }
         }
         #clerks have more or less been removed
-        job_patrol_drone_add = 200
+        job_enforcer_add = 200
         # job_clerk_add = 200
         multiplier = root.owner.value:giga_frameworld_outpost_count
     }
@@ -373,7 +371,6 @@ giga_situation_frameworld_outposts = {
         planet_decision_enact_speed_mult = 0.1
         planet_housing_add = 500
         planet_army_build_speed_mult = 0.1
-
         pop_purge_speed = 0.1
         giga_pop_assimilation_speed = 0.1
 

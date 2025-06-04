@@ -32,6 +32,10 @@ district_giga_frameworld_city = {
         all
     }
 
+	inline_script = {
+		script = zones/fwt_exclude_building
+	}
+
     max_buildings = 3
 
     triggered_district_planet_modifier = {
@@ -107,11 +111,6 @@ district_giga_frameworld_foundry = {
         uses_district_set = giga_frameworld
     }
 
-    included_building_sets = {
-        foundry
-        automation
-        origin
-    }
 
     inline_script = {
         script = districts/params/fwt_district_inline_alloy_params
@@ -144,11 +143,6 @@ district_giga_frameworld_factory = {
 		}
 	}
 
-    included_building_sets = {
-        factory
-        automation
-        origin
-    }
 
     show_in_tech = tech_basic_industry
 
@@ -170,11 +164,6 @@ district_giga_frameworld_generator = {
 
     show_in_tech = tech_power_plant_1
 
-    included_building_sets = {
-        generator
-        fallen_empire_generator
-        automation
-    }
 
 	inline_script = {
 		script = districts/params/fwt_district_inline_energy_params
@@ -194,11 +183,6 @@ district_giga_frameworld_mining = {
 
     show_in_tech = tech_mechanized_mining
 
-    included_building_sets = {
-        mining
-        fallen_empire_mining
-        automation
-    }
 
 	inline_script = {
 		script = districts/params/fwt_district_inline_minerals_params
@@ -224,6 +208,10 @@ district_giga_frameworld_farming = {
         automation
         fallen_empire_farming
     }
+
+	inline_script = {
+		script = zones/fwt_exclude_building
+	}
 
 	inline_script = {
 		script = districts/params/fwt_district_inline_food_params
@@ -256,6 +244,9 @@ district_giga_frameworld_trade = {
         origin
     }
 
+	inline_script = {
+		script = zones/fwt_exclude_building
+	}
 
 	convert_to = {
 		district_giga_frameworld_generator
@@ -299,6 +290,10 @@ district_giga_frameworld_administrative = {
         origin
     }
 
+	inline_script = {
+		script = zones/fwt_exclude_building
+	}
+
 	convert_to = {
 		district_giga_frameworld_sanctuary
 		district_giga_frameworld_synapse
@@ -338,6 +333,10 @@ district_giga_frameworld_synapse = {
 		unity
 		automation
 		origin
+	}
+
+	inline_script = {
+		script = zones/fwt_exclude_building
 	}
 
 	inline_script = {
@@ -418,6 +417,10 @@ district_giga_frameworld_simulation = {
 	}
 
 	inline_script = {
+		script = zones/fwt_exclude_building
+	}
+
+	inline_script = {
 		script = districts/params/fwt_district_inline_unity_params
 		JOB = "planet/unity/fwt_gestalt_unity_job_swap"
 	}
@@ -464,6 +467,10 @@ district_giga_frameworld_sanctuary = {
 		origin
 	}
 
+	inline_script = {
+		script = zones/fwt_exclude_building
+	}
+
 	triggered_desc = {
 		text = job_bio_trophy_effect_desc
 	}
@@ -486,7 +493,14 @@ district_giga_frameworld_science = {
         research
         automation
         origin
+		physics
+		engineering
+		society
     }
+
+	inline_script = {
+		script = zones/fwt_exclude_building
+	}
 
 	inline_script = {
 		script = districts/params/fwt_district_inline_science_params
@@ -525,6 +539,10 @@ district_giga_frameworld_amenities = {
 
 	include = {
 		all
+	}
+
+	inline_script = {
+		script = zones/fwt_exclude_building
 	}
 
 	resources = {
@@ -626,6 +644,10 @@ district_giga_frameworld_amenities_dystopian = {
 	}
 
     show_in_tech = tech_planetary_government
+
+	inline_script = {
+		script = zones/fwt_exclude_building
+	}
 
 	convert_to = {
 		district_giga_frameworld_amenities
@@ -749,6 +771,10 @@ district_giga_frameworld_amenities_gestalt = {
 
 	include = {
 		all
+	}
+
+	inline_script = {
+		script = zones/fwt_exclude_building
 	}
 
     triggered_district_planet_modifier = {

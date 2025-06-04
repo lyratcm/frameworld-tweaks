@@ -444,6 +444,42 @@ fwt_expansion_cost = {
 	mult = giga_frameworld_expansion_cost_exponent
 }
 
+fwt_city_districts_value = {
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_giga_frameworld_city
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_giga_frameworld_hive
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_giga_frameworld_nexus
+		}
+		mode = add
+	}
+}
+
+
+
+fwt_districts_value = {
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = add
+	}
+}
+
 ######################################################
 
 giga_planet_density_offset_jobs_by_pops = {

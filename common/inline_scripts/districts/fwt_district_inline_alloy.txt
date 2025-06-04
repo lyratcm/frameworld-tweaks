@@ -22,6 +22,17 @@ triggered_district_planet_modifier = {
 	}
 }
 
+included_building_sets = {
+	foundry
+	automation
+	origin
+}
+
+inline_script = {
+	script = zones/fwt_exclude_building
+}
+
+
 inline_script = {
 	script = planet/alloys/fwt_foundry_job_swap
 	jobs = @frameworld_jobs_base

@@ -1,0 +1,13 @@
+exclude = {
+    #automation, use our own
+    building_automation_1
+    building_automation_2
+    building_automation_city_1
+    building_automation_city_2
+    building_automation_farming_1
+    building_automation_farming_2
+    building_automation_mining_1
+    building_automation_mining_2
+    building_automation_generator_1
+    building_automation_generator_2
+}

@@ -113,7 +113,7 @@ country_event = {
                 value = 1
             }
         }
-        country_event = { id = giga_frameworld_origin.000 }
+        # country_event = { id = giga_frameworld_origin.000 }
     }
     after = {
         # clear the conquered modifier which apparently gets executed BEFORE the start event

@@ -47,6 +47,11 @@ resources = {
 	}
 }
 
+
+inline_script = {
+	script = zones/fwt_exclude_building
+}
+
 triggered_planet_modifier = {
 	potential = {
 		exists = owner

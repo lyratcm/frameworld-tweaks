@@ -4,38 +4,34 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="bugfixes&#10;decisions loc pt 1">
-      <change afterPath="$PROJECT_DIR$/common/governments/civics/fwt_frameworld_ow.txt" afterDir="false" />
+    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="decision locs pt2&#10;clean up pre 4.0 files&#10;add district half on level up">
+      <change afterPath="$PROJECT_DIR$/common/buildings/fwt_automation_buildings.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/buildings/fwt_automation_building_1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/buildings/fwt_automation_building_2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/zones/fwt_exclude_building.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/zones/shared_frameworld_urban_modifiers_sub.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/decisions/fwt_decisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/decisions/fwt_decisions.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_expansion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_expansion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_upgrades.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_upgrades.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/districts/giga_frameworld_districts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/districts/giga_frameworld_districts.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/economic_categories/fwt_economic_cats.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/economic_categories/fwt_economic_cats.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/governments/civics/fwt_fw_ow.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/zones/fwt_zones_frameworld_urban.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/zones/fwt_zones_frameworld_urban.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/on_actions/zz_fwt_on_actions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/on_actions/zz_fwt_on_actions.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/planet_classes/zz_giga_frameworld.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/planet_classes/zz_giga_frameworld.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pop_jobs/zz_giga_frameworld_jobs.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pop_jobs/zz_giga_growth_jobs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/pop_jobs/zz_giga_growth_jobs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_alloy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_alloy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_energy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_energy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_factory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_factory.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_minerals.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_minerals.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_science.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_science.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/zones/shared_frameworld_urban_modifiers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/zones/shared_frameworld_urban_modifiers.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/scripted_effects/fwt_decision_type.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/fwt_decision_type.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/scripted_effects/fwt_start_effects.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/fwt_start_effects.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_loc/zz_giga_frameworld_scripted_loc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_loc/zz_giga_frameworld_scripted_loc.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/scripted_variables/!!!_giga_frameworld_variables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_variables/!!!_giga_frameworld_variables.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/situations/fwt_decision_situations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/situations/fwt_decision_situations.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/situations/zz_giga_frameworld_situations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/situations/zz_giga_frameworld_situations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/static_modifiers/fwt_static_modifier.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/static_modifiers/fwt_static_modifier.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/zones/fwt_zones.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/zones/fwt_zones.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/fwt_events.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/fwt_events.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/fwt_job_size_events.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/localisation/english/fwt_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/english/fwt_frameworld_l_english.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localisation/english/fwt_job_size_l_english.yml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/localisation/replace/english/zz_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/replace/english/zz_frameworld_l_english.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plans.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plans.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +87,7 @@
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/common/inline_scripts/ship_sizes&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/common/inline_scripts/buildings&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -102,11 +98,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\buildings" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\ship_sizes" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\situations" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\pop_jobs" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\generic_parts" />
-      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common" />
@@ -180,7 +176,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747964550564</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="decision locs pt2&#10;clean up pre 4.0 files&#10;add district half on level up">
+      <option name="closed" value="true" />
+      <created>1748360016104</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1748360016104</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -190,6 +194,7 @@
     <MESSAGE value="misc inline fixes and small number tweaks, MVP for bios" />
     <MESSAGE value="add frameworld upgrades&#10;move situation and non auto decisions back to decisions&#10;added extra simultaneous build to the frameworld" />
     <MESSAGE value="bugfixes&#10;decisions loc pt 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="bugfixes&#10;decisions loc pt 1" />
+    <MESSAGE value="decision locs pt2&#10;clean up pre 4.0 files&#10;add district half on level up" />
+    <option name="LAST_COMMIT_MESSAGE" value="decision locs pt2&#10;clean up pre 4.0 files&#10;add district half on level up" />
   </component>
 </project>
