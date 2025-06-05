@@ -202,17 +202,6 @@ district_giga_frameworld_farming = {
 
     show_in_tech = tech_industrial_farming
 
-    included_building_sets = {
-        farming
-        hydroponics
-        automation
-        fallen_empire_farming
-    }
-
-	inline_script = {
-		script = zones/fwt_exclude_building
-	}
-
 	inline_script = {
 		script = districts/params/fwt_district_inline_food_params
 	}

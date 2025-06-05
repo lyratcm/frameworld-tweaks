@@ -62,7 +62,7 @@ resources = {
     }
     upkeep = {
         energy = @b3_upkeep
-        mult = value:fwt_districts_value|DISTRICT|district_giga_frameworld_urban_$DISTRICT$|
+        mult = value:fwt_districts_value|DISTRICT|district_giga_frameworld_urban_$DISTRICT$|COMPLETION|$COMPLETION$|
     }
 }
 

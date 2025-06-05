@@ -18,6 +18,18 @@ inline_script = {
 }
 base_buildtime = @[ city_time * $SIZE_COST$ * $SCALE$ ]
 
+included_building_sets = {
+	farming
+	fallen_empire_farming
+	automation
+	hydroponics
+}
+
+inline_script = {
+	script = zones/fwt_exclude_building
+}
+
+
 resources = {
 	category = planet_districts
 	cost = {

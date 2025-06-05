@@ -54,55 +54,20 @@ country_event = {
                 }
             }
             #used in some places for mult if gigas needed it
-            set_variable = {
-                which = fwt_energy_completion
-                value = 1
-            }
-            set_variable = {
-                which = fwt_mineral_completion
-                value = 1
-            }
-            set_variable = {
-                which = fwt_food_completion
-                value = 1
-            }
-            set_variable = {
-                which = fwt_alloy_completion
-                value = 1
-            }
-            set_variable = {
-                which = fwt_consumer_goods_completion
-                value = 1
-            }
-            set_variable = {
-                which = fwt_unity_trade_completion
-                value = 1
-            }
-            set_variable = {
-                which = fwt_sanctuary_completion
-                value = 1 }
-            set_variable = {
-                which = fwt_science_completion
-                value = 1
-            }
-            set_variable = {
-                which = fwt_rare_resources_completion
-                value = 1
-            }
-            set_variable = {
-                which = fwt_city_completion
-                value = 1
-            }
+            set_variable = { which = fwt_energy_completion value = 1 }
+            set_variable = { which = fwt_mineral_completion value = 1 }
+            set_variable = { which = fwt_food_completion value = 1 }
+            set_variable = { which = fwt_alloy_completion value = 1 }
+            set_variable = { which = fwt_consumer_goods_completion value = 1 }
+            set_variable = { which = fwt_unity_trade_completion value = 1 }
+            set_variable = { which = fwt_sanctuary_completion value = 1 }
+            set_variable = { which = fwt_science_completion value = 1 }
+            set_variable = { which = fwt_rare_resources_completion value = 1 }
+            set_variable = { which = fwt_city_completion value = 1 }
             # code for my job scaling
-            set_variable = {
-                which = frame_expansion_scale
-                value = 1
-            }
+            set_variable = { which = frame_expansion_scale value = 1 }
             # set_variable = { which = background_pops value = 0 }
-            set_variable = {
-                which = fwt_maintance_scale
-                value = 0.5
-            }
+            set_variable = { which = fwt_maintance_scale value = 0.5 }
             add_modifier = {
                 modifier = fwt_speed_unemploy_info
                 multiplier = -100000000

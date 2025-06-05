@@ -4,34 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="decision locs pt2&#10;clean up pre 4.0 files&#10;add district half on level up">
-      <change afterPath="$PROJECT_DIR$/common/buildings/fwt_automation_buildings.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/inline_scripts/buildings/fwt_automation_building_1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/inline_scripts/buildings/fwt_automation_building_2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/inline_scripts/zones/fwt_exclude_building.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/inline_scripts/zones/shared_frameworld_urban_modifiers_sub.txt" afterDir="false" />
+    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="tweaking scaling&#10;adding my own automation buildings (and disabling vanillas)&#10;disabling start event double triggers&#10;fixing upgrades rounding the wrong way&#10;added 3 extra distrcits after ecu upgrade to allow for more building slots&#10;updated plans.txt&#10;fixed some upkeep scalars from not account for job swaps&#10;made job adds make more sense">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/decisions/fwt_decisions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/decisions/fwt_decisions.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_upgrades.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_upgrades.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/districts/giga_frameworld_districts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/districts/giga_frameworld_districts.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_alloy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_alloy.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_energy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_energy.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_factory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_factory.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/buildings/fwt_automation_buildings.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/buildings/fwt_automation_buildings.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/buildings/fwt_automation_building_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/buildings/fwt_automation_building_1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/buildings/fwt_automation_building_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/buildings/fwt_automation_building_2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_food.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_food.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_minerals.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_minerals.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_science.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_science.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/zones/shared_frameworld_urban_modifiers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/zones/shared_frameworld_urban_modifiers.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_effects/fwt_decision_type.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/fwt_decision_type.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_effects/fwt_start_effects.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/fwt_start_effects.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_variables/!!!_giga_frameworld_variables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_variables/!!!_giga_frameworld_variables.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/situations/zz_giga_frameworld_situations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/situations/zz_giga_frameworld_situations.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/zones/fwt_zones.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/zones/fwt_zones.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/fwt_events.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/fwt_events.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localisation/english/fwt_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/english/fwt_frameworld_l_english.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localisation/replace/english/zz_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/replace/english/zz_frameworld_l_english.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plans.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plans.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +44,9 @@
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Steam/steamapps/common/Stellaris/common/economic_categories/00_common_categories.txt" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Steam/steamapps/common/Stellaris/common/pop_jobs/01_ruler_jobs.txt" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Steam/steamapps/workshop/content/281990/1121692237/common/scripted_triggers/giga_frameworld_triggers.txt" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="Unnamed" pattern="src[frameworld tweaks]:*..*&amp;&amp;!src[logs]:*..*" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -184,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1748360016104</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="tweaking scaling&#10;adding my own automation buildings (and disabling vanillas)&#10;disabling start event double triggers&#10;fixing upgrades rounding the wrong way&#10;added 3 extra distrcits after ecu upgrade to allow for more building slots&#10;updated plans.txt&#10;fixed some upkeep scalars from not account for job swaps&#10;made job adds make more sense">
+      <option name="closed" value="true" />
+      <created>1749007023370</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1749007023370</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -195,6 +188,7 @@
     <MESSAGE value="add frameworld upgrades&#10;move situation and non auto decisions back to decisions&#10;added extra simultaneous build to the frameworld" />
     <MESSAGE value="bugfixes&#10;decisions loc pt 1" />
     <MESSAGE value="decision locs pt2&#10;clean up pre 4.0 files&#10;add district half on level up" />
-    <option name="LAST_COMMIT_MESSAGE" value="decision locs pt2&#10;clean up pre 4.0 files&#10;add district half on level up" />
+    <MESSAGE value="tweaking scaling&#10;adding my own automation buildings (and disabling vanillas)&#10;disabling start event double triggers&#10;fixing upgrades rounding the wrong way&#10;added 3 extra distrcits after ecu upgrade to allow for more building slots&#10;updated plans.txt&#10;fixed some upkeep scalars from not account for job swaps&#10;made job adds make more sense" />
+    <option name="LAST_COMMIT_MESSAGE" value="tweaking scaling&#10;adding my own automation buildings (and disabling vanillas)&#10;disabling start event double triggers&#10;fixing upgrades rounding the wrong way&#10;added 3 extra distrcits after ecu upgrade to allow for more building slots&#10;updated plans.txt&#10;fixed some upkeep scalars from not account for job swaps&#10;made job adds make more sense" />
   </component>
 </project>

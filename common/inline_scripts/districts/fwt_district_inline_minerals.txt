@@ -47,6 +47,11 @@ resources = {
 	}
 }
 
+included_building_sets = {
+	mining
+	automation
+	fallen_empire_mining
+}
 
 inline_script = {
 	script = zones/fwt_exclude_building

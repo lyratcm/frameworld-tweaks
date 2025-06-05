@@ -217,6 +217,7 @@ building_fwt_automation_generator_1 = {
         script = buildings/fwt_automation_building_1
         ZONE = generator
         DISTRICT = 03
+        COMPLETION = energy
     }
 }
 
@@ -225,6 +226,7 @@ building_fwt_automation_generator_2 = {
         script = buildings/fwt_automation_building_2
         ZONE = generator
         DISTRICT = 03
+        COMPLETION = energy
     }
 }
 
@@ -233,6 +235,7 @@ building_fwt_automation_mining_1 = {
         script = buildings/fwt_automation_building_1
         ZONE = mining
         DISTRICT = 04
+        COMPLETION = mineral
     }
 }
 
@@ -241,6 +244,7 @@ building_fwt_automation_mining_2 = {
         script = buildings/fwt_automation_building_2
         ZONE = mining
         DISTRICT = 04
+        COMPLETION = mineral
     }
 }
 
@@ -249,6 +253,7 @@ building_fwt_automation_foundry_1 = {
         script = buildings/fwt_automation_building_1
         ZONE = foundry
         DISTRICT = 01
+        COMPLETION = alloy
     }
 }
 
@@ -257,6 +262,7 @@ building_fwt_automation_foundry_2 = {
         script = buildings/fwt_automation_building_2
         ZONE = foundry
         DISTRICT = 01
+        COMPLETION = alloy
     }
 }
 
@@ -265,6 +271,7 @@ building_fwt_automation_factory_1 = {
         script = buildings/fwt_automation_building_1
         ZONE = factory
         DISTRICT = 02
+        COMPLETION = consumer_goods
     }
 }
 
@@ -273,6 +280,7 @@ building_fwt_automation_factory_2 = {
         script = buildings/fwt_automation_building_2
         ZONE = factory
         DISTRICT = 02
+        COMPLETION = consumer_goods
     }
 }
 
@@ -281,6 +289,7 @@ building_fwt_automation_farming_1 = {
         script = buildings/fwt_automation_building_1
         ZONE = farming
         DISTRICT = 05
+        COMPLETION = food
     }
 }
 
@@ -289,6 +298,7 @@ building_fwt_automation_farming_2 = {
         script = buildings/fwt_automation_building_2
         ZONE = farming
         DISTRICT = 05
+        COMPLETION = food
     }
 }
 
@@ -297,6 +307,7 @@ building_fwt_automation_unity_1 = {
         script = buildings/fwt_automation_building_1
         ZONE = unity
         DISTRICT = 06
+        COMPLETION = unity_trade
     }
 }
 
@@ -305,6 +316,7 @@ building_fwt_automation_unity_2 = {
         script = buildings/fwt_automation_building_2
         ZONE = unity
         DISTRICT = 06
+        COMPLETION = unity_trade
     }
 }
 
@@ -313,6 +325,7 @@ building_fwt_automation_science_1 = {
         script = buildings/fwt_automation_building_1
         ZONE = science
         DISTRICT = 07
+        COMPLETION = science
     }
 }
 
@@ -321,6 +334,7 @@ building_fwt_automation_science_2 = {
         script = buildings/fwt_automation_building_2
         ZONE = science
         DISTRICT = 07
+        COMPLETION = science
     }
 }
 
@@ -329,6 +343,7 @@ building_fwt_automation_amenities_1 = {
         script = buildings/fwt_automation_building_1
         ZONE = amenities
         DISTRICT = 08
+        COMPLETION = unity_trade
     }
 }
 
@@ -337,6 +352,7 @@ building_fwt_automation_amenities_2 = {
         script = buildings/fwt_automation_building_2
         ZONE = amenities
         DISTRICT = 08
+        COMPLETION = unity_trade
     }
 }
 
@@ -345,6 +361,7 @@ building_fwt_automation_trade_1 = {
         script = buildings/fwt_automation_building_1
         ZONE = trade
         DISTRICT = 09
+        COMPLETION = unity_trade
     }
 }
 
@@ -353,5 +370,6 @@ building_fwt_automation_trade_2 = {
         script = buildings/fwt_automation_building_2
         ZONE = trade
         DISTRICT = 09
+        COMPLETION = unity_trade
     }
 }
