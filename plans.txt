@@ -1,14 +1,11 @@
 # write documentaiotn - add to already existing situation log
-# decied what i want to city zones to be, having them be default feels weird but using upgraded is to effecicent?
-# look at efficiency being too good early
-# change starting zone to not be unlocked at game start?
+# decide what i want to city zones to be, having them be default feels weird but using upgraded is to effecicent?
+# look at efficiency being too good early - counter with higher expansion costs
 # bio trophy reductions
-# defensive stations dieing
 
-# ydsadrill upgrade not named properly
-# 16x bonuses
+# 16x bonuses - alderson disk maybe although the origin gets pretty strong as this point
 
-#test non-overwriting merge? - talk to gigas team about moving some of my ow into code
+# test non-overwriting merge? - talk to gigas team about moving some of my ow into code - would help with compat with the other frameworld sub mod
 # gigas ehof district support
 
 # remove ascension breakthrough

@@ -215,58 +215,6 @@ defined_text = {
         trigger = { has_situation_flag = giga_frameworld_consume_world_dec }
         localization_key = giga_frameworld_consume_world
     }
-	text = {
-        trigger = { has_situation_flag = frameworld_penrose_dec }
-        localization_key = giga_frameworld_penrose
-    }
-	text = {
-        trigger = { has_situation_flag = giga_frameworld_decompressor_dec }
-        localization_key = giga_frameworld_decompressor
-    }
-	text = {
-        trigger = { has_situation_flag = giga_frameworld_advanced_city_dec }
-        localization_key = giga_frameworld_advanced_city
-    }
-	text = {
-        trigger = { has_situation_flag = giga_frameworld_advanced_industrial_dec }
-        localization_key = giga_frameworld_advanced_industrial
-    }
-	text = {
-        trigger = { has_situation_flag = frameworld_advanced_sanctuary_dec }
-        localization_key = giga_frameworld_advanced_sanctuary
-    }
-	text = {
-        trigger = { has_situation_flag = giga_frameworld_gaia_dec }
-        localization_key = giga_frameworld_gaia
-    }
-	text = {
-        trigger = { has_situation_flag = giga_frameworld_computing_complex_dec }
-        localization_key = giga_frameworld_computing_complex
-    }
-	text = {
-        trigger = { has_situation_flag = giga_frameworld_expand_infrastructure_dec }
-        localization_key = giga_frameworld_expand_infrastructure
-    }
-	text = {
-        trigger = { has_situation_flag = frameworld_orbital_ring_dec }
-        localization_key = giga_frameworld_orbital_ring_upgrade
-    }
-	text = {
-        trigger = { has_situation_flag = frameworld_maginot_dec }
-        localization_key = giga_frameworld_maginot
-    }
-	text = {
-        trigger = { has_situation_flag = frameworld_habitat_dec }
-        localization_key = giga_frameworld_habitat_upgrade
-    }
-	text = {
-        trigger = { has_situation_flag = interstellar_assembly_dec }
-        localization_key = giga_interstellar_assembly_upgrade
-    }
-	text = {
-        trigger = { has_situation_flag = yggdrasil_orchid_dec }
-        localization_key = giga_yggdrasil_orchid_upgrade
-    }
     default = frameworld_blank
 }
 

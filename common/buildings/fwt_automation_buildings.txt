@@ -57,6 +57,16 @@ building_fwt_automation_city_1 = {
         }
     }
 
+    # triggered_planet_modifier = {
+    #     potential = {
+    #         always = yes
+    #     }
+    #     modifier = {
+    #         district_automated_workforce = 1
+    #     }
+    #     multiplier = modifier:modifier:district_automated_workforce_add
+    # }
+
     resources = {
         category = planet_buildings
         cost = {

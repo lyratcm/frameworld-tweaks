@@ -12,33 +12,12 @@ giga_frameworld_expand = {
 	
 	enactment_time = 360
 
-	# inline_script = {
-	# 	script = decisions/fwt_inlines_expansion_costs
-	# 	NAME = giga_frameworld_expansion
-	# }
-
 	resources = {
 		category = megastructures_frameworld
 		cost = {
 			alloys = 1
 			multiplier = giga_frameworld_expansion_cost_multiplier_dec
 		}
-		# cost = {
-		# 	trigger = {
-		# 		exists = owner
-		# 		owner = { has_technology = tech_habitat_2 }
-		# 	}
-		# 	alloys = @giga_frameworld_expansion_cost_habitat_2
-		# 	multiplier = giga_frameworld_expansion_cost_multiplier
-		# }
-		# cost = {
-		# 	trigger = {
-		# 		exists = owner
-		# 		owner = { has_technology = tech_habitat_3 }
-		# 	}
-		# 	alloys = @giga_frameworld_expansion_cost_habitat_3
-		# 	multiplier = giga_frameworld_expansion_cost_multiplier
-		# }
 	}
 	
 	potential = {
@@ -50,21 +29,7 @@ giga_frameworld_expand = {
 		giga_is_frame_world = yes
 	}
 
-	allow = {
-		custom_tooltip_fail = {
-			text = giga_frameworld_expand_concurrent
-			# not = { has_planet_flag = giga_frameworld_expand_queued }
-		}
-	}
-
 	effect = {
-		# add_decision_time = {
-		# 	TIME = 360
-		# 	NAME = giga_frameworld_expand
-		# 	NAME1 = d_frameworld_expansion
-		# 	NAME2 = d_frameworld_structure_expansion
-		# 	NAME_SIZE1 = 1
-		# }
 		custom_tooltip = frameworld_line
 		giga_frameworld_expand_deposit = {
 			DEPOSIT = d_frameworld_expansion
@@ -85,15 +50,6 @@ giga_frameworld_expand = {
 			frameworld_conduct_audit_check_ai = yes
 		}
 		save_global_event_target_as = frame_expand@owner
-		# set_planet_flag = giga_frameworld_expand_queued
-		# set_planet_flag = giga_frameworld_expand_dec
-		# owner = {
-		# 	start_situation = {
-		# 		type = giga_situation_frameworld_decisions
-		# 	}
-		# }
-
-		# remove_planet_flag = giga_frameworld_expand_queued
 
 	}
 
@@ -171,27 +127,6 @@ giga_frameworld_expand_bulk_5 = {
 		script = decisions/fwt_inlines_expansion_costs
 		NAME = giga_frameworld_expansion_bulk_5
 	}
-	# resources = {
-	# 	category = megastructures_frameworld
-	# 	cost = {
-	# 		alloys = @giga_frameworld_expansion_cost_base
-	# 		multiplier = giga_frameworld_expansion_bulk_5_cost_multiplier
-	# 	}
-	# 	cost = {
-	# 		trigger = {
-	# 			exists = owner
-	# 			owner = { has_technology = tech_habitat_2 }
-	# 		}
-	# 		alloys = @giga_frameworld_expansion_cost_habitat_2
-	# 	}
-	# 	cost = {
-	# 		trigger = {
-	# 			exists = owner
-	# 			owner = { has_technology = tech_habitat_3 }
-	# 		}
-	# 		alloys = @giga_frameworld_expansion_cost_habitat_3
-	# 	}
-	# }
 	
 	potential = {
 		# is_variable_set = giga_frameworld_structure_expansions
@@ -212,12 +147,6 @@ giga_frameworld_expand_bulk_5 = {
 	}
 	
 	effect = {
-		# owner = {
-		# 	set_variable = {
-		# 		which = fwt_decision_time
-		# 		value = 1728
-		# 	}
-		# }
 		add_decision_time = { 
 			TIME = 1728 
 			NAME = giga_frameworld_expand_bulk_5
@@ -398,7 +327,7 @@ giga_frameworld_expand_nanites = {
 	icon = decision_frameworld_expand_nanites
 	owned_planets_only = yes
 
-	enactment_time = 0
+	enactment_time = 360
 
 	resources = {
 		category = decisions
@@ -424,36 +353,23 @@ giga_frameworld_expand_nanites = {
 	}
 
 	effect = {
-		owner = {
-			set_variable = {
-				which = fwt_decision_time
-				value = 360
-			}
+		giga_frameworld_expand_deposit = {
+			DEPOSIT = d_frameworld_expansion
+			VAR = giga_frameworld_expansions
 		}
-		add_decision_time = { 
-			TIME = 360
-			NAME = giga_frameworld_expand_nanites 
-			NAME1 = d_frameworld_expansion 
-			NAME2 = d_frameworld_nanite_expansion
-			NAME_SIZE1 = 1
+		custom_tooltip = frameworld_line
+		giga_frameworld_expand_deposit = {
+			DEPOSIT = d_frameworld_nanite_expansion
+			VAR = giga_frameworld_nanite_expansions
 		}
-		# giga_frameworld_expand_deposit = {
-		# 	DEPOSIT = d_frameworld_expansion
-		# 	VAR = giga_frameworld_expansions
-		# }
-		# custom_tooltip = frameworld_line
-		# giga_frameworld_expand_deposit = {
-		# 	DEPOSIT = d_frameworld_nanite_expansion
-		# 	VAR = giga_frameworld_nanite_expansions
-		# }
-		# custom_tooltip = frameworld_line
-		# change_planet_size = 1
+		custom_tooltip = frameworld_line
+		change_planet_size = 1
 
-		# hidden_effect = {
-		# 	giga_frameworld_update_entity_with_fallback = yes
-		# 	giga_frameworld_recalculate_variables = yes
-		# 	frameworld_conduct_audit_check_ai = yes
-		# }
+		hidden_effect = {
+			giga_frameworld_update_entity_with_fallback = yes
+			giga_frameworld_recalculate_variables = yes
+			frameworld_conduct_audit_check_ai = yes
+		}
 	}
 
 	ai_weight = {
@@ -469,7 +385,7 @@ giga_frameworld_expand_mass = {
 	icon = decision_frameworld_expand_mass
 	owned_planets_only = yes
 	
-	enactment_time = 0
+	enactment_time = 360
 	
 	resources = {
 		category = decisions
@@ -501,43 +417,30 @@ giga_frameworld_expand_mass = {
 	}
 	
 	effect = {
-		# owner = {
-		# 	set_variable = {
-		# 		which = fwt_decision_time
-		# 		value = 360
-		# 	}
-		# }
-		add_decision_time = { 
-			TIME = 360 
-			NAME = giga_frameworld_expand_mass 
-			NAME1 = d_frameworld_expansion 
-			NAME2 = d_frameworld_planet
-			NAME_SIZE1 = 1
+		giga_frameworld_expand_deposit = {
+			DEPOSIT = d_frameworld_expansion
+			VAR = giga_frameworld_expansions
 		}
-		# giga_frameworld_expand_deposit = { 
-		# 	DEPOSIT = d_frameworld_expansion 
-		# 	VAR = giga_frameworld_expansions
-		# }
-		# custom_tooltip = frameworld_line
-		# giga_frameworld_expand_deposit = { 
-		# 	DEPOSIT = d_frameworld_planet
-		# 	VAR = giga_frameworld_planets
-		# }
-		# custom_tooltip = frameworld_line
-		# change_planet_size = 1
+		custom_tooltip = frameworld_line
+		giga_frameworld_expand_deposit = {
+			DEPOSIT = d_frameworld_planet
+			VAR = giga_frameworld_planets
+		}
+		custom_tooltip = frameworld_line
+		change_planet_size = 1
 
-		# hidden_effect = {
-		# 	giga_frameworld_update_entity_with_fallback = yes
-		# 	giga_frameworld_recalculate_variables = yes
-		# 	frameworld_conduct_audit_check_ai = yes
-		# }
-		# set_planet_flag = giga_frameworld_expand_mass
-		# set_planet_flag = giga_frameworld_expand_mass_dec
-		# owner = {
-		# 	start_situation = {
-		# 		type = giga_situation_frameworld_decisions
-		# 	}
-		# }
+		hidden_effect = {
+			giga_frameworld_update_entity_with_fallback = yes
+			giga_frameworld_recalculate_variables = yes
+			frameworld_conduct_audit_check_ai = yes
+		}
+		set_planet_flag = giga_frameworld_expand_mass
+		set_planet_flag = giga_frameworld_expand_mass_dec
+		owner = {
+			start_situation = {
+				type = giga_situation_frameworld_decisions
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -778,36 +681,36 @@ giga_frameworld_reorganise = {
 	}
 	
 	effect = {
-		add_decision_time = {
-			TIME = 360
-			NAME = giga_frameworld_reorganise
-			NAME1 = d_frameworld_expansion 
-			NAME2 = d_frameworld_reorganise_expansion
-			NAME_SIZE1 = 1
+		# add_decision_time = {
+		# 	TIME = 360
+		# 	NAME = giga_frameworld_reorganise
+		# 	NAME1 = d_frameworld_expansion
+		# 	NAME2 = d_frameworld_reorganise_expansion
+		# 	NAME_SIZE1 = 1
+		# }
+		giga_frameworld_expand_deposit = {
+			DEPOSIT = d_frameworld_expansion
+			VAR = giga_frameworld_expansions
 		}
-		# giga_frameworld_expand_deposit = { 
-		# 	DEPOSIT = d_frameworld_expansion 
-		# 	VAR = giga_frameworld_expansions
-		# }
-		# custom_tooltip = frameworld_line
-		# giga_frameworld_expand_deposit = { 
-		# 	DEPOSIT = d_frameworld_reorganise_expansion
-		# 	VAR = giga_frameworld_reorganise_expansions
-		# }
-		# custom_tooltip = frameworld_line
-		# change_planet_size = 1
+		custom_tooltip = frameworld_line
+		giga_frameworld_expand_deposit = {
+			DEPOSIT = d_frameworld_reorganise_expansion
+			VAR = giga_frameworld_reorganise_expansions
+		}
+		custom_tooltip = frameworld_line
+		change_planet_size = 1
 
-		# hidden_effect = {
-		# 	giga_frameworld_update_entity_with_fallback = yes
-		# 	frameworld_conduct_audit_check_ai = yes
-		# }
-		# set_planet_flag = giga_frameworld_reorganise
-		# set_planet_flag = giga_frameworld_reorganise_dec
-		# owner = {
-		# 	start_situation = {
-		# 		type = giga_situation_frameworld_decisions
-		# 	}
-		# }
+		hidden_effect = {
+			giga_frameworld_update_entity_with_fallback = yes
+			frameworld_conduct_audit_check_ai = yes
+		}
+		set_planet_flag = giga_frameworld_reorganise
+		set_planet_flag = giga_frameworld_reorganise_dec
+		owner = {
+			start_situation = {
+				type = giga_situation_frameworld_decisions
+			}
+		}
 	}
 	
 	ai_weight = {
@@ -909,204 +812,186 @@ giga_frameworld_consume_world = {
 	}
 
 	effect = {
-		# owner = {
-		# 	set_variable = {
-		# 		which = fwt_decision_time
-		# 		value = 360
-		# 	}
-		# }
-		add_decision_time = {
-			TIME = 360
-			NAME = giga_frameworld_consume_world
-			NAME1 = d_frameworld_expansion 
-			NAME2 = d_frameworld_devour_expansion
-			NAME_SIZE1 = 1
+		set_planet_flag = giga_frameworld_consume_world
+		set_planet_flag = giga_frameworld_consume_world_dec
+		giga_frameworld_expand_deposit = {
+			DEPOSIT = d_frameworld_expansion
+			VAR = giga_frameworld_expansions
 		}
-		# set_planet_flag = giga_frameworld_consume_world
-		# set_planet_flag = giga_frameworld_consume_world_dec
-		# giga_frameworld_expand_deposit = {
-		# 	DEPOSIT = d_frameworld_expansion
-		# 	VAR = giga_frameworld_expansions
-		# }
-		# custom_tooltip = frameworld_line
-		# giga_frameworld_expand_deposit = {
-		# 	DEPOSIT = d_frameworld_devour_expansion
-		# 	VAR = giga_frameworld_devour_expansions
-		# }
-		# custom_tooltip = frameworld_line
-		# change_planet_size = 1
+		custom_tooltip = frameworld_line
+		giga_frameworld_expand_deposit = {
+			DEPOSIT = d_frameworld_devour_expansion
+			VAR = giga_frameworld_devour_expansions
+		}
+		custom_tooltip = frameworld_line
+		change_planet_size = 1
 
-		# custom_tooltip = frameworld_line
+		custom_tooltip = frameworld_line
 
-		# hidden_effect = {
-		# 	from = {
-		# 		random_owned_fleet = {
-		# 			limit = {
-		# 				is_consumable_frameworld_outpost = yes
-		# 			}
-		# 			orbit = {
-		# 				save_event_target_as = consumed_world
-		# 				add_deposit = d_frameworld_terravore_damage
-		# 			}
-		# 		}
-		# 	}
-		# }
+		hidden_effect = {
+			from = {
+				random_owned_fleet = {
+					limit = {
+						is_consumable_frameworld_outpost = yes
+					}
+					orbit = {
+						save_event_target_as = consumed_world
+						add_deposit = d_frameworld_terravore_damage
+					}
+				}
+			}
+		}
 
-		# if = {
-		# 	limit = {
-		# 		has_bug_branch = yes
-		# 		from = {
-		# 			is_machine_empire = yes
-		# 		}
-		# 	}
-		# 	random_list = {
-		# 		10 = {
-		# 			create_pop = {
-		# 				species = owner_main_species
-		# 			}
+		if = {
+			limit = {
+				has_bug_branch = yes
+				from = {
+					is_machine_empire = yes
+				}
+			}
+			random_list = {
+				10 = {
+					create_pop = {
+						species = owner_main_species
+					}
 
-		# 			create_message = {
-		# 				type = MESSAGE_TERRAVORE_CONSUME_WORLD
-		# 				localization = MESSAGE_BUGGED_MACHINE_TERRAVORE_CONSUME_WORLD_POP_TEXT
-		# 				days = 30
-		# 				target = event_target:consumed_world
+					create_message = {
+						type = MESSAGE_TERRAVORE_CONSUME_WORLD
+						localization = MESSAGE_BUGGED_MACHINE_TERRAVORE_CONSUME_WORLD_POP_TEXT
+						days = 30
+						target = event_target:consumed_world
 
-		# 				variable = {
-		# 					type = name
-		# 					localization = PLANET
-		# 					scope = event_target:consumed_world
-		# 				}
-		# 			}
-		# 		}
-		# 		10 = {
-		# 			owner = {
-		# 				add_monthly_resource_mult = {
-		# 					resource = minerals
-		# 					value = 3
-		# 					min = @tier1materialmin
-		# 					max = @tier1materialmax
-		# 				}
-		# 			}
+						variable = {
+							type = name
+							localization = PLANET
+							scope = event_target:consumed_world
+						}
+					}
+				}
+				10 = {
+					owner = {
+						add_monthly_resource_mult = {
+							resource = minerals
+							value = 3
+							min = @tier1materialmin
+							max = @tier1materialmax
+						}
+					}
 
-		# 			create_message = {
-		# 				type = MESSAGE_TERRAVORE_CONSUME_WORLD
-		# 				localization = MESSAGE_BUGGED_MACHINE_TERRAVORE_CONSUME_WORLD_MINERALS_TEXT
-		# 				days = 30
-		# 				target = event_target:consumed_world
+					create_message = {
+						type = MESSAGE_TERRAVORE_CONSUME_WORLD
+						localization = MESSAGE_BUGGED_MACHINE_TERRAVORE_CONSUME_WORLD_MINERALS_TEXT
+						days = 30
+						target = event_target:consumed_world
 
-		# 				variable = {
-		# 					type = name
-		# 					localization = PLANET
-		# 					scope = event_target:consumed_world
-		# 				}
-		# 			}
-		# 		}
-		# 		10 = {
-		# 			owner = {
-		# 				add_monthly_resource_mult = {
-		# 					resource = alloys
-		# 					value = 2
-		# 					min = @tier1materialmin
-		# 					max = @tier1materialmax
-		# 				}
-		# 			}
+						variable = {
+							type = name
+							localization = PLANET
+							scope = event_target:consumed_world
+						}
+					}
+				}
+				10 = {
+					owner = {
+						add_monthly_resource_mult = {
+							resource = alloys
+							value = 2
+							min = @tier1materialmin
+							max = @tier1materialmax
+						}
+					}
 
-		# 			create_message = {
-		# 				type = MESSAGE_TERRAVORE_CONSUME_WORLD
-		# 				localization = MESSAGE_BUGGED_MACHINE_TERRAVORE_CONSUME_WORLD_ALLOYS_TEXT
-		# 				days = 30
-		# 				target = event_target:consumed_world
+					create_message = {
+						type = MESSAGE_TERRAVORE_CONSUME_WORLD
+						localization = MESSAGE_BUGGED_MACHINE_TERRAVORE_CONSUME_WORLD_ALLOYS_TEXT
+						days = 30
+						target = event_target:consumed_world
 
-		# 				variable = {
-		# 					type = name
-		# 					localization = PLANET
-		# 					scope = event_target:consumed_world
-		# 				}
-		# 			}
-		# 		}
-		# 	}
-		# }
-		# else = {
-		# 	random_list = {
-		# 		10 = {
-		# 			create_pop = {
-		# 				species = owner_main_species
-		# 			}
+						variable = {
+							type = name
+							localization = PLANET
+							scope = event_target:consumed_world
+						}
+					}
+				}
+			}
+		}
+		else = {
+			random_list = {
+				10 = {
+					create_pop = {
+						species = owner_main_species
+					}
 
-		# 			create_message = {
-		# 				type = MESSAGE_TERRAVORE_CONSUME_WORLD
-		# 				localization = MESSAGE_TERRAVORE_CONSUME_WORLD_POP_TEXT
-		# 				days = 30
-		# 				target = event_target:consumed_world
+					create_message = {
+						type = MESSAGE_TERRAVORE_CONSUME_WORLD
+						localization = MESSAGE_TERRAVORE_CONSUME_WORLD_POP_TEXT
+						days = 30
+						target = event_target:consumed_world
 
-		# 				variable = {
-		# 					type = name
-		# 					localization = PLANET
-		# 					scope = event_target:consumed_world
-		# 				}
-		# 			}
-		# 		}
-		# 		10 = {
-		# 			owner = {
-		# 				add_monthly_resource_mult = {
-		# 					resource = minerals
-		# 					value = 3
-		# 					min = @tier1materialmin
-		# 					max = @tier1materialmax
-		# 				}
-		# 			}
+						variable = {
+							type = name
+							localization = PLANET
+							scope = event_target:consumed_world
+						}
+					}
+				}
+				10 = {
+					owner = {
+						add_monthly_resource_mult = {
+							resource = minerals
+							value = 3
+							min = @tier1materialmin
+							max = @tier1materialmax
+						}
+					}
 
-		# 			create_message = {
-		# 				type = MESSAGE_TERRAVORE_CONSUME_WORLD
-		# 				localization = MESSAGE_TERRAVORE_CONSUME_WORLD_MINERALS_TEXT
-		# 				days = 30
-		# 				target = event_target:consumed_world
+					create_message = {
+						type = MESSAGE_TERRAVORE_CONSUME_WORLD
+						localization = MESSAGE_TERRAVORE_CONSUME_WORLD_MINERALS_TEXT
+						days = 30
+						target = event_target:consumed_world
 
-		# 				variable = {
-		# 					type = name
-		# 					localization = PLANET
-		# 					scope = event_target:consumed_world
-		# 				}
-		# 			}
-		# 		}
-		# 		10 = {
-		# 			owner = {
-		# 				add_monthly_resource_mult = {
-		# 					resource = alloys
-		# 					value = 2
-		# 					min = @tier1materialmin
-		# 					max = @tier1materialmax
-		# 				}
-		# 			}
+						variable = {
+							type = name
+							localization = PLANET
+							scope = event_target:consumed_world
+						}
+					}
+				}
+				10 = {
+					owner = {
+						add_monthly_resource_mult = {
+							resource = alloys
+							value = 2
+							min = @tier1materialmin
+							max = @tier1materialmax
+						}
+					}
 
-		# 			create_message = {
-		# 				type = MESSAGE_TERRAVORE_CONSUME_WORLD
-		# 				localization = MESSAGE_TERRAVORE_CONSUME_WORLD_ALLOYS_TEXT
-		# 				days = 30
-		# 				target = event_target:consumed_world
+					create_message = {
+						type = MESSAGE_TERRAVORE_CONSUME_WORLD
+						localization = MESSAGE_TERRAVORE_CONSUME_WORLD_ALLOYS_TEXT
+						days = 30
+						target = event_target:consumed_world
 
-		# 				variable = {
-		# 					type = name
-		# 					localization = PLANET
-		# 					scope = event_target:consumed_world
-		# 				}
-		# 			}
-		# 		}
-		# 	}
-		# }
-		# reroll_random = yes
+						variable = {
+							type = name
+							localization = PLANET
+							scope = event_target:consumed_world
+						}
+					}
+				}
+			}
+		}
+		reroll_random = yes
 
-		# custom_tooltip = giga_frameworld_consume_world_effect
+		custom_tooltip = giga_frameworld_consume_world_effect
 
-		# hidden_effect = {
-		# 	giga_frameworld_update_entity_with_fallback = yes
-		# 	frameworld_conduct_audit_check_ai = yes
-		# }
-		# owner = {
-		# 	start_situation = {
-		# 		type = giga_situation_frameworld_decisions
-		# 	}
-		# }
+		hidden_effect = {
+			giga_frameworld_update_entity_with_fallback = yes
+			frameworld_conduct_audit_check_ai = yes
+		}
 	}
 
 	ai_weight = {
@@ -1142,7 +1027,7 @@ giga_frameworld_nanite_consume_world = {
 	sound = event_structural_collapse
 	owned_planets_only = yes
 
-	enactment_time = 0
+	enactment_time = 720
 
 	resources = {
 		category = decisions
@@ -1180,69 +1065,62 @@ giga_frameworld_nanite_consume_world = {
 	}
 
 	effect = {
-		add_decision_time = { 
-			TIME = 720
-			NAME = giga_frameworld_nanite_consume_world
-			NAME1 = d_frameworld_expansion 
-			NAME2 = d_frameworld_nanite_expansion
-			NAME_SIZE1 = 1
+		giga_frameworld_expand_deposit = {
+			DEPOSIT = d_frameworld_expansion
+			VAR = giga_frameworld_expansions
 		}
-		# giga_frameworld_expand_deposit = {
-		# 	DEPOSIT = d_frameworld_expansion
-		# 	VAR = giga_frameworld_expansions
-		# }
-		# custom_tooltip = frameworld_line
-		# giga_frameworld_expand_deposit = {
-		# 	DEPOSIT = d_frameworld_nanite_expansion
-		# 	VAR = giga_frameworld_nanite_expansions
-		# }
-		# custom_tooltip = frameworld_line
-		# change_planet_size = 1
+		custom_tooltip = frameworld_line
+		giga_frameworld_expand_deposit = {
+			DEPOSIT = d_frameworld_nanite_expansion
+			VAR = giga_frameworld_nanite_expansions
+		}
+		custom_tooltip = frameworld_line
+		change_planet_size = 1
 
-		# custom_tooltip = frameworld_line
+		custom_tooltip = frameworld_line
 
-		# hidden_effect = {
-		# 	from = {
-		# 		random_owned_fleet = {
-		# 			limit = {
-		# 				is_nanite_consumable_frameworld_outpost = yes
-		# 			}
-		# 			orbit = {
-		# 				save_event_target_as = consumed_world
-		# 				add_deposit = d_frameworld_nanite_damage
-		# 			}
-		# 		}
-		# 	}
-		# }
+		hidden_effect = {
+			from = {
+				random_owned_fleet = {
+					limit = {
+						is_nanite_consumable_frameworld_outpost = yes
+					}
+					orbit = {
+						save_event_target_as = consumed_world
+						add_deposit = d_frameworld_nanite_damage
+					}
+				}
+			}
+		}
 
-		# owner = {
-		# 	add_monthly_resource_mult = {
-		# 		resource = nanites
-		# 		value = 1
-		# 		min = @tier1materialmin
-		# 		max = @tier1materialmax
-		# 	}
-		# }
+		owner = {
+			add_monthly_resource_mult = {
+				resource = nanites
+				value = 1
+				min = @tier1materialmin
+				max = @tier1materialmax
+			}
+		}
 
-		# create_message = {
-		# 	type = MESSAGE_TERRAVORE_CONSUME_WORLD
-		# 	localization = MESSAGE_NANOTECH_CONSUME_WORLD_1_TEXT
-		# 	days = 30
-		# 	target = event_target:consumed_world
+		create_message = {
+			type = MESSAGE_TERRAVORE_CONSUME_WORLD
+			localization = MESSAGE_NANOTECH_CONSUME_WORLD_1_TEXT
+			days = 30
+			target = event_target:consumed_world
 
-		# 	variable = {
-		# 		type = name
-		# 		localization = PLANET
-		# 		scope = event_target:consumed_world
-		# 	}
-		# }
+			variable = {
+				type = name
+				localization = PLANET
+				scope = event_target:consumed_world
+			}
+		}
 
-		# custom_tooltip = giga_frameworld_nanite_consume_world_effect
+		custom_tooltip = giga_frameworld_nanite_consume_world_effect
 
-		# hidden_effect = {
-		# 	giga_frameworld_update_entity_with_fallback = yes
-		# 	frameworld_conduct_audit_check_ai = yes
-		# }
+		hidden_effect = {
+			giga_frameworld_update_entity_with_fallback = yes
+			frameworld_conduct_audit_check_ai = yes
+		}
 	}
 
 	ai_weight = {
