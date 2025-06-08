@@ -1,0 +1,28 @@
+exclude = {
+    #automation, use our own
+    building_automation_1
+    building_automation_2
+    building_automation_city_1
+    building_automation_city_2
+    building_automation_farming_1
+    building_automation_farming_2
+    building_automation_mining_1
+    building_automation_mining_2
+    building_automation_generator_1
+    building_automation_generator_2
+    building_fwt_automation_factory_1
+    building_fwt_automation_factory_2
+    building_fwt_automation_foundry_1
+    building_fwt_automation_foundry_2
+    building_fwt_automation_generator_1
+    building_fwt_automation_generator_2
+    building_fwt_automation_mining_1
+    building_fwt_automation_mining_2
+    building_fwt_automation_farming_1
+    building_fwt_automation_farming_2
+    building_fwt_automation_unity_1
+    building_fwt_automation_unity_2
+    building_fwt_automation_science_1
+    building_fwt_automation_science_2
+    $DISTRICT$
+}

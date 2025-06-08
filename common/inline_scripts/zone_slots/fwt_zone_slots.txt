@@ -1,0 +1,5 @@
+zone_slots = {
+    fwt_slot_city_government
+    fwt_slot_city_01
+    fwt_slot_city_02
+}

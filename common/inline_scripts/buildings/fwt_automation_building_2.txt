@@ -12,6 +12,7 @@ potential = {
         is_wilderness_empire = no
         giga_has_frameworld_origin = yes
     }
+    giga_is_frame_world = yes
 }
 
 
@@ -57,7 +58,7 @@ resources = {
         minerals = @b3_minerals
     }
     upkeep = {
-        energy = @b4_upkeep
+        energy = @[ b4_upkeep * 3 ]
         mult = value:fwt_districts_value|DISTRICT|district_giga_frameworld_urban_$DISTRICT$|COMPLETION|$COMPLETION$|
     }
     upkeep = {
@@ -67,13 +68,13 @@ resources = {
                 has_tradition = tr_est_cybernetics_1
             }
         }
-        energy = -2
-        mult = value:generator_districts_value
+        energy = -6
+        mult = value:fwt_districts_value|DISTRICT|district_giga_frameworld_urban_$DISTRICT$|COMPLETION|$COMPLETION$|
     }
 }
 
 prerequisites = {
-    tech_assembly_pattern
+    tech_construction_templates
 }
 
 show_tech_unlock_if = {

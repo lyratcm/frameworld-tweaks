@@ -56,12 +56,9 @@ district_giga_frameworld_city = {
 	icon = district_city
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	# default_starting_district = yes
 
-	zone_slots = {
-		slot_city_government
-		slot_city_01
-		slot_city_02
+	inline_script = {
+		script = zone_slots/fwt_zone_slots
 	}
 
 	show_on_uncolonized = {
@@ -85,9 +82,6 @@ district_giga_frameworld_city = {
 	convert_to = {
 		district_giga_frameworld_nexus
 		district_giga_frameworld_hive
-		district_giga_frameworld_city_advanced
-		district_giga_frameworld_nexus_advanced
-		district_giga_frameworld_hive_advanced
 	}
 	
 	resources = {
@@ -171,12 +165,9 @@ district_giga_frameworld_hive = {
 	icon = district_hive
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	# default_starting_district = yes
 
-	zone_slots = {
-		slot_city_government
-		slot_city_01
-		slot_city_02
+	inline_script = {
+		script = zone_slots/fwt_zone_slots
 	}
 
 	show_on_uncolonized = {
@@ -196,9 +187,6 @@ district_giga_frameworld_hive = {
 	convert_to = {
 		district_giga_frameworld_nexus
 		district_giga_frameworld_city
-		district_giga_frameworld_city_advanced
-		district_giga_frameworld_nexus_advanced
-		district_giga_frameworld_hive_advanced
 	}
 	
 	resources = {
@@ -266,12 +254,9 @@ district_giga_frameworld_nexus = {
 	icon = district_nexus
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
-	# default_starting_district = yes
 
-	zone_slots = {
-		slot_city_government
-		slot_city_01
-		slot_city_02
+	inline_script = {
+		script = zone_slots/fwt_zone_slots
 	}
 
 	show_on_uncolonized = {
@@ -314,10 +299,6 @@ district_giga_frameworld_nexus = {
 	convert_to = {
 		district_giga_frameworld_city
 		district_giga_frameworld_hive
-		
-		district_giga_frameworld_city_advanced
-		district_giga_frameworld_nexus_advanced
-		district_giga_frameworld_hive_advanced
 	}
 	
 	resources = {
@@ -534,7 +515,7 @@ district_giga_frameworld_urban_09 = {
 
 
 district_giga_frameworld_extra_01 = {
-	icon = district_rw_commercial
+	icon = district_city
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
@@ -552,7 +533,7 @@ district_giga_frameworld_extra_01 = {
 }
 
 district_giga_frameworld_extra_02 = {
-	icon = district_rw_commercial
+	icon = district_city
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
@@ -570,7 +551,7 @@ district_giga_frameworld_extra_02 = {
 }
 
 district_giga_frameworld_extra_03 = {
-	icon = district_rw_commercial
+	icon = district_city
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes

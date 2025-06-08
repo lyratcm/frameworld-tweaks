@@ -2,11 +2,11 @@
 # initial cost for expansion decision
 @giga_frameworld_expansion_cost_base = 550
 # incremental multiplier for expansion decision
-@giga_frameworld_expansion_cost_exponent = 1.11 #1.14 #1.15
+@giga_frameworld_expansion_cost_exponent = 1.12 #1.14 #1.15
 
 # hab tech unlock hab upgrade now
 # @giga_frameworld_expansion_exponent_habitat = -0.03  -0.04
-@giga_frameworld_expansion_exponent_voidborne = -0.02 #-0.04
+@giga_frameworld_expansion_exponent_voidborne = -0.03 #-0.04
 # spread over 2 techs
 @fwt_frameworld_expansion_exponent_mega_engineering = -0.01
 @giga_frameworld_expansion_exponent_ringworld = -0.02 #-0.03
@@ -28,6 +28,3 @@
 
 #time that the frameworld expansion normally takes
 @fwt_frameworld_auto_expansion_time = 360
-
-# nanite expansion decision
-@giga_frameworld_nanites_expansion_cost_base = 50000

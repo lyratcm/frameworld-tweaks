@@ -59,7 +59,6 @@ fwt_auto_harvest = {
 		exists = owner
 		owner = {
 			giga_has_frameworld_origin = yes
-			not = { country_has_situation = { SITUATION = fwt_situation_continuous_expansion } }
 		}
 		giga_is_frame_world = yes
 	}

@@ -63,7 +63,7 @@ building_fwt_automation_city_1 = {
             minerals = @b2_minerals
         }
         upkeep = {
-            energy = @b4_upkeep
+            energy = @[ b4_upkeep * 3 ]
             mult = value:fwt_city_districts_value
         }
         upkeep = {
@@ -73,7 +73,7 @@ building_fwt_automation_city_1 = {
                     has_tradition = tr_est_cybernetics_1
                 }
             }
-            energy = -2
+            energy = -6
             mult = value:fwt_city_districts_value
         }
     }
@@ -124,6 +124,7 @@ building_fwt_automation_city_2 = {
             is_wilderness_empire = no
             giga_has_frameworld_origin = yes
         }
+        giga_is_frame_world = yes
     }
 
     allow = {
@@ -168,7 +169,7 @@ building_fwt_automation_city_2 = {
             minerals = @b3_minerals
         }
         upkeep = {
-            energy = @b5_upkeep
+            energy = @[b5_upkeep * 3 ]
             mult = value:fwt_city_districts_value
         }
         upkeep = {
@@ -178,7 +179,7 @@ building_fwt_automation_city_2 = {
                     has_tradition = tr_est_cybernetics_1
                 }
             }
-            energy = -2.4
+            energy = -7.2
             mult = value:fwt_city_districts_value
         }
     }
@@ -209,6 +210,43 @@ building_fwt_automation_city_2 = {
             }
         }
         text = automation_city_tooltip
+    }
+}
+
+
+building_fwt_automation_foundry_1 = {
+    inline_script = {
+        script = buildings/fwt_automation_building_1
+        ZONE = foundry
+        DISTRICT = 01
+        COMPLETION = alloy
+    }
+}
+
+building_fwt_automation_foundry_2 = {
+    inline_script = {
+        script = buildings/fwt_automation_building_2
+        ZONE = foundry
+        DISTRICT = 01
+        COMPLETION = alloy
+    }
+}
+
+building_fwt_automation_factory_1 = {
+    inline_script = {
+        script = buildings/fwt_automation_building_1
+        ZONE = factory
+        DISTRICT = 02
+        COMPLETION = consumer_goods
+    }
+}
+
+building_fwt_automation_factory_2 = {
+    inline_script = {
+        script = buildings/fwt_automation_building_2
+        ZONE = factory
+        DISTRICT = 02
+        COMPLETION = consumer_goods
     }
 }
 
@@ -245,42 +283,6 @@ building_fwt_automation_mining_2 = {
         ZONE = mining
         DISTRICT = 04
         COMPLETION = mineral
-    }
-}
-
-building_fwt_automation_foundry_1 = {
-    inline_script = {
-        script = buildings/fwt_automation_building_1
-        ZONE = foundry
-        DISTRICT = 01
-        COMPLETION = alloy
-    }
-}
-
-building_fwt_automation_foundry_2 = {
-    inline_script = {
-        script = buildings/fwt_automation_building_2
-        ZONE = foundry
-        DISTRICT = 01
-        COMPLETION = alloy
-    }
-}
-
-building_fwt_automation_factory_1 = {
-    inline_script = {
-        script = buildings/fwt_automation_building_1
-        ZONE = factory
-        DISTRICT = 02
-        COMPLETION = consumer_goods
-    }
-}
-
-building_fwt_automation_factory_2 = {
-    inline_script = {
-        script = buildings/fwt_automation_building_2
-        ZONE = factory
-        DISTRICT = 02
-        COMPLETION = consumer_goods
     }
 }
 

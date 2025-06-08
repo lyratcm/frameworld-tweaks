@@ -48,6 +48,18 @@ inline_script = {
 	script = zones/shared_frameworld_non_urban_zone_modifiers
 }
 
+included_building_sets = {
+	urban
+	trade
+	automation
+	origin
+}
+
+inline_script = {
+	script = zones/fwt_all_exclude_building
+	DISTRICT = "building_fwt_automation_amenities_1	building_fwt_automation_amenities_2 building_fwt_automation_city_1 building_fwt_automation_city_2"
+}
+
 triggered_district_planet_modifier = {
 	job_trader_add = 300
 	mult = fwt_unity_trade_completion

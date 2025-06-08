@@ -89,7 +89,7 @@ giga_frameworld_decompressor = {
 	icon = decision_matter_decompressor
 	
 	prerequisites = {
-		giga_tech_automated_stripmine_2
+		tech_mega_engineering
 	}
 	
 	show_tech_unlock_if = {
@@ -441,9 +441,9 @@ giga_frameworld_advanced_sanctuary = {
 			influence = 150
 		}
 	}
-	prerequisites = {
-		tech_housing_2
-	}
+	# prerequisites = {
+	# 	tech_housing_2
+	# }
 	potential = {
 		always = no
 		exists = owner

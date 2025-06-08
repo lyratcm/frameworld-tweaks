@@ -12,12 +12,12 @@ potential = {
         is_wilderness_empire = no
         giga_has_frameworld_origin = yes
     }
+    giga_is_frame_world = yes
 }
 
 upgrades = {
     building_fwt_automation_$ZONE$_2
 }
-
 
 allow = {
     hidden_trigger = {
@@ -61,7 +61,17 @@ resources = {
         minerals = @b2_minerals
     }
     upkeep = {
-        energy = @b3_upkeep
+        energy = @[ b3_upkeep * 3 ]
+        mult = value:fwt_districts_value|DISTRICT|district_giga_frameworld_urban_$DISTRICT$|COMPLETION|$COMPLETION$|
+    }
+    upkeep = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_tradition = tr_est_cybernetics_1
+            }
+        }
+        energy = -4.8
         mult = value:fwt_districts_value|DISTRICT|district_giga_frameworld_urban_$DISTRICT$|COMPLETION|$COMPLETION$|
     }
 }

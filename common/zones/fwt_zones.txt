@@ -8,6 +8,48 @@
 @advanced_rare_upkeep = 1
 @advanced_time = 720
 
+fwt_zone_default = {
+	icon = GFX_diplomatic_weight_large
+	base_buildtime = @zone_buildtime
+	potential = { # planet scope
+	}
+
+	unlock = { # planet scope
+		NOT = {
+			has_designation = col_resort
+		}
+	}
+
+	resources = {
+		category = planet_zones
+		cost = {
+			minerals = @zone_cost
+		}
+	}
+
+	max_buildings = 6
+
+	include = {
+		all
+	}
+
+	inline_script = {
+		script = zones/fwt_all_exclude_building
+		DISTRICT = "building_fwt_automation_amenities_1	building_fwt_automation_amenities_2 building_fwt_automation_trade_1 building_fwt_automation_trade_2"
+	}
+
+	excluded_building_sets = {
+		generator
+		mining
+		farming
+		knights
+		betharian
+		fallen_empire_generator
+	}
+
+	ai_priority = 0
+}
+
 district_giga_frameworld_city = {
     base_buildtime = @city_time
     icon = GFX_colony_type_urban
@@ -33,8 +75,10 @@ district_giga_frameworld_city = {
     }
 
 	inline_script = {
-		script = zones/fwt_exclude_building
+		script = zones/fwt_all_exclude_building
+		DISTRICT = "building_fwt_automation_amenities_1	building_fwt_automation_amenities_2 building_fwt_automation_trade_1 building_fwt_automation_trade_2"
 	}
+
 
     max_buildings = 3
 
@@ -226,16 +270,7 @@ district_giga_frameworld_trade = {
 		uses_district_set = giga_frameworld
 	}
 
-    included_building_sets = {
-        urban
-        trade
-        automation
-        origin
-    }
 
-	inline_script = {
-		script = zones/fwt_exclude_building
-	}
 
 	convert_to = {
 		district_giga_frameworld_generator
@@ -485,6 +520,7 @@ district_giga_frameworld_science = {
 		physics
 		engineering
 		society
+		science
     }
 
 	inline_script = {
@@ -531,7 +567,8 @@ district_giga_frameworld_amenities = {
 	}
 
 	inline_script = {
-		script = zones/fwt_exclude_building
+		script = zones/fwt_all_exclude_building
+		DISTRICT = " building_fwt_automation_trade_1 building_fwt_automation_trade_2 building_fwt_automation_city_1 building_fwt_automation_city_2"
 	}
 
 	resources = {
@@ -635,8 +672,10 @@ district_giga_frameworld_amenities_dystopian = {
     show_in_tech = tech_planetary_government
 
 	inline_script = {
-		script = zones/fwt_exclude_building
+		script = zones/fwt_all_exclude_building
+		DISTRICT = "building_fwt_automation_trade_1 building_fwt_automation_trade_2 building_fwt_automation_city_1 building_fwt_automation_city_2"
 	}
+
 
 	convert_to = {
 		district_giga_frameworld_amenities
@@ -763,8 +802,10 @@ district_giga_frameworld_amenities_gestalt = {
 	}
 
 	inline_script = {
-		script = zones/fwt_exclude_building
+		script = zones/fwt_all_exclude_building
+		DISTRICT = "building_fwt_automation_trade_1 building_fwt_automation_trade_2 building_fwt_automation_city_1 building_fwt_automation_city_2"
 	}
+
 
     triggered_district_planet_modifier = {
 		job_patrol_drone_add = @frameworld_jobs_base

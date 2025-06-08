@@ -1,3 +1,5 @@
+# write documentaiotn - add to already existing situation log
+# decied what i want to city zones to be, having them be default feels weird but using upgraded is to effecicent?
 # look at efficiency being too good early
 # change starting zone to not be unlocked at game start?
 # bio trophy reductions

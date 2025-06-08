@@ -94,6 +94,24 @@ country_event = {
 			location = capital_scope
 		}
 
+		#### LYRA DOCS
+
+		create_point_of_interest = {
+			id = giga_frameworld_docs_chain.9
+			name = "fwt_frameworld_docs_changes_1"
+			desc = "fwt_frameworld_docs_changes_desc_1"
+			event_chain = "giga_frameworld_docs_chain"
+			location = capital_scope
+		}
+
+		create_point_of_interest = {
+			id = giga_frameworld_docs_chain.10
+			name = "fwt_frameworld_docs_changes_2"
+			desc = "fwt_frameworld_docs_changes_desc_2"
+			event_chain = "giga_frameworld_docs_chain"
+			location = capital_scope
+		}
+
 		##### END DOCS
 
 		# start outpost situation
@@ -277,7 +295,8 @@ country_event = {
 				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_09 ZONE = district_giga_frameworld_city }
 			}
 
-
+			remove_building = building_precinct_house
+			remove_building = building_stronghold
 			#####
 			remove_modifier = frameworld_building_wreck_fix
 

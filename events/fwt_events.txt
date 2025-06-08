@@ -24,7 +24,7 @@ country_event = {
             owner = {
                 set_variable = {
                     which = fwt_expansion_income
-                    value = 60
+                    value = 70
                 }
                 set_country_flag = fwt_maintenance_default
                 set_variable = {
