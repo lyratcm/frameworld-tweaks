@@ -11,7 +11,7 @@
 
 inline_script = {
 	script = planet/food/fwt_farmer_job_swap
-	jobs = @frameworld_jobs_base
+	jobs = $JOBS$
 	district = 1
 	extra_hive_jobs = @[ 100 * $SIZE_COST$ ]
 	multiplier_string = "mult = fwt_food_completion"

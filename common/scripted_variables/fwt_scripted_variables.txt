@@ -1,3 +1,8 @@
 @frameworld_housing_non_urban = -300
 @frameworld_jobs_base = 300
 @frameworld_housing_urban = 600
+@advanced_cost = 600
+@advanced_upkeep = 3
+@advanced_rare_upkeep = 1
+@advanced_rare_cost = 30
+@advanced_time = 720

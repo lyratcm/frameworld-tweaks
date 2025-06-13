@@ -6,6 +6,9 @@ inline_script = {
 	SIZE_COST = $SIZE_COST$
 	SIZE_COST = 0.5
 
+	JOBS = $JOBS$
+	JOBS = @frameworld_jobs_base
+
 	SCALE = $SCALE$
 	SCALE = 1
 

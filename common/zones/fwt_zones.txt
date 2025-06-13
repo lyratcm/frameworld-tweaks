@@ -532,7 +532,7 @@ district_giga_frameworld_science = {
 
 # amenities
 district_giga_frameworld_amenities = {
-	base_buildtime = @advanced_time
+
 	icon = GFX_colony_type_habitat_leisure
 
 	unlock = {
@@ -555,98 +555,17 @@ district_giga_frameworld_amenities = {
 
     show_in_tech = tech_holo_entertainment
 
-	convert_to = {
-		district_giga_frameworld_amenities_dystopian
-		district_giga_frameworld_amenities_gestalt
-	}
-
-	include = {
-		all
-	}
-
 	inline_script = {
-		script = zones/fwt_all_exclude_building
-		DISTRICT = " building_fwt_automation_trade_1 building_fwt_automation_trade_2 building_fwt_automation_city_1 building_fwt_automation_city_2"
+		script = districts/params/fwt_district_inline_amenities_params
+		JOB = "districts/parts/fwt_normal_amentity_swap"
 	}
 
-	resources = {
-		category = planet_districts
-		cost = {
-			minerals = @advanced_cost
-			mult = fwt_unity_trade_completion
-		}
-		upkeep = {
-			energy = @advanced_upkeep
-			mult = fwt_unity_trade_completion
-		}
-		cost = {
-			trigger = {
-				check_variable = { which = fwt_unity_trade_completion value > 1 }
-			}
-			exotic_gases = @advanced_rare_cost
-			mult = fwt_unity_trade_completion
-		}
-		upkeep = {
-			trigger = {
-				check_variable = { which = fwt_unity_trade_completion value > 1 }
-			}
-			exotic_gases = @advanced_rare_upkeep
-			mult = fwt_unity_trade_completion
-		}
-	}
-
-    planet_modifier = {
-        zone_building_slots_add = 3
-    }
-
-    inline_script = {
-        script = zones/shared_frameworld_non_urban_zone_modifiers
-    }
-
-    triggered_district_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { NOT = { has_valid_civic = civic_warrior_culture } }
-		}
-		modifier = {
-			job_entertainer_add = @frameworld_jobs_base
-		}
-		mult = fwt_unity_trade_completion
-	}
-
-    triggered_district_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_valid_civic = civic_warrior_culture }
-		}
-		modifier = {
-			job_duelist_add = @frameworld_jobs_base
-		}
-		mult = fwt_unity_trade_completion
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { NOT = { has_valid_civic = civic_warrior_culture } }
-		}
-		text = job_entertainer_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { has_valid_civic = civic_warrior_culture }
-		}
-		text = job_duelist_effect_desc
-	}
 }
 
 ###############################################################################################################
 # dystopian amenities
 
 district_giga_frameworld_amenities_dystopian = {
-	base_buildtime = @advanced_time
 	icon = GFX_colony_type_habitat_leisure
 
 	unlock = {
@@ -670,73 +589,14 @@ district_giga_frameworld_amenities_dystopian = {
     show_in_tech = tech_planetary_government
 
 	inline_script = {
-		script = zones/fwt_all_exclude_building
-		DISTRICT = "building_fwt_automation_trade_1 building_fwt_automation_trade_2 building_fwt_automation_city_1 building_fwt_automation_city_2"
-	}
-
-
-	convert_to = {
-		district_giga_frameworld_amenities
-		district_giga_frameworld_amenities_gestalt
-	}
-
-	resources = {
-		category = planet_districts
-		cost = {
-			minerals = @[ advanced_cost * 2 ]
-			mult = fwt_unity_trade_completion
-		}
-		upkeep = {
-			energy = @[ advanced_upkeep * 2 ]
-			mult = fwt_unity_trade_completion
-		}
-		cost = {
-			trigger = {
-				check_variable = { which = fwt_unity_trade_completion value > 1 }
-			}
-			exotic_gases = @advanced_rare_cost
-			mult = fwt_unity_trade_completion
-		}
-		upkeep = {
-			trigger = {
-				check_variable = { which = fwt_unity_trade_completion value > 1 }
-			}
-			exotic_gases = @advanced_rare_upkeep
-			mult = fwt_unity_trade_completion
-		}
-	}
-
-	include = {
-		all
-	}
-
-	triggered_desc = {
-		trigger = { always = yes }
-		text = district_giga_frameworld_amenities_dystopian_limit
-	}
-
-	inline_script = {
-		script = zones/shared_frameworld_non_urban_zone_modifiers
-	}
-
-	triggered_district_planet_modifier = {
-		potential = { always = yes }
-		planet_amenities_add = 200
-	}
-
-	inline_script = {
-		script = "planet/rulers/fwt_ruler_part_job_swap"
-		jobs = @frameworld_jobs_base
-		district = @yes
-		condition = "owner = { is_gestalt = no }"
-		multiplier_string = "mult = fwt_consumer_unity_trade_completion"
+		script = districts/params/fwt_district_inline_amenities_params
+		JOB = "districts/parts/fwt_dystopian_amentity_swap"
 	}
 }
 
 ###############################################################################################################
 # gestalt amenities
 district_giga_frameworld_amenities_gestalt = {
-	base_buildtime = @advanced_time
 	icon = GFX_colony_type_habitat_leisure
 
 	unlock = {
@@ -754,97 +614,9 @@ district_giga_frameworld_amenities_gestalt = {
 		}
 		uses_district_set = giga_frameworld
 	}
-	#change to a gestal starting tech
-    # show_in_tech = tech_unity_of_purpose
-
-	convert_to = {
-		district_giga_frameworld_amenities_dystopian
-		district_giga_frameworld_amenities
-	}
-
-	resources = {
-		category = planet_districts
-		cost = {
-			rare_crystals = @advanced_rare_cost
-			mult = fwt_unity_trade_completion
-		}
-		upkeep = {
-			rare_crystals = @advanced_rare_upkeep
-			mult = fwt_unity_trade_completion
-		}
-		cost = {
-			trigger = {
-				check_variable = { which = fwt_unity_trade_completion value > 1 }
-			}
-			rare_crystals = @advanced_rare_cost
-			mult = fwt_unity_trade_completion
-		}
-		upkeep = {
-			trigger = {
-				check_variable = { which = fwt_unity_trade_completion value > 1 }
-			}
-			rare_crystals = @advanced_rare_upkeep
-			mult = fwt_unity_trade_completion
-		}
-	}
-    planet_modifier = {
-        zone_building_slots_add = 3
-    }
-
-    inline_script = {
-        script = zones/shared_city_non_urban_zone_modifiers
-    }
-
-	include = {
-		all
-	}
 
 	inline_script = {
-		script = zones/fwt_all_exclude_building
-		DISTRICT = "building_fwt_automation_trade_1 building_fwt_automation_trade_2 building_fwt_automation_city_1 building_fwt_automation_city_2"
-	}
-
-
-    triggered_district_planet_modifier = {
-		job_patrol_drone_add = @frameworld_jobs_base
-		mult = fwt_unity_trade_completion
-	}
-
-    # triggered_district_planet_modifier = {
-	# 	potential = {
-	# 		always = yes
-	# 	}
-	# 	modifier = {
-	# 		job_logistics_drone_add = @[ 100 * 1.25 ]
-	# 	}
-	# 	mult = fwt_consumer_unity_trade_completion
-	# }
-
-    # triggered_district_planet_modifier = {
-	# 	potential = {
-	# 		has_planet_flag = frameworld_advanced_city
-	# 	}
-	# 	modifier = {
-	# 		job_frame_maintenance_overseer_add = @[ 100 * 1.25 ]
-	# 		job_maintenance_drone_add = @[ -100 * 1.25 ]
-	# 	}
-	# }
-	#
-	# triggered_desc = {
-	# 	text = job_maintenance_drone_effect_desc
-	# }
-	#
-	# triggered_desc = {
-	# 	trigger = {
-	# 		has_deposit = d_frameworld_advanced_nexus
-	# 	}
-	# 	text = job_frame_maintenance_overseer_effect_desc
-	# }
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		text = job_patrol_drone_effect_desc
+		script = districts/params/fwt_district_inline_amenities_params
+		JOB = "districts/parts/fwt_gestalt_amentity_swap"
 	}
 }

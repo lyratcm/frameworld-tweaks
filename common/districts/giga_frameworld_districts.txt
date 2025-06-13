@@ -387,6 +387,7 @@ district_giga_frameworld_urban_01 = {
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
+		RARE = volatile_motes
 	}
 }
 
@@ -402,6 +403,7 @@ district_giga_frameworld_urban_02 = {
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
+		RARE = rare_crystals
 	}
 }
 
@@ -417,6 +419,7 @@ district_giga_frameworld_urban_03 = {
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
+		RARE = exotic_gases
 	}
 }
 
@@ -432,6 +435,7 @@ district_giga_frameworld_urban_04 = {
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
+		RARE = rare_crystals
 	}
 }
 
@@ -447,6 +451,7 @@ district_giga_frameworld_urban_05 = {
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
+		RARE = volatile_motes
 	}
 }
 
@@ -462,6 +467,7 @@ district_giga_frameworld_urban_06 = {
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
+		RARE = rare_crystals
 	}
 }
 
@@ -477,6 +483,7 @@ district_giga_frameworld_urban_07 = {
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
+		RARE = exotic_gases
 	}
 }
 
@@ -493,6 +500,7 @@ district_giga_frameworld_urban_08 = {
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
+		RARE = exotic_gases
 	}
 }
 
@@ -509,6 +517,7 @@ district_giga_frameworld_urban_09 = {
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
+		RARE = rare_crystals
 	}
 
 }
@@ -528,6 +537,7 @@ district_giga_frameworld_extra_01 = {
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
 		POTENTIAL = "has_planet_flag = frameworld_advanced_city"
+		RARE = energy
 	}
 
 }
@@ -546,6 +556,7 @@ district_giga_frameworld_extra_02 = {
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
 		POTENTIAL = "has_planet_flag = frameworld_advanced_city"
+		RARE = energy
 	}
 
 }
@@ -564,6 +575,7 @@ district_giga_frameworld_extra_03 = {
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
 		POTENTIAL = "has_planet_flag = frameworld_advanced_city"
+		RARE = energy
 	}
 
 }

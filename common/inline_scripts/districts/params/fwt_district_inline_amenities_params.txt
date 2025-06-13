@@ -1,0 +1,15 @@
+inline_script = {
+    script = districts/fwt_district_inline_amenities
+    SIZE = $SIZE$
+    SIZE = 0
+
+    SIZE_COST = $SIZE_COST$
+    SIZE_COST = 0.5
+
+    JOBS = $JOBS$
+    JOBS = @frameworld_jobs_base
+
+    SCALE = $SCALE$
+    SCALE = 1
+    JOB = $JOB$
+}
