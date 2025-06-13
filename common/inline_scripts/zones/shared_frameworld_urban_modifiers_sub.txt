@@ -3,11 +3,25 @@
 resources = {
     category = planet_districts
     cost = {
-        minerals = 300
+        minerals =  @advanced_cost
         mult = frame_expansion_scale
     }
     upkeep = {
-        energy = 2
+        energy = @advanced_upkeep
+        mult = frame_expansion_scale
+    }
+    cost = {
+        trigger = {
+            check_variable = { which = frame_expansion_scale value > 1 }
+        }
+        $RARE$ = @advanced_rare_cost
+        mult = frame_expansion_scale
+    }
+    upkeep = {
+        trigger = {
+            check_variable = { which = frame_expansion_scale value > 1 }
+        }
+        $RARE$ = @advanced_rare_upkeep
         mult = frame_expansion_scale
     }
 }
@@ -25,56 +39,5 @@ potential = {
 triggered_planet_modifier = {
     potential = { always = yes }
     planet_housing_add = @frameworld_housing_urban
-    mult = frame_expansion_scale
-}
-
-triggered_planet_modifier = {
-    potential = {
-        exists = owner
-        owner = {
-            has_valid_civic = civic_agrarian_idyll
-        }
-    }
-    modifier = {
-        planet_housing_add = @[ frameworld_housing_urban * 0.5 * -1 ]
-    }
-    mult = frame_expansion_scale
-}
-
-triggered_planet_modifier = {
-    potential = {
-        exists = owner
-        owner = { has_active_tradition = tr_prosperity_public_works }
-    }
-    modifier = {
-        planet_housing_add = @[ frameworld_housing_urban * 0.5 ]
-    }
-    mult = frame_expansion_scale
-}
-
-triggered_planet_modifier = {
-    potential = {
-        exists = owner
-        owner = {
-            has_technology = tech_housing_1
-        }
-    }
-    modifier = {
-        planet_housing_add = @[ frameworld_housing_urban * 0.5 ]
-    }
-    mult = frame_expansion_scale
-}
-
-triggered_planet_modifier = {
-    potential = {
-        exists = owner
-        owner = {
-            has_technology = tech_housing_2
-            NOT = { has_valid_civic = civic_agrarian_idyll }
-        }
-    }
-    modifier = {
-        planet_housing_add = @[ frameworld_housing_urban * 0.5 ]
-    }
     mult = frame_expansion_scale
 }

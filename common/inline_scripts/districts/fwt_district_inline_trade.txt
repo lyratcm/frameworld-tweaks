@@ -61,7 +61,7 @@ inline_script = {
 }
 
 triggered_district_planet_modifier = {
-	job_trader_add = 300
+	job_trader_add = $JOBS$
 	mult = fwt_unity_trade_completion
 }
 

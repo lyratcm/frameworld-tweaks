@@ -4,26 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="machines and hives now scale their extra jobs like bios do (bios would double their number after their assembly building)&#10;updated automation building desc to account for 3x jobs">
-      <change afterPath="$PROJECT_DIR$/common/decisions/zz_frameworld_general_decision.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/traditions/!!_fwt_est.txt" afterDir="false" />
+    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="updated frameworld automation scaling to be inline with vanilla&#10;fixed research distrcits getting +100 housing&#10;removed uneeded swap&#10;disabled maintenance protocol as no longer needed with civilians&#10;city distrcit automation upkeep scales&#10;moved uneeded code into hidden eff&#10;added my own custom tooltip for automation to show different upkeep for atuomation building rather than using vanillas numbers&#10;increase alloy/engergy upgrade cost&#10;fxied sci upgrade not halving districts">
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_amenities.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_amenities_params.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/districts/parts/fwt_dystopian_amentity_swap.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/districts/parts/fwt_gestalt_amentity_swap.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/districts/parts/fwt_normal_amentity_swap.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/buildings/fwt_automation_buildings.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/buildings/fwt_automation_buildings.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_expansion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_expansion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_upgrades.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_upgrades.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/governments/civics/fwt_frameworld_ow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/governments/civics/fwt_frameworld_ow.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/buildings/fwt_automation_building_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/buildings/fwt_automation_building_1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/buildings/fwt_automation_building_2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/buildings/fwt_automation_building_2.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_alloy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_alloy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/districts/giga_frameworld_districts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/districts/giga_frameworld_districts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_energy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_energy.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_factory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_factory.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_food.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_food.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_minerals.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_minerals.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_science.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_science.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_alloy_params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_alloy_params.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_loc/zz_giga_frameworld_scripted_loc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_loc/zz_giga_frameworld_scripted_loc.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/situations/fwt_decision_situations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/situations/fwt_decision_situations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_unity.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_unity.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_energy_params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_energy_params.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_factory_params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_factory_params.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_food_params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_food_params.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_minerals_params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_minerals_params.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_science_params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_science_params.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_trade_params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_trade_params.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_unity_params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_unity_params.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/zones/shared_frameworld_urban_modifiers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/zones/shared_frameworld_urban_modifiers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/zones/shared_frameworld_urban_modifiers_sub.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/zones/shared_frameworld_urban_modifiers_sub.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_variables/fwt_scripted_variables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_variables/fwt_scripted_variables.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/zones/fwt_zones.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/zones/fwt_zones.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localisation/english/fwt_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/english/fwt_frameworld_l_english.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plans.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plans.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,31 +79,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;4.0&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/common/decisions&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;two.files.diff.last.used.folder&quot;: &quot;C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "4.0",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/common/inline_scripts/districts/parts",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "two.files.diff.last.used.folder": "C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\districts\parts" />
+      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\districts\params" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\decisions" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\buildings" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\ship_sizes" />
-      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\situations" />
-      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\pop_jobs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common" />
@@ -211,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749410509261</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="updated frameworld automation scaling to be inline with vanilla&#10;fixed research distrcits getting +100 housing&#10;removed uneeded swap&#10;disabled maintenance protocol as no longer needed with civilians&#10;city distrcit automation upkeep scales&#10;moved uneeded code into hidden eff&#10;added my own custom tooltip for automation to show different upkeep for atuomation building rather than using vanillas numbers&#10;increase alloy/engergy upgrade cost&#10;fxied sci upgrade not halving districts">
+      <option name="closed" value="true" />
+      <created>1749831570382</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1749831570382</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -226,6 +240,7 @@
     <MESSAGE value="scaling for upgrade districts&#10;adding tag support for all zone (up from most)" />
     <MESSAGE value="increase base exponent, increased reduction from voidborne&#10;added info to the frameworld poi to show what i've changed&#10;updated automation exclude to not use inlines in an exclude&#10;allow multiple auto havests to run at once&#10;remove pre-4.o code&#10;increase default alloys assigned to auto expand&#10;overwrote ctiy zone/zone slots to use my own and allow for building filtering&#10;inlined city zones&#10;moved mineral upgrade 2 to mega engi as gigas move the tech to a kilo" />
     <MESSAGE value="added premtive support for eat building scaling&#10;disabled defensive stations pending gigas fix&#10;cleaned up expansion decision and scripted loc files" />
-    <option name="LAST_COMMIT_MESSAGE" value="added premtive support for eat building scaling&#10;disabled defensive stations pending gigas fix&#10;cleaned up expansion decision and scripted loc files" />
+    <MESSAGE value="updated frameworld automation scaling to be inline with vanilla&#10;fixed research distrcits getting +100 housing&#10;removed uneeded swap&#10;disabled maintenance protocol as no longer needed with civilians&#10;city distrcit automation upkeep scales&#10;moved uneeded code into hidden eff&#10;added my own custom tooltip for automation to show different upkeep for atuomation building rather than using vanillas numbers&#10;increase alloy/engergy upgrade cost&#10;fxied sci upgrade not halving districts" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated frameworld automation scaling to be inline with vanilla&#10;fixed research distrcits getting +100 housing&#10;removed uneeded swap&#10;disabled maintenance protocol as no longer needed with civilians&#10;city distrcit automation upkeep scales&#10;moved uneeded code into hidden eff&#10;added my own custom tooltip for automation to show different upkeep for atuomation building rather than using vanillas numbers&#10;increase alloy/engergy upgrade cost&#10;fxied sci upgrade not halving districts" />
   </component>
 </project>

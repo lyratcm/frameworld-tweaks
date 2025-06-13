@@ -41,7 +41,7 @@ resources = {
 
 inline_script = {
 	script = $JOB$
-	jobs = @frameworld_jobs_base
+	jobs = $JOBS$
 	district = 1
 	multiplier_string = "mult = fwt_unity_trade_completion"
 }

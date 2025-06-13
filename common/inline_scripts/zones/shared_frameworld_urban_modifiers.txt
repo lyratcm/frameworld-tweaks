@@ -2,4 +2,6 @@ inline_script = {
     script = zones/shared_frameworld_urban_modifiers_sub
     POTENTIAL = "$POTENTIAL$"
     POTENTIAL = ""
+
+    RARE = $RARE$
 }

@@ -1,0 +1,13 @@
+triggered_district_planet_modifier = {
+    job_patrol_drone_add = @frameworld_jobs_base
+    mult = fwt_unity_trade_completion
+}
+
+
+triggered_desc = {
+    trigger = {
+        exists = owner
+        owner = { is_gestalt = yes }
+    }
+    text = job_patrol_drone_effect_desc
+}
