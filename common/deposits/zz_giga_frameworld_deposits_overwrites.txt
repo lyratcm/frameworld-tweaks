@@ -348,7 +348,7 @@ d_frameworld_expansion = {
 
         planet_building_capacity_add = 0.05
         giga_frameworld_growth_jobs_add = 20
-        logistic_growth_mult  = 0.025
+        logistic_growth_mult = 0.025
         planet_decision_enact_speed_mult = 0.02
         planet_army_build_speed_mult = 0.02
         pop_purge_speed = 0.02
@@ -376,7 +376,6 @@ d_frameworld_expansion = {
             check_variable = { which = frame_expansion_scale value >= 4 }
             exists = owner
             owner = {
-				has_galactic_wonders = yes
                 giga_has_frameworld_origin = yes
             }
         }
@@ -392,6 +391,18 @@ d_frameworld_expansion = {
         pop_purge_speed = 0.15
         giga_pop_assimilation_speed = 0.15
     }
+
+    # triggered_planet_modifier = {
+    #     potential = {
+    #         exists = owner
+    #         owner = {
+    #             giga_has_frameworld_origin = yes
+    #         }
+    #     }
+    #     multiplier = value:fwt_growth_efficiency_value
+    #
+    #     logistic_growth_mult = 1
+    # }
 }
 
 d_frameworld_expansion_tooltip = {
@@ -729,29 +740,29 @@ d_frameworld_expanded_maintenance_protocol = {
     drop_weight = { weight = 0 }
     potential = { always = no }
 
-    triggered_planet_modifier = {
-        potential = {
-			owner = {
-				is_gestalt = no
-				has_country_flag = fwt_maintenance_default
-			}
-		}
-        multiplier = value:giga_frameworld_expanded_maintenance_multiplier
-
-        job_frame_maintenance_worker_add = 1
-    }
-
-    triggered_planet_modifier = {
-        potential = {
-			owner = {
-				is_gestalt = yes
-				has_country_flag = fwt_maintenance_default
-			}
-		}
-        multiplier = value:giga_frameworld_expanded_maintenance_multiplier
-
-        job_frame_maintenance_drone_add = 1
-    }
+    # triggered_planet_modifier = {
+    #     potential = {
+	# 		owner = {
+	# 			is_gestalt = no
+	# 			has_country_flag = fwt_maintenance_default
+	# 		}
+	# 	}
+    #     multiplier = value:giga_frameworld_expanded_maintenance_multiplier
+    #
+    #     job_frame_maintenance_worker_add = 1
+    # }
+    #
+    # triggered_planet_modifier = {
+    #     potential = {
+	# 		owner = {
+	# 			is_gestalt = yes
+	# 			has_country_flag = fwt_maintenance_default
+	# 		}
+	# 	}
+    #     multiplier = value:giga_frameworld_expanded_maintenance_multiplier
+    #
+    #     job_frame_maintenance_drone_add = 1
+    # }
 }
 
 d_frameworld_admin = {
@@ -840,9 +851,9 @@ d_frameworld_admin = {
 			giga_planet_has_zombie_assembly_facilities = no
 		}
 
-		job_roboticist_add = 0.5
+		job_roboticist_add = 0.25
 
-		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0|
+		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
 	triggered_planet_modifier = {
 		potential = {
@@ -857,9 +868,9 @@ d_frameworld_admin = {
 			giga_planet_has_zombie_assembly_facilities = no
 		}
 
-		job_giga_extra_healthcare_add = 1
+		job_giga_extra_healthcare_add = 0.5
 
-		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0.5|
+		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
 
 	####################################################################################################################
@@ -877,9 +888,9 @@ d_frameworld_admin = {
 			giga_planet_has_zombie_assembly_facilities = no
 		}
 
-		job_giga_cloning_add = 0.5
+		job_giga_cloning_add = 0.4
 
-		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0|
+		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
 
 	triggered_planet_modifier = {
@@ -894,7 +905,7 @@ d_frameworld_admin = {
 			giga_planet_has_zombie_assembly_facilities = no
 		}
 
-		job_giga_extra_healthcare_add = 1
+		job_giga_extra_healthcare_add = 0.5
 
 		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0.5|
 	}
@@ -915,7 +926,7 @@ d_frameworld_admin = {
 
 		job_reassigner_add = 0.5
 
-		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|8|fraction|0.25|offset|0.75|
+		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
 
 	triggered_planet_modifier = {
@@ -929,9 +940,9 @@ d_frameworld_admin = {
 			giga_planet_has_zombie_assembly_facilities = yes
 		}
 
-		job_giga_extra_healthcare_add = 1
+		job_giga_extra_healthcare_add = 0.75
 
-		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|8|fraction|0.75|offset|0|
+		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
 
 	####################################################################################################################
@@ -947,7 +958,7 @@ d_frameworld_admin = {
 			}
 		}
 
-		job_roboticist_add = 0.5
+		job_roboticist_add = 0.4
 
 		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
@@ -963,7 +974,7 @@ d_frameworld_admin = {
 			}
 		}
 
-		job_roboticist_add = 0.25
+		job_roboticist_add = 0.2
 
 		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
@@ -1079,6 +1090,21 @@ d_frameworld_hive = {
 
 		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
+
+    #bio growth from clone vats
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_hive_empire = yes
+                giga_has_frameworld_origin = yes
+            }
+            giga_planet_has_cloning_assembly_facilities = yes
+        }
+        job_spawning_drone_add = 0.1
+
+        multiplier = modifier:giga_frameworld_growth_jobs_add
+    }
 
 	####################################################################################################################
 	####################################################################################################################
@@ -1198,6 +1224,21 @@ d_frameworld_core = {
 		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
 
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_machine_empire = yes
+                giga_has_frameworld_origin = yes
+                has_synthetic_ascension = yes
+            }
+            not = { has_modifier = frameworld_crucible }
+        }
+        job_replicator_add = 0.2
+
+        multiplier = modifier:giga_frameworld_growth_jobs_add
+    }
+
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -1287,4 +1328,57 @@ d_frameworld_core = {
 			engineering_research = 5
 		}
 	}
+}
+
+d_frameworld_advanced_city = {
+    is_for_colonizable = yes
+    icon = d_nexus_district
+    category = deposit_cat_rare
+    use_for_min_max_adjustments = yes
+
+    drop_weight = { weight = 0 }
+    potential = { always = no }
+
+    planet_modifier = {
+        planet_jobs_produces_mult = 0.20
+        planet_pop_assembly_mult = 0.15
+        bonus_pop_growth_mult = 0.15
+        bonus_pop_growth = 0.15
+    }
+}
+
+
+d_frameworld_penrose = {
+    is_for_colonizable = yes
+    icon = unused/d_dyson_sphere
+    category = deposit_cat_rare
+    use_for_min_max_adjustments = yes
+
+    drop_weight = { weight = 0 }
+    potential = { always = no }
+
+    planet_modifier = {
+        planet_technician_energy_produces_add = 1
+        planet_technician_minerals_upkeep_add = 1
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = no
+            }
+        }
+        job_giga_dark_matter_weaver_add = 100
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        job_giga_dark_matter_weaver_drone_add = 100
+    }
 }

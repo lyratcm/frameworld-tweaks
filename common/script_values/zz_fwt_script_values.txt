@@ -466,6 +466,7 @@ fwt_city_districts_value = {
 		}
 		mode = add
 	}
+	mult = frame_expansion_scale
 }
 
 
@@ -480,6 +481,21 @@ fwt_districts_value = {
 	}
 	mult = fwt_$COMPLETION$_completion
 }
+
+fwt_growth_efficiency_value = {
+	base = 0.025
+	modifier = {
+		planet = { check_variable = { which = frame_expansion_scale value >= 2 } }
+		mult = 1.5
+	}
+	modifier = {
+		planet = { check_variable = { which = frame_expansion_scale value >= 4 } }
+		mult = 1.5
+	}
+	mult = modifier:pop_bonus_workforce_mult
+	mult = giga_frameworld_expansions
+}
+
 
 ######################################################
 

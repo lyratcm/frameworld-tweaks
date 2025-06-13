@@ -18,19 +18,6 @@ origin_frameworld = {
 
     initializers = { giga_frameworld_system }
 
-    swap_type = {
-        trigger = {
-            is_scope_valid = yes
-            has_authority = auth_machine_intelligence
-            nor = {
-                has_country_flag = driven_memory_aggregator
-                has_country_flag = driven_neural_chorus
-            }
-        }
-        modifier = {
-          colony_start_urban_districts_add = -1
-        }
-    }
 
     possible = {
         civics = {

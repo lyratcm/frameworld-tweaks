@@ -26,7 +26,7 @@ giga_frameworld_penrose = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 2500
+			alloys = 5000
 			influence = 150
 		}
 	}
@@ -101,7 +101,7 @@ giga_frameworld_decompressor = {
 	resources = {
 		category = megastructures
 		cost = {
-			alloys = 2500
+			alloys = 5000
 			influence = 150
 		}
 	}
@@ -129,10 +129,6 @@ giga_frameworld_decompressor = {
 		# custom_tooltip = giga_frameworld_upgrade_warning
 		custom_tooltip = giga_frameworld_decompressor_effect
 		set_planet_flag = frameworld_decompressor_started
-		# add_decision_time = {
-		# 	TIME = @fwt_giga_tier_time
-		# 	NAME = giga_frameworld_decompressor
-		# }
 		hidden_effect = {
 			# set_planet_flag = frameworld_upgrade
 			set_planet_flag = frameworld_decompressor_started
@@ -258,10 +254,6 @@ giga_frameworld_advanced_city = {
 			set_variable = { which = fwt_rare_resources_completion value = 2 }
 			set_variable = { which = fwt_city_completion value = 2 }
 			set_planet_flag = frameworld_advanced_city
-			if = {
-				limit = { has_planet_flag = frameworld_habitat_upgrade}
-				set_variable = { which = frame_expansion_scale value = 2 }
-			}
 		}
 		if = {
 			limit = { owner = { is_hive_empire = yes } }
@@ -292,6 +284,7 @@ giga_frameworld_advanced_city = {
 					check_variable = { which = frame_expansion_upgrade value >= 1 }
 				}
 				change_variable = { which = frame_expansion_scale value = 1 }
+				set_variable = { which = frame_expansion_upgrade value = 0 }
 			}
 			else = {
 				change_variable = { which = frame_expansion_upgrade value = 1 }
@@ -373,7 +366,6 @@ giga_frameworld_advanced_industrial = {
 				check_variable = { which = fwt_consumer_goods_completion value >= 2 }
 			}
 		}
-
 	}
 	
 	effect = {
@@ -387,13 +379,13 @@ giga_frameworld_advanced_industrial = {
 			set_variable = { which = fwt_city_completion value = 4 }
 			add_deposit = d_frameworld_advanced_industrial
 			set_planet_flag = frameworld_advanced_industrial
+			hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.008 } } }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_01 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_02 }
 			validate_planet_buildings_and_districts = yes
 			save_event_target_as = giga_planet
 			remove_planet_flag = giga_frameworld_advanced_industrial_dec
 		}
-		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.008 } } }
-		fwt_half_district = { DISTRICT = district_giga_frameworld_urban_01 }
-		fwt_half_district = { DISTRICT = district_giga_frameworld_urban_02 }
 	}
 	on_queued = {
 		hidden_effect = { set_planet_flag = giga_frameworld_advanced_industrial_dec }
@@ -640,6 +632,8 @@ giga_frameworld_computing_complex = {
 			set_variable = { which = fwt_science_completion value = 4 }
 			save_event_target_as = giga_planet
 			owner = { country_event = { id = giga_frameworld_origin.011 } }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_07 }
+			validate_planet_buildings_and_districts = yes
 		}
 	}
 
@@ -997,6 +991,7 @@ giga_frameworld_habitat_upgrade = {
 					check_variable = { which = frame_expansion_upgrade value >= 1 }
 				}
 				change_variable = { which = frame_expansion_scale value = 1 }
+				set_variable = { which = frame_expansion_upgrade value = 0 }
 			}
 			else = {
 				change_variable = { which = frame_expansion_upgrade value = 1 }

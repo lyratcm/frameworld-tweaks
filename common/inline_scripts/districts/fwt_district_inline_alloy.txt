@@ -35,7 +35,7 @@ inline_script = {
 
 inline_script = {
 	script = planet/alloys/fwt_foundry_job_swap
-	jobs = @frameworld_jobs_base
+	jobs = $JOBS$
 	multiplier_string = "mult = fwt_alloy_completion"
 }
 
@@ -50,7 +50,7 @@ triggered_desc = {
 	text = job_maintenance_drone_effect_desc
 }
 
-base_buildtime = @[ city_time * $SIZE_COST$ * $SCALE$ ]
+base_buildtime = @city_time
 
 resources = {
 	category = planet_districts_industrial

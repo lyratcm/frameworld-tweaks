@@ -54,7 +54,7 @@ planet_modifier = {
 }
 
 inline_script = {
-	script = zones/shared_city_non_urban_zone_modifiers
+	script = zones/shared_frameworld_non_urban_zone_modifiers
 }
 
 inline_script = {

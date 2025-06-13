@@ -61,7 +61,7 @@ resources = {
         minerals = @b2_minerals
     }
     upkeep = {
-        energy = @[ b3_upkeep * 3 ]
+        energy = @[ b3_upkeep * 1.5 ]
         mult = value:fwt_districts_value|DISTRICT|district_giga_frameworld_urban_$DISTRICT$|COMPLETION|$COMPLETION$|
     }
     upkeep = {
@@ -71,7 +71,7 @@ resources = {
                 has_tradition = tr_est_cybernetics_1
             }
         }
-        energy = -4.8
+        energy = 2.4
         mult = value:fwt_districts_value|DISTRICT|district_giga_frameworld_urban_$DISTRICT$|COMPLETION|$COMPLETION$|
     }
 }
@@ -84,6 +84,6 @@ show_tech_unlock_if = {
     always = no
 }
 
-triggered_desc = {
-    text = automation_tooltip
+desc = {
+    text = building_fwt_automation_1_upkeep
 }

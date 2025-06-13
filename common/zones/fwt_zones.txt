@@ -46,8 +46,6 @@ fwt_zone_default = {
 		betharian
 		fallen_empire_generator
 	}
-
-	ai_priority = 0
 }
 
 district_giga_frameworld_city = {

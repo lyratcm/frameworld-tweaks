@@ -465,6 +465,62 @@ define_text = {
     default = entertainer_icon
 }
 
+defined_text = {
+    name = fwt_automation_city_upkeep_1_swap
+    text = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_tradition = tr_est_cybernetics_1
+            }
+        }
+        fwt_automation_city_upkeep_1_est
+    }
+    default = fwt_automation_city_upkeep_1_no_est
+}
+
+defined_text = {
+    name = fwt_automation_city_upkeep_2_swap
+    text = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_tradition = tr_est_cybernetics_1
+            }
+        }
+        localization_key = fwt_automation_city_upkeep_2_est
+    }
+    default = fwt_automation_city_upkeep_2_no_est
+}
+
+defined_text = {
+    name = fwt_automation_upkeep_1_swap
+    text = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_tradition = tr_est_cybernetics_1
+            }
+        }
+        localization_key = fwt_automation_upkeep_1_est
+    }
+    default = fwt_automation_upkeep_1_no_est
+}
+
+defined_text = {
+    name = fwt_automation_upkeep_2_swap
+    text = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_tradition = tr_est_cybernetics_1
+            }
+        }
+        localization_key = fwt_automation_upkeep_2_est
+    }
+    default = fwt_automation_upkeep_2_no_est
+}
+
 # defined_text = {
 # 	name = fwt_situation_speed_script_value
 # 	value = value:total_pop_gain

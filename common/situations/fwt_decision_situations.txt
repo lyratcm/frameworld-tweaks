@@ -1,4 +1,3 @@
-
 giga_situation_frameworld_decisions = {
     picture = GFX_evt_space_station
     complete_icon = GFX_situation_outcome_unknown

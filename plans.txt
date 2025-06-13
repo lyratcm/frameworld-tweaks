@@ -2,6 +2,7 @@
 # decide what i want to city zones to be, having them be default feels weird but using upgraded is to effecicent?
 # look at efficiency being too good early - counter with higher expansion costs
 # bio trophy reductions
+# log for path to next upgrades
 
 # 16x bonuses - alderson disk maybe although the origin gets pretty strong as this point
 
