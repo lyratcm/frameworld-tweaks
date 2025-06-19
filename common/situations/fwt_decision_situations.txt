@@ -283,15 +283,16 @@ fwt_situation_frameworld_continuous_harvest = {
     picture = GFX_evt_space_station
     complete_icon = GFX_situation_outcome_unknown
     complete_icon_frame = GFX_situation_outcome_frame_blue
+
     monthly_progress = {
 		base = 4.17
 		modifier = {
 			mult = owner.value:fwt_mult_bonus_to_dec_mult|MODIFIER|megastructure_build_speed_mult|
-			desc = giga_situation_frameworld_outposts_expansion_decision_speed
+			desc = giga_situation_frameworld_outposts_expansion_kilostructure_speed_bonus
 		}
 		modifier = {
 			mult = 0
-			desc = giga_situation_frameworld_outposts_expansion_decision_speed
+			desc = giga_situation_frameworld_outposts_expansion_no_asteroids
 			or = {
 				current_situation_approach = fwt_situation_continuous_expansion_approach_pause
 				owner = {
@@ -299,8 +300,6 @@ fwt_situation_frameworld_continuous_harvest = {
 						has_country_flag = has_more_asteroids
 						has_country_flag = has_more_asteroids_1
 					}
-				}
-				owner = {
 					nand = {
 						has_country_flag = fwt_asteroid_harvesting_1
 						has_country_flag = fwt_asteroid_harvesting
@@ -318,38 +317,16 @@ fwt_situation_frameworld_continuous_harvest = {
 				}
 				random_planet_within_border = {
 					limit = {
-						or = {
-							is_planet_class = pc_asteroid
-							is_planet_class = pc_ice_asteroid
-							is_planet_class = pc_crystal_asteroid
-							is_planet_class = pc_rare_crystal_asteroid
-							is_asteroid = yes
-						}
+						is_asteroid = yes
 						solar_system = {
 							count_system_planet = {
 								count > 1
-								limit = { 					
-									or = {
-										is_planet_class = pc_asteroid
-										is_planet_class = pc_ice_asteroid
-										is_planet_class = pc_crystal_asteroid
-										is_planet_class = pc_rare_crystal_asteroid
-										is_asteroid = yes
-									} 
-								}
-							}
-							# don't build in here if its being used for minerals
-							not = {
-								any_megastructure = {
-									is_megastructure_type = orbital_arc_furnace_1
-									is_megastructure_type = orbital_arc_furnace_2
-									is_megastructure_type = orbital_arc_furnace_3
-									is_megastructure_type = orbital_arc_furnace_4
-									is_megastructure_type = orbital_arc_furnace_destroyed
-									is_megastructure_type = orbital_arc_furnace_restored
+								limit = {
+									is_asteroid = yes
 								}
 							}
 						}
+						system_has_arc_furnace = yes
 					}
 					solar_system = {
 						event_target:frame_expand@owner = {
@@ -375,26 +352,8 @@ fwt_situation_frameworld_continuous_harvest = {
 				}
 				random_planet_within_border = {
 					limit = {
-						or = {
-							is_planet_class = pc_asteroid
-							is_planet_class = pc_ice_asteroid
-							is_planet_class = pc_crystal_asteroid
-							is_planet_class = pc_rare_crystal_asteroid
-							is_asteroid = yes
-						}
-						solar_system = {
-							# don't build in here if its being used for minerals
-							not = {
-								any_megastructure = {
-									is_megastructure_type = orbital_arc_furnace_1
-									is_megastructure_type = orbital_arc_furnace_2
-									is_megastructure_type = orbital_arc_furnace_3
-									is_megastructure_type = orbital_arc_furnace_4
-									is_megastructure_type = orbital_arc_furnace_destroyed
-									is_megastructure_type = orbital_arc_furnace_restored
-								}
-							}
-						}
+						is_asteroid = yes
+						system_has_arc_furnace = yes
 					}
 					solar_system = {
 						event_target:frame_expand@owner = {
@@ -509,36 +468,23 @@ fwt_situation_frameworld_continuous_harvest = {
 		owner = {
 			if = {
 				limit = {
-					has_country_flag = fwt_asteroid_harvesting
 					has_country_flag = fwt_asteroid_harvesting_1
 				}
 				random_planet_within_border = {
 					limit = {
-						or = {
-							is_planet_class = pc_asteroid
-							is_planet_class = pc_ice_asteroid
-							is_planet_class = pc_crystal_asteroid
-							is_planet_class = pc_rare_crystal_asteroid
-							is_asteroid = yes
-						}
+						is_asteroid = yes
 						solar_system = {
 							count_system_planet = {
 								count > 1
-								limit = { 					
-									or = {
-										is_planet_class = pc_asteroid
-										is_planet_class = pc_ice_asteroid
-										is_planet_class = pc_crystal_asteroid
-										is_planet_class = pc_rare_crystal_asteroid
-										is_asteroid = yes
-									} 
+								limit = {
+									is_asteroid = yes
 								}
 							}
 						}
+						system_has_arc_furnace = no
 					}
 					root = {
 						owner = {
-							set_country_flag = has_more_asteroids
 							set_country_flag = has_more_asteroids_1
 						}
 					}
@@ -547,19 +493,11 @@ fwt_situation_frameworld_continuous_harvest = {
 			else_if = {
 				limit = {
 					has_country_flag = fwt_asteroid_harvesting
-					not = {
-						has_country_flag = fwt_asteroid_harvesting_1
-					}
 				}
 				random_planet_within_border = {
 					limit = {
-						or = {
-							is_planet_class = pc_asteroid
-							is_planet_class = pc_ice_asteroid
-							is_planet_class = pc_crystal_asteroid
-							is_planet_class = pc_rare_crystal_asteroid
-							is_asteroid = yes
-						}
+						is_asteroid = yes
+						system_has_arc_furnace = no
 					}
 					root = {
 						owner = {

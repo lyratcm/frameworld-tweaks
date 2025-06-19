@@ -1,0 +1,52 @@
+#ow so that is ascension perk works for the frameworld
+ap_esap_ct1_expansion = {
+    on_enabled = {
+        if = {
+            limit = {
+                NOT = { has_technology = tech_wormhole_stabilization }
+            }
+            add_tech_progress = {
+                tech = tech_wormhole_stabilization
+                progress = 0.66
+            }
+        }
+        custom_tooltip = ap_esap_ct1_expansion_tooltip
+    } #Cornucopia handled on_action - on_colonized
+
+    possible = {
+        custom_tooltip = {
+            fail_text = "ap_esap_ct1_expansion_req_1"
+            or = {
+                num_owned_planets > 2
+                count_owned_fleet = {
+                    limit = {
+                        is_frameworld_outpost = yes
+                        is_disabled = no
+                    }
+                    count > 2
+                }
+            }
+        }
+        custom_tooltip = {
+            fail_text = "ap_esap_ct1_expansion_req_2"
+            Not = {
+                has_ascension_perk = ap_esap_ct3_not_expansion
+            }
+        }
+    }
+
+    modifier = {
+        #	colony_start_num_pops_add = 2
+        #	planet_colony_development_speed_mult = 0.50
+    }
+
+    potential = {
+        NOT = {
+            has_ascension_perk = ap_esap_ct1_expansion
+        }
+    }
+
+    ai_weight = {
+        factor = 9
+    }
+}

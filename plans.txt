@@ -1,10 +1,9 @@
 # write documentaiotn - add to already existing situation log
-# decide what i want to city zones to be, having them be default feels weird but using upgraded is to effecicent?
-# look at efficiency being too good early - counter with higher expansion costs
+# decide what i want to city zones to be, having them be default feels weird but using upgraded is to efficient?
+# start efficiency lower and be increased with upgrade tier, make hab/ecu upgrades kilo (increase efficiency), mega upgrades mega (move tech exponent reduction to this and increase eficiency) and giga upgrades giga (move ringworld exponent to this)
 # bio trophy reductions
 # log for path to next upgrades
-
-# 16x bonuses - alderson disk maybe although the origin gets pretty strong as this point
+# 16x bonuses - alderson disk maybe although the origin gets pretty strong as this point maybe reduce exponent once more
 
 # test non-overwriting merge? - talk to gigas team about moving some of my ow into code - would help with compat with the other frameworld sub mod
 # gigas ehof district support

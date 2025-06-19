@@ -556,3 +556,18 @@ giga_frameworld_resettlement_count = {
 	min = 400
 }
 
+giga_frameworld_outpost_growth_count = {
+	weight = owner.value:giga_frameworld_outpost_count
+	multiply = @giga_frameworld_outpost_expansion_curve
+	divide = value:giga_frameworld_outpost_growth_count_internal|reduction|$reduction|1$|reduction_offset|$reduction_offset|0$|
+	multiply = $mult|1$
+}
+
+giga_frameworld_outpost_growth_count_internal = {
+	weight = owner.value:giga_frameworld_outpost_count
+	#used to reduce the amount that each each output gives for more powerful modifiers like job efficiency
+	multiply = $reduction$
+	# reduce the effect more for the first increases to the modifier
+	subtract = $reduction_offset$
+	add = @giga_frameworld_outpost_expansion_curve
+}

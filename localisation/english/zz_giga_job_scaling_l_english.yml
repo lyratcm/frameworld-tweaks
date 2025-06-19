@@ -6,7 +6,9 @@
   mod_giga_planet_amenities_mult_offset_short:0 ""
   giga_situation_frameworld_outposts_expansion_base_speed:0 "Base time to complete expansion"
   giga_situation_frameworld_outposts_expansion_decision_speed:0 "Decision speed bonus"
+  giga_situation_frameworld_outposts_expansion_kilostructure_speed_bonus:0 "Kilostructures speed speed bonus"
   giga_situation_frameworld_outposts_expansion_approach_speed:0 "Approach speed change"
+  giga_situation_frameworld_outposts_expansion_no_asteroids:0 "No found asteroids"
 
  giga_situation_frameworld_decisions_type: "Asteroid harvest"
 

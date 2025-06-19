@@ -230,10 +230,10 @@ country_event = {
 			if = {
 				limit = { owner = { country_uses_food = yes } }
 				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_farming }
-				if = {
-					limit = { owner = { not = { has_civic = civic_machine_servitor } } }
-					add_district = district_giga_frameworld_urban_05
-				}
+				# if = {
+				# 	limit = { owner = { not = { has_civic = civic_machine_servitor } } }
+				# 	add_district = district_giga_frameworld_urban_05
+				# }
 			}
 			else = {
 				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_city }

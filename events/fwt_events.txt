@@ -542,162 +542,35 @@ country_event = {
     is_triggered_only = yes
 
     immediate = {
+        remove_country_flag = has_more_asteroids
+        remove_country_flag = has_more_asteroids_1
         if = {
-            limit = { has_country_flag = has_more_asteroids}
-            if = {
-                limit = {
-                    has_country_flag = fwt_asteroid_harvesting
-                    has_country_flag = fwt_asteroid_harvesting_1
-                    has_country_flag = has_more_asteroids
-                    has_country_flag = has_more_asteroids_1
-                    not = {
-                        any_planet_within_border = {
-                            or = {
-                                is_planet_class = pc_asteroid
-                                is_planet_class = pc_ice_asteroid
-                                is_planet_class = pc_crystal_asteroid
-                                is_planet_class = pc_rare_crystal_asteroid
+            limit = {
+                has_country_flag = fwt_asteroid_harvesting_1
+                any_planet_within_border = {
+                    is_asteroid = yes
+                    solar_system = {
+                        count_system_planet = {
+                            count > 1
+                            limit = {
                                 is_asteroid = yes
                             }
-                            solar_system = {
-                                count_system_planet = {
-                                    count > 1
-                                    limit = {
-                                        or = {
-                                            is_planet_class = pc_asteroid
-                                            is_planet_class = pc_ice_asteroid
-                                            is_planet_class = pc_crystal_asteroid
-                                            is_planet_class = pc_rare_crystal_asteroid
-                                            is_asteroid = yes
-                                        }
-                                    }
-                                }
-                                # don't build in here if its being used for minerals
-                                not = {
-                                    any_megastructure = {
-                                        is_megastructure_type = orbital_arc_furnace_1
-                                        is_megastructure_type = orbital_arc_furnace_2
-                                        is_megastructure_type = orbital_arc_furnace_3
-                                        is_megastructure_type = orbital_arc_furnace_4
-                                        is_megastructure_type = orbital_arc_furnace_destroyed
-                                        is_megastructure_type = orbital_arc_furnace_restored
-                                    }
-                                }
-                            }
                         }
+                        system_has_arc_furnace = yes
                     }
                 }
-                remove_country_flag = has_more_asteroids
-                remove_country_flag = has_more_asteroids_1
             }
-            if = {
-                limit = {
-                    has_country_flag = fwt_asteroid_harvesting
-                    not = { has_country_flag = fwt_asteroid_harvesting_1 }
-                    has_country_flag = has_more_asteroids
-                    not = { has_country_flag = has_more_asteroids_1 }
-                    any_planet_within_border = {
-                        or = {
-                            is_planet_class = pc_asteroid
-                            is_planet_class = pc_ice_asteroid
-                            is_planet_class = pc_crystal_asteroid
-                            is_planet_class = pc_rare_crystal_asteroid
-                            is_asteroid = yes
-                        }
-                        solar_system = {
-                            # don't build in here if its being used for minerals
-                            not = {
-                                any_megastructure = {
-                                    is_megastructure_type = orbital_arc_furnace_1
-                                    is_megastructure_type = orbital_arc_furnace_2
-                                    is_megastructure_type = orbital_arc_furnace_3
-                                    is_megastructure_type = orbital_arc_furnace_4
-                                    is_megastructure_type = orbital_arc_furnace_destroyed
-                                    is_megastructure_type = orbital_arc_furnace_restored
-                                }
-                            }
-                        }
-                    }
-                }
-                remove_country_flag = has_more_asteroids
-            }
+            set_country_flag = has_more_asteroids_1
         }
-        else = {
-            if = {
-                limit = {
-                    has_country_flag = fwt_asteroid_harvesting
-                    has_country_flag = fwt_asteroid_harvesting_1
-                    not = { has_country_flag = has_more_asteroids }
-                    not = { has_country_flag = has_more_asteroids_1 }
-                    any_planet_within_border = {
-                        or = {
-                            is_planet_class = pc_asteroid
-                            is_planet_class = pc_ice_asteroid
-                            is_planet_class = pc_crystal_asteroid
-                            is_planet_class = pc_rare_crystal_asteroid
-                            is_asteroid = yes
-                        }
-                        solar_system = {
-                            count_system_planet = {
-                                count > 1
-                                limit = {
-                                    or = {
-                                        is_planet_class = pc_asteroid
-                                        is_planet_class = pc_ice_asteroid
-                                        is_planet_class = pc_crystal_asteroid
-                                        is_planet_class = pc_rare_crystal_asteroid
-                                        is_asteroid = yes
-                                    }
-                                }
-                            }
-                            # don't build in here if its being used for minerals
-                            not = {
-                                any_megastructure = {
-                                    is_megastructure_type = orbital_arc_furnace_1
-                                    is_megastructure_type = orbital_arc_furnace_2
-                                    is_megastructure_type = orbital_arc_furnace_3
-                                    is_megastructure_type = orbital_arc_furnace_4
-                                    is_megastructure_type = orbital_arc_furnace_destroyed
-                                    is_megastructure_type = orbital_arc_furnace_restored
-                                }
-                            }
-                        }
-                    }
+        else_if = {
+            limit = {
+                has_country_flag = fwt_asteroid_harvesting
+                any_planet_within_border = {
+                    is_asteroid = yes
+                    system_has_arc_furnace = yes
                 }
-                set_country_flag = has_more_asteroids
-                set_country_flag = has_more_asteroids_1
             }
-            if = {
-                limit = {
-                    has_country_flag = fwt_asteroid_harvesting
-                    not = { has_country_flag = fwt_asteroid_harvesting_1 }
-                    not = { has_country_flag = has_more_asteroids }
-                    not = { has_country_flag = has_more_asteroids_1 }
-                    any_planet_within_border = {
-                        or = {
-                            is_planet_class = pc_asteroid
-                            is_planet_class = pc_ice_asteroid
-                            is_planet_class = pc_crystal_asteroid
-                            is_planet_class = pc_rare_crystal_asteroid
-                            is_asteroid = yes
-                        }
-                        solar_system = {
-                            # don't build in here if its being used for minerals
-                            not = {
-                                any_megastructure = {
-                                    is_megastructure_type = orbital_arc_furnace_1
-                                    is_megastructure_type = orbital_arc_furnace_2
-                                    is_megastructure_type = orbital_arc_furnace_3
-                                    is_megastructure_type = orbital_arc_furnace_4
-                                    is_megastructure_type = orbital_arc_furnace_destroyed
-                                    is_megastructure_type = orbital_arc_furnace_restored
-                                }
-                            }
-                        }
-                    }
-                }
-                set_country_flag = has_more_asteroids
-            }
+            set_country_flag = has_more_asteroids
         }
     }
 }

@@ -224,3 +224,7 @@
  building_fwt_automation_city_2_upkeep:0 "[planet.fwt_automation_city_upkeep_2_swap]"
  building_fwt_automation_1_upkeep:0 "[planet.fwt_automation_upkeep_1_swap]"
  building_fwt_automation_2_upkeep:0 "[planet.fwt_automation_upkeep_2_swap]"
+
+ col_frameworld_bureau_spiritualist:1 "$col_habitat_bureau_spiritualist$"
+ col_frameworld_bureau_spiritualist_desc:1 "$col_habitat_bureau_desc$"
+ col_frameworld_bureau_spiritualist_tt:1 "$col_habitat_bureau_tt$"

@@ -381,15 +381,13 @@ d_frameworld_expansion = {
         }
         multiplier = giga_frameworld_expansions
 
-        planet_building_capacity_add = 0.375
-        giga_frameworld_growth_jobs_add = 15
-        logistic_growth_mult = 0.01825
-        planet_decision_enact_speed_mult = 0.15
-		#extra build speed as pop growth will be getting out of control
-		planet_building_build_speed_mult = 0.02
-        planet_army_build_speed_mult = 0.15
-        pop_purge_speed = 0.15
-        giga_pop_assimilation_speed = 0.15
+        planet_building_capacity_add = 0.025
+        giga_frameworld_growth_jobs_add = 10
+        logistic_growth_mult = 0.0125
+        planet_decision_enact_speed_mult = 0.01
+        planet_army_build_speed_mult = 0.01
+        pop_purge_speed = 0.01
+        giga_pop_assimilation_speed = 0.01
     }
 
     # triggered_planet_modifier = {
@@ -1343,7 +1341,7 @@ d_frameworld_advanced_city = {
         planet_jobs_produces_mult = 0.20
         planet_pop_assembly_mult = 0.15
         bonus_pop_growth_mult = 0.15
-        bonus_pop_growth = 0.15
+        # bonus_pop_growth = 0.15
     }
 }
 

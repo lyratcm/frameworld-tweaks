@@ -1,8 +1,12 @@
 giga_extra_healthcare = {
     category = specialist
-    condition_string = SPECIALIST_JOB_TRIGGER
-    building_icon = building_clinic
-    clothes_texture_index = 3
+
+    swappable_data = {
+        default = {
+            condition_string = SPECIALIST_JOB_TRIGGER
+            building_icon = building_medical_1
+        }
+    }
 
     possible_pre_triggers = {
         has_owner = yes
@@ -106,9 +110,13 @@ giga_extra_healthcare = {
 
 giga_extra_crucible_drone = {
     category = complex_drone
-    condition_string = DRONE_JOB_TRIGGER
-    building_icon = building_clinic
-    icon = giga_extra_healthcare
+
+    swappable_data = {
+        default = {
+            condition_string = DRONE_JOB_TRIGGER
+            building_icon = building_medical_1
+        }
+    }
 
     possible_pre_triggers = {
         has_owner = yes
@@ -193,9 +201,13 @@ giga_extra_crucible_drone = {
 
 giga_cloning = {
     category = specialist
-    condition_string = SPECIALIST_JOB_TRIGGER
-    building_icon = building_clone_vats
-    clothes_texture_index = 3
+
+    swappable_data = {
+        default = {
+            condition_string = SPECIALIST_JOB_TRIGGER
+            building_icon = building_clone_vats
+        }
+    }
 
     possible_pre_triggers = {
         has_owner = yes
