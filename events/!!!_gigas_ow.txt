@@ -314,8 +314,6 @@ country_event = {
 					id = fwt.121
 				}
 			}
-			# # set up extra growth mechanics
-			# giga_extra_growth_setup = yes
 		}
         # clear the conquered modifier which apparently gets executed BEFORE the start event
         remove_modifier = frameworld_conquered

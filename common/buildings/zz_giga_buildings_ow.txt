@@ -211,6 +211,7 @@ building_negative_mass_factory_2 = {
 		planet_artisans_ehof_sr_negative_mass_produces_add = 1
 		planet_metallurgists_energy_upkeep_add = 1.6
 		planet_artisans_energy_upkeep_add = 1.6
+		# not using efficiency as the job already gets it from the main building
 		planet_artisans_ehof_sr_negative_mass_produces_mult = 0.20
 		planet_metallurgists_ehof_sr_negative_mass_produces_mult = 0.20
 	}

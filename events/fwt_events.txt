@@ -83,6 +83,10 @@ country_event = {
     after = {
         # clear the conquered modifier which apparently gets executed BEFORE the start event
         remove_modifier = frameworld_conquered
+        country_event = {
+            id = fwt.12
+
+        }
     }
 }
 
@@ -102,6 +106,32 @@ country_event = {
     }
 }
 
+
+country_event = {
+    id = fwt.12
+    title = "fwt.12.auto.name"
+    desc = "fwt.12.auto.desc"
+    is_triggered_only = yes
+
+    trigger = { giga_has_frameworld_origin = yes }
+    immediate = {
+    }
+    option = {
+        name = fwt.12.continuous_expansion
+        trigger = {
+            not = { country_has_situation = { SITUATION = fwt_situation_continuous_expansion } }
+        }
+        start_situation = {
+            type = fwt_situation_continuous_expansion
+        }
+    }
+    option = {
+        name = fwt.12.continuous_harvest
+        start_situation = {
+            type = fwt_situation_frameworld_continuous_harvest
+        }
+    }
+}
 
 country_event = {
     id = fwt.121
@@ -273,10 +303,10 @@ country_event = {
                 }
             }
         }
-        every_country = {
-            limit = { giga_has_frameworld_origin = yes }
-            event_target:frame_expand@this = { giga_extra_growth_setup = yes }
-        }
+        # every_country = {
+        #     limit = { giga_has_frameworld_origin = yes }
+        #     event_target:frame_expand@this = { giga_extra_growth_setup = yes }
+        # }
     }
 }
 
