@@ -9,6 +9,9 @@
 @yes = 1
 @no = 0
 
+show_in_tech = tech_industrial_farming
+
+
 inline_script = {
 	script = planet/food/fwt_farmer_job_swap
 	jobs = $JOBS$

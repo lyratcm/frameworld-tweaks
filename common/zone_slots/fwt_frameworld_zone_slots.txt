@@ -1,5 +1,5 @@
 slot_frameworld_urban_01 = {
-    inline_script = zones/fwt_zones_frameworld_urban
+    inline_script = zone_slots/fwt_zones_frameworld_urban_non_city
 
     unlock = { # planet scope
         uses_district_set = giga_frameworld
@@ -28,7 +28,9 @@ fwt_slot_city_government = {
 }
 
 fwt_slot_city_01 = {
-    inline_script = zones/fwt_zones_frameworld_urban
+    start = district_giga_frameworld_city_city
+
+    inline_script = zone_slots/fwt_zones_frameworld_urban
 
     potential = { # planet scope
         uses_district_set = giga_frameworld
@@ -42,7 +44,9 @@ fwt_slot_city_01 = {
 }
 
 fwt_slot_city_02 = {
-    inline_script = zones/fwt_zones_frameworld_urban
+    start = district_giga_frameworld_city_city
+
+    inline_script = zone_slots/fwt_zones_frameworld_urban
 
     potential = { # planet scope
         uses_district_set = giga_frameworld

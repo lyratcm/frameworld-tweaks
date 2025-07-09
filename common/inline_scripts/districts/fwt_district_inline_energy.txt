@@ -9,6 +9,7 @@
 @yes = 1
 @no = 0
 
+show_in_tech = tech_power_plant_1
 
 inline_script = {
 	script = planet/energy/fwt_technician_job_swap

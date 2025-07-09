@@ -233,3 +233,9 @@
  fwt.12.auto.desc: "Auto expansion is a situation that takes a % of your alloys to assemble frameworld expansions over time \n\n auto harvest is a situation that takes 42 energy a month to automate harvesting asteroids to be use to also expand the frameworld (this will only happen if you have asteroids in your territory)"
  fwt.12.continuous_expansion: "Start auto expansion"
  fwt.12.continuous_harvest: "Start auto harvest"
+
+ #never used anywhere as you can't add or remove the starting district but to silence cwtools
+ fwt_zone_default: "REPLACE_ME"
+ fwt_zone_default_desc: "REPLACE_ME"
+ mod_planet_fwt_zone_default_build_speed_mult: "REPLACE_ME"
+ mod_planet_fwt_zone_default_build_speed_mult_desc: "REPLACE_ME"

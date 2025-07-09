@@ -68,3 +68,12 @@ on_destroy_star_system = {
 		fwt.4112
 	}
 }
+
+
+#This = ship (starbase)
+#From = owner country
+on_building_starbase_outpost = {
+	events = {
+		fwt.4113
+	}
+}

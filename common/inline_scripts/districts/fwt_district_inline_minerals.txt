@@ -9,6 +9,7 @@
 @yes = 1
 @no = 0
 
+show_in_tech = tech_mechanized_mining
 
 inline_script = {
 	script = planet/minerals/fwt_miner_job_swap

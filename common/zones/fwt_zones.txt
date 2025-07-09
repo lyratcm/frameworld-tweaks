@@ -85,62 +85,6 @@ district_giga_frameworld_city = {
         planet_housing_add = 600
 		mult = fwt_city_completion
     }
-
-    triggered_planet_modifier = {
-		potential = { always = yes }
-        zone_building_slots_add = 3
-    }
-
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                has_valid_civic = civic_agrarian_idyll
-            }
-        }
-        modifier = {
-            planet_housing_add = -50
-        }
-		mult = fwt_city_completion
-    }
-
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = { has_active_tradition = tr_prosperity_public_works }
-        }
-        modifier = {
-            planet_housing_add = 50
-        }
-		mult = fwt_city_completion
-    }
-
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                has_technology = tech_housing_1
-            }
-        }
-        modifier = {
-            planet_housing_add = 50
-        }
-		mult = fwt_city_completion
-    }
-
-    triggered_planet_modifier = {
-        potential = {
-            exists = owner
-            owner = {
-                has_technology = tech_housing_2
-                NOT = { has_valid_civic = civic_agrarian_idyll }
-            }
-        }
-        modifier = {
-            planet_housing_add = 50
-        }
-		mult = fwt_city_completion
-    }
 }
 
 district_giga_frameworld_foundry = {
@@ -186,8 +130,6 @@ district_giga_frameworld_factory = {
 	}
 
 
-    show_in_tech = tech_basic_industry
-
 	inline_script = {
 		script = districts/params/fwt_district_inline_factory_params
 	}
@@ -203,9 +145,6 @@ district_giga_frameworld_generator = {
 	potential = {
 		uses_district_set = giga_frameworld
 	}
-
-    show_in_tech = tech_power_plant_1
-
 
 	inline_script = {
 		script = districts/params/fwt_district_inline_energy_params
@@ -223,9 +162,6 @@ district_giga_frameworld_mining = {
 		uses_district_set = giga_frameworld
 	}
 
-    show_in_tech = tech_mechanized_mining
-
-
 	inline_script = {
 		script = districts/params/fwt_district_inline_minerals_params
 	}
@@ -241,8 +177,6 @@ district_giga_frameworld_farming = {
 	potential = {
 		uses_district_set = giga_frameworld
 	}
-
-    show_in_tech = tech_industrial_farming
 
 	inline_script = {
 		script = districts/params/fwt_district_inline_food_params
@@ -266,13 +200,7 @@ district_giga_frameworld_trade = {
 			is_gestalt = no
 		}
 		uses_district_set = giga_frameworld
-	}
-
-
-
-	convert_to = {
-		district_giga_frameworld_generator
-	}
+}
 
 	inline_script = {
 		script =  districts/params/fwt_district_inline_trade_params
@@ -618,5 +546,527 @@ district_giga_frameworld_amenities_gestalt = {
 	inline_script = {
 		script = districts/params/fwt_district_inline_amenities_params
 		JOB = "districts/parts/fwt_gestalt_amentity_swap"
+	}
+}
+
+
+
+###############################################################################################################
+# city version of zones, half the districts so building 2 in a city isn't more effective
+district_giga_frameworld_city_city = {
+	base_buildtime = @city_time
+	icon = GFX_colony_type_urban
+
+	unlock = { uses_district_set = giga_frameworld }
+
+	potential = { uses_district_set = giga_frameworld }
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = @city_cost
+			mult = fwt_city_completion
+		}
+		upkeep = {
+			energy = @city_upkeep
+			mult = fwt_city_completion
+		}
+	}
+
+	include = {
+		all
+	}
+
+	inline_script = {
+		script = zones/fwt_all_exclude_building
+		DISTRICT = "building_fwt_automation_amenities_1	building_fwt_automation_amenities_2 building_fwt_automation_trade_1 building_fwt_automation_trade_2"
+	}
+
+
+	max_buildings = 3
+
+	triggered_district_planet_modifier = {
+		potential = { always = yes }
+		planet_housing_add = 300
+		mult = fwt_city_completion
+	}
+
+	triggered_planet_modifier = {
+		potential = { always = yes }
+		zone_building_slots_add = 3
+	}
+}
+
+district_giga_frameworld_foundry_city = {
+	icon = GFX_colony_type_habitat_foundry
+	potential = {
+		uses_district_set = giga_frameworld
+	}
+
+	unlock = { # planet scope
+		uses_district_set = giga_frameworld
+	}
+
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_alloy_params
+		JOBS = @[ frameworld_jobs_base / 2 ]
+	}
+}
+
+district_giga_frameworld_factory_city = {
+	icon = GFX_colony_type_habitat_factory
+	unlock = {
+		exists = owner
+		uses_district_set = giga_frameworld
+		owner = {
+			or = {
+				is_gestalt = no
+				has_valid_civic = civic_machine_servitor
+				country_uses_consumer_goods = yes
+			}
+		}
+	}
+
+	potential = {
+		exists = owner
+		uses_district_set = giga_frameworld
+		owner = {
+			or = {
+				is_gestalt = no
+				has_valid_civic = civic_machine_servitor
+				country_uses_consumer_goods = yes
+			}
+		}
+	}
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_factory_params
+		JOBS = @[ frameworld_jobs_base / 2 ]
+	}
+}
+
+district_giga_frameworld_generator_city = {
+	icon = GFX_colony_type_habitat_energy
+
+	unlock = {
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		uses_district_set = giga_frameworld
+	}
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_energy_params
+		JOBS = @[ frameworld_jobs_base / 2 ]
+	}
+}
+
+district_giga_frameworld_mining_city = {
+	icon = GFX_colony_type_habitat_mining
+
+	unlock = {
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		uses_district_set = giga_frameworld
+	}
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_minerals_params
+		JOBS = @[ frameworld_jobs_base / 2 ]
+	}
+}
+
+district_giga_frameworld_farming_city = {
+	icon = GFX_colony_type_habitat_farming
+
+	unlock = {
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		uses_district_set = giga_frameworld
+	}
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_food_params
+		JOBS = @[ frameworld_jobs_base / 2 ]
+	}
+}
+
+district_giga_frameworld_trade_city = {
+	icon = GFX_colony_type_habitat_trade
+
+	unlock = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	inline_script = {
+		script =  districts/params/fwt_district_inline_trade_params
+		JOBS = @[ frameworld_jobs_base / 2 ]
+	}
+}
+
+district_giga_frameworld_administrative_city = {
+	icon = GFX_colony_type_bureaucratic
+
+	unlock = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	show_in_tech = tech_planetary_government
+
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_unity_params
+		JOB = "planet/unity/fwt_bureaucrat_swap"
+		JOBS = @[ frameworld_jobs_base / 2 ]
+	}
+
+	included_building_sets = {
+		unity
+		automation
+		origin
+	}
+
+	inline_script = {
+		script = zones/fwt_exclude_building
+	}
+
+	convert_to = {
+		district_giga_frameworld_sanctuary
+		district_giga_frameworld_synapse
+		district_giga_frameworld_simulation
+	}
+}
+
+# hive unity
+district_giga_frameworld_synapse_city = {
+	icon = GFX_colony_type_bureaucratic
+
+	unlock = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_hive_empire = yes
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	show_in_tech = tech_hive_node
+
+	convert_to = {
+		district_giga_frameworld_sanctuary
+		district_giga_frameworld_administrative
+		district_giga_frameworld_simulation
+	}
+
+	included_building_sets = {
+		unity
+		automation
+		origin
+	}
+
+	inline_script = {
+		script = zones/fwt_exclude_building
+	}
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_unity_params
+		JOB = "planet/unity/fwt_gestalt_unity_job_swap"
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_active_tradition = tr_domination_synaptic_extensions
+			}
+		}
+		modifier = {
+			planet_housing_add = 200
+		}
+	}
+
+	triggered_district_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_edict = synaptic_reinforcement
+			}
+		}
+		job_maintenance_drone_add = @[ 100 * 1.25 ]
+	}
+
+	triggered_desc = {
+		text = job_synapse_drone_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				has_edict = synaptic_reinforcement
+			}
+		}
+		text = job_maintenance_drone_effect_desc
+	}
+}
+
+district_giga_frameworld_simulation_city = {
+	icon = GFX_colony_type_bureaucratic
+
+	unlock = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			NOT = { has_valid_civic = civic_machine_servitor }
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			NOT = { has_valid_civic = civic_machine_servitor }
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	show_in_tech = tech_planetary_government
+
+	convert_to = {
+		district_giga_frameworld_administrative
+		district_giga_frameworld_sanctuary
+		district_giga_frameworld_synapse
+	}
+
+	included_building_sets = {
+		unity
+		automation
+		origin
+	}
+
+	inline_script = {
+		script = zones/fwt_exclude_building
+	}
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_unity_params
+		JOB = "planet/unity/fwt_gestalt_unity_job_swap"
+		JOBS = @[ frameworld_jobs_base / 2 ]
+	}
+}
+
+district_giga_frameworld_sanctuary_city = {
+	icon = GFX_colony_type_bureaucratic
+
+	unlock = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			has_valid_civic = civic_machine_servitor
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_machine_empire = yes
+			has_valid_civic = civic_machine_servitor
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	show_in_tech = tech_planetary_government
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_unity_params
+		#lyra added to fit script
+		JOB = "districts/fwt_bio_trophy_job_swap"
+		JOBS = @[ frameworld_jobs_base / 2 ]
+	}
+
+	convert_to = {
+		district_giga_frameworld_simulation
+		district_giga_frameworld_synapse
+		district_giga_frameworld_administrative
+	}
+
+	included_building_sets = {
+		unity
+		automation
+		origin
+	}
+
+	inline_script = {
+		script = zones/fwt_exclude_building
+	}
+
+	triggered_desc = {
+		text = job_bio_trophy_effect_desc
+	}
+}
+
+district_giga_frameworld_science_city = {
+	icon = GFX_colony_type_habitat_research
+
+	unlock = {
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		uses_district_set = giga_frameworld
+	}
+
+	show_in_tech = tech_basic_science_lab_1
+
+	included_building_sets = {
+		research
+		automation
+		origin
+		physics
+		engineering
+		society
+		science
+	}
+
+	inline_script = {
+		script = zones/fwt_exclude_building
+	}
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_science_params
+		JOBS = @[ frameworld_jobs_base / 2 ]
+	}
+}
+
+# amenities
+district_giga_frameworld_amenities_city = {
+
+	icon = GFX_colony_type_habitat_leisure
+
+	unlock = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			NOT = { has_valid_civic = civic_dystopian_society }
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			NOT = { has_valid_civic = civic_dystopian_society }
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	show_in_tech = tech_holo_entertainment
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_amenities_params
+		JOB = "districts/parts/fwt_normal_amentity_swap"
+		JOBS = @[ frameworld_jobs_base / 2 ]
+	}
+
+}
+
+###############################################################################################################
+# dystopian amenities
+
+district_giga_frameworld_amenities_dystopian_city = {
+	icon = GFX_colony_type_habitat_leisure
+
+	unlock = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			has_valid_civic = civic_dystopian_society
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+			has_valid_civic = civic_dystopian_society
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	show_in_tech = tech_planetary_government
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_amenities_params
+		JOB = "districts/parts/fwt_dystopian_amentity_swap"
+		JOBS = @[ frameworld_jobs_base / 2 ]
+	}
+}
+
+###############################################################################################################
+# gestalt amenities
+district_giga_frameworld_amenities_gestalt_city = {
+	icon = GFX_colony_type_habitat_leisure
+
+	unlock = {
+		exists = owner
+		owner = {
+			is_gestalt = yes
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = yes
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_amenities_params
+		JOB = "districts/parts/fwt_gestalt_amentity_swap"
+		JOBS = @[ frameworld_jobs_base / 2 ]
 	}
 }

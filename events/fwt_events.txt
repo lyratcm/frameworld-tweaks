@@ -505,37 +505,33 @@ country_event = {
 
     option = {
         name = fwt.41.enable
-        allow = {
-            or = {
-                owner = {
-                    not = { has_country_flag = fwt_asteroid_harvesting }
-                    has_country_flag = fwt_asteroid_harvesting_1
-                }
-            }
-        }
-        owner = { set_country_flag = fwt_asteroid_harvesting }
+        allow = { not = { has_country_flag = fwt_asteroid_harvesting } }
+        set_country_flag = fwt_asteroid_harvesting
+        remove_country_flag = fwt_asteroid_harvesting_1
         country_event = { id = fwt.41 }
     }
     option = {
         name = fwt.41.enable_1
-        allow = { owner = { not = { has_country_flag = fwt_asteroid_harvesting_1 } } }
-        owner = {
-            set_country_flag = fwt_asteroid_harvesting
-            set_country_flag = fwt_asteroid_harvesting_1
-        }
+        allow = { not = { has_country_flag = fwt_asteroid_harvesting_1 } }
+        set_country_flag = fwt_asteroid_harvesting_1
+        remove_country_flag = fwt_asteroid_harvesting
         country_event = { id = fwt.41 }
     }
     option = {
         name = fwt.41.disable
-        allow = { owner = { has_country_flag = fwt_asteroid_harvesting } }
-        owner = {
-            remove_country_flag = fwt_asteroid_harvesting
-            remove_country_flag = fwt_asteroid_harvesting_1
+        allow = {
+            or = {
+                has_country_flag = fwt_asteroid_harvesting
+                has_country_flag = fwt_asteroid_harvesting_1
+            }
         }
+        remove_country_flag = fwt_asteroid_harvesting
+        remove_country_flag = fwt_asteroid_harvesting_1
         country_event = { id = fwt.41 }
     }
     option = {
         name = fwt.close_menu
+        country_event = { id = fwt.412 }
     }
 }
 
@@ -566,6 +562,20 @@ system_event = {
     }
 }
 
+# This = ship (starbase)
+# From = owner country
+# on_building_starbase_outpost
+system_event = {
+    id = fwt.4113
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        this = { solar_system = { system_event = { id = fwt.413 } } }
+    }
+}
+
+
 country_event = {
     id = fwt.412
     hide_window = yes
@@ -586,8 +596,8 @@ country_event = {
                                 is_asteroid = yes
                             }
                         }
-                        system_has_arc_furnace = yes
                     }
+                    system_has_arc_furnace = no
                 }
             }
             set_country_flag = has_more_asteroids_1
@@ -597,10 +607,65 @@ country_event = {
                 has_country_flag = fwt_asteroid_harvesting
                 any_planet_within_border = {
                     is_asteroid = yes
-                    system_has_arc_furnace = yes
+                    system_has_arc_furnace = no
                 }
             }
             set_country_flag = has_more_asteroids
+        }
+    }
+}
+
+system_event = {
+    id = fwt.413
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                owner = {
+                    nor = {
+                        has_country_flag = has_more_asteroids
+                        has_country_flag = has_more_asteroids_1
+                    }
+                }
+            }
+            if = {
+                limit = {
+                    owner = {
+                        has_country_flag = fwt_asteroid_harvesting_1
+                    }
+                    any_system_planet = {
+                        is_asteroid = yes
+                        solar_system = {
+                            count_system_planet = {
+                                count > 1
+                                limit = {
+                                    is_asteroid = yes
+                                }
+                            }
+                        }
+                        system_has_arc_furnace = no
+                    }
+                }
+                owner = {
+                    set_country_flag = has_more_asteroids_1
+                }
+            }
+            else_if = {
+                limit = {
+                    owner = {
+                        has_country_flag = fwt_asteroid_harvesting
+                    }
+                    any_system_planet = {
+                        is_asteroid = yes
+                        system_has_arc_furnace = no
+                    }
+                }
+                owner = {
+                    set_country_flag = has_more_asteroids
+                }
+            }
         }
     }
 }

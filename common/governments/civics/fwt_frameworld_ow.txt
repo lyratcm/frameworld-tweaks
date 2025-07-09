@@ -6,7 +6,7 @@ origin_frameworld = {
     flags = { custom_start_screen }
 
     description = origin_tooltip_frameworld_effects
-
+    habitability_preference = pc_giga_frameworld
     starting_colony = pc_giga_frameworld
     preferred_planet_class_neighbor = no
 
@@ -49,7 +49,7 @@ origin_frameworld = {
                 value = civic_machine_guided_sapience
             }
         }
-        #temp change
+        #temp change - no idea why this breaks frame outpost, wait on giga fix
         graphical_culture = {
             NOR = {
                 text = graphical_culture_tooltip_not_biological

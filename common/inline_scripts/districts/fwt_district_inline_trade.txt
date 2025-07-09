@@ -60,6 +60,10 @@ inline_script = {
 	DISTRICT = "building_fwt_automation_amenities_1	building_fwt_automation_amenities_2 building_fwt_automation_city_1 building_fwt_automation_city_2"
 }
 
+convert_to = {
+	district_giga_frameworld_generator
+}
+
 triggered_district_planet_modifier = {
 	job_trader_add = $JOBS$
 	mult = fwt_unity_trade_completion
