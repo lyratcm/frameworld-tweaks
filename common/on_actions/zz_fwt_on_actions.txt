@@ -22,6 +22,8 @@ on_yearly_pulse_country = {
 	events = {
 		#check once a year for new deposits (or run out of deposits) and when ever the empire should gain or lose a system
 		fwt.412
+		#update outpost output
+		fwt.6
 	}
 }
 

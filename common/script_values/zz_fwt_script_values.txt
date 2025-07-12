@@ -556,7 +556,26 @@ giga_frameworld_resettlement_count = {
 	min = 400
 }
 
-giga_frameworld_outpost_growth_count = {
+giga_frameworld_outpost_count_raw_hab = {
+	# number of outposts reduced by hab (min 50%)
+	add = owner.fwt_frameworld_hab
+
+	# branch offices and other sources
+	add = modifier:giga_frameworld_outpost_count
+}
+
+giga_frameworld_outpost_count_hab = {
+	#weight = modifier:giga_frameworld_outpost_count
+	weight = value:giga_frameworld_outpost_count_raw
+
+	# megacorp outposts count for less, but they get branch office outposts too
+	modifier = {
+		is_megacorp = yes
+		multiply = 0.5
+	}
+}
+
+giga_frameworld_outpost_growth_count_hab = {
 	weight = owner.value:giga_frameworld_outpost_count
 	multiply = @giga_frameworld_outpost_expansion_curve
 	divide = value:giga_frameworld_outpost_growth_count_internal|reduction|$reduction|1$|reduction_offset|$reduction_offset|0$|

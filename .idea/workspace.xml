@@ -4,27 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="added a menu for starting the situations&#10;update the ecu desposit to be the same as vanilla ecu">
-      <change afterPath="$PROJECT_DIR$/common/inline_scripts/zone_slots/fwt_zones_frameworld_urban_non_city.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/traits/frameworld_traits_habitability.txt" afterDir="false" />
+    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="fixed upkeep redction from automations&#10;fixed asteroid auto harvest&#10;added city version of zone that are half effect (so both ends up as good as the city)&#10;removed extra housing from city zones (like city distrcits get)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/deposits/fwt_deposits.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/deposits/fwt_deposits.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/governments/civics/fwt_frameworld_ow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/governments/civics/fwt_frameworld_ow.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/buildings/fwt_automation_building_1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/buildings/fwt_automation_building_1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_energy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_energy.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_factory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_factory.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_food.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_food.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_minerals.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_minerals.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/zones/fwt_zones_frameworld_urban.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/zone_slots/fwt_zones_frameworld_urban.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/megastructures/frameworld/outpost_construction.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/megastructures/frameworld/outpost_construction.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/on_actions/zz_fwt_on_actions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/on_actions/zz_fwt_on_actions.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/situations/fwt_decision_situations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/situations/fwt_decision_situations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/zone_slots/fwt_frameworld_zone_slots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/zone_slots/fwt_frameworld_zone_slots.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/zones/fwt_zones.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/zones/fwt_zones.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/situations/zz_giga_frameworld_situations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/situations/zz_giga_frameworld_situations.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/fwt_events.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/fwt_events.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localisation/english/fwt_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/english/fwt_frameworld_l_english.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plans.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plans.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="4.0" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,11 +67,11 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "4.0",
+    "git-widget-placeholder": "dev",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "17",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/common/traits",
+    "last_opened_file_path": "C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/common/ship_sizes",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -94,11 +82,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\ship_sizes" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\traits" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\zone_slots" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\buildings" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\districts\parts" />
-      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\districts\params" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\zone_slots" />
@@ -253,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750433434096</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="fixed upkeep redction from automations&#10;fixed asteroid auto harvest&#10;added city version of zone that are half effect (so both ends up as good as the city)&#10;removed extra housing from city zones (like city distrcits get)">
+      <option name="closed" value="true" />
+      <created>1752026673175</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1752026673175</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -272,6 +268,7 @@
     <MESSAGE value="inline amenties&#10;foundation for city versions of zones&#10;added rare resource upkeep to districts as not needed for zones" />
     <MESSAGE value="removed a starting food district&#10;reworked the back end of the asteroid situation and cleaned up the toolips&#10;added a unity designation back for the capital&#10;added the correct job swaps for enteratainers&#10;allowed a esap to work for the frameworld&#10;updated the iodizium reseach and negative mass buildings to 4.0&#10;reduced the extra stuff from mega expansion&#10;increased the scaling reduction for the frameworld efficiency pending rework&#10;fixed the giga frameworld job icons" />
     <MESSAGE value="added a menu for starting the situations&#10;update the ecu desposit to be the same as vanilla ecu" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a menu for starting the situations&#10;update the ecu desposit to be the same as vanilla ecu" />
+    <MESSAGE value="fixed upkeep redction from automations&#10;fixed asteroid auto harvest&#10;added city version of zone that are half effect (so both ends up as good as the city)&#10;removed extra housing from city zones (like city distrcits get)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed upkeep redction from automations&#10;fixed asteroid auto harvest&#10;added city version of zone that are half effect (so both ends up as good as the city)&#10;removed extra housing from city zones (like city distrcits get)" />
   </component>
 </project>

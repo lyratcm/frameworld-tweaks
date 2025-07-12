@@ -861,6 +861,42 @@ planet_event = {
     }
 }
 
+country_event = {
+    id = fwt.6
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        set_variable = { which = fwt_frameworld_hab value = 0 }
+        every_owned_fleet = {
+            limit = {
+                is_frameworld_outpost = yes
+                is_disabled = no
+            }
+            solar_system = {
+                every_system_planet = {
+                    limit = {
+                        is_frameworld_outpost_planet = yes
+                    }
+                    set_variable = {
+                        which = fwt_frameworld_hab
+                        value = modifier:pop_environment_tolerance
+                    }
+                    change_variable = {
+                        which = fwt_frameworld_hab
+                        value = owner_species.modifier:pop_environment_tolerance
+                    }
+                    ceiling_variable = 1
+                    divide_variable = { which = fwt_frameworld_hab value = 2 }
+                    owner = {
+                        change_variable = { which = fwt_frameworld_hab value = prev.fwt_frameworld_hab }
+                    }
+                }
+            }
+        }
+    }
+}
+
 situation_event = {
     id = fwt.999
     hide_window = yes

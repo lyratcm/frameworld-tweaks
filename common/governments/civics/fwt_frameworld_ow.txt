@@ -11,9 +11,9 @@ origin_frameworld = {
     preferred_planet_class_neighbor = no
 
     modifier = {
-      # it's SO beneficial for frame that it should probably be nerfed real hard
-      planetary_ascension_effect_mult = -0.5
-      planetary_ascension_cost_mult = 1
+        # it's SO beneficial for frame that it should probably be nerfed real hard
+        planetary_ascension_effect_mult = -0.5
+        planetary_ascension_cost_mult = 1
     }
 
     initializers = { giga_frameworld_system }
