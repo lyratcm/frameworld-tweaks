@@ -1,5 +1,5 @@
 # write documentation - add to already existing situation log
-# start efficiency lower and be increased with upgrade tier, make hab/ecu upgrades kilo (increase efficiency), mega upgrades mega (move tech exponent reduction to this and increase efficiency) and giga upgrades giga (move ringworld exponent to this), scale efficiency with hab? - power increase it instant rather than growth reduction being over time
+# start efficiency scale with hab - need testing
 # make hab affect efficiency from outposts
 # bio trophy reductions?
 # log for path to next upgrades

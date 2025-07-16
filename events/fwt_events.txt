@@ -87,6 +87,16 @@ country_event = {
             id = fwt.12
 
         }
+        country_event = {
+            id = fwt.11
+            days = 1
+        }
+        event_target:frame_expand@owner = {
+            planet_event = {
+                id = fwt.111
+                days = 1
+            }
+        }
     }
 }
 
@@ -97,6 +107,7 @@ country_event = {
     is_triggered_only = yes
 
     trigger = { giga_has_frameworld_origin = yes }
+
     immediate = {
         #backup in case it breaks, if your capital isn't the frameworld something is wrong but don't want to break it further
         if = {
@@ -106,6 +117,32 @@ country_event = {
     }
 }
 
+planet_event = {
+    id = fwt.111
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = { giga_is_frame_world = yes }
+
+    immediate = {
+        while = {
+            limit = { owner = { check_variable = { which = outpost_extra value > 0 } } }
+            change_planet_size = 1
+            create_pop_group = { species = owner_main_species }
+            create_pop_group = { species = owner_main_species }
+            create_pop_group = { species = owner_main_species }
+            if = {
+                limit = { owner = { is_catalytic_empire = no } }
+                add_district = district_giga_frameworld_urban_04
+            }
+            else_if = {
+                limit = { owner = { is_catalytic_empire = yes } }
+                add_district = district_giga_frameworld_urban_04
+            }
+            owner = { change_variable = { which = outpost_extra value = -1 } }
+        }
+    }
+}
 
 country_event = {
     id = fwt.12
@@ -114,8 +151,7 @@ country_event = {
     is_triggered_only = yes
 
     trigger = { giga_has_frameworld_origin = yes }
-    immediate = {
-    }
+
     option = {
         name = fwt.12.continuous_expansion
         trigger = {
@@ -125,6 +161,7 @@ country_event = {
             type = fwt_situation_continuous_expansion
         }
     }
+
     option = {
         name = fwt.12.continuous_harvest
         start_situation = {
@@ -857,6 +894,42 @@ planet_event = {
         multiply_variable = {
             which = fwt_pop_growth_reduction
             value = fwt_pop_growth_rec
+        }
+    }
+}
+
+country_event = {
+    id = fwt.6
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        set_variable = { which = fwt_frameworld_hab value = 0 }
+        every_owned_fleet = {
+            limit = {
+                is_frameworld_outpost = yes
+                is_disabled = no
+            }
+            solar_system = {
+                every_system_planet = {
+                    limit = {
+                        is_frameworld_outpost_planet = yes
+                    }
+                    set_variable = {
+                        which = fwt_frameworld_hab
+                        value = modifier:pop_environment_tolerance
+                    }
+                    change_variable = {
+                        which = fwt_frameworld_hab
+                        value = owner_species.modifier:pop_environment_tolerance
+                    }
+                    ceiling_variable = 1
+                    divide_variable = { which = fwt_frameworld_hab value = 2 }
+                    owner = {
+                        change_variable = { which = fwt_frameworld_hab value = prev.fwt_frameworld_hab }
+                    }
+                }
+            }
         }
     }
 }
