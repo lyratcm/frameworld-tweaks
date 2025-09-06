@@ -566,7 +566,7 @@ giga_frameworld_outpost_count_raw_hab = {
 
 giga_frameworld_outpost_count_hab = {
 	#weight = modifier:giga_frameworld_outpost_count
-	weight = value:giga_frameworld_outpost_count_raw
+	weight = value:giga_frameworld_outpost_count_raw_hab
 
 	# megacorp outposts count for less, but they get branch office outposts too
 	modifier = {
@@ -576,7 +576,7 @@ giga_frameworld_outpost_count_hab = {
 }
 
 giga_frameworld_outpost_growth_count_hab = {
-	weight = owner.value:giga_frameworld_outpost_count
+	weight = owner.value:giga_frameworld_outpost_count_hab
 	multiply = @giga_frameworld_outpost_expansion_curve
 	divide = value:giga_frameworld_outpost_growth_count_internal|reduction|$reduction|1$|reduction_offset|$reduction_offset|0$|
 	multiply = $mult|1$
@@ -589,4 +589,35 @@ giga_frameworld_outpost_growth_count_internal = {
 	# reduce the effect more for the first increases to the modifier
 	subtract = $reduction_offset$
 	add = @giga_frameworld_outpost_expansion_curve
+}
+
+fwt_frameworld_hab_percent = {
+    weight = fwt_frameworld_planet_base_hab
+
+	add = value:frameworld_modifier_hab|MODIFIER|pop_environment_tolerance|
+
+	min = value:fwt_frameworld_hab_percent_floor
+
+	max = value:fwt_frameworld_hab_percent_ceil
+
+	add = 1
+	divide = 2
+}
+
+fwt_frameworld_hab_percent_floor = {
+    base = 0
+    add = value:frameworld_modifier_hab|MODIFIER|habitability_floor_add|
+    min = 0
+}
+
+fwt_frameworld_hab_percent_ceil = {
+    base = 1
+    subtract = value:frameworld_modifier_hab|MODIFIER|habitability_ceil_add|
+    max = 1
+}
+
+frameworld_modifier_hab = {
+	weight = solar_system.owner_main_species.modifier:$MODIFIER$
+	# add = fwt_frameworld_planet_base_hab
+	add = solar_system.owner.modifier:$MODIFIER$
 }

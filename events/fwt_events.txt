@@ -94,7 +94,7 @@ country_event = {
         event_target:frame_expand@owner = {
             planet_event = {
                 id = fwt.111
-                days = 1
+                days = 5
             }
         }
     }
@@ -125,6 +125,19 @@ planet_event = {
     trigger = { giga_is_frame_world = yes }
 
     immediate = {
+        #setup frameworld hab variable to account for any starting planets
+        owner = {
+            every_owned_fleet = {
+                limit = {
+                    is_frameworld_outpost = yes
+                    is_disabled = no
+                }
+                orbit = {
+                    set_variable = { which = fwt_frameworld_planet_base_hab value = modifier:pop_environment_tolerance }
+                    prev.owner = { change_variable = { which = fwt_frameworld_hab value = prev.value:fwt_frameworld_hab_percent } }
+                }
+            }
+        }
         while = {
             limit = { owner = { check_variable = { which = outpost_extra value > 0 } } }
             change_planet_size = 1
@@ -824,7 +837,14 @@ country_event = {
     is_triggered_only = yes
 
     trigger = { giga_has_frameworld_origin = yes }
-    immediate = { event_target:frame_expand@owner = { planet_event = { id = fwt.51 days = 1 } } }
+    immediate = {
+        event_target:frame_expand@owner = {
+            planet_event = {
+            id = fwt.51
+                days = 1
+            }
+        }
+    }
 }
 
 
@@ -898,6 +918,7 @@ planet_event = {
     }
 }
 
+#yearly_pulse_country
 country_event = {
     id = fwt.6
     hide_window = yes
@@ -910,25 +931,8 @@ country_event = {
                 is_frameworld_outpost = yes
                 is_disabled = no
             }
-            solar_system = {
-                every_system_planet = {
-                    limit = {
-                        is_frameworld_outpost_planet = yes
-                    }
-                    set_variable = {
-                        which = fwt_frameworld_hab
-                        value = modifier:pop_environment_tolerance
-                    }
-                    change_variable = {
-                        which = fwt_frameworld_hab
-                        value = owner_species.modifier:pop_environment_tolerance
-                    }
-                    ceiling_variable = 1
-                    divide_variable = { which = fwt_frameworld_hab value = 2 }
-                    owner = {
-                        change_variable = { which = fwt_frameworld_hab value = prev.fwt_frameworld_hab }
-                    }
-                }
+            orbit = {
+                prev.owner = { change_variable = { which = fwt_frameworld_hab value = prev.value:fwt_frameworld_hab_percent } }
             }
         }
     }
@@ -947,14 +951,5 @@ situation_event = {
         set_situation_flag = giga_frameworld_expand_mass_bulk_5_dec
         set_situation_flag = giga_frameworld_reorganise_dec
         set_situation_flag = giga_frameworld_consume_world_dec
-        set_situation_flag = frameworld_penrose_dec
-        set_situation_flag = giga_frameworld_decompressor_dec
-        set_situation_flag = giga_frameworld_advanced_city_dec
-        set_situation_flag = giga_frameworld_advanced_industrial_dec
-        set_situation_flag = frameworld_advanced_sanctuary_dec
-        set_situation_flag = giga_frameworld_gaia_dec
-        set_situation_flag = giga_frameworld_computing_complex_dec
-        set_situation_flag = frameworld_orbital_ring_dec
-        set_situation_flag = giga_frameworld_maginot_dec
     }
 }

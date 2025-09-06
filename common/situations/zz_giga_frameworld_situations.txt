@@ -327,7 +327,7 @@ giga_situation_frameworld_outposts = {
         # planet_pop_assembly_reduction = -0.1
         # pop_growth_speed_reduction = -0.1
         pop_bonus_workforce_mult = 0.1
-        multiplier = value:giga_frameworld_outpost_growth_count_hab|reduction|2|reduction_offset|3|
+        multiplier = value:giga_frameworld_outpost_growth_count_hab|reduction|2|reduction_offset|5|
     }
 
     # virtual stuff

@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="starting support for scaling outpost output base on hab">
+    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/buildings/zz_giga_buildings_ow.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/megastructures/frameworld/outpost_construction.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/megastructures/frameworld/outpost_construction.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/situations/zz_giga_frameworld_situations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/situations/zz_giga_frameworld_situations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/static_modifiers/fwt_static_modifier.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/static_modifiers/fwt_static_modifier.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/fwt_events.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/fwt_events.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plans.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plans.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750433434096</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="hab efficiency support">
+      <option name="closed" value="true" />
+      <created>1752694266802</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1752694266802</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -254,6 +268,7 @@
     <MESSAGE value="inline amenties&#10;foundation for city versions of zones&#10;added rare resource upkeep to districts as not needed for zones" />
     <MESSAGE value="removed a starting food district&#10;reworked the back end of the asteroid situation and cleaned up the toolips&#10;added a unity designation back for the capital&#10;added the correct job swaps for enteratainers&#10;allowed a esap to work for the frameworld&#10;updated the iodizium reseach and negative mass buildings to 4.0&#10;reduced the extra stuff from mega expansion&#10;increased the scaling reduction for the frameworld efficiency pending rework&#10;fixed the giga frameworld job icons" />
     <MESSAGE value="added a menu for starting the situations&#10;update the ecu desposit to be the same as vanilla ecu" />
-    <option name="LAST_COMMIT_MESSAGE" value="added a menu for starting the situations&#10;update the ecu desposit to be the same as vanilla ecu" />
+    <MESSAGE value="hab efficiency support" />
+    <option name="LAST_COMMIT_MESSAGE" value="hab efficiency support" />
   </component>
 </project>

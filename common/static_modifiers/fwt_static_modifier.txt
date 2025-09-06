@@ -1,3 +1,7 @@
 fwt_speed_unemploy_info = {
     pop_demotion_time_mult = 1
 }
+
+fwt_frameworld_hab = {
+
+}

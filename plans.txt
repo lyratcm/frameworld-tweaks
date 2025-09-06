@@ -1,11 +1,10 @@
 # write documentation - add to already existing situation log
 # start efficiency scale with hab - need testing
-# make hab affect efficiency from outposts
-# bio trophy reductions?
+# change expansion scale to have a lower exponent but increase base when doing so - less painful after a long time after expanding
 # log for path to next upgrades
 # 16x bonuses - alderson disk maybe although the origin gets pretty strong as this point maybe reduce exponent once more
 
 # test non-overwriting merge? - talk to gigas team about moving some of my ow into code - would help with compat with the other frameworld sub mod
-# gigas ehof district support
-
-# remove ascension breakthrough
+# gigas ehof spec support
+# soldier spec
+# bio trophy reductions?
