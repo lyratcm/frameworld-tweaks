@@ -764,3 +764,244 @@ country_event = {
 		}
 	}
 }
+
+# integrated penrose frame
+country_event = {
+	id = giga_frameworld_origin.001
+	title = giga_frameworld_origin.001.name
+	desc = giga_frameworld_origin.001.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_dyson_sphere_build_start
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.001.a }
+}
+
+# integrated penrose panels
+country_event = {
+	id = giga_frameworld_origin.002
+	title = giga_frameworld_origin.002.name
+	desc = giga_frameworld_origin.002.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.002.a }
+}
+
+# integrated penrose complete
+country_event = {
+	id = giga_frameworld_origin.003
+	title = giga_frameworld_origin.003.name
+	desc = giga_frameworld_origin.003.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_dyson_sphere_build_complete
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.003.a }
+}
+
+# integrated decompressor struts
+country_event = {
+	id = giga_frameworld_origin.004
+	title = giga_frameworld_origin.004.name
+	desc = giga_frameworld_origin.004.desc
+	picture = GFX_evt_matter_decompressor
+	show_sound = event_mystic_reveal
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.004.a }
+}
+
+# integrated decompressor ring
+country_event = {
+	id = giga_frameworld_origin.005
+	title = giga_frameworld_origin.005.name
+	desc = giga_frameworld_origin.005.desc
+	picture = GFX_evt_matter_decompressor
+	show_sound = event_mystic_reveal
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.005.a }
+}
+
+# integrated decompressor complete
+country_event = {
+	id = giga_frameworld_origin.006
+	title = giga_frameworld_origin.006.name
+	desc = giga_frameworld_origin.006.desc
+	picture = GFX_evt_matter_decompressor
+	show_sound = event_mystic_reveal
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.006.a }
+}
+
+# city upgrade complete
+country_event = {
+	id = giga_frameworld_origin.007
+	title = giga_frameworld_origin.007.name
+	desc = {
+		trigger = { is_machine_empire = yes }
+		text = giga_frameworld_origin.007.desc.machine
+	}
+	desc = {
+		trigger = { is_hive_empire = yes }
+		text = giga_frameworld_origin.007.desc.hive
+	}
+	desc = {
+		trigger = {
+			is_machine_empire = no
+			is_hive_empire = no
+		}
+		text = giga_frameworld_origin.007.desc
+	}
+	picture = GFX_evt_city_planet
+	show_sound = event_cityscape
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.007.a }
+}
+
+# industrial upgrade complete
+country_event = {
+	id = giga_frameworld_origin.008
+	title = giga_frameworld_origin.008.name
+	desc = giga_frameworld_origin.008.desc
+	picture = GFX_evt_ship_offloading_cargo
+	show_sound = event_construction
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.008.a }
+}
+
+# sanctuary upgrade complete
+country_event = {
+	id = giga_frameworld_origin.009
+	title = giga_frameworld_origin.009.name
+	desc = giga_frameworld_origin.009.desc
+	picture = GFX_evt_metropolis
+	show_sound = event_cityscape
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.009.a }
+}
+
+# gaia upgrade complete
+country_event = {
+	id = giga_frameworld_origin.010
+	title = giga_frameworld_origin.010.name
+	desc = {
+		trigger = { has_civic = civic_machine_assimilator }
+		text = giga_frameworld_origin.010.desc.assimilator
+	}
+	desc = {
+		trigger = { has_civic = civic_machine_servitor  }
+		text = giga_frameworld_origin.010.desc.servitor
+	}
+	desc = {
+		trigger = {
+			nor = {
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor
+			}
+		}
+		text = giga_frameworld_origin.010.desc
+	}
+	picture = GFX_evt_habitat
+	show_sound = event_mystic_reveal
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = {
+		name = giga_frameworld_origin.010.a.assimilator
+		trigger = { has_civic = civic_machine_assimilator }
+	}
+	option = {
+		name = giga_frameworld_origin.010.a.servitor
+		trigger = { has_civic = civic_machine_servitor }
+	}
+	option = {
+		name = giga_frameworld_origin.010.a
+		trigger = {
+			nor = {
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor
+			}
+		}
+	}
+}
+
+# PCC upgrade complete
+country_event = {
+	id = giga_frameworld_origin.011
+	title = giga_frameworld_origin.011.name
+	desc = giga_frameworld_origin.011.desc
+	picture = GFX_evt_sapient_AI
+	show_sound = event_laboratory_sound
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.011.a }
+}
+
+# infrastructure upgrade complete
+country_event = {
+	id = giga_frameworld_origin.012
+	title = giga_frameworld_origin.012.name
+	desc = {
+		trigger = {
+			event_target:giga_planet = {
+				has_planet_flag = frameworld_expanded_infrastructure_2
+			}
+		}
+		text = giga_frameworld_origin.012.desc.2
+	}
+	desc = {
+		trigger = {
+			event_target:giga_planet = {
+				not = { has_planet_flag = frameworld_expanded_infrastructure_2}
+			}
+		}
+		text = giga_frameworld_origin.012.desc
+	}
+	picture = GFX_evt_space_hangar
+	show_sound = event_construction
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.012.a }
+}
+
+# maginot upgrade complete
+country_event = {
+	id = giga_frameworld_origin.013
+	title = giga_frameworld_origin.013.name
+	desc = giga_frameworld_origin.013.desc
+	picture = GFX_evt_maginot_world
+	show_sound = maginot_army_noise_effect
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.013.a }
+}
+
+# orbital ring upgrade complete
+country_event = {
+	id = giga_frameworld_origin.014
+	title = giga_frameworld_origin.014.name
+	desc = giga_frameworld_origin.014.desc
+	picture = GFX_evt_ship_offloading_cargo
+	show_sound = event_construction
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.014.a }
+}
+
+# nanite
+country_event = {
+	id = giga_frameworld_origin.015
+	title = giga_frameworld_origin.015.name
+	desc = giga_frameworld_origin.015.desc
+	picture = GFX_evt_rare_tech_cache
+	show_sound = event_construction
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.015.a }
+}

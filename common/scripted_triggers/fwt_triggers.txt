@@ -1,0 +1,22 @@
+fwt_tech_trigger_not = {
+    owner = {
+        not = {
+            has_technology = $TECHNOLOGY$
+        }
+    }
+}
+
+fwt_tech_trigger = {
+    owner = {
+        has_technology = $TECHNOLOGY$
+    }
+}
+
+fwt_t1_upgrade = {
+    has_planet_flag = frameworld_advanced_city
+    has_planet_flag = frameworld_habitat_upgrade
+}
+
+fwt_t2_upgrade = {
+    has_galactic_wonders = yes
+}

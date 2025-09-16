@@ -239,3 +239,25 @@
  fwt_zone_default_desc: "REPLACE_ME"
  mod_planet_fwt_zone_default_build_speed_mult: "REPLACE_ME"
  mod_planet_fwt_zone_default_build_speed_mult_desc: "REPLACE_ME"
+
+
+
+ #dummy locs so i can show prerequs while still having unlock on tech
+ giga_frameworld_penrose_dummy: "$giga_frameworld_penrose$"
+ giga_frameworld_penrose_dummy_desc: "$giga_frameworld_penrose_desc$"
+ giga_frameworld_decompressor_dummy: "$giga_frameworld_decompressor$"
+ giga_frameworld_decompressor_dummy_desc: "$giga_frameworld_decompressor$"
+ giga_frameworld_advanced_city_dummy: "$giga_frameworld_advanced_city$"
+ giga_frameworld_advanced_city_dummy_desc: "$giga_frameworld_advanced_city_desc$"
+ giga_frameworld_advanced_industrial_dummy: "$giga_frameworld_advanced_industrial$"
+ giga_frameworld_advanced_industrial_dummy_desc: "$giga_frameworld_advanced_industrial_desc$"
+ giga_frameworld_advanced_sanctuary_dummy: "$giga_frameworld_advanced_sanctuary$"
+ giga_frameworld_advanced_sanctuary_dummy_desc: "$giga_frameworld_advanced_sanctuary_desc$"
+ giga_frameworld_computing_complex_dummy: "$giga_frameworld_computing_complex$"
+ giga_frameworld_computing_complex_dummy_desc: "$giga_frameworld_computing_complex_desc$"
+ giga_frameworld_expand_infrastructure_dummy: "$giga_frameworld_expand_infrastructure$"
+ giga_frameworld_expand_infrastructure_dummy_desc: "$giga_frameworld_expand_infrastructure_desc$"
+ giga_frameworld_orbital_ring_upgrade_dummy: "$giga_frameworld_orbital_ring_upgrade$"
+ giga_frameworld_orbital_ring_upgrade_dummy_desc: "$giga_frameworld_orbital_ring_upgrade_desc$"
+ giga_frameworld_habitat_upgrade_dummy: "$giga_frameworld_habitat_upgrade$"
+ giga_frameworld_habitat_upgrade_dummy_desc: "$giga_frameworld_habitat_upgrade_desc$"

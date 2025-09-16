@@ -33,12 +33,14 @@ giga_situation_frameworld_decisions = {
         default = yes
 
     }
+
 	on_start = {
 		set_variable = {
 			which = fwt_decision_time
 			value = owner.fwt_decision_time
 		}
-	}						#Effects when the Situation is created
+	}
+
 	on_monthly = {
 		events = {
 			fwt.2

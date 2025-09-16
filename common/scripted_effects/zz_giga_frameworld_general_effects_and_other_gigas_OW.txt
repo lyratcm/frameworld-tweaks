@@ -212,19 +212,20 @@ giga_frameworld_recalculate_variables = {
 		}
 	}
 
-	set_variable = { which = giga_frameworld_expansion_cost_multiplier_dec value = giga_frameworld_expansion_cost_multiplier }
+	set_variable = { which = fwt_frameworld_expansion_cost_multiplier value = giga_frameworld_expansion_cost_multiplier }
+	multiply_variable = { which = fwt_frameworld_expansion_cost_multiplier value = giga_frameworld_expansion_cost_base }
+
+	#seperate var for decisions that need to take into account other decisions in queue
+	set_variable = { which = fwt_frameworld_expansion_cost_multiplier_dec value = fwt_frameworld_expansion_cost_multiplier }
 
 	# recalculate total decision cost from from expansion count
 	while = {
 		count = fwt_in_queue_expand
-
 		multiply_variable = {
-			which = giga_frameworld_expansion_cost_multiplier_dec
+			which = fwt_frameworld_expansion_cost_multiplier_dec
 			value = giga_frameworld_expansion_cost_exponent
 		}
 	}
-
-	multiply_variable = { which = giga_frameworld_expansion_cost_multiplier_dec value = giga_frameworld_expansion_cost_base }
 
 	# set up the bulk buy options
 	set_variable = {

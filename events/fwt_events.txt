@@ -938,6 +938,9 @@ country_event = {
     }
 }
 
+
+
+
 situation_event = {
     id = fwt.999
     hide_window = yes

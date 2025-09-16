@@ -5,7 +5,7 @@
 ###############################################################################################################
 
 # expand with alloys
-#anything commented out is gigas code left there as a reminder
+# anything commented out is gigas code left there as a reminder
 giga_frameworld_expand = {
 	icon = decision_frameworld_expand
 	owned_planets_only = yes
@@ -16,7 +16,7 @@ giga_frameworld_expand = {
 		category = megastructures_frameworld
 		cost = {
 			alloys = 1
-			multiplier = giga_frameworld_expansion_cost_multiplier_dec
+			multiplier = fwt_frameworld_expansion_cost_multiplier_dec
 		}
 	}
 	
@@ -131,7 +131,7 @@ giga_frameworld_expand_bulk_5 = {
 		category = megastructures_frameworld
 		cost = {
 			alloys = 1
-			multiplier = giga_frameworld_expansion_cost_multiplier_dec
+			multiplier = fwt_frameworld_expansion_cost_multiplier_dec
 			multiplier = 5
 		}
 	}
@@ -216,7 +216,7 @@ giga_frameworld_expand_bulk_10 = {
 		category = megastructures_frameworld
 		cost = {
 			alloys = 1
-			multiplier = giga_frameworld_expansion_cost_multiplier_dec
+			multiplier = fwt_frameworld_expansion_cost_multiplier_dec
 			multiplier = 10
 		}
 	}

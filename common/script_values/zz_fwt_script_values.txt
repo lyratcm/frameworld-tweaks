@@ -19,7 +19,7 @@ fwt_mult_bonus_to_dec_mult = {
 fwt_situation_decision_cost_time = {
 	base = 100
 	# no idea why script values are failing - lyra
-	#maybe its bc you scoped to a owner variable while in situation - also lyra
+	# maybe its bc you scoped to a owner variable while in situation - also lyra
 	divide = value:fwt_situation_decision_cost_time_month
 	#frame_expand@owner is that empires frame world
 }
@@ -31,11 +31,10 @@ fwt_situation_decision_cost_time_month = {
 
 ####### auto-expansion ######################
 
-#noinspection SpellCheckingInspection
 fwt_situation_continuous_speed = {
 	weight = owner.modifier:country_situations_expansion_alloys_upkeep_add
 	# add = owner.modifier:fwt_alloy_useage_offset
-	divide = value:fwt_situation_continuous_cost1
+	divide = capital_scope.owner.fwt_frameworld_expansion_cost_multiplier
 	mult = 100
 }
 
@@ -75,7 +74,7 @@ fwt_situation_continuous_cost2 = {
 fwt_situation_continuous_cost1 = {
 	weight = value:fwt_situation_continuous_cost2
 	# multiplier for how many expansions
-	mult = event_target:frame_expand@owner.giga_frameworld_expansion_cost_multiplier
+	mult = capital_scope.owner.giga_frameworld_expansion_cost_multiplier
 }
 
 #% of income spending as a %
