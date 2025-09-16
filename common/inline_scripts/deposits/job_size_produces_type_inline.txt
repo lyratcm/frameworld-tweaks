@@ -1,7 +1,0 @@
-triggered_planet_modifier = {
-    potential = { always = yes }
-    multiplier = fwt_$MODIFIER$_mult_var
-
-    planet_$JOB$__mult = 1
-    planet_$JOB$__mult_offset = 1
-}

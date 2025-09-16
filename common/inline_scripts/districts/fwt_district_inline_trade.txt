@@ -5,21 +5,11 @@
 @advanced_rare_upkeep = 1
 @base_time = 240
 @city_time = 480
-@base_housing = 1
+@base_housing = 100
 @yes = 1
 @no = 0
-conversion_ratio = 1
-show_tech_unlock_if = {
-	giga_has_frameworld_origin = yes
-	is_gestalt = no
-}
 
-is_capped_by_modifier = no
-
-prerequisites = {
-	#fall back tech that everyone will get
-	tech_interstellar_economics
-}
+show_in_tech = tech_interstellar_economics
 
 base_buildtime = @[ city_time * $SIZE_COST$ * $SCALE$ ]
 
@@ -27,21 +17,56 @@ resources = {
 	category = planet_districts_hab_trade
 	cost = {
 		minerals = @[ advanced_cost * $SIZE_COST$ * $SCALE$ ]
-		rare_crystals = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_unity_trade_completion
 	}
 	#half advanced cost (so base) and 0x advanced so none of the for tier 1
 	upkeep = {
 		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
+		mult = fwt_unity_trade_completion
+	}
+	cost = {
+		trigger = {
+			check_variable = { which = fwt_unity_trade_completion value > 1 }
+		}
+		rare_crystals = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_unity_trade_completion
+	}
+	#half advanced cost (so base) and 0x advanced so none of the for tier 1
+	upkeep = {
+		trigger = {
+			check_variable = { which = fwt_unity_trade_completion value > 1 }
+		}
 		rare_crystals = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+		mult = fwt_unity_trade_completion
 	}
 }
-
 planet_modifier = {
-	planet_housing_add = @base_housing
-	planet_housing_add = @[ $SIZE$ * 0.25 ]
-	job_clerk_add =  1
-	job_trader_add = 0.5
-	job_merchant_add = 0.25
+	zone_building_slots_add = 3
+}
+
+inline_script = {
+	script = zones/shared_frameworld_non_urban_zone_modifiers
+}
+
+included_building_sets = {
+	urban
+	trade
+	automation
+	origin
+}
+
+inline_script = {
+	script = zones/fwt_all_exclude_building
+	DISTRICT = "building_fwt_automation_amenities_1	building_fwt_automation_amenities_2 building_fwt_automation_city_1 building_fwt_automation_city_2"
+}
+
+convert_to = {
+	district_giga_frameworld_generator
+}
+
+triggered_district_planet_modifier = {
+	job_trader_add = $JOBS$
+	mult = fwt_unity_trade_completion
 }
 
 triggered_planet_modifier = {
@@ -52,8 +77,8 @@ triggered_planet_modifier = {
 		}
 	}
 	modifier = {
-		job_trader_add = 1
-		planet_housing_add = 0.125
+		job_trader_add = 100
+		planet_housing_add = @[ 25 * $SIZE_COST$ ]
 	}
 }
 
@@ -63,17 +88,4 @@ triggered_desc = {
 
 triggered_desc = {
 	text = job_trader_effect_desc
-}
-
-ai_resource_production = {
-	energy = @[ 12 * $SIZE_COST$ ]
-	trigger = {
-		OR = {
-			num_unemployed >= 10
-			num_assigned_jobs = {
-				job = servant
-				value >= 10
-			}
-		}
-	}
 }

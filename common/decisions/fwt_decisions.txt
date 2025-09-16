@@ -1,15 +1,63 @@
-fwt_auto_actions = {
+# fwt_auto_actions = {
+# 	icon = decision_frameworld_expand
+# 	owned_planets_only = yes
+#
+# 	enactment_time = 0
+#
+# 	potential = {
+# 		exists = owner
+# 		owner = {
+# 			not = {
+# 				has_country_flag = auto_menu_open
+# 			}
+# 			giga_has_frameworld_origin = yes
+# 		}
+# 		giga_is_frame_world = yes
+# 	}
+#
+# 	effect = {
+# 		owner = {
+# 			set_country_flag = auto_menu_open
+# 			country_event = {
+# 				id = fwt.4
+# 			}
+# 		}
+# 	}
+# }
+
+fwt_auto_expand = {
 	icon = decision_frameworld_expand
 	owned_planets_only = yes
-	
+
 	enactment_time = 0
-	
+
 	potential = {
 		exists = owner
 		owner = {
-			not = {
-				has_country_flag = auto_menu_open
+			giga_has_frameworld_origin = yes
+			not = { country_has_situation = { SITUATION = fwt_situation_continuous_expansion } }
+		}
+		giga_is_frame_world = yes
+	}
+
+	effect = {
+		owner = {
+			start_situation = {
+				type = fwt_situation_continuous_expansion
 			}
+		}
+	}
+}
+
+fwt_auto_harvest = {
+	icon = decision_frameworld_expand
+	owned_planets_only = yes
+
+	enactment_time = 0
+
+	potential = {
+		exists = owner
+		owner = {
 			giga_has_frameworld_origin = yes
 		}
 		giga_is_frame_world = yes
@@ -17,11 +65,9 @@ fwt_auto_actions = {
 
 	effect = {
 		owner = {
-			set_country_flag = auto_menu_open
-			country_event = {
-				id = fwt.4
+			start_situation = {
+				type = fwt_situation_frameworld_continuous_harvest
 			}
-			
 		}
 	}
 }

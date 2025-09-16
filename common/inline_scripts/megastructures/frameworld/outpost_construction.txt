@@ -41,6 +41,10 @@
     }
 
     on_build_complete = {
+        fromfrom.planet = {
+            set_variable = { which = fwt_frameworld_planet_base_hab value = modifier:pop_environment_tolerance }
+            from = { change_variable = { which = fwt_frameworld_hab value = prev.value:fwt_frameworld_hab_percent } }
+        }
         giga_frameworld_create_outpost = {
             owner = from
             planet = fromfrom.planet

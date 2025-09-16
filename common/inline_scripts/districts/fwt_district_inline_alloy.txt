@@ -5,34 +5,11 @@
 @advanced_rare_upkeep = 1
 @base_time = 240
 @city_time = 480
-@base_housing = 1
+@base_housing = 100
 @yes = 1
 @no = 0
 
-conversion_ratio = 1
-
-show_tech_unlock_if = {
-	giga_has_frameworld_origin = yes
-}
-
-is_capped_by_modifier = no
-
-prerequisites = {
-	#fall back tech that everyone will get
-	tech_basic_industry
-}
-
-triggered_planet_modifier = {
-	potential = {
-		exists = owner
-		owner = { is_crafter_empire = yes }
-	}
-	modifier = {
-		planet_max_buildings_add = @[ 0.67 * $SIZE_COST$ ]
-	}
-}
-
-triggered_planet_modifier = {
+triggered_district_planet_modifier = {
 	potential = {
 		exists = owner
 		owner = {
@@ -41,13 +18,25 @@ triggered_planet_modifier = {
 		}
 	}
 	modifier = {
-		job_maintenance_drone_add = @[ 2 * $SIZE_COST$ ]
+		job_maintenance_drone_add = @[ 200 * $SIZE_COST$ ]
 	}
 }
 
+included_building_sets = {
+	foundry
+	automation
+	origin
+}
+
 inline_script = {
-	script = planet/alloys/giga_foundry_job_swap
-	jobs = 1
+	script = zones/fwt_exclude_building
+}
+
+
+inline_script = {
+	script = planet/alloys/fwt_foundry_job_swap
+	jobs = $JOBS$
+	multiplier_string = "mult = fwt_alloy_completion"
 }
 
 triggered_desc = {
@@ -61,20 +50,32 @@ triggered_desc = {
 	text = job_maintenance_drone_effect_desc
 }
 
-base_buildtime = @[ city_time * $SIZE_COST$ * $SCALE$ ]
+base_buildtime = @city_time
 
 resources = {
 	category = planet_districts_industrial
 	cost = {
 		minerals = @[ advanced_cost * $SIZE_COST$ * $SCALE$ ]
+		mult = fwt_alloy_completion
+	}
+	cost = {
+		trigger = {
+			check_variable = { which = fwt_alloy_completion value > 1 }
+		}
 		volatile_motes = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_alloy_completion
 	}
 	#half advanced cost (so base) and 0x advanced so none of the for tier 1
 	upkeep = {
 		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
+		mult = fwt_alloy_completion
+	}
+	upkeep = {
+		trigger = {
+			check_variable = { which = fwt_alloy_completion value > 1 }
+		}
 		volatile_motes = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
 	}
-	
 	upkeep = {
 		trigger = {
 			exists = owner
@@ -83,6 +84,7 @@ resources = {
 			}
 		}
 		energy = 2
+		mult = fwt_alloy_completion
 	}
 	# nanite upgrade
 	upkeep = {
@@ -90,32 +92,28 @@ resources = {
 			frameworld_has_active_nanite_upgrade = yes
 		}
 		energy = @[ 20 * $SIZE$ ]
+		mult = fwt_alloy_completion
+	}
+	upkeep = {
+		trigger = {
+			check_variable = { which = fwt_alloy_completion value > 1 }
+		}
 		nanites = @[ 2 * $SIZE$ ]
+		mult = fwt_alloy_completion
 	}
 	produces = {
 		trigger = {
 			frameworld_has_active_nanite_upgrade = yes
 		}
 		alloys = @[ 10 * $SIZE$ ]
+		mult = fwt_alloy_completion
 	}
 }
 
 planet_modifier = {
-	planet_housing_add = @base_housing
-	planet_housing_add = @[ $SIZE$ * 0.125 ]
+	zone_building_slots_add = 3
 }
 
-
-ai_resource_production = {
-	alloys = @[ 4 * $SIZE_COST$ ]
-	trigger = {
-		always = yes
-	}
-}
-
-ai_resource_production = {
-	ai_unobtainium = 1000
-	trigger = {
-		frameworld_want_industrial = yes
-	}
+inline_script = {
+	script = zones/shared_frameworld_non_urban_zone_modifiers
 }

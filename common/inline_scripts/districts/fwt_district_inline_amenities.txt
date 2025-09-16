@@ -1,0 +1,53 @@
+base_buildtime = @advanced_time
+convert_to = {
+    district_giga_frameworld_amenities_dystopian
+    district_giga_frameworld_amenities_gestalt
+}
+
+include = {
+    all
+}
+
+inline_script = {
+    script = zones/fwt_all_exclude_building
+    DISTRICT = " building_fwt_automation_trade_1 building_fwt_automation_trade_2 building_fwt_automation_city_1 building_fwt_automation_city_2"
+}
+
+resources = {
+    category = planet_districts
+    cost = {
+        minerals = @advanced_cost
+        mult = fwt_unity_trade_completion
+    }
+    upkeep = {
+        energy = @advanced_upkeep
+        mult = fwt_unity_trade_completion
+    }
+    cost = {
+        trigger = {
+            check_variable = { which = fwt_unity_trade_completion value > 1 }
+        }
+        exotic_gases = @advanced_rare_cost
+        mult = fwt_unity_trade_completion
+    }
+    upkeep = {
+        trigger = {
+            check_variable = { which = fwt_unity_trade_completion value > 1 }
+        }
+        exotic_gases = @advanced_rare_upkeep
+        mult = fwt_unity_trade_completion
+    }
+}
+
+planet_modifier = {
+    zone_building_slots_add = 3
+}
+
+inline_script = {
+    script = zones/shared_frameworld_non_urban_zone_modifiers
+}
+
+inline_script = {
+    script = "$JOB$"
+    JOBS = $JOBS$
+}

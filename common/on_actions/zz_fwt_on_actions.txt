@@ -1,0 +1,81 @@
+on_game_start_country = {
+	events = {
+		fwt.1
+	}
+}
+
+on_tech_increased = {
+	events = {
+		fwt.3
+	}
+}
+
+on_monthly_pulse_country = {
+	events = {
+		fwt.11
+		fwt.5
+	}
+}
+
+# this = country
+on_yearly_pulse_country = {
+	events = {
+		#check once a year for new deposits (or run out of deposits) and when ever the empire should gain or lose a system
+		fwt.412
+		#update outpost output
+		fwt.6
+	}
+}
+
+### fwt harvest check for new systems under our ownership to reassess if there are any asteroids to harvest
+#This = ship (starbase)
+#From = owner country
+on_building_starbase_outpost = {
+	events = {
+		fwt.4111
+	}
+}
+# Called when a Starbase changes owner
+# THIS = Ship (Starbase)
+# FROM = Former Owner (Country)
+on_starbase_transfer = {
+	events = {
+		fwt.4111
+	}
+}
+
+# From = system
+# FromFrom = country (new owner)
+# This = country (previous owner)
+on_system_lost = {
+	events = {
+		fwt.412
+	}
+}
+
+# From = system
+# FromFrom = country (previous owner)
+# This = country (new owner)
+on_system_gained = {
+	events = {
+		fwt.412
+	}
+}
+
+#Fired from destroy_star_system scripted effect
+#This = system
+#From = destroyer (if using a star cracker)
+on_destroy_star_system = {
+	events = {
+		fwt.4112
+	}
+}
+
+
+#This = ship (starbase)
+#From = owner country
+on_building_starbase_outpost = {
+	events = {
+		fwt.4113
+	}
+}

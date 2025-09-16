@@ -1,9 +1,8 @@
 namespace = giga_frameworld_origin
-
 @frameworld_outpost_disassembly_reward = 50
 
 ###############################################################################################################################################
-# System initialiser finisher, upgrade notifications
+# System initializer finisher, upgrade notifications
 ###############################################################################################################################################
 
 ### game start
@@ -12,370 +11,997 @@ country_event = {
     hide_window = yes
     is_triggered_only = yes
 
-    trigger = {
-        has_origin = origin_frameworld # specifically not the trigger because any variant would likely want a different setup event
-    }
+	# specifically not the trigger because any variant would likely want a different setup event
+    trigger = { has_origin = origin_frameworld }
 
     immediate = {
-        # colony ship cost modifier OBSOLETE
-        #add_modifier = {
-        #	modifier = frameworld_origin_colony_cost
-        #}
+		#trigger my setup stuff so the OW event can use my vars
+		country_event = {
+			id = fwt.1
+		}
+    }
+    after = {
+		set_variable = {
+			which = giga_frameworld_megastructure_cost
+			value = 1
+		}
 
-        set_variable = {
-            which = giga_frameworld_megastructure_cost
-            value = 1
-        }
+		##### set up documentation
 
-        ##### set up documentation
+		begin_event_chain = { event_chain = giga_frameworld_docs_chain }
 
-        begin_event_chain = {
-            event_chain = giga_frameworld_docs_chain
-        }
+		create_point_of_interest = {
+			id = giga_frameworld_docs_chain.1
+			name = "giga_frameworld_docs_expansion"
+			desc = "giga_frameworld_docs_expansion_desc"
+			event_chain = "giga_frameworld_docs_chain"
+			location = capital_scope
+		}
 
-        create_point_of_interest = {
-            id = giga_frameworld_docs_chain.1
-            name = "giga_frameworld_docs_expansion"
-            desc = "giga_frameworld_docs_expansion_desc"
-            event_chain = "giga_frameworld_docs_chain"
-            location = capital_scope
-        }
+		create_point_of_interest = {
+			id = giga_frameworld_docs_chain.2
+			name = "giga_frameworld_docs_asteroids"
+			desc = "giga_frameworld_docs_asteroids_desc"
+			event_chain = "giga_frameworld_docs_chain"
+			location = capital_scope
+		}
 
-        create_point_of_interest = {
-            id = giga_frameworld_docs_chain.2
-            name = "giga_frameworld_docs_asteroids"
-            desc = "giga_frameworld_docs_asteroids_desc"
-            event_chain = "giga_frameworld_docs_chain"
-            location = capital_scope
-        }
+		create_point_of_interest = {
+			id = giga_frameworld_docs_chain.3
+			name = "giga_frameworld_docs_outposts"
+			desc = "giga_frameworld_docs_outposts_desc"
+			event_chain = "giga_frameworld_docs_chain"
+			location = capital_scope
+		}
 
-        create_point_of_interest = {
-            id = giga_frameworld_docs_chain.3
-            name = "giga_frameworld_docs_outposts"
-            desc = "giga_frameworld_docs_outposts_desc"
-            event_chain = "giga_frameworld_docs_chain"
-            location = capital_scope
-        }
+		create_point_of_interest = {
+			id = giga_frameworld_docs_chain.4
+			name = "giga_frameworld_docs_districts"
+			desc = "giga_frameworld_docs_districts_desc"
+			event_chain = "giga_frameworld_docs_chain"
+			location = capital_scope
+		}
 
-        create_point_of_interest = {
-            id = giga_frameworld_docs_chain.4
-            name = "giga_frameworld_docs_districts"
-            desc = "giga_frameworld_docs_districts_desc"
-            event_chain = "giga_frameworld_docs_chain"
-            location = capital_scope
-        }
+		create_point_of_interest = {
+			id = giga_frameworld_docs_chain.5
+			name = "giga_frameworld_docs_conquest"
+			desc = "giga_frameworld_docs_conquest_desc"
+			event_chain = "giga_frameworld_docs_chain"
+			location = capital_scope
+		}
 
-        create_point_of_interest = {
-            id = giga_frameworld_docs_chain.5
-            name = "giga_frameworld_docs_conquest"
-            desc = "giga_frameworld_docs_conquest_desc"
-            event_chain = "giga_frameworld_docs_chain"
-            location = capital_scope
-        }
+		create_point_of_interest = {
+			id = giga_frameworld_docs_chain.6
+			name = "giga_frameworld_docs_stations"
+			desc = "giga_frameworld_docs_stations_desc"
+			event_chain = "giga_frameworld_docs_chain"
+			location = capital_scope
+		}
 
-        create_point_of_interest = {
-            id = giga_frameworld_docs_chain.6
-            name = "giga_frameworld_docs_stations"
-            desc = "giga_frameworld_docs_stations_desc"
-            event_chain = "giga_frameworld_docs_chain"
-            location = capital_scope
-        }
+		create_point_of_interest = {
+			id = giga_frameworld_docs_chain.7
+			name = "giga_frameworld_docs_disabled"
+			desc = "giga_frameworld_docs_disabled_desc"
+			event_chain = "giga_frameworld_docs_chain"
+			location = capital_scope
+		}
 
-        create_point_of_interest = {
-            id = giga_frameworld_docs_chain.7
-            name = "giga_frameworld_docs_disabled"
-            desc = "giga_frameworld_docs_disabled_desc"
-            event_chain = "giga_frameworld_docs_chain"
-            location = capital_scope
-        }
+		create_point_of_interest = {
+			id = giga_frameworld_docs_chain.8
+			name = "giga_frameworld_docs_bonuses"
+			desc = "giga_frameworld_docs_bonuses_desc"
+			event_chain = "giga_frameworld_docs_chain"
+			location = capital_scope
+		}
 
-        create_point_of_interest = {
-            id = giga_frameworld_docs_chain.8
-            name = "giga_frameworld_docs_bonuses"
-            desc = "giga_frameworld_docs_bonuses_desc"
-            event_chain = "giga_frameworld_docs_chain"
-            location = capital_scope
-        }
+		#### LYRA DOCS
 
-        ##### END DOCS
+		create_point_of_interest = {
+			id = giga_frameworld_docs_chain.9
+			name = "fwt_frameworld_docs_changes_1"
+			desc = "fwt_frameworld_docs_changes_desc_1"
+			event_chain = "giga_frameworld_docs_chain"
+			location = capital_scope
+		}
 
-        # start outpost situation
-        start_situation = {
-            type = giga_situation_frameworld_outposts
-            target = capital_scope
-        }
+		create_point_of_interest = {
+			id = giga_frameworld_docs_chain.10
+			name = "fwt_frameworld_docs_changes_2"
+			desc = "fwt_frameworld_docs_changes_desc_2"
+			event_chain = "giga_frameworld_docs_chain"
+			location = capital_scope
+		}
 
-        # set up AI variables
-        set_variable = {
-            which = frameworld_ai_outpost_candidate_count
-            value = 0
-        }
+		##### END DOCS
 
-        #event_target:giga_global_situation_country = {
-        #	start_situation = {
-        #		type = giga_situation_frameworld_planet_effects
-        #		target = prev.capital_scope
-        #	}
-        #}
+		# start outpost situation
+		start_situation = {
+			type = giga_situation_frameworld_outposts
+			target = capital_scope
+		}
 
-        # associate this country with a specific frame
-        set_country_flag = giga_frameworld@capital_scope
+		# set up AI variables
+		set_variable = {
+			which = frameworld_ai_outpost_candidate_count
+			value = 0
+		}
 
-        capital_scope = {
-            # associate the frameworld with the country too
-            set_planet_flag = giga_frameworld@root
+		#event_target:giga_global_situation_country = {
+		#	start_situation = {
+		#		type = giga_situation_frameworld_planet_effects
+		#		target = prev.capital_scope
+		#	}
+		#}
 
-            # clear the conquered modifier which apparently gets executed BEFORE the start event
-            remove_modifier = frameworld_conquered
+		# associate this country with a specific frame
+		set_country_flag = giga_frameworld@capital_scope
 
-            # fix the entity
-            giga_frameworld_update_entity_with_fallback = {
-                WHO = root
-            }
+		capital_scope = {
+			# associate the frameworld with the country too
+			set_planet_flag = giga_frameworld@root
 
-            # spawn defensive stations
-            giga_frameworld_spawn_starting_defensive_stations = { WHO = root }
+			# clear the conquered modifier which apparently gets executed BEFORE the start event
+			remove_modifier = frameworld_conquered
 
-            # clear normal planet stuff we can't use
-            clear_deposits = yes
-            #remove_all_districts = yes # this wrecks our lab due to not enough building slots
+			# fix the entity
+			giga_frameworld_update_entity_with_fallback = { WHO = root }
 
-            # strip extra resources from the black hole, we want to make sure it's clean
-            solar_system.star = {
-                clear_deposits = yes
-            }
+			# spawn defensive stations
+			giga_frameworld_spawn_starting_defensive_stations = { WHO = root }
 
-            # make sure the variables are set up for expansion decisions
-            giga_frameworld_init_variables = yes
+			# clear normal planet stuff we can't use
+			clear_deposits = yes
+			#remove_all_districts = yes # this wrecks our lab due to not enough building slots
 
-            # set other AI variables
-            set_variable = {
-                which = frameworld_ai_artisan_modifier
-                value = 0
-            }
+			# strip extra resources from the black hole, we want to make sure it's clean
+			solar_system.star = { clear_deposits = yes }
 
-            ##### set up deposits
+			# make sure the variables are set up for expansion decisions
+			giga_frameworld_init_variables = yes
 
-            # an appropriate core
-            if = {
-                limit = { root = { is_regular_empire = yes }	}
-                add_deposit = d_frameworld_admin
-            }
-            else_if = {
-                limit = { root = { is_hive_empire = yes }	}
-                add_deposit = d_frameworld_hive
-            }
-            else_if = {
-                limit = { root = { is_machine_empire = yes }	}
-                add_deposit = d_frameworld_core
-            }
+			# set other AI variables
+			set_variable = {
+				which = frameworld_ai_artisan_modifier
+				value = 0
+			}
 
-            # max mining districts
-            add_deposit = d_frameworld_remnants
+			##### set up deposits
 
-            # environmentalist nature preserve
-            if = {
-                limit = {
-                    root = { giga_is_environmentalist = yes }
-                }
-                remove_building = building_ranger_lodge
-                add_deposit = d_frameworld_nature_preserve
-            }
+			# an appropriate core
+			if = {
+				limit = { root = { is_regular_empire = yes }	}
+				add_deposit = d_frameworld_admin
+			}
+			else_if = {
+				limit = { root = { is_hive_empire = yes }	}
+				add_deposit = d_frameworld_hive
+			}
+			else_if = {
+				limit = { root = { is_machine_empire = yes }	}
+				add_deposit = d_frameworld_core
+			}
 
-            # job upkeep adjustment
-            add_deposit = d_giga_job_upkeep
+			# max mining districts
+			add_deposit = d_frameworld_remnants
 
-            ##### replace districts
-            add_modifier = {
-                modifier = frameworld_building_wreck_fix
-                days = 3
-            }
+			# environmentalist nature preserve
+			if = {
+				limit = { root = { giga_is_environmentalist = yes } }
+				remove_building = building_ranger_lodge
+				add_deposit = d_frameworld_nature_preserve
+			}
 
-            # city
-            while = {
-                limit = {
-                    has_district = district_city
-                }
-                add_district = district_giga_frameworld_city
-                remove_district = district_city
-            }
-            # hive
-            while = {
-                limit = {
-                    has_district = district_hive
-                }
-                add_district = district_giga_frameworld_hive
-                remove_district = district_hive
-            }
-            # nexus
-            while = {
-                limit = {
-                    has_district = district_nexus
-                }
-                add_district = district_giga_frameworld_nexus
-                remove_district = district_nexus
-            }
+			# job upkeep adjustment
+			add_deposit = d_giga_job_upkeep
 
-            # industrial
-            while = {
-                limit = {
-                    has_district = district_industrial
-                }
-                if = {
-                    # alternate factory-foundry for normal empires
-                    limit = {
-                        owner = {
-                            or = {
-                                is_gestalt = no
-                                has_civic = civic_machine_obsessional_directive
-                                has_civic = civic_machine_servitor
-                            }
-                        }
-                    }
-                    if = {
-                        limit = { not = { has_planet_flag = foundry_next }}
-                        add_district = district_giga_frameworld_factory
-                        set_planet_flag = foundry_next
-                    }
-                    else = {
-                        add_district = district_giga_frameworld_foundry
-                        remove_planet_flag = foundry_next
-                    }
-                }
-                else = {
-                    # all foundry for gestalts, servitor can rely on their starting sanctuary
-                    add_district = district_giga_frameworld_foundry
-                }
-                remove_district = district_industrial
-            }
-            remove_planet_flag = foundry_next
+			##### replace districts
+			add_modifier = {
+				modifier = frameworld_building_wreck_fix
+				days = 3
+			}
+			remove_building = building_holo_theatres
+			fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_01 ZONE = district_giga_frameworld_foundry }
+			add_district = district_giga_frameworld_urban_01
+			if = {
+				limit = { owner = { country_uses_consumer_goods = yes } }
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_02 ZONE = district_giga_frameworld_factory }
+			}
+			else = {
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_02 ZONE = district_giga_frameworld_city }
+			}
+			fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_03 ZONE = district_giga_frameworld_generator }
+			if = {
+				limit = { owner = { is_gestalt = yes } }
+				add_district = district_giga_frameworld_urban_03
+			}
+			fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_04 ZONE = district_giga_frameworld_mining }
+			if = {
+				limit = { owner = { is_catalytic_empire = no } }
+				add_district = district_giga_frameworld_urban_04
+				add_district = district_giga_frameworld_urban_04
+				add_district = district_giga_frameworld_urban_04
+			}
+			else = {
+				add_district = district_giga_frameworld_urban_05
+				add_district = district_giga_frameworld_urban_05
+				add_district = district_giga_frameworld_urban_05
+				add_district = district_giga_frameworld_urban_05
+			}
+			if = {
+				limit = { owner = { country_uses_food = yes } }
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_farming }
+				# if = {
+				# 	limit = { owner = { not = { has_civic = civic_machine_servitor } } }
+				# 	add_district = district_giga_frameworld_urban_05
+				# }
+			}
+			else = {
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_city }
+			}
+			if = {
+				limit = { owner = { is_gestalt = no } }
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_administrative }
+			}
+			else_if = {
+				limit = { owner = { has_civic = civic_machine_servitor } }
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_sanctuary }
+			}
+			else_if = {
+				limit = { owner = { is_machine_empire = yes } }
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_simulation  }
+			}
+			else_if = {
+				limit = { owner = { is_hive_empire = yes } }
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_synapse  }
+			}
+			if = {
+				limit = { owner = { is_catalytic_empire = no not = { has_civic = civic_machine_servitor } } }
+				add_building = {
+					district = district_giga_frameworld_urban_01
+					zone = district_giga_frameworld_foundry
+					building = building_foundry_1
+				}
+			}
+			else_if = {
+				limit = { owner = { is_catalytic_empire = no } }
+				add_district = district_giga_frameworld_urban_06
+			}
+			fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_07 ZONE = district_giga_frameworld_science }
+			# add_district = district_giga_frameworld_science
+			if = {
+				limit = { owner = { is_gestalt = no } }
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_08 ZONE = district_giga_frameworld_amenities }
+			}
+			else_if = {
+				limit = { owner = { is_gestalt = yes } }
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_08 ZONE = district_giga_frameworld_amenities_gestalt }
+			}
+			else_if = {
+				limit = { owner = { has_civic = civic_dystopian_society } }
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_08 ZONE = district_giga_frameworld_amenities_dystopian }
+			}
+			# will be a metallurgist bonus at vanilla rates
+			# if = {
+			#     limit = {
+			#         has_global_flag = giga_buildcap_j
+			#     }
+			#     fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_09 ZONE = district_giga_frameworld_supertensiles  }
+			# }
+			if = {
+				limit = { owner = { is_gestalt = no } }
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_09 ZONE = district_giga_frameworld_trade }
+			}
+			else = {
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_09 ZONE = district_giga_frameworld_city }
+			}
 
-            # energy
-            while = {
-                limit = {
-                    has_district = district_generator
-                }
-                add_district = district_giga_frameworld_generator
-                remove_district = district_generator
-            }
+			remove_building = building_precinct_house
+			remove_building = building_stronghold
+			#####
+			remove_modifier = frameworld_building_wreck_fix
 
-            # mining
-            while = {
-                limit = {
-                    has_district = district_mining
-                }
-                add_district = district_giga_frameworld_mining
-                remove_district = district_mining
-            }
+			# get rid of any bad districts or buildings which can't be supported
+			validate_planet_buildings_and_districts = yes
 
-            # food
-            while = {
-                limit = {
-                    has_district = district_farming
-                }
-                add_district = district_giga_frameworld_farming
-                remove_district = district_farming
-            }
-            #####
-            remove_modifier = frameworld_building_wreck_fix
+			check_planet_employment = yes
 
-            # get rid of any bad districts or buildings which can't be supported
-            validate_planet_buildings_and_districts = yes
+			# # set the maintenance mod on
+			# giga_frameworld_apply_expanded_maintenance_modifier = yes
 
-            # fix unemployed pops from the initial district shuffle
-            every_owned_pop = {
-                limit = {
-                    is_unemployed = yes
-                }
-                clear_pop_category = yes
-            }
-            check_planet_employment = yes
-
-            # set the maintenance mod on
-            giga_frameworld_apply_expanded_maintenance_modifier = yes
-
-            #lyra do my set setup values popup first then use those values
-            owner = {
-                country_event = {
-                    id = fwt.121
-                }
-            }
-            planet_event = {
-                id = giga_frameworld_origin.0001
-                days = 1
-            }
-            # # set up extra growth mechanics
-            # giga_extra_growth_setup = yes
-        }
+			#lyra do my set setup values popup first then use those values
+			owner = {
+				country_event = {
+					id = fwt.121
+				}
+			}
+		}
+        # clear the conquered modifier which apparently gets executed BEFORE the start event
+        remove_modifier = frameworld_conquered
     }
 }
 
+###############################################################################################################################################
+# Resettlement and outpost construction/destruction
+###############################################################################################################################################
+
+### resettle pops to homeworld, and make sure the anti-pop-growth mod is applied
+country_event = {
+
+	id = giga_frameworld_origin.100
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		giga_has_frameworld_origin = yes
+		exists = capital_scope
+		capital_scope = {
+			giga_is_frame_world = yes
+			has_orbital_bombardment = no
+			is_occupied_flag = no
+		}
+	}
+
+	immediate = {
+		random_owned_planet = {
+			limit = { has_planet_flag = giga_frameworld@root }
+			save_event_target_as = target_frameworld
+		}
+
+		set_update_modifiers_batch = begin
+		every_owned_planet = {
+			limit = {
+				nor = {
+					is_same_value = event_target:giga_frameworld@root
+					is_planet_class = pc_cosmogenesis_world
+				}
+                giga_is_frame_world = no
+				has_orbital_bombardment = no
+				is_occupied_flag = no
+				is_under_colonization = no
+			}
+
+			# add overextension if it's missing
+			if = {
+				limit = {
+					not = {
+						has_modifier = frameworld_conquered
+					}
+				}
+				add_modifier = {
+					modifier = frameworld_conquered
+					clear_on_owner_change = yes
+				}
+			}
+
+			# remove resettlement block if we're not at war
+			if = {
+				limit = {
+					root = { is_at_war = no }
+					has_modifier = frameworld_conquered_no_resettle
+				}
+				remove_modifier = frameworld_conquered_no_resettle
+			}
+
+			# resettle pops to the homeworld
+			# if we're not blocked by war or recent acquisition, anyway...
+			if = {
+				limit = {
+					not = { has_modifier = frameworld_conquered_no_resettle }
+					any_owned_pop_group = {
+						nand = {
+							is_robotic_species = yes
+							has_virtual_species_trait = yes
+						}
+					}
+				}
+				while = {
+					# 5% or 400, whichever is more
+					count = value:giga_frameworld_resettlement_count
+					random_owned_pop_group = {
+						limit = {
+							nand = {
+								is_robotic_species = yes
+								has_virtual_species_trait = yes
+							}
+						}
+						resettle_pop = {
+							pop = this
+							planet = event_target:target_frameworld
+						}
+					}
+				}
+			}
+
+			# shut down some virtual pops anyway
+			if = {
+				limit = {
+					any_owned_pop_group = {
+						is_robotic_species = yes
+						has_virtual_species_trait = yes
+					}
+				}
+                random_owned_pop_group = {
+                    limit = {
+                        is_robotic_species = yes
+                        has_virtual_species_trait = yes
+                    }
+                    kill_pop_group = { pop_group = this amount = value:giga_frameworld_resettlement_count }
+                }
+				# while = {
+				# 	# 5% or 4, whichever is more
+				# 	count = value:giga_frameworld_resettlement_count
+				# 	random_owned_pop_group = {
+				# 		limit = {
+				# 			is_robotic_species = yes
+				# 			has_virtual_species_trait = yes
+				# 		}
+                #         kill_pop_group = { pop_group = this  }
+				# 	}
+				# }
+			}
+
+			# if there are no pops left, clear out the planet and place an outpost
+			if = {
+				limit = {
+                    pop_amount = 0
+				}
+
+				#remove_all_buildings = yes
+				#remove_all_districts = yes
+				#destroy_colony = yes
+
+				if = {
+					limit = {
+						can_have_frameworld_outpost = yes
+					}
+					set_planet_flag = frameworld_built_outpost
+					#giga_frameworld_create_outpost = { WHO = root RESETTLED = yes}
+					#root = {
+					#	giga_frameworld_recalculate_outpost_bonus = yes
+					#}
+					giga_frameworld_create_outpost = {
+						planet = this
+						owner = root
+					}
+				}
+
+				root = {
+					country_event = {
+						id = giga_frameworld_origin.101
+						scopes = { from = prev }
+					}
+				}
+			}
+		}
+		set_update_modifiers_batch = end
+	}
+}
+
+### conquered world abandonment outpost notification
+country_event = {
+	id = giga_frameworld_origin.101
+	is_triggered_only = yes
+
+	title = giga_frameworld_origin.101.name
+
+	# first time clearing a colony
+	desc = {
+		trigger = {
+			NOT = { has_country_flag = frameworld_resettled_conquest }
+		}
+		text = giga_frameworld_origin.101.desc.a
+	}
+
+	# following times clearing a colony
+	desc = {
+		trigger = {
+			has_country_flag = frameworld_resettled_conquest
+		}
+		text = giga_frameworld_origin.101.desc.b
+	}
+
+	show_sound = event_mystic_reveal
+	picture = GFX_evt_colony_settlement
+
+	location = from
+
+	option = {
+		name = giga_frameworld_origin.101.a
+		hidden_effect = {
+			set_country_flag = frameworld_resettled_conquest
+			from = { remove_planet_flag = frameworld_built_outpost }
+		}
+	}
+}
+
+
+# yearly outpost planet sanity check to make sure none are orphaned, in either direction
+# scopeless
+event = {
+	id = giga_frameworld_origin.106
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+
+		# check every outpost to make sure it has a planet, and the status thereof
+		every_galaxy_fleet = {
+			limit = {
+				is_frameworld_outpost = yes
+			}
+
+			if = {
+				limit = {
+					exists = orbit
+				}
+				# if the planet exists but it isn't one of the specified types, convert it if habitable, destroy the outpost if not
+				if = {
+					limit = {
+						orbit = {
+							is_frameworld_outpost_planet = no
+						}
+					}
+					if = {
+						limit = {
+							orbit = {
+								or = {
+									is_colonizable = yes
+									is_colony = yes
+								}
+							}
+						}
+						orbit = {
+							giga_frameworld_outpost_set_planet_class = yes
+							giga_frameworld_clear_outpost_flags = yes
+						}
+					}
+					else = {
+						destroy_fleet = this
+					}
+				}
+			}
+			else = {
+				# if it has no planet, it needs to go
+				destroy_fleet = this
+			}
+		}
+
+		# check outpost planets without outposts to restore them
+		every_galaxy_planet = {
+			limit = {
+				is_frameworld_outpost_planet = yes
+				not = {
+					any_fleet_in_orbit = {
+						is_frameworld_outpost = yes
+					}
+				}
+			}
+			giga_frameworld_outpost_restore_planet_class = yes
+			giga_frameworld_clear_outpost_flags = yes
+		}
+	}
+}
+
+
+# first outpost notification
+country_event = {
+	id = giga_frameworld_origin.107
+	title = giga_frameworld_origin.107.name
+	desc = {
+		text = giga_frameworld_origin.107.desc
+		trigger = { is_gestalt = no }
+	}
+	desc = {
+		text = giga_frameworld_origin.107.desc.hive
+		trigger = { is_hive_empire = yes }
+	}
+	desc = {
+		text = giga_frameworld_origin.107.desc.machine
+		trigger = { is_machine_empire = yes }
+	}
+	picture = GFX_evt_space_station
+	location = from
+	is_triggered_only = yes
+
+	option = {
+		name = giga_frameworld_origin.107.a
+
+		add_monthly_resource_mult = {
+			resource = engineering_research
+			value = @tier1researchreward
+			min = @tier1researchmin
+			max = @tier1researchmax
+		}
+	}
+}
+
+### apply overextension debuff to other planets
 planet_event = {
-    id = giga_frameworld_origin.0001
-    is_triggered_only = yes
-    hide_window = yes
+	id = giga_frameworld_origin.108
+	is_triggered_only = yes
+	hide_window = yes
 
-    immediate = {
-        #machines need extra alloys for assembly
-        if = {
-            limit = {
-                owner = {
-                    or = {
-                        is_robot_empire = yes
-                        is_machine_empire = yes
-                        is_individual_machine = yes
-                    }
-                }
-            }
-            add_district = district_giga_frameworld_foundry
-        }
-        # extra food for catalytic
-        if = {
-            limit = {
-                num_districts = {
-                    type = district_giga_frameworld_generator
-                    value >= 2
-                }
-                not = {
-                    owner = {
-                        has_civic = civic_catalytic_processing
-                    }
-                }
-            }
-            add_district = district_giga_frameworld_mining
-            remove_district = district_giga_frameworld_generator
-        }
-        else_if = {
-            limit = {
-                num_districts = {
-                    type = district_giga_frameworld_generator
-                    value >= 2
-                }
-                owner = {
-                    has_civic = civic_catalytic_processing
-                }
-            }
-            add_district = district_giga_frameworld_farming
-            remove_district = district_giga_frameworld_generator
-        }
-        #some last tweaks to make starting numbers more even
-        if = {
-            limit = {
-                has_building = building_commercial_zone
-            }
-            remove_building = building_commercial_zone
-            add_building = building_foundry_1
-        }
-        # get rid of any bad districts or buildings which can't be supported
-        validate_planet_buildings_and_districts = yes
+	trigger = {
+		owner = {
+			giga_has_frameworld_origin = yes
+		}
+        giga_is_frame_world = no
+		nor = {
+			has_planet_flag = giga_frameworld@owner
+			is_planet_class = pc_cosmogenesis_world
+		}
+	}
 
-        # fix unemployed pops from the initial district shuffle
-        every_owned_pop = {
-            limit = {
-                is_unemployed = yes
-            }
-            clear_pop_category = yes
-        }
-        check_planet_employment = yes
-    }
+	immediate = {
+		add_modifier = {
+			modifier = frameworld_conquered
+			clear_on_owner_change = yes
+		}
+
+		if = {
+			limit = {
+				from = {
+					is_at_war = yes
+				}
+			}
+			add_modifier = {
+				modifier = frameworld_conquered_no_resettle
+				clear_on_owner_change = yes
+				years = 5 # this many years of no resettlement while at war
+			}
+		}
+	}
+}
+
+###############################################################################################################################################
+# Gaining and losing systems
+###############################################################################################################################################
+
+### lose system with outpost in
+# from = system which changed hands
+# fromfrom = new owner
+country_event = {
+
+	id = giga_frameworld_origin.200
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		giga_has_frameworld_origin = yes
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				or = {
+					not = { exists = fromfrom }
+					fromfrom = {
+						giga_has_frameworld_origin = no # if the new owner isn't also a frameworld empire
+					}
+				}
+			}
+
+			from = {
+				every_fleet_in_system = {
+					limit = {
+						is_frameworld_outpost = yes
+					}
+
+					if = {
+						limit = {
+							exists = orbit
+						}
+						orbit = {
+							giga_frameworld_outpost_restore_planet_class = yes
+							giga_frameworld_clear_outpost_flags = yes
+						}
+					}
+					destroy_fleet = this
+				}
+			}
+		}
+	}
+}
+
+
+### update expansion variables on transfer
+planet_event = {
+	id = giga_frameworld_origin.301
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		giga_is_frame_world = yes
+	}
+
+	immediate = {
+		giga_frameworld_recalculate_variables = yes
+	}
+}
+
+### yearly pulse cleanup to check for deleted defensive stations
+# this = country
+country_event = {
+	id = giga_frameworld_origin.402
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		any_system = {
+			has_star_flag = giga_origin_frameworld
+		}
+	}
+
+	immediate = {
+		every_system_within_border = {
+			limit = {
+				has_star_flag = giga_origin_frameworld
+			}
+
+			random_system_planet = {
+				limit = {
+					giga_is_frame_world = yes
+				}
+
+				save_event_target_as = frameworld
+			}
+
+			giga_frameworld_check_defensive_station = { PLANET = event_target:frameworld ID = 1 }
+			giga_frameworld_check_defensive_station = { PLANET = event_target:frameworld ID = 2 }
+			giga_frameworld_check_defensive_station = { PLANET = event_target:frameworld ID = 3 }
+
+			if = {
+				limit = {
+					event_target:frameworld = {
+						has_planet_flag = frameworld_maginot
+					}
+				}
+
+				giga_frameworld_check_defensive_station = { PLANET = event_target:frameworld ID = 4 }
+				giga_frameworld_check_defensive_station = { PLANET = event_target:frameworld ID = 5 }
+				giga_frameworld_check_defensive_station = { PLANET = event_target:frameworld ID = 6 }
+			}
+		}
+	}
+}
+
+# integrated penrose frame
+country_event = {
+	id = giga_frameworld_origin.001
+	title = giga_frameworld_origin.001.name
+	desc = giga_frameworld_origin.001.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_dyson_sphere_build_start
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.001.a }
+}
+
+# integrated penrose panels
+country_event = {
+	id = giga_frameworld_origin.002
+	title = giga_frameworld_origin.002.name
+	desc = giga_frameworld_origin.002.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_dyson_sphere_build_upgrade_panel
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.002.a }
+}
+
+# integrated penrose complete
+country_event = {
+	id = giga_frameworld_origin.003
+	title = giga_frameworld_origin.003.name
+	desc = giga_frameworld_origin.003.desc
+	picture = GFX_evt_black_hole
+	show_sound = event_dyson_sphere_build_complete
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.003.a }
+}
+
+# integrated decompressor struts
+country_event = {
+	id = giga_frameworld_origin.004
+	title = giga_frameworld_origin.004.name
+	desc = giga_frameworld_origin.004.desc
+	picture = GFX_evt_matter_decompressor
+	show_sound = event_mystic_reveal
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.004.a }
+}
+
+# integrated decompressor ring
+country_event = {
+	id = giga_frameworld_origin.005
+	title = giga_frameworld_origin.005.name
+	desc = giga_frameworld_origin.005.desc
+	picture = GFX_evt_matter_decompressor
+	show_sound = event_mystic_reveal
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.005.a }
+}
+
+# integrated decompressor complete
+country_event = {
+	id = giga_frameworld_origin.006
+	title = giga_frameworld_origin.006.name
+	desc = giga_frameworld_origin.006.desc
+	picture = GFX_evt_matter_decompressor
+	show_sound = event_mystic_reveal
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.006.a }
+}
+
+# city upgrade complete
+country_event = {
+	id = giga_frameworld_origin.007
+	title = giga_frameworld_origin.007.name
+	desc = {
+		trigger = { is_machine_empire = yes }
+		text = giga_frameworld_origin.007.desc.machine
+	}
+	desc = {
+		trigger = { is_hive_empire = yes }
+		text = giga_frameworld_origin.007.desc.hive
+	}
+	desc = {
+		trigger = {
+			is_machine_empire = no
+			is_hive_empire = no
+		}
+		text = giga_frameworld_origin.007.desc
+	}
+	picture = GFX_evt_city_planet
+	show_sound = event_cityscape
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.007.a }
+}
+
+# industrial upgrade complete
+country_event = {
+	id = giga_frameworld_origin.008
+	title = giga_frameworld_origin.008.name
+	desc = giga_frameworld_origin.008.desc
+	picture = GFX_evt_ship_offloading_cargo
+	show_sound = event_construction
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.008.a }
+}
+
+# sanctuary upgrade complete
+country_event = {
+	id = giga_frameworld_origin.009
+	title = giga_frameworld_origin.009.name
+	desc = giga_frameworld_origin.009.desc
+	picture = GFX_evt_metropolis
+	show_sound = event_cityscape
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.009.a }
+}
+
+# gaia upgrade complete
+country_event = {
+	id = giga_frameworld_origin.010
+	title = giga_frameworld_origin.010.name
+	desc = {
+		trigger = { has_civic = civic_machine_assimilator }
+		text = giga_frameworld_origin.010.desc.assimilator
+	}
+	desc = {
+		trigger = { has_civic = civic_machine_servitor  }
+		text = giga_frameworld_origin.010.desc.servitor
+	}
+	desc = {
+		trigger = {
+			nor = {
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor
+			}
+		}
+		text = giga_frameworld_origin.010.desc
+	}
+	picture = GFX_evt_habitat
+	show_sound = event_mystic_reveal
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = {
+		name = giga_frameworld_origin.010.a.assimilator
+		trigger = { has_civic = civic_machine_assimilator }
+	}
+	option = {
+		name = giga_frameworld_origin.010.a.servitor
+		trigger = { has_civic = civic_machine_servitor }
+	}
+	option = {
+		name = giga_frameworld_origin.010.a
+		trigger = {
+			nor = {
+				has_civic = civic_machine_assimilator
+				has_civic = civic_machine_servitor
+			}
+		}
+	}
+}
+
+# PCC upgrade complete
+country_event = {
+	id = giga_frameworld_origin.011
+	title = giga_frameworld_origin.011.name
+	desc = giga_frameworld_origin.011.desc
+	picture = GFX_evt_sapient_AI
+	show_sound = event_laboratory_sound
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.011.a }
+}
+
+# infrastructure upgrade complete
+country_event = {
+	id = giga_frameworld_origin.012
+	title = giga_frameworld_origin.012.name
+	desc = {
+		trigger = {
+			event_target:giga_planet = {
+				has_planet_flag = frameworld_expanded_infrastructure_2
+			}
+		}
+		text = giga_frameworld_origin.012.desc.2
+	}
+	desc = {
+		trigger = {
+			event_target:giga_planet = {
+				not = { has_planet_flag = frameworld_expanded_infrastructure_2}
+			}
+		}
+		text = giga_frameworld_origin.012.desc
+	}
+	picture = GFX_evt_space_hangar
+	show_sound = event_construction
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.012.a }
+}
+
+# maginot upgrade complete
+country_event = {
+	id = giga_frameworld_origin.013
+	title = giga_frameworld_origin.013.name
+	desc = giga_frameworld_origin.013.desc
+	picture = GFX_evt_maginot_world
+	show_sound = maginot_army_noise_effect
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.013.a }
+}
+
+# orbital ring upgrade complete
+country_event = {
+	id = giga_frameworld_origin.014
+	title = giga_frameworld_origin.014.name
+	desc = giga_frameworld_origin.014.desc
+	picture = GFX_evt_ship_offloading_cargo
+	show_sound = event_construction
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.014.a }
+}
+
+# nanite
+country_event = {
+	id = giga_frameworld_origin.015
+	title = giga_frameworld_origin.015.name
+	desc = giga_frameworld_origin.015.desc
+	picture = GFX_evt_rare_tech_cache
+	show_sound = event_construction
+	location = event_target:giga_planet
+	is_triggered_only = yes
+	option = { name = giga_frameworld_origin.015.a }
 }

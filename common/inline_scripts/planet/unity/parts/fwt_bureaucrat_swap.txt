@@ -1,0 +1,32 @@
+# regular empires
+inline_script = {
+    script = generic_parts/fwt_toggled_job
+    job = bureaucrat
+    add = $add$
+    type = $type$
+    count = $jobs$
+    condition = "
+        $condition$
+    "
+    type = $type$
+    zone = "_district"
+    multiplier_string = "$multiplier_string$"
+}
+inline_script = {
+    script = generic_parts/giga_toggled_desc
+    toggle = @[ $jobs$ * $description$ ]
+    trigger = "
+        bureaucrat_is_memorialist = no
+        $condition$
+    "
+    text = job_bureaucrat_effect_desc
+}
+inline_script = {
+    script = generic_parts/giga_toggled_desc
+    toggle = @[ $jobs$ * $description$ ]
+    trigger = "
+        bureaucrat_is_memorialist = yes
+        $condition$
+    "
+    text = job_death_chronicler_effect_desc
+}

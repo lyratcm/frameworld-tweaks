@@ -1,0 +1,94 @@
+@stickiness = 10
+@stickiness_low = 5
+@zone_urban = 100
+
+col_frameworld_bureau_spiritualist = {
+    icon = GFX_colony_type_bureaucratic
+
+    potential = {
+        giga_is_frame_world = yes
+        exists = space_owner
+        space_owner = {
+            is_regular_empire = yes
+            OR = {
+                is_spiritualist = yes
+                has_make_spiritualist_perk = yes
+            }
+        }
+    }
+
+    planet_modifier = {
+        planet_stability_add = 5
+        planet_housing_add = 1000
+        planet_resettlement_unemployed_destination_mult = 0.1
+        planet_amenities_add = 1000
+        pop_government_ethic_attraction = 1
+        planet_bureaucrats_produces_mult = 0.15
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = space_owner
+            space_owner = { has_tradition = tr_adaptability_finish }
+        }
+        modifier = {
+            planet_jobs_produces_mult = 0.05
+        }
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = space_owner.federation
+            space_owner.federation = { has_federation_perk = all_the_priests_1 }
+            space_owner = { NOT = { has_origin = origin_cybernetic_creed } }
+        }
+        job_bureaucrat_per_pop = 0.04
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = space_owner.federation
+            space_owner.federation = { has_federation_perk = all_the_priests_1 }
+            space_owner = { has_origin = origin_cybernetic_creed }
+        }
+        job_haruspex_per_pop = 0.04
+    }
+
+    weight_modifier = {
+        modifier = {
+            add = @stickiness
+            has_designation = col_bureau_spiritualist
+        }
+        modifier = {
+            num_zones = {
+                type = district_giga_frameworld_administrative
+                value > 0
+            }
+            add = @zone_urban
+        }
+        modifier = {
+            num_zones = {
+                type = district_giga_frameworld_synapse
+                value > 0
+            }
+            add = @zone_urban
+        }
+        modifier = {
+            num_zones = {
+                type = district_giga_frameworld_simulation
+                value > 0
+            }
+            add = @zone_urban
+        }
+        inline_script = {
+            script = colony_types/shared_weights_priests
+        }
+        complex_trigger_modifier = {
+            trigger = num_districts
+            parameters = {
+                type = district_city
+            }
+            mode = add
+        }
+    }
+}

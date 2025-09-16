@@ -19,7 +19,7 @@ fwt_mult_bonus_to_dec_mult = {
 fwt_situation_decision_cost_time = {
 	base = 100
 	# no idea why script values are failing - lyra
-	#maybe its bc you scoped to a owner variable while in situation - also lyra
+	# maybe its bc you scoped to a owner variable while in situation - also lyra
 	divide = value:fwt_situation_decision_cost_time_month
 	#frame_expand@owner is that empires frame world
 }
@@ -31,11 +31,10 @@ fwt_situation_decision_cost_time_month = {
 
 ####### auto-expansion ######################
 
-#noinspection SpellCheckingInspection
 fwt_situation_continuous_speed = {
 	weight = owner.modifier:country_situations_expansion_alloys_upkeep_add
 	# add = owner.modifier:fwt_alloy_useage_offset
-	divide = value:fwt_situation_continuous_cost1
+	divide = capital_scope.owner.fwt_frameworld_expansion_cost_multiplier
 	mult = 100
 }
 
@@ -50,10 +49,10 @@ fwt_situation_continuous_cost2 = {
 		add = @giga_frameworld_expansion_cost_habitat_3
 		owner = { has_technology = tech_habitat_3 }
 	}
-	modifier = {
-		add = @fwt_frameworld_expansion_cost_starbase_2
-		owner = { has_technology = tech_starbase_2 }
-	}
+	# modifier = {
+	# 	add = @fwt_frameworld_expansion_cost_starbase_2
+	# 	owner = { has_technology = tech_starbase_2 }
+	# }
 	modifier = {
 		add = @fwt_frameworld_expansion_cost_starbase_3
 		owner = { has_technology = tech_starbase_3}
@@ -75,7 +74,7 @@ fwt_situation_continuous_cost2 = {
 fwt_situation_continuous_cost1 = {
 	weight = value:fwt_situation_continuous_cost2
 	# multiplier for how many expansions
-	mult = event_target:frame_expand@owner.giga_frameworld_expansion_cost_multiplier
+	mult = capital_scope.owner.giga_frameworld_expansion_cost_multiplier
 }
 
 #% of income spending as a %
@@ -141,8 +140,8 @@ fwt_situation_end_days_left = {
 #currently unused due to pop growth tracking being impossible
 fwt_total_growth = {
 	base = 0
-	add = modifier:pop_growth_speed
-	divide = value:fwt_total_growth_reduction
+	add = modifier:logistic_growth_mult
+	# divide = value:fwt_total_growth_reduction
 	# complex_trigger_modifier = {
 	# 	trigger = check_galaxy_setup_value
 	# 	mode = set
@@ -150,25 +149,6 @@ fwt_total_growth = {
 	#
 	# 	}
 	# }
-}
-
-fwt_total_growth_reduction = {
-	base = 0
-	add = modifier:pop_growth_speed_reduction
-	modifier = {
-		add = 1
-		check_modifier_value = {
-			modifier = pop_growth_speed_reduction
-			value > 0
-		}
-	}
-	modifier = {
-		subtract = 1
-		check_modifier_value = {
-			modifier = pop_growth_speed_reduction
-			value < 0
-		}
-	}
 }
 
 fwt_total_assembly = {
@@ -199,15 +179,10 @@ fwt_total_assembly_reduction = {
 
 fwt_total_assembly_organic = {
 	base = 0
-	add = modifier:planet_pop_assembly_organic_add
-	add = modifier:planet_pop_assembly_organic_mult
-	divide = value:fwt_total_assembly_organic
+	add = modifier:bonus_pop_growth
+	add = modifier:bonus_pop_growth_mult
 }
 
-fwt_total_assembly_organic_reduction = {
-	base = 1
-	add = modifier:planet_pop_assembly_organic_reduction
-}
 #frameworld support
 fwt_total_secondary_growth = {
 	base = 0
@@ -243,32 +218,32 @@ fwt_total_pops_trigger = {
 }
 
 
-#### expansion scaling ########
-fwt_expansion_build_scaling = {
-	weight = giga_frameworld_expansions
-	multiply = value:fwt_expansion_mult
-}
-
-fwt_expansion_mult = {
-	weight = giga_frameworld_expansions
-	divide = value:fwt_expansion_mult_reduction
-	add = 1
-}
-# base is 1/20th but increase that as you expand more
-# still need to make this scale worst
-#maybe its fine with new scaling
-fwt_expansion_mult_reduction = {
-	weight = giga_frameworld_expansions
-	divide = 5
-	add = 20
-}
+# #### expansion scaling ########
+# fwt_expansion_build_scaling = {
+# 	weight = giga_frameworld_expansions
+# 	multiply = value:fwt_expansion_mult
+# }
+#
+# fwt_expansion_mult = {
+# 	weight = giga_frameworld_expansions
+# 	divide = value:fwt_expansion_mult_reduction
+# 	add = 1
+# }
+# # base is 1/20th but increase that as you expand more
+# # still need to make this scale worst
+# #maybe its fine with new scaling
+# fwt_expansion_mult_reduction = {
+# 	weight = giga_frameworld_expansions
+# 	divide = 5
+# 	add = 20
+# }
 
 ##### maintenance job switches #############
 giga_frameworld_expanded_maintenance_multiplier = {
 	base = 0
 
 	complex_trigger_modifier = {
-		trigger = count_owned_pop
+		trigger = count_owned_pop_amount
 		parameters = {
 			limit = {
 				is_unemployed = yes
@@ -381,124 +356,15 @@ fwt_modifier_bonuses_params_mult = {
 	# subtract = -1
 }
 
-#100
-#100
-#1
-# a scale of real pops to fake ones for scaling the real pops outputs
-fwt_pop_ratio = {
-	weight = value:fwt_job_effectivness
-	divide = fwt_scaled_pop
-}
-
 #make is a multiplier
 fwt_giga_planet_job_size = {
 	weight = planet.modifier:giga_planet_job_size
 	add = 1
 }
 
-fwt_planet_job_size = {
-	weight = value:fwt_pop_ratio
-	# # add 1 as its an added %
-	# add = 1
-	#scale it to any planet size bonuses gigas had added, normally 0 on the frameworld
-	mult = value:fwt_giga_planet_job_size
-	# set = 0.33
-}
-
-
-#gets the number of effective jobs by grabbing all the districts and their effective job counts
-fwt_district_job_count_sub = {
-	weight = value:fwt_district_distrcit_count_housing|DISTRICT|district_giga_frameworld_city|
-	add = value:fwt_district_distrcit_count_housing|DISTRICT|district_giga_frameworld_city_advanced|
-	add = value:fwt_district_distrcit_count_housing|DISTRICT|district_giga_frameworld_hive|
-	add = value:fwt_district_distrcit_count_housing|DISTRICT|district_giga_frameworld_hive_advanced|
-	add = value:fwt_district_distrcit_count_housing|DISTRICT|district_giga_frameworld_nexus|
-	add = value:fwt_district_distrcit_count_housing|DISTRICT|district_giga_frameworld_nexus_advanced|
-	add = value:fwt_district_distrcit_count_housing|DISTRICT|district_giga_frameworld_nexus_advanced|
-	add = value:fwt_district_distrcit_count_alloys|DISTRICT|district_giga_frameworld_foundry|
-	add = value:fwt_district_distrcit_count_alloys|DISTRICT|district_giga_frameworld_ecu_foundry|
-	add = value:fwt_district_distrcit_count_alloys|DISTRICT|district_giga_frameworld_foundry_advanced|
-	add = value:fwt_district_distrcit_count_consumer_goods|DISTRICT|district_giga_frameworld_factory|
-	add = value:fwt_district_distrcit_count_consumer_goods|DISTRICT|district_giga_frameworld_ecu_factory|
-	add = value:fwt_district_distrcit_count_consumer_goods|DISTRICT|district_giga_frameworld_factory_advanced|
-	add = value:fwt_district_distrcit_count_energy|DISTRICT|district_giga_frameworld_generator|
-	add = value:fwt_district_distrcit_count_energy|DISTRICT|district_giga_frameworld_hab_generator|
-	add = value:fwt_district_distrcit_count_energy|DISTRICT|district_giga_frameworld_penrose|
-	add = value:fwt_district_distrcit_count_minerals|DISTRICT|district_giga_frameworld_mining|
-	add = value:fwt_district_distrcit_count_minerals|DISTRICT|district_giga_frameworld_hab_mining|
-	add = value:fwt_district_distrcit_count_minerals|DISTRICT|district_giga_frameworld_strip_mine|
-	add = value:fwt_district_distrcit_count_food|DISTRICT|district_giga_frameworld_farming|
-	add = value:fwt_district_distrcit_count_food|DISTRICT|district_giga_frameworld_hab_farming|
-	add = value:fwt_district_distrcit_count_food|DISTRICT|district_giga_frameworld_yggdrasil|
-	add = value:fwt_district_distrcit_count_trade|DISTRICT|district_giga_frameworld_trade|
-	add = value:fwt_district_distrcit_count_trade|DISTRICT|district_giga_frameworld_ecu_trade|
-	add = value:fwt_district_distrcit_count_trade|DISTRICT|district_giga_frameworld_advanced_trade|
-	add = value:fwt_district_distrcit_count_unity|DISTRICT|district_giga_frameworld_administrative|
-	add = value:fwt_district_distrcit_count_unity|DISTRICT|district_giga_frameworld_ecu_administrative|
-	add = value:fwt_district_distrcit_count_unity|DISTRICT|district_giga_frameworld_advanced_administrative|
-	add = value:fwt_district_distrcit_count_unity|DISTRICT|district_giga_frameworld_temple|
-	add = value:fwt_district_distrcit_count_unity|DISTRICT|district_giga_frameworld_ecu_temple|
-	add = value:fwt_district_distrcit_count_unity|DISTRICT|district_giga_frameworld_advanced_temple|
-	add = value:fwt_district_distrcit_count_unity|DISTRICT|district_giga_frameworld_synapse|
-	add = value:fwt_district_distrcit_count_unity|DISTRICT|district_giga_frameworld_ecu_synapse|
-	add = value:fwt_district_distrcit_count_unity|DISTRICT|district_giga_frameworld_advanced_synapse|
-	add = value:fwt_district_distrcit_count_unity|DISTRICT|district_giga_frameworld_simulation|
-	add = value:fwt_district_distrcit_count_unity|DISTRICT|district_giga_frameworld_ecu_simulation|
-	add = value:fwt_district_distrcit_count_unity|DISTRICT|district_giga_frameworld_advanced_simulation|
-	add = value:fwt_district_distrcit_count_unity|DISTRICT|district_giga_frameworld_sanctuary|
-	add = value:fwt_district_distrcit_count_unity|DISTRICT|district_giga_frameworld_ecu_sanctuary|
-	add = value:fwt_district_distrcit_count_unity|DISTRICT|district_giga_frameworld_sanctuary_advanced|
-	add = value:fwt_district_distrcit_count_science|DISTRICT|district_giga_frameworld_science|
-	add = value:fwt_district_distrcit_count_science|DISTRICT|district_giga_frameworld_hab_science|
-	add = value:fwt_district_distrcit_count_science|DISTRICT|district_giga_frameworld_science_computer|
-	add = value:fwt_district_distrcit_count_anti_crime|DISTRICT|district_giga_frameworld_anticrime|
-	add = value:fwt_district_distrcit_count_amenities|DISTRICT|district_giga_frameworld_amenities|
-	add = value:fwt_district_distrcit_count_amenities|DISTRICT|district_giga_frameworld_amenities_dystopian|
-	add = value:fwt_district_distrcit_count_amenities|DISTRICT|district_giga_frameworld_amenities_gestalt|
-	add = value:fwt_district_distrcit_count_rare|DISTRICT|district_giga_frameworld_ecu_refinery|
-	add = value:fwt_district_distrcit_count_rare|DISTRICT|district_giga_frameworld_refinery|
-	add = value:fwt_district_distrcit_count_sr|DISTRICT|district_giga_frameworld_sentient_metal|
-	add = value:fwt_district_distrcit_count_nm|DISTRICT|district_giga_frameworld_negative_mass|
-	add = value:fwt_district_distrcit_count_st|DISTRICT|district_giga_frameworld_supertensiles|
-	add = value:fwt_district_distrcit_count_fortress|DISTRICT|district_giga_frameworld_fortress|
-	add = value:fwt_district_distrcit_count_msg|DISTRICT|district_giga_frameworld_maginot_shield_generators|
-	add = value:fwt_district_distrcit_count_mpc|DISTRICT|district_giga_frameworld_maginot_planetary_cannons|
-	mult = frame_expansion_scale
-}
-
-fwt_district_job_count = {
-	weight = trigger:num_pops
-	subtract = trigger:num_districts
-	# gives jobs not from districts
-	divide = frame_expansion_scale
-	divide = 2
-	#make the job have an increasingly small effect
-	add = value:fwt_district_job_count_sub
-}
-
-fwt_free_maintenance = {
-	#get the number of pops that wouldn't have jobs then make them as effective as an old maintenance worker
-	weight = background_pops
-	subtract = value:fwt_district_job_count
-	mult = fwt_maintance_scale
-	min = 0
-}
-
-#get the number of pops that would have jobs
-fwt_free_jobs = {
-	weight = background_pops
-	subtract = value:fwt_free_maintenance
-}
-
-# total number of pops working job account for pops that don't have jobs being less effective
-fwt_job_effectivness = {
-	weight = value:fwt_free_jobs
-	add = value:fwt_free_maintenance
-}
-
 # pops relative to fake pops for scaling modifiers tied to a pop
 fwt_pop_effectivness = {
-	weight = trigger:num_pops
+	weight = trigger:pop_amount
 	divide = background_pops
 }
 
@@ -532,23 +398,6 @@ political_power_empire_base = {
 	mult = value:political_power_empire_base_sub
 }
 
-fwt_fwt_planet_job_size_mult = {
-	base = 1
-	add = value:fwt_planet_job_size
-}
-
-fwt_budding_mult = {
-	weight = 1
-	mult = fwt_budding_multiplier
-	mult = value:fwt_planet_job_size
-}
-
-tec_growth_mult = {
-	base = 1
-	mult = modifier:$MODIFIER$
-	mult = planet.value:fwt_planet_job_size
-}
-
 bb_scripted_modifier_job_weight_mult = {
 	base = 1
 	add = modifier:$MODIFIER$
@@ -566,4 +415,208 @@ fwt_situation_finish_count = {
 	weight = trigger:situation_monthly_progress
 	subtract = value:fwt_situation_finish_count_sub
 	divide = 100
+	min = 1
+}
+
+
+#temp till code switch
+giga_planet_density_offset_modifier_by_pops = {
+	weight = modifier:$modifier$
+	subtract = modifier:giga_$modifier$_offset
+	[[countCountry]
+		modifier = {
+			exists = owner
+			subtract = owner.modifier:giga_$modifier$_offset
+		}
+	]
+	[[positiveOnly]
+		min = 0
+	]
+	[[negativeOnly]
+		max = 0
+	]
+	multiply = value:giga_planet_density_by_pops|pops|$pops|20000$|
+}
+
+fwt_expansion_cost = {
+	weight = giga_frameworld_expansion_cost_base
+	mult = giga_frameworld_expansion_cost_exponent
+}
+
+fwt_city_districts_value = {
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_giga_frameworld_city
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_giga_frameworld_hive
+		}
+		mode = add
+	}
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = district_giga_frameworld_nexus
+		}
+		mode = add
+	}
+	mult = frame_expansion_scale
+}
+
+
+
+fwt_districts_value = {
+	complex_trigger_modifier = {
+		trigger = num_districts
+		parameters = {
+			type = $DISTRICT$
+		}
+		mode = add
+	}
+	mult = fwt_$COMPLETION$_completion
+}
+
+fwt_growth_efficiency_value = {
+	base = 0.025
+	modifier = {
+		planet = { check_variable = { which = frame_expansion_scale value >= 2 } }
+		mult = 1.5
+	}
+	modifier = {
+		planet = { check_variable = { which = frame_expansion_scale value >= 4 } }
+		mult = 1.5
+	}
+	mult = modifier:pop_bonus_workforce_mult
+	mult = giga_frameworld_expansions
+}
+
+
+######################################################
+
+giga_planet_density_offset_jobs_by_pops = {
+	complex_trigger_modifier = {
+		trigger = num_assigned_jobs
+		parameters = {
+			job = $job$
+		}
+		mode = weight
+	}
+	divide = 100
+	multiply = value:giga_planet_density_by_pops|pops|$pops|20000$|
+}
+
+giga_planet_density_offset_by_bio_trophies = {
+	weight = value:giga_planet_density_count_bio_trophies
+	divide = 100
+	multiply = value:giga_planet_density_by_pops|pops|$pops|20000$|
+}
+
+giga_frameworld_outpost_growth_job_upkeep = {
+	base = 1
+	[[!checkType]
+		complex_trigger_modifier = {
+			trigger = num_assigned_jobs
+			parameters = {
+				job = $job$
+			}
+			trigger_scope = target
+			mode = mult
+		}
+	]
+	[[checkType]
+		complex_trigger_modifier = {
+			trigger = num_assigned_jobs
+			parameters = {
+				job = $job$
+				value > 0
+			}
+			trigger_scope = target
+			mode = mult
+		}
+	]
+	divide = 100
+	mult = value:giga_frameworld_outpost_growth_count
+	[[modifier]
+		mult = target.value:scripted_modifier_mult|MODIFIER|$modifier$|
+	]
+}
+
+# number of pops resettled per month to the frameworld
+# 5% or 400, whichever is more. Breakpoint is 400 / 0.05 = 8000
+giga_frameworld_resettlement_count = {
+	weight = trigger:pop_amount
+	mult = 0.05
+	round = yes
+	min = 400
+}
+
+giga_frameworld_outpost_count_raw_hab = {
+	# number of outposts reduced by hab (min 50%)
+	add = owner.fwt_frameworld_hab
+
+	# branch offices and other sources
+	add = modifier:giga_frameworld_outpost_count
+}
+
+giga_frameworld_outpost_count_hab = {
+	#weight = modifier:giga_frameworld_outpost_count
+	weight = value:giga_frameworld_outpost_count_raw_hab
+
+	# megacorp outposts count for less, but they get branch office outposts too
+	modifier = {
+		is_megacorp = yes
+		multiply = 0.5
+	}
+}
+
+giga_frameworld_outpost_growth_count_hab = {
+	weight = owner.value:giga_frameworld_outpost_count_hab
+	multiply = @giga_frameworld_outpost_expansion_curve
+	divide = value:giga_frameworld_outpost_growth_count_internal|reduction|$reduction|1$|reduction_offset|$reduction_offset|0$|
+	multiply = $mult|1$
+}
+
+giga_frameworld_outpost_growth_count_internal = {
+	weight = owner.value:giga_frameworld_outpost_count
+	#used to reduce the amount that each each output gives for more powerful modifiers like job efficiency
+	multiply = $reduction$
+	# reduce the effect more for the first increases to the modifier
+	subtract = $reduction_offset$
+	add = @giga_frameworld_outpost_expansion_curve
+}
+
+fwt_frameworld_hab_percent = {
+    weight = fwt_frameworld_planet_base_hab
+
+	add = value:frameworld_modifier_hab|MODIFIER|pop_environment_tolerance|
+
+	min = value:fwt_frameworld_hab_percent_floor
+
+	max = value:fwt_frameworld_hab_percent_ceil
+
+	add = 1
+	divide = 2
+}
+
+fwt_frameworld_hab_percent_floor = {
+    base = 0
+    add = value:frameworld_modifier_hab|MODIFIER|habitability_floor_add|
+    min = 0
+}
+
+fwt_frameworld_hab_percent_ceil = {
+    base = 1
+    subtract = value:frameworld_modifier_hab|MODIFIER|habitability_ceil_add|
+    max = 1
+}
+
+frameworld_modifier_hab = {
+	weight = solar_system.owner_main_species.modifier:$MODIFIER$
+	# add = fwt_frameworld_planet_base_hab
+	add = solar_system.owner.modifier:$MODIFIER$
 }

@@ -1,0 +1,284 @@
+giga_extra_healthcare = {
+    category = specialist
+
+    swappable_data = {
+        default = {
+            condition_string = SPECIALIST_JOB_TRIGGER
+            building_icon = building_medical_1
+        }
+    }
+
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+
+    possible_precalc = can_fill_specialist_job
+
+    tags = { pop_assembly }
+
+    triggered_planet_pop_group_modifier_for_all = {
+        bonus_pop_growth = 0.8
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        fake_pop_growth_mod = 0.8
+    }
+
+    resources = {
+        category = planet_doctors
+        upkeep = {
+            consumer_goods = 0.5
+        }
+        upkeep = {
+            trigger = {
+                is_lithoid = no
+            }
+            food = 2
+        }
+        upkeep = {
+            trigger = {
+                is_lithoid = yes
+            }
+            minerals = 2
+        }
+        produces = {
+            trigger = {
+                owner = {
+                    has_valid_civic = civic_private_healthcare_corporate
+                }
+            }
+            trade = 2
+        }
+        produces = {
+            trigger = {
+                planet = {
+                    has_planet_flag = has_private_clinics
+                }
+            }
+            trade = 1
+        }
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = {
+                NOT = { has_valid_civic = civic_dystopian_society }
+            }
+        }
+        planet_amenities_add = 200
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            exists = owner
+            owner = { has_valid_civic = civic_private_healthcare_corporate }
+        }
+        planet_amenities_add = 100
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+    triggered_planet_modifier = {
+        potential = {
+            planet = { has_planet_flag = has_private_clinics }
+        }
+        planet_amenities_add = 100
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+
+    weight = {
+        modifier = {
+            exists = owner
+            owner = { has_valid_civic = civic_private_healthcare_corporate }
+            weight = value:giga_specialist_no_resource_weight|JOB|giga_extra_healthcare|INDENTURED|0.5|AMENITIES|yes|TRADE|yes|
+        }
+        modifier = {
+            exists = owner
+            owner = { not = { has_valid_civic = civic_private_healthcare_corporate } }
+            weight = value:giga_specialist_no_resource_weight|JOB|giga_extra_healthcare|INDENTURED|0.5|AMENITIES|yes|
+        }
+        multiply = 10
+    }
+
+    inline_script = jobs/automodding_priority_amenities
+}
+
+giga_extra_crucible_drone = {
+    category = complex_drone
+
+    swappable_data = {
+        default = {
+            condition_string = DRONE_JOB_TRIGGER
+            building_icon = building_medical_1
+        }
+    }
+
+    possible_pre_triggers = {
+        has_owner = yes
+        is_enslaved = no
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+
+    possible_precalc = can_fill_drone_job
+
+    possible = { can_think = yes }
+
+    tags = { pop_assembly }
+
+    triggered_planet_pop_group_modifier_for_all = {
+        bonus_pop_growth = 2
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        fake_pop_growth_mod = 2
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        planet_amenities_add = 500
+        mult = value:scripted_modifier_mult|MODIFIER|pop_job_amenities_mult|
+    }
+
+    resources = {
+        category = planet_doctors
+        upkeep = {
+            alloys = 1
+        }
+        upkeep = {
+            trigger = {
+                exists = planet
+                planet = {
+                    growing_species = {
+                        is_lithoid = no
+                        #cyber check added to ensure that you can't have it give growth without upkeep
+                    }
+                }
+            }
+            food = 5
+        }
+        upkeep = {
+            trigger = {
+                exists = planet
+                planet = {
+                    growing_species = {
+                        is_lithoid = yes
+                    }
+                }
+            }
+            minerals = 5
+        }
+    }
+
+    weight = {
+        weight = @spawner_drone_job_weight
+        modifier = {
+            factor = 0.01 # crisis purge
+            exists = planet
+            exists = planet.controller
+            planet.controller = {
+                OR = {
+                    is_country_type = swarm
+                    is_country_type = ai_empire
+                }
+            }
+        }
+    }
+
+    inline_script = jobs/automodding_priority_amenities
+}
+
+giga_cloning = {
+    category = specialist
+
+    swappable_data = {
+        default = {
+            condition_string = SPECIALIST_JOB_TRIGGER
+            building_icon = building_clone_vats
+        }
+    }
+
+    possible_pre_triggers = {
+        has_owner = yes
+        is_being_purged = no
+        is_being_assimilated = no
+        is_sapient = yes
+    }
+
+    tags = { pop_assembly }
+
+    possible_precalc = can_fill_specialist_job
+    triggered_planet_pop_group_modifier_for_all = {
+        potential = { always = yes }
+        bonus_pop_growth = 2
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            always = yes
+        }
+        fake_pop_growth_mod = 2
+    }
+
+    triggered_planet_pop_group_modifier_for_all = {
+        potential = {
+            exists = planet
+            planet = {
+                exists = owner
+                owner = {
+                    has_tradition = tr_cloning_adopt
+                }
+            }
+        }
+        bonus_pop_growth = 1
+    }
+
+    triggered_planet_modifier = {
+        potential = {
+            exists = planet
+            planet = {
+                exists = owner
+                owner = {
+                    has_tradition = tr_cloning_adopt
+                }
+            }
+        }
+        fake_pop_growth_mod = 1
+    }
+    resources = {
+        category = planet_jobs
+        upkeep = {
+            consumer_goods = 1
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = { is_lithoid_empire = no }
+            }
+            food = 5
+        }
+        upkeep = {
+            trigger = {
+                exists = owner
+                owner = { is_lithoid_empire = yes }
+            }
+            minerals = 5
+        }
+    }
+
+    weight = {
+        weight = value:giga_specialist_no_resource_weight|JOB|giga_cloning|INDENTURED|0.5|
+        mult = 10
+    }
+}

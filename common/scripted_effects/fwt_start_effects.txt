@@ -1,0 +1,46 @@
+fwt_adding_district_zone_or_building = {
+    if = {
+        limit = {
+            num_districts = { type = $DISTRICT$ value = 0 }
+        }
+        add_district = $DISTRICT$
+    }
+    add_zone = {
+        district = $DISTRICT$
+        zone = $ZONE$
+        zone_slot = 0
+        replace = yes
+    }
+    [[BUILDING]
+        add_building = {
+            district = $DISTRICT$
+            zone = $ZONE$
+            building = $BUILDING$
+        }
+    ]
+}
+
+fwt_clear_district = {
+    while = {
+        limit = {
+            has_district = $district$
+        }
+        remove_district = $district$
+    }
+}
+
+fwt_half_district = {
+    export_trigger_value_to_variable = {
+        trigger = num_districts
+        parameters = {
+            type = $DISTRICT$
+        }
+        variable = fwt_dist_count_temp
+    }
+    divide_variable = { which = fwt_dist_count_temp value = 2 }
+    floor_variable = fwt_dist_count_temp
+    while = {
+        count = fwt_dist_count_temp
+        remove_district = $DISTRICT$
+    }
+}

@@ -1,0 +1,9 @@
+triggered_district_planet_modifier = {
+    modifier = {
+        job_entertainer_add = $JOBS$
+    }
+    mult = fwt_unity_trade_completion
+}
+desc = {
+    text = job_entertainer_effect_desc
+}

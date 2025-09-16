@@ -1,0 +1,22 @@
+inline_script = {
+    script = planet/rulers/parts/fwt_politician_jobs
+    jobs = @[ $jobs$ - $swap$ ]
+    add = $add$
+    condition = "$condition$"
+    district = $district$
+    description = $description$
+    multiplier_string = "$multiplier_string$"
+    type = "$type$"
+}
+
+inline_script = {
+    script = planet/rulers/parts/fwt_ruler_job_swap
+    jobs = $swap$
+    add = $add$
+    condition = "$condition$"
+    district = $district$
+    description = $description$
+    politician_description = @no
+    multiplier_string = "$multiplier_string$"
+    type = "$type$"
+}

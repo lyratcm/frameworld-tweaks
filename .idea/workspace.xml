@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="">
+    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="output hab changes finished">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/decisions/zz_frameworld_general_decision.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_expansion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_expansion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_upgrades.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_upgrades.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_triggers/fwt_triggers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_triggers/fwt_triggers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/situations/fwt_decision_situations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/situations/fwt_decision_situations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/fwt_events.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/fwt_events.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/english/fwt_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/english/fwt_frameworld_l_english.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,112 +23,81 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "lyratcm"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;lyratcm&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/lyratcm/frameworld-tweaks.git",
-    "accountId": "a9af0b98-51a8-4f92-99f6-72ffe1213c55"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/lyratcm/frameworld-tweaks.git&quot;,
+    &quot;accountId&quot;: &quot;a9af0b98-51a8-4f92-99f6-72ffe1213c55&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Steam/steamapps/common/Stellaris/common/economic_categories/00_common_categories.txt" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Steam/steamapps/common/Stellaris/common/pop_jobs/01_ruler_jobs.txt" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/../../../../../../../Program Files (x86)/Steam/steamapps/workshop/content/281990/1121692237/common/scripted_triggers/giga_frameworld_triggers.txt" root0="SKIP_INSPECTION" />
   </component>
+  <component name="NamedScopeManager">
+    <scope name="Unnamed" pattern="src[frameworld tweaks]:*..*&amp;&amp;!src[logs]:*..*" />
+  </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 6
 }</component>
   <component name="ProjectId" id="2lWKcaA9EYaxm3VLkoAnjhXDaC9" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.sourceCode"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;4.0&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/common/traits&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;two.files.diff.last.used.folder&quot;: &quot;C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts" />
-      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\scripted_triggers" />
-      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\situations" />
-      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\pop_jobs" />
+      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\traits" />
+      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\zone_slots" />
+      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\buildings" />
+      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\districts\parts" />
+      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\districts\params" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\zone_slots" />
+      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\events" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\deposits" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\deposits\part" />
     </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="frameworld tweaks" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="frameworld tweaks" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="frameworld tweaks" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration default="true" type="Tox" factoryName="Tox">
-      <module name="frameworld tweaks" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -129,6 +108,179 @@
       <option name="presentableId" value="Default" />
       <updated>1725290472204</updated>
     </task>
+    <task id="LOCAL-00001" summary="Removing pop changes to allow for 4.0 changes">
+      <option name="closed" value="true" />
+      <created>1742320194222</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1742320194222</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added new districts/zones and gave them pops">
+      <option name="closed" value="true" />
+      <created>1747242465334</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1747242465334</updated>
+    </task>
+    <task id="LOCAL-00003" summary="all districts/jobs now work and inlines are split from gigas to avoid issues with buildings that use the same code">
+      <option name="closed" value="true" />
+      <created>1747408003998</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1747408003998</updated>
+    </task>
+    <task id="LOCAL-00004" summary="misc inline fixes and small number tweaks, MVP for bios">
+      <option name="closed" value="true" />
+      <created>1747419483928</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1747419483928</updated>
+    </task>
+    <task id="LOCAL-00005" summary="add frameworld upgrades&#10;move situation and non auto decisions back to decisions&#10;added extra simultaneous build to the frameworld">
+      <option name="closed" value="true" />
+      <created>1747620687735</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1747620687735</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add frameworld upgrades&#10;move situation and non auto decisions back to decisions&#10;added extra simultaneous build to the frameworld">
+      <option name="closed" value="true" />
+      <created>1747865203737</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747865203737</updated>
+    </task>
+    <task id="LOCAL-00007" summary="bugfixes&#10;decisions loc pt 1">
+      <option name="closed" value="true" />
+      <created>1747964550564</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1747964550564</updated>
+    </task>
+    <task id="LOCAL-00008" summary="decision locs pt2&#10;clean up pre 4.0 files&#10;add district half on level up">
+      <option name="closed" value="true" />
+      <created>1748360016104</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1748360016104</updated>
+    </task>
+    <task id="LOCAL-00009" summary="tweaking scaling&#10;adding my own automation buildings (and disabling vanillas)&#10;disabling start event double triggers&#10;fixing upgrades rounding the wrong way&#10;added 3 extra distrcits after ecu upgrade to allow for more building slots&#10;updated plans.txt&#10;fixed some upkeep scalars from not account for job swaps&#10;made job adds make more sense">
+      <option name="closed" value="true" />
+      <created>1749007023370</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1749007023370</updated>
+    </task>
+    <task id="LOCAL-00010" summary="scaling for upgrade districts&#10;adding tag support for all zone (up from most)">
+      <option name="closed" value="true" />
+      <created>1749153129155</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1749153129156</updated>
+    </task>
+    <task id="LOCAL-00011" summary="increase base exponent, increased reduction from voidborne&#10;added info to the frameworld poi to show what i've changed&#10;updated automation exclude to not use inlines in an exclude&#10;allow multiple auto havests to run at once&#10;remove pre-4.o code&#10;increase default alloys assigned to auto expand&#10;overwrote ctiy zone/zone slots to use my own and allow for building filtering&#10;inlined city zones&#10;moved mineral upgrade 2 to mega engi as gigas move the tech to a kilo">
+      <option name="closed" value="true" />
+      <created>1749370258773</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1749370258773</updated>
+    </task>
+    <task id="LOCAL-00012" summary="added premtive support for eat building scaling&#10;disabled defensive stations pending gigas fix&#10;cleaned up expansion decision and scripted loc files">
+      <option name="closed" value="true" />
+      <created>1749410509261</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1749410509261</updated>
+    </task>
+    <task id="LOCAL-00013" summary="updated frameworld automation scaling to be inline with vanilla&#10;fixed research distrcits getting +100 housing&#10;removed uneeded swap&#10;disabled maintenance protocol as no longer needed with civilians&#10;city distrcit automation upkeep scales&#10;moved uneeded code into hidden eff&#10;added my own custom tooltip for automation to show different upkeep for atuomation building rather than using vanillas numbers&#10;increase alloy/engergy upgrade cost&#10;fxied sci upgrade not halving districts">
+      <option name="closed" value="true" />
+      <created>1749831570382</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1749831570382</updated>
+    </task>
+    <task id="LOCAL-00014" summary="inline amenties&#10;foundation for city versions of zones&#10;added rare resource upkeep to districts as not needed for zones">
+      <option name="closed" value="true" />
+      <created>1749838989051</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1749838989051</updated>
+    </task>
+    <task id="LOCAL-00015" summary="inline amenties&#10;foundation for city versions of zones&#10;added rare resource upkeep to districts as not needed for zones">
+      <option name="closed" value="true" />
+      <created>1749839033052</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1749839033052</updated>
+    </task>
+    <task id="LOCAL-00016" summary="removed a starting food district&#10;reworked the back end of the asteroid situation and cleaned up the toolips&#10;added a unity designation back for the capital&#10;added the correct job swaps for enteratainers&#10;allowed a esap to work for the frameworld&#10;updated the iodizium reseach and negative mass buildings to 4.0&#10;reduced the extra stuff from mega expansion&#10;increased the scaling reduction for the frameworld efficiency pending rework&#10;fixed the giga frameworld job icons">
+      <option name="closed" value="true" />
+      <created>1750373886772</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1750373886772</updated>
+    </task>
+    <task id="LOCAL-00017" summary="added a menu for starting the situations&#10;update the ecu desposit to be the same as vanilla ecu">
+      <option name="closed" value="true" />
+      <created>1750433434096</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1750433434096</updated>
+    </task>
+    <task id="LOCAL-00018" summary="hab efficiency support">
+      <option name="closed" value="true" />
+      <created>1752694266802</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1752694266802</updated>
+    </task>
+    <task id="LOCAL-00019" summary="output hab changes finished">
+      <option name="closed" value="true" />
+      <created>1757195808493</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1757195808493</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Removing pop changes to allow for 4.0 changes" />
+    <MESSAGE value="added new districts/zones and gave them pops" />
+    <MESSAGE value="all districts/jobs now work and inlines are split from gigas to avoid issues with buildings that use the same code" />
+    <MESSAGE value="misc inline fixes and small number tweaks, MVP for bios" />
+    <MESSAGE value="add frameworld upgrades&#10;move situation and non auto decisions back to decisions&#10;added extra simultaneous build to the frameworld" />
+    <MESSAGE value="bugfixes&#10;decisions loc pt 1" />
+    <MESSAGE value="decision locs pt2&#10;clean up pre 4.0 files&#10;add district half on level up" />
+    <MESSAGE value="tweaking scaling&#10;adding my own automation buildings (and disabling vanillas)&#10;disabling start event double triggers&#10;fixing upgrades rounding the wrong way&#10;added 3 extra distrcits after ecu upgrade to allow for more building slots&#10;updated plans.txt&#10;fixed some upkeep scalars from not account for job swaps&#10;made job adds make more sense" />
+    <MESSAGE value="scaling for upgrade districts&#10;adding tag support for all zone (up from most)" />
+    <MESSAGE value="increase base exponent, increased reduction from voidborne&#10;added info to the frameworld poi to show what i've changed&#10;updated automation exclude to not use inlines in an exclude&#10;allow multiple auto havests to run at once&#10;remove pre-4.o code&#10;increase default alloys assigned to auto expand&#10;overwrote ctiy zone/zone slots to use my own and allow for building filtering&#10;inlined city zones&#10;moved mineral upgrade 2 to mega engi as gigas move the tech to a kilo" />
+    <MESSAGE value="added premtive support for eat building scaling&#10;disabled defensive stations pending gigas fix&#10;cleaned up expansion decision and scripted loc files" />
+    <MESSAGE value="updated frameworld automation scaling to be inline with vanilla&#10;fixed research distrcits getting +100 housing&#10;removed uneeded swap&#10;disabled maintenance protocol as no longer needed with civilians&#10;city distrcit automation upkeep scales&#10;moved uneeded code into hidden eff&#10;added my own custom tooltip for automation to show different upkeep for atuomation building rather than using vanillas numbers&#10;increase alloy/engergy upgrade cost&#10;fxied sci upgrade not halving districts" />
+    <MESSAGE value="inline amenties&#10;foundation for city versions of zones&#10;added rare resource upkeep to districts as not needed for zones" />
+    <MESSAGE value="removed a starting food district&#10;reworked the back end of the asteroid situation and cleaned up the toolips&#10;added a unity designation back for the capital&#10;added the correct job swaps for enteratainers&#10;allowed a esap to work for the frameworld&#10;updated the iodizium reseach and negative mass buildings to 4.0&#10;reduced the extra stuff from mega expansion&#10;increased the scaling reduction for the frameworld efficiency pending rework&#10;fixed the giga frameworld job icons" />
+    <MESSAGE value="added a menu for starting the situations&#10;update the ecu desposit to be the same as vanilla ecu" />
+    <MESSAGE value="hab efficiency support" />
+    <MESSAGE value="output hab changes finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="output hab changes finished" />
   </component>
 </project>

@@ -1,0 +1,43 @@
+@frameworld_housing_urban = 600
+
+resources = {
+    category = planet_districts
+    cost = {
+        minerals =  @advanced_cost
+        mult = frame_expansion_scale
+    }
+    upkeep = {
+        energy = @advanced_upkeep
+        mult = frame_expansion_scale
+    }
+    cost = {
+        trigger = {
+            check_variable = { which = frame_expansion_scale value > 1 }
+        }
+        $RARE$ = @advanced_rare_cost
+        mult = frame_expansion_scale
+    }
+    upkeep = {
+        trigger = {
+            check_variable = { which = frame_expansion_scale value > 1 }
+        }
+        $RARE$ = @advanced_rare_upkeep
+        mult = frame_expansion_scale
+    }
+}
+
+show_on_uncolonized = {
+    uses_district_set = giga_frameworld
+    $POTENTIAL$
+}
+
+potential = {
+    uses_district_set = giga_frameworld
+    $POTENTIAL$
+}
+
+triggered_planet_modifier = {
+    potential = { always = yes }
+    planet_housing_add = @frameworld_housing_urban
+    mult = frame_expansion_scale
+}

@@ -1,0 +1,59 @@
+slot_frameworld_urban_01 = {
+    inline_script = zone_slots/fwt_zones_frameworld_urban_non_city
+
+    unlock = { # planet scope
+        uses_district_set = giga_frameworld
+    }
+}
+
+fwt_slot_city_government = {
+    start = fwt_zone_default
+
+    include = {
+        fwt_zone_default
+    }
+
+    exclude = {
+    }
+
+    potential = { # planet scope
+        uses_district_set = giga_frameworld
+        always = yes
+    }
+
+    unlock = { # planet scope
+        uses_district_set = giga_frameworld
+        always = yes
+    }
+}
+
+fwt_slot_city_01 = {
+    start = district_giga_frameworld_city_city
+
+    inline_script = zone_slots/fwt_zones_frameworld_urban
+
+    potential = { # planet scope
+        uses_district_set = giga_frameworld
+        always = yes
+    }
+
+    unlock = { # planet scope
+        uses_district_set = giga_frameworld
+        always = yes
+    }
+}
+
+fwt_slot_city_02 = {
+    start = district_giga_frameworld_city_city
+
+    inline_script = zone_slots/fwt_zones_frameworld_urban
+
+    potential = { # planet scope
+        uses_district_set = giga_frameworld
+        always = yes
+    }
+
+    unlock = { # planet scope
+        uses_district_set = giga_frameworld
+    }
+}

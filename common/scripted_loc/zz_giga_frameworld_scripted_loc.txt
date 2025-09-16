@@ -215,58 +215,6 @@ defined_text = {
         trigger = { has_situation_flag = giga_frameworld_consume_world_dec }
         localization_key = giga_frameworld_consume_world
     }
-	text = {
-        trigger = { has_situation_flag = frameworld_penrose_dec }
-        localization_key = giga_frameworld_penrose
-    }
-	text = {
-        trigger = { has_situation_flag = giga_frameworld_decompressor_dec }
-        localization_key = giga_frameworld_decompressor
-    }
-	text = {
-        trigger = { has_situation_flag = giga_frameworld_advanced_city_dec }
-        localization_key = giga_frameworld_advanced_city
-    }
-	text = {
-        trigger = { has_situation_flag = giga_frameworld_advanced_industrial_dec }
-        localization_key = giga_frameworld_advanced_industrial
-    }
-	text = {
-        trigger = { has_situation_flag = frameworld_advanced_sanctuary_dec }
-        localization_key = giga_frameworld_advanced_sanctuary
-    }
-	text = {
-        trigger = { has_situation_flag = giga_frameworld_gaia_dec }
-        localization_key = giga_frameworld_gaia
-    }
-	text = {
-        trigger = { has_situation_flag = giga_frameworld_computing_complex_dec }
-        localization_key = giga_frameworld_computing_complex
-    }
-	text = {
-        trigger = { has_situation_flag = giga_frameworld_expand_infrastructure_dec }
-        localization_key = giga_frameworld_expand_infrastructure
-    }
-	text = {
-        trigger = { has_situation_flag = frameworld_orbital_ring_dec }
-        localization_key = giga_frameworld_orbital_ring_upgrade
-    }
-	text = {
-        trigger = { has_situation_flag = frameworld_maginot_dec }
-        localization_key = giga_frameworld_maginot
-    }
-	text = {
-        trigger = { has_situation_flag = frameworld_habitat_dec }
-        localization_key = giga_frameworld_habitat_upgrade
-    }
-	text = {
-        trigger = { has_situation_flag = interstellar_assembly_dec }
-        localization_key = giga_interstellar_assembly_upgrade
-    }
-	text = {
-        trigger = { has_situation_flag = yggdrasil_orchid_dec }
-        localization_key = giga_yggdrasil_orchid_upgrade
-    }
     default = frameworld_blank
 }
 
@@ -315,6 +263,263 @@ defined_text = {
     default = frameworld_blank
 }
 
+define_text = {
+    name = fwt_frameworld_unity_spec
+    text = {
+        trigger = {
+            owner = {
+                is_machine_empire = yes
+            }
+        }
+        localization_key = district_giga_frameworld_simulation
+    }
+    text = {
+        trigger = {
+            owner = {
+                is_hive_empire = yes
+            }
+        }
+        localization_key = district_giga_frameworld_synapse
+    }
+    default = district_giga_frameworld_administrative
+}
+
+define_text = {
+    name = fwt_frameworld_amenities_spec
+    text = {
+        trigger = {
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        localization_key = district_giga_frameworld_amenities_gestalt
+    }
+    text = {
+        trigger = {
+            owner = {
+                has_valid_civic = civic_dystopian_society
+            }
+        }
+        localization_key = district_giga_frameworld_amenities_dystopian
+    }
+    default = district_giga_frameworld_amenities
+}
+
+define_text = {
+    name = fwt_frameworld_factory_spec
+    text = {
+        trigger = {
+            owner = {
+                or = {
+                    is_gestalt = no
+                    has_valid_civic = civic_machine_servitor
+                    country_uses_consumer_goods = yes
+                }
+            }
+        }
+        localization_key = district_giga_frameworld_factory_swap
+    }
+    default = fwt_null_loc
+}
+
+define_text = {
+    name = district_giga_frameworld_trade_spec
+    text = {
+        trigger = {
+            owner = {
+                is_gestalt = no
+            }
+        }
+        localization_key = district_giga_frameworld_trade_swap
+    }
+    default = fwt_null_loc
+}
+
+define_text = {
+    name = district_giga_frameworld_trade_job_spec
+    text = {
+        trigger = {
+            owner = {
+                is_gestalt = no
+            }
+        }
+        localization_key = district_giga_frameworld_trade_job_swap
+    }
+    default = fwt_null_loc
+}
+
+define_text = {
+    name = fwt_frameworld_factory_job_spec
+    text = {
+        trigger = {
+            owner = {
+                or = {
+                    is_gestalt = no
+                    has_valid_civic = civic_machine_servitor
+                    country_uses_consumer_goods = yes
+                }
+            }
+        }
+        localization_key = district_giga_frameworld_factory_job_swap
+    }
+    default = fwt_null_loc
+}
+
+# country
+# Artisan / others
+defined_text = {
+    name = fwt_GetArtisanIcon
+    text = {
+        trigger = {
+            is_scope_valid = yes
+            is_gestalt = no
+            is_crafter_empire = no
+        }
+        localization_key = job_artisan_icon
+    }
+    text = {
+        trigger = {
+            is_scope_valid = yes
+            is_gestalt = no
+            is_crafter_empire = yes
+        }
+        localization_key = job_artificer_icon
+    }
+    text = {
+        trigger = {
+            is_scope_valid = yes
+            is_gestalt = yes
+            has_valid_civic = civic_machine_servitor
+        }
+        localization_key = job_artisan_drone
+    }
+    default = fwt_null_loc
+}
+
+
+# country
+# metallurgists / others
+defined_text = {
+    name = fwt_GetFoundryIcon
+    text = {
+        trigger = {
+            is_scope_valid = yes
+            is_gestalt = no
+            is_catalytic_empire = no
+        }
+        localization_key = job_foundry
+    }
+    text = {
+        trigger = {
+            is_scope_valid = yes
+            is_gestalt = no
+            is_catalytic_empire = yes
+        }
+        localization_key = job_catalytic_technician
+    }
+    text = {
+        trigger = {
+            is_scope_valid = yes
+            is_hive_empire = yes
+        }
+        localization_key = job_alloy_drone
+    }
+    text = {
+        trigger = {
+            is_scope_valid = yes
+            is_machine_empire = yes
+            is_catalytic_empire = no
+        }
+        localization_key = job_fabricator
+    }
+    text = {
+        trigger = {
+            is_scope_valid = yes
+            is_machine_empire = yes
+            is_catalytic_empire = yes
+        }
+        localization_key = job_catalytic_drone
+    }
+    default = fwt_null_loc
+}
+
+
+define_text = {
+    name = fwt_frameworld_amenities_job_spec
+    text = {
+        trigger = {
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        localization_key = coordinator_icon
+    }
+    text = {
+        trigger = {
+            owner = {
+                has_valid_civic = civic_dystopian_society
+            }
+        }
+        localization_key = politician_icon
+    }
+    default = entertainer_icon
+}
+
+defined_text = {
+    name = fwt_automation_city_upkeep_1_swap
+    text = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_tradition = tr_est_cybernetics_1
+            }
+        }
+        fwt_automation_city_upkeep_1_est
+    }
+    default = fwt_automation_city_upkeep_1_no_est
+}
+
+defined_text = {
+    name = fwt_automation_city_upkeep_2_swap
+    text = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_tradition = tr_est_cybernetics_1
+            }
+        }
+        localization_key = fwt_automation_city_upkeep_2_est
+    }
+    default = fwt_automation_city_upkeep_2_no_est
+}
+
+defined_text = {
+    name = fwt_automation_upkeep_1_swap
+    text = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_tradition = tr_est_cybernetics_1
+            }
+        }
+        localization_key = fwt_automation_upkeep_1_est
+    }
+    default = fwt_automation_upkeep_1_no_est
+}
+
+defined_text = {
+    name = fwt_automation_upkeep_2_swap
+    text = {
+        trigger = {
+            exists = owner
+            owner = {
+                has_tradition = tr_est_cybernetics_1
+            }
+        }
+        localization_key = fwt_automation_upkeep_2_est
+    }
+    default = fwt_automation_upkeep_2_no_est
+}
 
 # defined_text = {
 # 	name = fwt_situation_speed_script_value

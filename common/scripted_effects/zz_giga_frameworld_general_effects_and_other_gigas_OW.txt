@@ -5,97 +5,90 @@ giga_frameworld_recalculate_exponent = {
 		which = giga_frameworld_expansion_cost_exponent
 		value = @giga_frameworld_expansion_cost_exponent
 	}
-	
+
 	if = {
 		limit = {
 			exists = owner
 		}
-		
-		owner = {
-			if = {
-				limit = {
-					event_target:frameworld = {
-						has_planet_flag = frameworld_habitat_completed
-					}
-				}
-				prev = {
-					change_variable = {
-						which = giga_frameworld_expansion_cost_exponent
-						value = @fwt_frameworld_expansion_cost_habitat_upgrade
-					}
-				}
-			}
-			
-			if = {
-				limit = {
+		# owner = {
+		# 	if = {
+		# 		limit = {
+		# 			event_target:frame_expand@this = {
+		# 				has_planet_flag = frameworld_habitat_completed
+		# 			}
+		# 		}
+		# 		change_variable = {
+		# 			which = giga_frameworld_expansion_cost_exponent
+		# 			value = @fwt_frameworld_expansion_cost_habitat_upgrade
+		# 		}
+		# 	}
+
+		if = {
+			limit = {
+				owner = {
 					has_ascension_perk = ap_voidborn
 				}
-				prev = {
-					change_variable = {
-						which = giga_frameworld_expansion_cost_exponent
-						value = @giga_frameworld_expansion_exponent_voidborne
-					}
-				}
+
 			}
-			
-			if = {
-				limit = {
+			change_variable = {
+				which = giga_frameworld_expansion_cost_exponent
+				value = @giga_frameworld_expansion_exponent_voidborne
+			}
+		}
+
+		if = {
+			limit = {
+				owner = {
 					has_technology = tech_ring_world
 				}
-				prev = {
-					change_variable = {
-						which = giga_frameworld_expansion_cost_exponent
-						value = @giga_frameworld_expansion_exponent_ringworld
-					}
-				}
 			}
+			change_variable = {
+				which = giga_frameworld_expansion_cost_exponent
+				value = @giga_frameworld_expansion_exponent_ringworld
+			}
+		}
 
-			if = {
-				limit = {
+		if = {
+			limit = {
+				owner = {
 					has_technology = tech_mega_engineering
 				}
-				prev = {
-					change_variable = {
-						which = giga_frameworld_expansion_cost_exponent
-						value = @fwt_frameworld_expansion_exponent_mega_engineering
-					}
-				}
 			}
-
-			if = {
-				limit = {
-					event_target:frameworld = {
-						has_planet_flag = frameworld_expand_infrastructure_completed
-					}
-				}
-				prev = {
-					change_variable = {
-						which = giga_frameworld_expansion_cost_exponent
-						value = @fwt_frameworld_expansion_cost_city_upgrade
-					}
-				}
+			change_variable = {
+				which = giga_frameworld_expansion_cost_exponent
+				value = @fwt_frameworld_expansion_exponent_mega_engineering
 			}
-
-			# if = {
-			# 	limit = {
-			# 		event_target:frameworld = {
-			# 			has_planet_flag = frameworld_interstellar_assembly_completed
-			# 			has_planet_flag = frameworld_yggdrasil_orchid_completed
-			# 			has_planet_flag = frameworld_computing_complex_completed
-			# 			has_planet_flag = frameworld_interstellar_assembly_completed
-			# 			has_planet_flag = frameworld_advanced_industrial_completed
-			# 			has_planet_flag = frameworld_decompressor_completed
-			# 			has_planet_flag = frameworld_penrose_completed
-			# 		}
-			# 	}
-			# 	prev = {
-			# 		change_variable = {
-			# 			which = giga_frameworld_expansion_cost_exponent
-			# 			value = @fwt_frameworld_expansion_cost_mega_engi_upgrade
-			# 		}
-			# 	}
-			# }
 		}
+
+		# if = {
+		# 	limit = {
+		# 		event_target:frame_expand@this = {
+		# 			has_planet_flag = frameworld_expand_infrastructure_completed
+		# 		}
+		# 	}
+		# 	change_variable = {
+		# 		which = giga_frameworld_expansion_cost_exponent
+		# 		value = @fwt_frameworld_expansion_cost_city_upgrade
+		# 	}
+		# }
+
+		# if = {
+		# 	limit = {
+		# 		event_target:frameworld = {
+		# 			has_planet_flag = frameworld_interstellar_assembly_completed
+		# 			has_planet_flag = frameworld_yggdrasil_orchid_completed
+		# 			has_planet_flag = frameworld_computing_complex_completed
+		# 			has_planet_flag = frameworld_interstellar_assembly_completed
+		# 			has_planet_flag = frameworld_advanced_industrial_completed
+		# 			has_planet_flag = frameworld_decompressor_completed
+		# 			has_planet_flag = frameworld_penrose_completed
+		# 		}
+		# 	}
+		# 	change_variable = {
+		# 		which = giga_frameworld_expansion_cost_exponent
+		# 		value = @fwt_frameworld_expansion_cost_mega_engi_upgrade
+		# 	}
+		# }
 	}
 }
 
@@ -103,16 +96,16 @@ giga_frameworld_recalculate_exponent = {
 giga_frameworld_recalculate_variables = {
 	# cost mult to 1
 	giga_frameworld_reset_variables = yes
-	
+
 	# recalculate the exponent
 	giga_frameworld_recalculate_exponent = yes
-	
+
 	# deal with calculating base cost
-	set_variable = { 
+	set_variable = {
 		which = giga_frameworld_expansion_cost_base
 		value = @giga_frameworld_expansion_cost_base
 	}
-	
+
 	if = {
 		limit = {
 			exists = owner
@@ -125,7 +118,7 @@ giga_frameworld_recalculate_variables = {
 			value = @giga_frameworld_expansion_cost_habitat_2
 		}
 	}
-	
+
 	if = {
 		limit = {
 			exists = owner
@@ -138,20 +131,20 @@ giga_frameworld_recalculate_variables = {
 			value = @giga_frameworld_expansion_cost_habitat_3
 		}
 	}
-	
-	if = {
-		limit = {
-			exists = owner
-			owner = {
-				has_technology = tech_starbase_2
-			}
-		}
-		change_variable = {
-			which = giga_frameworld_expansion_cost_base
-			value = @fwt_frameworld_expansion_cost_starbase_2
-		}
-	}
-		
+
+	# if = {
+	# 	limit = {
+	# 		exists = owner
+	# 		owner = {
+	# 			has_technology = tech_starbase_2
+	# 		}
+	# 	}
+	# 	change_variable = {
+	# 		which = giga_frameworld_expansion_cost_base
+	# 		value = @fwt_frameworld_expansion_cost_starbase_2
+	# 	}
+	# }
+
 	if = {
 		limit = {
 			exists = owner
@@ -164,7 +157,7 @@ giga_frameworld_recalculate_variables = {
 			value = @fwt_frameworld_expansion_cost_starbase_3
 		}
 	}
-		
+
 	if = {
 		limit = {
 			exists = owner
@@ -218,9 +211,24 @@ giga_frameworld_recalculate_variables = {
 			}
 		}
 	}
-	
+
+	set_variable = { which = fwt_frameworld_expansion_cost_multiplier value = giga_frameworld_expansion_cost_multiplier }
+	multiply_variable = { which = fwt_frameworld_expansion_cost_multiplier value = giga_frameworld_expansion_cost_base }
+
+	#seperate var for decisions that need to take into account other decisions in queue
+	set_variable = { which = fwt_frameworld_expansion_cost_multiplier_dec value = fwt_frameworld_expansion_cost_multiplier }
+
+	# recalculate total decision cost from from expansion count
+	while = {
+		count = fwt_in_queue_expand
+		multiply_variable = {
+			which = fwt_frameworld_expansion_cost_multiplier_dec
+			value = giga_frameworld_expansion_cost_exponent
+		}
+	}
+
 	# set up the bulk buy options
-	set_variable = { 
+	set_variable = {
 		# temp value for our mult
 		which = giga_frameworld_expansion_multiplier_bulk
 		value = giga_frameworld_expansion_cost_multiplier
@@ -230,201 +238,79 @@ giga_frameworld_recalculate_variables = {
 		which = giga_frameworld_expansion_bulk_5_cost_multiplier
 		value = giga_frameworld_expansion_cost_multiplier
 	}
-	
+
 	while = {
 		count = 4 # the current mult is for +1 so for +5 we need 4 more
-		multiply_variable = { 
+		multiply_variable = {
 			# increase our temp multiplier
 			which = giga_frameworld_expansion_multiplier_bulk
 			value = giga_frameworld_expansion_cost_exponent
 		}
-		change_variable = { 
+		change_variable = {
 			# add the cost to our bulk cost
 			which = giga_frameworld_expansion_bulk_5_cost_multiplier
 			value = giga_frameworld_expansion_multiplier_bulk
 		}
 	}
-	
-	set_variable = { 
+
+	set_variable = {
 		# +10 starts with the +5 cost
 		which = giga_frameworld_expansion_bulk_10_cost_multiplier
 		value = giga_frameworld_expansion_bulk_5_cost_multiplier
 	}
-	
+
 	while = {
 		count = 5 # increment 5 more times to get to +10
-		multiply_variable = { 
+		multiply_variable = {
 			# increase temp multiplier
 			which = giga_frameworld_expansion_multiplier_bulk
 			value = giga_frameworld_expansion_cost_exponent
 		}
-		change_variable = { 
+		change_variable = {
 			# add to bulk cost
 			which = giga_frameworld_expansion_bulk_10_cost_multiplier
 			value = giga_frameworld_expansion_multiplier_bulk
 		}
 	}
-	
+
 	# tooltip variables
 	set_variable = {
 		which = giga_frameworld_expansion_cost_multiplier_tooltip
 		value = giga_frameworld_expansion_cost_multiplier
 	}
+
 	round_variable_to_closest = {
 		which = giga_frameworld_expansion_cost_multiplier_tooltip
 		value = 0.01
 	}
-	
+
 	set_variable = {
 		which = giga_frameworld_expansion_bulk_5_cost_multiplier_tooltip
 		value = giga_frameworld_expansion_bulk_5_cost_multiplier
 	}
+
 	round_variable_to_closest = {
 		which = giga_frameworld_expansion_bulk_5_cost_multiplier_tooltip
 		value = 0.01
 	}
-	
+
 	set_variable = {
 		which = giga_frameworld_expansion_bulk_10_cost_multiplier_tooltip
 		value = giga_frameworld_expansion_bulk_10_cost_multiplier
 	}
+
 	round_variable_to_closest = {
 		which = giga_frameworld_expansion_bulk_10_cost_multiplier_tooltip
 		value = 0.01
 	}
-	
+
 	# recalculate "we have lots of alloys AI buffer"
 	giga_frameworld_recalculate_buffer = yes
 
-	# recalculate maginot district cap
-	giga_frameworld_update_maginot_deposits = yes
+	# # recalculate maginot district cap
+	# giga_frameworld_update_maginot_deposits = yes
 }
 
-frameworld_conduct_audit_check_ai = {
-	if = {
-		limit = {
-			exists = owner
-			owner = {
-				is_ai = yes
-			}
-		}
-		#replaced the effect with the script due to recursion depth issues
-		# update megastructure cost variable
-		hidden_effect = {
-			if = {
-				limit = {
-					exists = owner
-				}
-				owner = {
-					# start with 1 for our multiplier
-					set_variable = {
-						which = giga_frameworld_megastructure_cost
-						value = 1
-					}
-					set_variable = {
-						which = giga_frameworld_megastructure_cost_mod
-						value = 0
-					}
-					# get the base megas cost mult
-					export_modifier_to_variable = {
-						modifier = megastructures_cost_mult
-						variable = giga_frameworld_megastructure_cost_mod
-					}
-					change_variable = {
-						which = giga_frameworld_megastructure_cost
-						value = giga_frameworld_megastructure_cost_mod
-					}
-				}
-			}
-		}
-		
-		### buildings
-		if = { limit = { frameworld_audit_foundry1 = yes } frameworld_audit_foundry1_effect = yes }
-		else_if = { limit = { frameworld_audit_foundry2 = yes } frameworld_audit_foundry2_effect = yes }
-		
-		else_if = { limit = { frameworld_audit_energygrid1 = yes } frameworld_audit_energygrid1_effect = yes }
-		else_if = { limit = { frameworld_audit_mineralhub1 = yes } frameworld_audit_mineralhub1_effect = yes }
-		else_if = { limit = { frameworld_audit_energygrid2 = yes } frameworld_audit_energygrid2_effect = yes }
-		else_if = { limit = { frameworld_audit_mineralhub2 = yes } frameworld_audit_mineralhub2_effect = yes }
-		
-		else_if = { limit = { frameworld_audit_crime = yes } frameworld_audit_crime_effect = yes }
-		
-		else_if = { limit = { frameworld_audit_sanctuary1 = yes } frameworld_audit_sanctuary1_effect = yes }
-		else_if = { limit = { frameworld_audit_sanctuary2 = yes } frameworld_audit_sanctuary2_effect = yes }
-		else_if = { limit = { frameworld_audit_sanctuary3 = yes } frameworld_audit_sanctuary3_effect = yes }
-		
-		else_if = { limit = { frameworld_audit_supercomputer = yes } frameworld_audit_supercomputer_effect = yes }
-		
-		else_if = { limit = { frameworld_audit_refinery = yes } frameworld_audit_refinery_effect = yes }
-		
-		else_if = { limit = { frameworld_audit_science2 = yes } frameworld_audit_science2_effect = yes }
-		else_if = { limit = { frameworld_audit_science3 = yes } frameworld_audit_science3_effect = yes }
-		else_if = { limit = { frameworld_audit_science1 = yes } frameworld_audit_science1_effect = yes } # 1 after 2 and 3 because it costs gas upkeep
-		
-		else_if = { limit = { frameworld_audit_unity2 = yes } frameworld_audit_unity2_effect = yes }
-		else_if = { limit = { frameworld_audit_unity3 = yes } frameworld_audit_unity3_effect = yes }
-		else_if = { limit = { frameworld_audit_unity1 = yes } frameworld_audit_unity1_effect = yes } # 1 after 2 and 3 because it costs crystal upkeep
-
-		else_if = { limit = { frameworld_audit_trade1 = yes } frameworld_audit_trade1_effect = yes }
-		else_if = { limit = { frameworld_audit_trade2 = yes } frameworld_audit_trade2_effect = yes }
-		
-		else_if = { limit = { frameworld_audit_hydroponics = yes } frameworld_audit_hydroponics_effect = yes }
-		
-		### upgrades
-		if = { limit = { frameworld_audit_upgrade_advanced_city  = yes } frameworld_audit_upgrade_advanced_city_effect = yes }
-		else_if = { limit = { frameworld_audit_upgrade_advanced_industrial = yes } frameworld_audit_upgrade_advanced_industrial_effect = yes }
-		else_if = { limit = { frameworld_audit_upgrade_advanced_sanctuary  = yes } frameworld_audit_upgrade_advanced_sanctuary_effect = yes }
-		
-		else_if = { limit = { frameworld_audit_upgrade_gaia  = yes } frameworld_audit_upgrade_gaia_effect = yes }
-		
-		else_if = { limit = { frameworld_audit_upgrade_penrose = yes } frameworld_audit_upgrade_penrose_effect = yes }
-		else_if = { limit = { frameworld_audit_upgrade_decompressor  = yes } frameworld_audit_upgrade_decompressor_effect = yes }
-		
-		else_if = { limit = { frameworld_audit_upgrade_expanded_infrastructure  = yes } frameworld_audit_upgrade_expanded_infrastructure_effect = yes }
-		else_if = { limit = { frameworld_audit_upgrade_computing_complex  = yes } frameworld_audit_upgrade_computing_complex_effect = yes }
-		else_if = { limit = { frameworld_audit_upgrade_maginot  = yes } frameworld_audit_upgrade_maginot = yes }
-		
-		### count up industrial districts
-		# hidden_effect = {
-		# 	export_trigger_value_to_variable = {
-		# 		trigger = num_districts
-		# 		parameters = {
-		# 			type = district_giga_frameworld_industrial
-		# 		}
-		# 		variable = frameworld_industrial_districts
-		# 	}
-		# 	export_trigger_value_to_variable = {
-		# 		trigger = num_districts
-		# 		parameters = {
-		# 			type = district_giga_frameworld_industrial_advanced
-		# 		}
-		# 		variable = frameworld_advanced_industrial_districts
-		# 	}
-		# 	change_variable = {
-		# 		which = frameworld_industrial_districts
-		# 		value = frameworld_advanced_industrial_districts
-		# 	}
-			
-		# 	### count up science districts
-		# 	export_trigger_value_to_variable = {
-		# 		trigger = num_districts
-		# 		parameters = {
-		# 			type = district_giga_frameworld_science
-		# 		}
-		# 		variable = frameworld_science_districts
-		# 	}
-			
-		# 	### count up unity districts
-		# 	export_trigger_value_to_variable = {
-		# 		trigger = num_districts
-		# 		parameters = {
-		# 			type = district_giga_frameworld_simulation
-		# 		}
-		# 		variable = frameworld_simulation_districts
-		# 	}
-		# }
-	}
-}
 
 # disabled as those job aren't wanted
 giga_frameworld_apply_expanded_maintenance_modifier = {
@@ -460,4 +346,173 @@ giga_frameworld_apply_expanded_maintenance_modifier = {
 	# 	}
 	# 	check_planet_employment = yes
 	# }
+}
+
+#temp overwrite till ai check is fixed
+frameworld_conduct_audit_check_ai = {
+    # if = {
+    #     limit = {
+    #         exists = owner
+    #         owner = {
+    #             is_ai = yes
+    #         }
+    #     }
+    #     frameworld_conduct_audit = yes
+    # }
+}
+
+frameworld_conduct_audit = {
+	# # update megastructure cost variable
+	# hidden_effect = {
+	# 	if = {
+	# 		limit = {
+	# 			exists = owner
+	# 		}
+	# 		owner = {
+	# 			# start with 1 for our multiplier
+	# 			set_variable = {
+	# 				which = giga_frameworld_megastructure_cost
+	# 				value = 1
+	# 			}
+	# 			set_variable = {
+	# 				which = giga_frameworld_megastructure_cost_mod
+	# 				value = 0
+	# 			}
+	# 			# get the base megas cost mult
+	# 			export_modifier_to_variable = {
+	# 				modifier = megastructures_cost_mult
+	# 				variable = giga_frameworld_megastructure_cost_mod
+	# 			}
+	# 			change_variable = {
+	# 				which = giga_frameworld_megastructure_cost
+	# 				value = giga_frameworld_megastructure_cost_mod
+	# 			}
+	# 		}
+	# 	}
+	# }
+	#
+	# ### buildings
+	# if = { limit = { frameworld_audit_foundry1 = yes } frameworld_audit_foundry1_effect = yes }
+	# else_if = { limit = { frameworld_audit_foundry2 = yes } frameworld_audit_foundry2_effect = yes }
+	#
+	# else_if = { limit = { frameworld_audit_energygrid1 = yes } frameworld_audit_energygrid1_effect = yes }
+	# else_if = { limit = { frameworld_audit_mineralhub1 = yes } frameworld_audit_mineralhub1_effect = yes }
+	# else_if = { limit = { frameworld_audit_energygrid2 = yes } frameworld_audit_energygrid2_effect = yes }
+	# else_if = { limit = { frameworld_audit_mineralhub2 = yes } frameworld_audit_mineralhub2_effect = yes }
+	#
+	# else_if = { limit = { frameworld_audit_crime = yes } frameworld_audit_crime_effect = yes }
+	#
+	# else_if = { limit = { frameworld_audit_sanctuary1 = yes } frameworld_audit_sanctuary1_effect = yes }
+	# else_if = { limit = { frameworld_audit_sanctuary2 = yes } frameworld_audit_sanctuary2_effect = yes }
+	# else_if = { limit = { frameworld_audit_sanctuary3 = yes } frameworld_audit_sanctuary3_effect = yes }
+	#
+	# else_if = { limit = { frameworld_audit_supercomputer = yes } frameworld_audit_supercomputer_effect = yes }
+	#
+	# else_if = { limit = { frameworld_audit_refinery = yes } frameworld_audit_refinery_effect = yes }
+	#
+	# else_if = { limit = { frameworld_audit_science2 = yes } frameworld_audit_science2_effect = yes }
+	# else_if = { limit = { frameworld_audit_science3 = yes } frameworld_audit_science3_effect = yes }
+	# else_if = { limit = { frameworld_audit_science1 = yes } frameworld_audit_science1_effect = yes } # 1 after 2 and 3 because it costs gas upkeep
+	#
+	# else_if = { limit = { frameworld_audit_unity2 = yes } frameworld_audit_unity2_effect = yes }
+	# else_if = { limit = { frameworld_audit_unity3 = yes } frameworld_audit_unity3_effect = yes }
+	# else_if = { limit = { frameworld_audit_unity1 = yes } frameworld_audit_unity1_effect = yes } # 1 after 2 and 3 because it costs crystal upkeep
+	#
+	# else_if = { limit = { frameworld_audit_trade1 = yes } frameworld_audit_trade1_effect = yes }
+	# else_if = { limit = { frameworld_audit_trade2 = yes } frameworld_audit_trade2_effect = yes }
+	#
+	# else_if = { limit = { frameworld_audit_hydroponics = yes } frameworld_audit_hydroponics_effect = yes }
+	#
+	# ### upgrades
+	# if = { limit = { frameworld_audit_upgrade_advanced_city  = yes } frameworld_audit_upgrade_advanced_city_effect = yes }
+	# else_if = { limit = { frameworld_audit_upgrade_advanced_industrial = yes } frameworld_audit_upgrade_advanced_industrial_effect = yes }
+	# else_if = { limit = { frameworld_audit_upgrade_advanced_sanctuary  = yes } frameworld_audit_upgrade_advanced_sanctuary_effect = yes }
+	#
+	# else_if = { limit = { frameworld_audit_upgrade_gaia  = yes } frameworld_audit_upgrade_gaia_effect = yes }
+	#
+	# else_if = { limit = { frameworld_audit_upgrade_penrose = yes } frameworld_audit_upgrade_penrose_effect = yes }
+	# else_if = { limit = { frameworld_audit_upgrade_decompressor  = yes } frameworld_audit_upgrade_decompressor_effect = yes }
+	#
+	# else_if = { limit = { frameworld_audit_upgrade_expanded_infrastructure  = yes } frameworld_audit_upgrade_expanded_infrastructure_effect = yes }
+	# else_if = { limit = { frameworld_audit_upgrade_computing_complex  = yes } frameworld_audit_upgrade_computing_complex_effect = yes }
+	# else_if = { limit = { frameworld_audit_upgrade_maginot  = yes } frameworld_audit_upgrade_maginot = yes }
+	#
+	# ### count up industrial districts
+	# # hidden_effect = {
+	# # 	export_trigger_value_to_variable = {
+	# # 		trigger = num_districts
+	# # 		parameters = {
+	# # 			type = district_giga_frameworld_industrial
+	# # 		}
+	# # 		variable = frameworld_industrial_districts
+	# # 	}
+	# # 	export_trigger_value_to_variable = {
+	# # 		trigger = num_districts
+	# # 		parameters = {
+	# # 			type = district_giga_frameworld_industrial_advanced
+	# # 		}
+	# # 		variable = frameworld_advanced_industrial_districts
+	# # 	}
+	# # 	change_variable = {
+	# # 		which = frameworld_industrial_districts
+	# # 		value = frameworld_advanced_industrial_districts
+	# # 	}
+	#
+	# # 	### count up sceince districts
+	# # 	export_trigger_value_to_variable = {
+	# # 		trigger = num_districts
+	# # 		parameters = {
+	# # 			type = district_giga_frameworld_science
+	# # 		}
+	# # 		variable = frameworld_science_districts
+	# # 	}
+	#
+	# # 	### count up unity districts
+	# # 	export_trigger_value_to_variable = {
+	# # 		trigger = num_districts
+	# # 		parameters = {
+	# # 			type = district_giga_frameworld_simulation
+	# # 		}
+	# # 		variable = frameworld_simulation_districts
+	# # 	}
+	# # }
+}
+
+giga_frameworld_create_outpost = {
+	$planet$ = {
+		save_event_target_as = outpost_planet
+		giga_frameworld_set_outpost_flags = yes
+	}
+	$owner$ = { save_event_target_as = outpost_owner }
+
+	create_fleet = {
+		effect = {
+			set_owner = event_target:outpost_owner
+			create_ship = {
+				random_existing_design = frameworld_planetary_outpost
+				effect = {
+					set_disable_at_health = 0.05
+					set_name = {
+						key = frameworld_planetary_outpost_name
+						variable_string = "\\[outpost_planet.GetName]"
+					}
+				}
+			}
+			save_event_target_as = target_orbital
+			fleet = {
+				set_location = {
+					target = event_target:outpost_planet
+				}
+				set_fleet_flag = @giga_frameworld_outpost_fleet_flag
+				set_name = {
+					key = frameworld_planetary_outpost_name
+					variable_string = "\\[outpost_planet.GetName]"
+				}
+			}
+		}
+	}
+
+	$planet$ = {
+		giga_frameworld_outpost_set_planet_class = yes
+	}
 }

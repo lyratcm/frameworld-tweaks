@@ -1,20 +1,10 @@
-# ydsadrill upgrade not named properly
-# add solider output scale
-# add unity from pop support
-# remove ascension breakthrough
-# gigas ehof district support
-# look at not counting non-output jobs
-# private/half jobs counting towards normal pop count less same with limited jobs with planet modifiers like entertainers/enforcers
-# increase pop upkeep - account for upkeep modifier - without evovleds help?
-# look at secondary pop growth output/gain - fixed?
-# x job per pop support?
-# gestalt trade support
-# add support for merchants added by distrcits
+# write documentation - add to already existing situation log
+# start efficiency scale with hab - need testing
+# change expansion scale to have a lower exponent but increase base when doing so - less painful after a long time after expanding
+# log for path to next upgrades
+# 16x bonuses - alderson disk maybe although the origin gets pretty strong as this point maybe reduce exponent once more
 
-# have pop growth account for extra assembly total cost - test?
-# remove strata output when calcing job output and add it back when applying pop modifier
-
-# 16x bonuses
-# background pops get more efficiency as frameworld upgrades
-
-#test non-overwriting merge? - talk to gigas team about moving some of my ow into code
+# test non-overwriting merge? - talk to gigas team about moving some of my ow into code - would help with compat with the other frameworld sub mod
+# gigas ehof spec support
+# soldier spec
+# bio trophy reductions?

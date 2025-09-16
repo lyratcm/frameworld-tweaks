@@ -1,0 +1,97 @@
+# regular empires
+inline_script = {
+    script = generic_parts/fwt_toggled_job
+    job = technician
+    add = $add$
+    type = $type$
+    count = $jobs$
+    condition = "
+        owner = {
+            is_gestalt = no
+            is_fallen_empire_spiritualist = no
+        }
+        $condition$
+    "
+    zone = "_district"
+    multiplier_string = "$multiplier_string$"
+}
+inline_script = {
+    script = generic_parts/giga_toggled_desc
+    toggle = @[ $jobs$ * $description$ ]
+    trigger = "
+        owner = {
+            is_gestalt = no
+            is_fallen_empire_spiritualist = no
+        }
+        $condition$
+    "
+    text = job_technician_effect_desc
+}
+
+# spiritualist FE
+inline_script = {
+    script = generic_parts/fwt_toggled_job
+    job = fe_acolyte_generator
+    add = $add$
+    type = $type$
+    count = $jobs$
+    condition = "
+        owner = {
+            is_fallen_empire_spiritualist = yes
+        }
+        $condition$
+    "
+    zone = "_district"
+    multiplier_string = "$multiplier_string$"
+}
+inline_script = {
+    script = generic_parts/giga_toggled_desc
+    toggle = @[ $jobs$ * $description$ ]
+    trigger = "
+        owner = {
+            is_fallen_empire_spiritualist = yes
+        }
+        $condition$
+    "
+    text = job_fe_acolyte_generator_effect_desc
+}
+
+# gestalts
+inline_script = {
+    script = generic_parts/fwt_toggled_job
+    job = technician_drone
+    add = $add$
+    type = $type$
+    count = $jobs$
+    condition = "
+        owner = {
+            is_gestalt = yes
+        }
+        $condition$
+    "
+    zone = "_district"
+    multiplier_string = "$multiplier_string$"
+}
+inline_script = {
+    script = generic_parts/giga_toggled_desc
+    toggle = @[ $jobs$ * $description$ ]
+    trigger = "
+        owner = {
+            is_gestalt = yes
+            is_wilderness_empire = no
+        }
+        $condition$
+    "
+    text = job_technician_drone_effect_desc
+}
+inline_script = {
+    script = generic_parts/giga_toggled_desc
+    toggle = @[ $jobs$ * $description$ ]
+    trigger = "
+        owner = {
+            is_wilderness_empire = yes
+        }
+        $condition$
+    "
+    text = job_photosymbiont_effect_desc
+}

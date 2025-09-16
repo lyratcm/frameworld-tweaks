@@ -5,29 +5,13 @@
 @advanced_rare_upkeep = 1
 @base_time = 240
 @city_time = 480
-@base_housing = 1
+@base_housing = 100
 @yes = 1
 @no = 0
-conversion_ratio = 1
-show_tech_unlock_if = {
-	giga_has_frameworld_origin = yes
-}
-is_capped_by_modifier = no
-prerequisites = {
-	#fall back tech that everyone will get
-	tech_basic_industry
-}
 
-triggered_planet_modifier = {
-	potential = {
-		exists = owner
-		owner = { is_crafter_empire = yes }
-	}
-	modifier = {
-		planet_max_buildings_add = @[ 0.67 * $SIZE_COST$ ]
-	}
-}
-triggered_planet_modifier = {
+show_in_tech = tech_basic_industry
+
+triggered_district_planet_modifier = {
 	potential = {
 		exists = owner
 		owner = {
@@ -36,13 +20,24 @@ triggered_planet_modifier = {
 		}
 	}
 	modifier = {
-		job_maintenance_drone_add = @[ 2 * $SIZE_COST$ ]
+		job_maintenance_drone_add = @[ 200 * $SIZE_COST$ ]
 	}
 }
 
+included_building_sets = {
+	factory
+	automation
+	origin
+}
+
 inline_script = {
-	script = planet/consumer_goods/giga_artisan_job_swap
-	jobs = 1
+	script = zones/fwt_exclude_building
+}
+
+inline_script = {
+	script = planet/consumer_goods/fwt_artisan_job_swap
+	jobs = $JOBS$
+	multiplier_string = "mult = fwt_consumer_goods_completion"
 }
 
 triggered_desc = {
@@ -62,14 +57,30 @@ resources = {
 	category = planet_districts_industrial
 	cost = {
 		minerals = @[ advanced_cost * $SIZE_COST$ * $SCALE$ ]
-		rare_crystals = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+
+		mult = fwt_consumer_goods_completion
 	}
 	#half advanced cost (so base) and 0x advanced so none of the for tier 1
 	upkeep = {
 		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
-		rare_crystals = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+		mult = fwt_consumer_goods_completion
 	}
-	
+	upkeep = {
+		trigger = {
+			check_variable = { which = fwt_mineral_completion value > 1 }
+		}
+		rare_crystals = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+		mult = fwt_consumer_goods_completion
+	}
+
+	cost = {
+		trigger = {
+			check_variable = { which = fwt_mineral_completion value > 1 }
+		}
+		rare_crystals = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_consumer_goods_completion
+	}
+
 	upkeep = {
 		trigger = {
 			exists = owner
@@ -78,25 +89,14 @@ resources = {
 			}
 		}
 		energy = 2
+		mult = fwt_consumer_goods_completion
 	}
+}
+
+inline_script = {
+	script = zones/shared_frameworld_non_urban_zone_modifiers
 }
 
 planet_modifier = {
-	planet_housing_add = @base_housing
-	planet_housing_add = @[ $SIZE$ * 0.125 ]
+	zone_building_slots_add = 3
 }
-
-
-ai_resource_production = {
-	consumer_goods = @[10 * $SIZE_COST$ ]
-	trigger = {
-		always = yes
-	}
-}
-
-# ai_resource_production = {
-# 	ai_unobtainium = 1000
-# 	trigger = {
-# 		frameworld_want_industrial = yes
-# 	}
-# }

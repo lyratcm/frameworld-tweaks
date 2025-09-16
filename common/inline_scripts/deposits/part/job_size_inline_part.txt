@@ -1,6 +1,0 @@
-inline_script = {
-    script = deposits/job_size_inline
-    MODIFIER = $MODIFIER$
-    POTENTIAL = $POTENTIAL$
-    POTENTIAL = "always = yes"
-}

@@ -5,12 +5,9 @@
 @advanced_rare_upkeep = 1
 @base_time = 240
 @city_time = 480
-@base_housing = 1
+@base_housing = 100
 @yes = 1
 @no = 0
-#having it always be half does mess with the frameworld being taken by war but considering it loses most of it bonuses on conquest anyway its not much of an issue
-conversion_ratio = 1
-is_capped_by_modifier = no
 
 base_buildtime = @[ city_time * $SIZE_COST$ * $SCALE$ ]
 
@@ -18,25 +15,41 @@ resources = {
 	category = planet_districts_hab_research
 	cost = {
 		minerals = @[ advanced_cost * $SIZE_COST$ * $SCALE$ ]
-		rare_crystals = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_unity_trade_completion
 	}
 	#half advanced cost (so base) and 0x advanced so none of the for tier 1
 	upkeep = {
 		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
+		mult = fwt_unity_trade_completion
+	}
+	cost = {
+		trigger = {
+			check_variable = { which = fwt_unity_trade_completion value > 1 }
+		}
+		rare_crystals = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_unity_trade_completion
+	}
+	#half advanced cost (so base) and 0x advanced so none of the for tier 1
+	upkeep = {
+		trigger = {
+			check_variable = { which = fwt_unity_trade_completion value > 1 }
+		}
 		rare_crystals = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+		mult = fwt_unity_trade_completion
 	}
 }
+
 inline_script = {
-	script = $job$
-	jobs = 1
+	script = $JOB$
+	jobs = $JOBS$
+	district = 1
+	multiplier_string = "mult = fwt_unity_trade_completion"
 }
+
+inline_script = {
+	script = zones/shared_frameworld_non_urban_zone_modifiers
+}
+
 planet_modifier = {
-	planet_housing_add = @base_housing
-	planet_housing_add = @[ $SIZE$ * 0.125 ]
-}
-ai_resource_production = {
-	unity = @[ 4 * $SIZE_COST$ ]
-	trigger = {
-		always = yes
-	}
+	zone_building_slots_add = 3
 }

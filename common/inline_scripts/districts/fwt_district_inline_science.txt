@@ -5,87 +5,82 @@
 @advanced_rare_upkeep = 1
 @base_time = 240
 @city_time = 480
-@base_housing = 1
+@base_housing = 100
 @yes = 1
 @no = 0
-conversion_ratio = 1
-show_tech_unlock_if = {
-	giga_has_frameworld_origin = yes
-}
-is_capped_by_modifier = no
 
 base_buildtime = @[ city_time * $SIZE_COST$ * $SCALE$ ]
+
+
 
 resources = {
 	category = planet_districts_hab_research
 	cost = {
 		minerals = @[ advanced_cost * $SIZE_COST$ * $SCALE$ ]
-		exotic_gases = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_science_completion
 	}
 	#half advanced cost (so base) and 0x advanced so none of the for tier 1
 	upkeep = {
 		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
-		exotic_gases = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+		mult = fwt_science_completion
 	}
-	
+	cost = {
+		trigger = {
+			check_variable = { which = fwt_science_completion value > 1 }
+		}
+		exotic_gases = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
+		mult = fwt_science_completion
+	}
+	#half advanced cost (so base) and 0x advanced so none of the for tier 1
+	upkeep = {
+		trigger = {
+			check_variable = { which = fwt_science_completion value > 1 }
+		}
+		exotic_gases = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+		mult = fwt_science_completion
+	}
 	# nanite upgrade
 	upkeep = {
 		trigger = {
 			frameworld_has_active_nanite_upgrade = yes
 		}
 		nanites = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+		mult = fwt_science_completion
 	}
 }
 
 planet_modifier = {
-	planet_housing_add = 1
-	planet_housing_add = @[ $SIZE$ * 0.125 ]
+	zone_building_slots_add = 3
 }
 
+inline_script = {
+	script = zones/shared_frameworld_non_urban_zone_modifiers
+}
+
+inline_script = {
+	script = planet/research/fwt_researcher_job_swap
+	jobs = @[ $JOBS$ * $SIZE_COST$ * 2 ]
+	district = @yes
+	mode = @job_mode_add
+	condition = "frameworld_has_active_nanite_upgrade = no"
+	multiplier_string = "mult = fwt_science_completion"
+}
 
 # inline_script = {
-# 	script = planet/research/giga_researcher_job_swap
-# 	jobs = 1
+# 	script = planet/research/fwt_researcher_job_swap
+# 	jobs = @[ 200.02 * $SIZE_COST$ ]
+# 	district = @yes
+# 	description = @no
+# 	mode = @job_mode_add
+# 	condition = "frameworld_has_active_nanite_upgrade = no"
+# 	multiplier_string = "mult = fwt_science_completion"
 # }
-inline_script = {
-	script = planet/research/giga_researcher_job_swap
-	jobs = 1
-
-	condition = "frameworld_has_active_nanite_upgrade = no"
-}
 
 # nanite upgrade
 inline_script = {
-	script = planet/research/giga_nanotech_researcher_job_swap
-	jobs = 1
-
+	script = planet/research/fwt_nanotech_researcher_job_swap
+	jobs = $JOBS$
+	district = 1
 	condition = "frameworld_has_active_nanite_upgrade = yes"
-}
-
-ai_resource_production = {
-	physics_research = @[ 16 * $SIZE_COST$ ]
-	trigger = {
-		always = yes
-	}
-}
-
-ai_resource_production = {
-	society_research = @[ 16 * $SIZE_COST$ ]
-	trigger = {
-		always = yes
-	}
-}
-
-ai_resource_production = {
-	engineering_research = @[ 16 * $SIZE_COST$ ]
-	trigger = {
-		always = yes
-	}
-}
-
-ai_resource_production = {
-	ai_unobtainium = 1000
-	trigger = {
-		frameworld_want_science = yes
-	}
+	multiplier_string = "mult = fwt_science_completion"
 }
