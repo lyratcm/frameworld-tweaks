@@ -4,18 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="output hab changes finished">
+    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="adding dummy decisions to show player what the next decisions needed">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/decisions/zz_frameworld_general_decision.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_expansion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_expansion.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_upgrades.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_upgrades.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/governments/civics/fwt_frameworld_ow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/governments/civics/fwt_frameworld_ow.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_amenities.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_amenities.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/alloys/parts/fwt_foundry_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/alloys/parts/fwt_foundry_job_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/consumer_goods/parts/fwt_artisan_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/consumer_goods/parts/fwt_artisan_job_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/energy/parts/fwt_technician_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/energy/parts/fwt_technician_job_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/food/parts/fwt_farmer_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/food/parts/fwt_farmer_job_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/minerals/parts/fwt_miner_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/minerals/parts/fwt_miner_job_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_biologist_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_biologist_job_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_engineer_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_engineer_job_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_physicist_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_physicist_job_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_politician_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_politician_job_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_politician_jobs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_politician_jobs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_ruler_swap_jobs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_ruler_swap_jobs.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/fwt_bureaucrat_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/fwt_bureaucrat_swap.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/on_actions/zz_fwt_on_actions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/on_actions/zz_fwt_on_actions.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pop_jobs/zz_giga_growth_jobs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/pop_jobs/zz_giga_growth_jobs.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_loc/zz_giga_frameworld_scripted_loc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_loc/zz_giga_frameworld_scripted_loc.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/scripted_triggers/fwt_triggers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_triggers/fwt_triggers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_variables/!!!_giga_frameworld_variables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_variables/!!!_giga_frameworld_variables.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/situations/fwt_decision_situations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/situations/fwt_decision_situations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/situations/zz_giga_frameworld_situations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/situations/zz_giga_frameworld_situations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/static_modifiers/fwt_static_modifier.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/static_modifiers/fwt_static_modifier.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/fwt_events.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/fwt_events.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/localisation/english/fwt_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/english/fwt_frameworld_l_english.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/replace/english/zz_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/replace/english/zz_frameworld_l_english.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plans.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plans.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +47,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="main" />
+        <entry key="$PROJECT_DIR$" value="4.0" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -70,7 +92,7 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;4.0&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,

@@ -34,48 +34,15 @@ fwt_situation_decision_cost_time_month = {
 fwt_situation_continuous_speed = {
 	weight = owner.modifier:country_situations_expansion_alloys_upkeep_add
 	# add = owner.modifier:fwt_alloy_useage_offset
-	divide = capital_scope.owner.fwt_frameworld_expansion_cost_multiplier
+	divide = owner.capital_scope.fwt_frameworld_expansion_cost_multiplier
 	mult = 100
 }
 
-fwt_situation_continuous_cost2 = {
-	#make sure to update this to match any new base cost changes
-	base = @giga_frameworld_expansion_cost_base
-	modifier = {
-		add = @giga_frameworld_expansion_cost_habitat_2
-		owner = { has_technology = tech_habitat_2 }
-	}
-	modifier = {
-		add = @giga_frameworld_expansion_cost_habitat_3
-		owner = { has_technology = tech_habitat_3 }
-	}
-	# modifier = {
-	# 	add = @fwt_frameworld_expansion_cost_starbase_2
-	# 	owner = { has_technology = tech_starbase_2 }
-	# }
-	modifier = {
-		add = @fwt_frameworld_expansion_cost_starbase_3
-		owner = { has_technology = tech_starbase_3}
-	}
-	modifier = {
-		add = @fwt_frameworld_expansion_cost_starbase_4
-		owner = { has_technology = tech_starbase_4 }
-	}
-	modifier = {
-		add = @fwt_frameworld_expansion_cost_starbase_5
-		owner = { has_technology = tech_starbase_5 }
-	}
-	modifier = {
-		add = @fwt_frameworld_expansion_cost_megashipyard
-		owner = { has_technology = tech_mega_shipyard }
-	}
-}
-
-fwt_situation_continuous_cost1 = {
-	weight = value:fwt_situation_continuous_cost2
-	# multiplier for how many expansions
-	mult = capital_scope.owner.giga_frameworld_expansion_cost_multiplier
-}
+# fwt_situation_continuous_cost1 = {
+# 	weight = value:fwt_situation_continuous_cost2
+# 	# multiplier for how many expansions
+# 	mult = owner.capital_scope.giga_frameworld_expansion_cost_multiplier
+# }
 
 #% of income spending as a %
 fwt_situation_continuous_pol_speed = {
@@ -209,13 +176,13 @@ fwt_total_pop_gain = {
 	add = value:fwt_total_secondary_growth
 }
 
-fwt_total_pops_trigger = {
-	base = 0
-	add = trigger:num_organic_pops_per_year
-	add = trigger:num_artificial_pops_per_year
-	add = total_growth
-	divide = 12
-}
+# fwt_total_pops_trigger = {
+# 	base = 0
+# 	add = trigger:num_organic_pops_per_year
+# 	add = trigger:num_artificial_pops_per_year
+# 	add = total_growth
+# 	divide = 12
+# }
 
 
 # #### expansion scaling ########
@@ -495,6 +462,85 @@ fwt_growth_efficiency_value = {
 	mult = giga_frameworld_expansions
 }
 
+fwt_base_expansion_cost = {
+	#make sure to update this to match any new base cost changes
+	base = @giga_frameworld_expansion_cost_base
+	modifier = {
+		add = @giga_frameworld_expansion_cost_habitat_2
+		owner = { has_technology = tech_habitat_2 }
+	}
+	modifier = {
+		add = @giga_frameworld_expansion_cost_habitat_3
+		owner = { has_technology = tech_habitat_3 }
+	}
+	# modifier = {
+	# 	add = @fwt_frameworld_expansion_cost_starbase_2
+	# 	owner = { has_technology = tech_starbase_2 }
+	# }
+	modifier = {
+		add = @fwt_frameworld_expansion_cost_starbase_3
+		owner = { has_technology = tech_starbase_3}
+	}
+	modifier = {
+		add = @fwt_frameworld_expansion_cost_starbase_4
+		owner = { has_technology = tech_starbase_4 }
+	}
+	modifier = {
+		add = @fwt_frameworld_expansion_cost_starbase_5
+		owner = { has_technology = tech_starbase_5 }
+	}
+	modifier = {
+		add = @fwt_frameworld_expansion_cost_megashipyard
+		owner = { has_technology = tech_mega_shipyard }
+	}
+	modifier = {
+		mult = @fwt_frameworld_expansion_cost_t1_upgrade
+		owner = {
+			capital_scope = {
+				check_variable = { which = fwt_city_completion value >= 2 }
+				check_variable = { which = fwt_science_completion value >= 2 }
+			}
+		}
+	}
+	modifier = {
+		mult = @fwt_frameworld_expansion_cost_t2_upgrade
+		owner = {
+			capital_scope = {
+				check_variable = { which = fwt_energy_completion value >= 4 }
+				check_variable = { which = fwt_mineral_completion value >= 4 }
+				check_variable = { which = fwt_unity_trade_completion value >= 4 }
+				check_variable = { which = fwt_food_completion value >= 4 }
+				check_variable = { which = fwt_sanctuary_completion value >= 4 }
+			}
+		}
+	}
+	modifier = {
+		mult = @fwt_frameworld_expansion_cost_t3_upgrade
+		owner = {
+			capital_scope = {
+				check_variable = { which = fwt_alloy_completion value >= 4 }
+				check_variable = { which = fwt_science_completion value >= 4 }
+			}
+		}
+	}
+}
+
+fwt_base_expansion_exponent = {
+	#make sure to update this to match any new base cost changes
+	base = @giga_frameworld_expansion_cost_exponent
+	modifier = {
+		add = @giga_frameworld_expansion_exponent_voidborne
+		owner = { has_ascension_perk = ap_voidborn }
+	}
+	modifier = {
+		add = @giga_frameworld_expansion_exponent_ringworld
+		owner = { has_technology = tech_ring_world }
+	}
+	modifier = {
+		add = @fwt_frameworld_expansion_exponent_mega_engineering
+		owner = { has_technology = tech_mega_engineering }
+	}
+}
 
 ######################################################
 
@@ -582,7 +628,7 @@ giga_frameworld_outpost_growth_count_hab = {
 }
 
 giga_frameworld_outpost_growth_count_internal = {
-	weight = owner.value:giga_frameworld_outpost_count
+	weight = owner.value:giga_frameworld_outpost_count_hab
 	#used to reduce the amount that each each output gives for more powerful modifiers like job efficiency
 	multiply = $reduction$
 	# reduce the effect more for the first increases to the modifier

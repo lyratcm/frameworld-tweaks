@@ -16,25 +16,25 @@ inline_script = {
 resources = {
     category = planet_districts
     cost = {
-        minerals = @advanced_cost
+        minerals = @[ advanced_cost * 0.5 ]
         mult = fwt_unity_trade_completion
     }
     upkeep = {
-        energy = @advanced_upkeep
+        energy = @[ advanced_upkeep * 0.5 ]
         mult = fwt_unity_trade_completion
     }
     cost = {
         trigger = {
             check_variable = { which = fwt_unity_trade_completion value > 1 }
         }
-        exotic_gases = @advanced_rare_cost
+        exotic_gases = @[ advanced_rare_cost * 0.5 ]
         mult = fwt_unity_trade_completion
     }
     upkeep = {
         trigger = {
             check_variable = { which = fwt_unity_trade_completion value > 1 }
         }
-        exotic_gases = @advanced_rare_upkeep
+        exotic_gases = @[ advanced_rare_upkeep * 0.5 ]
         mult = fwt_unity_trade_completion
     }
 }

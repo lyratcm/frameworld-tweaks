@@ -105,7 +105,7 @@ giga_extra_healthcare = {
         multiply = 10
     }
 
-    inline_script = jobs/automodding_priority_amenities
+    inline_script = jobs/automodding_priority_charisma
 }
 
 giga_extra_crucible_drone = {
@@ -196,7 +196,7 @@ giga_extra_crucible_drone = {
         }
     }
 
-    inline_script = jobs/automodding_priority_amenities
+    inline_script = jobs/automodding_priority_charisma
 }
 
 giga_cloning = {

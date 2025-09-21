@@ -70,6 +70,66 @@ defined_text = {
 }
 
 defined_text = {
+    name = FrameworldExpansionCostMult1
+    text = {
+        trigger = {
+            capital_scope = {
+                or = {
+                    check_variable = { which = fwt_city_completion value >= 2 }
+                    check_variable = { which = fwt_science_completion value >= 2 }
+                }
+            }
+        }
+
+        localization_key = giga_frameworld_expand_base_discount_mult_mod_1
+    }
+
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = FrameworldExpansionCostMult2
+
+    text = {
+        trigger = {
+            capital_scope = {
+                or = {
+                    check_variable = { which = fwt_energy_completion value >= 4 }
+                    check_variable = { which = fwt_mineral_completion value >= 4 }
+                    check_variable = { which = fwt_unity_trade_completion value >= 4 }
+                    check_variable = { which = fwt_food_completion value >= 4 }
+                    check_variable = { which = fwt_sanctuary_completion value >= 4 }
+                }
+            }
+        }
+
+        localization_key = giga_frameworld_expand_base_discount_mult_mod_2
+    }
+
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = FrameworldExpansionCostMult3
+
+    text = {
+        trigger = {
+            capital_scope = {
+                or = {
+                    check_variable = { which = fwt_alloy_completion value >= 4 }
+                    check_variable = { which = fwt_science_completion value >= 4 }
+                }
+
+            }
+        }
+
+        localization_key = giga_frameworld_expand_base_discount_mult_mod_3
+    }
+
+    default = frameworld_blank
+}
+
+defined_text = {
     name = FrameworldExpansionMult4
 
     text = {

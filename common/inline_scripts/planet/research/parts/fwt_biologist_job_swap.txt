@@ -15,18 +15,6 @@ inline_script = {
     zone = "_district"
     multiplier_string = "$multiplier_string$"
 }
-inline_script = {
-    script = generic_parts/giga_toggled_desc
-    toggle = @[ $jobs$ * $description$ ]
-    trigger = "
-        owner = {
-            is_gestalt = no
-        }
-        $condition$
-    "
-    text = job_biologist_effect_desc
-}
-
 # gestalt
 inline_script = {
     script = generic_parts/fwt_toggled_job
@@ -42,26 +30,4 @@ inline_script = {
     "
     zone = "_district"
     multiplier_string = "$multiplier_string$"
-}
-inline_script = {
-    script = generic_parts/giga_toggled_desc
-    toggle = @[ $jobs$ * $description$ ]
-    trigger = "
-        owner = {
-            is_hive_empire = yes
-        }
-        $condition$
-    "
-    text = job_brain_drone_biologist_effect_desc
-}
-inline_script = {
-    script = generic_parts/giga_toggled_desc
-    toggle = @[ $jobs$ * $description$ ]
-    trigger = "
-        owner = {
-            is_machine_empire = yes
-        }
-        $condition$
-    "
-    text = job_calculator_biologist_effect_desc
 }

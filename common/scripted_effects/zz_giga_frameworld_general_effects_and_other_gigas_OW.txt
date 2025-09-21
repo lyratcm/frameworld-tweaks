@@ -1,64 +1,69 @@
 # planet scope
 giga_frameworld_recalculate_exponent = {
-	# set to the base level
 	set_variable = {
 		which = giga_frameworld_expansion_cost_exponent
-		value = @giga_frameworld_expansion_cost_exponent
+		value = value:fwt_base_expansion_exponent
 	}
-
-	if = {
-		limit = {
-			exists = owner
-		}
-		# owner = {
-		# 	if = {
-		# 		limit = {
-		# 			event_target:frame_expand@this = {
-		# 				has_planet_flag = frameworld_habitat_completed
-		# 			}
-		# 		}
-		# 		change_variable = {
-		# 			which = giga_frameworld_expansion_cost_exponent
-		# 			value = @fwt_frameworld_expansion_cost_habitat_upgrade
-		# 		}
-		# 	}
-
-		if = {
-			limit = {
-				owner = {
-					has_ascension_perk = ap_voidborn
-				}
-
-			}
-			change_variable = {
-				which = giga_frameworld_expansion_cost_exponent
-				value = @giga_frameworld_expansion_exponent_voidborne
-			}
-		}
-
-		if = {
-			limit = {
-				owner = {
-					has_technology = tech_ring_world
-				}
-			}
-			change_variable = {
-				which = giga_frameworld_expansion_cost_exponent
-				value = @giga_frameworld_expansion_exponent_ringworld
-			}
-		}
-
-		if = {
-			limit = {
-				owner = {
-					has_technology = tech_mega_engineering
-				}
-			}
-			change_variable = {
-				which = giga_frameworld_expansion_cost_exponent
-				value = @fwt_frameworld_expansion_exponent_mega_engineering
-			}
-		}
+	#
+	# # set to the base level
+	# set_variable = {
+	# 	which = giga_frameworld_expansion_cost_exponent
+	# 	value = @giga_frameworld_expansion_cost_exponent
+	# }
+	#
+	# if = {
+	# 	limit = {
+	# 		exists = owner
+	# 	}
+	# 	# owner = {
+	# 	# 	if = {
+	# 	# 		limit = {
+	# 	# 			event_target:frame_expand@this = {
+	# 	# 				has_planet_flag = frameworld_habitat_completed
+	# 	# 			}
+	# 	# 		}
+	# 	# 		change_variable = {
+	# 	# 			which = giga_frameworld_expansion_cost_exponent
+	# 	# 			value = @fwt_frameworld_expansion_cost_habitat_upgrade
+	# 	# 		}
+	# 	# 	}
+	#
+	# 	if = {
+	# 		limit = {
+	# 			owner = {
+	# 				has_ascension_perk = ap_voidborn
+	# 			}
+	#
+	# 		}
+	# 		change_variable = {
+	# 			which = giga_frameworld_expansion_cost_exponent
+	# 			value = @giga_frameworld_expansion_exponent_voidborne
+	# 		}
+	# 	}
+	#
+	# 	if = {
+	# 		limit = {
+	# 			owner = {
+	# 				has_technology = tech_ring_world
+	# 			}
+	# 		}
+	# 		change_variable = {
+	# 			which = giga_frameworld_expansion_cost_exponent
+	# 			value = @giga_frameworld_expansion_exponent_ringworld
+	# 		}
+	# 	}
+	#
+	# 	if = {
+	# 		limit = {
+	# 			owner = {
+	# 				has_technology = tech_mega_engineering
+	# 			}
+	# 		}
+	# 		change_variable = {
+	# 			which = giga_frameworld_expansion_cost_exponent
+	# 			value = @fwt_frameworld_expansion_exponent_mega_engineering
+	# 		}
+	# 	}
 
 		# if = {
 		# 	limit = {
@@ -89,7 +94,7 @@ giga_frameworld_recalculate_exponent = {
 		# 		value = @fwt_frameworld_expansion_cost_mega_engi_upgrade
 		# 	}
 		# }
-	}
+	# }
 }
 
 # planet scope
@@ -103,99 +108,109 @@ giga_frameworld_recalculate_variables = {
 	# deal with calculating base cost
 	set_variable = {
 		which = giga_frameworld_expansion_cost_base
-		value = @giga_frameworld_expansion_cost_base
+		value = value:fwt_base_expansion_cost
 	}
 
-	if = {
-		limit = {
-			exists = owner
-			owner = {
-				has_technology = tech_habitat_2
-			}
-		}
-		change_variable = {
-			which = giga_frameworld_expansion_cost_base
-			value = @giga_frameworld_expansion_cost_habitat_2
-		}
+	# deal with calculating base cost
+	set_variable = {
+		which = giga_frameworld_expansion_cost_exponent
+		value = value:fwt_base_expansion_exponent
 	}
-
-	if = {
-		limit = {
-			exists = owner
-			owner = {
-				has_technology = tech_habitat_3
-			}
-		}
-		change_variable = {
-			which = giga_frameworld_expansion_cost_base
-			value = @giga_frameworld_expansion_cost_habitat_3
-		}
-	}
+	# set_variable = {
+	# 	which = giga_frameworld_expansion_cost_base
+	# 	value = @giga_frameworld_expansion_cost_base
+	# }
 
 	# if = {
 	# 	limit = {
 	# 		exists = owner
 	# 		owner = {
-	# 			has_technology = tech_starbase_2
+	# 			has_technology = tech_habitat_2
 	# 		}
 	# 	}
 	# 	change_variable = {
 	# 		which = giga_frameworld_expansion_cost_base
-	# 		value = @fwt_frameworld_expansion_cost_starbase_2
+	# 		value = @giga_frameworld_expansion_cost_habitat_2
 	# 	}
 	# }
-
-	if = {
-		limit = {
-			exists = owner
-			owner = {
-				has_technology = tech_starbase_3
-			}
-		}
-		change_variable = {
-			which = giga_frameworld_expansion_cost_base
-			value = @fwt_frameworld_expansion_cost_starbase_3
-		}
-	}
-
-	if = {
-		limit = {
-			exists = owner
-			owner = {
-				has_technology = tech_starbase_4
-			}
-		}
-		change_variable = {
-			which = giga_frameworld_expansion_cost_base
-			value = @fwt_frameworld_expansion_cost_starbase_4
-		}
-	}
-
-	if = {
-		limit = {
-			exists = owner
-			owner = {
-				has_technology = tech_starbase_5
-			}
-		}
-		change_variable = {
-			which = giga_frameworld_expansion_cost_base
-			value = @fwt_frameworld_expansion_cost_starbase_5
-		}
-	}
-
-	if = {
-		limit = {
-			exists = owner
-			owner = {
-				has_technology = tech_mega_shipyard
-			}
-		}
-		change_variable = {
-			which = giga_frameworld_expansion_cost_base
-			value = @fwt_frameworld_expansion_cost_megashipyard
-		}
-	}
+	#
+	# if = {
+	# 	limit = {
+	# 		exists = owner
+	# 		owner = {
+	# 			has_technology = tech_habitat_3
+	# 		}
+	# 	}
+	# 	change_variable = {
+	# 		which = giga_frameworld_expansion_cost_base
+	# 		value = @giga_frameworld_expansion_cost_habitat_3
+	# 	}
+	# }
+	#
+	# # if = {
+	# # 	limit = {
+	# # 		exists = owner
+	# # 		owner = {
+	# # 			has_technology = tech_starbase_2
+	# # 		}
+	# # 	}
+	# # 	change_variable = {
+	# # 		which = giga_frameworld_expansion_cost_base
+	# # 		value = @fwt_frameworld_expansion_cost_starbase_2
+	# # 	}
+	# # }
+	#
+	# if = {
+	# 	limit = {
+	# 		exists = owner
+	# 		owner = {
+	# 			has_technology = tech_starbase_3
+	# 		}
+	# 	}
+	# 	change_variable = {
+	# 		which = giga_frameworld_expansion_cost_base
+	# 		value = @fwt_frameworld_expansion_cost_starbase_3
+	# 	}
+	# }
+	#
+	# if = {
+	# 	limit = {
+	# 		exists = owner
+	# 		owner = {
+	# 			has_technology = tech_starbase_4
+	# 		}
+	# 	}
+	# 	change_variable = {
+	# 		which = giga_frameworld_expansion_cost_base
+	# 		value = @fwt_frameworld_expansion_cost_starbase_4
+	# 	}
+	# }
+	#
+	# if = {
+	# 	limit = {
+	# 		exists = owner
+	# 		owner = {
+	# 			has_technology = tech_starbase_5
+	# 		}
+	# 	}
+	# 	change_variable = {
+	# 		which = giga_frameworld_expansion_cost_base
+	# 		value = @fwt_frameworld_expansion_cost_starbase_5
+	# 	}
+	# }
+	#
+	# if = {
+	# 	limit = {
+	# 		exists = owner
+	# 		owner = {
+	# 			has_technology = tech_mega_shipyard
+	# 		}
+	# 	}
+	# 	change_variable = {
+	# 		which = giga_frameworld_expansion_cost_base
+	# 		value = @fwt_frameworld_expansion_cost_megashipyard
+	# 	}
+	# }
 
 	# recalculate multiplier from expansion count
 	if = {
@@ -212,7 +227,10 @@ giga_frameworld_recalculate_variables = {
 		}
 	}
 
+
+
 	set_variable = { which = fwt_frameworld_expansion_cost_multiplier value = giga_frameworld_expansion_cost_multiplier }
+
 	multiply_variable = { which = fwt_frameworld_expansion_cost_multiplier value = giga_frameworld_expansion_cost_base }
 
 	#seperate var for decisions that need to take into account other decisions in queue

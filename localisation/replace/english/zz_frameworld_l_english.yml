@@ -1,14 +1,14 @@
 ﻿l_english:
 
-  giga_frameworld_expand_upgrade_5:0 "\n    £engineering£§Y$tech_ring_world$§!: $giga_frameworld_expand_factor$ §G-0.01x§!"
-  giga_frameworld_expand_base_discount_mod_1:0 "\n    $tech_habitat_2$: §G-25§!"
-  giga_frameworld_expand_base_discount_mod_2:0 "\n    $tech_habitat_3$: §G-25§!"
+  giga_frameworld_expand_upgrade_5:0 "\n    £engineering£§Y$tech_ring_world$§!: $giga_frameworld_expand_factor$ §G$@giga_frameworld_expansion_exponent_ringworld$x§!"
+  giga_frameworld_expand_base_discount_mod_1:0 "\n    $tech_habitat_2$: §G$@giga_frameworld_expansion_cost_habitat_2|*0$§!"
+  giga_frameworld_expand_base_discount_mod_2:0 "\n    $tech_habitat_3$: §G$@giga_frameworld_expansion_cost_habitat_3|*0$§!"
 
-  giga_frameworld_expand_multiplier_discount_mod_2:0 "\n    $ap_voidborn$: §G-0.025x§!"
-  giga_frameworld_expand_multiplier_discount_mod_3:0 "\n    $tech_ring_world$: §G-0.01x§!"
+  giga_frameworld_expand_multiplier_discount_mod_2:0 "\n    $ap_voidborn$: §G$@giga_frameworld_expansion_exponent_voidborne$x§!"
+  giga_frameworld_expand_multiplier_discount_mod_3:0 "\n    $tech_ring_world$: §G$@giga_frameworld_expansion_exponent_ringworld$x§!"
 
   giga_frameworld_expand:0 "$giga_frameworld_expand_name$§B§!"
-  giga_frameworld_expand_desc:0 "§T$giga_frameworld_expand_desc_cost$\n\n$giga_frameworld_expand_base$: £alloys£§Y[capital_scope.giga_frameworld_expansion_cost_base]§!\n    Base: £alloys£§Y550§![owner.FrameworldExpansionCost1][owner.FrameworldExpansionCost2][owner.FrameworldExpansionCost4][owner.FrameworldExpansionCost5][owner.FrameworldExpansionCost6][owner.FrameworldExpansionCost7]\n\n$giga_frameworld_expand_factor$: §Y[capital_scope.giga_frameworld_expansion_cost_exponent]x§!\n    Base: §Y1.11x§![owner.FrameworldExpansionMult2][owner.FrameworldExpansionMult3][owner.FrameworldExpansionMult4]\n\n$giga_frameworld_expand_fabricated$: §Y[capital_scope.giga_frameworld_structure_expansions]§!\n$giga_frameworld_expand_total$: §Y[capital_scope.giga_frameworld_expansion_cost_multiplier_tooltip]x§![this.FrameworldExpansionUpgradesTitle][this.FrameworldExpansionUpgrades1][this.FrameworldExpansionUpgrades2][this.FrameworldExpansionUpgrades3][this.FrameworldExpansionUpgrades4][this.FrameworldExpansionUpgrades5][this.FrameworldExpansionUpgrades7][this.FrameworldExpansionUpgrades8][this.FrameworldExpansionUpgrades9][this.FrameworldExpansionUpgrades10][this.FrameworldExpansionUpgrades11]§!\n§T--------------§!\n$giga_frameworld_expand_desc_fluff$"
+  giga_frameworld_expand_desc:0 "§T$giga_frameworld_expand_desc_cost$\n\n$giga_frameworld_expand_base$: £alloys£§Y[capital_scope.giga_frameworld_expansion_cost_base]§!\n    Base: £alloys£§Y$@giga_frameworld_expansion_cost_base|*0$§![owner.FrameworldExpansionCost1][owner.FrameworldExpansionCost2][owner.FrameworldExpansionCost4][owner.FrameworldExpansionCost5][owner.FrameworldExpansionCost6][owner.FrameworldExpansionCost7][owner.FrameworldExpansionCostMult1][owner.FrameworldExpansionCostMult2][owner.FrameworldExpansionCostMult3]\n\n$giga_frameworld_expand_factor$: §Y[capital_scope.giga_frameworld_expansion_cost_exponent]x§!\n    Base: §Y$@giga_frameworld_expansion_cost_exponent$x§![owner.FrameworldExpansionMult2][owner.FrameworldExpansionMult3][owner.FrameworldExpansionMult4]\n\n$giga_frameworld_expand_fabricated$: §Y[capital_scope.giga_frameworld_structure_expansions]§!\n$giga_frameworld_expand_total$: §Y[capital_scope.giga_frameworld_expansion_cost_multiplier_tooltip]x§![this.FrameworldExpansionUpgradesTitle][this.FrameworldExpansionUpgrades1][this.FrameworldExpansionUpgrades2][this.FrameworldExpansionUpgrades3][this.FrameworldExpansionUpgrades4][this.FrameworldExpansionUpgrades5][this.FrameworldExpansionUpgrades7][this.FrameworldExpansionUpgrades8][this.FrameworldExpansionUpgrades9][this.FrameworldExpansionUpgrades10][this.FrameworldExpansionUpgrades11]§!\n§T--------------§!\n$giga_frameworld_expand_desc_fluff$"
 
   giga_frameworld_expand_bulk_5:0 "$giga_frameworld_expand_name$ §B§!§Yx5§!"
   giga_frameworld_expand_bulk_5_desc:0 "§T$giga_frameworld_expand_desc_cost$\n\n$giga_frameworld_expand_bulk_5_info$ $giga_frameworld_expand_bulk_cost_info$\n\n$giga_frameworld_expand_base$: £alloys£§Y[capital_scope.giga_frameworld_expansion_cost_base]§!\n    Base: £alloys£§Y600§![owner.FrameworldExpansionCost1][owner.FrameworldExpansionCost2][owner.FrameworldExpansionCost3][owner.FrameworldExpansionCost4][owner.FrameworldExpansionCost5][owner.FrameworldExpansionCost6][owner.FrameworldExpansionCost7]\n\n$giga_frameworld_expand_factor$: §Y[capital_scope.giga_frameworld_expansion_cost_exponent]x§!\n    Base: §Y1.14x§![owner.FrameworldExpansionMult1][owner.FrameworldExpansionMult2][owner.FrameworldExpansionMult3][owner.FrameworldExpansionMult4]\n\n$giga_frameworld_expand_fabricated$: §Y[capital_scope.giga_frameworld_structure_expansions]§!\n$giga_frameworld_expand_total$: §Y[capital_scope.giga_frameworld_expansion_cost_multiplier_tooltip]x§![this.FrameworldExpansionUpgradesTitle][this.FrameworldExpansionUpgrades1][this.FrameworldExpansionUpgrades2][this.FrameworldExpansionUpgrades3][this.FrameworldExpansionUpgrades4][this.FrameworldExpansionUpgrades5][this.FrameworldExpansionUpgrades6][this.FrameworldExpansionUpgrades7][this.FrameworldExpansionUpgrades8][this.FrameworldExpansionUpgrades9][this.FrameworldExpansionUpgrades10][this.FrameworldExpansionUpgrades11]§!\n§T--------------§!\n$giga_frameworld_expand_desc_fluff$"
@@ -16,20 +16,22 @@
   giga_frameworld_expand_bulk_10:0 "$giga_frameworld_expand_name$ §E§!§Yx10§!"
   giga_frameworld_expand_bulk_10_desc:0 "§T$giga_frameworld_expand_desc_cost$\n\n$giga_frameworld_expand_bulk_10_info$ $giga_frameworld_expand_bulk_cost_info$\n\n$giga_frameworld_expand_base$: £alloys£§Y[capital_scope.giga_frameworld_expansion_cost_base]§!\n    Base: £alloys£§Y600§![owner.FrameworldExpansionCost1][owner.FrameworldExpansionCost2][owner.FrameworldExpansionCost3][owner.FrameworldExpansionCost4][owner.FrameworldExpansionCost5][owner.FrameworldExpansionCost6][owner.FrameworldExpansionCost7]\n\n$giga_frameworld_expand_factor$: §Y[capital_scope.giga_frameworld_expansion_cost_exponent]x§!\n    Base: §Y1.14x§![owner.FrameworldExpansionMult1][owner.FrameworldExpansionMult2][owner.FrameworldExpansionMult3][owner.FrameworldExpansionMult4]\n\n$giga_frameworld_expand_fabricated$: §Y[capital_scope.giga_frameworld_structure_expansions]§!\n$giga_frameworld_expand_total$: §Y[capital_scope.giga_frameworld_expansion_cost_multiplier_tooltip]x§![this.FrameworldExpansionUpgradesTitle][this.FrameworldExpansionUpgrades1][this.FrameworldExpansionUpgrades2][this.FrameworldExpansionUpgrades3][this.FrameworldExpansionUpgrades4][this.FrameworldExpansionUpgrades5][this.FrameworldExpansionUpgrades6][this.FrameworldExpansionUpgrades7][this.FrameworldExpansionUpgrades8][this.FrameworldExpansionUpgrades9][this.FrameworldExpansionUpgrades10][this.FrameworldExpansionUpgrades11]§!\n§T--------------§!\n$giga_frameworld_expand_desc_fluff$"
 
+  giga_frameworld_expand_base_discount_mod_3:0 "\n    $tech_starbase_2$: §G$@fwt_frameworld_expansion_cost_starbase_2|*0$§!"
+  giga_frameworld_expand_base_discount_mod_4:0 "\n    $tech_starbase_3$: §G$@fwt_frameworld_expansion_cost_starbase_3|*0$§!"
+  giga_frameworld_expand_base_discount_mod_5:0 "\n    $tech_starbase_4$: §G$@fwt_frameworld_expansion_cost_starbase_4|*0$§!"
+  giga_frameworld_expand_base_discount_mod_6:0 "\n    $tech_starbase_5$: §G$@fwt_frameworld_expansion_cost_starbase_5|*0$§!"
+  giga_frameworld_expand_base_discount_mod_7:0 "\n    $tech_mega_shipyard$: §G$@fwt_frameworld_expansion_cost_megashipyard|*0$§!"
+  giga_frameworld_expand_base_discount_mult_mod_1:0 "\n    T1 Upgrades: §G$@fwt_frameworld_expansion_cost_t1_upgrade|0$x§!"
+  giga_frameworld_expand_base_discount_mult_mod_2:0 "\n    T2 Upgrades: §G$@fwt_frameworld_expansion_cost_t2_upgrade|0$x§!"
+  giga_frameworld_expand_base_discount_mult_mod_3:0 "\n    T3 Upgrades: §G$@fwt_frameworld_expansion_cost_t2_upgrade|0$x§!"
+  giga_frameworld_expand_multiplier_discount_mod_4:0 "\n    $tech_mega_engineering$: §G$@fwt_frameworld_expansion_exponent_mega_engineering$x§!"
 
-  giga_frameworld_expand_base_discount_mod_3:0 "\n    $tech_starbase_2$: §G-10§!"
-  giga_frameworld_expand_base_discount_mod_4:0 "\n    $tech_starbase_3$: §G-15§!"
-  giga_frameworld_expand_base_discount_mod_5:0 "\n    $tech_starbase_4$: §G-20§!"
-  giga_frameworld_expand_base_discount_mod_6:0 "\n    $tech_starbase_5$: §G-25§!"
-  giga_frameworld_expand_base_discount_mod_7:0 "\n    $tech_mega_shipyard$: §G-40§!"
-  giga_frameworld_expand_multiplier_discount_mod_4:0 "\n    $tech_mega_engineering$: §G-0.02x§!"
-
-  giga_frameworld_expand_upgrade_6:0 "\n    £engineering£§Y$tech_starbase_2$§!: $giga_frameworld_expand_factor$ §G-10x§!"
-  giga_frameworld_expand_upgrade_7:0 "\n    £engineering£§Y$tech_starbase_3$§!: $giga_frameworld_expand_factor$ §G-15§!"
-  giga_frameworld_expand_upgrade_8:0 "\n    £engineering£§Y$tech_starbase_4$§!: $giga_frameworld_expand_factor$ §G-20§!"
-  giga_frameworld_expand_upgrade_9:0 "\n    £engineering£§Y$tech_starbase_5$§!: $giga_frameworld_expand_factor$ §G-25§!"
-  giga_frameworld_expand_upgrade_10:0 "\n    £engineering£§Y$tech_mega_shipyard$§!: $giga_frameworld_expand_factor$ §G-30§!"
-  giga_frameworld_expand_upgrade_11:0 "\n    £engineering£§Y$tech_mega_engineering$§!: $giga_frameworld_expand_factor$ §G-0.40x§!"
+  giga_frameworld_expand_upgrade_6:0 "\n    £engineering£§Y$tech_starbase_2$§!: $giga_frameworld_expand_factor$ §G$@fwt_frameworld_expansion_cost_starbase_2|*0$§!"
+  giga_frameworld_expand_upgrade_7:0 "\n    £engineering£§Y$tech_starbase_3$§!: $giga_frameworld_expand_factor$ §G$@fwt_frameworld_expansion_cost_starbase_3|*0$§!"
+  giga_frameworld_expand_upgrade_8:0 "\n    £engineering£§Y$tech_starbase_4$§!: $giga_frameworld_expand_factor$ §G$@fwt_frameworld_expansion_cost_starbase_4|*0$§!"
+  giga_frameworld_expand_upgrade_9:0 "\n    £engineering£§Y$tech_starbase_5$§!: $giga_frameworld_expand_factor$ §G$@fwt_frameworld_expansion_cost_starbase_5|*0$§!"
+  giga_frameworld_expand_upgrade_10:0 "\n    £engineering£§Y$tech_mega_shipyard$§!: $giga_frameworld_expand_factor$ §G$@fwt_frameworld_expansion_cost_megashipyard|*0$§!"
+  giga_frameworld_expand_upgrade_11:0 "\n    £engineering£§Y$tech_mega_engineering$§!: $giga_frameworld_expand_factor$ §G$@fwt_frameworld_expansion_exponent_mega_engineering$x§!"
 
  ################### decommpresser overwrite ###########################################################################################
 
