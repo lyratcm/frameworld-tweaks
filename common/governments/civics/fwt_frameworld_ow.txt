@@ -23,6 +23,7 @@ origin_frameworld = {
         civics = {
             not = {
                 value = civic_agrarian_idyll
+                value = civic_ds_vero
             }
             nor = {
                 text = giga_civic_tooltip_not_environmental_architects

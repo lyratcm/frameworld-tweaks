@@ -20,3 +20,50 @@ fwt_t1_upgrade = {
 fwt_t2_upgrade = {
     has_galactic_wonders = yes
 }
+
+is_asteroid_harvestable = {
+    [[PLANET_1]
+        solar_system = {
+            count_system_planet = {
+                count > 1
+                limit = {
+                    is_asteroid = yes
+                }
+            }
+        }
+    ]
+    [[PLANET_STRATEGIC]
+        or = {
+            planet_resource_compare = {
+                type = produces
+                resource = rare_crystals
+                value > 0
+            }
+            planet_resource_compare = {
+                type = produces
+                resource = exotic_gases
+                value > 0
+            }
+            planet_resource_compare = {
+                type = produces
+                resource = volatile_motes
+                value > 0
+            }
+        }
+    ]
+    [[PLANET_INDUSTRY]
+        is_asteroid = yes
+        is_moon = no
+        has_anomaly = no
+        planet_has_no_megastructure = yes
+    ]
+}
+
+fwt_auto_harvest_flag = {
+    nand = {
+        has_country_flag = fwt_asteroid_harvesting
+        has_country_flag = fwt_asteroid_strategic
+        has_country_flag = fwt_asteroid_industry
+        has_country_flag = fwt_asteroid_harvesting_0
+    }
+}

@@ -1,8 +1,8 @@
-on_game_start_country = {
-	events = {
-		fwt.1
-	}
-}
+# on_game_start_country = {
+# 	events = {
+# 		fwt.1
+# 	}
+# }
 
 on_tech_increased = {
 	events = {
@@ -14,6 +14,8 @@ on_monthly_pulse_country = {
 	events = {
 		fwt.11
 		fwt.5
+		#update outpost output
+		fwt.6
 	}
 }
 
@@ -22,8 +24,6 @@ on_yearly_pulse_country = {
 	events = {
 		#check once a year for new deposits (or run out of deposits) and when ever the empire should gain or lose a system
 		fwt.412
-		#update outpost output
-		fwt.6
 	}
 }
 

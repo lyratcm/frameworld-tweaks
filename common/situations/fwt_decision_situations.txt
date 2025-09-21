@@ -9,7 +9,7 @@ giga_situation_frameworld_decisions = {
 			desc = giga_situation_frameworld_outposts_expansion_base_speed 	#Do not forget to add loc tooltips (the game will scream at you otherwise)
 		}
 		modifier = {
-			mult = event_target:frame_expand@owner.value:fwt_mult_bonus_to_dec_mult|MODIFIER|planet_decision_enact_speed_mult|
+			mult = capital_scope.value:fwt_mult_bonus_to_dec_mult|MODIFIER|planet_decision_enact_speed_mult|
 			desc = giga_situation_frameworld_outposts_expansion_decision_speed
 		}
 	}
@@ -100,9 +100,7 @@ fwt_situation_continuous_expansion = {
 
 
 	triggered_modifier = {
-		potential = {
-			always = yes
-		}
+		potential = { always = yes }
 		#added in country scope
 		country_situations_expansion_alloys_upkeep_add = 1
 		country_situations_expansion_alloys_upkeep_add_offset = 1
@@ -298,19 +296,11 @@ fwt_situation_frameworld_continuous_harvest = {
 			or = {
 				current_situation_approach = fwt_situation_continuous_expansion_approach_pause
 				owner = {
-					or = {
-						and = {
-							not = {	has_country_flag = has_more_asteroids_1 }
-							has_country_flag = fwt_asteroid_harvesting_1
-						}
-						and = {
-							not = {	has_country_flag = has_more_asteroids }
-							has_country_flag = fwt_asteroid_harvesting
-						}
-						and = {
-							has_country_flag = has_more_asteroids
-							has_country_flag = has_more_asteroids_1
-						}
+					nand = {
+						has_country_flag = fwt_asteroid_harvesting
+						has_country_flag = fwt_asteroid_strategic
+						has_country_flag = fwt_asteroid_industry
+						has_country_flag = fwt_asteroid_harvesting_0
 					}
 				}
 			}
@@ -321,9 +311,12 @@ fwt_situation_frameworld_continuous_harvest = {
 		if = {
 			limit = {
 				owner = {
-					nor = {
-						has_country_flag = fwt_asteroid_harvesting_1
+					nand = {
 						has_country_flag = fwt_asteroid_harvesting
+						has_country_flag = fwt_asteroid_strategic
+						has_country_flag = fwt_asteroid_industry
+						has_country_flag = fwt_asteroid_harvesting_0
+						has_country_flag = asteroid_harvest_menu_open
 					}
 				}
 			}
@@ -333,45 +326,9 @@ fwt_situation_frameworld_continuous_harvest = {
 				}
 			}
 		}
-		#if theres a
 		owner = {
-			remove_country_flag = has_more_asteroids_1
-			remove_country_flag = has_more_asteroid
-			if = {
-				limit = {
-					has_country_flag = fwt_asteroid_harvesting_1
-				}
-				random_planet_within_border = {
-					limit = {
-						is_asteroid = yes
-						solar_system = {
-							count_system_planet = {
-								count > 1
-								limit = {
-									is_asteroid = yes
-								}
-							}
-						}
-						system_has_arc_furnace = no
-					}
-					owner = {
-						set_country_flag = has_more_asteroids_1
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_country_flag = fwt_asteroid_harvesting
-				}
-				random_planet_within_border = {
-					limit = {
-						is_asteroid = yes
-						system_has_arc_furnace = no
-					}
-					owner = {
-						set_country_flag = has_more_asteroids
-					}
-				}
+			country_event = {
+				id = fwt.412
 			}
 		}
 		if = {
@@ -382,22 +339,82 @@ fwt_situation_frameworld_continuous_harvest = {
 
     on_progress_complete = {
 		owner = {
-			if = {
+			every_planet_within_border = {
 				limit = {
-					has_country_flag = fwt_asteroid_harvesting_1
+					is_asteroid = yes
+					system_has_arc_furnace = no
 				}
-				random_planet_within_border = {
+				if = {
 					limit = {
-						is_asteroid = yes
-						solar_system = {
-							count_system_planet = {
-								count > 1
-								limit = {
-									is_asteroid = yes
-								}
-							}
+						owner = {
+							has_country_flag = fwt_asteroid_industry
 						}
-						system_has_arc_furnace = no
+						is_asteroid_harvestable = { PLANET_INDUSTRY = yes }
+					}
+					event_target:frame_expand@owner = {
+						giga_frameworld_expand_deposit = {
+							DEPOSIT = d_frameworld_asteroid
+							VAR = giga_frameworld_asteroids
+						}
+						giga_frameworld_expand_deposit = {
+							DEPOSIT = d_frameworld_expansion
+							VAR = giga_frameworld_expansions
+						}
+						change_planet_size = 1
+						giga_frameworld_update_entity_with_fallback = yes
+						frameworld_conduct_audit_check_ai = yes
+					}
+					remove_planet = yes
+				}
+				else_if = {
+					limit = {
+						owner = {
+							has_country_flag = fwt_asteroid_harvesting
+						}
+						is_asteroid_harvestable = { PLANET_1 = yes }
+					}
+					event_target:frame_expand@owner = {
+						giga_frameworld_expand_deposit = {
+							DEPOSIT = d_frameworld_asteroid
+							VAR = giga_frameworld_asteroids
+						}
+						giga_frameworld_expand_deposit = {
+							DEPOSIT = d_frameworld_expansion
+							VAR = giga_frameworld_expansions
+						}
+						change_planet_size = 1
+						giga_frameworld_update_entity_with_fallback = yes
+						frameworld_conduct_audit_check_ai = yes
+					}
+					remove_planet = yes
+				}
+				else_if = {
+					limit = {
+						owner = {
+							has_country_flag = fwt_asteroid_strategic
+						}
+						is_asteroid_harvestable = { PLANET_STRATEGIC = yes }
+					}
+					event_target:frame_expand@owner = {
+						giga_frameworld_expand_deposit = {
+							DEPOSIT = d_frameworld_asteroid
+							VAR = giga_frameworld_asteroids
+						}
+						giga_frameworld_expand_deposit = {
+							DEPOSIT = d_frameworld_expansion
+							VAR = giga_frameworld_expansions
+						}
+						change_planet_size = 1
+						giga_frameworld_update_entity_with_fallback = yes
+						frameworld_conduct_audit_check_ai = yes
+					}
+					remove_planet = yes
+				}
+				else_if = {
+					limit = {
+						owner = {
+							has_country_flag = fwt_asteroid_harvesting_0
+						}
 					}
 					event_target:frame_expand@owner = {
 						giga_frameworld_expand_deposit = {
@@ -415,34 +432,22 @@ fwt_situation_frameworld_continuous_harvest = {
 					remove_planet = yes
 				}
 			}
-			else_if = {
-				limit = {
-					has_country_flag = fwt_asteroid_harvesting
-				}
-				random_planet_within_border = {
-					limit = {
-						is_asteroid = yes
-						system_has_arc_furnace = no
-					}
-					event_target:frame_expand@owner = {
-						giga_frameworld_expand_deposit = {
-							DEPOSIT = d_frameworld_asteroid
-							VAR = giga_frameworld_asteroids
+		}
+		if = {
+			limit = {
+				owner = {
+					has_country_flag = fwt_asteroid_industry
+					nand = {
+						has_global_flag = asteroid_manufactory_capped_u
+						check_variable = {
+							which = giga_current_asteroid_manufactory
+							value < value:giga_asteroid_manufactory_limit
 						}
-						giga_frameworld_expand_deposit = {
-							DEPOSIT = d_frameworld_expansion
-							VAR = giga_frameworld_expansions
-						}
-						change_planet_size = 1
-						giga_frameworld_update_entity_with_fallback = yes
-						frameworld_conduct_audit_check_ai = yes
-
 					}
-					remove_planet = yes
 				}
 			}
-			start_situation = {
-				type = fwt_situation_frameworld_continuous_harvest
+			owner = {
+				remove_country_flag = fwt_asteroid_industry
 			}
 		}
 		destroy_situation = this
@@ -467,18 +472,10 @@ fwt_situation_frameworld_continuous_harvest = {
 				trigger = {
 					owner = {
 						or = {
-							and = {
-								not = {	has_country_flag = has_more_asteroids_1 }
-								has_country_flag = fwt_asteroid_harvesting_1
-							}
-							and = {
-								not = {	has_country_flag = has_more_asteroids }
-								has_country_flag = fwt_asteroid_harvesting
-							}
-							nand = {
-								has_country_flag = has_more_asteroids
-								has_country_flag = has_more_asteroids_1
-							}
+							has_country_flag = fwt_asteroid_harvesting
+							has_country_flag = fwt_asteroid_strategic
+							has_country_flag = fwt_asteroid_industry
+							has_country_flag = fwt_asteroid_harvesting_0
 						}
 					}
 				}
@@ -503,6 +500,7 @@ fwt_situation_frameworld_continuous_harvest = {
 					id = fwt.41
 				}
 			}
+			set_situation_approach = fwt_situation_continuous_expansion_approach_harvest
 		}
 		resources = {
 			category = country_situations_harvest
@@ -510,18 +508,10 @@ fwt_situation_frameworld_continuous_harvest = {
 				trigger = {
 					owner = {
 						or = {
-							and = {
-								not = {	has_country_flag = has_more_asteroids_1 }
-								has_country_flag = fwt_asteroid_harvesting_1
-							}
-							and = {
-								not = {	has_country_flag = has_more_asteroids }
-								has_country_flag = fwt_asteroid_harvesting
-							}
-							nand = {
-								has_country_flag = has_more_asteroids
-								has_country_flag = has_more_asteroids_1
-							}
+							has_country_flag = fwt_asteroid_harvesting
+							has_country_flag = fwt_asteroid_strategic
+							has_country_flag = fwt_asteroid_industry
+							has_country_flag = fwt_asteroid_harvesting_0
 						}
 					}
 				}

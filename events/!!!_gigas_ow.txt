@@ -308,12 +308,12 @@ country_event = {
 			# # set the maintenance mod on
 			# giga_frameworld_apply_expanded_maintenance_modifier = yes
 
-			#lyra do my set setup values popup first then use those values
-			owner = {
-				country_event = {
-					id = fwt.121
-				}
-			}
+			# #lyra do my set setup values popup first then use those values
+			# owner = {
+			# 	country_event = {
+			# 		id = fwt.121
+			# 	}
+			# }
 		}
         # clear the conquered modifier which apparently gets executed BEFORE the start event
         remove_modifier = frameworld_conquered

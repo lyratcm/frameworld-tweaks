@@ -111,8 +111,10 @@ giga_frameworld_penrose_dummy = {
 			not = { has_planet_flag = frameworld_penrose_dec }
 			text = giga_frameworld_upgrade_fail
 		}
-		check_variable = { which = fwt_energy_completion value < 4 }
-		check_variable = { which = fwt_energy_completion value >= 2 }
+		hidden_trigger = {
+			check_variable = { which = fwt_energy_completion value < 4 }
+			check_variable = { which = fwt_energy_completion value >= 2 }
+		}
 	}
 
 	effect = {
@@ -262,8 +264,10 @@ giga_frameworld_decompressor_dummy = {
 			not = { has_planet_flag = giga_frameworld_decompressor_dec }
 			text = giga_frameworld_upgrade_fail
 		}
-		check_variable = { which = fwt_mineral_completion value < 4 }
-		check_variable = { which = fwt_mineral_completion value >= 2 }
+		hidden_trigger = {
+			check_variable = { which = fwt_mineral_completion value < 4 }
+			check_variable = { which = fwt_mineral_completion value >= 2 }
+		}
 	}
 
 	effect = {
@@ -314,7 +318,6 @@ giga_frameworld_advanced_city = {
 	
 	resources = {
 		category = decisions
-		cost = { minerals = 15000 }
 		cost = {
 			trigger = {
 				exists = owner
@@ -324,6 +327,7 @@ giga_frameworld_advanced_city = {
 			}
 			influence = 200
 		}
+		cost = { minerals = 15000 }
 	}
 
 	prerequisites = {
@@ -459,7 +463,6 @@ giga_frameworld_advanced_city_dummy = {
 
 	resources = {
 		category = decisions
-		cost = { minerals = 15000 }
 		cost = {
 			trigger = {
 				exists = owner
@@ -469,6 +472,7 @@ giga_frameworld_advanced_city_dummy = {
 			}
 			influence = 200
 		}
+		cost = { minerals = 15000 }
 	}
 
 
@@ -477,9 +481,6 @@ giga_frameworld_advanced_city_dummy = {
 		exists = owner
 		owner = {
 			giga_has_frameworld_origin = yes
-			#ecu/hive/machine world requirement but minus the ascension perks due to having bonuses from both ecus and habitats
-			#maybe change it later if over-tuned
-			has_technology = tech_housing_2
 		}
 		giga_is_frame_world = yes
 		or = {
@@ -498,30 +499,32 @@ giga_frameworld_advanced_city_dummy = {
 			not = { has_planet_flag = frameworld_advanced_city_dec }
 			text = giga_frameworld_upgrade_fail
 		}
-		or = {
-			and = {
-				check_variable = { which = fwt_alloy_completion value < 2 }
-				check_variable = { which = fwt_alloy_completion value >= 1 }
-			}
-			and = {
-				check_variable = { which = fwt_consumer_goods_completion value < 2 }
-				check_variable = { which = fwt_consumer_goods_completion value >= 1 }
-			}
-			and = {
-				check_variable = { which = fwt_unity_trade_completion value < 2 }
-				check_variable = { which = fwt_unity_trade_completion value >= 1 }
-			}
-			and = {
-				check_variable = { which = fwt_sanctuary_completion value < 2 }
-				check_variable = { which = fwt_sanctuary_completion value >= 1 }
-			}
-			and = {
-				check_variable = { which = fwt_rare_resources_completion value < 2 }
-				check_variable = { which = fwt_rare_resources_completion value >= 1 }
-			}
-			and = {
-				check_variable = { which = fwt_city_completion value < 2 }
-				check_variable = { which = fwt_city_completion value >= 1 }
+		hidden_trigger = {
+			or = {
+				and = {
+					check_variable = { which = fwt_alloy_completion value < 2 }
+					check_variable = { which = fwt_alloy_completion value >= 1 }
+				}
+				and = {
+					check_variable = { which = fwt_consumer_goods_completion value < 2 }
+					check_variable = { which = fwt_consumer_goods_completion value >= 1 }
+				}
+				and = {
+					check_variable = { which = fwt_unity_trade_completion value < 2 }
+					check_variable = { which = fwt_unity_trade_completion value >= 1 }
+				}
+				and = {
+					check_variable = { which = fwt_sanctuary_completion value < 2 }
+					check_variable = { which = fwt_sanctuary_completion value >= 1 }
+				}
+				and = {
+					check_variable = { which = fwt_rare_resources_completion value < 2 }
+					check_variable = { which = fwt_rare_resources_completion value >= 1 }
+				}
+				and = {
+					check_variable = { which = fwt_city_completion value < 2 }
+					check_variable = { which = fwt_city_completion value >= 1 }
+				}
 			}
 		}
 	}
@@ -734,14 +737,16 @@ giga_frameworld_advanced_industrial_dummy = {
 			not = { has_planet_flag = giga_frameworld_advanced_industrial_dec }
 			text = giga_frameworld_upgrade_fail
 		}
-		or = {
-			and = {
-				check_variable = { which = fwt_alloy_completion value < 4 }
-				check_variable = { which = fwt_alloy_completion value >= 2 }
-			}
-			and = {
-				check_variable = { which = fwt_consumer_goods_completion value < 4 }
-				check_variable = { which = fwt_consumer_goods_completion value >= 2 }
+		hidden_trigger = {
+			or = {
+				and = {
+					check_variable = { which = fwt_alloy_completion value < 4 }
+					check_variable = { which = fwt_alloy_completion value >= 2 }
+				}
+				and = {
+					check_variable = { which = fwt_consumer_goods_completion value < 4 }
+					check_variable = { which = fwt_consumer_goods_completion value >= 2 }
+				}
 			}
 		}
 	}
@@ -905,8 +910,6 @@ giga_frameworld_advanced_sanctuary_dummy = {
 		owner = {
 			giga_has_frameworld_origin = yes
 			is_machine_empire = yes
-			has_valid_civic = civic_machine_servitor
-			has_ascension_perk = ap_arcology_project
 		}
 		giga_is_frame_world = yes
 		check_variable = { which = fwt_sanctuary_completion value < 2 }
@@ -918,8 +921,10 @@ giga_frameworld_advanced_sanctuary_dummy = {
 			not = { has_planet_flag = frameworld_advanced_sanctuary_dec }
 			text = giga_frameworld_upgrade_fail
 		}
-		check_variable = { which = fwt_sanctuary_completion value < 2 }
-		check_variable = { which = fwt_sanctuary_completion value >= 1 }
+		hidden_trigger = {
+			check_variable = { which = fwt_sanctuary_completion value < 2 }
+			check_variable = { which = fwt_sanctuary_completion value >= 1 }
+		}
 	}
 
 	effect = {
@@ -1029,6 +1034,81 @@ giga_frameworld_gaia = {
 	ai_weight = {
 		weight = 1000
 		
+		modifier = {
+			factor = 0
+			not = { any_owned_species = { is_robotic = no } }
+		}
+	}
+}
+
+giga_frameworld_gaia_dummy = {
+	icon = decision_gaia_planet
+	owned_planets_only = yes
+
+	enactment_time = @fwt_ecu_tier_time
+
+	resources = {
+		category = decisions
+		cost = {
+			minerals = 5000
+			energy = 20000
+			exotic_gases = 1000
+		}
+
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_ai = no
+				}
+			}
+			influence = 100
+		}
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			giga_has_frameworld_origin = yes
+			not = { has_ascension_perk = ap_world_shaper }
+		}
+		fwt_t1_upgrade = yes
+		giga_is_frame_world = yes
+		not = { has_planet_flag = frameworld_gaia }
+	}
+
+	allow = {
+		owner = {
+			has_ascension_perk = ap_world_shaper
+		}
+		custom_tooltip_fail = {
+			not = { has_planet_flag = giga_frameworld_gaia_dec }
+			text = giga_frameworld_upgrade_fail
+		}
+	}
+
+	effect = {
+		set_planet_flag = frameworld_gaia
+		custom_tooltip = giga_frameworld_upgrade_desc
+		custom_tooltip = giga_frameworld_gaia_effect
+
+		hidden_effect = {
+			add_deposit = d_frameworld_gaia
+			set_planet_flag = frameworld_gaia
+			remove_planet_flag = giga_frameworld_gaia_dec
+			save_event_target_as = giga_planet
+		}
+		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.010 } } }
+	}
+	on_queued = {
+		hidden_effect = { set_planet_flag = giga_frameworld_gaia_dec }
+	}
+	on_unqueued = {
+		hidden_effect = { remove_planet_flag = giga_frameworld_gaia_dec }
+	}
+	ai_weight = {
+		weight = 1000
+
 		modifier = {
 			factor = 0
 			not = { any_owned_species = { is_robotic = no } }
@@ -1146,7 +1226,6 @@ giga_frameworld_computing_complex_dummy = {
 		exists = owner
 		owner = {
 			giga_has_frameworld_origin = yes
-			has_technology = giga_tech_planetary_computer
 		}
 		giga_is_frame_world = yes
 		check_variable = { which = fwt_science_completion value < 4 }
@@ -1158,8 +1237,10 @@ giga_frameworld_computing_complex_dummy = {
 			not = { has_planet_flag = giga_frameworld_computing_complex_dec }
 			text = giga_frameworld_upgrade_fail
 		}
-		check_variable = { which = fwt_science_completion value < 4 }
-		check_variable = { which = fwt_science_completion value >= 2 }
+		hidden_trigger = {
+			check_variable = { which = fwt_science_completion value < 4 }
+			check_variable = { which = fwt_science_completion value >= 2 }
+		}
 	}
 
 	effect = {
@@ -1718,12 +1799,11 @@ giga_frameworld_habitat_upgrade_dummy = {
 	}
 
 	potential = {
-		fwt_tech_trigger_not = { TECHNOLOGY = tech_habitat_1 }
 		exists = owner
 		owner = {
 			giga_has_frameworld_origin = yes
-			has_technology = tech_habitat_1
 		}
+		fwt_tech_trigger_not = { TECHNOLOGY = tech_habitat_1 }
 		giga_is_frame_world = yes
 		or = {
 			check_variable = { which = fwt_energy_completion value < 2 }
@@ -1741,22 +1821,24 @@ giga_frameworld_habitat_upgrade_dummy = {
 			}
 			text = giga_frameworld_upgrade_fail
 		}
-		or = {
-			and = {
-				check_variable = { which = fwt_energy_completion value < 2 }
-				check_variable = { which = fwt_energy_completion value >= 1 }
-			}
-			and = {
-				check_variable = { which = fwt_mineral_completion value < 2 }
-				check_variable = { which = fwt_mineral_completion value >= 1 }
-			}
-			and = {
-				check_variable = { which = fwt_food_completion value < 2 }
-				check_variable = { which = fwt_food_completion value >= 1 }
-			}
-			and = {
-				check_variable = { which = fwt_science_completion value < 2 }
-				check_variable = { which = fwt_science_completion value >= 1 }
+		hidden_trigger = {
+			or = {
+				and = {
+					check_variable = { which = fwt_energy_completion value < 2 }
+					check_variable = { which = fwt_energy_completion value >= 1 }
+				}
+				and = {
+					check_variable = { which = fwt_mineral_completion value < 2 }
+					check_variable = { which = fwt_mineral_completion value >= 1 }
+				}
+				and = {
+					check_variable = { which = fwt_food_completion value < 2 }
+					check_variable = { which = fwt_food_completion value >= 1 }
+				}
+				and = {
+					check_variable = { which = fwt_science_completion value < 2 }
+					check_variable = { which = fwt_science_completion value >= 1 }
+				}
 			}
 		}
 	}
@@ -1834,7 +1916,6 @@ giga_frameworld_interstellar_assembly = {
 	}
 	
 	potential = {
-		fwt_tech_trigger_not = { TECHNOLOGY = tech_interstellar_assembly }
 		fwt_t1_upgrade = yes
 		exists = owner
 		owner = {
@@ -1850,7 +1931,6 @@ giga_frameworld_interstellar_assembly = {
 	}
 	
 	allow = {
-		fwt_tech_trigger = { TECHNOLOGY = tech_interstellar_assembly }
 		custom_tooltip_fail = {
 			not = {
 				has_planet_flag = interstellar_assembly_dec
@@ -1869,6 +1949,97 @@ giga_frameworld_interstellar_assembly = {
 		}
 	}
 	
+	effect = {
+		# set_planet_flag = frameworld_upgrade
+		custom_tooltip = giga_frameworld_upgrade_desc
+		custom_tooltip = giga_frameworld_interstellar_assembly_effect
+		# add_decision_time = {
+		# 	TIME = @fwt_giga_tier_time
+		# 	NAME = interstellar_assembly
+		# 	# NAME_DEPOSIT = d_interstellar_assembly
+		# }
+		hidden_effect = {
+			remove_flags = { NAME = interstellar_assembly }
+			# add_deposit = d_frameworld_interstellar_assembly
+			save_event_target_as = giga_planet
+
+			frame_size_gal_wonders = yes
+			add_completion_flag = { NAME = interstellar_assembly }
+			set_variable = { which = fwt_unity_trade_completion value = 4 }
+			set_variable = { which = fwt_sanctuary_completion value = 4 }
+			remove_planet_flag = interstellar_assembly_dec
+			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_06 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_09 }
+		}
+	}
+	on_queued = { hidden_effect = { set_planet_flag = interstellar_assembly_dec }  }
+	on_unqueued = { hidden_effect = { remove_planet_flag = interstellar_assembly_dec }  }
+	ai_weight = {
+		#always good to upgrade
+		weight = 100000
+	}
+}
+
+giga_frameworld_interstellar_assembly_dummy = {
+	icon = decision_nexus_district
+	owned_planets_only = yes
+
+	enactment_time = @fwt_mega_tier
+
+	resources = {
+		category = decisions
+		cost = {
+			alloys = 10000
+		}
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_ai = no
+				}
+			}
+			unity = 2000
+		}
+	}
+
+	potential = {
+		fwt_tech_trigger_not = { TECHNOLOGY = tech_interstellar_assembly }
+		fwt_t1_upgrade = yes
+		exists = owner
+		owner = {
+			giga_has_frameworld_origin = yes
+			has_technology = tech_interstellar_assembly
+		}
+		giga_is_frame_world = yes
+		or = {
+			check_variable = { which = fwt_unity_trade_completion value < 4 }
+			check_variable = { which = fwt_sanctuary_completion value < 4 }
+		}
+
+	}
+
+	allow = {
+		fwt_tech_trigger = { TECHNOLOGY = tech_interstellar_assembly }
+		custom_tooltip_fail = {
+			not = {
+				has_planet_flag = interstellar_assembly_dec
+			}
+			text = giga_frameworld_upgrade_fail
+		}
+		hidden_trigger = {
+			or = {
+				and = {
+					check_variable = { which = fwt_unity_trade_completion value < 4 }
+					check_variable = { which = fwt_unity_trade_completion value >= 2 }
+				}
+				and = {
+					check_variable = { which = fwt_sanctuary_completion value < 4 }
+					check_variable = { which = fwt_sanctuary_completion value >= 2 }
+				}
+			}
+		}
+	}
+
 	effect = {
 		# set_planet_flag = frameworld_upgrade
 		custom_tooltip = giga_frameworld_upgrade_desc
@@ -1926,7 +2097,6 @@ giga_frameworld_yggdrasil_orchid = {
 	}
 	
 	potential = {
-		fwt_tech_trigger_not = { TECHNOLOGY = giga_tech_yggdrasil_orchid }
 		fwt_t1_upgrade = yes
 		exists = owner
 		owner = {
@@ -1939,7 +2109,6 @@ giga_frameworld_yggdrasil_orchid = {
 	}
 	
 	allow = {
-		fwt_tech_trigger = { TECHNOLOGY = giga_tech_yggdrasil_orchid }
 		custom_tooltip_fail = {
 			not = {
 				has_planet_flag = yggdrasil_orchid_dec
@@ -1950,6 +2119,83 @@ giga_frameworld_yggdrasil_orchid = {
 		check_variable = { which = fwt_food_completion value >= 2 }
 	}
 	
+	effect = {
+		set_planet_flag = frameworld_upgrade
+		custom_tooltip = giga_frameworld_upgrade_desc
+		custom_tooltip = giga_frameworld_yggdrasil_orchid_effect
+		# add_decision_time = {
+		# 	TIME = @fwt_giga_tier_time
+		# 	NAME = yggdrasil_orchid
+		# 	# NAME_DEPOSIT = d_yggdrasil_orchid
+		# }
+		hidden_effect = {
+			remove_flags = { NAME = yggdrasil_orchid }
+			save_event_target_as = giga_planet
+			frame_size_gal_wonders = yes
+			add_completion_flag = { NAME = yggdrasil_orchid }
+			set_variable = { which = fwt_food_completion value = 4 }
+			remove_planet_flag = yggdrasil_orchid_dec
+			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_05 }
+		}
+	}
+	on_queued = { hidden_effect = { set_planet_flag = yggdrasil_orchid_dec }  }
+	on_unqueued = { hidden_effect = { remove_planet_flag = yggdrasil_orchid_dec }  }
+	ai_weight = {
+		#always good to upgrade
+		weight = 100000
+	}
+}
+
+giga_frameworld_yggdrasil_orchid_dummy = {
+	icon = decision_nexus_district
+	owned_planets_only = yes
+
+	enactment_time = 0
+
+	resources = {
+		category = decisions
+		cost = {
+			alloys = 10000
+		}
+
+		cost = {
+			trigger = {
+				exists = owner
+				owner = {
+					is_ai = no
+				}
+			}
+			influence = 200
+		}
+	}
+
+	potential = {
+		fwt_tech_trigger_not = { TECHNOLOGY = giga_tech_yggdrasil_orchid }
+		fwt_t1_upgrade = yes
+		exists = owner
+		owner = {
+			giga_has_frameworld_origin = yes
+			has_technology = giga_tech_yggdrasil_orchid
+		}
+		giga_is_frame_world = yes
+		check_variable = { which = fwt_food_completion value < 4 }
+
+	}
+
+	allow = {
+		fwt_tech_trigger = { TECHNOLOGY = giga_tech_yggdrasil_orchid }
+		custom_tooltip_fail = {
+			not = {
+				has_planet_flag = yggdrasil_orchid_dec
+			}
+			text = giga_frameworld_upgrade_fail
+		}
+		hidden_trigger = {
+			check_variable = { which = fwt_food_completion value < 4 }
+			check_variable = { which = fwt_food_completion value >= 2 }
+		}
+	}
+
 	effect = {
 		set_planet_flag = frameworld_upgrade
 		custom_tooltip = giga_frameworld_upgrade_desc
