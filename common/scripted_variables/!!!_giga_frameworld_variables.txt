@@ -11,7 +11,6 @@
 @fwt_frameworld_expansion_exponent_mega_engineering = -0.02
 @giga_frameworld_expansion_exponent_ringworld = -0.03 #-0.03
 
-
 @giga_frameworld_expansion_cost_habitat_2 = -25 # -50
 @giga_frameworld_expansion_cost_habitat_3 = -25 # -50
 # an additional 100 cost reduction for a total of 180 #150 #100 550 -> 400
@@ -25,10 +24,3 @@
 @fwt_frameworld_expansion_cost_habitat_upgrade = -10
 @fwt_frameworld_expansion_cost_city_upgrade = -10
 # @fwt_frameworld_expansion_cost_mega_engi_upgrade = 100
-
-#time that the frameworld expansion normally takes
-@fwt_frameworld_auto_expansion_time = 360
-
-@fwt_frameworld_expansion_cost_t1_upgrade = 2
-@fwt_frameworld_expansion_cost_t2_upgrade = 2
-@fwt_frameworld_expansion_cost_t3_upgrade = 2

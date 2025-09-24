@@ -28,198 +28,199 @@ giga_situation_frameworld_outposts = {
 
             # assembly job upkeeps
 
-            ############################################################################################################
-            # secondary healthcare workers
-
-            upkeep = {
-                trigger = {
-                    owner = {
-                        is_gestalt = no
-                    }
-                }
-                consumer_goods = 0.05
-                food = 0.2
-                multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|giga_extra_healthcare|checkType|yes|lithoid|no|
-            }
-            upkeep = {
-                trigger = {
-                    owner = {
-                        is_gestalt = no
-                    }
-                }
-                consumer_goods = 0.1
-                minerals = 0.2
-                multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|giga_extra_healthcare|checkType|yes|lithoid|yes|
-            }
-
-            ############################################################################################################
-            # roboticists
-
-            upkeep = {
-                trigger = {
-                    owner = {
-                        is_gestalt = no
-                    }
-                }
-                alloys = 0.2
-                multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|roboticist|
-            }
-
-            ############################################################################################################
-            # cloning technicians
-
-            upkeep = {
-                trigger = {
-                    owner = {
-                        is_gestalt = no
-                    }
-                }
-                consumer_goods = 0.1
-                food = 0.5
-                multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|giga_cloning|checkType|yes|lithoid|no|
-            }
-            upkeep = {
-                trigger = {
-                    owner = {
-                        is_gestalt = no
-                    }
-                }
-                consumer_goods = 0.1
-                minerals = 0.5
-                multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|giga_cloning|checkType|yes|lithoid|yes|
-            }
-
-            ############################################################################################################
-            # reassigners
-
-            upkeep = {
-                trigger = {
-                    owner = {
-                        is_gestalt = no
-                    }
-                }
-                consumer_goods = 0.1
-                food = 0.2
-                multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|reassigner|checkType|yes|lithoid|no|
-            }
-            upkeep = {
-                trigger = {
-                    owner = {
-                        is_gestalt = no
-                    }
-                }
-                consumer_goods = 0.1
-                minerals = 0.2
-                multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|reassigner|checkType|yes|lithoid|yes|
-            }
-
-            ############################################################################################################
-            # spawning drones
-
-            upkeep = {
-                trigger = {
-                    owner = {
-                        is_hive_empire = yes
-                    }
-                }
-                food = 0.5
-                multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|spawning_drone|checkType|yes|lithoid|no|
-            }
-            upkeep = {
-                trigger = {
-                    owner = {
-                        is_hive_empire = yes
-                    }
-                }
-                minerals = 0.5
-                multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|spawning_drone|checkType|yes|lithoid|yes|
-            }
-
-            ############################################################################################################
-            # augmentation drones
-
-            upkeep = {
-                trigger = {
-                    owner = {
-                        is_hive_empire = yes
-                    }
-                }
-                alloys = 0.1
-                multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|augmentor_drone|
-            }
-
-            ############################################################################################################
-            # replicators
-
-            upkeep = {
-                trigger = {
-                    owner = {
-                        is_machine_empire = yes
-                    }
-                }
-                alloys = 0.1
-                multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|replicator|
-            }
-
-            ############################################################################################################
-            # supplemental crucible drones
-
-            upkeep = {
-                trigger = {
-                    owner = {
-                        is_machine_empire = yes
-                        has_tradition = tr_cybernetics_assimilator_gestation
-                    }
-                    target = {
-                        has_modifier = frameworld_crucible
-
-                        any_targeting_situation = {
-                            is_situation_type = giga_situation_extra_growth
-                            has_situation_flag = has_species
-                            check_variable = {
-                                which = total_growth
-                                value > 0
-                            }
-                            event_target:giga_extra_growth_species@this = {
-                                is_lithoid = no
-                                has_trait = trait_cybernetic
-                            }
-                        }
-                    }
-                }
-                alloys = 0.1
-                food = 0.5
-
-                multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|giga_extra_crucible_drone|
-            }
-            upkeep = {
-                trigger = {
-                    owner = {
-                        is_machine_empire = yes
-                        has_tradition = tr_cybernetics_assimilator_gestation
-                    }
-                    target = {
-                        has_modifier = frameworld_crucible
-
-                        any_targeting_situation = {
-                            is_situation_type = giga_situation_extra_growth
-                            has_situation_flag = has_species
-                            check_variable = {
-                                which = total_growth
-                                value > 0
-                            }
-                            event_target:giga_extra_growth_species@this = {
-                                is_lithoid = yes
-                                has_trait = trait_cybernetic
-                            }
-                        }
-                    }
-                }
-                alloys = 0.1
-                minerals = 0.5
-
-                multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|giga_extra_crucible_drone|
-            }
+            #disabled till gigas fix it - tbh im not sure why this is needed your already spending a load to expand the frame work and for job growth
+            # ############################################################################################################
+            # # secondary healthcare workers
+            #
+            # upkeep = {
+            #     trigger = {
+            #         owner = {
+            #             is_gestalt = no
+            #         }
+            #     }
+            #     consumer_goods = 0.05
+            #     food = 0.2
+            #     multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|giga_extra_healthcare|checkType|yes|lithoid|no|
+            # }
+            # upkeep = {
+            #     trigger = {
+            #         owner = {
+            #             is_gestalt = no
+            #         }
+            #     }
+            #     consumer_goods = 0.1
+            #     minerals = 0.2
+            #     multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|giga_extra_healthcare|checkType|yes|lithoid|yes|
+            # }
+            #
+            # ############################################################################################################
+            # # roboticists
+            #
+            # upkeep = {
+            #     trigger = {
+            #         owner = {
+            #             is_gestalt = no
+            #         }
+            #     }
+            #     alloys = 0.2
+            #     multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|roboticist|
+            # }
+            #
+            # ############################################################################################################
+            # # cloning technicians
+            #
+            # upkeep = {
+            #     trigger = {
+            #         owner = {
+            #             is_gestalt = no
+            #         }
+            #     }
+            #     consumer_goods = 0.1
+            #     food = 0.5
+            #     multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|giga_cloning|checkType|yes|lithoid|no|
+            # }
+            # upkeep = {
+            #     trigger = {
+            #         owner = {
+            #             is_gestalt = no
+            #         }
+            #     }
+            #     consumer_goods = 0.1
+            #     minerals = 0.5
+            #     multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|giga_cloning|checkType|yes|lithoid|yes|
+            # }
+            #
+            # ############################################################################################################
+            # # reassigners
+            #
+            # upkeep = {
+            #     trigger = {
+            #         owner = {
+            #             is_gestalt = no
+            #         }
+            #     }
+            #     consumer_goods = 0.1
+            #     food = 0.2
+            #     multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|reassigner|checkType|yes|lithoid|no|
+            # }
+            # upkeep = {
+            #     trigger = {
+            #         owner = {
+            #             is_gestalt = no
+            #         }
+            #     }
+            #     consumer_goods = 0.1
+            #     minerals = 0.2
+            #     multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|reassigner|checkType|yes|lithoid|yes|
+            # }
+            #
+            # ############################################################################################################
+            # # spawning drones
+            #
+            # upkeep = {
+            #     trigger = {
+            #         owner = {
+            #             is_hive_empire = yes
+            #         }
+            #     }
+            #     food = 0.5
+            #     multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|spawning_drone|checkType|yes|lithoid|no|
+            # }
+            # upkeep = {
+            #     trigger = {
+            #         owner = {
+            #             is_hive_empire = yes
+            #         }
+            #     }
+            #     minerals = 0.5
+            #     multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|spawning_drone|checkType|yes|lithoid|yes|
+            # }
+            #
+            # ############################################################################################################
+            # # augmentation drones
+            #
+            # upkeep = {
+            #     trigger = {
+            #         owner = {
+            #             is_hive_empire = yes
+            #         }
+            #     }
+            #     alloys = 0.1
+            #     multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|augmentor_drone|
+            # }
+            #
+            # ############################################################################################################
+            # # replicators
+            #
+            # upkeep = {
+            #     trigger = {
+            #         owner = {
+            #             is_machine_empire = yes
+            #         }
+            #     }
+            #     alloys = 0.1
+            #     multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|replicator|
+            # }
+            #
+            # ############################################################################################################
+            # # supplemental crucible drones
+            #
+            # upkeep = {
+            #     trigger = {
+            #         owner = {
+            #             is_machine_empire = yes
+            #             has_tradition = tr_cybernetics_assimilator_gestation
+            #         }
+            #         target = {
+            #             has_modifier = frameworld_crucible
+            #
+            #             any_targeting_situation = {
+            #                 is_situation_type = giga_situation_extra_growth
+            #                 has_situation_flag = has_species
+            #                 check_variable = {
+            #                     which = total_growth
+            #                     value > 0
+            #                 }
+            #                 event_target:giga_extra_growth_species@this = {
+            #                     is_lithoid = no
+            #                     has_trait = trait_cybernetic
+            #                 }
+            #             }
+            #         }
+            #     }
+            #     alloys = 0.1
+            #     food = 0.5
+            #
+            #     multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|giga_extra_crucible_drone|
+            # }
+            # upkeep = {
+            #     trigger = {
+            #         owner = {
+            #             is_machine_empire = yes
+            #             has_tradition = tr_cybernetics_assimilator_gestation
+            #         }
+            #         target = {
+            #             has_modifier = frameworld_crucible
+            #
+            #             any_targeting_situation = {
+            #                 is_situation_type = giga_situation_extra_growth
+            #                 has_situation_flag = has_species
+            #                 check_variable = {
+            #                     which = total_growth
+            #                     value > 0
+            #                 }
+            #                 event_target:giga_extra_growth_species@this = {
+            #                     is_lithoid = yes
+            #                     has_trait = trait_cybernetic
+            #                 }
+            #             }
+            #         }
+            #     }
+            #     alloys = 0.1
+            #     minerals = 0.5
+            #
+            #     multiplier = value:giga_frameworld_outpost_growth_job_upkeep|job|giga_extra_crucible_drone|
+            # }
 
             ############################################################################################################
 
@@ -287,6 +288,16 @@ giga_situation_frameworld_outposts = {
     #############################################################################################
     # empire modifiers
 
+
+    # growth/efficiency
+    triggered_target_modifier = {
+        # planet_pop_assembly_organic_reduction = -0.1
+        # planet_pop_assembly_reduction = -0.1
+        # pop_growth_speed_reduction = -0.1
+        pop_bonus_workforce_mult = 0.1
+        multiplier = value:giga_frameworld_outpost_growth_count_hab|reduction|2|reduction_offset|4|
+    }
+
     # count
     triggered_modifier = {
         giga_frameworld_outpost_count_display = 1
@@ -319,15 +330,6 @@ giga_situation_frameworld_outposts = {
 
         giga_frameworld_growth_jobs_add = 50
         multiplier = root.owner.value:giga_frameworld_outpost_count
-    }
-
-    # growth/efficiency
-    triggered_target_modifier = {
-        # planet_pop_assembly_organic_reduction = -0.1
-        # planet_pop_assembly_reduction = -0.1
-        # pop_growth_speed_reduction = -0.1
-        pop_bonus_workforce_mult = 0.1
-        multiplier = value:giga_frameworld_outpost_growth_count_hab|reduction|2|reduction_offset|4|
     }
 
     # virtual stuff

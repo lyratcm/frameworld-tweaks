@@ -39,17 +39,6 @@ inline_script = {
 	multiplier_string = "mult = fwt_alloy_completion"
 }
 
-triggered_desc = {
-	trigger = {
-		exists = owner
-		owner = {
-			is_machine_empire = yes
-			has_edict = industrial_maintenance
-		}
-	}
-	text = job_maintenance_drone_effect_desc
-}
-
 base_buildtime = @city_time
 
 resources = {
@@ -65,42 +54,42 @@ resources = {
 		volatile_motes = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
 		mult = fwt_alloy_completion
 	}
-	#half advanced cost (so base) and 0x advanced so none of the for tier 1
-	upkeep = {
-		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
-		mult = fwt_alloy_completion
-	}
-	upkeep = {
-		trigger = {
-			check_variable = { which = fwt_alloy_completion value > 1 }
-		}
-		volatile_motes = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
-	}
-	upkeep = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_edict = industrial_maintenance
-			}
-		}
-		energy = 2
-		mult = fwt_alloy_completion
-	}
-	# nanite upgrade
-	upkeep = {
-		trigger = {
-			frameworld_has_active_nanite_upgrade = yes
-		}
-		energy = @[ 20 * $SIZE$ ]
-		mult = fwt_alloy_completion
-	}
-	upkeep = {
-		trigger = {
-			check_variable = { which = fwt_alloy_completion value > 1 }
-		}
-		nanites = @[ 2 * $SIZE$ ]
-		mult = fwt_alloy_completion
-	}
+	# #half advanced cost (so base) and 0x advanced so none of the for tier 1
+	# upkeep = {
+	# 	energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
+	# 	mult = fwt_alloy_completion
+	# }
+	# upkeep = {
+	# 	trigger = {
+	# 		check_variable = { which = fwt_alloy_completion value > 1 }
+	# 	}
+	# 	volatile_motes = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+	# }
+	# upkeep = {
+	# 	trigger = {
+	# 		exists = owner
+	# 		owner = {
+	# 			has_edict = industrial_maintenance
+	# 		}
+	# 	}
+	# 	energy = 2
+	# 	mult = fwt_alloy_completion
+	# }
+	# # nanite upgrade
+	# upkeep = {
+	# 	trigger = {
+	# 		frameworld_has_active_nanite_upgrade = yes
+	# 	}
+	# 	energy = @[ 20 * $SIZE$ ]
+	# 	mult = fwt_alloy_completion
+	# }
+	# upkeep = {
+	# 	trigger = {
+	# 		check_variable = { which = fwt_alloy_completion value > 1 }
+	# 	}
+	# 	nanites = @[ 2 * $SIZE$ ]
+	# 	mult = fwt_alloy_completion
+	# }
 	produces = {
 		trigger = {
 			frameworld_has_active_nanite_upgrade = yes

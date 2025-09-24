@@ -62,7 +62,7 @@ resources = {
     }
     upkeep = {
         energy = @[ b3_upkeep * 1.5 ]
-        mult = value:fwt_districts_value|DISTRICT|district_giga_frameworld_urban_$DISTRICT$|COMPLETION|$COMPLETION$|
+        mult = value:fwt_districts_value|DISTRICT|district_giga_frameworld_$DISTRICT$|COMPLETION|$COMPLETION$|
     }
     upkeep = {
         trigger = {
@@ -72,7 +72,7 @@ resources = {
             }
         }
         energy = -2.4
-        mult = value:fwt_districts_value|DISTRICT|district_giga_frameworld_urban_$DISTRICT$|COMPLETION|$COMPLETION$|
+        mult = value:fwt_districts_value|DISTRICT|district_giga_frameworld_$DISTRICT$|COMPLETION|$COMPLETION$|
     }
 }
 

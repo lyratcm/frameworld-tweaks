@@ -1,5 +1,47 @@
 namespace = fwt
 
+#triggered before gigas does it menu
+country_event = {
+    id = fwt.0
+    hide_window = yes
+    is_triggered_only = yes
+
+    trigger = { giga_has_frameworld_origin = yes }
+
+    immediate = {
+        set_variable = { which = fwt_frameworld_hab value = 0 }
+        set_variable = {
+            which = fwt_expansion_income
+            value = 70
+        }
+        random_planet_within_border = {
+            limit = {
+                exists = owner
+                owner = { giga_has_frameworld_origin = yes }
+                giga_is_frame_world = yes
+            }
+            set_variable = { which = fwt_energy_completion value = 1 }
+            set_variable = { which = fwt_mineral_completion value = 1 }
+            set_variable = { which = fwt_food_completion value = 1 }
+            set_variable = { which = fwt_alloy_completion value = 1 }
+            set_variable = { which = fwt_consumer_goods_completion value = 1 }
+            set_variable = { which = fwt_unity_trade_completion value = 1 }
+            set_variable = { which = fwt_sanctuary_completion value = 1 }
+            set_variable = { which = fwt_science_completion value = 1 }
+            set_variable = { which = fwt_rare_resources_completion value = 1 }
+            set_variable = { which = fwt_city_completion value = 1 }
+            set_variable = { which = fwt_in_queue_expand value = 0 }
+            # code for my job scaling
+            set_variable = { which = frame_expansion_scale value = 1 }
+            set_variable = { which = fwt_maintance_scale value = 0.5 }
+            set_variable = {
+                which = fwt_maintenance_count
+                value = 1
+            }
+        }
+    }
+}
+
 country_event = {
     id = fwt.1
     hide_window = yes
@@ -28,61 +70,10 @@ country_event = {
                 remove_building = building_luxury_residence
             }
             save_global_event_target_as = frame_expand@owner
-            owner = {
-                set_variable = {
-                    which = fwt_expansion_income
-                    value = 70
-                }
-                set_country_flag = fwt_maintenance_default
-                set_variable = {
-                    which = fwt_decision_time
-                    value = 360
-                }
-                if = {
-                    limit = { megacorp_metamod_enable = yes }
-                    set_variable = {
-                        which = fwt_growth_ceiling
-                        value = 5
-                    }
-                    set_variable = {
-                        which = fwt_required_scaling
-                        value = 0.25
-                    }
-                }
-                else = {
-                    set_variable = {
-                        which = fwt_growth_ceiling
-                        value = 5
-                    }
-                    set_variable = {
-                        which = fwt_required_scaling
-                        value = 0.25
-                    }
-                }
-            }
-            #used in some places for mult if gigas needed it
-            set_variable = { which = fwt_energy_completion value = 1 }
-            set_variable = { which = fwt_mineral_completion value = 1 }
-            set_variable = { which = fwt_food_completion value = 1 }
-            set_variable = { which = fwt_alloy_completion value = 1 }
-            set_variable = { which = fwt_consumer_goods_completion value = 1 }
-            set_variable = { which = fwt_unity_trade_completion value = 1 }
-            set_variable = { which = fwt_sanctuary_completion value = 1 }
-            set_variable = { which = fwt_science_completion value = 1 }
-            set_variable = { which = fwt_rare_resources_completion value = 1 }
-            set_variable = { which = fwt_city_completion value = 1 }
-            # code for my job scaling
-            set_variable = { which = frame_expansion_scale value = 1 }
-            # set_variable = { which = background_pops value = 0 }
-            set_variable = { which = fwt_maintance_scale value = 0.5 }
             add_modifier = {
                 modifier = fwt_speed_unemploy_info
                 multiplier = -100000000
                 days = 40
-            }
-            set_variable = {
-                which = fwt_maintenance_count
-                value = 1
             }
         }
         # country_event = { id = giga_frameworld_origin.000 }
@@ -155,11 +146,11 @@ planet_event = {
             create_pop_group = { species = owner_main_species }
             if = {
                 limit = { owner = { is_catalytic_empire = no } }
-                add_district = district_giga_frameworld_urban_04
+                add_district = district_giga_frameworld_mining
             }
             else_if = {
                 limit = { owner = { is_catalytic_empire = yes } }
-                add_district = district_giga_frameworld_urban_04
+                add_district = district_giga_frameworld_farming
             }
             owner = { change_variable = { which = outpost_extra value = -1 } }
         }
@@ -400,7 +391,6 @@ situation_event = {
                 days = 1
             }
         }
-
         #income
         owner = {
             export_trigger_value_to_variable = {
@@ -428,6 +418,50 @@ situation_event = {
         set_variable = {
             which = fwt_situation_continuous_total_revenue
             value = fwt_situation_continuous_total_revenue_sub
+        }
+    }
+}
+
+country_event = {
+    id = fwt.21
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        every_situation = {
+            limit = {
+                or = {
+                    situation_progress > 99.9
+                    situation_progress < 0
+                }
+                is_situation_type = fwt_situation_continuous_expansion
+            }
+            event_target:frame_expand@owner = {
+                remove_planet_flag = giga_frameworld_expand_queued
+                giga_frameworld_expand_deposit = {
+                    DEPOSIT = d_frameworld_expansion
+                    VAR = giga_frameworld_expansions
+                }
+                custom_tooltip = frameworld_line
+                giga_frameworld_expand_deposit = {
+                    DEPOSIT = d_frameworld_structure_expansion
+                    VAR = giga_frameworld_structure_expansions
+                }
+                custom_tooltip = frameworld_line
+                change_planet_size = 1
+
+                # update entity and do all the math
+                hidden_effect = {
+                    giga_frameworld_update_entity_with_fallback = yes
+                    #uncomment this once magiont stuff is added back
+                    # giga_frameworld_recalculate_variables = yes
+                    frameworld_conduct_audit_check_ai = yes
+                }
+                remove_flags = { NAME = giga_frameworld_expand }
+            }
+            reset_situation_progress = yes
+            # owner = { clear_variable = situation_progress start_situation = { type = fwt_situation_continuous_expansion }  }
+            # destroy_situation = this
         }
     }
 }
@@ -743,44 +777,48 @@ country_event = {
                 }
                 if = {
                     limit = {
-                        owner = {
+                        exists = solar_system.owner
+                        solar_system.owner = {
                             has_country_flag = fwt_asteroid_industry
                         }
                         is_asteroid_harvestable = { PLANET_INDUSTRY = yes }
                     }
-                    owner = {
+                    solar_system.owner = {
                         set_country_flag = has_more_asteroids_industry
                     }
                 }
                 else_if = {
                     limit = {
-                        owner = {
+                        exists = solar_system.owner
+                        solar_system.owner = {
                             has_country_flag = fwt_asteroid_harvesting
                         }
                         is_asteroid_harvestable = { PLANET_1 = yes }
                     }
-                    owner = {
+                    solar_system.owner = {
                         set_country_flag = has_more_asteroids
                     }
                 }
                 else_if = {
                     limit = {
-                        owner = {
+                        exists = solar_system.owner
+                        solar_system.owner = {
                             has_country_flag = fwt_asteroid_strategic
                         }
                         is_asteroid_harvestable = { PLANET_STRATEGIC = yes }
                     }
-                    owner = {
+                    solar_system.owner = {
                         set_country_flag = has_more_asteroids_strategic
                     }
                 }
                 else_if = {
                     limit = {
-                        owner = {
+                        exists = solar_system.owner
+                        solar_system.owner = {
                             has_country_flag = fwt_asteroid_harvesting_0
                         }
                     }
-                    owner = {
+                    solar_system.owner = {
                         set_country_flag = has_more_asteroids_0
                     }
                 }

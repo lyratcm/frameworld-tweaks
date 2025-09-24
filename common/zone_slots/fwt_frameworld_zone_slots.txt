@@ -1,5 +1,109 @@
 slot_frameworld_urban_01 = {
-    inline_script = zone_slots/fwt_zones_frameworld_urban_non_city
+    inline_script = zone_slots/fwt_exclude
+    include = {
+        district_giga_frameworld_foundry
+        district_giga_frameworld_city
+    }
+
+    unlock = { # planet scope
+        uses_district_set = giga_frameworld
+    }
+}
+
+slot_frameworld_urban_02 = {
+    inline_script = zone_slots/fwt_exclude
+    include = {
+        district_giga_frameworld_factory
+        district_giga_frameworld_city
+    }
+
+    unlock = { # planet scope
+        uses_district_set = giga_frameworld
+    }
+}
+
+slot_frameworld_urban_03 = {
+    inline_script = zone_slots/fwt_exclude
+    include = {
+        district_giga_frameworld_generator
+        district_giga_frameworld_city
+    }
+
+    unlock = { # planet scope
+        uses_district_set = giga_frameworld
+    }
+}
+
+slot_frameworld_urban_04 = {
+    inline_script = zone_slots/fwt_exclude
+    include = {
+        district_giga_frameworld_mining
+        district_giga_frameworld_city
+    }
+
+    unlock = { # planet scope
+        uses_district_set = giga_frameworld
+    }
+}
+
+slot_frameworld_urban_05 = {
+    inline_script = zone_slots/fwt_exclude
+    include = {
+        district_giga_frameworld_farming
+        district_giga_frameworld_city
+    }
+
+    unlock = { # planet scope
+        uses_district_set = giga_frameworld
+    }
+}
+
+slot_frameworld_urban_06 = {
+    inline_script = zone_slots/fwt_exclude
+    include = {
+        district_giga_frameworld_administrative
+        district_giga_frameworld_simulation
+        district_giga_frameworld_sanctuary
+        district_giga_frameworld_city
+    }
+
+    unlock = { # planet scope
+        uses_district_set = giga_frameworld
+    }
+}
+
+slot_frameworld_urban_07 = {
+    inline_script = zone_slots/fwt_exclude
+    include = {
+        district_giga_frameworld_science
+        district_giga_frameworld_city
+    }
+
+    unlock = { # planet scope
+        uses_district_set = giga_frameworld
+    }
+}
+
+slot_frameworld_urban_08 = {
+    inline_script = zone_slots/fwt_exclude
+    include = {
+        district_giga_frameworld_amenities
+        district_giga_frameworld_amenities_dystopian
+        district_giga_frameworld_amenities_gestalt
+        district_giga_frameworld_city
+    }
+
+    unlock = { # planet scope
+        uses_district_set = giga_frameworld
+    }
+}
+
+slot_frameworld_urban_09 = {
+    inline_script = zone_slots/fwt_exclude
+    include = {
+        district_giga_frameworld_trade
+        district_giga_frameworld_city
+    }
 
     unlock = { # planet scope
         uses_district_set = giga_frameworld

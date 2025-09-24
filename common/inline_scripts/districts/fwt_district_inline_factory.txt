@@ -40,15 +40,11 @@ inline_script = {
 	multiplier_string = "mult = fwt_consumer_goods_completion"
 }
 
-triggered_desc = {
-	trigger = {
-		exists = owner
-		owner = {
-			is_machine_empire = yes
-			has_edict = industrial_maintenance
-		}
-	}
-	text = job_maintenance_drone_effect_desc
+inline_script = {
+	script = planet/consumer_goods/fwt_artisan_job_swap
+	jobs = $JOBS$
+	multiplier_string = "mult = fwt_consumer_goods_completion"
+	condition = "owner = { not = { has_valid_civic = civic_machine_servitor } }"
 }
 
 base_buildtime = @[ city_time * $SIZE_COST$ * $SCALE$ ]
@@ -60,18 +56,18 @@ resources = {
 
 		mult = fwt_consumer_goods_completion
 	}
-	#half advanced cost (so base) and 0x advanced so none of the for tier 1
-	upkeep = {
-		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
-		mult = fwt_consumer_goods_completion
-	}
-	upkeep = {
-		trigger = {
-			check_variable = { which = fwt_mineral_completion value > 1 }
-		}
-		rare_crystals = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
-		mult = fwt_consumer_goods_completion
-	}
+	# #half advanced cost (so base) and 0x advanced so none of the for tier 1
+	# upkeep = {
+	# 	energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
+	# 	mult = fwt_consumer_goods_completion
+	# }
+	# upkeep = {
+	# 	trigger = {
+	# 		check_variable = { which = fwt_mineral_completion value > 1 }
+	# 	}
+	# 	rare_crystals = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+	# 	mult = fwt_consumer_goods_completion
+	# }
 
 	cost = {
 		trigger = {
@@ -81,16 +77,16 @@ resources = {
 		mult = fwt_consumer_goods_completion
 	}
 
-	upkeep = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_edict = industrial_maintenance
-			}
-		}
-		energy = 2
-		mult = fwt_consumer_goods_completion
-	}
+	# upkeep = {
+	# 	trigger = {
+	# 		exists = owner
+	# 		owner = {
+	# 			has_edict = industrial_maintenance
+	# 		}
+	# 	}
+	# 	energy = 2
+	# 	mult = fwt_consumer_goods_completion
+	# }
 }
 
 inline_script = {

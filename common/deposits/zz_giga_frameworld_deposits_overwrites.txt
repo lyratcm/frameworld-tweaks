@@ -268,7 +268,7 @@ d_giga_job_upkeep = {
 	triggered_planet_modifier = {
 		potential = { exists = owner owner = { is_gestalt = no giga_country_uses_priests = no } }
 
-		planet_psionic_jobs_produces_mult = 0.05
+        psionic_pop_bonus_workforce_mult = 0.05
 
 		multiplier = value:giga_planet_density_offset_shroud_conduit_by_pops|job|giga_shroud_conduit_worker|
 	}
@@ -276,15 +276,14 @@ d_giga_job_upkeep = {
 	triggered_planet_modifier = {
 		potential = { exists = owner owner = { is_gestalt = no giga_country_uses_priests = yes } }
 
-		planet_psionic_jobs_produces_mult = 0.05
+        psionic_pop_bonus_workforce_mult = 0.05
 
 		multiplier = value:giga_planet_density_offset_shroud_conduit_by_pops|job|giga_shroud_conduit_priest|
 	}
 
 	triggered_planet_modifier = {
 		potential = { exists = owner owner = { is_gestalt = yes } }
-
-		planet_psionic_jobs_produces_mult = 0.05
+        psionic_pop_bonus_workforce_mult = 0.05
 
 		multiplier = value:giga_planet_density_offset_shroud_conduit_by_pops|job|giga_shroud_conduit_drone|
 	}
@@ -324,7 +323,7 @@ d_giga_job_upkeep = {
 		"
 
 		modifiers = "
-			pop_job_trade_mult = 0.025 # tooltip says 5%?
+			planet_jobs_trade_produces_mult = 0.025
 			multiplier = value:giga_planet_density_offset_jobs_by_pops|job|bugged_financier|
 		"
 

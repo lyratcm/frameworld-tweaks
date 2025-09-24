@@ -135,7 +135,7 @@ country_event = {
 
 		# associate this country with a specific frame
 		set_country_flag = giga_frameworld@capital_scope
-
+		# start_situation = { type = genetic_ascension_situation }
 		capital_scope = {
 			# associate the frameworld with the country too
 			set_planet_flag = giga_frameworld@root
@@ -200,100 +200,112 @@ country_event = {
 				days = 3
 			}
 			remove_building = building_holo_theatres
-			fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_01 ZONE = district_giga_frameworld_foundry }
-			add_district = district_giga_frameworld_urban_01
+			fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_foundry ZONE = district_giga_frameworld_foundry }
+			add_district = district_giga_frameworld_foundry
 			if = {
-				limit = { owner = { country_uses_consumer_goods = yes } }
-				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_02 ZONE = district_giga_frameworld_factory }
+				limit = {
+					owner = {
+						OR = {
+							has_valid_civic = civic_machine_obsessional_directive
+							resource_expenses_compare = {
+								resource = consumer_goods
+								value > 0
+							}
+							is_gestalt = no
+						}
+						# not = { has_civic = civic_machine_servitor }
+					}
+				}
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_factory ZONE = district_giga_frameworld_factory }
 			}
-			else = {
-				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_02 ZONE = district_giga_frameworld_city }
-			}
-			fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_03 ZONE = district_giga_frameworld_generator }
-			if = {
-				limit = { owner = { is_gestalt = yes } }
-				add_district = district_giga_frameworld_urban_03
-			}
-			fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_04 ZONE = district_giga_frameworld_mining }
+			# else_if = {
+			# 	#don't replace for RS as they will want the district eventfully and don't want to confuse
+			# 	limit = { owner = { is_machine_empire = no } }
+			# 	fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_factory ZONE = district_giga_frameworld_city }
+			# }
+			# else = {
+			# 	add_district = district_giga_frameworld_generator
+			# }
+			fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_generator ZONE = district_giga_frameworld_generator }
+			add_district = district_giga_frameworld_generator
+			fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_mining ZONE = district_giga_frameworld_mining }
 			if = {
 				limit = { owner = { is_catalytic_empire = no } }
-				add_district = district_giga_frameworld_urban_04
-				add_district = district_giga_frameworld_urban_04
-				add_district = district_giga_frameworld_urban_04
+				add_district = district_giga_frameworld_mining
+				add_district = district_giga_frameworld_mining
+				add_district = district_giga_frameworld_mining
 			}
 			else = {
-				add_district = district_giga_frameworld_urban_05
-				add_district = district_giga_frameworld_urban_05
-				add_district = district_giga_frameworld_urban_05
-				add_district = district_giga_frameworld_urban_05
+				add_district = district_giga_frameworld_farming
+				add_district = district_giga_frameworld_farming
+				add_district = district_giga_frameworld_farming
+				add_district = district_giga_frameworld_farming
 			}
 			if = {
-				limit = { owner = { country_uses_food = yes } }
-				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_farming }
+				limit = {
+					owner = {
+						or = {
+							country_uses_bio_ships = yes
+							resource_expenses_compare = {
+								resource = food
+								value > 0
+							}
+							is_gestalt = no
+						}
+					}
+				}
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_farming ZONE = district_giga_frameworld_farming }
 				# if = {
 				# 	limit = { owner = { not = { has_civic = civic_machine_servitor } } }
-				# 	add_district = district_giga_frameworld_urban_05
+				# 	add_district = district_giga_frameworld_farming
 				# }
 			}
-			else = {
-				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_05 ZONE = district_giga_frameworld_city }
-			}
+			# else = {
+			# 	fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_farming ZONE = district_giga_frameworld_city }
+			# }
 			if = {
 				limit = { owner = { is_gestalt = no } }
-				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_administrative }
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_unity ZONE = district_giga_frameworld_administrative }
 			}
 			else_if = {
 				limit = { owner = { has_civic = civic_machine_servitor } }
-				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_sanctuary }
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_unity ZONE = district_giga_frameworld_sanctuary }
 			}
 			else_if = {
 				limit = { owner = { is_machine_empire = yes } }
-				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_simulation  }
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_unity ZONE = district_giga_frameworld_simulation  }
 			}
 			else_if = {
 				limit = { owner = { is_hive_empire = yes } }
-				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_06 ZONE = district_giga_frameworld_synapse  }
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_unity ZONE = district_giga_frameworld_synapse  }
 			}
 			if = {
 				limit = { owner = { is_catalytic_empire = no not = { has_civic = civic_machine_servitor } } }
 				add_building = {
-					district = district_giga_frameworld_urban_01
+					district = district_giga_frameworld_foundry
 					zone = district_giga_frameworld_foundry
 					building = building_foundry_1
 				}
 			}
 			else_if = {
 				limit = { owner = { is_catalytic_empire = no } }
-				add_district = district_giga_frameworld_urban_06
+				add_district = district_giga_frameworld_unity
 			}
-			fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_07 ZONE = district_giga_frameworld_science }
+			fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_science ZONE = district_giga_frameworld_science }
 			# add_district = district_giga_frameworld_science
-			if = {
-				limit = { owner = { is_gestalt = no } }
-				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_08 ZONE = district_giga_frameworld_amenities }
-			}
-			else_if = {
-				limit = { owner = { is_gestalt = yes } }
-				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_08 ZONE = district_giga_frameworld_amenities_gestalt }
-			}
-			else_if = {
-				limit = { owner = { has_civic = civic_dystopian_society } }
-				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_08 ZONE = district_giga_frameworld_amenities_dystopian }
-			}
-			# will be a metallurgist bonus at vanilla rates
 			# if = {
-			#     limit = {
-			#         has_global_flag = giga_buildcap_j
-			#     }
-			#     fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_09 ZONE = district_giga_frameworld_supertensiles  }
+			# 	limit = { owner = { is_gestalt = no } }
+			# 	fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_amenities ZONE = district_giga_frameworld_amenities }
 			# }
-			if = {
-				limit = { owner = { is_gestalt = no } }
-				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_09 ZONE = district_giga_frameworld_trade }
-			}
-			else = {
-				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_urban_09 ZONE = district_giga_frameworld_city }
-			}
+			# else_if = {
+			# 	limit = { owner = { is_gestalt = yes } }
+			# 	fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_amenities ZONE = district_giga_frameworld_amenities_gestalt }
+			# }
+			# else_if = {
+			# 	limit = { owner = { has_civic = civic_dystopian_society } }
+			# 	fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_amenities ZONE = district_giga_frameworld_amenities_dystopian }
+			# }
+			# fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_trade ZONE = district_giga_frameworld_trade }
 
 			remove_building = building_precinct_house
 			remove_building = building_stronghold

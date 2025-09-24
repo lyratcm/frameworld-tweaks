@@ -1,0 +1,17 @@
+include = {
+    district_giga_frameworld_city
+    district_giga_frameworld_foundry
+    district_giga_frameworld_factory
+    district_giga_frameworld_generator
+    district_giga_frameworld_mining
+    district_giga_frameworld_farming
+    district_giga_frameworld_trade
+    district_giga_frameworld_administrative
+    district_giga_frameworld_synapse
+    district_giga_frameworld_simulation
+    district_giga_frameworld_sanctuary
+    district_giga_frameworld_science
+    district_giga_frameworld_amenities
+    district_giga_frameworld_amenities_dystopian
+    district_giga_frameworld_amenities_gestalt
+}

@@ -7,10 +7,12 @@ inline_script = {
 	SIZE_COST = 0.5
 
 	JOBS = $JOBS$
-	JOBS = @frameworld_jobs_base
+	JOBS = @[ frameworld_jobs_base * 0.5 ]
 
 	SCALE = $SCALE$
 	SCALE = 1
 
 	JOB = $JOB$
+
+	condition = "$condition$"
 }

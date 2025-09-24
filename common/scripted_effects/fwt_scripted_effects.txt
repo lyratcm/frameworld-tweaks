@@ -1,0 +1,9 @@
+reset_situation_progress = {
+	set_variable = {
+		which = situation_progress
+		value = trigger:situation_progress
+	}
+	multiply_variable = { which = situation_progress value = -1 }
+	add_situation_progress = situation_progress
+	clear_variable = situation_progress
+}

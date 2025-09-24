@@ -586,7 +586,7 @@ giga_frameworld_outpost_growth_job_upkeep = {
 		}
 	]
 	divide = 100
-	mult = value:giga_frameworld_outpost_growth_count
+	mult = value:giga_frameworld_outpost_growth_count_hab
 	[[modifier]
 		mult = target.value:scripted_modifier_mult|MODIFIER|$modifier$|
 	]
@@ -636,6 +636,11 @@ giga_frameworld_outpost_growth_count_internal = {
 	add = @giga_frameworld_outpost_expansion_curve
 }
 
+giga_frameworld_outpost_count_raw_efficiency = {
+	weight = value:giga_frameworld_outpost_count_raw
+	mult = @fwt_base_job_efficiency_outpost_perc
+}
+
 fwt_frameworld_hab_percent = {
     weight = fwt_frameworld_planet_base_hab
 
@@ -665,4 +670,19 @@ frameworld_modifier_hab = {
 	weight = solar_system.owner_main_species.modifier:$MODIFIER$
 	# add = fwt_frameworld_planet_base_hab
 	add = solar_system.owner.modifier:$MODIFIER$
+}
+
+# giga_frameworld_outpost_growth_count_hab_round = {
+# 	weight = value:giga_frameworld_outpost_growth_count_hab|reduction|2|reduction_offset|4|
+# 	mult = 100
+# 	round = yes
+# 	divide = 100
+# }
+
+# doesn't work with script variables that have parameters
+fwt_loc_rounding = {
+	weight = value:$INPUT$
+	mult = 100
+	round = yes
+	divide = 100
 }

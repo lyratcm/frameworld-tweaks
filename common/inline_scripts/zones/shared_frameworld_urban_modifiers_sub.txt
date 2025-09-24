@@ -1,30 +1,34 @@
 @frameworld_housing_urban = 600
+@city_upkeep = 2
+@advanced_rare_cost = 30
+@advanced_rare_upkeep = 1
+@civic_tankbound_district_upkeep = 6
 
-resources = {
-    category = planet_districts
-    cost = {
-        minerals =  @advanced_cost
-        mult = frame_expansion_scale
-    }
-    upkeep = {
-        energy = @advanced_upkeep
-        mult = frame_expansion_scale
-    }
-    cost = {
-        trigger = {
-            check_variable = { which = frame_expansion_scale value > 1 }
-        }
-        $RARE$ = @advanced_rare_cost
-        mult = frame_expansion_scale
-    }
-    upkeep = {
-        trigger = {
-            check_variable = { which = frame_expansion_scale value > 1 }
-        }
-        $RARE$ = @advanced_rare_upkeep
-        mult = frame_expansion_scale
-    }
-}
+# resources = {
+#     category = planet_districts
+#     cost = {
+#         minerals =  @advanced_cost
+#         mult = frame_expansion_scale
+#     }
+#     upkeep = {
+#         energy = @advanced_upkeep
+#         mult = frame_expansion_scale
+#     }
+#     cost = {
+#         trigger = {
+#             check_variable = { which = frame_expansion_scale value > 1 }
+#         }
+#         $RARE$ = @advanced_rare_cost
+#         mult = frame_expansion_scale
+#     }
+#     upkeep = {
+#         trigger = {
+#             check_variable = { which = frame_expansion_scale value > 1 }
+#         }
+#         $RARE$ = @advanced_rare_upkeep
+#         mult = frame_expansion_scale
+#     }
+# }
 
 show_on_uncolonized = {
     uses_district_set = giga_frameworld

@@ -1,3 +1,4 @@
+#most of these can be cut
 @base_cost = 300
 @city_cost = 500
 @advanced_cost = 500
@@ -100,6 +101,7 @@ district_giga_frameworld_city = {
 		mult = frame_expansion_scale
 	}
 
+	#for if you pick the civic up later
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
@@ -110,6 +112,7 @@ district_giga_frameworld_city = {
 		modifier = {
 			planet_housing_add = -500
 		}
+		mult = frame_expansion_scale
 	}
 
 	triggered_planet_modifier = {
@@ -120,6 +123,7 @@ district_giga_frameworld_city = {
 		modifier = {
 			planet_housing_add = 500
 		}
+		mult = frame_expansion_scale
 	}
 
 	triggered_planet_modifier = {
@@ -132,6 +136,7 @@ district_giga_frameworld_city = {
 		modifier = {
 			planet_housing_add = 500
 		}
+		mult = frame_expansion_scale
 	}
 
 	triggered_planet_modifier = {
@@ -145,16 +150,18 @@ district_giga_frameworld_city = {
 		modifier = {
 			planet_housing_add = 500
 		}
+		mult = frame_expansion_scale
 	}
 
 	triggered_planet_modifier = {
 		potential = {
 			exists = owner
-			owner = { is_gestalt = no }
+			owner = { is_tankbound_empire = yes }
 		}
 		modifier = {
-			job_enforcer_add = @enforcer_add
+			job_production_overseer_add = 100
 		}
+		mult = frame_expansion_scale
 	}
 }
 
@@ -201,7 +208,6 @@ district_giga_frameworld_hive = {
 	triggered_planet_modifier = {
 		potential = { always = yes }
 		planet_housing_add = 1000
-		job_maintenance_drone_add = 300
 		mult = frame_expansion_scale
 	}
 	
@@ -222,7 +228,6 @@ district_giga_frameworld_hive = {
 		}
 		modifier = {
 			planet_housing_add = 500
-			job_maintenance_drone_add = 150
 		}
 	}
 	
@@ -233,16 +238,6 @@ district_giga_frameworld_hive = {
 		}
 		modifier = {
 			planet_housing_add = 500
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_patrol_drone_add = 50
 		}
 	}
 }
@@ -279,16 +274,13 @@ district_giga_frameworld_nexus = {
 				owner = {
 					is_ai = no
 				}
-
 				# we need more housing
 				free_housing < 10
-
 				# we might still need to unlock buildings
 				num_districts = {
 					type = district_giga_frameworld_nexus
 					value < 10
 				}
-
 				# if we need more maintenance drones
 				frameworld_needs_more_maintenance_drones = yes
 			}
@@ -313,7 +305,6 @@ district_giga_frameworld_nexus = {
 	triggered_planet_modifier = {
 		potential = { always = yes }
 		planet_housing_add = 1000
-		job_maintenance_drone_add = 300
 		mult = frame_expansion_scale
 	}
 	
@@ -334,7 +325,6 @@ district_giga_frameworld_nexus = {
 		}
 		modifier = {
 			planet_housing_add = 500
-			job_maintenance_drone_add = 150
 		}
 	}
 	
@@ -357,16 +347,6 @@ district_giga_frameworld_nexus = {
 			planet_housing_add = 500
 		}
 	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_gestalt = yes }
-		}
-		modifier = {
-			job_patrol_drone_add = 50
-		}
-	}
 }
 
 ###############################################################################################################
@@ -375,7 +355,7 @@ district_giga_frameworld_nexus = {
 ###############################################################################################################
 ###############################################################################################################
 
-district_giga_frameworld_urban_01 = {
+district_giga_frameworld_foundry = {
 	icon = district_arcology_arms_industry
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
@@ -385,139 +365,362 @@ district_giga_frameworld_urban_01 = {
 		slot_frameworld_urban_01
 	}
 
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = 400
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			energy = @city_upkeep
+			mult = frame_expansion_scale
+		}
+		cost = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			volatile_motes = @advanced_rare_cost
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			volatile_motes = @advanced_rare_upkeep
+			mult = frame_expansion_scale
+		}
+	}
+
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
-		RARE = volatile_motes
 	}
 }
 
-district_giga_frameworld_urban_02 = {
+district_giga_frameworld_factory = {
 	icon = district_arcology_civilian_industry
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 
 	zone_slots = {
-		slot_frameworld_urban_01
+		slot_frameworld_urban_02
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = 400
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			energy = @city_upkeep
+			mult = frame_expansion_scale
+		}
+		cost = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			rare_crystals = @advanced_rare_cost
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			rare_crystals = @advanced_rare_upkeep
+			mult = frame_expansion_scale
+		}
 	}
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
-		RARE = rare_crystals
 	}
 }
 
-district_giga_frameworld_urban_03 = {
+district_giga_frameworld_generator = {
 	icon = district_hab_energy
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 
 	zone_slots = {
-		slot_frameworld_urban_01
+		slot_frameworld_urban_03
+	}
+
+	resources = {
+		category = planet_districts_generator
+		cost = {
+			minerals = 400
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			energy = @city_upkeep
+			mult = frame_expansion_scale
+		}
+		cost = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			exotic_gases = @advanced_rare_cost
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			exotic_gases = @advanced_rare_upkeep
+			mult = frame_expansion_scale
+		}
 	}
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
-		RARE = exotic_gases
 	}
 }
 
-district_giga_frameworld_urban_04 = {
+district_giga_frameworld_mining = {
 	icon = district_hab_mining
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 
 	zone_slots = {
-		slot_frameworld_urban_01
+		slot_frameworld_urban_04
+	}
+
+	resources = {
+		category = planet_districts_mining
+		cost = {
+			minerals = 400
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			energy = @city_upkeep
+			mult = frame_expansion_scale
+		}
+		cost = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			rare_crystals = @advanced_rare_cost
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			rare_crystals = @advanced_rare_upkeep
+			mult = frame_expansion_scale
+		}
 	}
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
-		RARE = rare_crystals
 	}
 }
 
-district_giga_frameworld_urban_05 = {
+district_giga_frameworld_farming = {
 	icon = district_rw_farming
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 
 	zone_slots = {
-		slot_frameworld_urban_01
+		slot_frameworld_urban_05
+	}
+
+	resources = {
+		category = planet_districts_farming
+		cost = {
+			minerals = 400
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			energy = @city_upkeep
+			mult = frame_expansion_scale
+		}
+		cost = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			volatile_motes = @advanced_rare_cost
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			volatile_motes = @advanced_rare_upkeep
+			mult = frame_expansion_scale
+		}
 	}
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
-		RARE = volatile_motes
 	}
 }
 
-district_giga_frameworld_urban_06 = {
+district_giga_frameworld_unity = {
 	icon = district_arcology_administrative
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 
 	zone_slots = {
-		slot_frameworld_urban_01
+		slot_frameworld_urban_06
+	}
+
+	resources = {
+		category = planet_districts
+		cost = {
+			minerals = 400
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			energy = @city_upkeep
+			mult = frame_expansion_scale
+		}
+		cost = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			rare_crystals = @advanced_rare_cost
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			rare_crystals = @advanced_rare_upkeep
+			mult = frame_expansion_scale
+		}
 	}
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
-		RARE = rare_crystals
 	}
 }
 
-district_giga_frameworld_urban_07 = {
+district_giga_frameworld_science = {
 	icon = district_hab_science
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 
 	zone_slots = {
-		slot_frameworld_urban_01
+		slot_frameworld_urban_07
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = 400
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			energy = @city_upkeep
+			mult = frame_expansion_scale
+		}
+		cost = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			rare_crystals = @advanced_rare_cost
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			rare_crystals = @advanced_rare_upkeep
+			mult = frame_expansion_scale
+		}
 	}
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
-		RARE = exotic_gases
 	}
 }
 
-district_giga_frameworld_urban_08 = {
+district_giga_frameworld_amenities = {
 	icon = district_arcology_leisure
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 
 	zone_slots = {
-		slot_frameworld_urban_01
+		slot_frameworld_urban_08
 	}
 
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = 400
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			energy = @city_upkeep
+			mult = frame_expansion_scale
+		}
+		cost = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			rare_crystals = @advanced_rare_cost
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			rare_crystals = @advanced_rare_upkeep
+			mult = frame_expansion_scale
+		}
+	}
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
-		RARE = exotic_gases
 	}
 }
 
-district_giga_frameworld_urban_09 = {
+district_giga_frameworld_trade = {
 	icon = district_rw_commercial
 	base_buildtime = @base_time
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 
 	zone_slots = {
-		slot_frameworld_urban_01
+		slot_frameworld_urban_09
 	}
 
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = 400
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			energy = @city_upkeep
+			mult = frame_expansion_scale
+		}
+		cost = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			rare_crystals = @advanced_rare_cost
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			rare_crystals = @advanced_rare_upkeep
+			mult = frame_expansion_scale
+		}
+	}
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
-		RARE = rare_crystals
 	}
 
 }
@@ -533,11 +736,35 @@ district_giga_frameworld_extra_01 = {
 		slot_frameworld_urban_01
 	}
 
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = 400
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			energy = @city_upkeep
+			mult = frame_expansion_scale
+		}
+		cost = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			energy = @advanced_rare_cost
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			energy = @advanced_rare_upkeep
+			mult = frame_expansion_scale
+		}
+	}
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
 		POTENTIAL = "has_planet_flag = frameworld_advanced_city"
-		RARE = energy
 	}
 
 }
@@ -552,11 +779,35 @@ district_giga_frameworld_extra_02 = {
 		slot_frameworld_urban_01
 	}
 
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = 400
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			energy = @city_upkeep
+			mult = frame_expansion_scale
+		}
+		cost = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			energy = @advanced_rare_cost
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			energy = @advanced_rare_upkeep
+			mult = frame_expansion_scale
+		}
+	}
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
 		POTENTIAL = "has_planet_flag = frameworld_advanced_city"
-		RARE = energy
 	}
 
 }
@@ -571,11 +822,35 @@ district_giga_frameworld_extra_03 = {
 		slot_frameworld_urban_01
 	}
 
+	resources = {
+		category = planet_districts_cities
+		cost = {
+			minerals = 400
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			energy = @city_upkeep
+			mult = frame_expansion_scale
+		}
+		cost = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			energy = @advanced_rare_cost
+			mult = frame_expansion_scale
+		}
+		upkeep = {
+			trigger = {
+				check_variable = { which = frame_expansion_scale value > 1 }
+			}
+			energy = @advanced_rare_upkeep
+			mult = frame_expansion_scale
+		}
+	}
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
 		POTENTIAL = "has_planet_flag = frameworld_advanced_city"
-		RARE = energy
 	}
 
 }

@@ -19,11 +19,11 @@ resources = {
 		minerals = @[ advanced_cost * $SIZE_COST$ * $SCALE$ ]
 		mult = fwt_science_completion
 	}
-	#half advanced cost (so base) and 0x advanced so none of the for tier 1
-	upkeep = {
-		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
-		mult = fwt_science_completion
-	}
+	# #half advanced cost (so base) and 0x advanced so none of the for tier 1
+	# upkeep = {
+	# 	energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
+	# 	mult = fwt_science_completion
+	# }
 	cost = {
 		trigger = {
 			check_variable = { which = fwt_science_completion value > 1 }
@@ -31,22 +31,22 @@ resources = {
 		exotic_gases = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
 		mult = fwt_science_completion
 	}
-	#half advanced cost (so base) and 0x advanced so none of the for tier 1
-	upkeep = {
-		trigger = {
-			check_variable = { which = fwt_science_completion value > 1 }
-		}
-		exotic_gases = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
-		mult = fwt_science_completion
-	}
-	# nanite upgrade
-	upkeep = {
-		trigger = {
-			frameworld_has_active_nanite_upgrade = yes
-		}
-		nanites = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
-		mult = fwt_science_completion
-	}
+	# #half advanced cost (so base) and 0x advanced so none of the for tier 1
+	# upkeep = {
+	# 	trigger = {
+	# 		check_variable = { which = fwt_science_completion value > 1 }
+	# 	}
+	# 	exotic_gases = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+	# 	mult = fwt_science_completion
+	# }
+	# # nanite upgrade
+	# upkeep = {
+	# 	trigger = {
+	# 		frameworld_has_active_nanite_upgrade = yes
+	# 	}
+	# 	nanites = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+	# 	mult = fwt_science_completion
+	# }
 }
 
 planet_modifier = {

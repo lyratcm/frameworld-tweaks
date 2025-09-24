@@ -19,10 +19,10 @@ resources = {
         minerals = @[ advanced_cost * 0.5 ]
         mult = fwt_unity_trade_completion
     }
-    upkeep = {
-        energy = @[ advanced_upkeep * 0.5 ]
-        mult = fwt_unity_trade_completion
-    }
+    # upkeep = {
+    #     energy = @[ advanced_upkeep * 0.5 ]
+    #     mult = fwt_unity_trade_completion
+    # }
     cost = {
         trigger = {
             check_variable = { which = fwt_unity_trade_completion value > 1 }
@@ -30,13 +30,13 @@ resources = {
         exotic_gases = @[ advanced_rare_cost * 0.5 ]
         mult = fwt_unity_trade_completion
     }
-    upkeep = {
-        trigger = {
-            check_variable = { which = fwt_unity_trade_completion value > 1 }
-        }
-        exotic_gases = @[ advanced_rare_upkeep * 0.5 ]
-        mult = fwt_unity_trade_completion
-    }
+    # upkeep = {
+    #     trigger = {
+    #         check_variable = { which = fwt_unity_trade_completion value > 1 }
+    #     }
+    #     exotic_gases = @[ advanced_rare_upkeep * 0.5 ]
+    #     mult = fwt_unity_trade_completion
+    # }
 }
 
 planet_modifier = {
@@ -48,6 +48,14 @@ inline_script = {
 }
 
 inline_script = {
-    script = "$JOB$"
+    script = $JOB$
     JOBS = $JOBS$
+    multiplier_string = "mult = fwt_unity_trade_completion"
 }
+
+# inline_script = {
+#     script = $JOB$
+#     JOBS = $JOBS$
+#     # condition = "has_major_upgraded_capital = yes"
+#     # multiplier_string = "mult = fwt_unity_trade_completion"
+# }
