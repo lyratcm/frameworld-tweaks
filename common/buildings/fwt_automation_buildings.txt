@@ -196,7 +196,7 @@ building_fwt_automation_foundry_1 = {
     inline_script = {
         script = buildings/fwt_automation_building_1
         ZONE = foundry
-        DISTRICT = 01
+        DISTRICT = foundry
         COMPLETION = alloy
     }
 }
@@ -205,7 +205,7 @@ building_fwt_automation_foundry_2 = {
     inline_script = {
         script = buildings/fwt_automation_building_2
         ZONE = foundry
-        DISTRICT = 01
+        DISTRICT = foundry
         COMPLETION = alloy
     }
 }
@@ -214,7 +214,7 @@ building_fwt_automation_factory_1 = {
     inline_script = {
         script = buildings/fwt_automation_building_1
         ZONE = factory
-        DISTRICT = 02
+        DISTRICT = factory
         COMPLETION = consumer_goods
     }
 }
@@ -223,7 +223,7 @@ building_fwt_automation_factory_2 = {
     inline_script = {
         script = buildings/fwt_automation_building_2
         ZONE = factory
-        DISTRICT = 02
+        DISTRICT = factory
         COMPLETION = consumer_goods
     }
 }
@@ -232,7 +232,7 @@ building_fwt_automation_generator_1 = {
     inline_script = {
         script = buildings/fwt_automation_building_1
         ZONE = generator
-        DISTRICT = 03
+        DISTRICT = generator
         COMPLETION = energy
     }
 }
@@ -241,7 +241,7 @@ building_fwt_automation_generator_2 = {
     inline_script = {
         script = buildings/fwt_automation_building_2
         ZONE = generator
-        DISTRICT = 03
+        DISTRICT = generator
         COMPLETION = energy
     }
 }
@@ -250,7 +250,7 @@ building_fwt_automation_mining_1 = {
     inline_script = {
         script = buildings/fwt_automation_building_1
         ZONE = mining
-        DISTRICT = 04
+        DISTRICT = mining
         COMPLETION = mineral
     }
 }
@@ -259,7 +259,7 @@ building_fwt_automation_mining_2 = {
     inline_script = {
         script = buildings/fwt_automation_building_2
         ZONE = mining
-        DISTRICT = 04
+        DISTRICT = mining
         COMPLETION = mineral
     }
 }
@@ -268,7 +268,7 @@ building_fwt_automation_farming_1 = {
     inline_script = {
         script = buildings/fwt_automation_building_1
         ZONE = farming
-        DISTRICT = 05
+        DISTRICT = farming
         COMPLETION = food
     }
 }
@@ -277,7 +277,7 @@ building_fwt_automation_farming_2 = {
     inline_script = {
         script = buildings/fwt_automation_building_2
         ZONE = farming
-        DISTRICT = 05
+        DISTRICT = farming
         COMPLETION = food
     }
 }
@@ -286,7 +286,7 @@ building_fwt_automation_unity_1 = {
     inline_script = {
         script = buildings/fwt_automation_building_1
         ZONE = unity
-        DISTRICT = 06
+        DISTRICT = unity
         COMPLETION = unity_trade
     }
 }
@@ -295,7 +295,7 @@ building_fwt_automation_unity_2 = {
     inline_script = {
         script = buildings/fwt_automation_building_2
         ZONE = unity
-        DISTRICT = 06
+        DISTRICT = unity
         COMPLETION = unity_trade
     }
 }
@@ -304,7 +304,7 @@ building_fwt_automation_science_1 = {
     inline_script = {
         script = buildings/fwt_automation_building_1
         ZONE = science
-        DISTRICT = 07
+        DISTRICT = science
         COMPLETION = science
     }
 }
@@ -313,7 +313,7 @@ building_fwt_automation_science_2 = {
     inline_script = {
         script = buildings/fwt_automation_building_2
         ZONE = science
-        DISTRICT = 07
+        DISTRICT = science
         COMPLETION = science
     }
 }
@@ -322,7 +322,7 @@ building_fwt_automation_amenities_1 = {
     inline_script = {
         script = buildings/fwt_automation_building_1
         ZONE = amenities
-        DISTRICT = 08
+        DISTRICT = amenities
         COMPLETION = unity_trade
     }
 }
@@ -331,7 +331,7 @@ building_fwt_automation_amenities_2 = {
     inline_script = {
         script = buildings/fwt_automation_building_2
         ZONE = amenities
-        DISTRICT = 08
+        DISTRICT = amenities
         COMPLETION = unity_trade
     }
 }
@@ -340,7 +340,7 @@ building_fwt_automation_trade_1 = {
     inline_script = {
         script = buildings/fwt_automation_building_1
         ZONE = trade
-        DISTRICT = 09
+        DISTRICT = trade
         COMPLETION = unity_trade
     }
 }
@@ -349,7 +349,7 @@ building_fwt_automation_trade_2 = {
     inline_script = {
         script = buildings/fwt_automation_building_2
         ZONE = trade
-        DISTRICT = 09
+        DISTRICT = trade
         COMPLETION = unity_trade
     }
 }

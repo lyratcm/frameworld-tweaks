@@ -278,11 +278,11 @@ defined_text = {
     default = frameworld_blank
 }
 
-# You can also do this to use script values in loc:
-defined_text = {
-	name = fwt_total_pop_gain
-	value = value:total_pop_gain
-}
+# # You can also do this to use script values in loc:
+# defined_text = {
+# 	name = fwt_total_pop_gain
+# 	value = value:total_pop_gain
+# }
 
 defined_text = {
     name = fwt_pop_type
@@ -534,7 +534,7 @@ defined_text = {
                 has_tradition = tr_est_cybernetics_1
             }
         }
-        fwt_automation_city_upkeep_1_est
+        localization_key = fwt_automation_city_upkeep_1_est
     }
     default = fwt_automation_city_upkeep_1_no_est
 }
@@ -581,7 +581,171 @@ defined_text = {
     default = fwt_automation_upkeep_2_no_est
 }
 
-# defined_text = {
-# 	name = fwt_situation_speed_script_value
-# 	value = value:total_pop_gain
-# }
+
+defined_text = {
+    name = fwt_capital_upgrade_district
+    text = {
+        trigger = {
+            not = {
+                has_major_upgraded_capital = yes
+            }
+        }
+        localization_key = fwt_capital_upgrade_needed
+    }
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = fwt_unity_district_desc
+    text = {
+        trigger = {
+            owner = {
+                is_gestalt = no
+            }
+        }
+        localization_key = fwt_bio_unity_district_desc
+    }
+    text = {
+        trigger = {
+            owner = {
+                is_gestalt = yes
+                is_hive_empire = no
+                not = {
+                    has_civic = civic_machine_servitor
+                }
+            }
+        }
+        localization_key = fwt_machine_unity_district_desc
+    }
+    text = {
+        trigger = {
+            owner = {
+                is_gestalt = yes
+                is_hive_empire = no
+                has_civic = civic_machine_servitor
+            }
+        }
+        localization_key = fwt_rs_unity_district_desc
+    }
+    text = {
+        trigger = {
+            owner = {
+                is_gestalt = yes
+                is_hive_empire = yes
+            }
+        }
+        localization_key = fwt_hive_unity_district_desc
+    }
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = fwt_amenities_district_desc
+    text = {
+        trigger = {
+            owner = {
+                is_gestalt = no
+            }
+        }
+        localization_key = fwt_bio_amenities_district_desc
+    }
+    text = {
+        trigger = {
+            owner = {
+                is_gestalt = no
+                has_civic = civic_dystopian_society
+            }
+        }
+        localization_key = fwt_dystopian_unity_district_desc
+    }
+    text = {
+        trigger = {
+            owner = {
+                is_gestalt = yes
+            }
+        }
+        localization_key = fwt_gestal_unity_district_desc
+    }
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = fwt_housing_district_desc
+    text = {
+        trigger = {
+            owner = {
+                is_gestalt = no
+            }
+        }
+        localization_key = district_giga_frameworld_city_desc
+    }
+    text = {
+        trigger = {
+            owner = {
+                is_gestalt = yes
+                is_hive_empire = no
+            }
+        }
+        localization_key = district_giga_frameworld_nexus_desc
+    }
+    text = {
+        trigger = {
+            owner = {
+                is_gestalt = yes
+                is_hive_empire = yes
+            }
+        }
+        localization_key = district_giga_frameworld_hive_desc
+    }
+    default = frameworld_blank
+}
+
+defined_text = {
+    name = giga_frameworld_outpost_count_hab_loc
+    value = value:giga_frameworld_outpost_count_hab
+}
+
+defined_text = {
+    name = giga_frameworld_outpost_growth_count_hab_loc
+    value = value:giga_frameworld_outpost_growth_count_hab|reduction|2|reduction_offset|4|
+}
+
+defined_text = {
+    name = giga_frameworld_outpost_count_raw_loc
+    value = value:giga_frameworld_outpost_count_raw_efficiency
+}
+
+defined_text = {
+    name = fwt_amenities_district_swap
+    text = {
+        trigger = {
+            is_gestalt = no
+        }
+        localization_key = district_giga_frameworld_non_gestal
+    }
+    text = {
+        trigger = {
+            is_gestalt = yes
+        }
+        localization_key = district_giga_frameworld_gestal
+    }
+    default = frameworld_blank
+}
+
+
+defined_text = {
+    name = fwt_amenities_district_plural_swap
+    text = {
+        trigger = {
+            is_gestalt = no
+        }
+        localization_key = district_giga_frameworld_non_gestal_plural
+    }
+    text = {
+        trigger = {
+            is_gestalt = yes
+        }
+        localization_key = district_giga_frameworld_gestal_plural
+    }
+    default = frameworld_blank
+}

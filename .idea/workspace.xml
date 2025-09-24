@@ -4,40 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="adding dummy decisions to show player what the next decisions needed">
+    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="move my own variabled to their own file&#10;went through and modified the starting districts to have less bloat&#10;updated districts to only have 1 zone + city&#10;some districts start at half jobs and doulbe with capital upgrade&#10;fixed some scoping issues&#10;removed exccess desc as vanilla adds then automatically&#10;added an event that triggers on game start to set up my variables before the gigas event&#10;added better info to districts about job increases&#10;moved loc overwrites to replace">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_expansion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_expansion.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_upgrades.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_upgrades.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/governments/civics/fwt_frameworld_ow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/governments/civics/fwt_frameworld_ow.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_amenities.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_amenities.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/alloys/parts/fwt_foundry_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/alloys/parts/fwt_foundry_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/consumer_goods/parts/fwt_artisan_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/consumer_goods/parts/fwt_artisan_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/energy/parts/fwt_technician_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/energy/parts/fwt_technician_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/food/parts/fwt_farmer_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/food/parts/fwt_farmer_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/minerals/parts/fwt_miner_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/minerals/parts/fwt_miner_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_biologist_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_biologist_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_engineer_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_engineer_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_physicist_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/research/parts/fwt_physicist_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_politician_job_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_politician_job_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_politician_jobs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_politician_jobs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_ruler_swap_jobs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/rulers/parts/fwt_ruler_swap_jobs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/fwt_bureaucrat_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/planet/unity/parts/fwt_bureaucrat_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/on_actions/zz_fwt_on_actions.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/on_actions/zz_fwt_on_actions.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pop_jobs/zz_giga_growth_jobs.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/pop_jobs/zz_giga_growth_jobs.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_loc/zz_giga_frameworld_scripted_loc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_loc/zz_giga_frameworld_scripted_loc.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_triggers/fwt_triggers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_triggers/fwt_triggers.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_variables/!!!_giga_frameworld_variables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_variables/!!!_giga_frameworld_variables.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/situations/fwt_decision_situations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/situations/fwt_decision_situations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/situations/zz_giga_frameworld_situations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/situations/zz_giga_frameworld_situations.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/static_modifiers/fwt_static_modifier.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/static_modifiers/fwt_static_modifier.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_trade_params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_trade_params.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/fwt_events.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/fwt_events.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localisation/english/fwt_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/english/fwt_frameworld_l_english.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localisation/replace/english/zz_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/replace/english/zz_frameworld_l_english.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/plans.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plans.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +61,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.generate.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
@@ -97,7 +69,7 @@
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/common/traits&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
@@ -282,7 +254,31 @@
       <option name="project" value="LOCAL" />
       <updated>1757195808493</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Reworked expansion mult exponent is lower but base doubled each tier&#10;fixed double start event and remove unneeded start event&#10;removed duplicate job descs&#10;removed extra luxury residence when starting with high amenties&#10;reworked starting sitation options to show better&#10;changed auto harvest to allow for no stratgis and avoiding asteroid manufactory targets&#10;fixed missing loc on city zones&#10;moved cost calc for expansion to scrip values&#10;updated expansion tooltip to use the script values/scripted variables so don't have to manually update it everytime i change the numbers&#10;fixed deposit tooltip being out of date&#10;fixed an automod script being out of date">
+      <option name="closed" value="true" />
+      <created>1758487608781</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1758487608781</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Reworked expansion mult exponent is lower but base doubled each tier&#10;fixed double start event and remove unneeded start event&#10;removed duplicate job descs&#10;removed extra luxury residence when starting with high amenties&#10;reworked starting situation options to show better&#10;changed auto harvest to allow for no strategics and avoiding asteroid manufactory targets&#10;fixed missing loc on city zones&#10;moved cost calc for expansion to scrip values&#10;updated expansion tooltip to use the script values/scripted variables so don't have to manually update it everytime I want to change the numbers&#10;fixed deposit tooltip being out of date&#10;fixed an automod script being out of date">
+      <option name="closed" value="true" />
+      <created>1758487636876</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1758487636876</updated>
+    </task>
+    <task id="LOCAL-00022" summary="move my own variabled to their own file&#10;went through and modified the starting districts to have less bloat&#10;updated districts to only have 1 zone + city&#10;some districts start at half jobs and doulbe with capital upgrade&#10;fixed some scoping issues&#10;removed exccess desc as vanilla adds then automatically&#10;added an event that triggers on game start to set up my variables before the gigas event&#10;added better info to districts about job increases&#10;moved loc overwrites to replace">
+      <option name="closed" value="true" />
+      <created>1758754619027</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1758754619027</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -303,6 +299,9 @@
     <MESSAGE value="added a menu for starting the situations&#10;update the ecu desposit to be the same as vanilla ecu" />
     <MESSAGE value="hab efficiency support" />
     <MESSAGE value="output hab changes finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="output hab changes finished" />
+    <MESSAGE value="Reworked expansion mult exponent is lower but base doubled each tier&#10;fixed double start event and remove unneeded start event&#10;removed duplicate job descs&#10;removed extra luxury residence when starting with high amenties&#10;reworked starting sitation options to show better&#10;changed auto harvest to allow for no stratgis and avoiding asteroid manufactory targets&#10;fixed missing loc on city zones&#10;moved cost calc for expansion to scrip values&#10;updated expansion tooltip to use the script values/scripted variables so don't have to manually update it everytime i change the numbers&#10;fixed deposit tooltip being out of date&#10;fixed an automod script being out of date" />
+    <MESSAGE value="Reworked expansion mult exponent is lower but base doubled each tier&#10;fixed double start event and remove unneeded start event&#10;removed duplicate job descs&#10;removed extra luxury residence when starting with high amenties&#10;reworked starting situation options to show better&#10;changed auto harvest to allow for no strategics and avoiding asteroid manufactory targets&#10;fixed missing loc on city zones&#10;moved cost calc for expansion to scrip values&#10;updated expansion tooltip to use the script values/scripted variables so don't have to manually update it everytime I want to change the numbers&#10;fixed deposit tooltip being out of date&#10;fixed an automod script being out of date" />
+    <MESSAGE value="move my own variabled to their own file&#10;went through and modified the starting districts to have less bloat&#10;updated districts to only have 1 zone + city&#10;some districts start at half jobs and doulbe with capital upgrade&#10;fixed some scoping issues&#10;removed exccess desc as vanilla adds then automatically&#10;added an event that triggers on game start to set up my variables before the gigas event&#10;added better info to districts about job increases&#10;moved loc overwrites to replace" />
+    <option name="LAST_COMMIT_MESSAGE" value="move my own variabled to their own file&#10;went through and modified the starting districts to have less bloat&#10;updated districts to only have 1 zone + city&#10;some districts start at half jobs and doulbe with capital upgrade&#10;fixed some scoping issues&#10;removed exccess desc as vanilla adds then automatically&#10;added an event that triggers on game start to set up my variables before the gigas event&#10;added better info to districts about job increases&#10;moved loc overwrites to replace" />
   </component>
 </project>

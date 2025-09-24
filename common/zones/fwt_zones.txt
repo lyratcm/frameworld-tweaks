@@ -183,30 +183,6 @@ district_giga_frameworld_farming = {
 	}
 }
 
-district_giga_frameworld_trade = {
-	icon = GFX_colony_type_habitat_trade
-
-    unlock = {
-		exists = owner
-		owner = {
-			is_gestalt = no
-		}
-		uses_district_set = giga_frameworld
-	}
-
-	potential = {
-		exists = owner
-		owner = {
-			is_gestalt = no
-		}
-		uses_district_set = giga_frameworld
-}
-
-	inline_script = {
-		script =  districts/params/fwt_district_inline_trade_params
-	}
-}
-
 district_giga_frameworld_administrative = {
 	icon = GFX_colony_type_bureaucratic
 
@@ -232,6 +208,7 @@ district_giga_frameworld_administrative = {
 	inline_script = {
 		script = districts/params/fwt_district_inline_unity_params
 		JOB = "planet/unity/fwt_bureaucrat_swap"
+		condition = "has_major_upgraded_capital = yes"
 	}
 
     included_building_sets = {
@@ -269,6 +246,7 @@ district_giga_frameworld_synapse = {
 			is_hive_empire = yes
 		}
 		uses_district_set = giga_frameworld
+
 	}
 
     show_in_tech = tech_hive_node
@@ -292,6 +270,7 @@ district_giga_frameworld_synapse = {
 	inline_script = {
 		script = districts/params/fwt_district_inline_unity_params
 		JOB = "planet/unity/fwt_gestalt_unity_job_swap"
+		condition = "has_major_upgraded_capital = yes"
 	}
 
 	triggered_district_planet_modifier = {
@@ -314,20 +293,6 @@ district_giga_frameworld_synapse = {
 			}
 		}
 		job_maintenance_drone_add = @[ 100 * 1.25 ]
-	}
-
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_edict = synaptic_reinforcement
-			}
-		}
-		text = job_maintenance_drone_effect_desc
 	}
 }
 
@@ -373,6 +338,7 @@ district_giga_frameworld_simulation = {
 	inline_script = {
 		script = districts/params/fwt_district_inline_unity_params
 		JOB = "planet/unity/fwt_gestalt_unity_job_swap"
+		condition = "has_major_upgraded_capital = yes"
 	}
 }
 
@@ -403,6 +369,7 @@ district_giga_frameworld_sanctuary = {
 		script = districts/params/fwt_district_inline_unity_params
 		#lyra added to fit script
 		JOB = "districts/fwt_bio_trophy_job_swap"
+		condition = "has_major_upgraded_capital = yes"
 	}
 
 	convert_to = {
@@ -419,10 +386,6 @@ district_giga_frameworld_sanctuary = {
 
 	inline_script = {
 		script = zones/fwt_exclude_building
-	}
-
-	triggered_desc = {
-		text = job_bio_trophy_effect_desc
 	}
 }
 
@@ -486,6 +449,7 @@ district_giga_frameworld_amenities = {
 	inline_script = {
 		script = districts/params/fwt_district_inline_amenities_params
 		JOB = "districts/parts/fwt_normal_amentity_swap"
+		condition = "has_major_upgraded_capital = yes"
 	}
 
 }
@@ -519,6 +483,7 @@ district_giga_frameworld_amenities_dystopian = {
 	inline_script = {
 		script = districts/params/fwt_district_inline_amenities_params
 		JOB = "districts/parts/fwt_dystopian_amentity_swap"
+		condition = "has_major_upgraded_capital = yes"
 	}
 }
 
@@ -546,10 +511,33 @@ district_giga_frameworld_amenities_gestalt = {
 	inline_script = {
 		script = districts/params/fwt_district_inline_amenities_params
 		JOB = "districts/parts/fwt_gestalt_amentity_swap"
+		# condition = "has_major_upgraded_capital = yes"
 	}
 }
 
+district_giga_frameworld_trade = {
+	icon = GFX_colony_type_habitat_trade
 
+	unlock = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			is_gestalt = no
+		}
+		uses_district_set = giga_frameworld
+	}
+
+	inline_script = {
+		script = districts/params/fwt_district_inline_trade_params
+	}
+}
 
 ###############################################################################################################
 # city version of zones, half the districts so building 2 in a city isn't more effective
@@ -567,10 +555,10 @@ district_giga_frameworld_city_city = {
 			minerals = @city_cost
 			mult = fwt_city_completion
 		}
-		upkeep = {
-			energy = @city_upkeep
-			mult = fwt_city_completion
-		}
+		# upkeep = {
+		# 	energy = @city_upkeep
+		# 	mult = fwt_city_completion
+		# }
 	}
 
 	include = {
@@ -581,7 +569,6 @@ district_giga_frameworld_city_city = {
 		script = zones/fwt_all_exclude_building
 		DISTRICT = "building_fwt_automation_amenities_1	building_fwt_automation_amenities_2 building_fwt_automation_trade_1 building_fwt_automation_trade_2"
 	}
-
 
 	max_buildings = 3
 
@@ -832,19 +819,6 @@ district_giga_frameworld_synapse_city = {
 		job_maintenance_drone_add = @[ 100 * 1.25 ]
 	}
 
-	triggered_desc = {
-		text = job_synapse_drone_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				has_edict = synaptic_reinforcement
-			}
-		}
-		text = job_maintenance_drone_effect_desc
-	}
 }
 
 district_giga_frameworld_simulation_city = {
@@ -937,10 +911,6 @@ district_giga_frameworld_sanctuary_city = {
 
 	inline_script = {
 		script = zones/fwt_exclude_building
-	}
-
-	triggered_desc = {
-		text = job_bio_trophy_effect_desc
 	}
 }
 

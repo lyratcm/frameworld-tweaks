@@ -1,16 +1,7 @@
-#number is being doubled some where
-# triggered_district_planet_modifier = {
-#     potential = { always = yes }
-#     planet_housing_add = 600
-#     job_bio_trophy_add = 1500
-#     job_coordinator_add = 150
-#     $multiplier_string$
-# }
-
 triggered_district_planet_modifier = {
-    potential = { always = yes }
+    potential = { always = yes $condition$ }
     planet_housing_add = 300
-    job_bio_trophy_add = 750
+    job_bio_trophy_add = 1100
     job_coordinator_add = 75
     $multiplier_string$
 }

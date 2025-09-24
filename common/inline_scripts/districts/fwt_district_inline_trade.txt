@@ -19,11 +19,11 @@ resources = {
 		minerals = @[ advanced_cost * $SIZE_COST$ * $SCALE$ ]
 		mult = fwt_unity_trade_completion
 	}
-	#half advanced cost (so base) and 0x advanced so none of the for tier 1
-	upkeep = {
-		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
-		mult = fwt_unity_trade_completion
-	}
+	# #half advanced cost (so base) and 0x advanced so none of the for tier 1
+	# upkeep = {
+	# 	energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
+	# 	mult = fwt_unity_trade_completion
+	# }
 	cost = {
 		trigger = {
 			check_variable = { which = fwt_unity_trade_completion value > 1 }
@@ -31,14 +31,14 @@ resources = {
 		rare_crystals = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
 		mult = fwt_unity_trade_completion
 	}
-	#half advanced cost (so base) and 0x advanced so none of the for tier 1
-	upkeep = {
-		trigger = {
-			check_variable = { which = fwt_unity_trade_completion value > 1 }
-		}
-		rare_crystals = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
-		mult = fwt_unity_trade_completion
-	}
+	# #half advanced cost (so base) and 0x advanced so none of the for tier 1
+	# upkeep = {
+	# 	trigger = {
+	# 		check_variable = { which = fwt_unity_trade_completion value > 1 }
+	# 	}
+	# 	rare_crystals = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+	# 	mult = fwt_unity_trade_completion
+	# }
 }
 planet_modifier = {
 	zone_building_slots_add = 3
@@ -67,6 +67,31 @@ convert_to = {
 triggered_district_planet_modifier = {
 	job_trader_add = $JOBS$
 	mult = fwt_unity_trade_completion
+	potential = { owner = { is_gestalt = no } }
+}
+
+# triggered_district_planet_modifier = {
+# 	job_trader_add = $JOBS$
+# 	mult = fwt_unity_trade_completion
+# 	potential = {
+# 		owner = { is_gestalt = no }
+# 		has_major_upgraded_capital = yes
+# 	}
+# }
+
+triggered_district_planet_modifier = {
+	job_logistics_drone_add = $JOBS$
+	mult = fwt_unity_trade_completion
+	potential = { owner = { is_gestalt = yes } }
+}
+
+triggered_district_planet_modifier = {
+	job_logistics_drone_add = $JOBS$
+	mult = fwt_unity_trade_completion
+	potential = {
+		owner = { is_gestalt = yes }
+		has_major_upgraded_capital = yes
+	}
 }
 
 triggered_planet_modifier = {
@@ -80,12 +105,4 @@ triggered_planet_modifier = {
 		job_trader_add = 100
 		planet_housing_add = @[ 25 * $SIZE_COST$ ]
 	}
-}
-
-triggered_desc = {
-	text = job_clerk_effect_desc
-}
-
-triggered_desc = {
-	text = job_trader_effect_desc
 }

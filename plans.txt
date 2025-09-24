@@ -2,6 +2,7 @@
 # change expansion scale to have a lower exponent but increase base when doing so - less painful after a long time after expanding
 # 16x bonuses - alderson disk maybe although the origin gets pretty strong as this point maybe reduce exponent once more
 # aquatic support
+# better info about hab effect on outpost
 
 # test non-overwriting merge? - talk to gigas team about moving some of my ow into code - would help with compat with the other frameworld sub mod
 # gigas ehof spec support

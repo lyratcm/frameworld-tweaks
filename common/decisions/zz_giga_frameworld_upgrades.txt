@@ -68,7 +68,7 @@ giga_frameworld_penrose = {
 				owner = { country_event = { id = giga_frameworld_origin.001 } }
 			}
 			remove_planet_flag = frameworld_penrose_dec
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_03 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_generator }
 		}
 	}
 	on_queued = {
@@ -138,7 +138,7 @@ giga_frameworld_penrose_dummy = {
 				owner = { country_event = { id = giga_frameworld_origin.001 } }
 			}
 			remove_planet_flag = frameworld_penrose_dec
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_03 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_generator }
 		}
 	}
 	on_queued = {
@@ -218,7 +218,7 @@ giga_frameworld_decompressor = {
 				owner = { country_event = { id = giga_frameworld_origin.004 } }
 			}
 			remove_planet_flag = giga_frameworld_decompressor_dec
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_04 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_mining }
 		}
 	}
 	on_queued = {
@@ -294,7 +294,7 @@ giga_frameworld_decompressor_dummy = {
 				owner = { country_event = { id = giga_frameworld_origin.004 } }
 			}
 			remove_planet_flag = giga_frameworld_decompressor_dec
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_04 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_mining }
 		}
 	}
 	on_queued = {
@@ -420,10 +420,10 @@ giga_frameworld_advanced_city = {
 			add_modifier = { modifier = frameworld_building_wreck_fix }
 			set_planet_flag = frameworld_advanced_city
 			remove_planet_flag = frameworld_advanced_city_dec
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_01 }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_02 }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_06 }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_09 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_foundry }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_factory }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_unity }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_trade }
 			remove_modifier = frameworld_building_wreck_fix
 			if = {
 				limit = {
@@ -560,10 +560,10 @@ giga_frameworld_advanced_city_dummy = {
 			add_modifier = { modifier = frameworld_building_wreck_fix }
 			set_planet_flag = frameworld_advanced_city
 			remove_planet_flag = frameworld_advanced_city_dec
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_01 }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_02 }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_06 }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_09 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_foundry }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_factory }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_unity }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_trade }
 			remove_modifier = frameworld_building_wreck_fix
 			if = {
 				limit = {
@@ -666,8 +666,8 @@ giga_frameworld_advanced_industrial = {
 			add_deposit = d_frameworld_advanced_industrial
 			set_planet_flag = frameworld_advanced_industrial
 			hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.008 } } }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_01 }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_02 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_foundry }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_factory }
 			validate_planet_buildings_and_districts = yes
 			save_event_target_as = giga_planet
 			remove_planet_flag = giga_frameworld_advanced_industrial_dec
@@ -763,8 +763,8 @@ giga_frameworld_advanced_industrial_dummy = {
 			add_deposit = d_frameworld_advanced_industrial
 			set_planet_flag = frameworld_advanced_industrial
 			hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.008 } } }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_01 }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_02 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_foundry }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_factory }
 			validate_planet_buildings_and_districts = yes
 			save_event_target_as = giga_planet
 			remove_planet_flag = giga_frameworld_advanced_industrial_dec
@@ -853,7 +853,7 @@ giga_frameworld_advanced_sanctuary = {
 
 		save_event_target_as = giga_planet
 		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.009 } } }
-		fwt_half_district = { DISTRICT = district_giga_frameworld_urban_06 }
+		fwt_half_district = { DISTRICT = district_giga_frameworld_unity }
 
 	}
 	on_queued = {
@@ -939,7 +939,7 @@ giga_frameworld_advanced_sanctuary_dummy = {
 
 		save_event_target_as = giga_planet
 		hidden_effect = { owner = { country_event = { id = giga_frameworld_origin.009 } } }
-		fwt_half_district = { DISTRICT = district_giga_frameworld_urban_06 }
+		fwt_half_district = { DISTRICT = district_giga_frameworld_unity }
 
 	}
 	on_queued = {
@@ -1178,7 +1178,7 @@ giga_frameworld_computing_complex = {
 			set_variable = { which = fwt_science_completion value = 4 }
 			save_event_target_as = giga_planet
 			owner = { country_event = { id = giga_frameworld_origin.011 } }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_07 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_science }
 			validate_planet_buildings_and_districts = yes
 		}
 	}
@@ -1252,7 +1252,7 @@ giga_frameworld_computing_complex_dummy = {
 			set_variable = { which = fwt_science_completion value = 4 }
 			save_event_target_as = giga_planet
 			owner = { country_event = { id = giga_frameworld_origin.011 } }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_07 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_science }
 			validate_planet_buildings_and_districts = yes
 		}
 	}
@@ -1762,9 +1762,9 @@ giga_frameworld_habitat_upgrade = {
 				change_variable = { which = frame_expansion_upgrade value = 1 }
 			}
 			set_planet_flag = frameworld_habitat_upgrade
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_03 }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_04 }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_07 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_generator }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_mining }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_science }
 		}
 	}
 	on_queued = { hidden_effect = { set_planet_flag = frameworld_habitat_dec }  }
@@ -1878,9 +1878,9 @@ giga_frameworld_habitat_upgrade_dummy = {
 				change_variable = { which = frame_expansion_upgrade value = 1 }
 			}
 			set_planet_flag = frameworld_habitat_upgrade
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_03 }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_04 }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_07 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_generator }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_mining }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_science }
 		}
 	}
 	on_queued = { hidden_effect = { set_planet_flag = frameworld_habitat_dec }  }
@@ -1968,8 +1968,8 @@ giga_frameworld_interstellar_assembly = {
 			set_variable = { which = fwt_unity_trade_completion value = 4 }
 			set_variable = { which = fwt_sanctuary_completion value = 4 }
 			remove_planet_flag = interstellar_assembly_dec
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_06 }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_09 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_unity }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_trade }
 		}
 	}
 	on_queued = { hidden_effect = { set_planet_flag = interstellar_assembly_dec }  }
@@ -2059,8 +2059,8 @@ giga_frameworld_interstellar_assembly_dummy = {
 			set_variable = { which = fwt_unity_trade_completion value = 4 }
 			set_variable = { which = fwt_sanctuary_completion value = 4 }
 			remove_planet_flag = interstellar_assembly_dec
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_06 }
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_09 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_unity }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_trade }
 		}
 	}
 	on_queued = { hidden_effect = { set_planet_flag = interstellar_assembly_dec }  }
@@ -2135,7 +2135,7 @@ giga_frameworld_yggdrasil_orchid = {
 			add_completion_flag = { NAME = yggdrasil_orchid }
 			set_variable = { which = fwt_food_completion value = 4 }
 			remove_planet_flag = yggdrasil_orchid_dec
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_05 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_farming }
 		}
 	}
 	on_queued = { hidden_effect = { set_planet_flag = yggdrasil_orchid_dec }  }
@@ -2212,7 +2212,7 @@ giga_frameworld_yggdrasil_orchid_dummy = {
 			add_completion_flag = { NAME = yggdrasil_orchid }
 			set_variable = { which = fwt_food_completion value = 4 }
 			remove_planet_flag = yggdrasil_orchid_dec
-			fwt_half_district = { DISTRICT = district_giga_frameworld_urban_05 }
+			fwt_half_district = { DISTRICT = district_giga_frameworld_farming }
 		}
 	}
 	on_queued = { hidden_effect = { set_planet_flag = yggdrasil_orchid_dec }  }

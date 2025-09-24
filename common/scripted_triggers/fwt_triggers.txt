@@ -18,7 +18,9 @@ fwt_t1_upgrade = {
 }
 
 fwt_t2_upgrade = {
-    has_galactic_wonders = yes
+    owner = {
+        has_galactic_wonders = yes
+    }
 }
 
 is_asteroid_harvestable = {

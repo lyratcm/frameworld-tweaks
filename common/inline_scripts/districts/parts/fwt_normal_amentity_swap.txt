@@ -1,9 +1,10 @@
 triggered_district_planet_modifier = {
-    modifier = {
-        job_entertainer_add = $JOBS$
-    }
+    potential = { has_major_upgraded_capital = yes }
+    job_entertainer_add = $JOBS$
     mult = fwt_unity_trade_completion
 }
-desc = {
-    text = job_entertainer_effect_desc
+
+triggered_district_planet_modifier = {
+    job_entertainer_add = $JOBS$
+    mult = fwt_unity_trade_completion
 }

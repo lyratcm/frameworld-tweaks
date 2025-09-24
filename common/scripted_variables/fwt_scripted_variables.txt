@@ -6,3 +6,16 @@
 @advanced_rare_upkeep = 1
 @advanced_rare_cost = 30
 @advanced_time = 720
+
+#time that the frameworld expansion normally takes
+@fwt_frameworld_auto_expansion_time = 360
+
+@fwt_frameworld_expansion_cost_t1_upgrade = 2
+@fwt_frameworld_expansion_cost_t2_upgrade = 2
+@fwt_frameworld_expansion_cost_t3_upgrade = 2
+
+@fwt_base_job_efficiency_outpost_perc = 10
+
+@base_job_efficiency_outpost = 0.1
+#same as above but mult by 100 to show in locs
+@base_job_efficiency_outpost_perc = 10

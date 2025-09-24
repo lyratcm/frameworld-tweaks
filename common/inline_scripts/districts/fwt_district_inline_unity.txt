@@ -17,11 +17,11 @@ resources = {
 		minerals = @[ advanced_cost * $SIZE_COST$ * $SCALE$ ]
 		mult = fwt_unity_trade_completion
 	}
-	#half advanced cost (so base) and 0x advanced so none of the for tier 1
-	upkeep = {
-		energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
-		mult = fwt_unity_trade_completion
-	}
+	# #half advanced cost (so base) and 0x advanced so none of the for tier 1
+	# upkeep = {
+	# 	energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
+	# 	mult = fwt_unity_trade_completion
+	# }
 	cost = {
 		trigger = {
 			check_variable = { which = fwt_unity_trade_completion value > 1 }
@@ -29,14 +29,14 @@ resources = {
 		rare_crystals = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
 		mult = fwt_unity_trade_completion
 	}
-	#half advanced cost (so base) and 0x advanced so none of the for tier 1
-	upkeep = {
-		trigger = {
-			check_variable = { which = fwt_unity_trade_completion value > 1 }
-		}
-		rare_crystals = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
-		mult = fwt_unity_trade_completion
-	}
+	# #half advanced cost (so base) and 0x advanced so none of the for tier 1
+	# upkeep = {
+	# 	trigger = {
+	# 		check_variable = { which = fwt_unity_trade_completion value > 1 }
+	# 	}
+	# 	rare_crystals = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
+	# 	mult = fwt_unity_trade_completion
+	# }
 }
 
 inline_script = {
@@ -44,6 +44,14 @@ inline_script = {
 	jobs = $JOBS$
 	district = 1
 	multiplier_string = "mult = fwt_unity_trade_completion"
+}
+
+inline_script = {
+	script = $JOB$
+	jobs = $JOBS$
+	district = 1
+	multiplier_string = "mult = fwt_unity_trade_completion"
+	condition = "$condition$"
 }
 
 inline_script = {
