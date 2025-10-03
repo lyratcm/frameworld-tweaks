@@ -4,7 +4,7 @@ namespace = giga_frameworld_origin
 ###############################################################################################################################################
 # System initializer finisher, upgrade notifications
 ###############################################################################################################################################
-
+#for some reason using !! for event name leads to the on actions failing (something weird with having a higher prio than the on aaction while not ow the event)
 ### game start
 country_event = {
     id = giga_frameworld_origin.000

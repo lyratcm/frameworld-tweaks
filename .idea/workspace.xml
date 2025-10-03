@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="fixed auto harvest situation&#10;fixed expansion decision not being set at game start&#10;removed uneeded scripted vars&#10;fixed auto resettle event missing correct scope&#10;added mod icon">
-      <change afterPath="$PROJECT_DIR$/common/scripted_loc/!!_giga_frameworld_scriped_loc.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/localisation/replace/english/!!_fwt_low_prio_ow_l_english.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
+    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="changed exponent reduction to ecu perk and added text (that should get overwritten) on the perl&#10;cleaned up uneeded comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_loc/zz_giga_frameworld_scripted_loc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_loc/fwt_frameworld_scripted_loc.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events/fwt_events.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/fwt_events.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/localisation/replace/english/zz_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/replace/english/zz_frameworld_l_english.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_triggers/zz_giga_assembly_triggers.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_triggers/zz_giga_assembly_triggers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/zz_gigas_ow.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,25 +57,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.generate.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/localisation/replace/english",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.editor",
-    "two.files.diff.last.used.folder": "C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.generate.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/localisation/replace/english&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
+    &quot;two.files.diff.last.used.folder&quot;: &quot;C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/common&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\localisation\replace\english" />
@@ -306,7 +301,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759453943533</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="changed exponent reduction to ecu perk and added text (that should get overwritten) on the perl&#10;cleaned up uneeded comments">
+      <option name="closed" value="true" />
+      <created>1759506062303</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1759506062303</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -332,6 +335,7 @@
     <MESSAGE value="move my own variabled to their own file&#10;went through and modified the starting districts to have less bloat&#10;updated districts to only have 1 zone + city&#10;some districts start at half jobs and doulbe with capital upgrade&#10;fixed some scoping issues&#10;removed exccess desc as vanilla adds then automatically&#10;added an event that triggers on game start to set up my variables before the gigas event&#10;added better info to districts about job increases&#10;moved loc overwrites to replace" />
     <MESSAGE value="move my own variabled to their own file&#10;went through and modified the starting districts to have less bloat&#10;updated districts to only have 1 zone + city&#10;some districts start at half jobs and doulbe with capital upgrade&#10;fixed some scoping issues&#10;removed excess desc as vanilla adds then automatically&#10;added an event that triggers on game start to set up my variables before the gigas event&#10;added better info to districts about job increases&#10;moved loc overwrites to replace" />
     <MESSAGE value="fixed auto harvest situation&#10;fixed expansion decision not being set at game start&#10;removed uneeded scripted vars&#10;fixed auto resettle event missing correct scope&#10;added mod icon" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed auto harvest situation&#10;fixed expansion decision not being set at game start&#10;removed uneeded scripted vars&#10;fixed auto resettle event missing correct scope&#10;added mod icon" />
+    <MESSAGE value="changed exponent reduction to ecu perk and added text (that should get overwritten) on the perl&#10;cleaned up uneeded comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed exponent reduction to ecu perk and added text (that should get overwritten) on the perl&#10;cleaned up uneeded comments" />
   </component>
 </project>
