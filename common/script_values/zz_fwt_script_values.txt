@@ -530,7 +530,7 @@ fwt_base_expansion_exponent = {
 	base = @giga_frameworld_expansion_cost_exponent
 	modifier = {
 		add = @giga_frameworld_expansion_exponent_voidborne
-		owner = { has_ascension_perk = ap_voidborn }
+		owner = { has_ascension_perk = ap_arcology_project }
 	}
 	modifier = {
 		add = @giga_frameworld_expansion_exponent_ringworld

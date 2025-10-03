@@ -1,0 +1,13 @@
+defined_text = {
+    name = FrameworldExpansionMult2
+
+    text = {
+        trigger = {
+            has_ascension_perk = ap_arcology_project
+        }
+
+        localization_key = giga_frameworld_expand_multiplier_discount_mod_2
+    }
+
+    default = frameworld_blank
+}

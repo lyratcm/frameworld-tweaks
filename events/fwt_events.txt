@@ -579,15 +579,6 @@ country_event = {
         start_situation = { type = fwt_situation_frameworld_continuous_harvest }
         country_event = { id = fwt.4 }
     }
-    # option = {
-    # 	name = fwt.4.maintenance
-    # 	country_event = {
-    # 		id = fwt.43
-    # 	}
-    # 	country_event = {
-    # 		id = fwt.4
-    # 	}
-    # }
     option = {
         allow = { not = { any_situation = { is_situation_type = fwt_situation_continuous_expansion } } }
         name = fwt.4.auto_expand

@@ -1,0 +1,3 @@
+﻿#overwrite vanilla stuff but this should mean any actual ow overwrite this
+l_english:
+  decision_arcology_project_effects:1 "Turns the planet into an §Y$pc_city$§!, increasing £housing£ §Y$PLANET_HOUSING_TITLE$§!, §YResource Production§! and §YPop Growth§! and unlocking special £district£ §YArcology Districts§! at the expense of the planet's natural resources becoming §Rinaccessible§!, preventing all further development of £district£ §YGenerator§!, §YMining§! and §YAgriculture Districts§!.\n\nReduces the exponent of the frameworld expansions by §G$@giga_frameworld_expansion_exponent_voidborne$x§!"

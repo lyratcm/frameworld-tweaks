@@ -48,7 +48,7 @@
   giga_frameworld_expand_base_discount_mod_1:0 "\n    $tech_habitat_2$: §G$@giga_frameworld_expansion_cost_habitat_2|*0$§!"
   giga_frameworld_expand_base_discount_mod_2:0 "\n    $tech_habitat_3$: §G$@giga_frameworld_expansion_cost_habitat_3|*0$§!"
 
-  giga_frameworld_expand_multiplier_discount_mod_2:0 "\n    $ap_voidborn$: §G$@giga_frameworld_expansion_exponent_voidborne$x§!"
+  giga_frameworld_expand_multiplier_discount_mod_2:0 "\n    $ap_arcology_project$: §G$@giga_frameworld_expansion_exponent_voidborne$x§!"
   giga_frameworld_expand_multiplier_discount_mod_3:0 "\n    $tech_ring_world$: §G$@giga_frameworld_expansion_exponent_ringworld$x§!"
 
   giga_frameworld_expand:0 "$giga_frameworld_expand_name$§B§!"
