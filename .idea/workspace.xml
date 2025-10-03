@@ -4,11 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="move my own variabled to their own file&#10;went through and modified the starting districts to have less bloat&#10;updated districts to only have 1 zone + city&#10;some districts start at half jobs and doulbe with capital upgrade&#10;fixed some scoping issues&#10;removed exccess desc as vanilla adds then automatically&#10;added an event that triggers on game start to set up my variables before the gigas event&#10;added better info to districts about job increases&#10;moved loc overwrites to replace">
+    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="cut some unneeded variables">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/districts/giga_frameworld_districts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/districts/giga_frameworld_districts.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_science.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_science.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_trade_params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_trade_params.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/situations/fwt_decision_situations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/situations/fwt_decision_situations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/descriptor.mod" beforeDir="false" afterPath="$PROJECT_DIR$/descriptor.mod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/!!!_gigas_ow.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/fwt_events.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/fwt_events.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/replace/english/zz_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/replace/english/zz_frameworld_l_english.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,11 +91,11 @@
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\districts\params" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\zone_slots" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\events" />
       <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\deposits" />
-      <recent name="C:\Users\dan20\Documents\Paradox Interactive\Stellaris\mod\frameworld tweaks\common\inline_scripts\deposits\part" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -278,7 +283,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758754619027</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="move my own variabled to their own file&#10;went through and modified the starting districts to have less bloat&#10;updated districts to only have 1 zone + city&#10;some districts start at half jobs and doulbe with capital upgrade&#10;fixed some scoping issues&#10;removed excess desc as vanilla adds then automatically&#10;added an event that triggers on game start to set up my variables before the gigas event&#10;added better info to districts about job increases&#10;moved loc overwrites to replace">
+      <option name="closed" value="true" />
+      <created>1758835767513</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1758835767513</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -302,6 +315,7 @@
     <MESSAGE value="Reworked expansion mult exponent is lower but base doubled each tier&#10;fixed double start event and remove unneeded start event&#10;removed duplicate job descs&#10;removed extra luxury residence when starting with high amenties&#10;reworked starting sitation options to show better&#10;changed auto harvest to allow for no stratgis and avoiding asteroid manufactory targets&#10;fixed missing loc on city zones&#10;moved cost calc for expansion to scrip values&#10;updated expansion tooltip to use the script values/scripted variables so don't have to manually update it everytime i change the numbers&#10;fixed deposit tooltip being out of date&#10;fixed an automod script being out of date" />
     <MESSAGE value="Reworked expansion mult exponent is lower but base doubled each tier&#10;fixed double start event and remove unneeded start event&#10;removed duplicate job descs&#10;removed extra luxury residence when starting with high amenties&#10;reworked starting situation options to show better&#10;changed auto harvest to allow for no strategics and avoiding asteroid manufactory targets&#10;fixed missing loc on city zones&#10;moved cost calc for expansion to scrip values&#10;updated expansion tooltip to use the script values/scripted variables so don't have to manually update it everytime I want to change the numbers&#10;fixed deposit tooltip being out of date&#10;fixed an automod script being out of date" />
     <MESSAGE value="move my own variabled to their own file&#10;went through and modified the starting districts to have less bloat&#10;updated districts to only have 1 zone + city&#10;some districts start at half jobs and doulbe with capital upgrade&#10;fixed some scoping issues&#10;removed exccess desc as vanilla adds then automatically&#10;added an event that triggers on game start to set up my variables before the gigas event&#10;added better info to districts about job increases&#10;moved loc overwrites to replace" />
-    <option name="LAST_COMMIT_MESSAGE" value="move my own variabled to their own file&#10;went through and modified the starting districts to have less bloat&#10;updated districts to only have 1 zone + city&#10;some districts start at half jobs and doulbe with capital upgrade&#10;fixed some scoping issues&#10;removed exccess desc as vanilla adds then automatically&#10;added an event that triggers on game start to set up my variables before the gigas event&#10;added better info to districts about job increases&#10;moved loc overwrites to replace" />
+    <MESSAGE value="move my own variabled to their own file&#10;went through and modified the starting districts to have less bloat&#10;updated districts to only have 1 zone + city&#10;some districts start at half jobs and doulbe with capital upgrade&#10;fixed some scoping issues&#10;removed excess desc as vanilla adds then automatically&#10;added an event that triggers on game start to set up my variables before the gigas event&#10;added better info to districts about job increases&#10;moved loc overwrites to replace" />
+    <option name="LAST_COMMIT_MESSAGE" value="move my own variabled to their own file&#10;went through and modified the starting districts to have less bloat&#10;updated districts to only have 1 zone + city&#10;some districts start at half jobs and doulbe with capital upgrade&#10;fixed some scoping issues&#10;removed excess desc as vanilla adds then automatically&#10;added an event that triggers on game start to set up my variables before the gigas event&#10;added better info to districts about job increases&#10;moved loc overwrites to replace" />
   </component>
 </project>

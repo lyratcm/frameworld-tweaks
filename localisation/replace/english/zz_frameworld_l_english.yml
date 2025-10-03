@@ -25,7 +25,7 @@
  district_giga_frameworld_unity_plural: "Specialized Administrative"
  mod_planet_district_giga_frameworld_unity_build_speed_mult_desc: "REPLACE_ME"
  district_giga_frameworld_science: "Specialized Science"
- district_giga_frameworld_science_desc: "Advanced laboratories where research is conducted in every scientific field."
+ district_giga_frameworld_science_desc: "Advanced laboratories where research is conducted in every scientific field.[this.fwt_capital_upgrade_district]"
  district_giga_frameworld_science_plural: "Specialized Science"
  mod_planet_district_giga_frameworld_science_build_speed_mult_desc: "REPLACE_ME"
  district_giga_frameworld_amenities: "$district_giga_frameworld_non_gestal$"

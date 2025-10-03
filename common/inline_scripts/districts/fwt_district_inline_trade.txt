@@ -70,14 +70,14 @@ triggered_district_planet_modifier = {
 	potential = { owner = { is_gestalt = no } }
 }
 
-# triggered_district_planet_modifier = {
-# 	job_trader_add = $JOBS$
-# 	mult = fwt_unity_trade_completion
-# 	potential = {
-# 		owner = { is_gestalt = no }
-# 		has_major_upgraded_capital = yes
-# 	}
-# }
+triggered_district_planet_modifier = {
+	job_trader_add = $JOBS$
+	mult = fwt_unity_trade_completion
+	potential = {
+		owner = { is_gestalt = no }
+		has_major_upgraded_capital = yes
+	}
+}
 
 triggered_district_planet_modifier = {
 	job_logistics_drone_add = $JOBS$

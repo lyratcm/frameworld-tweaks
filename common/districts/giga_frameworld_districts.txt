@@ -3,44 +3,17 @@
 @city_cost = 500
 @advanced_cost = 500
 @advanced_rare_cost = 30
-@advanced_double_cost = 1000
-@advanced_double_rare_cost = 60
-@elite_cost = 2000
-@elite_rare_cost = 100
-@elite_double_cost = 4000
-@elite_double_rare_cost = 200
-@mega_cost = 2000
-@mega_alloy_cost = 500
-@mega_rare_cost = 250
 
 @base_upkeep = 1
 @city_upkeep = 2
 @advanced_upkeep = 3
 @advanced_rare_upkeep = 1
-@advanced_double_upkeep = 10
-@advanced_double_rare_upkeep = 2
-@elite_upkeep = 10
-@elite_rare_upkeep = 2
-@elite_double_upkeep = 20
-@elite_double_rare_upkeep = 4
-@mega_upkeep = 20
-@mega_alloy_upkeep = 5
-@mega_rare_upkeep = 5
 
 @base_time = 240
 @city_time = 480
 @advanced_time = 720
 @elite_time = 1420
 @mega_time = 960
-
-@base_housing = 1
-
-@double = 2
-@scale = 1
-@half = 0.5
-@quarter = 0.25
-
-@enforcer_add = 50
 
 #size cost is scaling for things that are halved at stage 1 but are 1 and 2 at those stages
 # size is for things that are like above but don't happen at stage 1 e.g. rare upkeep

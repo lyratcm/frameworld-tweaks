@@ -229,15 +229,11 @@ country_event = {
 			fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_generator ZONE = district_giga_frameworld_generator }
 			#give megacorps more starting trade
 			if = {
-				limit = {
-					owner = {
-						is_megacorp = no
-					}
-				}
+				limit = { owner = { is_megacorp = no } }
 				add_district = district_giga_frameworld_generator
 			}
 			else = {
-				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_unity ZONE = district_giga_frameworld_trade  }
+				fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_trade ZONE = district_giga_frameworld_trade  }
 			}
 			fwt_adding_district_zone_or_building = { DISTRICT = district_giga_frameworld_mining ZONE = district_giga_frameworld_mining }
 			if = {

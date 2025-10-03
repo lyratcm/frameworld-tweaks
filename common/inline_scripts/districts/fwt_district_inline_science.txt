@@ -59,10 +59,19 @@ inline_script = {
 
 inline_script = {
 	script = planet/research/fwt_researcher_job_swap
-	jobs = @[ $JOBS$ * $SIZE_COST$ * 2 ]
+	jobs = @[ $JOBS$ * $SIZE_COST$ ]
 	district = @yes
 	mode = @job_mode_add
 	condition = "frameworld_has_active_nanite_upgrade = no"
+	multiplier_string = "mult = fwt_science_completion"
+}
+
+inline_script = {
+	script = planet/research/fwt_researcher_job_swap
+	jobs = @[ $JOBS$ * $SIZE_COST$ ]
+	district = @yes
+	mode = @job_mode_add
+	condition = "frameworld_has_active_nanite_upgrade = no  has_major_upgraded_capital = yes"
 	multiplier_string = "mult = fwt_science_completion"
 }
 
@@ -79,8 +88,17 @@ inline_script = {
 # nanite upgrade
 inline_script = {
 	script = planet/research/fwt_nanotech_researcher_job_swap
-	jobs = $JOBS$
+	jobs = @[ $JOBS$ /2 ]
 	district = 1
 	condition = "frameworld_has_active_nanite_upgrade = yes"
+	multiplier_string = "mult = fwt_science_completion"
+}
+
+
+inline_script = {
+	script = planet/research/fwt_nanotech_researcher_job_swap
+	jobs = @[ $JOBS$ /2 ]
+	district = 1
+	condition = "frameworld_has_active_nanite_upgrade = yes has_major_upgraded_capital = yes"
 	multiplier_string = "mult = fwt_science_completion"
 }
