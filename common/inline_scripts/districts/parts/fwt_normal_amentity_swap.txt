@@ -1,10 +1,10 @@
 triggered_district_planet_modifier = {
-    potential = { has_major_upgraded_capital = yes }
-    job_entertainer_add = $JOBS$
+    potential = { owner = { has_ascension_perk = ap_arcology_project }}
+    job_entertainer_add = 100
     mult = fwt_unity_trade_completion
 }
 
 triggered_district_planet_modifier = {
-    job_entertainer_add = $JOBS$
+    job_entertainer_add = @[ frameworld_jobs_base - 100 ]
     mult = fwt_unity_trade_completion
 }

@@ -35,8 +35,15 @@ inline_script = {
 
 inline_script = {
 	script = planet/alloys/fwt_foundry_job_swap
-	jobs = $JOBS$
+	jobs = @[ frameworld_jobs_base - 100 ]
 	multiplier_string = "mult = fwt_alloy_completion"
+}
+
+inline_script = {
+	script = planet/alloys/fwt_foundry_job_swap
+	jobs = 100
+	multiplier_string = "mult = fwt_alloy_completion"
+	condition = "owner = { has_ascension_perk = ap_arcology_project }"
 }
 
 base_buildtime = @city_time

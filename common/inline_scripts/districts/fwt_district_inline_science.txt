@@ -59,7 +59,7 @@ inline_script = {
 
 inline_script = {
 	script = planet/research/fwt_researcher_job_swap
-	jobs = @[ $JOBS$ * $SIZE_COST$ ]
+	jobs = @[ $JOBS$ - 200 ]
 	district = @yes
 	mode = @job_mode_add
 	condition = "frameworld_has_active_nanite_upgrade = no"
@@ -68,10 +68,10 @@ inline_script = {
 
 inline_script = {
 	script = planet/research/fwt_researcher_job_swap
-	jobs = @[ $JOBS$ * $SIZE_COST$ ]
+	jobs = 100
 	district = @yes
 	mode = @job_mode_add
-	condition = "frameworld_has_active_nanite_upgrade = no  has_major_upgraded_capital = yes"
+	condition = "frameworld_has_active_nanite_upgrade = no 				owner = { has_ascension_perk = ap_arcology_project }"
 	multiplier_string = "mult = fwt_science_completion"
 }
 

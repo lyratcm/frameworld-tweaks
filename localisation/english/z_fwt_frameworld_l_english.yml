@@ -281,3 +281,4 @@
  fwt.41.enable_strategic_1: "Stop harvesting asteroids"
  fwt.41.enable_asteroid_industry: "Harvest all asteroids but ones with that will fit a asteroid manufactory"
  fwt.41.enable_asteroid_industry_1: "Stop harvesting asteroids"
+ fwt_missing_hab_upgrade: "Requires Habitat Upgrade completed"

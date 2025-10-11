@@ -15,7 +15,8 @@
 @elite_time = 1420
 @mega_time = 960
 
-#size cost is scaling for things that are halved at stage 1 but are 1 and 2 at those stages
+# no fulled longer used but shows up in legacy code
+# size cost is scaling for things that are halved at stage 1 but are 1 and 2 at those stages
 # size is for things that are like above but don't happen at stage 1 e.g. rare upkeep
 # scale is for t2 as vanilla doesn't scale costs for stuff like ring world districts based on the number of jobs so doubling it too high
 
@@ -363,6 +364,17 @@ district_giga_frameworld_foundry = {
 			mult = frame_expansion_scale
 		}
 	}
+	# #job add
+	# inline_script = {
+	# 	script = planet/alloys/fwt_foundry_job_swap
+	# 	jobs = @frameworld_jobs_base
+	# 	multiplier_string = "mult = fwt_alloy_completion"
+	# }
+	# #reduction to account from jobs from the zone
+	# inline_script = {
+	# 	script = planet/alloys/fwt_foundry_job_swap
+	# 	jobs = @frameworld_jobs_offset
+	# }
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
@@ -405,6 +417,31 @@ district_giga_frameworld_factory = {
 		}
 	}
 
+	# inline_script = {
+	# 	script = planet/consumer_goods/fwt_artisan_job_swap
+	# 	jobs = @[ frameworld_jobs_base * 0.5 ]
+	# 	multiplier_string = "mult = fwt_consumer_goods_completion"
+	# }
+	#
+	# inline_script = {
+	# 	script = planet/consumer_goods/fwt_artisan_job_swap
+	# 	jobs = @[ frameworld_jobs_base * 0.5 ]
+	# 	multiplier_string = "mult = fwt_consumer_goods_completion"
+	# 	condition = "owner = { not = { has_valid_civic = civic_machine_servitor } }"
+	# }
+	#
+	# inline_script = {
+	# 	script = planet/consumer_goods/fwt_artisan_job_swap
+	# 	jobs = @[ frameworld_jobs_offset * 0.5 ]
+	# }
+	#
+	# inline_script = {
+	# 	script = planet/consumer_goods/fwt_artisan_job_swap
+	# 	jobs = @[ frameworld_jobs_offset * 0.5 ]
+	# 	multiplier_string = "mult = fwt_consumer_goods_completion"
+	# 	condition = "owner = { not = { has_valid_civic = civic_machine_servitor } }"
+	# }
+
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
 	}
@@ -445,6 +482,19 @@ district_giga_frameworld_generator = {
 			mult = frame_expansion_scale
 		}
 	}
+
+	# inline_script = {
+	# 	script = planet/energy/fwt_technician_job_swap
+	# 	jobs = @frameworld_jobs_base
+	# 	district = 1
+	# 	extra_hive_jobs = 50
+	# 	multiplier_string = "mult = fwt_energy_completion"
+	# }
+	#
+	# inline_script = {
+	# 	script = planet/energy/fwt_technician_job_swap
+	# 	jobs = @frameworld_jobs_offset
+	# }
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
@@ -487,6 +537,19 @@ district_giga_frameworld_mining = {
 		}
 	}
 
+	# inline_script = {
+	# 	script = planet/minerals/fwt_miner_job_swap
+	# 	jobs = @frameworld_jobs_base
+	# 	district = 1
+	# 	extra_hive_jobs = 50
+	# 	multiplier_string = "mult = fwt_mineral_completion"
+	# }
+	#
+	# inline_script = {
+	# 	script = planet/minerals/fwt_miner_job_swap
+	# 	jobs = @frameworld_jobs_offset
+	# }
+
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
 	}
@@ -528,6 +591,19 @@ district_giga_frameworld_farming = {
 		}
 	}
 
+	# inline_script = {
+	# 	script = planet/food/fwt_farmer_job_swap
+	# 	jobs = @frameworld_jobs_base
+	# 	district = 1
+	# 	extra_hive_jobs = 50
+	# 	multiplier_string = "mult = fwt_food_completion"
+	# }
+	#
+	# inline_script = {
+	# 	script = planet/food/fwt_farmer_job_swap
+	# 	jobs = @frameworld_jobs_offset
+	# }
+
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
 	}
@@ -563,12 +639,39 @@ district_giga_frameworld_unity = {
 		upkeep = {
 			trigger = {
 				check_variable = { which = frame_expansion_scale value > 1 }
+
 			}
 			rare_crystals = @advanced_rare_upkeep
 			mult = frame_expansion_scale
 		}
 	}
 
+	# inline_script = {
+	# 	script = "planet/unity/fwt_bureaucrat_swap"
+	# 	jobs = @[ frameworld_jobs_base * 0.5 ]
+	# 	district = 1
+	# 	multiplier_string = "mult = fwt_unity_trade_completion"
+	# }
+	#
+	# inline_script = {
+	# 	script = "planet/unity/fwt_bureaucrat_swap"
+	# 	jobs = @[ frameworld_jobs_base * 0.5 ]
+	# 	district = 1
+	# 	multiplier_string = "mult = fwt_unity_trade_completion"
+	# 	condition = "has_major_upgraded_capital = yes"
+	# }
+	#
+	# inline_script = {
+	# 	script = "planet/unity/fwt_bureaucrat_swap"
+	# 	jobs = @[ frameworld_jobs_offset * 0.5 ]
+	# }
+	#
+	# inline_script = {
+	# 	script = "planet/unity/fwt_bureaucrat_swap"
+	# 	jobs = @[ frameworld_jobs_offset * 0.5 ]
+	# 	condition = "has_major_upgraded_capital = yes"
+	# }
+	#
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
 	}

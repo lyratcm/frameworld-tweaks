@@ -1,5 +1,6 @@
 @frameworld_housing_non_urban = -300
 @frameworld_jobs_base = 300
+@frameworld_jobs_offset = -200
 @frameworld_housing_urban = 600
 @advanced_cost = 600
 @advanced_upkeep = 3

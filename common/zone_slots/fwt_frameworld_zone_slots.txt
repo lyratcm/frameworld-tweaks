@@ -148,13 +148,16 @@ fwt_slot_city_01 = {
 }
 
 fwt_slot_city_02 = {
-    start = district_giga_frameworld_city_city
+    # start = district_giga_frameworld_city_city
 
     inline_script = zone_slots/fwt_zones_frameworld_urban
 
     potential = { # planet scope
         uses_district_set = giga_frameworld
-        always = yes
+        custom_tooltip_fail = {
+            text = fwt_missing_hab_upgrade
+            has_planet_flag = frameworld_habitat_upgrade
+        }
     }
 
     unlock = { # planet scope

@@ -1,16 +1,16 @@
 triggered_district_planet_modifier = {
     potential = { always = yes }
-    planet_amenities_add = 200
+    planet_amenities_add = 300
 }
 
 triggered_district_planet_modifier = {
-    potential = { has_major_upgraded_capital = yes  }
-    planet_amenities_add = 200
+    potential = { owner = { has_ascension_perk = ap_arcology_project } }
+    planet_amenities_add = 100
 }
 
 inline_script = {
     script = "planet/rulers/fwt_ruler_part_job_swap"
-    jobs = $JOBS$
+    jobs = @[ frameworld_jobs_base - 100 ]
     district = @yes
     condition = "owner = { is_gestalt = no } has_major_upgraded_capital = yes"
     multiplier_string = "mult = fwt_consumer_unity_trade_completion"
@@ -18,8 +18,8 @@ inline_script = {
 
 inline_script = {
     script = "planet/rulers/fwt_ruler_part_job_swap"
-    jobs = $JOBS$
+    jobs = 100
     district = @yes
-    condition = "owner = { is_gestalt = no } has_major_upgraded_capital = yes"
+    condition = "owner = { is_gestalt = no has_ascension_perk = ap_arcology_project }"
     multiplier_string = "mult = fwt_consumer_unity_trade_completion"
 }
