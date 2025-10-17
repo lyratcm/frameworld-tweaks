@@ -583,6 +583,8 @@ district_giga_frameworld_city_city = {
 		zone_building_slots_add = 3
 	}
 }
+
+
 #
 # district_giga_frameworld_foundry_city = {
 # 	icon = GFX_colony_type_habitat_foundry

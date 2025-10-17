@@ -1,19 +1,5 @@
 include = {
 	district_giga_frameworld_city_city
-	district_giga_frameworld_foundry_city
-	district_giga_frameworld_factory_city
-	district_giga_frameworld_generator_city
-	district_giga_frameworld_mining_city
-	district_giga_frameworld_farming_city
-	district_giga_frameworld_trade_city
-	district_giga_frameworld_administrative_city
-	district_giga_frameworld_synapse_city
-	district_giga_frameworld_simulation_city
-	district_giga_frameworld_sanctuary_city
-	district_giga_frameworld_science_city
-	district_giga_frameworld_amenities_city
-	district_giga_frameworld_amenities_dystopian_city
-	district_giga_frameworld_amenities_gestalt_city
 }
 #only frameworld zones
 exclude = {
@@ -37,7 +23,6 @@ exclude = {
 	zone_food
 	zone_energy
 	zone_machine_replication
-	zone_hive_spawning
 	zone_urban
 	zone_industrial
 	zone_foundry

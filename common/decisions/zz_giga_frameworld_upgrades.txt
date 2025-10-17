@@ -1671,7 +1671,7 @@ giga_frameworld_habitat_upgrade = {
 	resources = {
 		category = decisions
 		cost = {
-			alloys = 10000
+			alloys = 5000
 		}
 		
 		cost = {
@@ -1784,7 +1784,7 @@ giga_frameworld_habitat_upgrade_dummy = {
 	resources = {
 		category = decisions
 		cost = {
-			alloys = 10000
+			alloys = 5000
 		}
 
 		cost = {

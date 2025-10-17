@@ -59,7 +59,7 @@ inline_script = {
 
 inline_script = {
 	script = planet/research/fwt_researcher_job_swap
-	jobs = @[ $JOBS$ - 200 ]
+	jobs = @[ $JOBS$ - 100 ]
 	district = @yes
 	mode = @job_mode_add
 	condition = "frameworld_has_active_nanite_upgrade = no"

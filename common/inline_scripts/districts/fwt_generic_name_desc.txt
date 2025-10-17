@@ -1,0 +1,84 @@
+triggered_name = {
+    trigger = {
+        exists = owner
+        owner = { is_hive_empire = yes }
+        num_zones = {
+            type = district_giga_frameworld_$TYPE$
+            value > 0
+        }
+    }
+    text = fwt_$TYPE$_hive
+}
+triggered_flavor_desc = {
+    trigger = {
+        exists = owner
+        owner = { is_hive_empire = yes }
+        num_zones = {
+            type = district_giga_frameworld_$TYPE$
+            value > 0
+        }
+    }
+    text = fwt_$TYPE$_hive_desc
+}
+triggered_name = {
+    trigger = {
+        exists = owner
+        owner = { is_machine_empire = yes }
+        num_zones = {
+            type = district_giga_frameworld_$TYPE$
+            value > 0
+        }
+    }
+    text = fwt_$TYPE$_machine
+}
+triggered_flavor_desc = {
+    trigger = {
+        exists = owner
+        owner = { is_machine_empire = yes }
+        num_zones = {
+            type = district_giga_frameworld_$TYPE$
+            value > 0
+        }
+    }
+    text = fwt_$TYPE$_machine_desc
+}
+triggered_name = {
+    trigger = {
+        exists = owner
+        owner = { is_individual_machine = yes }
+        num_zones = {
+            type = district_giga_frameworld_$TYPE$
+            value > 0
+        }
+    }
+    text = fwt_$TYPE$_individual_machine
+}
+triggered_flavor_desc = {
+    trigger = {
+        exists = owner
+        owner = { is_individual_machine = yes }
+        num_zones = {
+            type = district_giga_frameworld_$TYPE$
+            value > 0
+        }
+    }
+    text = fwt_$TYPE$_individual_machine_desc
+}
+triggered_name = {
+    trigger = {
+        num_zones = {
+            type = district_giga_frameworld_$TYPE$
+            value > 0
+        }
+    }
+    text = fwt_$TYPE$
+}
+triggered_flavor_desc = {
+    trigger = {
+        num_zones = {
+            type = district_giga_frameworld_$TYPE$
+            value > 0
+        }
+    }
+    text = fwt_$TYPE$_desc
+}

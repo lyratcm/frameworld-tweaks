@@ -4,22 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="fixed the frameworld not getting starting districts/ other starting events">
+    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="updated the advanced districts to have bae 200 and upgrade with ecus">
+      <change afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_generic_name_desc.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_upgrades.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/decisions/zz_giga_frameworld_upgrades.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/districts/giga_frameworld_districts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/districts/giga_frameworld_districts.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_alloy.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_alloy.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_factory.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_factory.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_science.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_science.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/fwt_district_inline_trade.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_unity_params.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/params/fwt_district_inline_unity_params.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/parts/fwt_dystopian_amentity_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/parts/fwt_dystopian_amentity_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/parts/fwt_gestalt_amentity_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/parts/fwt_gestalt_amentity_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/inline_scripts/districts/parts/fwt_normal_amentity_swap.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/districts/parts/fwt_normal_amentity_swap.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_variables/fwt_scripted_variables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_variables/fwt_scripted_variables.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/zone_slots/fwt_exclude.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/zone_slots/fwt_exclude.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/inline_scripts/zone_slots/fwt_zones_frameworld_urban.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/inline_scripts/zone_slots/fwt_zones_frameworld_urban.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/zone_slots/fwt_frameworld_zone_slots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/zone_slots/fwt_frameworld_zone_slots.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/zones/fwt_zones.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/zones/fwt_zones.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/events/zz_gigas_ow.txt" beforeDir="false" afterPath="$PROJECT_DIR$/events/zz_gigas_ow.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/localisation/english/z_fwt_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/english/z_fwt_frameworld_l_english.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/plans.txt" beforeDir="false" afterPath="$PROJECT_DIR$/plans.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +79,7 @@
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/dan20/Documents/Paradox Interactive/Stellaris/mod/frameworld tweaks/localisation/replace/english&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
@@ -329,7 +328,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759509279821</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="updated the advanced districts to have bae 200 and upgrade with ecus">
+      <option name="closed" value="true" />
+      <created>1760151959033</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1760151959033</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -357,6 +364,7 @@
     <MESSAGE value="fixed auto harvest situation&#10;fixed expansion decision not being set at game start&#10;removed uneeded scripted vars&#10;fixed auto resettle event missing correct scope&#10;added mod icon" />
     <MESSAGE value="changed exponent reduction to ecu perk and added text (that should get overwritten) on the perl&#10;cleaned up uneeded comments" />
     <MESSAGE value="fixed the frameworld not getting starting districts/ other starting events" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed the frameworld not getting starting districts/ other starting events" />
+    <MESSAGE value="updated the advanced districts to have bae 200 and upgrade with ecus" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated the advanced districts to have bae 200 and upgrade with ecus" />
   </component>
 </project>

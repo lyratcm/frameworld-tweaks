@@ -493,6 +493,7 @@ fwt_base_expansion_cost = {
 		add = @fwt_frameworld_expansion_cost_megashipyard
 		owner = { has_technology = tech_mega_shipyard }
 	}
+	add = modifier:decisions_alloy_cost_add
 	modifier = {
 		mult = @fwt_frameworld_expansion_cost_t1_upgrade
 		owner = {
@@ -523,6 +524,7 @@ fwt_base_expansion_cost = {
 			}
 		}
 	}
+	mult = modifier:decisions_cost_mult
 }
 
 fwt_base_expansion_exponent = {

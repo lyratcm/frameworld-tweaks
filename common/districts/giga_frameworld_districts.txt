@@ -84,7 +84,7 @@ district_giga_frameworld_city = {
 			}
 		}
 		modifier = {
-			planet_housing_add = -500
+			planet_housing_add = -200
 		}
 		mult = frame_expansion_scale
 	}
@@ -95,7 +95,7 @@ district_giga_frameworld_city = {
 			owner = { has_active_tradition = tr_prosperity_public_works }
 		}
 		modifier = {
-			planet_housing_add = 500
+			planet_housing_add = 100
 		}
 		mult = frame_expansion_scale
 	}
@@ -108,7 +108,7 @@ district_giga_frameworld_city = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 500
+			planet_housing_add = 100
 		}
 		mult = frame_expansion_scale
 	}
@@ -122,7 +122,7 @@ district_giga_frameworld_city = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 500
+			planet_housing_add = 200
 		}
 		mult = frame_expansion_scale
 	}
@@ -133,9 +133,56 @@ district_giga_frameworld_city = {
 			owner = { is_tankbound_empire = yes }
 		}
 		modifier = {
-			job_production_overseer_add = 100
+			job_production_overseer_add = 50
 		}
 		mult = frame_expansion_scale
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_prosperity_extended_hives }
+		}
+		modifier = {
+			planet_housing_add = 100
+		}
+		mult = frame_expansion_scale
+	}
+
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = { has_active_tradition = tr_virtuality_4 }
+	# 	}
+	# 	modifier = {
+	# 		job_maintenance_drone_add = 1000
+	# 	}
+	# }
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_active_tradition = tr_prosperity_optimized_nexus }
+		}
+		modifier = {
+			planet_housing_add = 100
+		}
+		mult = frame_expansion_scale
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			has_modifier = gestation_colony
+		}
+		modifier = {
+			job_gestation_drone_add = 100
+		}
+		mult = frame_expansion_scale
+	}
+
+	inline_script = {
+		script = districts/fwt_generic_name_desc
+		TYPE = city_city
 	}
 }
 
@@ -364,20 +411,14 @@ district_giga_frameworld_foundry = {
 			mult = frame_expansion_scale
 		}
 	}
-	# #job add
-	# inline_script = {
-	# 	script = planet/alloys/fwt_foundry_job_swap
-	# 	jobs = @frameworld_jobs_base
-	# 	multiplier_string = "mult = fwt_alloy_completion"
-	# }
-	# #reduction to account from jobs from the zone
-	# inline_script = {
-	# 	script = planet/alloys/fwt_foundry_job_swap
-	# 	jobs = @frameworld_jobs_offset
-	# }
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
+	}
+
+	inline_script = {
+		script = districts/fwt_generic_name_desc
+		TYPE = foundry
 	}
 }
 
@@ -417,30 +458,10 @@ district_giga_frameworld_factory = {
 		}
 	}
 
-	# inline_script = {
-	# 	script = planet/consumer_goods/fwt_artisan_job_swap
-	# 	jobs = @[ frameworld_jobs_base * 0.5 ]
-	# 	multiplier_string = "mult = fwt_consumer_goods_completion"
-	# }
-	#
-	# inline_script = {
-	# 	script = planet/consumer_goods/fwt_artisan_job_swap
-	# 	jobs = @[ frameworld_jobs_base * 0.5 ]
-	# 	multiplier_string = "mult = fwt_consumer_goods_completion"
-	# 	condition = "owner = { not = { has_valid_civic = civic_machine_servitor } }"
-	# }
-	#
-	# inline_script = {
-	# 	script = planet/consumer_goods/fwt_artisan_job_swap
-	# 	jobs = @[ frameworld_jobs_offset * 0.5 ]
-	# }
-	#
-	# inline_script = {
-	# 	script = planet/consumer_goods/fwt_artisan_job_swap
-	# 	jobs = @[ frameworld_jobs_offset * 0.5 ]
-	# 	multiplier_string = "mult = fwt_consumer_goods_completion"
-	# 	condition = "owner = { not = { has_valid_civic = civic_machine_servitor } }"
-	# }
+	inline_script = {
+		script = districts/fwt_generic_name_desc
+		TYPE = factory
+	}
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
@@ -483,18 +504,10 @@ district_giga_frameworld_generator = {
 		}
 	}
 
-	# inline_script = {
-	# 	script = planet/energy/fwt_technician_job_swap
-	# 	jobs = @frameworld_jobs_base
-	# 	district = 1
-	# 	extra_hive_jobs = 50
-	# 	multiplier_string = "mult = fwt_energy_completion"
-	# }
-	#
-	# inline_script = {
-	# 	script = planet/energy/fwt_technician_job_swap
-	# 	jobs = @frameworld_jobs_offset
-	# }
+	inline_script = {
+		script = districts/fwt_generic_name_desc
+		TYPE = generator
+	}
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
@@ -537,18 +550,10 @@ district_giga_frameworld_mining = {
 		}
 	}
 
-	# inline_script = {
-	# 	script = planet/minerals/fwt_miner_job_swap
-	# 	jobs = @frameworld_jobs_base
-	# 	district = 1
-	# 	extra_hive_jobs = 50
-	# 	multiplier_string = "mult = fwt_mineral_completion"
-	# }
-	#
-	# inline_script = {
-	# 	script = planet/minerals/fwt_miner_job_swap
-	# 	jobs = @frameworld_jobs_offset
-	# }
+	inline_script = {
+		script = districts/fwt_generic_name_desc
+		TYPE = mining
+	}
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
@@ -591,18 +596,10 @@ district_giga_frameworld_farming = {
 		}
 	}
 
-	# inline_script = {
-	# 	script = planet/food/fwt_farmer_job_swap
-	# 	jobs = @frameworld_jobs_base
-	# 	district = 1
-	# 	extra_hive_jobs = 50
-	# 	multiplier_string = "mult = fwt_food_completion"
-	# }
-	#
-	# inline_script = {
-	# 	script = planet/food/fwt_farmer_job_swap
-	# 	jobs = @frameworld_jobs_offset
-	# }
+	inline_script = {
+		script = districts/fwt_generic_name_desc
+		TYPE = farming
+	}
 
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
@@ -646,32 +643,11 @@ district_giga_frameworld_unity = {
 		}
 	}
 
-	# inline_script = {
-	# 	script = "planet/unity/fwt_bureaucrat_swap"
-	# 	jobs = @[ frameworld_jobs_base * 0.5 ]
-	# 	district = 1
-	# 	multiplier_string = "mult = fwt_unity_trade_completion"
-	# }
-	#
-	# inline_script = {
-	# 	script = "planet/unity/fwt_bureaucrat_swap"
-	# 	jobs = @[ frameworld_jobs_base * 0.5 ]
-	# 	district = 1
-	# 	multiplier_string = "mult = fwt_unity_trade_completion"
-	# 	condition = "has_major_upgraded_capital = yes"
-	# }
-	#
-	# inline_script = {
-	# 	script = "planet/unity/fwt_bureaucrat_swap"
-	# 	jobs = @[ frameworld_jobs_offset * 0.5 ]
-	# }
-	#
-	# inline_script = {
-	# 	script = "planet/unity/fwt_bureaucrat_swap"
-	# 	jobs = @[ frameworld_jobs_offset * 0.5 ]
-	# 	condition = "has_major_upgraded_capital = yes"
-	# }
-	#
+	inline_script = {
+		script = districts/fwt_generic_name_desc
+		TYPE = administrative
+	}
+
 	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
 	}
@@ -711,6 +687,11 @@ district_giga_frameworld_science = {
 			rare_crystals = @advanced_rare_upkeep
 			mult = frame_expansion_scale
 		}
+	}
+
+	inline_script = {
+		script = districts/fwt_generic_name_desc
+		TYPE = science
 	}
 
 	inline_script = {
@@ -755,6 +736,11 @@ district_giga_frameworld_amenities = {
 	}
 
 	inline_script = {
+		script = districts/fwt_generic_name_desc
+		TYPE = amenities
+	}
+
+	inline_script = {
 		script = zones/shared_frameworld_urban_modifiers
 	}
 }
@@ -793,6 +779,11 @@ district_giga_frameworld_trade = {
 			rare_crystals = @advanced_rare_upkeep
 			mult = frame_expansion_scale
 		}
+	}
+
+	inline_script = {
+		script = districts/fwt_generic_name_desc
+		TYPE = trade
 	}
 
 	inline_script = {
