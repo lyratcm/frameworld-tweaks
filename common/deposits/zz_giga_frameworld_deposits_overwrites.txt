@@ -1055,6 +1055,11 @@ d_frameworld_admin = {
 			unity = 10
 		}
 	}
+
+    triggered_planet_modifier = {
+        planet_assembly_jobs_bonus_workforce_mult = 1
+        multiplier = modifier:planet_growth_jobs_fake_energy_produces_mult
+    }
 }
 
 d_frameworld_hive = {

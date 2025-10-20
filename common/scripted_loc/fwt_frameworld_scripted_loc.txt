@@ -702,12 +702,12 @@ defined_text = {
 
 defined_text = {
     name = giga_frameworld_outpost_count_hab_loc
-    value = value:giga_frameworld_outpost_count_hab
+    value = value:giga_frameworld_outpost_count_hab_10
 }
 
 defined_text = {
     name = giga_frameworld_outpost_growth_count_hab_loc
-    value = value:giga_frameworld_outpost_growth_count_hab|reduction|2|reduction_offset|4|
+    value = value:giga_frameworld_outpost_growth_count_hab_10
 }
 
 defined_text = {

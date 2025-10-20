@@ -4,9 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="cleaned out commeted out extra upkeeps on zones&#10;added a requirement to have upgrade the capital building once to use the second zone slot&#10;added subtitles to districts&#10;outposts now give job efficiency for pop assembly jobs (at a slightly higher rate) rather than generic job efficiency to be more inline with 4.0 pop growth changes&#10;the auto expand situaiton should now benifit from modifiers to decision cost">
+    <list default="true" id="8089c46d-f730-4edd-a2ab-17940d2c7fa8" name="Changes" comment="the normal expand decision doesn't double-dip on cost reductions after the previous changes&#10;cleaned up some unused code">
+      <change afterPath="$PROJECT_DIR$/common/scripted_modifiers/fwt_scripted_modifiers.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/deposits/zz_giga_frameworld_deposits_overwrites.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/economic_categories/fwt_economic_cats.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/economic_categories/fwt_economic_cats.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/script_values/zz_fwt_script_values.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_effects/zz_giga_frameworld_general_effects_and_other_gigas_OW.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_loc/fwt_frameworld_scripted_loc.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_loc/fwt_frameworld_scripted_loc.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/scripted_variables/fwt_scripted_variables.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/scripted_variables/fwt_scripted_variables.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/situations/zz_giga_frameworld_situations.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/situations/zz_giga_frameworld_situations.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/static_modifiers/fwt_static_modifier.txt" beforeDir="false" afterPath="$PROJECT_DIR$/common/static_modifiers/fwt_static_modifier.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/english/z_fwt_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/english/fwt_frameworld_l_english.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/localisation/replace/english/zz_frameworld_l_english.yml" beforeDir="false" afterPath="$PROJECT_DIR$/localisation/replace/english/zz_frameworld_l_english.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -340,11 +349,18 @@
       <option name="project" value="LOCAL" />
       <updated>1760935891305</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="the normal expand decision doesn't double-dip on cost reductions after the previous changes&#10;cleaned up some unused code">
+      <option name="closed" value="true" />
+      <created>1760936169978</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1760936169978</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="all districts/jobs now work and inlines are split from gigas to avoid issues with buildings that use the same code" />
     <MESSAGE value="misc inline fixes and small number tweaks, MVP for bios" />
     <MESSAGE value="add frameworld upgrades&#10;move situation and non auto decisions back to decisions&#10;added extra simultaneous build to the frameworld" />
     <MESSAGE value="bugfixes&#10;decisions loc pt 1" />
@@ -369,6 +385,7 @@
     <MESSAGE value="updated the advanced districts to have bae 200 and upgrade with ecus" />
     <MESSAGE value="fixed some of the job number changes&#10;removed unneeded exclude zones&#10;added inline for subtitles&#10;updated capital housing to new base numbers&#10;added support for decision cost modifiers&#10;reduced hab upgrade to be more inline with mineral to alloy cost ratio&#10;added extra starting alloy district to balence out reduction" />
     <MESSAGE value="cleaned out commeted out extra upkeeps on zones&#10;added a requirement to have upgrade the capital building once to use the second zone slot&#10;added subtitles to districts&#10;outposts now give job efficiency for pop assembly jobs (at a slightly higher rate) rather than generic job efficiency to be more inline with 4.0 pop growth changes&#10;the auto expand situaiton should now benifit from modifiers to decision cost" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleaned out commeted out extra upkeeps on zones&#10;added a requirement to have upgrade the capital building once to use the second zone slot&#10;added subtitles to districts&#10;outposts now give job efficiency for pop assembly jobs (at a slightly higher rate) rather than generic job efficiency to be more inline with 4.0 pop growth changes&#10;the auto expand situaiton should now benifit from modifiers to decision cost" />
+    <MESSAGE value="the normal expand decision doesn't double-dip on cost reductions after the previous changes&#10;cleaned up some unused code" />
+    <option name="LAST_COMMIT_MESSAGE" value="the normal expand decision doesn't double-dip on cost reductions after the previous changes&#10;cleaned up some unused code" />
   </component>
 </project>

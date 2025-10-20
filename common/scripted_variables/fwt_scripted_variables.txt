@@ -15,8 +15,8 @@
 @fwt_frameworld_expansion_cost_t2_upgrade = 2
 @fwt_frameworld_expansion_cost_t3_upgrade = 2
 
-@fwt_base_job_efficiency_outpost_perc = 12.5
+@fwt_base_job_efficiency_outpost_perc = 10
 
-@base_job_efficiency_outpost = 0.125
+@base_job_efficiency_outpost = 0.1
 #same as above but mult by 100 to show in locs
-@base_job_efficiency_outpost_perc = 12.5
+@base_job_efficiency_outpost_perc = 10

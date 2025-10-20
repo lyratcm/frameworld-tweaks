@@ -632,11 +632,21 @@ giga_frameworld_outpost_count_hab = {
 	}
 }
 
+giga_frameworld_outpost_count_hab_10 = {
+	weight = value:giga_frameworld_outpost_count_hab
+	mult = 10
+}
+
 giga_frameworld_outpost_growth_count_hab = {
 	weight = owner.value:giga_frameworld_outpost_count_hab
 	multiply = @giga_frameworld_outpost_expansion_curve
 	divide = value:giga_frameworld_outpost_growth_count_internal|reduction|$reduction|1$|reduction_offset|$reduction_offset|0$|
 	multiply = $mult|1$
+}
+
+giga_frameworld_outpost_growth_count_hab_10 = {
+	weight = value:giga_frameworld_outpost_growth_count_hab|reduction|2|reduction_offset|3|
+	mult = 10
 }
 
 giga_frameworld_outpost_growth_count_internal = {
@@ -645,6 +655,8 @@ giga_frameworld_outpost_growth_count_internal = {
 	multiply = $reduction$
 	# reduce the effect more for the first increases to the modifier
 	subtract = $reduction_offset$
+	# to stop the offset giving extra at the start
+	min = owner.value:giga_frameworld_outpost_count_hab
 	add = @giga_frameworld_outpost_expansion_curve
 }
 

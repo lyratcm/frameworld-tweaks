@@ -288,6 +288,17 @@ giga_situation_frameworld_outposts = {
     #############################################################################################
     # empire modifiers
 
+    # growth/efficiency
+    triggered_target_modifier = {
+        #slightly higher than before as it balances out with the reduced hab at the first and the harsher curve at the end
+        # planet_assembly_jobs_bonus_workforce_mult_situation = @base_job_efficiency_outpost
+        #couldn't get any other sort of modifier to show properly so using a fake one here then appliyng the value in the capital deposit
+        planet_growth_jobs_fake_energy_produces_mult = @base_job_efficiency_outpost
+        # planet_pop_assembly_organic_reduction = -0.1
+        # planet_pop_assembly_reduction = -0.1
+        multiplier = value:giga_frameworld_outpost_growth_count_hab|reduction|2|reduction_offset|3|
+    }
+
     # count
     triggered_modifier = {
         giga_frameworld_outpost_count_display = 1
@@ -368,13 +379,4 @@ giga_situation_frameworld_outposts = {
         multiplier = owner.value:giga_frameworld_outpost_count
     }
 
-
-    # growth/efficiency
-    triggered_target_modifier = {
-        #slightly higher than before as it balances out with the reduced hab at the first and the harsher curve at the end
-        planet_growth_jobs_bonus_workforce_mult = @base_job_efficiency_outpost
-        # planet_pop_assembly_organic_reduction = -0.1
-        # planet_pop_assembly_reduction = -0.1
-        multiplier = value:giga_frameworld_outpost_growth_count_hab|reduction|3|reduction_offset|4|
-    }
 }

@@ -1,0 +1,6 @@
+planet_assembly_jobs_bonus_workforce_mult_situation = {
+    icon = planet_growth_jobs_bonus_workforce_mult
+	good = yes
+	category = planet
+	localize_with_value_key = yes
+}

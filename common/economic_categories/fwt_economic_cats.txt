@@ -44,3 +44,10 @@ planet_growth_jobs = {
 		use_parent_icon = yes
 	}
 }
+
+planet_growth_jobs_fake = {
+	modifier_category = planet
+	generate_mult_modifiers = {
+		produces
+	}
+}
