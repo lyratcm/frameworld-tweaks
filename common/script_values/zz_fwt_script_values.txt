@@ -34,9 +34,15 @@ fwt_situation_decision_cost_time_month = {
 fwt_situation_continuous_speed = {
 	weight = owner.modifier:country_situations_expansion_alloys_upkeep_add
 	# add = owner.modifier:fwt_alloy_useage_offset
-	divide = owner.capital_scope.fwt_frameworld_expansion_cost_multiplier
+	divide = value:fwt_situation_continuous_speed1
 	mult = 100
 }
+
+fwt_situation_continuous_speed1 = {
+	weight = owner.capital_scope.fwt_frameworld_expansion_cost_multiplier
+	mult = value:fwt_modifier_mult_params|MODIFIER|decisions_cost_mult|
+}
+
 
 # fwt_situation_continuous_cost1 = {
 # 	weight = value:fwt_situation_continuous_cost2
@@ -498,7 +504,6 @@ fwt_base_expansion_cost = {
 		add = @fwt_frameworld_expansion_cost_megashipyard
 		owner = { has_technology = tech_mega_shipyard }
 	}
-	add = modifier:decisions_alloy_cost_add
 	modifier = {
 		mult = @fwt_frameworld_expansion_cost_t1_upgrade
 		owner = {
@@ -529,7 +534,7 @@ fwt_base_expansion_cost = {
 			}
 		}
 	}
-	mult = value:fwt_modifier_mult_params|MODIFIER|decisions_cost_mult|
+	# mult = value:fwt_modifier_mult_params|MODIFIER|decisions_cost_mult|
 }
 
 fwt_base_expansion_exponent = {
