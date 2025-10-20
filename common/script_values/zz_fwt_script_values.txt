@@ -316,6 +316,11 @@ fwt_modifier_bonuses_params_mult_parentheses = {
 	add = planet.modifier:planet_jobs_$STRATA$_$PRODUCTION$_mult
 }
 
+fwt_modifier_mult_params = {
+	base = 1
+	add = modifier:$MODIFIER$
+}
+
 fwt_modifier_bonuses_params_mult = {
 	weight = value:fwt_modifier_bonuses_params_mult_parentheses|MODIFIER|$MODIFIER$|STRATA|$STRATA$|PRODUCTION|$PRODUCTION$|
 	#scale it to any planet size bonuses gigas had added
@@ -524,7 +529,7 @@ fwt_base_expansion_cost = {
 			}
 		}
 	}
-	mult = modifier:decisions_cost_mult
+	mult = value:fwt_modifier_mult_params|MODIFIER|decisions_cost_mult|
 }
 
 fwt_base_expansion_exponent = {

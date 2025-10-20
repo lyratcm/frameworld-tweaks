@@ -288,16 +288,6 @@ giga_situation_frameworld_outposts = {
     #############################################################################################
     # empire modifiers
 
-
-    # growth/efficiency
-    triggered_target_modifier = {
-        # planet_pop_assembly_organic_reduction = -0.1
-        # planet_pop_assembly_reduction = -0.1
-        # pop_growth_speed_reduction = -0.1
-        pop_bonus_workforce_mult = 0.1
-        multiplier = value:giga_frameworld_outpost_growth_count_hab|reduction|2|reduction_offset|4|
-    }
-
     # count
     triggered_modifier = {
         giga_frameworld_outpost_count_display = 1
@@ -308,9 +298,7 @@ giga_situation_frameworld_outposts = {
 
     # empire size
     triggered_modifier = {
-
         empire_size_add = 5
-
         multiplier = owner.value:giga_frameworld_outpost_empire_size_mult
     }
 
@@ -362,7 +350,7 @@ giga_situation_frameworld_outposts = {
             }
         }
         #maintenance drones are just civilians now
-        job_patrol_drone_add = 200
+        job_patrol_drone_add = 100
         # job_maintenance_drone_add = 200
 
         multiplier = root.owner.value:giga_frameworld_outpost_count
@@ -378,5 +366,15 @@ giga_situation_frameworld_outposts = {
         giga_pop_assimilation_speed = 0.1
 
         multiplier = owner.value:giga_frameworld_outpost_count
+    }
+
+
+    # growth/efficiency
+    triggered_target_modifier = {
+        #slightly higher than before as it balances out with the reduced hab at the first and the harsher curve at the end
+        planet_growth_jobs_bonus_workforce_mult = @base_job_efficiency_outpost
+        # planet_pop_assembly_organic_reduction = -0.1
+        # planet_pop_assembly_reduction = -0.1
+        multiplier = value:giga_frameworld_outpost_growth_count_hab|reduction|3|reduction_offset|4|
     }
 }

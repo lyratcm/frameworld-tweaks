@@ -1,3 +1,14 @@
 fwt_speed_unemploy_info = {
     pop_demotion_time_mult = 1
 }
+
+planet_growth_jobs_bonus_workforce_mult = {
+    icon = "gfx/interface/icons/jobs/job_giga_cloning.dds"
+    custom_tooltip = planet_growth_jobs_bonus_workforce_mult_tt
+    pop_giga_cloning_workforce_mult = 1
+    pop_roboticist_workforce_mult = 1
+    pop_replicator_workforce_mult = 1
+    pop_spawning_drone_workforce_mult = 1
+    pop_reassigner_workforce_mult = 1
+    pop_giga_extra_crucible_drone_workforce_mult = 1
+}

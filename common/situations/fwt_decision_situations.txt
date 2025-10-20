@@ -323,9 +323,9 @@ fwt_situation_frameworld_continuous_harvest = {
 	}
 
 	on_start = {
-		if = {
-			limit = {
-				owner = {
+		owner = {
+			if = {
+				limit = {
 					nand = {
 						has_country_flag = has_more_asteroids
 						has_country_flag = fwt_asteroid_harvesting
@@ -342,18 +342,12 @@ fwt_situation_frameworld_continuous_harvest = {
 						has_country_flag = has_more_asteroids_industry
 						has_country_flag = fwt_asteroid_industry
 					}
-					not = {
-						has_country_flag = asteroid_harvest_menu_open
-					}
+					not = { has_country_flag = asteroid_harvest_menu_open }
 				}
-			}
-			owner = {
 				country_event = {
 					id = fwt.41
 				}
 			}
-		}
-		owner = {
 			country_event = {
 				id = fwt.412
 			}

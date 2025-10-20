@@ -21,3 +21,26 @@ country_situations_harvest = {
 	parent = country_situations_fwt
 	modifier_category = country
 }
+
+
+planet_growth_jobs = {
+	modifier_category = pop_job
+	parent = planet_pop_assemblers
+	generate_mult_modifiers = {
+		produces
+		upkeep
+	}
+	generate_add_modifiers = {
+		produces
+		upkeep
+	}
+	triggered_produces_modifier = {
+		key = planet_pop_assemblers
+		modifier_types = {
+			# mult
+			add
+		}
+		trigger = { always = yes }
+		use_parent_icon = yes
+	}
+}

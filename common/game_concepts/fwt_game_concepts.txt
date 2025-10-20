@@ -1,0 +1,3 @@
+concept_planet_growth_jobs = {
+	icon = "gfx/interface/icons/jobs/job_giga_cloning.dds"
+}

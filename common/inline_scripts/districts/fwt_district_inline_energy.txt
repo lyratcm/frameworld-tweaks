@@ -27,18 +27,6 @@ resources = {
 		minerals = @[ advanced_rural_cost * $SIZE_COST$ * $SCALE$ ]
 		mult = fwt_energy_completion
 	}
-	# #half advanced cost (so base) and 0x advanced so none of the for tier 1
-	# upkeep = {
-	# 	energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
-	# 	mult = fwt_energy_completion
-	# }
-	# upkeep = {
-	# 	trigger = {
-	# 		check_variable = { which = fwt_mineral_completion value > 1 }
-	# 	}
-	# 	exotic_gases = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
-	# 	mult = fwt_energy_completion
-	# }
 	cost = {
 		trigger = {
 			check_variable = { which = fwt_mineral_completion value > 1 }

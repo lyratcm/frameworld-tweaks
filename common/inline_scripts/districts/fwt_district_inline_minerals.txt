@@ -26,11 +26,6 @@ resources = {
 		minerals = @[ advanced_rural_cost * $SIZE_COST$ * $SCALE$ ]
 		mult = fwt_mineral_completion
 	}
-	# #half advanced cost (so base) and 0x advanced so none of the for tier 1
-	# upkeep = {
-	# 	energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
-	# 	mult = fwt_mineral_completion
-	# }
 	cost = {
 		trigger = {
 			check_variable = { which = fwt_mineral_completion value > 1 }
@@ -38,14 +33,6 @@ resources = {
 		rare_crystals = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
 		mult = fwt_mineral_completion
 	}
-	# #half advanced cost (so base) and 0x advanced so none of the for tier 1
-	# upkeep = {
-	# 	trigger = {
-	# 		check_variable = { which = fwt_mineral_completion value > 1 }
-	# 	}
-	# 	rare_crystals = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
-	# 	mult = fwt_mineral_completion
-	# }
 }
 
 included_building_sets = {

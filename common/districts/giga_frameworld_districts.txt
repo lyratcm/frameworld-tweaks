@@ -505,8 +505,9 @@ district_giga_frameworld_generator = {
 	}
 
 	inline_script = {
-		script = districts/fwt_generic_name_desc
+		script = districts/fwt_non_urban_name_desc
 		TYPE = generator
+		AUTO_TYPE = generator
 	}
 
 	inline_script = {
@@ -551,8 +552,9 @@ district_giga_frameworld_mining = {
 	}
 
 	inline_script = {
-		script = districts/fwt_generic_name_desc
+		script = districts/fwt_non_urban_name_desc
 		TYPE = mining
+		AUTO_TYPE = mining
 	}
 
 	inline_script = {
@@ -597,8 +599,9 @@ district_giga_frameworld_farming = {
 	}
 
 	inline_script = {
-		script = districts/fwt_generic_name_desc
-		TYPE = farming
+		script = districts/fwt_non_urban_name_desc
+		TYPE = agriculture
+		AUTO_TYPE = farming
 	}
 
 	inline_script = {
@@ -641,6 +644,16 @@ district_giga_frameworld_unity = {
 			rare_crystals = @advanced_rare_upkeep
 			mult = frame_expansion_scale
 		}
+	}
+
+	#trigged name/desc takes the first that is true
+	triggered_name = {
+		trigger = { owner = { has_valid_civic = civic_machine_servitor } }
+		text = fwt_bio_trophy_machine
+	}
+	triggered_desc = {
+		trigger = { owner = { has_valid_civic = civic_machine_servitor } }
+		text = fwt_bio_trophy_machine_desc
 	}
 
 	inline_script = {

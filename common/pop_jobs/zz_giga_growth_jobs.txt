@@ -31,7 +31,7 @@ giga_extra_healthcare = {
     }
 
     resources = {
-        category = planet_doctors
+        category = planet_growth_jobs
         upkeep = {
             consumer_goods = 0.5
         }
@@ -152,7 +152,7 @@ giga_extra_crucible_drone = {
     }
 
     resources = {
-        category = planet_doctors
+        category = planet_growth_jobs
         upkeep = {
             alloys = 1
         }
@@ -257,7 +257,7 @@ giga_cloning = {
         fake_pop_growth_mod = 1
     }
     resources = {
-        category = planet_jobs
+        category = planet_growth_jobs
         upkeep = {
             consumer_goods = 1
         }

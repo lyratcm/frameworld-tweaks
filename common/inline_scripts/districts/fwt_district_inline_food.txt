@@ -39,11 +39,6 @@ resources = {
 		minerals = @[ advanced_rural_cost * $SIZE_COST$ * $SCALE$ ]
 		mult = fwt_food_completion
 	}
-	# #half advanced cost (so base) and 0x advanced so none of the for tier 1
-	# upkeep = {
-	# 	energy = @[ advanced_upkeep * $SIZE_COST$ * $SCALE$ ]
-	# 	mult = fwt_food_completion
-	# }
 	cost = {
 		trigger = {
 			check_variable = { which = fwt_mineral_completion value > 1 }
@@ -51,14 +46,6 @@ resources = {
 		volatile_motes = @[ advanced_rare_cost * $SIZE$ * $SCALE$ ]
 		mult = fwt_food_completion
 	}
-	# #half advanced cost (so base) and 0x advanced so none of the for tier 1
-	# upkeep = {
-	# 	trigger = {
-	# 		check_variable = { which = fwt_mineral_completion value > 1 }
-	# 	}
-	# 	volatile_motes = @[ advanced_rare_upkeep * $SIZE$ * $SCALE$ ]
-	# 	mult = fwt_food_completion
-	# }
 }
 
 triggered_planet_modifier = {

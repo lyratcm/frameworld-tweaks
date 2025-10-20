@@ -1,0 +1,117 @@
+# triggered district names will pick the first one that they hit.
+
+triggered_name = {
+	trigger = {
+		exists = owner
+		owner = { is_tankbound_empire = yes }
+	}
+	text = automated_$AUTO_TYPE$
+}
+
+triggered_name = {
+	trigger = {
+        has_district = district_giga_frameworld_$TYPE$
+		exists = owner
+		owner = {
+			has_technology = tech_power_plant_4
+		}
+	}
+	text = $TYPE$_4
+}
+
+triggered_name = {
+	trigger = {
+        has_district = district_giga_frameworld_$TYPE$
+		exists = owner
+		owner = {
+			has_technology = tech_power_plant_3
+		}
+	}
+	text = $TYPE$_3
+}
+
+triggered_name = {
+	trigger = {
+        has_district = district_giga_frameworld_$TYPE$
+		exists = owner
+		owner = {
+			has_technology = tech_power_plant_2
+		}
+	}
+	text = $TYPE$_2
+}
+
+triggered_name = {
+	trigger = {
+        has_district = district_giga_frameworld_$TYPE$
+		exists = owner
+		owner = {
+			has_technology = tech_power_plant_1
+		}
+	}
+	text = $TYPE$_1
+}
+
+triggered_name = {
+	text = $TYPE$_0
+}
+
+triggered_flavor_desc = {
+	trigger = {
+        num_zones = {
+			type = district_giga_frameworld_$TYPE$
+			value > 0
+		}
+		exists = owner
+		owner = {
+			has_technology = tech_power_plant_4
+		}
+	}
+	text = $TYPE$_4_desc
+}
+
+triggered_flavor_desc = {
+	trigger = {
+        num_zones = {
+			type = district_giga_frameworld_$TYPE$
+			value > 0
+		}
+		exists = owner
+		owner = {
+			has_technology = tech_power_plant_3
+		}
+	}
+	text = $TYPE$_3_desc
+}
+
+triggered_flavor_desc = {
+	trigger = {
+        num_zones = {
+			type = district_giga_frameworld_$TYPE$
+			value > 0
+		}
+		exists = owner
+		owner = {
+			has_technology = tech_power_plant_2
+		}
+	}
+	text = $TYPE$_2_desc
+}
+
+triggered_flavor_desc = {
+	trigger = {
+        num_zones = {
+			type = district_giga_frameworld_$TYPE$
+			value > 0
+		}
+		exists = owner
+		owner = {
+			has_technology = tech_power_plant_1
+		}
+	}
+	text = $TYPE$_1_desc
+}
+
+triggered_flavor_desc = {
+	text = $TYPE$_0_desc
+}

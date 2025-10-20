@@ -155,8 +155,8 @@ fwt_slot_city_02 = {
     potential = { # planet scope
         uses_district_set = giga_frameworld
         custom_tooltip_fail = {
-            text = fwt_missing_hab_upgrade
-            has_planet_flag = frameworld_habitat_upgrade
+            text = requires_building_major_capital
+            has_major_upgraded_capital = yes
         }
     }
 
@@ -165,8 +165,8 @@ fwt_slot_city_02 = {
             uses_district_set = giga_frameworld
         }
         custom_tooltip_fail = {
-            text = fwt_missing_hab_upgrade
-            has_planet_flag = frameworld_habitat_upgrade
+            text = requires_building_major_capital
+            has_major_upgraded_capital = yes
         }
     }
 }

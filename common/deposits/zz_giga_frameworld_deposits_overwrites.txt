@@ -832,24 +832,24 @@ d_frameworld_admin = {
 	####################################################################################################################
 	####################################################################################################################
 
-	# growth
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-				giga_has_frameworld_origin = yes
-				is_synthetic_empire = no
-			}
-			giga_planet_has_robot_assembly_facilities = no
-			giga_planet_has_cloning_assembly_facilities = no
-			giga_planet_has_zombie_assembly_facilities = no
-		}
-
-		job_giga_extra_healthcare_add = 1
-
-		multiplier = modifier:giga_frameworld_growth_jobs_add
-	}
+	# # growth
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = {
+	# 			is_regular_empire = yes
+	# 			giga_has_frameworld_origin = yes
+	# 			is_synthetic_empire = no
+	# 		}
+	# 		giga_planet_has_robot_assembly_facilities = no
+	# 		giga_planet_has_cloning_assembly_facilities = no
+	# 		giga_planet_has_zombie_assembly_facilities = no
+	# 	}
+    #
+	# 	job_giga_extra_healthcare_add = 1
+    #
+	# 	multiplier = modifier:giga_frameworld_growth_jobs_add
+	# }
 
 	####################################################################################################################
 	# robot assembly
@@ -871,23 +871,23 @@ d_frameworld_admin = {
 
 		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-				giga_has_frameworld_origin = yes
-				is_synthetic_empire = no
-			}
-			giga_planet_has_robot_assembly_facilities = yes
-			giga_planet_has_cloning_assembly_facilities = no
-			giga_planet_has_zombie_assembly_facilities = no
-		}
-
-		job_giga_extra_healthcare_add = 0.5
-
-		multiplier = modifier:giga_frameworld_growth_jobs_add
-	}
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = {
+	# 			is_regular_empire = yes
+	# 			giga_has_frameworld_origin = yes
+	# 			is_synthetic_empire = no
+	# 		}
+	# 		giga_planet_has_robot_assembly_facilities = yes
+	# 		giga_planet_has_cloning_assembly_facilities = no
+	# 		giga_planet_has_zombie_assembly_facilities = no
+	# 	}
+    #
+	# 	job_giga_extra_healthcare_add = 0.5
+    #
+	# 	multiplier = modifier:giga_frameworld_growth_jobs_add
+	# }
 
 	####################################################################################################################
 	# cloning
@@ -908,23 +908,23 @@ d_frameworld_admin = {
 
 		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-				giga_has_frameworld_origin = yes
-				is_synthetic_empire = no
-			}
-			giga_planet_has_cloning_assembly_facilities = yes
-			giga_planet_has_zombie_assembly_facilities = no
-		}
-
-		job_giga_extra_healthcare_add = 0.5
-
-		multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0.5|
-	}
+    #
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = {
+	# 			is_regular_empire = yes
+	# 			giga_has_frameworld_origin = yes
+	# 			is_synthetic_empire = no
+	# 		}
+	# 		giga_planet_has_cloning_assembly_facilities = yes
+	# 		giga_planet_has_zombie_assembly_facilities = no
+	# 	}
+    #
+	# 	job_giga_extra_healthcare_add = 0.5
+    #
+	# 	multiplier = value:giga_sequential_job_split|value|modifier:giga_frameworld_growth_jobs_add|interval|4|fraction|0.5|offset|0.5|
+	# }
 
 	####################################################################################################################
 	# zombies
@@ -945,21 +945,21 @@ d_frameworld_admin = {
 		multiplier = modifier:giga_frameworld_growth_jobs_add
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_regular_empire = yes
-				giga_has_frameworld_origin = yes
-				is_synthetic_empire = no
-			}
-			giga_planet_has_zombie_assembly_facilities = yes
-		}
-
-		job_giga_extra_healthcare_add = 0.75
-
-		multiplier = modifier:giga_frameworld_growth_jobs_add
-	}
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = {
+	# 			is_regular_empire = yes
+	# 			giga_has_frameworld_origin = yes
+	# 			is_synthetic_empire = no
+	# 		}
+	# 		giga_planet_has_zombie_assembly_facilities = yes
+	# 	}
+    #
+	# 	job_giga_extra_healthcare_add = 0.75
+    #
+	# 	multiplier = modifier:giga_frameworld_growth_jobs_add
+	# }
 
 	####################################################################################################################
 	# synth assembly
@@ -1012,22 +1012,22 @@ d_frameworld_admin = {
 	# 	multiplier = trigger:pop_amount
     # }
 
-	# maginot district caps
-	triggered_planet_modifier = {
-		potential = {
-			is_giga_maginot_frameworld = yes
-		}
-		district_giga_frameworld_maginot_planetary_cannons_max = @giga_frameworld_maginot_district_factor
-		multiplier = trigger:planet_size
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			is_giga_maginot_frameworld = yes
-		}
-		district_giga_frameworld_maginot_shield_generators_max = @giga_frameworld_maginot_district_factor
-		multiplier = trigger:planet_size
-	}
+	# # maginot district caps
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		is_giga_maginot_frameworld = yes
+	# 	}
+	# 	district_giga_frameworld_maginot_planetary_cannons_max = @giga_frameworld_maginot_district_factor
+	# 	multiplier = trigger:planet_size
+	# }
+    #
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		is_giga_maginot_frameworld = yes
+	# 	}
+	# 	district_giga_frameworld_maginot_shield_generators_max = @giga_frameworld_maginot_district_factor
+	# 	multiplier = trigger:planet_size
+	# }
 
 	####################################################################################################################
 	####################################################################################################################

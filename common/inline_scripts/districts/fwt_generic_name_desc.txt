@@ -23,7 +23,7 @@ triggered_flavor_desc = {
 triggered_name = {
     trigger = {
         exists = owner
-        owner = { is_machine_empire = yes }
+        owner = { or = { is_individual_machine = yes is_machine_empire = yes } }
         num_zones = {
             type = district_giga_frameworld_$TYPE$
             value > 0
@@ -34,35 +34,13 @@ triggered_name = {
 triggered_flavor_desc = {
     trigger = {
         exists = owner
-        owner = { is_machine_empire = yes }
+        owner = { or = { is_individual_machine = yes is_machine_empire = yes }  }
         num_zones = {
             type = district_giga_frameworld_$TYPE$
             value > 0
         }
     }
     text = fwt_$TYPE$_machine_desc
-}
-triggered_name = {
-    trigger = {
-        exists = owner
-        owner = { is_individual_machine = yes }
-        num_zones = {
-            type = district_giga_frameworld_$TYPE$
-            value > 0
-        }
-    }
-    text = fwt_$TYPE$_individual_machine
-}
-triggered_flavor_desc = {
-    trigger = {
-        exists = owner
-        owner = { is_individual_machine = yes }
-        num_zones = {
-            type = district_giga_frameworld_$TYPE$
-            value > 0
-        }
-    }
-    text = fwt_$TYPE$_individual_machine_desc
 }
 triggered_name = {
     trigger = {

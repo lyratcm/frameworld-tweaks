@@ -21,7 +21,6 @@ giga_frameworld_expand = {
 	}
 	
 	potential = {
-		is_variable_set = giga_frameworld_structure_expansions
 		exists = owner
 		owner = {
 			giga_has_frameworld_origin = yes
